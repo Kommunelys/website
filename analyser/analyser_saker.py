@@ -205,8 +205,8 @@ def kildetekst(sak: dict, voteringer: dict[int, dict],
     return "\n\n".join(d for d in deler if d), kilder
 
 
-def analyser(klient, kilde: str) -> tuple[dict, str]:
-    """Ett kall mot modellen. Gir (svaret, modellen som faktisk svarte).
+def analyser(klient, kilde: str) -> tuple[dict, str, dict]:
+    """Ett kall mot modellen. Gir (svaret, modellen som faktisk svarte, forbruket).
 
     Svaret er låst til SKJEMA. Avslår modellens sikkerhetsfiltre, kjøres samme
     forespørsel på Anthropics anbefalte reservemodell (fallbacks: "default").
@@ -229,9 +229,12 @@ def analyser(klient, kilde: str) -> tuple[dict, str]:
     if not tekster:
         raise Avvist(f"ingen tekst i svaret (stop_reason {svar.stop_reason})")
     try:
-        return json.loads(tekster[-1]), svar.model
+        resultat = json.loads(tekster[-1])
     except json.JSONDecodeError as e:
         raise Avvist(f"ugyldig JSON: {e}") from e
+    # For å måle faktisk kostnad per sak og per møte (fase 2).
+    forbruk = {"inn": svar.usage.input_tokens, "ut": svar.usage.output_tokens}
+    return resultat, svar.model, forbruk
 
 
 def gyldig(a: dict) -> bool:
@@ -281,6 +284,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
 
     teller = collections.Counter()
     tegn = 0
+    tokens = collections.Counter()
     for sak in _kandidater(saker):
         kilde, kilder = kildetekst(sak, voteringer, stopp)
         if not kilder:
@@ -303,7 +307,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             continue
 
         try:
-            resultat, modell = analyser(klient, kilde)
+            resultat, modell, forbruk = analyser(klient, kilde)
         except anthropic.RateLimitError:
             # SDK-en har alt prøvd på nytt. Flere kall nå vil også bli avvist.
             print(f"  {sak['sak_id']}: rate limit, stopper kjøringen")
@@ -336,12 +340,16 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             "innsats": INNSATS,
             "instruksjon_versjon": INSTRUKSJON_VERSJON,
             "dato": dt.date.today().isoformat(),
+            "tokens": forbruk,
             # CLAUDE.md regel 5: uten kildelenke publiseres det ikke.
             "kilder": kilder,
         })
         sti.write_text(json.dumps(resultat, ensure_ascii=False, indent=1), encoding="utf-8")
+        tokens.update(forbruk)
 
     print(", ".join(f"{k}: {v}" for k, v in teller.items()))
+    if tokens:
+        print(f"tokens: {tokens['inn']} inn, {tokens['ut']} ut")
     if tort_lop and teller["sendt"]:
         print(f"grunnlaget er {tegn} tegn til sammen, i snitt {tegn // teller['sendt']} per sak")
 
