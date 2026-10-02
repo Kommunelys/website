@@ -18,6 +18,7 @@ eller en feil i sjekksummen ikke kan sende hele året på én gang.
     python -m analyser.analyser_saker 2026 --tort-lop    # vis hva som ville blitt sendt
     python -m analyser.analyser_saker 2026 --maks 10     # høyst 10 saker
     python -m analyser.analyser_saker 2026 --vis 8356    # skriv ut grunnlaget for én sak
+    python -m analyser.analyser_saker 2026 --saker 7675,8356  # bare disse sakene
 """
 
 from __future__ import annotations
@@ -257,15 +258,20 @@ def _kandidater(saker: list[dict]) -> list[dict]:
     return sorted(ut, key=lambda s: s["saksgang"][-1]["dato"], reverse=True)
 
 
+def _finn(saker: list[dict], ident: int) -> dict | None:
+    """Saken med denne sak-ID-en, eller med en behandling med denne ID-en."""
+    return next((s for s in saker if s["sak_id"] == ident
+                 or any(st["behandling_id"] == ident for st in s["saksgang"])), None)
+
+
 def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
-         vis: int | None = None) -> None:
+         vis: int | None = None, bare: list[int] | None = None) -> None:
     saker = json.loads((SAKER / f"{aar}.json").read_text(encoding="utf-8"))
     voteringer = {b["behandling_id"]: b for b in _les(VOTERINGER / f"{aar}.json", [])}
     stopp, _ = holdt_tilbake(aar)
 
     if vis is not None:
-        sak = next((s for s in saker if s["sak_id"] == vis
-                    or any(st["behandling_id"] == vis for st in s["saksgang"])), None)
+        sak = _finn(saker, vis)
         if not sak:
             raise SystemExit(f"fant ingen sak med ID {vis}")
         kilde, kilder = kildetekst(sak, voteringer, stopp)
@@ -282,10 +288,17 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             raise SystemExit("mangler pakken 'anthropic'. pip install -r krav.txt")
         klient = anthropic.Anthropic()
 
+    kandidater = _kandidater(saker)
+    if bare:
+        valgt = {id(s) for s in (_finn(saker, i) for i in bare) if s}
+        kandidater = [s for s in kandidater if id(s) in valgt]
+        if len(kandidater) < len(bare):
+            print(f"advarsel: bare {len(kandidater)} av {len(bare)} saker kan analyseres")
+
     teller = collections.Counter()
     tegn = 0
     tokens = collections.Counter()
-    for sak in _kandidater(saker):
+    for sak in kandidater:
         kilde, kilder = kildetekst(sak, voteringer, stopp)
         if not kilder:
             teller["uten grunnlag"] += 1
@@ -356,7 +369,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
 
 def main() -> None:
     argv = sys.argv[1:]
-    med_verdi = ("--maks", "--vis")
+    med_verdi = ("--maks", "--vis", "--saker")
 
     def verdi(flagg: str) -> int | None:
         return int(argv[argv.index(flagg) + 1]) if flagg in argv else None
@@ -366,8 +379,10 @@ def main() -> None:
                 if not a.startswith("--") and (i == 0 or argv[i - 1] not in med_verdi)),
                dt.date.today().year)
     maks = verdi("--maks")
+    bare = ([int(x) for x in argv[argv.index("--saker") + 1].split(",") if x.strip()]
+            if "--saker" in argv else None)
     kjor(aar, tort_lop="--tort-lop" in argv,
-         maks=MAKS_PER_KJORING if maks is None else maks, vis=verdi("--vis"))
+         maks=MAKS_PER_KJORING if maks is None else maks, vis=verdi("--vis"), bare=bare)
 
 
 if __name__ == "__main__":
