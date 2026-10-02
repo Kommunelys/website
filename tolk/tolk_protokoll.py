@@ -10,6 +10,10 @@ kolonnebasert, og uten -layout mister du koblingen mellom navn, funksjon og
 
     pdftotext -layout protokoll.pdf protokoll.txt
     python -m tolk.tolk_protokoll protokoll.txt
+
+Saksprotokollen for én sak, slik `hent.hent_dokumenter` lagrer den, tolkes med
+`les_vedtak`. Den har ikke saksnummeret foran hver sak, så saksnummeret oppgis.
+Se `tolk/bygg_voteringer.py`.
 """
 
 from __future__ import annotations
@@ -19,18 +23,31 @@ import re
 import sys
 from pathlib import Path
 
-from .navn import del_navn_og_parti, normaliser
+from .navn import del_navn_og_parti, normaliser, partikode
 
 # Et vedtak eller forslag, fram til «Dermed ble ... vedtatt».
+# Observert i 2026: «Ikke til stede (1): navn.» etter navnelistene, noen ganger
+# uten kolon og navn, og «vedtatt, med ordførers dobbeltstemme» (eller leders).
+# Ved alternativ votering står «For forslag 1 stemte 4: …» for hvert forslag.
+# Én gang står det bare «Dermed vedtatt», uten «ble» og uten punktum.
 VOTERING = re.compile(
     r"((?:(?P<stiller>[A-ZÆØÅ][\wÆØÅæøå .\-]+?) \((?P<parti>[^)]+)\) "
-    r"fremmet følgende (?P<type>[\w ]*?forslag):?)|Innstilling:)"
+    r"fremmet følgende (?P<type>[\w ]*?forslag):?)|Innstilling:|(?P<forslag>Forslag):)"
     r"(?P<tekst>.*?)"
     r"(?:For forslaget stemte (?P<n_for>\d+): (?P<for>.*?)\.)? ?"
     r"(?:Imot forslaget stemte (?P<n_mot>\d+): (?P<mot>.*?)\.)? ?"
-    r"Dermed ble (?P<resultat>[\w ]+?vedtatt)\.",
+    r"(?P<alternativer>(?:For forslag \S+ stemte \d+: .*?\. ?)+)?"
+    r"(?:Ikke til stede \((?P<n_borte>\d+)\):? ?(?P<borte>[^.]*?)\.? ?)?"
+    r"Dermed (?:ble )?(?P<resultat>[\w ]*?vedtatt)"
+    r"(?:,? med (?P<dobbelt>ordførers|leders) dobbeltstemme)?\.?",
     re.S,
 )
+
+ALTERNATIV = re.compile(r"For forslag (?P<forslag>\S+) stemte (?P<n>\d+): (?P<navn>.*?)\.(?= For forslag |\s*$)")
+
+# Uten navneliste: «Forslag til vedtak enstemmig vedtatt.», «Innstillingen ble
+# enstemmig vedtatt.», «Forslaget fra X (R) ble enstemmig vedtatt.»
+ENSTEMMIG = re.compile(r"(?P<tekst>[^.:]{0,100}?)\s*\b(?:ble )?enstemmig vedtatt\b")
 
 SAK = re.compile(r"(?=(?:PS|RS|OS|FO) \d+/\d+ [^\n]{0,300}? behandling av sak)")
 
@@ -81,51 +98,130 @@ def les_oppmote(tekst: str) -> list[dict]:
     return ut
 
 
-def les_voteringer(tekst: str) -> list[dict]:
-    """Alle voteringer i protokollen, i rekkefølge."""
+def _flat(tekst: str) -> str:
     # Bindestrek på linjeskift midt i et navn: «Tor-\nAndré» -> «Tor-André».
     flat = re.sub(r"-\n(?=[A-ZÆØÅa-zæøå])", "-", tekst)
-    flat = re.sub(r"\s+", " ", flat)
+    return re.sub(r"\s+", " ", flat)
 
+
+def _subjekt(tekst: str) -> str:
+    """Hva som ble enstemmig vedtatt: «Forslag til vedtak», «Innstillingen».
+
+    Teksten foran setningen kan være en overskrift eller slutten av et
+    forslag, så den kuttes ved det første ordet som innleder setningen.
+    """
+    t = tekst.strip()
+    m = re.search(r"\b(?:Forslag\w*|Innstilling\w*|Tilleggsforslag\w*|Dette|Følgende)\b.*$", t)
+    return m.group(0) if m else t
+
+
+def _voteringer(del_: str, saksnr: str) -> list[dict]:
+    """Voteringene i teksten for én sak, i rekkefølge."""
+    funnet: list[tuple[int, dict]] = []
+    dekket: list[tuple[int, int]] = []
+
+    for v in VOTERING.finditer(del_):
+        g = v.groupdict()
+        stemte_for = _navneliste(g["for"])
+        stemte_mot = _navneliste(g["mot"])
+        borte = _navneliste(g["borte"])
+        n_for = int(g["n_for"] or 0)
+        n_mot = int(g["n_mot"] or 0)
+        n_borte = int(g["n_borte"] or 0)
+        dekket.append(v.span())
+
+        alternativer = []
+        for a in ALTERNATIV.finditer((g["alternativer"] or "").strip()):
+            navn = _navneliste(a.group("navn"))
+            alternativer.append({
+                "forslag": a.group("forslag"),
+                "antall": int(a.group("n")),
+                "navn": [n for n, _ in navn],
+                "partier": {n: p for n, p in navn},
+            })
+        # Uten noe stemmetall finnes ingen fasit å kontrollere mot. Da skal
+        # raden stoppes, ikke gå videre som 0 mot 0.
+        har_tall = bool(g["n_for"] or g["n_mot"] or alternativer)
+
+        funnet.append((v.start(), {
+            "saksnr": saksnr,
+            # «Behandling» er overskriften foran, ikke en del av navnet.
+            "forslagsstiller": (
+                normaliser(re.sub(r"^Behandling\s+", "", g["stiller"]))
+                if g["stiller"] else None
+            ),
+            "parti": partikode(g["parti"]),
+            "type": (g["type"] or ("forslag" if g["forslag"] else "innstilling")).strip(),
+            "tekst": re.sub(r"\s+", " ", g["tekst"]).strip(),
+            "enstemmig": False,
+            "antall_for": n_for,
+            "antall_mot": n_mot,
+            "for": [n for n, _ in stemte_for],
+            "mot": [n for n, _ in stemte_mot],
+            "alternativer": alternativer,
+            "ikke_til_stede": [n for n, _ in borte],
+            "partier": {
+                n: p for n, p in stemte_for + stemte_mot
+            } | {n: p for a in alternativer for n, p in a["partier"].items()},
+            "resultat": (
+                "falt" if "ikke" in g["resultat"] else "vedtatt"
+            ),
+            "resultat_tekst": g["resultat"],
+            "dobbeltstemme": (
+                {"ordførers": "ordfører", "leders": "leder"}[g["dobbelt"]]
+                if g["dobbelt"] else None
+            ),
+            # Kontrollen (ADR-002). Er denne usann, skal raden ikke
+            # publiseres uten at et menneske har sett på den. Navn på de
+            # som ikke var til stede, står ikke alltid; da telles de ikke.
+            "tall_stemmer": (
+                har_tall
+                and len(stemte_for) == n_for and len(stemte_mot) == n_mot
+                and all(len(a["navn"]) == a["antall"] for a in alternativer)
+                and (not borte or len(borte) == n_borte)
+            ),
+        }))
+
+    for e in ENSTEMMIG.finditer(del_):
+        if any(a <= e.start() < b for a, b in dekket):
+            continue  # del av en votering med navneliste
+        funnet.append((e.start(), {
+            "saksnr": saksnr,
+            "forslagsstiller": None,
+            "parti": None,
+            "type": "enstemmig",
+            "tekst": _subjekt(e.group("tekst")),
+            "enstemmig": True,
+            # Hvem som stemte, står ikke. Det følger av oppmøtet (ADR-008).
+            "antall_for": None,
+            "antall_mot": 0,
+            "for": [],
+            "mot": [],
+            "alternativer": [],
+            "ikke_til_stede": [],
+            "partier": {},
+            "resultat": "vedtatt",
+            "resultat_tekst": "enstemmig vedtatt",
+            "dobbeltstemme": None,
+            "tall_stemmer": True,
+        }))
+
+    return [v for _, v in sorted(funnet, key=lambda t: t[0])]
+
+
+def les_voteringer(tekst: str) -> list[dict]:
+    """Alle voteringer i en møteprotokoll, i rekkefølge."""
     ut = []
-    for del_ in SAK.split(flat):
+    for del_ in SAK.split(_flat(tekst)):
         m = re.match(r"((?:PS|RS|OS|FO) \d+/\d+)", del_)
-        if not m:
-            continue
-        saksnr = m.group(1)
-
-        for v in VOTERING.finditer(del_):
-            g = v.groupdict()
-            stemte_for = _navneliste(g["for"])
-            stemte_mot = _navneliste(g["mot"])
-            n_for = int(g["n_for"] or 0)
-            n_mot = int(g["n_mot"] or 0)
-
-            ut.append(
-                {
-                    "saksnr": saksnr,
-                    "forslagsstiller": (
-                        normaliser(g["stiller"]) if g["stiller"] else None
-                    ),
-                    "parti": g["parti"],
-                    "type": (g["type"] or "innstilling").strip(),
-                    "tekst": re.sub(r"\s+", " ", g["tekst"]).strip(),
-                    "antall_for": n_for,
-                    "antall_mot": n_mot,
-                    "for": [n for n, _ in stemte_for],
-                    "mot": [n for n, _ in stemte_mot],
-                    "partier": {n: p for n, p in stemte_for + stemte_mot},
-                    "resultat": (
-                        "falt" if "ikke" in g["resultat"] else "vedtatt"
-                    ),
-                    # Kontrollen (ADR-002). Er denne usann, skal raden ikke
-                    # publiseres uten at et menneske har sett på den.
-                    "tall_stemmer": (
-                        len(stemte_for) == n_for and len(stemte_mot) == n_mot
-                    ),
-                }
-            )
+        if m:
+            ut += _voteringer(del_, m.group(1))
     return ut
+
+
+def les_vedtak(tekst: str, saksnr: str) -> list[dict]:
+    """Voteringene i saksprotokollen for én sak."""
+    return _voteringer(_flat(tekst), saksnr)
 
 
 def tolk(tekst: str) -> dict:

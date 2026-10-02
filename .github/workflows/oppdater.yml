@@ -57,6 +57,13 @@ jobs:
       - name: Bygg saker og saksgang
         run: python -m tolk.bygg_saker "${{ inputs.aar || '2026' }}"
 
+      # Henter bare dokumenter som ikke har tekst fra før (ADR-013).
+      - name: Hent tekst fra saksframlegg og vedtak
+        run: python -m hent.hent_dokumenter "${{ inputs.aar || '2026' }}"
+
+      - name: Tolk voteringer
+        run: python -m tolk.bygg_voteringer "${{ inputs.aar || '2026' }}"
+
       - name: Lagre endringer
         run: |
           git config user.name "oppdater-bot"

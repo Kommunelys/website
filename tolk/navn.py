@@ -17,6 +17,21 @@ VARIANTER: dict[str, str] = {
     "Line M Nordkvelle": "Line Mari Nordkvelle",
 }
 
+# Navnelistene i protokollene bruker koder, forslagsstilleren står med fullt
+# partinavn: «Tor Borgan (Senterpartiet) fremmet følgende forslag».
+PARTIKODER: dict[str, str] = {
+    "Arbeiderpartiet": "AP",
+    "Fremskrittspartiet": "FRP",
+    "Høyre": "H",
+    "Industri- og Næringspartiet": "INP",
+    "Pensjonistpartiet": "PP",
+    "Rødt": "R",
+    "Senterpartiet": "SP",
+    "Sosialistisk Venstreparti": "SV",
+    "Uavhengig": "UAVH",
+    "Venstre": "V",
+}
+
 NAVN_MED_PARTI = re.compile(r"^(.+?)\s*\(([A-ZÆØÅ]+)\)$")
 
 
@@ -24,6 +39,14 @@ def normaliser(navn: str) -> str:
     """Rydd mellomrom og slå sammen kjente varianter."""
     n = re.sub(r"\s+", " ", navn).strip().strip(",.")
     return VARIANTER.get(n, n)
+
+
+def partikode(parti: str | None) -> str | None:
+    """«Senterpartiet» -> «SP». Ukjente navn og koder returneres uendret."""
+    if parti is None:
+        return None
+    p = re.sub(r"\s+", " ", parti).strip()
+    return PARTIKODER.get(p, p)
 
 
 def del_navn_og_parti(tekst: str) -> tuple[str, str] | None:
