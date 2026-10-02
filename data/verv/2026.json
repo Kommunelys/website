@@ -1,0 +1,10413 @@
+[
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørn Kristian Nesbak",
+  "person_id": 1398,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lill Marit Sandseter",
+  "person_id": 2426,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Oddlaug Holthe Olsen",
+  "person_id": 182,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Finn Anders Blæstervold",
+  "person_id": 2720,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Bjørn Kristian Nesbak"
+  ],
+  "navn": "Geir Haagensen",
+  "person_id": 814,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Gunnar Thorsen"
+  ],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Erik Røsegg"
+  ],
+  "navn": "Jens Fredrik Skjelstad",
+  "person_id": 2378,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Lill Marit Sandseter"
+  ],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-12",
+  "utvalg": "AD",
+  "utvalg_id": 13
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1,
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Ann-Karin Vang",
+  "person_id": 72,
+  "repr": "ANDRE",
+  "rolle": "Leder",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Anders Lindstrøm",
+  "person_id": 218,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Bjørn Kristian Nesbak",
+  "person_id": 1398,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-01-20",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Finn Anders Blæstervold",
+  "person_id": 2720,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-01-20",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Geir Olav Jensen",
+  "person_id": 2820,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Ingunn Ramdal",
+  "person_id": 1618,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-03-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mona Myrslo Walmsley",
+  "person_id": 1632,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Oddlaug Holthe Olsen",
+  "person_id": 182,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Ørjan Nicolaysen",
+  "person_id": 2824,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1,
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Anita Ulstad",
+  "person_id": 864,
+  "repr": "ANDRE",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørn Kristian Feragen",
+  "person_id": 2640,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Daryoush Shirazi Shahvand",
+  "person_id": 1060,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eli Eiklid",
+  "person_id": 1638,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gisle Kristian Almlid-Larsen",
+  "person_id": 618,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Hege Tangen",
+  "person_id": 2314,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Leif Terje Nilsen",
+  "person_id": 836,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Marte Alstad",
+  "person_id": 220,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Marthe Solnes",
+  "person_id": 298,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-03-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Finn Anders Blæstervold"
+  ],
+  "navn": "Thomas Herstad",
+  "person_id": 778,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-10",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Øystein Larsen",
+  "person_id": 820,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": false,
+  "i_medlemslister": [],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Bente Aas",
+  "person_id": null,
+  "repr": "ANDRE",
+  "rolle": null,
+  "sist_motte": "2026-01-20",
+  "utvalg": "AMU",
+  "utvalg_id": 5
+ },
+ {
+  "forst_motte": "2026-06-22",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1
+  },
+  "motte_for": [],
+  "navn": "Arnt Bardal",
+  "person_id": 1610,
+  "repr": "SNASA",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-22",
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": "2026-06-22",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Anita Ravlo Sand",
+  "person_id": 2052,
+  "repr": "LEVANGER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-22",
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": "2026-06-22",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "STEINKJER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-22",
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": "2026-06-22",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Unn-Elisabeth Tronstad Kristiansen",
+  "person_id": 630,
+  "repr": "INDERØY",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-22",
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": "2026-06-22",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Knut Snorre Sandnes",
+  "person_id": 2496,
+  "repr": "VERDAL",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-06-22",
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "STEINKJER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Geir Jostein Ørsjødal",
+  "person_id": 2618,
+  "repr": "INDERØY",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Hilde Daleng",
+  "person_id": 2614,
+  "repr": "VERDAL",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Nina Bakken Bye",
+  "person_id": 2050,
+  "repr": "LEVANGER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "AUINR",
+  "utvalg_id": 29
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 5
+  },
+  "motte_for": [],
+  "navn": "Kari Helene Alstad",
+  "person_id": 2538,
+  "repr": "ANDRE",
+  "rolle": "Leder",
+  "sist_motte": "2026-08-26",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-05-06",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Ann Kristin Bratting",
+  "person_id": 2410,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Arnulf Vengstad",
+  "person_id": 2540,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-11",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Mari Lisbet Hanem Finstad",
+  "person_id": 316,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Rolf Bosnes",
+  "person_id": 1138,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-30",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 5
+  },
+  "motte_for": [],
+  "navn": "Trond Svenkerud",
+  "person_id": 1100,
+  "repr": "ANDRE",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-08-26",
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Asbjørn Eirik Aasheim",
+  "person_id": 2546,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bente Markhus",
+  "person_id": 606,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ester Stølan",
+  "person_id": 2542,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kari Jølle",
+  "person_id": 2544,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kolbjørn Almlid",
+  "person_id": 1122,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "ELRÅ",
+  "utvalg_id": 18
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 3
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Leder",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-06-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-08-26",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Ragnar Andresen",
+  "person_id": 2276,
+  "repr": "V",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-02-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Erik Røsegg"
+  ],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-25",
+  "utvalg": "FOR",
+  "utvalg_id": 28
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 9
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Anne Berit Lein",
+  "person_id": 304,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-20",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 9
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 10
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 10
+  },
+  "motte_for": [],
+  "navn": "Jens Fredrik Skjelstad",
+  "person_id": 2378,
+  "repr": "V",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 11
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 10
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-03-05",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 7
+  },
+  "motte_for": [],
+  "navn": "May Britt Lagesen",
+  "person_id": 546,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 7
+  },
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 9
+  },
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 9
+  },
+  "motte_for": [],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 7
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-03-19",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "May Britt Lagesen"
+  ],
+  "navn": "Bente Merete Aune Bragstad",
+  "person_id": 2384,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-19",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørg Helland",
+  "person_id": 2420,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-03-05",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "Christine Agdestein",
+   "Gunnar Thorsen"
+  ],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-06-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Erik Røsegg"
+  ],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-11",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-09-03",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Mari Grøneng Bartnes"
+  ],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunnar Mikalsen Kvifte",
+  "person_id": 2440,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Thorolf Antonsen",
+   "Håvard Krogstad-Wiborg"
+  ],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristin Gisvold",
+  "person_id": 264,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-03-19",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Anne Berit Lein"
+  ],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Tor-André Hopen"
+  ],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-25",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "Gunnar Thorsen",
+   "Tommy Fossum Skatland",
+   "Thorolf Antonsen"
+  ],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2464,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-19",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Anne Berit Lein"
+  ],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-01-29",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 5
+  },
+  "motte_for": [
+   "May Britt Lagesen",
+   "Thorolf Antonsen"
+  ],
+  "navn": "Robert Ertsås",
+  "person_id": 560,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-05-13",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Christine Agdestein"
+  ],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-03",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-03-05",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 5
+  },
+  "motte_for": [
+   "Anne Berit Lein",
+   "Jens Fredrik Skjelstad"
+  ],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Terje Tømmerås",
+  "person_id": 566,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-09-24",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Tommy Fossum Skatland"
+  ],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 9
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-24",
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Vegard Forbord",
+  "person_id": 2460,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FS",
+  "utvalg_id": 8
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Anne Berit Lein",
+  "person_id": 304,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Bente Merete Aune Bragstad",
+  "person_id": 2384,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørg Helland",
+  "person_id": 2420,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Daniel Folladal",
+  "person_id": 2448,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Jens Fredrik Skjelstad",
+  "person_id": 2378,
+  "repr": "V",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Knut Roald Ralfsen",
+  "person_id": 2458,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Kristin Gisvold",
+  "person_id": 264,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lill Marit Sandseter",
+  "person_id": 2426,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Line Mari Nordkvelle",
+  "person_id": 1040,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "May Britt Lagesen",
+  "person_id": 546,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2464,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Morten Resve",
+  "person_id": 260,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Per Sverre Rannem",
+  "person_id": 2474,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Robert Ertsås",
+  "person_id": 560,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Terje Tømmerås",
+  "person_id": 566,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Vegard Forbord",
+  "person_id": 2460,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Aisha Bigset",
+  "person_id": 2386,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Amalie Rodum",
+  "person_id": 574,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anders Schjefte",
+  "person_id": 2376,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Andreas Lillevestre",
+  "person_id": 2494,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ann Kristin Bratting",
+  "person_id": 2410,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anne Marthe Høgsnes",
+  "person_id": 2444,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anniken Gulstad Laugen-Rønne",
+  "person_id": 2466,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Arne Richstad",
+  "person_id": 1028,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ausra Norum",
+  "person_id": 2452,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bente Markhus",
+  "person_id": 606,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjarne Jostein Arnøy",
+  "person_id": 2446,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørn Roald Andersen",
+  "person_id": 2454,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Britt Iren Melgård Thane",
+  "person_id": 2436,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Cheneso Moumakwa",
+  "person_id": 2370,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eirik Forås",
+  "person_id": 598,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Bjørg Helland"
+  ],
+  "navn": "Eli Djuvsland Rishaug",
+  "person_id": 236,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ella Friedl",
+  "person_id": 2442,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Enok Askil Moe",
+  "person_id": 2484,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Finn Rossing",
+  "person_id": 580,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frank Steinar Bartnes",
+  "person_id": 2400,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frode Arnestad",
+  "person_id": 1226,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunn Bratberg",
+  "person_id": 2462,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Harald van der Linden",
+  "person_id": 2390,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Heidi Bruem Klæbu",
+  "person_id": 948,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Daniel Folladal"
+  ],
+  "navn": "Hilde Grevskott",
+  "person_id": 2412,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Håkon Sivertsen",
+  "person_id": 2402,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingolf Brønstad",
+  "person_id": 2388,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingrid Bøe Sletten",
+  "person_id": 372,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Vegard Forbord"
+  ],
+  "navn": "Johan Kristian Daling",
+  "person_id": 2492,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "June Falch Bartnes",
+  "person_id": 2372,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Bjørnar Wennevik",
+  "person_id": 2418,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "May Britt Lagesen"
+  ],
+  "navn": "Knut Egil Sjøli",
+  "person_id": 1044,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Knut Gunnar Brandsegg",
+  "person_id": 2374,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Kjell Magnar Haugan"
+  ],
+  "navn": "Kristian Hovd Sjøli",
+  "person_id": 2490,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Lars Myhr Sandlund"
+  ],
+  "navn": "Lena Hanem Bartnes",
+  "person_id": 2456,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [],
+  "navn": "Lillian Hatling",
+  "person_id": 300,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Linn Kristine Sandseter",
+  "person_id": 2468,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lise Halsen",
+  "person_id": 2434,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Livard Arnstein Eklo",
+  "person_id": 622,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Nina Bartnes Skrattalsrud",
+  "person_id": 2432,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ola Myklebust Grønnesby",
+  "person_id": 2394,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ove Austmo",
+  "person_id": 2396,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Per Kristian Kvam",
+  "person_id": 2382,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ragnar Andresen",
+  "person_id": 2276,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ragnhild Kvalø",
+  "person_id": 232,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Snorre Bernt Gundersen",
+  "person_id": 1092,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Solvor Laila Lein Lillemark",
+  "person_id": 1016,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stian Grøtan",
+  "person_id": 2430,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stig Rønning",
+  "person_id": 2478,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Tommy Fossum Skatland"
+  ],
+  "navn": "Terje Bjarte Langli",
+  "person_id": 570,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tine Engan",
+  "person_id": 2414,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tone Brauti Saugestad",
+  "person_id": 2486,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tor Arne Mjøen",
+  "person_id": 586,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Turid Saursaunet",
+  "person_id": 2060,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Wiggo Oksvold",
+  "person_id": 2408,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": false,
+  "i_medlemslister": [],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Mikalsen Kvifte",
+  "person_id": null,
+  "repr": null,
+  "rolle": null,
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSB",
+  "utvalg_id": 15
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Anne Berit Lein",
+  "person_id": 304,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Bente Merete Aune Bragstad",
+  "person_id": 2384,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørg Helland",
+  "person_id": 2420,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Daniel Folladal",
+  "person_id": 2448,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Mikalsen Kvifte",
+  "person_id": 2440,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Jens Fredrik Skjelstad",
+  "person_id": 2378,
+  "repr": "V",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Knut Roald Ralfsen",
+  "person_id": 2458,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Kristin Gisvold",
+  "person_id": 264,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lill Marit Sandseter",
+  "person_id": 2426,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Line Mari Nordkvelle",
+  "person_id": 1040,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "May Britt Lagesen",
+  "person_id": 546,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2464,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Per Sverre Rannem",
+  "person_id": 2474,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Robert Ertsås",
+  "person_id": 560,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Terje Tømmerås",
+  "person_id": 566,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Aisha Bigset",
+  "person_id": 2386,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Amalie Rodum",
+  "person_id": 574,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anders Schjefte",
+  "person_id": 2376,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Andreas Lillevestre",
+  "person_id": 2494,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ann Kristin Bratting",
+  "person_id": 2410,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anne Marthe Høgsnes",
+  "person_id": 2444,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anniken Gulstad Laugen-Rønne",
+  "person_id": 2466,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Arne Richstad",
+  "person_id": 1028,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ausra Norum",
+  "person_id": 2452,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjarne Jostein Arnøy",
+  "person_id": 2446,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørn Roald Andersen",
+  "person_id": 2454,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Britt Iren Melgård Thane",
+  "person_id": 2436,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Cheneso Moumakwa",
+  "person_id": 2370,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eirik Forås",
+  "person_id": 598,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Bjørg Helland"
+  ],
+  "navn": "Eli Djuvsland Rishaug",
+  "person_id": 236,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ella Friedl",
+  "person_id": 2442,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Enok Askil Moe",
+  "person_id": 2484,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Finn Rossing",
+  "person_id": 580,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frank Steinar Bartnes",
+  "person_id": 2400,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frode Arnestad",
+  "person_id": 1226,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunn Bratberg",
+  "person_id": 2462,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Harald van der Linden",
+  "person_id": 2390,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Heidi Bruem Klæbu",
+  "person_id": 948,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Daniel Folladal"
+  ],
+  "navn": "Hilde Grevskott",
+  "person_id": 2412,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Håkon Sivertsen",
+  "person_id": 2402,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingolf Brønstad",
+  "person_id": 2388,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingrid Bøe Sletten",
+  "person_id": 372,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Vegard Forbord"
+  ],
+  "navn": "Johan Kristian Daling",
+  "person_id": 2492,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "June Falch Bartnes",
+  "person_id": 2372,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Bjørnar Wennevik",
+  "person_id": 2418,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "May Britt Lagesen"
+  ],
+  "navn": "Knut Egil Sjøli",
+  "person_id": 1044,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Knut Gunnar Brandsegg",
+  "person_id": 2374,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Kjell Magnar Haugan"
+  ],
+  "navn": "Kristian Hovd Sjøli",
+  "person_id": 2490,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Lars Myhr Sandlund"
+  ],
+  "navn": "Lena Hanem Bartnes",
+  "person_id": 2456,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [],
+  "navn": "Lillian Hatling",
+  "person_id": 300,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Linn Kristine Sandseter",
+  "person_id": 2468,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lise Halsen",
+  "person_id": 2434,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Livard Arnstein Eklo",
+  "person_id": 622,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Nina Bartnes Skrattalsrud",
+  "person_id": 2432,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ola Myklebust Grønnesby",
+  "person_id": 2394,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ove Austmo",
+  "person_id": 2396,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Per Kristian Kvam",
+  "person_id": 2382,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ragnar Andresen",
+  "person_id": 2276,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ragnhild Kvalø",
+  "person_id": 232,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Snorre Bernt Gundersen",
+  "person_id": 1092,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Solvor Laila Lein Lillemark",
+  "person_id": 1016,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stian Grøtan",
+  "person_id": 2430,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stig Rønning",
+  "person_id": 2478,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Tommy Fossum Skatland"
+  ],
+  "navn": "Terje Bjarte Langli",
+  "person_id": 570,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tine Engan",
+  "person_id": 2414,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tone Brauti Saugestad",
+  "person_id": 2486,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tor Arne Mjøen",
+  "person_id": 586,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Turid Saursaunet",
+  "person_id": 2060,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Wiggo Oksvold",
+  "person_id": 2408,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": false,
+  "i_medlemslister": [],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Morten Resve",
+  "person_id": null,
+  "repr": null,
+  "rolle": null,
+  "sist_motte": "2026-06-17",
+  "utvalg": "FSKO",
+  "utvalg_id": 14
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 3
+  },
+  "motte_for": [],
+  "navn": "Bente Merete Aune Bragstad",
+  "person_id": 2384,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Bjørg Helland",
+  "person_id": 2420,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-12",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Robert Ertsås",
+  "person_id": 560,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-12",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-05-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristin Gisvold",
+  "person_id": 264,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Aisha Bigset",
+  "person_id": 2386,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "Kristin Gisvold"
+  ],
+  "navn": "Bjarne Jostein Arnøy",
+  "person_id": 2446,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-06-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Robert Ertsås"
+  ],
+  "navn": "Bjørn Roald Andersen",
+  "person_id": 2454,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Britt Iren Melgård Thane",
+  "person_id": 2436,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Cheneso Moumakwa",
+  "person_id": 2370,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunn Bratberg",
+  "person_id": 2462,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-06-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Bjørg Helland"
+  ],
+  "navn": "Hilde Grevskott",
+  "person_id": 2412,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-10",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Knut Gunnar Brandsegg",
+  "person_id": 2374,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristian Hovd Sjøli",
+  "person_id": 2490,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lillian Hatling",
+  "person_id": 300,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Torbjørn Alstad Austad"
+  ],
+  "navn": "Linn Kristine Sandseter",
+  "person_id": 2468,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-18",
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Per Kristian Kvam",
+  "person_id": 2382,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stig Rønning",
+  "person_id": 2478,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tone Brauti Saugestad",
+  "person_id": 2486,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Wiggo Oksvold",
+  "person_id": 2408,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HHO",
+  "utvalg_id": 7
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 4
+  },
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Leder",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Line Mari Nordkvelle",
+  "person_id": 1040,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-05-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-18",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Turid Saursaunet",
+  "person_id": 2060,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Vegard Forbord",
+  "person_id": 2460,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-18",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 3
+  },
+  "motte_for": [],
+  "navn": "Terje Tømmerås",
+  "person_id": 566,
+  "repr": "AP",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-08-18",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-09-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Rune Kvaran"
+  ],
+  "navn": "Amalie Rodum",
+  "person_id": 574,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ella Friedl",
+  "person_id": 2442,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 4
+  },
+  "motte_for": [
+   "Anniken Bjørnes",
+   "Turid Saursaunet"
+  ],
+  "navn": "Enok Askil Moe",
+  "person_id": 2484,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frode Arnestad",
+  "person_id": 1226,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Harald van der Linden",
+  "person_id": 2390,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Håkon Sivertsen",
+  "person_id": 2402,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kemal Kaplan",
+  "person_id": 2780,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Knut Egil Sjøli",
+  "person_id": 1044,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-03-18",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Per-Ole Austmo",
+   "Vegard Forbord"
+  ],
+  "navn": "Lena Hanem Bartnes",
+  "person_id": 2456,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-05-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Terje Tømmerås"
+  ],
+  "navn": "Livard Arnstein Eklo",
+  "person_id": 622,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-23",
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Nina Bartnes Skrattalsrud",
+  "person_id": 2432,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stian Grøtan",
+  "person_id": 2430,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tor Arne Mjøen",
+  "person_id": 586,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HOK",
+  "utvalg_id": 4
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 5
+  },
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Leder",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Daniel Folladal",
+  "person_id": 2448,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2160,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 4
+  },
+  "motte_for": [],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-09-15",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anders Schjefte",
+  "person_id": 2376,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Andreas Lillevestre",
+  "person_id": 2494,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-01-27",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Kjell Magnar Haugan",
+   "Monika Skoglund Luktvasslimo"
+  ],
+  "navn": "Anne Marthe Høgsnes",
+  "person_id": 2444,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-17",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Britt Iren Melgård Thane",
+  "person_id": 2436,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eirik Forås",
+  "person_id": 598,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eli Djuvsland Rishaug",
+  "person_id": 236,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Anita Brønstad Skavdal"
+  ],
+  "navn": "Finn Rossing",
+  "person_id": 580,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-17",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunnar Mikalsen Kvifte",
+  "person_id": 2440,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingolf Brønstad",
+  "person_id": 2388,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingrid Bøe Sletten",
+  "person_id": 372,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-04-28",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Sigrun Modell",
+   "Lars Myhr Sandlund"
+  ],
+  "navn": "Johan Kristian Daling",
+  "person_id": 2492,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Bjørnar Wennevik",
+  "person_id": 2418,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristian Hovd Sjøli",
+  "person_id": 2490,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristin Rannem",
+  "person_id": 240,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lillian Hatling",
+  "person_id": 300,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lise Halsen",
+  "person_id": 2434,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ola Myklebust Grønnesby",
+  "person_id": 2394,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Snorre Bernt Gundersen",
+  "person_id": 1092,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Solvor Laila Lein Lillemark",
+  "person_id": 1016,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Terje Bjarte Langli",
+  "person_id": 570,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tine Engan",
+  "person_id": 2414,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "HPNM",
+  "utvalg_id": 34
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1
+  },
+  "motte_for": [],
+  "navn": "Anita Ravlo Sand",
+  "person_id": 2052,
+  "repr": "LEVANGER",
+  "rolle": "Leder",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Arnt Bardal",
+  "person_id": 1610,
+  "repr": "SNASA",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Astrid Juberg Vordal",
+  "person_id": 2048,
+  "repr": "LEVANGER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bodil Ressem",
+  "person_id": 2610,
+  "repr": "VERDAL",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "STEINKJER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Geir Jostein Ørsjødal",
+  "person_id": 2618,
+  "repr": "INDERØY",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gjermund Hansen Eggen",
+  "person_id": 1812,
+  "repr": "SNASA",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "STEINKJER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Knut Snorre Sandnes",
+  "person_id": 2496,
+  "repr": "VERDAL",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Nina Bakken Bye",
+  "person_id": 2050,
+  "repr": "LEVANGER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tone Våg",
+  "person_id": 2044,
+  "repr": "SNASA",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "STEINKJER",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Trine Reitan",
+  "person_id": 2326,
+  "repr": "VERDAL",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Trude Hoff",
+  "person_id": 1688,
+  "repr": "INDERØY",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Unn-Elisabeth Tronstad Kristiansen",
+  "person_id": 630,
+  "repr": "INDERØY",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Geir Singstad",
+  "person_id": 2612,
+  "repr": "VERDAL",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunnar Løvås",
+  "person_id": 2608,
+  "repr": "LEVANGER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Hilde Daleng",
+  "person_id": 2614,
+  "repr": "VERDAL",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ikke fordelt til saksbehandler",
+  "person_id": 0,
+  "repr": "VERDAL",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "STEINKJER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Mats Henriksen",
+  "person_id": 2604,
+  "repr": "LEVANGER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Oddgeir Hagen",
+  "person_id": 2606,
+  "repr": "LEVANGER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Pål Sverre Fikse",
+  "person_id": 2058,
+  "repr": "VERDAL",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Signar Berger",
+  "person_id": 2046,
+  "repr": "INDERØY",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tore Wold",
+  "person_id": 2620,
+  "repr": "INDERØY",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Trine Hasvang Vaag",
+  "person_id": 1834,
+  "repr": "SNASA",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Vebjørn Gorseth",
+  "person_id": 558,
+  "repr": "STEINKJER",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Unn-Elisabeth Tronstad Kristiansen"
+  ],
+  "navn": "Vibeke Arntzen",
+  "person_id": 2616,
+  "repr": "INDERØY",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-05-04",
+  "i_dagens_liste": false,
+  "i_medlemslister": [],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [
+   "Bodil Ressem"
+  ],
+  "navn": "Einar Olav Larsen",
+  "person_id": null,
+  "repr": "VERDAL",
+  "rolle": null,
+  "sist_motte": "2026-05-04",
+  "utvalg": "INR",
+  "utvalg_id": 27
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 4
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-08-20",
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": "2026-06-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-20",
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-20",
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 4
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-08-20",
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "May Britt Lagesen",
+  "person_id": 546,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": "2026-02-12",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-25",
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": "2026-06-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Erik Røsegg"
+  ],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-11",
+  "utvalg": "KN",
+  "utvalg_id": 12
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 5
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Anne Berit Lein",
+  "person_id": 304,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-05-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Anniken Bjørnes",
+  "person_id": 584,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Bente Merete Aune Bragstad",
+  "person_id": 2384,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Bjørg Helland",
+  "person_id": 2420,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-20",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Daniel Folladal",
+  "person_id": 2448,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2,
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Anniken Bjørnes"
+  ],
+  "navn": "Gunnar Mikalsen Kvifte",
+  "person_id": 2440,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Jens Fredrik Skjelstad",
+  "person_id": 2378,
+  "repr": "V",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Knut Roald Ralfsen",
+  "person_id": 2458,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Kristin Gisvold",
+  "person_id": 264,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Line Mari Nordkvelle",
+  "person_id": 1040,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "May Britt Lagesen",
+  "person_id": 546,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2464,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Morten Resve",
+  "person_id": 260,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Per Sverre Rannem",
+  "person_id": 2474,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Robert Ertsås",
+  "person_id": 560,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Terje Tømmerås",
+  "person_id": 566,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 5
+  },
+  "motte_for": [],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Vegard Forbord",
+  "person_id": 2460,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-03-25",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 4
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Aisha Bigset",
+  "person_id": 2386,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 4
+  },
+  "motte_for": [
+   "Kristin Gisvold",
+   "Christine Agdestein",
+   "Elin Rodum Agdestein"
+  ],
+  "navn": "Amalie Rodum",
+  "person_id": 574,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 4
+  },
+  "motte_for": [
+   "Bjørg Helland",
+   "May Britt Lagesen",
+   "Monika Skoglund Luktvasslimo"
+  ],
+  "navn": "Anders Schjefte",
+  "person_id": 2376,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Andreas Lillevestre",
+  "person_id": 2494,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ann Kristin Bratting",
+  "person_id": 2410,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "May Britt Lagesen",
+   "Terje Tømmerås"
+  ],
+  "navn": "Anne Marthe Høgsnes",
+  "person_id": 2444,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-05-20",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anniken Gulstad Laugen-Rønne",
+  "person_id": 2466,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Arne Richstad",
+  "person_id": 1028,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Jens Fredrik Skjelstad"
+  ],
+  "navn": "Ausra Norum",
+  "person_id": 2452,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-04",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjarne Jostein Arnøy",
+  "person_id": 2446,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjørn Roald Andersen",
+  "person_id": 2454,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Britt Iren Melgård Thane",
+  "person_id": 2436,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-09-16",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Gjertrud Holand"
+  ],
+  "navn": "Charlotte Guin",
+  "person_id": 2884,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Cheneso Moumakwa",
+  "person_id": 2370,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-09-16",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Vegard Forbord"
+  ],
+  "navn": "Eirik Forås",
+  "person_id": 598,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Bjørg Helland",
+   "Terje Tømmerås"
+  ],
+  "navn": "Eli Djuvsland Rishaug",
+  "person_id": 236,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ella Friedl",
+  "person_id": 2442,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Enok Askil Moe",
+  "person_id": 2484,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Finn Rossing",
+  "person_id": 580,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frank Steinar Bartnes",
+  "person_id": 2400,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Frode Arnestad",
+  "person_id": 1226,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunn Bratberg",
+  "person_id": 2462,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Harald van der Linden",
+  "person_id": 2390,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Heidi Bruem Klæbu",
+  "person_id": 948,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "Kjell Magnar Haugan",
+   "May Britt Lagesen",
+   "Daniel Folladal"
+  ],
+  "navn": "Hilde Grevskott",
+  "person_id": 2412,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Håkon Sivertsen",
+  "person_id": 2402,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingolf Brønstad",
+  "person_id": 2388,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-05-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Gjertrud Holand"
+  ],
+  "navn": "Ingrid Bøe Sletten",
+  "person_id": 372,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-05-20",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 5
+  },
+  "motte_for": [
+   "Morten Resve",
+   "Lars Myhr Sandlund",
+   "Vegard Forbord"
+  ],
+  "navn": "Johan Kristian Daling",
+  "person_id": 2492,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "June Falch Bartnes",
+  "person_id": 2372,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Bjørnar Wennevik",
+  "person_id": 2418,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "May Britt Lagesen"
+  ],
+  "navn": "Knut Egil Sjøli",
+  "person_id": 1044,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Knut Gunnar Brandsegg",
+  "person_id": 2374,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "Thorolf Antonsen",
+   "Kjell Magnar Haugan"
+  ],
+  "navn": "Kristian Hovd Sjøli",
+  "person_id": 2490,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Lars Myhr Sandlund"
+  ],
+  "navn": "Lena Hanem Bartnes",
+  "person_id": 2456,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 4
+  },
+  "motte_for": [],
+  "navn": "Lillian Hatling",
+  "person_id": 300,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Linn Kristine Sandseter",
+  "person_id": 2468,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lise Halsen",
+  "person_id": 2434,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Livard Arnstein Eklo",
+  "person_id": 622,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Natalia Lillegaard",
+  "person_id": 222,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Nina Bartnes Skrattalsrud",
+  "person_id": 2432,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ola Myklebust Grønnesby",
+  "person_id": 2394,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ove Austmo",
+  "person_id": 2396,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Per Kristian Kvam",
+  "person_id": 2382,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ragnar Andresen",
+  "person_id": 2276,
+  "repr": "V",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ragnhild Kvalø",
+  "person_id": 232,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Sigrun Iversen",
+  "person_id": 2488,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Snorre Bernt Gundersen",
+  "person_id": 1092,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-05-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Tommy Fossum Skatland"
+  ],
+  "navn": "Solvor Laila Lein Lillemark",
+  "person_id": 1016,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-05-20",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Stian Grøtan",
+  "person_id": 2430,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-09-16",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Sigrun Modell"
+  ],
+  "navn": "Stig Rønning",
+  "person_id": 2478,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-09-16",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-06-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Tommy Fossum Skatland"
+  ],
+  "navn": "Terje Bjarte Langli",
+  "person_id": 570,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-17",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tine Engan",
+  "person_id": 2414,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tone Brauti Saugestad",
+  "person_id": 2486,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tor Arne Mjøen",
+  "person_id": 586,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Turid Saursaunet",
+  "person_id": 2060,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-02-04",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Espen Hatlinghus"
+  ],
+  "navn": "Wiggo Oksvold",
+  "person_id": 2408,
+  "repr": "UAVH",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-02-04",
+  "utvalg": "KS",
+  "utvalg_id": 10
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 3
+  },
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-04-28",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Daniel Folladal",
+  "person_id": 2448,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-04-28",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-28",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-04-28",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2464,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 3
+  },
+  "motte_for": [],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anders Schjefte",
+  "person_id": 2376,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Andreas Lillevestre",
+  "person_id": 2494,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-17",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Monika Skoglund Luktvasslimo"
+  ],
+  "navn": "Anne Marthe Høgsnes",
+  "person_id": 2444,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-03-17",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eirik Forås",
+  "person_id": 598,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Eli Djuvsland Rishaug",
+  "person_id": 236,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Finn Rossing",
+  "person_id": 580,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gunnar Mikalsen Kvifte",
+  "person_id": 2440,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingolf Brønstad",
+  "person_id": 2388,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingrid Bøe Sletten",
+  "person_id": 372,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-04-28",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 2
+  },
+  "motte_for": [
+   "Sigrun Modell",
+   "Lars Myhr Sandlund"
+  ],
+  "navn": "Johan Kristian Daling",
+  "person_id": 2492,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-09",
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristian Hovd Sjøli",
+  "person_id": 2490,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristin Rannem",
+  "person_id": 240,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lillian Hatling",
+  "person_id": 300,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lise Halsen",
+  "person_id": 2434,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ola Myklebust Grønnesby",
+  "person_id": 2394,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Solvor Laila Lein Lillemark",
+  "person_id": 1016,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Terje Bjarte Langli",
+  "person_id": 570,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tine Engan",
+  "person_id": 2414,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "KTU",
+  "utvalg_id": 9
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 4
+  },
+  "motte_for": [],
+  "navn": "Kjell Delbekk",
+  "person_id": 1094,
+  "repr": "SAFO",
+  "rolle": "Leder",
+  "sist_motte": "2026-08-26",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Lill Kristin Aune",
+  "person_id": 1106,
+  "repr": "SAFO",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-06-03",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Randi Reitan Troset",
+  "person_id": 2554,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Vigdis Nyhus",
+  "person_id": 1096,
+  "repr": "FFO",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-03",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-05-06",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Zaid F. Ranneh",
+  "person_id": 2062,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-03",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 3
+  },
+  "motte_for": [],
+  "navn": "Ausra Norum",
+  "person_id": 2452,
+  "repr": "V",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-08-26",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-06-03",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Ausra Norum"
+  ],
+  "navn": "Aisha Bigset",
+  "person_id": 2386,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-03",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anja Katrine Eide",
+  "person_id": 2520,
+  "repr": "SAFO",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Cheneso Moumakwa",
+  "person_id": 2370,
+  "repr": "PP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Christiane Bogott",
+  "person_id": 2592,
+  "repr": "FFO",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-03-11",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 3
+  },
+  "motte_for": [
+   "Randi Reitan Troset"
+  ],
+  "navn": "Enok Askil Moe",
+  "person_id": 2484,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-08-26",
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Pål Espen Tømmervik",
+  "person_id": 2594,
+  "repr": "FFO",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "RÅFIM",
+  "utvalg_id": 35
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 2
+  },
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-03",
+  "utvalg": "SSBY",
+  "utvalg_id": 31
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-03",
+  "utvalg": "SSBY",
+  "utvalg_id": 31
+ },
+ {
+  "forst_motte": "2026-03-25",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Jon Eirik Brandtsegg",
+  "person_id": 2094,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-03",
+  "utvalg": "SSBY",
+  "utvalg_id": 31
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bjarne Jostein Arnøy",
+  "person_id": 2446,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "SSBY",
+  "utvalg_id": 31
+ },
+ {
+  "forst_motte": "2026-02-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 4
+  },
+  "motte_for": [],
+  "navn": "Jon Erik Finstad",
+  "person_id": 1624,
+  "repr": "SP",
+  "rolle": "Leder",
+  "sist_motte": "2026-09-10",
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": "2026-02-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Amalie Rodum",
+  "person_id": 574,
+  "repr": "H",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-16",
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": "2026-02-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Erland Kjesbu",
+  "person_id": 2600,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-10",
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": "2026-02-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-09-10",
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": "2026-02-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 4
+  },
+  "motte_for": [],
+  "navn": "Ragnhild Kvalø",
+  "person_id": 232,
+  "repr": "AP",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-09-10",
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": "2026-06-16",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Tommy Fossum Skatland"
+  ],
+  "navn": "Finn Rossing",
+  "person_id": 580,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-06-16",
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Ingrid Bøe Sletten",
+  "person_id": 372,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Torgunn Sollid-Bolås",
+  "person_id": 2602,
+  "repr": "ANDRE",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Torill Sværd",
+  "person_id": 608,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "SSKO",
+  "utvalg_id": 25
+ },
+ {
+  "forst_motte": "2026-01-08",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1
+  },
+  "motte_for": [],
+  "navn": "Hans Einar Krokan",
+  "person_id": 2524,
+  "repr": "ANDRE",
+  "rolle": "Leder",
+  "sist_motte": "2026-01-08",
+  "utvalg": "UGW",
+  "utvalg_id": 37
+ },
+ {
+  "forst_motte": "2026-01-08",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Henry Skevik",
+  "person_id": 588,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-01-08",
+  "utvalg": "UGW",
+  "utvalg_id": 37
+ },
+ {
+  "forst_motte": "2026-01-08",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Ingrid Blekastad",
+  "person_id": 1274,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-01-08",
+  "utvalg": "UGW",
+  "utvalg_id": 37
+ },
+ {
+  "forst_motte": "2026-01-08",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Line Mari Nordkvelle",
+  "person_id": 1040,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-01-08",
+  "utvalg": "UGW",
+  "utvalg_id": 37
+ },
+ {
+  "forst_motte": "2026-01-08",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Lill Astrid Widegren",
+  "person_id": 2526,
+  "repr": "ANDRE",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-01-08",
+  "utvalg": "UGW",
+  "utvalg_id": 37
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 4
+  },
+  "motte_for": [],
+  "navn": "Sigurd Strand",
+  "person_id": 2796,
+  "repr": "ANDRE",
+  "rolle": "Leder",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Austin McGawley",
+  "person_id": 2800,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-05",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-03-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Edvard Lånkan",
+  "person_id": 2572,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Elin Stokke Folstad",
+  "person_id": 2742,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-05",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "Emma Tangstad",
+  "person_id": 2736,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 3
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Liv Toril Malmo",
+  "person_id": 2798,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-01-20",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-03-10",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 2
+  },
+  "motte_for": [],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-05-05",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 4
+  },
+  "motte_for": [],
+  "navn": "William Sund Bjørhusdahl",
+  "person_id": 2740,
+  "repr": "ANDRE",
+  "rolle": "Medlem",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 3
+  },
+  "motte_for": [],
+  "navn": "Anna Kjerstina Leirvik Solbakken",
+  "person_id": 2564,
+  "repr": "ANDRE",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-01-20",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 4
+  },
+  "motte_for": [],
+  "navn": "Lotte Kornelia Damås Aasland",
+  "person_id": 2738,
+  "repr": "ANDRE",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-06-02",
+  "utvalg": "UNGRÅ",
+  "utvalg_id": 36
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Leder": 1
+  },
+  "motte_for": [],
+  "navn": "Gunnar Thorsen",
+  "person_id": 550,
+  "repr": "AP",
+  "rolle": "Leder",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anne Berit Lein",
+  "person_id": 304,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Erik Røsegg",
+  "person_id": 2470,
+  "repr": "INP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Håvard Krogstad-Wiborg",
+  "person_id": 282,
+  "repr": "R",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Jens Fredrik Skjelstad",
+  "person_id": 2378,
+  "repr": "V",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lill Marit Sandseter",
+  "person_id": 2426,
+  "repr": "SP",
+  "rolle": "Medlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Line Anita Hammer",
+  "person_id": 548,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Mari Grøneng Bartnes",
+  "person_id": 612,
+  "repr": "SV",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "May Britt Lagesen",
+  "person_id": 546,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Thorolf Antonsen",
+  "person_id": 2392,
+  "repr": "AP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tommy Fossum Skatland",
+  "person_id": 246,
+  "repr": "FRP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Medlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor-André Hopen",
+  "person_id": 2476,
+  "repr": "PP",
+  "rolle": "Medlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Nestleder": 1
+  },
+  "motte_for": [],
+  "navn": "Christine Agdestein",
+  "person_id": 258,
+  "repr": "H",
+  "rolle": "Nestleder",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anita Brønstad Skavdal",
+  "person_id": 2450,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Anniken Bjørnes",
+  "person_id": 584,
+  "repr": "R",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Bente Merete Aune Bragstad",
+  "person_id": 2384,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Elin Rodum Agdestein",
+  "person_id": 2416,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Espen Hatlinghus",
+  "person_id": 2438,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Gjertrud Holand",
+  "person_id": 368,
+  "repr": "SV",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kjell Magnar Haugan",
+  "person_id": 562,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Kristin Gisvold",
+  "person_id": 264,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [
+   "Anne Berit Lein"
+  ],
+  "navn": "Lars Myhr Sandlund",
+  "person_id": 592,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Lisbeth Melhus",
+  "person_id": 1556,
+  "repr": "UAVH",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Monika Skoglund Luktvasslimo",
+  "person_id": 2464,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Per-Ole Austmo",
+  "person_id": 2424,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Robert Ertsås",
+  "person_id": 560,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Rune Kvaran",
+  "person_id": 1046,
+  "repr": "H",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Sigrun Modell",
+  "person_id": 2422,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Terje Tømmerås",
+  "person_id": 566,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Tor André Eide",
+  "person_id": 2246,
+  "repr": "FRP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": "2026-04-23",
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {
+   "Varamedlem": 1
+  },
+  "motte_for": [],
+  "navn": "Tor Borgan",
+  "person_id": 2398,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": "2026-04-23",
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Torbjørn Alstad Austad",
+  "person_id": 2482,
+  "repr": "INP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Vegard Forbord",
+  "person_id": 2460,
+  "repr": "SP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ },
+ {
+  "forst_motte": null,
+  "i_dagens_liste": true,
+  "i_medlemslister": [
+   "2026-10-02"
+  ],
+  "moter_som": {},
+  "motte_for": [],
+  "navn": "Vilde Guin",
+  "person_id": 2428,
+  "repr": "AP",
+  "rolle": "Varamedlem",
+  "sist_motte": null,
+  "utvalg": "VN",
+  "utvalg_id": 26
+ }
+]

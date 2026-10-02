@@ -1,8 +1,10 @@
-"""Laster ned saksframlegg og saksprotokoller og lagrer teksten.
+"""Laster ned saksframlegg, saksprotokoller og møteprotokoller og lagrer teksten.
 
 ADR-005: dokumentene lagres ikke i repoet. Bare teksten, under data/tekst/.
+         Møteprotokollene ligger i data/tekst/moter/<møte-ID>.txt.
 ADR-006: møteinnkallingen lastes aldri ned for analyse. Den er alle
          saksframleggene limt sammen, over 350 sider for kommunestyret.
+         Møteprotokollen hentes bare for oppmøtelisten (ADR-008).
 ADR-013: poppler for PDF. Protokoller tas med `pdftotext -layout`, fordi
          oppmøtelisten er kolonnebasert. Saksframlegg tas uten -layout, slik at
          de faste overskriftene står på egne linjer (tolk/saksframlegg.py).
@@ -114,20 +116,28 @@ def filformat(data: bytes) -> str:
     return "ukjent"
 
 
-def _apne_i_raadata(aar: int) -> tuple[set[int], set[int]]:
-    """(åpne dokumenter, åpne vedtak), lest rett fra rådataene.
+def _moter_i_raadata(aar: int) -> list[dict]:
+    mappe = RAA / str(aar) / "moter"
+    if not mappe.exists():
+        raise SystemExit(f"fant ikke {mappe}. Kjør hent.hent_moter først.")
+    return [json.loads(sti.read_text(encoding="utf-8"))
+            for sti in sorted(mappe.glob("*.json"))]
+
+
+def _apne_i_raadata(aar: int) -> tuple[set[int], set[int], set[int]]:
+    """(åpne dokumenter, åpne vedtak, åpne møtedokumenter), lest rett fra
+    rådataene.
 
     Et flagg som sier skjermet eller upublisert ett sted, vinner over alle
     andre forekomster av samme dokument eller vedtak.
     """
-    mappe = RAA / str(aar) / "moter"
-    if not mappe.exists():
-        raise SystemExit(f"fant ikke {mappe}. Kjør hent.hent_moter først.")
-
     dok_apne, dok_stengt = set(), set()
     vedtak_apne, vedtak_stengt = set(), set()
-    for sti in mappe.glob("*.json"):
-        mote = json.loads(sti.read_text(encoding="utf-8"))
+    mote_apne, mote_stengt = set(), set()
+    for mote in _moter_i_raadata(aar):
+        for d in mote["detaljer"].get("MeetingDocuments") or []:
+            (mote_stengt if d.get("IsRestricted") else mote_apne).add(d["Id"])
+
         for b in mote["behandlinger"]:
             for x in [b, *(b.get("AdditionalDmbHandlings") or [])]:
                 apent = x.get("ProtocolPublished") and not x.get("ProtocolRestricted")
@@ -140,7 +150,8 @@ def _apne_i_raadata(aar: int) -> tuple[set[int], set[int]]:
                          and not journal.get("AccessCodeId"))
                 (dok_apne if apent else dok_stengt).add(bes.get("Id"))
 
-    return dok_apne - dok_stengt, vedtak_apne - vedtak_stengt
+    return (dok_apne - dok_stengt, vedtak_apne - vedtak_stengt,
+            mote_apne - mote_stengt)
 
 
 def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
@@ -167,13 +178,26 @@ def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
                 ut.append({"id": v["dokument_id"], "url": v["url"],
                            "slag": "vedlegg", "kolonner": False})
 
-    dok_apne, vedtak_apne = _apne_i_raadata(aar)
+    # Møteprotokollen, for oppmøtelisten. Aldri møteinnkallingen (ADR-006).
+    for mote in _moter_i_raadata(aar):
+        mid = mote["mote"]["MO_ID"]
+        for d in mote["detaljer"].get("MeetingDocuments") or []:
+            if d["DmbDocumentTypeId"] == "MP" and not d.get("IsRestricted"):
+                ut.append({"id": d["Id"],
+                           "url": portal.url_motedokument(mid, "MP", d["Id"]),
+                           "slag": "moteprotokoll", "kolonner": True,
+                           "fil": f"moter/{mid}.txt"})
+
+    dok_apne, vedtak_apne, mote_apne = _apne_i_raadata(aar)
+    apne_for = {"saksprotokoll": vedtak_apne, "moteprotokoll": mote_apne}
     sett, unike = set(), []
     for o in ut:
-        if o["id"] in sett:
+        # Vedtak, møtedokumenter og saksdokumenter har hver sine ID-er.
+        nokkel = (o["slag"] if o["slag"] in apne_for else "dokument", o["id"])
+        if nokkel in sett:
             continue
-        sett.add(o["id"])
-        apne = vedtak_apne if o["slag"] == "saksprotokoll" else dok_apne
+        sett.add(nokkel)
+        apne = apne_for.get(o["slag"], dok_apne)
         if o["id"] not in apne:
             print(f"hopper over {o['slag']} {o['id']}: ikke åpen i rådataene")
             continue
@@ -185,13 +209,15 @@ def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
     sjekk_poppler()
     TEKST.mkdir(parents=True, exist_ok=True)
     oppgaver = _oppgaver(aar, med_vedlegg)
-    print(f"{len(oppgaver)} dokumenter. Omtrent "
-          f"{len(oppgaver) * SEKUND_PER_DOKUMENT / 60:.0f} minutter.")
+    nye = [o for o in oppgaver
+           if mal_bare or not (TEKST / o.get("fil", f"{o['id']}.txt")).exists()]
+    print(f"{len(oppgaver)} dokumenter, {len(nye)} skal lastes ned. Omtrent "
+          f"{len(nye) * SEKUND_PER_DOKUMENT / 60:.0f} minutter.")
 
     maling: list[dict] = []
     with tempfile.TemporaryDirectory() as tmp:
         for i, o in enumerate(oppgaver, 1):
-            mal = TEKST / f"{o['id']}.txt"
+            mal = TEKST / o.get("fil", f"{o['id']}.txt")
             if mal.exists() and not mal_bare:
                 continue
 
@@ -240,6 +266,7 @@ def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
                 if post["mangler_tekstlag"]:
                     print(f"[{i}] {o['id']} mangler tekstlag, ikke lagret")
                     continue
+                mal.parent.mkdir(parents=True, exist_ok=True)
                 mal.write_text(tekst, encoding="utf-8")
 
     if mal_bare:

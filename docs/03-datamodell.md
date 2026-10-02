@@ -59,6 +59,30 @@ Fordeling for 2026, politiske saker uten formaliteter: 121 behandlet, 64 venter
 på protokoll, 49 vedtatt i kommunestyret, 31 til behandling. Tallene kommer fra
 `python -m tolk.bygg_saker 2026`.
 
+## Voteringer
+
+`votering` og `stemme` ligger samlet i `data/voteringer/<år>.json`, én post
+per behandling med vedtak. Hver votering har en navneliste per standpunkt, og
+partiet til hvert navn. Tolkes av `python -m tolk.bygg_voteringer` fra
+saksprotokollene i `data/tekst/`.
+
+| Form | Slik står den i protokollen | Antall i 2026 |
+|---|---|---|
+| For og mot | «For forslaget stemte 29: … Imot forslaget stemte 10: …» | 381 |
+| Alternativ votering | «For forslag 1 stemte 4: … For forslag 2 stemte 3: …» | 61 |
+| Enstemmig | «Forslag til vedtak enstemmig vedtatt.» Ingen navneliste | 45 |
+
+I tillegg avgjøres 4 voteringer med ordførers eller leders dobbeltstemme, og
+5 har «Ikke til stede» inne i navnelisten.
+
+Feltet `tall_stemmer` er kontrollen fra ADR-002: antall navn stemmer med
+oppgitt stemmetall for hvert standpunkt. En votering uten noe stemmetall har
+ingen fasit og får også `tall_stemmer: false`. Slike rader publiseres ikke
+før et menneske har sett på dem. I 2026 gjelder det ingen.
+
+Hvem som stemte i en enstemmig votering, står ikke i protokollen. Det følger
+av oppmøtet, som må hentes fra møteprotokollen (se under).
+
 ## Folkevalgte, verv og oppmøte
 
 De fem tabellene om folkevalgte bærer mer enn de ser ut til.
@@ -93,25 +117,108 @@ Portalens endepunkt `api/DmbMembers` gir trolig bare dagens medlemmer, ikke
 historikk. Derfor to grep:
 
 1. Medlemslisten hentes ved hver kjøring og lagres versjonert, slik at
-   historikken bygges opp framover.
+   historikken bygges opp framover (`hent.hent_medlemmer`, til
+   `data/raa/medlemmer/<dato>.json`, ny fil bare når noe er endret).
+   Mobilnummer, e-post og kjønn fra portalen lagres ikke.
 2. Oppmøtelisten i hver protokoll leses som selvstendig kilde. Den er datert,
    står i et dokument som ikke endres i ettertid, og oppgir både rolle og hvem
    en vara møtte for.
 
+`python -m tolk.bygg_verv` setter de to sammen til `data/verv/<år>.json`, ett
+verv per person og utvalg, og `data/utvalg/<år>.json` med utvalg og partier.
+Portalen oppgir ikke når et verv begynte eller sluttet. Vervet får derfor de
+datoene det er observert: hvilke medlemslister det står i
+(`i_medlemslister`), og første og siste møte personen møtte (`forst_motte`,
+`sist_motte`). Valg, fritak og permisjon står i sakene, men er ikke lest ut.
+
+Status 2. oktober 2026: 21 utvalg og 602 verv. 750 av 754 oppmøterader finnes
+i dagens medlemsliste for utvalget; de fire som mangler, har trolig gått ut
+av utvalget i løpet av året.
+
+**Varamedlemmer uten «varamedlem for».** Noen varamedlemmer står på
+oppmøtelisten uten å møte for noen, for eksempel Tor Borgan i 9 møter i
+formannskapet. De tar ingen plass i protokollen og telles for seg. Med den
+regelen har ingen møter flere i plasser enn utvalget har faste plasser.
+
+Oppmøtet ligger i `data/oppmote/<år>.json`, én post per møte, lest av
+`python -m tolk.bygg_oppmote` fra alle 67 møteprotokoller i 2026: 754 rader,
+136 av dem varamedlemmer. Kolonnen «Repr.» lagres som `repr`. Den er partiet,
+men i interkommunale utvalg er den kommunen, og i rådene ofte «ANDRE».
+
 ### Kvalitetskontroll på kjøpet
 
-Når `stemme` kontrolleres mot `oppmote`, fanges avvik automatisk. I protokollen
-fra 16.09.2026 stemmer Lena Hanem Bartnes (SP) uten å stå på oppmøtelisten.
+Når `stemme` kontrolleres mot `oppmote`, fanges avvik automatisk. I 2026
+gjelder det 97 voteringer i 6 møter, og alle står slik i protokollene:
+
+| Møte | Avvik |
+|---|---|
+| FS 29.01 | Tor Borgan stemmer uten å stå på listen. May Britt Lagesen stemmer selv om en vara møtte for henne, og to voteringer får 13 stemmer med 12 frammøtte |
+| FS 12.02 | May Britt Lagesen stemmer selv om en vara møtte for henne |
+| KS 25.03 | Linn Kristine Sandseter stemmer i 21 voteringer uten å stå på listen |
+| KS 20.05 | Gunnar Mikalsen Kvifte stemmer i 23 voteringer uten å stå på listen |
+| FSKO 17.06 | Lill Marit Sandseter stemmer uten å stå på listen |
+| KS 16.09 | Lena Hanem Bartnes (SP) stemmer i 42 voteringer uten å stå på listen |
+
+Avvikene lagres per møte. En votering med avvik publiseres ikke før et
+menneske har sett på den.
+
+### Vurdering av avvik
+
+Avvikene kan vurderes av et menneske eller en språkmodell. Vurderingen
+avgjør bare om voteringen publiseres og med hvilken merknad. Navn og tall
+gjengis alltid slik protokollen oppgir dem, og `vurdert_av` sier hvem som
+har vurdert. Svaret står ofte ikke i dokumentene. Når det avgjørende er
+hvem som møtte, og det bare kommunen vet, er avgjørelsen
+`venter_paa_kommunen`. Se ADR-015.
+
+`python -m tolk.bygg_avvik` samler avvikene til `data/avvik/<år>.json`. Ett
+avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
+`oppmote:1285:lena-hanem-bartnes`, som gjelder 42 voteringer. I 2026 er det
+10 avvik og 97 voteringer.
+
+Vurderingen skrives for hånd i `data/vurderinger.json`:
+
+```json
+[{"avvik": "oppmote:1285:lena-hanem-bartnes",
+  "avgjorelse": "publiser",
+  "merknad": "Vises sammen med voteringen",
+  "begrunnelse": "Hvorfor, med kilde",
+  "vurdert_av": "Navn", "dato": "2026-10-02"}]
+```
+
+| `avgjorelse` | Virkning |
+|---|---|
+| `publiser` | Voteringene publiseres, med merknaden |
+| `ikke_publiser` | Holdes tilbake |
+| `venter_paa_kommunen` | Holdes tilbake til kommunen har svart |
+
+Et avvik uten vurdering holdes tilbake. Nettstedet viser at voteringen
+finnes, men ikke hvem som stemte hva.
+
+Status 2. oktober 2026, vurdert av Claude Opus 5.5 etter beslutning fra
+prosjekteier: 9 av 10 avvik publiseres med merknad. I dem er personen på
+listen og personen i navnelisten fra samme parti, eller det mangler ett navn
+på listen hos en som fast møter og stemmer, eller det er én stemme for mye i
+en votering som endte 13–0. Partifordelingen og resultatet er da riktig. Kommunestyret 16.09.2026 venter på
+kommunen: Lena Hanem Bartnes (SP) stemmer, og Anniken Bjørnes (R) står på
+listen. De er fra ulike partier, og møtet hadde 11 voteringer på 20–19 eller
+19–20. De 42 voteringene holdes tilbake. `tester.kontroller` stopper
+publiseringen hvis en vurdering mangler begrunnelse, har en ukjent
+avgjørelse, eller gjelder et avvik som ikke lenger finnes, for eksempel fordi
+kommunen har rettet protokollen.
 
 ## Navnevarianter
 
-Samme person skrives ulikt i samme dokument. Observert i protokollen fra
-16.09.2026:
+Samme person skrives ulikt, også i samme dokument. Oppmøtelisten bruker ofte
+fullt navn der navnelistene i voteringene ikke gjør det:
 
-| Variant | Normalisert til |
-|---|---|
-| Tor Andre Eide | Tor André Eide |
-| Line M Nordkvelle | Line Mari Nordkvelle |
+| Variant | Normalisert til | Hvor |
+|---|---|---|
+| Tor Andre Eide | Tor André Eide | Protokollen 16.09.2026 |
+| Line M Nordkvelle | Line Mari Nordkvelle | Protokollen 16.09.2026 |
+| Monika Luktvasslimo | Monika Skoglund Luktvasslimo | Oppmøtet i HPNM, hele 2026 |
+| Enok Moe | Enok Askil Moe | Navnelistene i HOK, hele 2026 |
+| Terje Langli | Terje Bjarte Langli | Navnelistene i KS, FSKO og FSB 17.06 |
 
 Normaliseringen ligger i `tolk/navn.py`. Hver representant har en liste over
 kjente varianter, slik at nye former kan legges til uten å endre koden.

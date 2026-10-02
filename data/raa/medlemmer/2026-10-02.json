@@ -1,0 +1,4296 @@
+{
+ "hentet": "2026-10-02",
+ "utvalg": {
+  "10": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bente Merete Aune Bragstad",
+     "person_id": 2384,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bjørg Helland",
+     "person_id": 2420,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Daniel Folladal",
+     "person_id": 2448,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Mari Nordkvelle",
+     "person_id": 1040,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "May Britt Lagesen",
+     "person_id": 546,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Monika Skoglund Luktvasslimo",
+     "person_id": 2464,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per Sverre Rannem",
+     "person_id": 2474,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Robert Ertsås",
+     "person_id": 560,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Terje Tømmerås",
+     "person_id": 566,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Kristin Gisvold",
+     "person_id": 264,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Knut Roald Ralfsen",
+     "person_id": 2458,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anniken Bjørnes",
+     "person_id": 584,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gunnar Mikalsen Kvifte",
+     "person_id": 2440,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anne Berit Lein",
+     "person_id": 304,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Morten Resve",
+     "person_id": 260,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Vegard Forbord",
+     "person_id": 2460,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Jens Fredrik Skjelstad",
+     "person_id": 2378,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anders Schjefte",
+     "person_id": 2376,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anne Marthe Høgsnes",
+     "person_id": 2444,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eli Djuvsland Rishaug",
+     "person_id": 236,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Heidi Bruem Klæbu",
+     "person_id": 948,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hilde Grevskott",
+     "person_id": 2412,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Egil Sjøli",
+     "person_id": 1044,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristian Hovd Sjøli",
+     "person_id": 2490,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lise Halsen",
+     "person_id": 2434,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Livard Arnstein Eklo",
+     "person_id": 622,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Natalia Lillegaard",
+     "person_id": 222,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ove Austmo",
+     "person_id": 2396,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ragnhild Kvalø",
+     "person_id": 232,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Arne Richstad",
+     "person_id": 1028,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frank Steinar Bartnes",
+     "person_id": 2400,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "June Falch Bartnes",
+     "person_id": 2372,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Solvor Laila Lein Lillemark",
+     "person_id": 1016,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Bjarte Langli",
+     "person_id": 570,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Amalie Rodum",
+     "person_id": 574,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjarne Jostein Arnøy",
+     "person_id": 2446,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Britt Iren Melgård Thane",
+     "person_id": 2436,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Harald van der Linden",
+     "person_id": 2390,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kjell Bjørnar Wennevik",
+     "person_id": 2418,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Gunnar Brandsegg",
+     "person_id": 2374,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Snorre Bernt Gundersen",
+     "person_id": 1092,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stian Grøtan",
+     "person_id": 2430,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingolf Brønstad",
+     "person_id": 2388,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Linn Kristine Sandseter",
+     "person_id": 2468,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ola Myklebust Grønnesby",
+     "person_id": 2394,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Per Kristian Kvam",
+     "person_id": 2382,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tine Engan",
+     "person_id": 2414,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ann Kristin Bratting",
+     "person_id": 2410,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Cheneso Moumakwa",
+     "person_id": 2370,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Sigrun Iversen",
+     "person_id": 2488,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjørn Roald Andersen",
+     "person_id": 2454,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Enok Askil Moe",
+     "person_id": 2484,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Rossing",
+     "person_id": 580,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Arne Mjøen",
+     "person_id": 586,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Turid Saursaunet",
+     "person_id": 2060,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Aisha Bigset",
+     "person_id": 2386,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Andreas Lillevestre",
+     "person_id": 2494,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eirik Forås",
+     "person_id": 598,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunn Bratberg",
+     "person_id": 2462,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Johan Kristian Daling",
+     "person_id": 2492,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lena Hanem Bartnes",
+     "person_id": 2456,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lillian Hatling",
+     "person_id": 300,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Nina Bartnes Skrattalsrud",
+     "person_id": 2432,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stig Rønning",
+     "person_id": 2478,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Charlotte Guin",
+     "person_id": 2884,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ella Friedl",
+     "person_id": 2442,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frode Arnestad",
+     "person_id": 1226,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingrid Bøe Sletten",
+     "person_id": 372,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tone Brauti Saugestad",
+     "person_id": 2486,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Wiggo Oksvold",
+     "person_id": 2408,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anniken Gulstad Laugen-Rønne",
+     "person_id": 2466,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ausra Norum",
+     "person_id": 2452,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Håkon Sivertsen",
+     "person_id": 2402,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ragnar Andresen",
+     "person_id": 2276,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    }
+   ],
+   "navn": "Kommunestyre"
+  },
+  "12": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "May Britt Lagesen",
+     "person_id": 546,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    }
+   ],
+   "navn": "Klagenemnda"
+  },
+  "13": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bjørn Kristian Nesbak",
+     "person_id": 1398,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Oddlaug Holthe Olsen",
+     "person_id": 182,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lill Marit Sandseter",
+     "person_id": 2426,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Anders Blæstervold",
+     "person_id": 2720,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Geir Haagensen",
+     "person_id": 814,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Jens Fredrik Skjelstad",
+     "person_id": 2378,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    }
+   ],
+   "navn": "Administrasjonsutvalget"
+  },
+  "14": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bente Merete Aune Bragstad",
+     "person_id": 2384,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bjørg Helland",
+     "person_id": 2420,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Daniel Folladal",
+     "person_id": 2448,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Mari Nordkvelle",
+     "person_id": 1040,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "May Britt Lagesen",
+     "person_id": 546,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Monika Skoglund Luktvasslimo",
+     "person_id": 2464,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per Sverre Rannem",
+     "person_id": 2474,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Robert Ertsås",
+     "person_id": 560,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Terje Tømmerås",
+     "person_id": 566,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Kristin Gisvold",
+     "person_id": 264,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Knut Roald Ralfsen",
+     "person_id": 2458,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gunnar Mikalsen Kvifte",
+     "person_id": 2440,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anne Berit Lein",
+     "person_id": 304,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lill Marit Sandseter",
+     "person_id": 2426,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Jens Fredrik Skjelstad",
+     "person_id": 2378,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anders Schjefte",
+     "person_id": 2376,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anne Marthe Høgsnes",
+     "person_id": 2444,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eli Djuvsland Rishaug",
+     "person_id": 236,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Heidi Bruem Klæbu",
+     "person_id": 948,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hilde Grevskott",
+     "person_id": 2412,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Egil Sjøli",
+     "person_id": 1044,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristian Hovd Sjøli",
+     "person_id": 2490,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lise Halsen",
+     "person_id": 2434,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Livard Arnstein Eklo",
+     "person_id": 622,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ove Austmo",
+     "person_id": 2396,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ragnhild Kvalø",
+     "person_id": 232,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Arne Richstad",
+     "person_id": 1028,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frank Steinar Bartnes",
+     "person_id": 2400,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "June Falch Bartnes",
+     "person_id": 2372,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Solvor Laila Lein Lillemark",
+     "person_id": 1016,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Bjarte Langli",
+     "person_id": 570,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Amalie Rodum",
+     "person_id": 574,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjarne Jostein Arnøy",
+     "person_id": 2446,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Britt Iren Melgård Thane",
+     "person_id": 2436,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Harald van der Linden",
+     "person_id": 2390,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kjell Bjørnar Wennevik",
+     "person_id": 2418,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Gunnar Brandsegg",
+     "person_id": 2374,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Snorre Bernt Gundersen",
+     "person_id": 1092,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stian Grøtan",
+     "person_id": 2430,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingolf Brønstad",
+     "person_id": 2388,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Linn Kristine Sandseter",
+     "person_id": 2468,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ola Myklebust Grønnesby",
+     "person_id": 2394,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Per Kristian Kvam",
+     "person_id": 2382,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tine Engan",
+     "person_id": 2414,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Wiggo Oksvold",
+     "person_id": 2408,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ann Kristin Bratting",
+     "person_id": 2410,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Cheneso Moumakwa",
+     "person_id": 2370,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjørn Roald Andersen",
+     "person_id": 2454,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Enok Askil Moe",
+     "person_id": 2484,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Rossing",
+     "person_id": 580,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Arne Mjøen",
+     "person_id": 586,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Turid Saursaunet",
+     "person_id": 2060,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Aisha Bigset",
+     "person_id": 2386,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Andreas Lillevestre",
+     "person_id": 2494,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eirik Forås",
+     "person_id": 598,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunn Bratberg",
+     "person_id": 2462,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Johan Kristian Daling",
+     "person_id": 2492,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lena Hanem Bartnes",
+     "person_id": 2456,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lillian Hatling",
+     "person_id": 300,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Nina Bartnes Skrattalsrud",
+     "person_id": 2432,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stig Rønning",
+     "person_id": 2478,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ella Friedl",
+     "person_id": 2442,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frode Arnestad",
+     "person_id": 1226,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingrid Bøe Sletten",
+     "person_id": 372,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tone Brauti Saugestad",
+     "person_id": 2486,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anniken Gulstad Laugen-Rønne",
+     "person_id": 2466,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ausra Norum",
+     "person_id": 2452,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Håkon Sivertsen",
+     "person_id": 2402,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ragnar Andresen",
+     "person_id": 2276,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    }
+   ],
+   "navn": "Foretaksmøte Steinkjer kommuneskoger - Ogndalsbruket KF"
+  },
+  "15": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bente Merete Aune Bragstad",
+     "person_id": 2384,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bjørg Helland",
+     "person_id": 2420,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Daniel Folladal",
+     "person_id": 2448,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Mari Nordkvelle",
+     "person_id": 1040,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "May Britt Lagesen",
+     "person_id": 546,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Monika Skoglund Luktvasslimo",
+     "person_id": 2464,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per Sverre Rannem",
+     "person_id": 2474,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Robert Ertsås",
+     "person_id": 560,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Terje Tømmerås",
+     "person_id": 566,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Kristin Gisvold",
+     "person_id": 264,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Knut Roald Ralfsen",
+     "person_id": 2458,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anne Berit Lein",
+     "person_id": 304,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lill Marit Sandseter",
+     "person_id": 2426,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Morten Resve",
+     "person_id": 260,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Vegard Forbord",
+     "person_id": 2460,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Jens Fredrik Skjelstad",
+     "person_id": 2378,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anders Schjefte",
+     "person_id": 2376,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anne Marthe Høgsnes",
+     "person_id": 2444,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eli Djuvsland Rishaug",
+     "person_id": 236,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Heidi Bruem Klæbu",
+     "person_id": 948,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hilde Grevskott",
+     "person_id": 2412,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Egil Sjøli",
+     "person_id": 1044,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristian Hovd Sjøli",
+     "person_id": 2490,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lise Halsen",
+     "person_id": 2434,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Livard Arnstein Eklo",
+     "person_id": 622,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ove Austmo",
+     "person_id": 2396,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ragnhild Kvalø",
+     "person_id": 232,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Arne Richstad",
+     "person_id": 1028,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frank Steinar Bartnes",
+     "person_id": 2400,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "June Falch Bartnes",
+     "person_id": 2372,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Solvor Laila Lein Lillemark",
+     "person_id": 1016,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Bjarte Langli",
+     "person_id": 570,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Amalie Rodum",
+     "person_id": 574,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjarne Jostein Arnøy",
+     "person_id": 2446,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Britt Iren Melgård Thane",
+     "person_id": 2436,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Harald van der Linden",
+     "person_id": 2390,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kjell Bjørnar Wennevik",
+     "person_id": 2418,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Gunnar Brandsegg",
+     "person_id": 2374,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Snorre Bernt Gundersen",
+     "person_id": 1092,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stian Grøtan",
+     "person_id": 2430,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingolf Brønstad",
+     "person_id": 2388,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Linn Kristine Sandseter",
+     "person_id": 2468,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ola Myklebust Grønnesby",
+     "person_id": 2394,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Per Kristian Kvam",
+     "person_id": 2382,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tine Engan",
+     "person_id": 2414,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Wiggo Oksvold",
+     "person_id": 2408,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ann Kristin Bratting",
+     "person_id": 2410,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Cheneso Moumakwa",
+     "person_id": 2370,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjørn Roald Andersen",
+     "person_id": 2454,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Enok Askil Moe",
+     "person_id": 2484,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Rossing",
+     "person_id": 580,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Arne Mjøen",
+     "person_id": 586,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Turid Saursaunet",
+     "person_id": 2060,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Aisha Bigset",
+     "person_id": 2386,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Andreas Lillevestre",
+     "person_id": 2494,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bente Markhus",
+     "person_id": 606,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eirik Forås",
+     "person_id": 598,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunn Bratberg",
+     "person_id": 2462,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Johan Kristian Daling",
+     "person_id": 2492,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lena Hanem Bartnes",
+     "person_id": 2456,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lillian Hatling",
+     "person_id": 300,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Nina Bartnes Skrattalsrud",
+     "person_id": 2432,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stig Rønning",
+     "person_id": 2478,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ella Friedl",
+     "person_id": 2442,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frode Arnestad",
+     "person_id": 1226,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingrid Bøe Sletten",
+     "person_id": 372,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tone Brauti Saugestad",
+     "person_id": 2486,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anniken Gulstad Laugen-Rønne",
+     "person_id": 2466,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ausra Norum",
+     "person_id": 2452,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Håkon Sivertsen",
+     "person_id": 2402,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ragnar Andresen",
+     "person_id": 2276,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    }
+   ],
+   "navn": "Foretaksmøte Steinkjerbygg KF"
+  },
+  "18": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Kari Helene Alstad",
+     "person_id": 2538,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Ann Kristin Bratting",
+     "person_id": 2410,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Arnulf Vengstad",
+     "person_id": 2540,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Lisbet Hanem Finstad",
+     "person_id": 316,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Rolf Bosnes",
+     "person_id": 1138,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Trond Svenkerud",
+     "person_id": 1100,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Asbjørn Eirik Aasheim",
+     "person_id": 2546,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bente Markhus",
+     "person_id": 606,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ester Stølan",
+     "person_id": 2542,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kari Jølle",
+     "person_id": 2544,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kolbjørn Almlid",
+     "person_id": 1122,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    }
+   ],
+   "navn": "Eldrerådet"
+  },
+  "25": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Jon Erik Finstad",
+     "person_id": 1624,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erland Kjesbu",
+     "person_id": 2600,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Amalie Rodum",
+     "person_id": 574,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Ragnhild Kvalø",
+     "person_id": 232,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Torgunn Sollid-Bolås",
+     "person_id": 2602,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Rossing",
+     "person_id": 580,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Torill Sværd",
+     "person_id": 608,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingrid Bøe Sletten",
+     "person_id": 372,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    }
+   ],
+   "navn": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+  },
+  "26": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "May Britt Lagesen",
+     "person_id": 546,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anne Berit Lein",
+     "person_id": 304,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lill Marit Sandseter",
+     "person_id": 2426,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Jens Fredrik Skjelstad",
+     "person_id": 2378,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bente Merete Aune Bragstad",
+     "person_id": 2384,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Monika Skoglund Luktvasslimo",
+     "person_id": 2464,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Robert Ertsås",
+     "person_id": 560,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Tømmerås",
+     "person_id": 566,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Vilde Guin",
+     "person_id": 2428,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristin Gisvold",
+     "person_id": 264,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anniken Bjørnes",
+     "person_id": 584,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Vegard Forbord",
+     "person_id": 2460,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    }
+   ],
+   "navn": "Valgstyre"
+  },
+  "27": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Anita Ravlo Sand",
+     "person_id": 2052,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Geir Jostein Ørsjødal",
+     "person_id": 2618,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Trude Hoff",
+     "person_id": 1688,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Unn-Elisabeth Tronstad Kristiansen",
+     "person_id": 630,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Astrid Juberg Vordal",
+     "person_id": 2048,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Nina Bakken Bye",
+     "person_id": 2050,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Arnt Bardal",
+     "person_id": 1610,
+     "repr": "SNASA",
+     "repr_navn": "Snåsa"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gjermund Hansen Eggen",
+     "person_id": 1812,
+     "repr": "SNASA",
+     "repr_navn": "Snåsa"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tone Våg",
+     "person_id": 2044,
+     "repr": "SNASA",
+     "repr_navn": "Snåsa"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bodil Ressem",
+     "person_id": 2610,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Knut Snorre Sandnes",
+     "person_id": 2496,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Trine Reitan",
+     "person_id": 2326,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Signar Berger",
+     "person_id": 2046,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tore Wold",
+     "person_id": 2620,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Vibeke Arntzen",
+     "person_id": 2616,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunnar Løvås",
+     "person_id": 2608,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Mats Henriksen",
+     "person_id": 2604,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Oddgeir Hagen",
+     "person_id": 2606,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Trine Hasvang Vaag",
+     "person_id": 1834,
+     "repr": "SNASA",
+     "repr_navn": "Snåsa"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Vebjørn Gorseth",
+     "person_id": 558,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Geir Singstad",
+     "person_id": 2612,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hilde Daleng",
+     "person_id": 2614,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ikke fordelt til saksbehandler",
+     "person_id": 0,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Pål Sverre Fikse",
+     "person_id": 2058,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    }
+   ],
+   "navn": "Innherred regionråd"
+  },
+  "28": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Ragnar Andresen",
+     "person_id": 2276,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    }
+   ],
+   "navn": "Forretningsutvalget"
+  },
+  "29": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Arnt Bardal",
+     "person_id": 1610,
+     "repr": "SNASA",
+     "repr_navn": "Snåsa"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Unn-Elisabeth Tronstad Kristiansen",
+     "person_id": 630,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anita Ravlo Sand",
+     "person_id": 2052,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Knut Snorre Sandnes",
+     "person_id": 2496,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Geir Jostein Ørsjødal",
+     "person_id": 2618,
+     "repr": "INDERØY",
+     "repr_navn": "Inderøy"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Nina Bakken Bye",
+     "person_id": 2050,
+     "repr": "LEVANGER",
+     "repr_navn": "Levanger"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "STEINKJER",
+     "repr_navn": "Steinkjer"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hilde Daleng",
+     "person_id": 2614,
+     "repr": "VERDAL",
+     "repr_navn": "Verdal"
+    }
+   ],
+   "navn": "Arbeidsutvalg Innherred regionråd"
+  },
+  "31": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Jon Eirik Brandtsegg",
+     "person_id": 2094,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjarne Jostein Arnøy",
+     "person_id": 2446,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    }
+   ],
+   "navn": "Styre for Steinkjerbygg KF"
+  },
+  "34": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Daniel Folladal",
+     "person_id": 2448,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Monika Luktvasslimo",
+     "person_id": 2160,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anders Schjefte",
+     "person_id": 2376,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anne Marthe Høgsnes",
+     "person_id": 2444,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eli Djuvsland Rishaug",
+     "person_id": 236,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristian Hovd Sjøli",
+     "person_id": 2490,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lise Halsen",
+     "person_id": 2434,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Solvor Laila Lein Lillemark",
+     "person_id": 1016,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Bjarte Langli",
+     "person_id": 570,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Britt Iren Melgård Thane",
+     "person_id": 2436,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kjell Bjørnar Wennevik",
+     "person_id": 2418,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Snorre Bernt Gundersen",
+     "person_id": 1092,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingolf Brønstad",
+     "person_id": 2388,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ola Myklebust Grønnesby",
+     "person_id": 2394,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tine Engan",
+     "person_id": 2414,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Rossing",
+     "person_id": 580,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunnar Mikalsen Kvifte",
+     "person_id": 2440,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristin Rannem",
+     "person_id": 240,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Andreas Lillevestre",
+     "person_id": 2494,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eirik Forås",
+     "person_id": 598,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Johan Kristian Daling",
+     "person_id": 2492,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lillian Hatling",
+     "person_id": 300,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingrid Bøe Sletten",
+     "person_id": 372,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    }
+   ],
+   "navn": "Hovedutvalg plan næring og miljø"
+  },
+  "35": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Kjell Delbekk",
+     "person_id": 1094,
+     "repr": "SAFO",
+     "repr_navn": "SAFO"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Randi Reitan Troset",
+     "person_id": 2554,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Zaid F. Ranneh",
+     "person_id": 2062,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Vigdis Nyhus",
+     "person_id": 1096,
+     "repr": "FFO",
+     "repr_navn": "FFO"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lill Kristin Aune",
+     "person_id": 1106,
+     "repr": "SAFO",
+     "repr_navn": "SAFO"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Ausra Norum",
+     "person_id": 2452,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Christiane Bogott",
+     "person_id": 2592,
+     "repr": "FFO",
+     "repr_navn": "FFO"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Pål Espen Tømmervik",
+     "person_id": 2594,
+     "repr": "FFO",
+     "repr_navn": "FFO"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Cheneso Moumakwa",
+     "person_id": 2370,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Enok Askil Moe",
+     "person_id": 2484,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anja Katrine Eide",
+     "person_id": 2520,
+     "repr": "SAFO",
+     "repr_navn": "SAFO"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Aisha Bigset",
+     "person_id": 2386,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    }
+   ],
+   "navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+  },
+  "36": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Sigurd Strand",
+     "person_id": 2796,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Austin McGawley",
+     "person_id": 2800,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Edvard Lånkan",
+     "person_id": 2572,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Elin Stokke Folstad",
+     "person_id": 2742,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Emma Tangstad",
+     "person_id": 2736,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Liv Toril Malmo",
+     "person_id": 2798,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "William Sund Bjørhusdahl",
+     "person_id": 2740,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Anna Kjerstina Leirvik Solbakken",
+     "person_id": 2564,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Lotte Kornelia Damås Aasland",
+     "person_id": 2738,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    }
+   ],
+   "navn": "Ungdomsrådet"
+  },
+  "37": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Hans Einar Krokan",
+     "person_id": 2524,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Henry Skevik",
+     "person_id": 588,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Ingrid Blekastad",
+     "person_id": 1274,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Mari Nordkvelle",
+     "person_id": 1040,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Lill Astrid Widegren",
+     "person_id": 2526,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    }
+   ],
+   "navn": "Utvalg Galleri Widegren"
+  },
+  "4": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Mari Nordkvelle",
+     "person_id": 1040,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Turid Saursaunet",
+     "person_id": 2060,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Vegard Forbord",
+     "person_id": 2460,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Terje Tømmerås",
+     "person_id": 566,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kemal Kaplan",
+     "person_id": 2780,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Egil Sjøli",
+     "person_id": 1044,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Livard Arnstein Eklo",
+     "person_id": 622,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Amalie Rodum",
+     "person_id": 574,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Harald van der Linden",
+     "person_id": 2390,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stian Grøtan",
+     "person_id": 2430,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Enok Askil Moe",
+     "person_id": 2484,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Arne Mjøen",
+     "person_id": 586,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lena Hanem Bartnes",
+     "person_id": 2456,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Nina Bartnes Skrattalsrud",
+     "person_id": 2432,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ella Friedl",
+     "person_id": 2442,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Frode Arnestad",
+     "person_id": 1226,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Håkon Sivertsen",
+     "person_id": 2402,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    }
+   ],
+   "navn": "Hovedutvalg oppvekst og kultur"
+  },
+  "5": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Ann-Karin Vang",
+     "person_id": 72,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anders Lindstrøm",
+     "person_id": 218,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bjørn Kristian Nesbak",
+     "person_id": 1398,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Finn Anders Blæstervold",
+     "person_id": 2720,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Geir Olav Jensen",
+     "person_id": 2820,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Ingunn Ramdal",
+     "person_id": 1618,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mona Myrslo Walmsley",
+     "person_id": 1632,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Oddlaug Holthe Olsen",
+     "person_id": 182,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Ørjan Nicolaysen",
+     "person_id": 2824,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Anita Ulstad",
+     "person_id": 864,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjørn Kristian Feragen",
+     "person_id": 2640,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Daryoush Shirazi Shahvand",
+     "person_id": 1060,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eli Eiklid",
+     "person_id": 1638,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gisle Kristian Almlid-Larsen",
+     "person_id": 618,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hege Tangen",
+     "person_id": 2314,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Leif Terje Nilsen",
+     "person_id": 836,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Marte Alstad",
+     "person_id": 220,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Marthe Solnes",
+     "person_id": 298,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Thomas Herstad",
+     "person_id": 778,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Øystein Larsen",
+     "person_id": 820,
+     "repr": "ANDRE",
+     "repr_navn": "Andre"
+    }
+   ],
+   "navn": "Arbeidsmiljøutvalget"
+  },
+  "7": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Bente Merete Aune Bragstad",
+     "person_id": 2384,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Bjørg Helland",
+     "person_id": 2420,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Robert Ertsås",
+     "person_id": 560,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Kristin Gisvold",
+     "person_id": 264,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Hilde Grevskott",
+     "person_id": 2412,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristian Hovd Sjøli",
+     "person_id": 2490,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjarne Jostein Arnøy",
+     "person_id": 2446,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Britt Iren Melgård Thane",
+     "person_id": 2436,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Knut Gunnar Brandsegg",
+     "person_id": 2374,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Linn Kristine Sandseter",
+     "person_id": 2468,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Per Kristian Kvam",
+     "person_id": 2382,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Wiggo Oksvold",
+     "person_id": 2408,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Cheneso Moumakwa",
+     "person_id": 2370,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjørn Roald Andersen",
+     "person_id": 2454,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Aisha Bigset",
+     "person_id": 2386,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunn Bratberg",
+     "person_id": 2462,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lillian Hatling",
+     "person_id": 300,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Stig Rønning",
+     "person_id": 2478,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tone Brauti Saugestad",
+     "person_id": 2486,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    }
+   ],
+   "navn": "Hovedutvalg helse og omsorg"
+  },
+  "8": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Gunnar Thorsen",
+     "person_id": 550,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Line Anita Hammer",
+     "person_id": 548,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "May Britt Lagesen",
+     "person_id": 546,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Thorolf Antonsen",
+     "person_id": 2392,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tommy Fossum Skatland",
+     "person_id": 246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Erik Røsegg",
+     "person_id": 2470,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor-André Hopen",
+     "person_id": 2476,
+     "repr": "PP",
+     "repr_navn": "Pensjonistpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Håvard Krogstad-Wiborg",
+     "person_id": 282,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anne Berit Lein",
+     "person_id": 304,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Mari Grøneng Bartnes",
+     "person_id": 612,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Jens Fredrik Skjelstad",
+     "person_id": 2378,
+     "repr": "V",
+     "repr_navn": "Venstre"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Christine Agdestein",
+     "person_id": 258,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bente Merete Aune Bragstad",
+     "person_id": 2384,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Bjørg Helland",
+     "person_id": 2420,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Monika Skoglund Luktvasslimo",
+     "person_id": 2464,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Robert Ertsås",
+     "person_id": 560,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Tømmerås",
+     "person_id": 566,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristin Gisvold",
+     "person_id": 264,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Rune Kvaran",
+     "person_id": 1046,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Torbjørn Alstad Austad",
+     "person_id": 2482,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunnar Mikalsen Kvifte",
+     "person_id": 2440,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Per-Ole Austmo",
+     "person_id": 2424,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tor Borgan",
+     "person_id": 2398,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Vegard Forbord",
+     "person_id": 2460,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gjertrud Holand",
+     "person_id": 368,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lisbeth Melhus",
+     "person_id": 1556,
+     "repr": "UAVH",
+     "repr_navn": "Uavhengig"
+    }
+   ],
+   "navn": "Formannskap"
+  },
+  "9": {
+   "medlemmer": [
+    {
+     "funksjon": "Leder",
+     "navn": "Elin Rodum Agdestein",
+     "person_id": 2416,
+     "repr": "H",
+     "repr_navn": "Høyre"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Daniel Folladal",
+     "person_id": 2448,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Monika Skoglund Luktvasslimo",
+     "person_id": 2464,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Tor André Eide",
+     "person_id": 2246,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Espen Hatlinghus",
+     "person_id": 2438,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Anita Brønstad Skavdal",
+     "person_id": 2450,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Lars Myhr Sandlund",
+     "person_id": 592,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Medlem",
+     "navn": "Sigrun Modell",
+     "person_id": 2422,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Nestleder",
+     "navn": "Kjell Magnar Haugan",
+     "person_id": 562,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anders Schjefte",
+     "person_id": 2376,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Anne Marthe Høgsnes",
+     "person_id": 2444,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eli Djuvsland Rishaug",
+     "person_id": 236,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristian Hovd Sjøli",
+     "person_id": 2490,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lise Halsen",
+     "person_id": 2434,
+     "repr": "AP",
+     "repr_navn": "Arbeiderpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Solvor Laila Lein Lillemark",
+     "person_id": 1016,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Terje Bjarte Langli",
+     "person_id": 570,
+     "repr": "FRP",
+     "repr_navn": "Fremskrittspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingolf Brønstad",
+     "person_id": 2388,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ola Myklebust Grønnesby",
+     "person_id": 2394,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Tine Engan",
+     "person_id": 2414,
+     "repr": "INP",
+     "repr_navn": "Industri- og næringspartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Finn Rossing",
+     "person_id": 580,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Gunnar Mikalsen Kvifte",
+     "person_id": 2440,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Kristin Rannem",
+     "person_id": 240,
+     "repr": "R",
+     "repr_navn": "Rødt"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Andreas Lillevestre",
+     "person_id": 2494,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Eirik Forås",
+     "person_id": 598,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Johan Kristian Daling",
+     "person_id": 2492,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Lillian Hatling",
+     "person_id": 300,
+     "repr": "SP",
+     "repr_navn": "Senterpartiet"
+    },
+    {
+     "funksjon": "Varamedlem",
+     "navn": "Ingrid Bøe Sletten",
+     "person_id": 372,
+     "repr": "SV",
+     "repr_navn": "Sosialistisk Venstreparti"
+    }
+   ],
+   "navn": "Trafikksikkerhetsutvalget"
+  }
+ }
+}

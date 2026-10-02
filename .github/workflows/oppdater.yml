@@ -54,8 +54,28 @@ jobs:
           python -m hent.hent_moter "${{ inputs.aar || '2026' }}" \
             ${{ inputs.alt && '--alt' || '' }}
 
+      - name: Hent medlemslister
+        run: python -m hent.hent_medlemmer "${{ inputs.aar || '2026' }}"
+
       - name: Bygg saker og saksgang
         run: python -m tolk.bygg_saker "${{ inputs.aar || '2026' }}"
+
+      # Henter bare dokumenter som ikke har tekst fra før (ADR-013).
+      - name: Hent tekst fra saksframlegg og vedtak
+        run: python -m hent.hent_dokumenter "${{ inputs.aar || '2026' }}"
+
+      - name: Tolk voteringer
+        run: python -m tolk.bygg_voteringer "${{ inputs.aar || '2026' }}"
+
+      - name: Les oppmøte og kontroller stemmene
+        run: python -m tolk.bygg_oppmote "${{ inputs.aar || '2026' }}"
+
+      - name: Bygg utvalg og verv
+        run: python -m tolk.bygg_verv "${{ inputs.aar || '2026' }}"
+
+      # Voteringer med avvik holdes tilbake i bygget til de er vurdert.
+      - name: Samle avvik til vurdering
+        run: python -m tolk.bygg_avvik "${{ inputs.aar || '2026' }}"
 
       - name: Lagre endringer
         run: |

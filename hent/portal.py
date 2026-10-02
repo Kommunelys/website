@@ -80,13 +80,16 @@ def behandling(behandling_id: int) -> dict:
     return _hent(f"{BASIS}api/DmbHandlings/{behandling_id}")
 
 
-def utvalgsmedlemmer(utvalg_id: int) -> list | dict:
-    """Medlemmer i ett utvalg.
+def utvalgsmedlemmer(utvalg_id: int) -> list[dict]:
+    """Dagens medlemmer og varamedlemmer i ett utvalg, med funksjon og parti.
 
-    Ikke bekreftet mot live portal ennå; stien er lest ut av app-koden.
-    Gir trolig bare dagens medlemmer, ikke historikk (ADR-008).
+    Bekreftet 2.10.2026 fra siden «Kalender og medlemmer» i portalen. Utvalgs-ID
+    er `UT_ID` fra møtelisten. Gir bare dagens medlemmer, ikke historikk
+    (ADR-008). Svaret har også mobilnummer, e-post og kjønn; se
+    hent/hent_medlemmer.py for hva som lagres.
     """
-    return _hent(f"{BASIS}api/DmbMembers?dmbId={utvalg_id}")
+    d = _hent(f"{BASIS}api/DmbMembers/GetByDmbBoard/{utvalg_id}")
+    return d if isinstance(d, list) else []
 
 
 def hent_fil(url: str) -> bytes:

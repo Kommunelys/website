@@ -1,0 +1,193 @@
+{
+ "medlemsliste_hentet": "2026-10-02",
+ "partier": {
+  "ANDRE": "Andre",
+  "AP": "Arbeiderpartiet",
+  "FFO": "FFO",
+  "FRP": "Fremskrittspartiet",
+  "H": "Høyre",
+  "INDERØY": "Inderøy",
+  "INP": "Industri- og næringspartiet",
+  "LEVANGER": "Levanger",
+  "PP": "Pensjonistpartiet",
+  "R": "Rødt",
+  "SAFO": "SAFO",
+  "SNASA": "Snåsa",
+  "SP": "Senterpartiet",
+  "STEINKJER": "Steinkjer",
+  "SV": "Sosialistisk Venstreparti",
+  "UAVH": "Uavhengig",
+  "V": "Venstre",
+  "VERDAL": "Verdal"
+ },
+ "utvalg": [
+  {
+   "faste_medlemmer": 7,
+   "kortnavn": "HOK",
+   "moter": 9,
+   "navn": "Hovedutvalg oppvekst og kultur",
+   "utvalg_id": 4,
+   "varamedlemmer": 13
+  },
+  {
+   "faste_medlemmer": 10,
+   "kortnavn": "AMU",
+   "moter": 2,
+   "navn": "Arbeidsmiljøutvalget",
+   "utvalg_id": 5,
+   "varamedlemmer": 10
+  },
+  {
+   "faste_medlemmer": 7,
+   "kortnavn": "HHO",
+   "moter": 7,
+   "navn": "Hovedutvalg helse og omsorg",
+   "utvalg_id": 7,
+   "varamedlemmer": 15
+  },
+  {
+   "faste_medlemmer": 12,
+   "kortnavn": "FS",
+   "moter": 15,
+   "navn": "Formannskap",
+   "utvalg_id": 8,
+   "varamedlemmer": 21
+  },
+  {
+   "faste_medlemmer": 9,
+   "kortnavn": "KTU",
+   "moter": 5,
+   "navn": "Trafikksikkerhetsutvalget",
+   "utvalg_id": 9,
+   "varamedlemmer": 18
+  },
+  {
+   "faste_medlemmer": 39,
+   "kortnavn": "KS",
+   "moter": 7,
+   "navn": "Kommunestyre",
+   "utvalg_id": 10,
+   "varamedlemmer": 57
+  },
+  {
+   "faste_medlemmer": 4,
+   "kortnavn": "KN",
+   "moter": 5,
+   "navn": "Klagenemnda",
+   "utvalg_id": 12,
+   "varamedlemmer": 5
+  },
+  {
+   "faste_medlemmer": 7,
+   "kortnavn": "AD",
+   "moter": 7,
+   "navn": "Administrasjonsutvalget",
+   "utvalg_id": 13,
+   "varamedlemmer": 7
+  },
+  {
+   "faste_medlemmer": 37,
+   "kortnavn": "FSKO",
+   "moter": 1,
+   "navn": "Foretaksmøte Steinkjer kommuneskoger - Ogndalsbruket KF",
+   "utvalg_id": 14,
+   "varamedlemmer": 54
+  },
+  {
+   "faste_medlemmer": 38,
+   "kortnavn": "FSB",
+   "moter": 1,
+   "navn": "Foretaksmøte Steinkjerbygg KF",
+   "utvalg_id": 15,
+   "varamedlemmer": 55
+  },
+  {
+   "faste_medlemmer": 7,
+   "kortnavn": "ELRÅ",
+   "moter": 9,
+   "navn": "Eldrerådet",
+   "utvalg_id": 18,
+   "varamedlemmer": 6
+  },
+  {
+   "faste_medlemmer": 5,
+   "kortnavn": "SSKO",
+   "moter": 4,
+   "navn": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+   "utvalg_id": 25,
+   "varamedlemmer": 5
+  },
+  {
+   "faste_medlemmer": 13,
+   "kortnavn": "VN",
+   "moter": 1,
+   "navn": "Valgstyre",
+   "utvalg_id": 26,
+   "varamedlemmer": 21
+  },
+  {
+   "faste_medlemmer": 15,
+   "kortnavn": "INR",
+   "moter": 2,
+   "navn": "Innherred regionråd",
+   "utvalg_id": 27,
+   "varamedlemmer": 13
+  },
+  {
+   "faste_medlemmer": 11,
+   "kortnavn": "FOR",
+   "moter": 5,
+   "navn": "Forretningsutvalget",
+   "utvalg_id": 28,
+   "varamedlemmer": 4
+  },
+  {
+   "faste_medlemmer": 5,
+   "kortnavn": "AUINR",
+   "moter": 10,
+   "navn": "Arbeidsutvalg Innherred regionråd",
+   "utvalg_id": 29,
+   "varamedlemmer": 4
+  },
+  {
+   "faste_medlemmer": 3,
+   "kortnavn": "SSBY",
+   "moter": 2,
+   "navn": "Styre for Steinkjerbygg KF",
+   "utvalg_id": 31,
+   "varamedlemmer": 1
+  },
+  {
+   "faste_medlemmer": 9,
+   "kortnavn": "HPNM",
+   "moter": 9,
+   "navn": "Hovedutvalg plan næring og miljø",
+   "utvalg_id": 34,
+   "varamedlemmer": 21
+  },
+  {
+   "faste_medlemmer": 7,
+   "kortnavn": "RÅFIM",
+   "moter": 8,
+   "navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+   "utvalg_id": 35,
+   "varamedlemmer": 7
+  },
+  {
+   "faste_medlemmer": 11,
+   "kortnavn": "UNGRÅ",
+   "moter": 8,
+   "navn": "Ungdomsrådet",
+   "utvalg_id": 36,
+   "varamedlemmer": 0
+  },
+  {
+   "faste_medlemmer": 5,
+   "kortnavn": "UGW",
+   "moter": 3,
+   "navn": "Utvalg Galleri Widegren",
+   "utvalg_id": 37,
+   "varamedlemmer": 0
+  }
+ ]
+}

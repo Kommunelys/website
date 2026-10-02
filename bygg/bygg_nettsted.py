@@ -20,6 +20,8 @@ import shutil
 import sys
 from pathlib import Path
 
+from tolk.bygg_avvik import holdt_tilbake
+
 ROT = Path(__file__).resolve().parent.parent
 UT = ROT / "nettsted"
 
@@ -36,9 +38,24 @@ def kjor(aar: int) -> None:
     UT.mkdir(exist_ok=True)
     (UT / "data").mkdir(exist_ok=True)
 
+    # ADR-002: en votering med avvik som ikke er godkjent av et menneske,
+    # publiseres ikke. Det står at den finnes, men ikke hvem som stemte hva.
+    sti = ROT / "data" / "voteringer" / f"{aar}.json"
+    voteringer = json.loads(sti.read_text("utf-8")) if sti.exists() else []
+    stopp, merknader = holdt_tilbake(aar)
+    holdt = 0
+    for b in voteringer:
+        for i, v in enumerate(b["voteringer"]):
+            nokkel = (b["behandling_id"], v["nr"])
+            if nokkel in stopp:
+                b["voteringer"][i] = {"nr": v["nr"], "holdt_tilbake": True}
+                holdt += 1
+            elif nokkel in merknader:
+                v["merknader"] = merknader[nokkel]
+
     # Data ved siden av sidene, lastet ved behov.
     for navn, innhold in (("saker", saker), ("moter", moter),
-                          ("analyser", analyser)):
+                          ("analyser", analyser), ("voteringer", voteringer)):
         (UT / "data" / f"{navn}-{aar}.json").write_text(
             json.dumps(innhold, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
@@ -66,10 +83,11 @@ def kjor(aar: int) -> None:
         "saker": len(saker),
         "moter": len(moter),
         "analyser": len(analyser),
+        "voteringer_holdt_tilbake": holdt,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     print(f"nettsted/ bygget: {len(saker)} saker, {len(moter)} møter, "
-          f"{len(analyser)} analyser")
+          f"{len(analyser)} analyser, {holdt} voteringer holdt tilbake")
 
 
 def main() -> None:

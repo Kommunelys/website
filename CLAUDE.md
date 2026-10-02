@@ -17,9 +17,11 @@ utvetydig uoffisielt i all presentasjon.
 |---|---|
 | API-et til portalen | Kartlagt og dokumentert, se `docs/02-api.md` |
 | Innhenting av møter og saker | Virker, kjørt mot hele 2026 |
-| Tolkning av protokoll til stemmer | Virker, 42 av 42 voteringer riktig i testmøtet |
+| Tolkning av protokoll til stemmer | Virker. 42 av 42 i testmøtet, og alle 442 voteringer med navneliste i 2026 består tellekontrollen |
+| Oppmøte | Virker. Lest fra alle 67 møteprotokoller i 2026; stemmene i 6 møter avviker fra oppmøtelisten og er flagget |
+| Utvalg og verv | Virker. Medlemslistene hentes versjonert; vervene har observerte, ikke vedtatte, datoer |
 | Saksgang på tvers av utvalg | Virker |
-| Nedlasting av dokumenter | URL-ene testet og 2026-samlingen målt. Verktøy valgt i ADR-013. Tekst ikke lagret ennå |
+| Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
 | Nettsted | Prototype finnes, se `docs/05-plan.md`. Ikke portet hit |
 | GitHub Actions | Skrevet, ikke kjørt. Tidsplanen er slått av til ADR-007 er avklart |
@@ -31,7 +33,10 @@ utvetydig uoffisielt i all presentasjon.
    med kommunen ennå. Se `docs/04-beslutninger.md`, ADR-007.
 2. **Stemmetall tolkes aldri av en språkmodell.** Det gjøres med
    mønstergjenkjenning i `tolk/`, og antall navn kontrolleres alltid mot
-   oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av.
+   oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av. Om en
+   votering med avvik likevel skal publiseres, kan vurderes av en modell,
+   men vurderingen endrer aldri navn eller tall, og den merkes med
+   `vurdert_av` (`data/vurderinger.json`, ADR-015).
 3. **Skjermet informasjon lastes aldri ned og sendes aldri til en modell.**
    Portalen merker dette med `ProtocolRestricted`, `IsRestricted` og
    `AccessCodeId`. Respekter feltene i hvert ledd.
@@ -49,10 +54,17 @@ hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted
-data/raa/      rå API-svar, urørt. Slettes aldri
+data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
+               lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
 data/saker/    normaliserte saker med saksgang
-data/tekst/    tekst trukket ut av PDF
+data/tekst/    tekst trukket ut av PDF og Word (møteprotokoller i tekst/moter/)
+data/voteringer/  voteringer og stemmer fra saksprotokollene
+data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
+data/utvalg/   utvalg og partier
+data/verv/     verv per person og utvalg
+data/avvik/    avvik som må vurderes før voteringene publiseres
+data/vurderinger.json  avgjørelsene for avvikene, skrevet av et menneske
 data/analyse/  sammendrag og tagger fra modellen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
@@ -62,10 +74,15 @@ tester/    kontroller som må passere før publisering
 
 ```bash
 python -m hent.hent_moter 2026          # møter, saker, saksgang
+python -m hent.hent_medlemmer 2026      # dagens medlemslister -> data/raa/medlemmer/
 python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
 python -m hent.hent_dokumenter 2026 --mal  # bare måling -> data/maling-<år>.json
 python -m tolk.bygg_saker               # saksgang og status -> data/saker/
-python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én protokolltekst
+python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
+python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
+python -m tolk.bygg_verv 2026           # utvalg, partier og verv -> data/utvalg/, data/verv/
+python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data/avvik/
+python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 ```
@@ -88,12 +105,35 @@ python -m tester.kontroller             # alle kontroller
   `pdfinfo`. `hent.hent_dokumenter` stopper hvis den finner xpdf (ADR-013).
 - **Ikke alle vedtak er PDF.** Noen møter har saksprotokollene bare i Word,
   blant annet HPNM og KTU 09.06.2026. De har voteringene og må tas med.
+- **En votering har flere former enn «for» og «mot».** Ved alternativ
+  votering står «For forslag 1 stemte 4: …» for hvert forslag. Enstemmige
+  vedtak har ingen navneliste. «Ikke til stede (1): …» står inne i
+  navnelisten, og noen ganger avgjøres det «med ordførers dobbeltstemme».
+  En votering uten stemmetall har ingen fasit og skal stoppes, ikke
+  registreres som 0 mot 0 (`tolk/tolk_protokoll.py`).
+- **Feil API-adresse gir 200, ikke 404.** Portalen svarer med appens forside
+  som HTML. Et svar som ikke er JSON, betyr feil adresse. Adressene i
+  `docs/02-api.md` merket «Fra koden» er ikke testet, og to av dem var feil.
+- **Medlemslisten har mobilnummer, e-post og kjønn.** Det lagres ikke
+  (`hent/hent_medlemmer.py`).
 - **Hoveddokumentet er ikke alltid et saksframlegg.** I referatsaker er det
   ofte et brev eller en protokoll fra andre. Bare dokumenter som starter med
   «SAKSFRAMLEGG», deles ved overskriftene (`tolk/saksframlegg.py`).
 - **Navnevarianter.** Samme person skrives ulikt i samme dokument, for
-  eksempel «Tor André Eide» og «Tor Andre Eide». Normaliseres i
-  `tolk/navn.py`.
+  eksempel «Tor André Eide» og «Tor Andre Eide». Oppmøtelisten bruker ofte
+  fullt navn der navnelistene i voteringene ikke gjør det, for eksempel
+  «Enok Askil Moe» og «Enok Moe». Normaliseres i `tolk/navn.py`.
+- **Oppmøtelisten og stemmene stemmer ikke alltid overens.** I 6 møter i
+  2026 stemmer noen som ikke står på oppmøtelisten, eller det er flere
+  stemmer enn frammøtte. Det står slik i protokollene. `tolk.bygg_oppmote`
+  flagger dem; slike voteringer publiseres ikke før det finnes en vurdering
+  i `data/vurderinger.json`. Sjekk bevisene med kode før du vurderer: hvem
+  som står på listen uten å stemme, partiet deres, og vedtak om permisjon og
+  fritak i sakene. Se `docs/03-datamodell.md`.
+- **Dagens medlemsliste beskriver ikke plassene tidligere i året.** Permisjon,
+  fritak og partibytte gjør at stemmer per parti ikke kan kontrolleres mot
+  dagens antall plasser. SP har for eksempel én stemme mer enn dagens faste
+  plasser i alle kommunestyremøtene i 2026.
 - **GitHub Actions utløser ikke seg selv.** En commit med standardtokenet
   starter ikke andre arbeidsflyter. Derfor én arbeidsflyt med tre jobber.
 
