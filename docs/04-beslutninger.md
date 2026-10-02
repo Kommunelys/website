@@ -252,3 +252,22 @@ Begge referatsakene i testen var slike.
   skannede dokumentet har 1 tegn per side, de korteste protokollene 82.
 - Vedlegg behandles som «annet hoveddokument» når de trengs, og JPEG hoppes
   over. Valget vurderes på nytt hvis vedleggene viser seg å være annerledes.
+
+---
+
+## ADR-014 — Kontaktopplysninger fra medlemslistene lagres ikke
+
+**Besluttet.** Unntak fra ADR-001.
+
+Medlemslisten fra portalen (`api/DmbMembers/GetByDmbBoard`) har mobilnummer,
+e-post og kjønn for hver folkevalgt, i tillegg til navn, parti og funksjon.
+ADR-001 sier at rå svar lagres urørt, og repoet er offentlig.
+
+Opplysningene er publisert av kommunen, men tjenesten trenger dem ikke, og
+folkevalgte omtales bare i sin rolle (CLAUDE.md regel 6). Et offentlig repo med
+alle mobilnumrene samlet og versjonert ville vært en ny og mer søkbar kopi.
+
+**Konsekvens:** `hent.hent_medlemmer` lagrer bare person-ID, navn, funksjon,
+parti og partinavn. Alle felter som tolkes, beholdes, så hensikten med
+ADR-001, å kunne tolke på nytt, er ivaretatt. Trengs et annet felt senere,
+hentes det fra da av; eldre versjoner av listen har det ikke.
