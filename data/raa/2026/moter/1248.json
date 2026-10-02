@@ -1,0 +1,709 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7864,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Orientering: Utbygginger og utbyggingsmuligheter på Sannan v/Hasle Gjerde",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7817,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-02-15T00:00:00",
+    "DocumentNumber": 193,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde",
+       "FileFormatId": "RA-PDF",
+       "Id": 758247,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Anmonding om å trekke innsigelse- KPA Steinkjer boligområde Kråkhaugen",
+       "FileFormatId": "RA-PDF",
+       "Id": 758248,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Ny vurdering - kommuneplan - Steinkjer kommune - kommuneplanens arealdel - 2024 - 2037 - boligom.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 758249,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 449259,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-02-23T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 14375,
+    "Title": "Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde"
+   },
+   "SequenceNumber": 12,
+   "SortOrder": 1,
+   "Title": "Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7839,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-02T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høring - forslag til midlertidig endring av Forskrift om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk - Steinkjer kommune - Trøndelag - under fotball-VM for herrer 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 762412,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder  og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag",
+       "FileFormatId": "RA-PDF",
+       "Id": 766983,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høring - forslag til midlertidig endring av forskrift om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag - under fotball-VM for herrer",
+       "FileFormatId": "RA-PDF",
+       "Id": 767014,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsnotat Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 766921,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 451891,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-02T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17000,
+    "Title": "Høring - forslag til midlertidig endring av Forskrift om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk - Steinkjer kommune - Trøndelag - under fotball-VM for herrer 2026"
+   },
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Høring - forslag til midlertidig endring av Forskrift om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk - Steinkjer kommune - Trøndelag - under fotball-VM for herrer 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7828,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-02-16T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringssaker pr. 10.02.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 759591,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 450163,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-02-23T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 15276,
+    "Title": "Høringssaker pr. 10.02.2026"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Høringssaker pr. 10.02.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 28,
+      "Name": "Forretningsutvalget",
+      "ShortCode": "FOR"
+     },
+     "Id": 7800,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 28,
+      "EndDate": "2026-02-25T16:00:00+01:00",
+      "Id": 1337,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Hilmar Alexandersen",
+      "StartDate": "2026-02-25T14:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1337,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 5,
+     "SortOrder": 1,
+     "Title": "Søknad om fritak fra folkevalgte verv - Anniken Bjørnes",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7802,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-03-25T21:00:00+01:00",
+      "Id": 1255,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-03-25T16:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1255,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 15,
+     "SortOrder": 3,
+     "Title": "Søknad om fritak fra folkevalgte verv - Anniken Bjørnes",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7801,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-28T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksfremlegg",
+       "FileFormatId": "RA-PDF",
+       "Id": 749285,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 441198,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-02-11T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 6317,
+    "Title": "Søknad om fritak fra folkevalgte verv - Anniken Bjørnes"
+   },
+   "SequenceNumber": 15,
+   "SortOrder": 2,
+   "Title": "Søknad om fritak fra folkevalgte verv - Anniken Bjørnes",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 28,
+      "Name": "Forretningsutvalget",
+      "ShortCode": "FOR"
+     },
+     "Id": 7682,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 28,
+      "EndDate": "2026-02-25T16:00:00+01:00",
+      "Id": 1337,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Hilmar Alexandersen",
+      "StartDate": "2026-02-25T14:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1337,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 4,
+     "SortOrder": 1,
+     "Title": "17. mai 2026 - Ny komite",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7674,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-17T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "17. mai 2026 - Ny komite",
+       "FileFormatId": "RA-PDF",
+       "Id": 738014,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Oversikt tidligere komiteer",
+       "FileFormatId": "RA-PDF",
+       "Id": 738057,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 433599,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2026-02-11T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 78136,
+    "Title": "17. mai 2026 - Ny komite"
+   },
+   "SequenceNumber": 16,
+   "SortOrder": 2,
+   "Title": "17. mai 2026 - Ny komite",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7843,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-03-05T14:15:00+01:00",
+    "Id": 1248,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1248,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Orientering fra ordfører og kommunedirektør",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 8,
+   "Name": "Formannskap",
+   "ShortCode": "FS"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 8,
+  "EndDate": "2026-03-05T14:15:00+01:00",
+  "Id": 1248,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5077,
+    "IsRestricted": false,
+    "MeetingId": 1248,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5080,
+    "IsRestricted": false,
+    "MeetingId": 1248,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 3,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-03-05T12:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1248,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-03-05T14:15:00",
+  "MO_START": "2026-03-05T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 8,
+  "UT_NAVN": "Formannskap"
+ }
+}

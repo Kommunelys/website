@@ -1,0 +1,814 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8430,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Trafikksikkerhet v/Stine Strand",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8552,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 9,
+   "SortOrder": 1,
+   "Title": "CRPD nettverket",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8556,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 10,
+   "SortOrder": 1,
+   "Title": "Orientering om arbeidet med sertifisering Likestilt arbeidsliv v/Susanne",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 35,
+      "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+      "ShortCode": "RÅFIM"
+     },
+     "Id": 8291,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 35,
+      "EndDate": "2026-06-03T14:15:00+02:00",
+      "Id": 1267,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Olve",
+      "StartDate": "2026-06-03T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1267,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 13,
+     "SortOrder": 1,
+     "Title": "Status for arbeidet med handlingsplanen - fast sak",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8550,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-02T00:00:00",
+    "DocumentNumber": 20,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Status for arbeidet med handlingsplanen - fast sak",
+       "FileFormatId": "RA-PDF",
+       "Id": 809917,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Handlingsplan RÅFIM konkretisering 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 809918,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 484734,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-02T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 49802,
+    "Title": "Status for arbeidet med handlingsplanen - fast sak"
+   },
+   "SequenceNumber": 17,
+   "SortOrder": 2,
+   "Title": "Status for arbeidet med handlingsplanen - fast sak",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8553,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 18,
+   "SortOrder": 1,
+   "Title": "Vedlikehold av kommunale boliger",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8486,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-11T00:00:00",
+    "DocumentNumber": 26,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Sak til RÅFIM fra dialogforum - råd og forslag til frivillige lag og organisasjoner som vil ha flere medlemmer og deltakere med innvandrerbakgrunn",
+       "FileFormatId": "RA-PDF",
+       "Id": 842676,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Råd og forslag til frivillige lag og organisasjoner som vil ha flere medlemmer og deltakere med innvandrerbakgrunn",
+       "FileFormatId": "RA-PDF",
+       "Id": 842677,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 507536,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-14T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Likestillingssenteret KUN v/Karin Hovde",
+    "Senders": [],
+    "SequenceNumber": 72564,
+    "Title": "Sak til RÅFIM fra dialogforum - råd og forslag til frivillige lag og organisasjoner som vil ha flere medlemmer og deltakere med innvandrerbakgrunn"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Sak til RÅFIM fra dialogforum - råd og forslag til frivillige lag og organisasjoner som vil ha flere medlemmer og deltakere med innvandrerbakgrunn",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8478,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-10T00:00:00",
+    "DocumentNumber": 25,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Najonaljubileet 2030 - kommunekomiteene (003).docx",
+       "FileFormatId": "RA-PDF",
+       "Id": 842186,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 507174,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-28T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Ffo Trøndelag",
+    "Senders": [],
+    "SequenceNumber": 72203,
+    "Title": "Nasjonaljubileet 2030 – tilgjengelighet for alle"
+   },
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Nasjonaljubileet 2030 – tilgjengelighet for alle",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8551,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-10T00:00:00",
+    "DocumentNumber": 21,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tilgjengelighet, inkludering og universell utforming ved leirskoleopphold",
+       "FileFormatId": "RA-PDF",
+       "Id": 842516,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 507405,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-28T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Funksjonshemmedes Fellesorganisasjon V/ Ina Myran Stavrum",
+    "Senders": [],
+    "SequenceNumber": 72433,
+    "Title": "Spørsmål om tilgjengelighet - inkludering og universell utforming ved leirskoleopphold"
+   },
+   "SequenceNumber": 16,
+   "SortOrder": 1,
+   "Title": "Spørsmål om tilgjengelighet - inkludering og universell utforming ved leirskoleopphold",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8549,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-21T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Svar på spørsmål om tilgjengelighet - inkludering og universell utforming ved leirskoleopphold",
+       "FileFormatId": "RA-PDF",
+       "Id": 844840,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 509016,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-24T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Funksjonshemmedes Fellesorganisasjon V/ Ina Myran Stavrum",
+    "Senders": [],
+    "SequenceNumber": 74039,
+    "Title": "Svar på spørsmål om tilgjengelighet - inkludering og universell utforming ved leirskoleopphold"
+   },
+   "SequenceNumber": 17,
+   "SortOrder": 1,
+   "Title": "Svar på spørsmål om tilgjengelighet - inkludering og universell utforming ved leirskoleopphold",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8540,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-23T00:00:00",
+    "DocumentNumber": 29,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Brev fra Steinkjer kommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 846992,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Planprogram for endring av kommuneplanens arealdel 2024-2037 - Høring med frist 5.11.2026.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 846993,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Planprogram for endring av kommuneplanens arealdel 2024-2037 - høring_offentlig ettersyn.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 846994,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Planprogram for forslag om endring av kommuneplanens arealdel 2024-2037 - høring_offentlig ettersyn.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 846995,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 510384,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-25T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Steinkjer Kommune",
+    "Senders": [],
+    "SequenceNumber": 75407,
+    "Title": "RÅFIM - Høring - planprogram for endring av kommuneplanens arealdel 2024 - 2037"
+   },
+   "SequenceNumber": 18,
+   "SortOrder": 1,
+   "Title": "RÅFIM - Høring - planprogram for endring av kommuneplanens arealdel 2024 - 2037",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 7765,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-10-12T15:00:00+02:00",
+    "Id": 1288,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-10-12T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1288,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 19,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 35,
+   "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+   "ShortCode": "RÅFIM"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 35,
+  "EndDate": "2026-10-12T15:00:00+02:00",
+  "Id": 1288,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5502,
+    "IsRestricted": false,
+    "MeetingId": 1288,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 6,
+  "MeetingRoom": "Olve",
+  "StartDate": "2026-10-12T12:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1288,
+  "MO_ROM": "Olve",
+  "MO_SLUTT": "2026-10-12T15:00:00",
+  "MO_START": "2026-10-12T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 35,
+  "UT_NAVN": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ }
+}

@@ -1,0 +1,286 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 13,
+    "Name": "Administrasjonsutvalget",
+    "ShortCode": "AD"
+   },
+   "Id": 8448,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 13,
+    "EndDate": "2026-09-24T10:30:00+02:00",
+    "Id": 1322,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-09-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1322,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-03T00:00:00",
+    "DocumentNumber": 17,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Sykefravær Steinkjer kommune 2. kvartal 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 839726,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 505567,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-03T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 70600,
+    "Title": "Sykefravær Steinkjer kommune 2. kvartal 2026"
+   },
+   "SequenceNumber": 6,
+   "SortOrder": 2,
+   "Title": "Sykefravær Steinkjer kommune 2. kvartal 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 13,
+    "Name": "Administrasjonsutvalget",
+    "ShortCode": "AD"
+   },
+   "Id": 8450,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 13,
+    "EndDate": "2026-09-24T10:30:00+02:00",
+    "Id": 1322,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-09-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1322,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-03T00:00:00",
+    "DocumentNumber": 18,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rapportering fra \"Forsterket innsats\" september 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 839727,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 505568,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-24T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 70601,
+    "Title": "Rapportering fra \"Forsterket innsats\" september 2026"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 2,
+   "Title": "Rapportering fra \"Forsterket innsats\" september 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 13,
+    "Name": "Administrasjonsutvalget",
+    "ShortCode": "AD"
+   },
+   "Id": 8505,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 13,
+    "EndDate": "2026-09-24T10:30:00+02:00",
+    "Id": 1322,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-09-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1322,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-21T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Status arbeid med kompetanse- og rekrutteringsstrategi",
+       "FileFormatId": "RA-PDF",
+       "Id": 844537,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 508781,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-21T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 73804,
+    "Title": "Status arbeid med kompetanse- og rekrutteringsstrategi"
+   },
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Status arbeid med kompetanse- og rekrutteringsstrategi",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 13,
+   "Name": "Administrasjonsutvalget",
+   "ShortCode": "AD"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 13,
+  "EndDate": "2026-09-24T10:30:00+02:00",
+  "Id": 1322,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5482,
+    "IsRestricted": false,
+    "MeetingId": 1322,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 5,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-09-24T08:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1322,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-09-24T10:30:00",
+  "MO_START": "2026-09-24T08:30:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 13,
+  "UT_NAVN": "Administrasjonsutvalget"
+ }
+}

@@ -1,0 +1,497 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7731,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-01-27T14:30:00+01:00",
+    "Id": 1231,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+    "MeetingNumber": 1,
+    "MeetingRoom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+    "StartDate": "2026-01-27T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1231,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-13T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Temaplan næring sluttrapport 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 744261,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Sluttrapport 2025 Temaplan næring",
+       "FileFormatId": "RA-PDF",
+       "Id": 744394,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 437572,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 2700,
+    "Title": "Temaplan næring sluttrapport 2025"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Temaplan næring sluttrapport 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7733,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-01-27T14:30:00+01:00",
+    "Id": 1231,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+    "MeetingNumber": 1,
+    "MeetingRoom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+    "StartDate": "2026-01-27T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1231,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-13T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Temaplan næring - Handlingsplan og budsjett 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 744266,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Handlingsplan og budsjett 2026 temaplan næring",
+       "FileFormatId": "RA-PDF",
+       "Id": 744267,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 437575,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 2703,
+    "Title": "Temaplan næring - Handlingsplan og budsjett 2026"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Temaplan næring - Handlingsplan og budsjett 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7601,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-01-27T14:30:00+01:00",
+    "Id": 1231,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+    "MeetingNumber": 1,
+    "MeetingRoom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+    "StartDate": "2026-01-27T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1231,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-08T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av fast eiendom - Deler av gnr/bnr 86/6 - Gunn Odlaug Skei og Oddvar Arne Austad",
+       "FileFormatId": "RA-PDF",
+       "Id": 726857,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad_0001",
+       "FileFormatId": "RA-PDF",
+       "Id": 726858,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kjøpekontrakt, deler av 86-6",
+       "FileFormatId": "RA-PDF",
+       "Id": 726859,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kart, 86-6",
+       "FileFormatId": "RA-PDF",
+       "Id": 726860,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 426654,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2026-01-12T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 71203,
+    "Title": "Søknad om konsesjon på erverv av fast eiendom - Deler av gnr/bnr 86/6 - Gunn Odlaug Skei og Oddvar Arne Austad"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Søknad om konsesjon på erverv av fast eiendom - Deler av gnr/bnr 86/6 - Gunn Odlaug Skei og Oddvar Arne Austad",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7673,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-01-27T14:30:00+01:00",
+    "Id": 1231,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+    "MeetingNumber": 1,
+    "MeetingRoom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+    "StartDate": "2026-01-27T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1231,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-15T00:00:00",
+    "DocumentNumber": 95,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Stadfestet vedtak etter klagebehandling - dispensasjon - klage - Steinkjer 7_6 - Kattbergstien 6.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 737056,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 433036,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2025-12-16T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Statsforvalteren I Trøndelag",
+    "Senders": [],
+    "SequenceNumber": 77575,
+    "Title": "Stadfestet vedtak etter klagebehandling - dispensasjon - klage - 7/6 - Kattbergstien 60 - avslag på søknad om dispensasjon for flytebrygge"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Stadfestet vedtak etter klagebehandling - dispensasjon - klage - 7/6 - Kattbergstien 60 - avslag på søknad om dispensasjon for flytebrygge",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7736,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-01-27T14:30:00+01:00",
+    "Id": 1231,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+    "MeetingNumber": 1,
+    "MeetingRoom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+    "StartDate": "2026-01-27T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1231,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-12T00:00:00",
+    "DocumentNumber": 59,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtak - settestatsforvalter - Trøndelag - byggesak - Steinkjer 457_39 - utebod og platting.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 744100,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 437507,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-12T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Statsforvaltaren I Møre Og Romsdal",
+    "Senders": [],
+    "SequenceNumber": 2635,
+    "Title": "Vedtak - settestatsforvalter - Trøndelag - byggesak - Steinkjer 457/39 - utebod og platting"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Vedtak - settestatsforvalter - Trøndelag - byggesak - Steinkjer 457/39 - utebod og platting",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 34,
+   "Name": "Hovedutvalg plan næring og miljø",
+   "ShortCode": "HPNM"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 34,
+  "EndDate": "2026-01-27T14:30:00+01:00",
+  "Id": 1231,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5005,
+    "IsRestricted": false,
+    "MeetingId": 1231,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5008,
+    "IsRestricted": false,
+    "MeetingId": 1231,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+  "MeetingNumber": 1,
+  "MeetingRoom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+  "StartDate": "2026-01-27T12:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1231,
+  "MO_ROM": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+  "MO_SLUTT": "2026-01-27T14:30:00",
+  "MO_START": "2026-01-27T12:00:00",
+  "MO_STED": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+  "Type": 4,
+  "UT_ID": 34,
+  "UT_NAVN": "Hovedutvalg plan næring og miljø"
+ }
+}

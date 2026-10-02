@@ -1,0 +1,995 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 28,
+      "Name": "Forretningsutvalget",
+      "ShortCode": "FOR"
+     },
+     "Id": 7691,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 28,
+      "EndDate": "0001-01-01T00:00:00+00:00",
+      "Id": 1241,
+      "MeetingDocuments": [],
+      "MeetingLocation": "E-postmøte",
+      "MeetingNumber": 1,
+      "MeetingRoom": "E-postmøte",
+      "StartDate": "2026-01-22T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1241,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 1,
+     "SortOrder": 1,
+     "Title": "Søknad om forlenget permisjon fra verv som folkevalgt 01.01.2026-30.06.2026 - Lill Marit Sandseter",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7693,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-02-04T21:00:00+01:00",
+      "Id": 1240,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-02-04T18:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1240,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 4,
+     "SortOrder": 3,
+     "Title": "Søknad om forlenget permisjon fra verv som folkevalgt 01.01.2026-30.06.2026 - Lill Marit Sandseter",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7692,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-19T00:00:00",
+    "DocumentNumber": 13,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om forlenget permisjon fra verv som folkevalgt 01.01.2026-30.06.2026 - Lill Marit Sandseter",
+       "FileFormatId": "RA-PDF",
+       "Id": 741656,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Søknad om forlenget midlertidig fritak (permisjon) fra politiske verv 01.07.2025 - 31.12.2025 - Lill Marit Sandseter",
+       "FileFormatId": "RA-PDF",
+       "Id": 743773,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 435969,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 1098,
+    "Title": "Søknad om forlenget permisjon fra verv som folkevalgt 01.01.2026-30.06.2026 - Lill Marit Sandseter"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 2,
+   "Title": "Søknad om forlenget permisjon fra verv som folkevalgt 01.01.2026-30.06.2026 - Lill Marit Sandseter",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7701,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-02-04T21:00:00+01:00",
+      "Id": 1240,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-02-04T18:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1240,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 3,
+     "SortOrder": 2,
+     "Title": "Innherredsbyen - utvikling og drift av partnerskap - også etter 2027",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7700,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-08T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Innherredsbyen - utvikling og drift av partnerskap - også etter 2027",
+       "FileFormatId": "RA-PDF",
+       "Id": 742464,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Satsingen Innherredsbyen - videre utvikling og drift av partnerskapet , også etter 2027.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 742465,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Satsingen Innherredsbyen og videre utvikling og drift av partnerskapet- også etter 2027.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 742466,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 436472,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-13T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 1601,
+    "Title": "Innherredsbyen - utvikling og drift av partnerskap - også etter 2027"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Innherredsbyen - utvikling og drift av partnerskap - også etter 2027",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7741,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-02-04T21:00:00+01:00",
+      "Id": 1240,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-02-04T18:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1240,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 2,
+     "SortOrder": 2,
+     "Title": "Bruk av utviklingsmidler NTE-utbytte januar 2026",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7740,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-14T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Bruk av utviklingsmidler NTE-utbytte januar 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 745228,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026 kort søknad Fliring scene universell utforming",
+       "FileFormatId": "RA-PDF",
+       "Id": 745229,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026 Steinkjer Håndballklubb Søknad Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 745231,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026 Søknad GameOut NTE utbyttet og kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 745232,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026 Budsjett GameOut 2026-28 v3",
+       "FileFormatId": "RA-PDF",
+       "Id": 745233,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 438190,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-15T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 3313,
+    "Title": "Bruk av utviklingsmidler NTE-utbytte januar 2026"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Bruk av utviklingsmidler NTE-utbytte januar 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 7776,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-01-28T12:15:00+01:00",
+      "Id": 1233,
+      "MeetingDocuments": [],
+      "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+      "StartDate": "2026-01-28T09:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1233,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 1,
+     "SortOrder": 1,
+     "Title": "Avgrensninger ungdomsskoleutredning",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7777,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-21T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avgrensninger ungdomsskoleutredning",
+       "FileFormatId": "RA-PDF",
+       "Id": 748386,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 440623,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-21T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 5745,
+    "Title": "Avgrensninger ungdomsskoleutredning"
+   },
+   "SequenceNumber": 4,
+   "SortOrder": 2,
+   "Title": "Avgrensninger ungdomsskoleutredning",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7811,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Høringsuttalelse grunnrentebeskatning småkraftverk",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7812,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 6,
+   "SortOrder": 1,
+   "Title": "Forslag om å få en sak om EL-sykkelutleie i Steinkjer kommune",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7813,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1230,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Forslag om få en sak om å sette ned komite 1000-årsjubileet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7683,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1230,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-05T00:00:00",
+    "DocumentNumber": 16,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Ordførerfullmakt  10-25",
+       "FileFormatId": "RA-PDF",
+       "Id": 740838,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 435418,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-05T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Formannskapet",
+    "Senders": [],
+    "SequenceNumber": 548,
+    "Title": "Ordførerfullmakt 10-25"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Ordførerfullmakt 10-25",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7734,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1230,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-13T00:00:00",
+    "DocumentNumber": 17,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Ordførerfullmakt  11-25",
+       "FileFormatId": "RA-PDF",
+       "Id": 744411,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 437683,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-13T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Formannskapet",
+    "Senders": [],
+    "SequenceNumber": 2811,
+    "Title": "Ordførerfullmakt 11-25"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Ordførerfullmakt 11-25",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 7735,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-01-29T15:45:00+01:00",
+    "Id": 1230,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-01-29T12:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1230,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-13T00:00:00",
+    "DocumentNumber": 18,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Ordførerfullmakt  12-25",
+       "FileFormatId": "RA-PDF",
+       "Id": 744421,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 437693,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-13T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Formannskapet",
+    "Senders": [],
+    "SequenceNumber": 2821,
+    "Title": "Ordførerfullmakt 12-25"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Ordførerfullmakt 12-25",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 8,
+   "Name": "Formannskap",
+   "ShortCode": "FS"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 8,
+  "EndDate": "2026-01-29T15:45:00+01:00",
+  "Id": 1230,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 4995,
+    "IsRestricted": false,
+    "MeetingId": 1230,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 4998,
+    "IsRestricted": false,
+    "MeetingId": 1230,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 1,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-01-29T12:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1230,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-01-29T15:45:00",
+  "MO_START": "2026-01-29T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 8,
+  "UT_NAVN": "Formannskap"
+ }
+}

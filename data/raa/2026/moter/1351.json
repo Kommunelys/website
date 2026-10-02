@@ -1,0 +1,129 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7984,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-04-28T12:30:00+02:00",
+    "Id": 1351,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Malm samfunnshus",
+    "MeetingNumber": 5,
+    "MeetingRoom": null,
+    "StartDate": "2026-04-28T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1351,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-14T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsuttalelse – Kommuneplanens arealdel 2024-2037 – Endring av bestemmelse 14.2.1 c tilknyttet Kråkhaugen boligområde",
+       "FileFormatId": "RA-PDF",
+       "Id": 778659,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 462912,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 28009,
+    "Title": "Høringsuttalelse – Kommuneplanens arealdel 2024-2037 – Endring av bestemmelse 14.2.1 c tilknyttet Kråkhaugen boligområde"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Høringsuttalelse – Kommuneplanens arealdel 2024-2037 – Endring av bestemmelse 14.2.1 c tilknyttet Kråkhaugen boligområde",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 9,
+   "Name": "Trafikksikkerhetsutvalget",
+   "ShortCode": "KTU"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 9,
+  "EndDate": "2026-04-28T12:30:00+02:00",
+  "Id": 1351,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5195,
+    "IsRestricted": false,
+    "MeetingId": 1351,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5198,
+    "IsRestricted": false,
+    "MeetingId": 1351,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Malm samfunnshus",
+  "MeetingNumber": 5,
+  "MeetingRoom": null,
+  "StartDate": "2026-04-28T12:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1351,
+  "MO_ROM": null,
+  "MO_SLUTT": "2026-04-28T12:30:00",
+  "MO_START": "2026-04-28T12:00:00",
+  "MO_STED": "Malm samfunnshus",
+  "Type": 4,
+  "UT_ID": 9,
+  "UT_NAVN": "Trafikksikkerhetsutvalget"
+ }
+}

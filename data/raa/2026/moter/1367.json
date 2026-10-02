@@ -1,0 +1,296 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 25,
+    "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+    "ShortCode": "SSKO"
+   },
+   "Id": 8434,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 25,
+    "EndDate": "2026-09-10T16:00:00+02:00",
+    "Id": 1367,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Laura Kieler, 5.etasje",
+    "StartDate": "2026-09-10T14:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1367,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 9,
+   "SortOrder": 1,
+   "Title": "Godkjenning av møteprotokoll fra styremøte 16.06.26",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 25,
+    "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+    "ShortCode": "SSKO"
+   },
+   "Id": 8433,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 25,
+    "EndDate": "2026-09-10T16:00:00+02:00",
+    "Id": 1367,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Laura Kieler, 5.etasje",
+    "StartDate": "2026-09-10T14:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1367,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-31T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Regnskapsrapport pr 31.08.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 838532,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Regnskapsrapport pr 31.08.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 838531,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 504823,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-31T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 69858,
+    "Title": "Regnskapsrapport pr 31.08.26"
+   },
+   "SequenceNumber": 10,
+   "SortOrder": 1,
+   "Title": "Regnskapsrapport pr 31.08.26",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 25,
+    "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+    "ShortCode": "SSKO"
+   },
+   "Id": 8432,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 25,
+    "EndDate": "2026-09-10T16:00:00+02:00",
+    "Id": 1367,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Laura Kieler, 5.etasje",
+    "StartDate": "2026-09-10T14:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1367,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-31T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kjøp skogsmark fra Anton Husby",
+       "FileFormatId": "RA-PDF",
+       "Id": 838544,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kart 1-10000",
+       "FileFormatId": "RA-PDF",
+       "Id": 838545,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kart 1-50000",
+       "FileFormatId": "RA-PDF",
+       "Id": 838546,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kjøp av skogsmark - Anton Husby",
+       "FileFormatId": "RA-PDF",
+       "Id": 838547,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 504831,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-31T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 69866,
+    "Title": "Søknad om kjøp skogsmark fra Anton Husby"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Søknad om kjøp skogsmark fra Anton Husby",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 25,
+   "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+   "ShortCode": "SSKO"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 25,
+  "EndDate": "2026-09-10T16:00:00+02:00",
+  "Id": 1367,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5455,
+    "IsRestricted": false,
+    "MeetingId": 1367,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5458,
+    "IsRestricted": false,
+    "MeetingId": 1367,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 4,
+  "MeetingRoom": "Laura Kieler, 5.etasje",
+  "StartDate": "2026-09-10T14:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1367,
+  "MO_ROM": "Laura Kieler, 5.etasje",
+  "MO_SLUTT": "2026-09-10T16:00:00",
+  "MO_START": "2026-09-10T14:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 25,
+  "UT_NAVN": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+ }
+}

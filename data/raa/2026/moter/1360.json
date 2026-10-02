@@ -1,0 +1,421 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8319,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Godkjenning av innkalling og sakliste",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8320,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Godkjenning av referat fra 30. møte 12.05.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8321,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 16,
+   "SortOrder": 1,
+   "Title": "Videreføring av pkt. 4 i 29. møte «Tildeling av NTE-midler fra Steinkjer kommune til bilderammer, beløp NOK 48.000».",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8322,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 17,
+   "SortOrder": 1,
+   "Title": "4. Mulige gjesteutstillere i Galleri Widegren. Det har kommet flere forslag til fremtidige gjesteutstillere. Det er også forslag om utstilling med arbeider av Olaf Waade.Nylig kom det forslag på Lotte Damaas Åsland, 16-17 år fra Malm.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8323,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 18,
+   "SortOrder": 1,
+   "Title": "Status Eplene i Messehagen – Hva gjenstår å gjøre? Henry orienterer.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8324,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 19,
+   "SortOrder": 1,
+   "Title": "Utstilling av elevarbeider til høsten - separat sak i forhold til gjesteutstillinger. Dette anses som en fin mulighet til å gjøre Viktor Widegren kjent ved å trekke folk til galleriet. Ingrid Blekastad orienterer",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8325,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 20,
+   "SortOrder": 1,
+   "Title": "Mulighet for å låne Widegren-bilder i privat eie i 3-6 måneder, eventuelt mer, til utstilling i galleriet sommeren 2026 og ut september. Oppfølging fra møte 30 den 12.05.2026.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8326,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 21,
+   "SortOrder": 1,
+   "Title": "Utlånte bilder– Status. Skjebnen til legekontoret er kanskje avgjort, men nå har næringslivet engasjert seg i saken. Mitt forslag er likevel at vi skal hente tilbake bildene før sommeren og beholde dem i hvert fall til over Eplene i Messehagen 2026.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 8327,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1360,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-19T13:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1360,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 22,
+   "SortOrder": 1,
+   "Title": "Eventuelt. Og neste møte",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 37,
+   "Name": "Utvalg Galleri Widegren",
+   "ShortCode": "UGW"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 37,
+  "EndDate": "0001-01-01T00:00:00+00:00",
+  "Id": 1360,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5375,
+    "IsRestricted": false,
+    "MeetingId": 1360,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Galleriet/Teams",
+  "MeetingNumber": 4,
+  "MeetingRoom": null,
+  "StartDate": "2026-06-19T13:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1360,
+  "MO_ROM": null,
+  "MO_SLUTT": null,
+  "MO_START": "2026-06-19T13:00:00",
+  "MO_STED": "Galleriet/Teams",
+  "Type": 4,
+  "UT_ID": 37,
+  "UT_NAVN": "Utvalg Galleri Widegren"
+ }
+}

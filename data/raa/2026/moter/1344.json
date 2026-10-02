@@ -1,0 +1,890 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8034,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Orientering - gangbru Bane Nor",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8035,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Orientering - dagsturhytta",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8036,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Orientering - Malm industripark",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7951,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-14T00:00:00",
+    "DocumentNumber": 73,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Reguleringsendring (detaljregulering) Områdeplan Sørsia Bydel 1.B4 - Kongensgate 42 - 1. gangs behandling.",
+       "FileFormatId": "RA-PDF",
+       "Id": 770071,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 456454,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 21553,
+    "Title": "Reguleringsendring (detaljregulering) Områdeplan Sørsia Bydel 1.B4 - Kongensgate 42 - 1. gangs behandling."
+   },
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Reguleringsendring (detaljregulering) Områdeplan Sørsia Bydel 1.B4 - Kongensgate 42 - 1. gangs behandling.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7838,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-08T00:00:00",
+    "DocumentNumber": 74,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Reguleringsplan (detaljregulering) Heggevegen 34. Offentlig ettersyn",
+       "FileFormatId": "RA-PDF",
+       "Id": 762393,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 451877,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 16986,
+    "Title": "Reguleringsplan (detaljregulering) Heggevegen 34. Offentlig ettersyn"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Reguleringsplan (detaljregulering) Heggevegen 34. Offentlig ettersyn",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8019,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-14T00:00:00",
+    "DocumentNumber": 88,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Utbyggingsavtale Heggevegen 34 - utlegging til offentlig ettersyn",
+       "FileFormatId": "RA-PDF",
+       "Id": 784341,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forslag til utbyggingsavtale Heggevegen 34",
+       "FileFormatId": "RA-PDF",
+       "Id": 785593,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 466663,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 31756,
+    "Title": "Utbyggingsavtale Heggevegen 34 - utlegging til offentlig ettersyn"
+   },
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Utbyggingsavtale Heggevegen 34 - utlegging til offentlig ettersyn",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8028,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-14T00:00:00",
+    "DocumentNumber": 7,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Malm industripark- finansiering av arbeid med innsigelser samt advokatbistand til grunneier",
+       "FileFormatId": "RA-PDF",
+       "Id": 785921,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 467589,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-17T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 32680,
+    "Title": "Malm industripark- finansiering av arbeid med innsigelser samt advokatbistand til grunneier"
+   },
+   "SequenceNumber": 16,
+   "SortOrder": 1,
+   "Title": "Malm industripark- finansiering av arbeid med innsigelser samt advokatbistand til grunneier",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8021,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-14T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 75/4 og 76/5 - Knut Kåre Tangen Valstad",
+       "FileFormatId": "RA-PDF",
+       "Id": 784526,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kjøpekontrakt - Knut Kåre Tangen Valstad",
+       "FileFormatId": "RA-PDF",
+       "Id": 784527,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon - Knut Kåre Tangen Valstad",
+       "FileFormatId": "RA-PDF",
+       "Id": 784528,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 466749,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 31842,
+    "Title": "Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 75/4 og 76/5 - Knut Kåre Tangen Valstad"
+   },
+   "SequenceNumber": 17,
+   "SortOrder": 1,
+   "Title": "Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 75/4 og 76/5 - Knut Kåre Tangen Valstad",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8003,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-08T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 290/11, 299/2 og 299/5 - Geir Kjartan Stokke",
+       "FileFormatId": "RA-PDF",
+       "Id": 781070,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kjøpekontrakt - Geir Kjartan Stokke",
+       "FileFormatId": "RA-PDF",
+       "Id": 781071,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon - Geir Kjartan Stokke",
+       "FileFormatId": "RA-PDF",
+       "Id": 781072,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 464636,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 29732,
+    "Title": "Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 290/11, 299/2 og 299/5 - Geir Kjartan Stokke"
+   },
+   "SequenceNumber": 18,
+   "SortOrder": 1,
+   "Title": "Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 290/11, 299/2 og 299/5 - Geir Kjartan Stokke",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8000,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1344,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-08T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Oppstart av navnesak for park - Sverdrupparken",
+       "FileFormatId": "RA-PDF",
+       "Id": 780820,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Foreningen Game Steinkjer - Etablering av Sverdrupparken - Brev 03032025",
+       "FileFormatId": "RA-PDF",
+       "Id": 780821,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "OttoSverdrupResyme",
+       "FileFormatId": "RA-PDF",
+       "Id": 780822,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 464490,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-14T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 29586,
+    "Title": "Oppstart av navnesak for park - Sverdrupparken"
+   },
+   "SequenceNumber": 19,
+   "SortOrder": 1,
+   "Title": "Oppstart av navnesak for park - Sverdrupparken",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7968,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-04-28T13:15:00+02:00",
+    "Id": 1344,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+    "StartDate": "2026-04-28T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1344,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-12T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avslutning av forvaltningskontroll - tilskudd til spesielle miljøtiltak i jordbruket (SMIL) - St.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 773744,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 459030,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-13T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Statsforvalteren I Trøndelag",
+    "Senders": [],
+    "SequenceNumber": 24130,
+    "Title": "Avslutning av forvaltningskontroll - tilskudd til spesielle miljøtiltak i jordbruket - SMIL"
+   },
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Avslutning av forvaltningskontroll - tilskudd til spesielle miljøtiltak i jordbruket - SMIL",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 34,
+   "Name": "Hovedutvalg plan næring og miljø",
+   "ShortCode": "HPNM"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 34,
+  "EndDate": "2026-04-28T13:15:00+02:00",
+  "Id": 1344,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5190,
+    "IsRestricted": false,
+    "MeetingId": 1344,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5193,
+    "IsRestricted": false,
+    "MeetingId": 1344,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Bergmannsparken/Malm samfunnshus",
+  "MeetingNumber": 9,
+  "MeetingRoom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+  "StartDate": "2026-04-28T10:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1344,
+  "MO_ROM": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+  "MO_SLUTT": "2026-04-28T13:15:00",
+  "MO_START": "2026-04-28T10:00:00",
+  "MO_STED": "Bergmannsparken/Malm samfunnshus",
+  "Type": 4,
+  "UT_ID": 34,
+  "UT_NAVN": "Hovedutvalg plan næring og miljø"
+ }
+}

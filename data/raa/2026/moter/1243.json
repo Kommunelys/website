@@ -1,0 +1,262 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7742,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-01-20T19:00:00+01:00",
+    "Id": 1243,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg.",
+    "StartDate": "2026-01-20T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1243,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Godkjenning av protokoll og sakliste",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7747,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-01-20T19:00:00+01:00",
+    "Id": 1243,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg.",
+    "StartDate": "2026-01-20T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1243,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Ny kommunedirektør ønsker å hilse på ungdomsrådet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7744,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-01-20T19:00:00+01:00",
+    "Id": 1243,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg.",
+    "StartDate": "2026-01-20T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1243,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Ely Navarro fra Hilmarfestivalen ønsker å presentere flerkulturelt myldrearrangement, men også råd om hvordan de kan involvere flere ungdommer og aktiviteter på flerkulturelt myldrearrangement",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7745,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-01-20T19:00:00+01:00",
+    "Id": 1243,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg.",
+    "StartDate": "2026-01-20T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1243,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "UKM lokal og regional - Erfaringer fra 2025 - Bidrag fra ungdomsrådet i 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7746,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-01-20T19:00:00+01:00",
+    "Id": 1243,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg.",
+    "StartDate": "2026-01-20T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1243,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 36,
+   "Name": "Ungdomsrådet",
+   "ShortCode": "UNGRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 36,
+  "EndDate": "2026-01-20T19:00:00+01:00",
+  "Id": 1243,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5015,
+    "IsRestricted": false,
+    "MeetingId": 1243,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5018,
+    "IsRestricted": false,
+    "MeetingId": 1243,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 1,
+  "MeetingRoom": "Sigrid Toresdatter, 2. etg.",
+  "StartDate": "2026-01-20T17:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1243,
+  "MO_ROM": "Sigrid Toresdatter, 2. etg.",
+  "MO_SLUTT": "2026-01-20T19:00:00",
+  "MO_START": "2026-01-20T17:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 36,
+  "UT_NAVN": "Ungdomsrådet"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "behandlinger": [],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 18,
+   "Name": "Eldrerådet",
+   "ShortCode": "ELRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 18,
+  "EndDate": "2026-05-13T15:00:00+02:00",
+  "Id": 1352,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5185,
+    "IsRestricted": false,
+    "MeetingId": 1352,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 9,
+  "MeetingRoom": "Sigrid Toresdatter 2. etg",
+  "StartDate": "2026-05-13T12:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1352,
+  "MO_ROM": "Sigrid Toresdatter 2. etg",
+  "MO_SLUTT": "2026-05-13T15:00:00",
+  "MO_START": "2026-05-13T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 18,
+  "UT_NAVN": "Eldrerådet"
+ }
+}

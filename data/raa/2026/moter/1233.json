@@ -1,0 +1,467 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 7777,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-01-29T15:45:00+01:00",
+      "Id": 1230,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-01-29T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1230,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 4,
+     "SortOrder": 2,
+     "Title": "Avgrensninger ungdomsskoleutredning",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7776,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-01-28T12:15:00+01:00",
+    "Id": 1233,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+    "StartDate": "2026-01-28T09:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1233,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-01-21T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avgrensninger ungdomsskoleutredning",
+       "FileFormatId": "RA-PDF",
+       "Id": 748386,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 440623,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-01-21T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 5745,
+    "Title": "Avgrensninger ungdomsskoleutredning"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Avgrensninger ungdomsskoleutredning",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7656,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-01-28T12:15:00+01:00",
+    "Id": 1233,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+    "StartDate": "2026-01-28T09:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1233,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-18T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat SU 13.11.2025 Binde skole",
+       "FileFormatId": "RA-PDF",
+       "Id": 727182,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 426843,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2025-12-22T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Medlemer i SU Binde skole",
+    "Senders": [],
+    "SequenceNumber": 71392,
+    "Title": "Referat SU møte Binde skole 13.11.2025"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Referat SU møte Binde skole 13.11.2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7676,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-01-28T12:15:00+01:00",
+    "Id": 1233,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+    "StartDate": "2026-01-28T09:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1233,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-18T00:00:00",
+    "DocumentNumber": 23,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Møteprotokoll 11.12.25 - SU Lø barnehage",
+       "FileFormatId": "RA-PDF",
+       "Id": 737397,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 433240,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2025-12-18T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Hovedutvalg oppvekst og kultur",
+    "Senders": [],
+    "SequenceNumber": 77778,
+    "Title": "Møteprotokoll 11.12.25 - SU Lø barnehage"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Møteprotokoll 11.12.25 - SU Lø barnehage",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7649,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-01-28T12:15:00+01:00",
+    "Id": 1233,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+    "StartDate": "2026-01-28T09:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1233,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-05T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "SU referat 04.12.25",
+       "FileFormatId": "RA-PDF",
+       "Id": 734154,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 431319,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2025-12-05T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Foresatte m.fl.",
+    "Senders": [],
+    "SequenceNumber": 75861,
+    "Title": "Referat fra SU møte Henning skole 04.12.25"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Referat fra SU møte Henning skole 04.12.25",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7677,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-01-28T12:15:00+01:00",
+    "Id": 1233,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+    "StartDate": "2026-01-28T09:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1233,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-18T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat SU 09.12.2025 Binde skole",
+       "FileFormatId": "RA-PDF",
+       "Id": 738360,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 433827,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2025-12-22T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Medlemmer i SU Binde skole",
+    "Senders": [],
+    "SequenceNumber": 78363,
+    "Title": "Referat SU møte Binde skole 09.12.2025"
+   },
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Referat SU møte Binde skole 09.12.2025",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 4,
+   "Name": "Hovedutvalg oppvekst og kultur",
+   "ShortCode": "HOK"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 4,
+  "EndDate": "2026-01-28T12:15:00+01:00",
+  "Id": 1233,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5000,
+    "IsRestricted": false,
+    "MeetingId": 1233,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+  "MeetingNumber": 1,
+  "MeetingRoom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+  "StartDate": "2026-01-28T09:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1233,
+  "MO_ROM": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+  "MO_SLUTT": "2026-01-28T12:15:00",
+  "MO_START": "2026-01-28T09:00:00",
+  "MO_STED": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 4,
+  "UT_NAVN": "Hovedutvalg oppvekst og kultur"
+ }
+}

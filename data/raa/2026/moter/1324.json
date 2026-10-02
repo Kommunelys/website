@@ -1,0 +1,32 @@
+{
+ "behandlinger": [],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 13,
+   "Name": "Administrasjonsutvalget",
+   "ShortCode": "AD"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 13,
+  "EndDate": "2026-12-10T10:30:00+01:00",
+  "Id": 1324,
+  "MeetingDocuments": [],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 7,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-12-10T08:30:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1324,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-12-10T10:30:00",
+  "MO_START": "2026-12-10T08:30:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 13,
+  "UT_NAVN": "Administrasjonsutvalget"
+ }
+}

@@ -1,0 +1,183 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 25,
+    "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+    "ShortCode": "SSKO"
+   },
+   "Id": 8296,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 25,
+    "EndDate": "2026-06-16T15:30:00+02:00",
+    "Id": 1359,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Lia, Steinkjer skistadion",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-16T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1359,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Godkjenning av møteprotokoll fra styremøte 23.03.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 25,
+    "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+    "ShortCode": "SSKO"
+   },
+   "Id": 8295,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 25,
+    "EndDate": "2026-06-16T15:30:00+02:00",
+    "Id": 1359,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Lia, Steinkjer skistadion",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-16T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1359,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-05T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Regnskapsrapport pr. 05.06.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 811166,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Økonomirapport pr. 05.06.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 811167,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 485502,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-08T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 50567,
+    "Title": "Regnskapsrapport pr. 05.06.26"
+   },
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Regnskapsrapport pr. 05.06.26",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 25,
+   "Name": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF",
+   "ShortCode": "SSKO"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 25,
+  "EndDate": "2026-06-16T15:30:00+02:00",
+  "Id": 1359,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5350,
+    "IsRestricted": false,
+    "MeetingId": 1359,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5353,
+    "IsRestricted": false,
+    "MeetingId": 1359,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Lia, Steinkjer skistadion",
+  "MeetingNumber": 3,
+  "MeetingRoom": null,
+  "StartDate": "2026-06-16T08:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1359,
+  "MO_ROM": null,
+  "MO_SLUTT": "2026-06-16T15:30:00",
+  "MO_START": "2026-06-16T08:30:00",
+  "MO_STED": "Lia, Steinkjer skistadion",
+  "Type": 4,
+  "UT_ID": 25,
+  "UT_NAVN": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+ }
+}

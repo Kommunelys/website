@@ -1,0 +1,5 @@
+# Innhenting og tolkning trenger ingenting utover Python 3.11+.
+# PDF-tekst krever poppler-utils (pdftotext, pdfinfo) på systemet.
+
+# Fase 2: AI-analyse
+anthropic>=0.40

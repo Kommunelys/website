@@ -1,0 +1,260 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8238,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-06-22T13:45:00+02:00",
+    "Id": 1361,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 10,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-22T12:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1361,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-17T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Behov for oppdatert kunnskapsgrunnlag- persontransportreiser mellom Innherred og Trondheimsområdet",
+       "FileFormatId": "RA-PDF",
+       "Id": 806934,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 482869,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-17T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 47940,
+    "Title": "Behov for oppdatert kunnskapsgrunnlag- persontransportreiser mellom Innherred og Trondheimsområdet"
+   },
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Behov for oppdatert kunnskapsgrunnlag- persontransportreiser mellom Innherred og Trondheimsområdet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8145,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-06-22T13:45:00+02:00",
+    "Id": 1361,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 10,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-22T12:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1361,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-17T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høring - regional plan for samferdsel 2026-2038",
+       "FileFormatId": "RA-PDF",
+       "Id": 802870,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Utkast til ny Regional plan for samferdsel",
+       "FileFormatId": "RA-PDF",
+       "Id": 802871,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 480511,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-17T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 45589,
+    "Title": "Høring - regional plan for samferdsel 2026-2038"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Høring - regional plan for samferdsel 2026-2038",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8332,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-06-22T13:45:00+02:00",
+    "Id": 1361,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 10,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-22T12:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1361,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 29,
+   "Name": "Arbeidsutvalg Innherred regionråd",
+   "ShortCode": "AUINR"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 29,
+  "EndDate": "2026-06-22T13:45:00+02:00",
+  "Id": 1361,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5380,
+    "IsRestricted": false,
+    "MeetingId": 1361,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5383,
+    "IsRestricted": false,
+    "MeetingId": 1361,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 10,
+  "MeetingRoom": "Olve",
+  "StartDate": "2026-06-22T12:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1361,
+  "MO_ROM": "Olve",
+  "MO_SLUTT": "2026-06-22T13:45:00",
+  "MO_START": "2026-06-22T12:30:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 29,
+  "UT_NAVN": "Arbeidsutvalg Innherred regionråd"
+ }
+}

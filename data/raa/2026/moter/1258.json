@@ -1,0 +1,400 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 29,
+      "Name": "Arbeidsutvalg Innherred regionråd",
+      "ShortCode": "AUINR"
+     },
+     "Id": 7957,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 29,
+      "EndDate": "2026-03-23T11:00:00+01:00",
+      "Id": 1349,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 9,
+      "MeetingRoom": "Olve",
+      "StartDate": "2026-03-23T08:30:00+01:00"
+     },
+     "MeetingCaseTypeId": "RS",
+     "MeetingId": 1349,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 1,
+     "SortOrder": 1,
+     "Title": "Billettpriser på tog Innherred og presentasjon av Innherredsbyen - forespørsel om møte med politisk ledelse",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 27,
+    "Name": "Innherred regionråd",
+    "ShortCode": "INR"
+   },
+   "Id": 7958,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 27,
+    "EndDate": "2026-05-04T15:00:00+02:00",
+    "Id": 1258,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Snåsa herredshus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Kommunestyresalen",
+    "StartDate": "2026-05-04T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1258,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-09T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Billettpriser på tog Innherred og presentasjon av Innherredsbyen - forespørsel om møte med politisk ledelse",
+       "FileFormatId": "RA-PDF",
+       "Id": 770626,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 456671,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-12T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "SAMFERDSELSDEPARTEMENTET",
+    "Senders": [],
+    "SequenceNumber": 21770,
+    "Title": "Billettpriser på tog Innherred og presentasjon av Innherredsbyen - forespørsel om møte med politisk ledelse"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 2,
+   "Title": "Billettpriser på tog Innherred og presentasjon av Innherredsbyen - forespørsel om møte med politisk ledelse",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 27,
+    "Name": "Innherred regionråd",
+    "ShortCode": "INR"
+   },
+   "Id": 8022,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 27,
+    "EndDate": "2026-05-04T15:00:00+02:00",
+    "Id": 1258,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Snåsa herredshus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Kommunestyresalen",
+    "StartDate": "2026-05-04T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1258,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 7,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Innherredsbyen - ny prosjektperiode 2028-2031, partnerskapsavtale",
+       "FileFormatId": "RA-PDF",
+       "Id": 784671,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Partnerskapsavtale 2028-2031",
+       "FileFormatId": "RA-PDF",
+       "Id": 784994,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Aktivitetsoversikt og Innherredsbyen som samarbeidsarena",
+       "FileFormatId": "RA-PDF",
+       "Id": 791055,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 466829,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 31922,
+    "Title": "Innherredsbyen - ny prosjektperiode 2028-2031, partnerskapsavtale"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Innherredsbyen - ny prosjektperiode 2028-2031, partnerskapsavtale",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 27,
+    "Name": "Innherred regionråd",
+    "ShortCode": "INR"
+   },
+   "Id": 8025,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 27,
+    "EndDate": "2026-05-04T15:00:00+02:00",
+    "Id": 1258,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Snåsa herredshus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Kommunestyresalen",
+    "StartDate": "2026-05-04T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1258,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Innherredsbyen - vedtak om nullvekstmål",
+       "FileFormatId": "RA-PDF",
+       "Id": 784977,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Grunnlagsdokument nullvekstmål Innherredsbyen",
+       "FileFormatId": "RA-PDF",
+       "Id": 791056,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 467024,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 32117,
+    "Title": "Innherredsbyen - vedtak om nullvekstmål"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Innherredsbyen - vedtak om nullvekstmål",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 27,
+    "Name": "Innherred regionråd",
+    "ShortCode": "INR"
+   },
+   "Id": 8100,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 27,
+    "EndDate": "2026-05-04T15:00:00+02:00",
+    "Id": 1258,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Snåsa herredshus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Kommunestyresalen",
+    "StartDate": "2026-05-04T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1258,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Orientering om tilbudsstruktur videregående opplæring v/Trøndelag fylkeskommune (på Teams)",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 27,
+   "Name": "Innherred regionråd",
+   "ShortCode": "INR"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 27,
+  "EndDate": "2026-05-04T15:00:00+02:00",
+  "Id": 1258,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5231,
+    "IsRestricted": false,
+    "MeetingId": 1258,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5234,
+    "IsRestricted": false,
+    "MeetingId": 1258,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Snåsa herredshus",
+  "MeetingNumber": 1,
+  "MeetingRoom": "Kommunestyresalen",
+  "StartDate": "2026-05-04T10:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1258,
+  "MO_ROM": "Kommunestyresalen",
+  "MO_SLUTT": "2026-05-04T15:00:00",
+  "MO_START": "2026-05-04T10:00:00",
+  "MO_STED": "Snåsa herredshus",
+  "Type": 4,
+  "UT_ID": 27,
+  "UT_NAVN": "Innherred regionråd"
+ }
+}

@@ -1,0 +1,204 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 31,
+      "Name": "Styre for Steinkjerbygg KF",
+      "ShortCode": "SSBY"
+     },
+     "Id": 7988,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 31,
+      "EndDate": "2026-03-25T15:00:00+01:00",
+      "Id": 1350,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": null,
+      "StartDate": "2026-03-25T13:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1350,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 3,
+     "SortOrder": 1,
+     "Title": "Steinkjerbygg KF - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 15,
+    "Name": "Foretaksmøte Steinkjerbygg KF",
+    "ShortCode": "FSB"
+   },
+   "Id": 7992,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 15,
+    "EndDate": "2026-06-17T18:00:00+02:00",
+    "Id": 1275,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Weidemannsalen",
+    "StartDate": "2026-06-17T17:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1275,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjerbygg KF - årsregnskap og årsberetning 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 778948,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "ÅRSREGNSKAP 2025 - Steinkjebygg KF",
+       "FileFormatId": "RA-PDF",
+       "Id": 778955,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "ÅRSBERETNING 2025 - Steinkjerbygg KF",
+       "FileFormatId": "RA-PDF",
+       "Id": 778963,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kontrollutvalgets uttalelse 2025 Steinkjerbygg KF.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 791124,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 463054,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-10T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 28151,
+    "Title": "Steinkjerbygg KF - årsregnskap og årsberetning 2025"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 2,
+   "Title": "Steinkjerbygg KF - årsregnskap og årsberetning 2025",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 15,
+   "Name": "Foretaksmøte Steinkjerbygg KF",
+   "ShortCode": "FSB"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 15,
+  "EndDate": "2026-06-17T18:00:00+02:00",
+  "Id": 1275,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5365,
+    "IsRestricted": false,
+    "MeetingId": 1275,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5368,
+    "IsRestricted": false,
+    "MeetingId": 1275,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 1,
+  "MeetingRoom": "Weidemannsalen",
+  "StartDate": "2026-06-17T17:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1275,
+  "MO_ROM": "Weidemannsalen",
+  "MO_SLUTT": "2026-06-17T18:00:00",
+  "MO_START": "2026-06-17T17:30:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 15,
+  "UT_NAVN": "Foretaksmøte Steinkjerbygg KF"
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 7867,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1341,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-02-25T15:30:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1341,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 9,
+   "SortOrder": 1,
+   "Title": "Godkjenning av innkalling og sakliste",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 7868,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1341,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-02-25T15:30:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1341,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 10,
+   "SortOrder": 1,
+   "Title": "Videreføring av pkt. 3 i 28. møte «Tildeling av NTE-midler fra Steinkjer kommune til bilderammer, beløp NOK 48.000». Ta konkret stilling til bilder og rammetyrper som skal prioriteres, vurdere hvilke leverandører vi skal innhente anbud fra.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 7869,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1341,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-02-25T15:30:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1341,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Egen konto for Galleri Widegren i Bergmannsparken AS.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 7870,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1341,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-02-25T15:30:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1341,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 12,
+   "SortOrder": 1,
+   "Title": "Galleriverter – Utarbeide veileder og invitasjon av galleriverter til 30. møte i galleriet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 37,
+    "Name": "Utvalg Galleri Widegren",
+    "ShortCode": "UGW"
+   },
+   "Id": 7871,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 37,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1341,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Galleriet/Teams",
+    "MeetingNumber": 3,
+    "MeetingRoom": null,
+    "StartDate": "2026-02-25T15:30:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1341,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Eventuelt – Bilder som er til utlån; skal vi hente dem inn til galleriet?",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 37,
+   "Name": "Utvalg Galleri Widegren",
+   "ShortCode": "UGW"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 37,
+  "EndDate": "0001-01-01T00:00:00+00:00",
+  "Id": 1341,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5093,
+    "IsRestricted": false,
+    "MeetingId": 1341,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Galleriet/Teams",
+  "MeetingNumber": 3,
+  "MeetingRoom": null,
+  "StartDate": "2026-02-25T15:30:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1341,
+  "MO_ROM": null,
+  "MO_SLUTT": null,
+  "MO_START": "2026-02-25T15:30:00",
+  "MO_STED": "Galleriet/Teams",
+  "Type": 4,
+  "UT_ID": 37,
+  "UT_NAVN": "Utvalg Galleri Widegren"
+ }
+}

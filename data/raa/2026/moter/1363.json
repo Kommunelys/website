@@ -1,0 +1,344 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 18,
+    "Name": "Eldrerådet",
+    "ShortCode": "ELRÅ"
+   },
+   "Id": 8341,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 18,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1363,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Epostmøte",
+    "MeetingNumber": 10,
+    "MeetingRoom": "",
+    "StartDate": "2026-06-30T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1363,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-24T00:00:00",
+    "DocumentNumber": 151,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "FNs internasjonale eldredag - bruk av midler",
+       "FileFormatId": "RA-PDF",
+       "Id": 821555,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "FNs internasjonale eldredag 2026 - søknad om midler",
+       "FileFormatId": "RA-PDF",
+       "Id": 821557,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll FNs internasjonale eldredag 2026 - søknad om midler",
+       "FileFormatId": "RA-PDF",
+       "Id": 821558,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 493635,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-24T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 58687,
+    "Title": "FNs internasjonale eldredag - bruk av midler"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "FNs internasjonale eldredag - bruk av midler",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 18,
+    "Name": "Eldrerådet",
+    "ShortCode": "ELRÅ"
+   },
+   "Id": 8340,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 18,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1363,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Epostmøte",
+    "MeetingNumber": 10,
+    "MeetingRoom": "",
+    "StartDate": "2026-06-30T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1363,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 18,
+    "Name": "Eldrerådet",
+    "ShortCode": "ELRÅ"
+   },
+   "Id": 8310,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 18,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1363,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Epostmøte",
+    "MeetingNumber": 10,
+    "MeetingRoom": "",
+    "StartDate": "2026-06-30T10:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1363,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-03T00:00:00",
+    "DocumentNumber": 150,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Protokoll fra møte i eldrerådet i Trøndelag fylkeskommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810697,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Møteprotokoll Eldrerådet 2023-2027 21.05.2026.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810698,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Eldrerådets vedtak - tiltak mobilitet.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810699,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Eldrerådets vedtak - tiltak folkehelse.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810700,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Eldrerådets vedtak - tiltak tannhelse.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810701,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Eldrerådets vedtak - tiltak minoriteter.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810702,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Eldrerådets vedtak - tiltak utdanning.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 810703,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 485194,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-04T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Trøndelag Fylkeskommune | Trööndelagen Fylhkentjïelte",
+    "Senders": [],
+    "SequenceNumber": 50260,
+    "Title": "Protokoll fra møte i eldrerådet i Trøndelag fylkeskommune"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Protokoll fra møte i eldrerådet i Trøndelag fylkeskommune",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 18,
+   "Name": "Eldrerådet",
+   "ShortCode": "ELRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 18,
+  "EndDate": "0001-01-01T00:00:00+00:00",
+  "Id": 1363,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5391,
+    "IsRestricted": false,
+    "MeetingId": 1363,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5394,
+    "IsRestricted": false,
+    "MeetingId": 1363,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Epostmøte",
+  "MeetingNumber": 10,
+  "MeetingRoom": "",
+  "StartDate": "2026-06-30T10:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1363,
+  "MO_ROM": "",
+  "MO_SLUTT": null,
+  "MO_START": "2026-06-30T10:00:00",
+  "MO_STED": "Epostmøte",
+  "Type": 4,
+  "UT_ID": 18,
+  "UT_NAVN": "Eldrerådet"
+ }
+}

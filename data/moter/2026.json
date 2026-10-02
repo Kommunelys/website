@@ -1,0 +1,2325 @@
+[
+ {
+  "antall_saker": 9,
+  "dato": "2026-01-08T14:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1244/MI/5020"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1244/MP/5023"
+   }
+  ],
+  "mote_id": 1244,
+  "rom": null,
+  "slutt": "17:30",
+  "sted": "Malm skole/TEAMS",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1244",
+  "utvalg": "UGW",
+  "utvalg_navn": "Utvalg Galleri Widegren"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-01-20T13:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1242/MI/5010"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1242/MP/5013"
+   }
+  ],
+  "mote_id": 1242,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1242",
+  "utvalg": "AMU",
+  "utvalg_navn": "Arbeidsmiljøutvalget"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-01-20T17:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1243/MI/5015"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1243/MP/5018"
+   }
+  ],
+  "mote_id": 1243,
+  "rom": "Sigrid Toresdatter, 2. etg.",
+  "slutt": "19:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1243",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-01-22T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1241/MI/4990"
+   }
+  ],
+  "mote_id": 1241,
+  "rom": "E-postmøte",
+  "slutt": "",
+  "sted": "E-postmøte",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1241",
+  "utvalg": "FOR",
+  "utvalg_navn": "Forretningsutvalget"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-01-26T10:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1246/MI/5025"
+   }
+  ],
+  "mote_id": 1246,
+  "rom": "Olve",
+  "slutt": "12:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1246",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-01-27T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1231/MI/5005"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1231/MP/5008"
+   }
+  ],
+  "mote_id": 1231,
+  "rom": "12-13: Steinkjer mekaniske AS, 13.00: Fredrikkesalen.",
+  "slutt": "14:30",
+  "sted": "Steinkjer mekaniske AS/Steinkjer rådhus.",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1231",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-01-28T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1232/MI/4970"
+   }
+  ],
+  "mote_id": 1232,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "Steinkjer rådhus.",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1232",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-01-28T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1233/MI/5000"
+   }
+  ],
+  "mote_id": 1233,
+  "rom": "Elvesalen (kulturhuset / Fredrikkesalen (rådhuset)",
+  "slutt": "12:15",
+  "sted": "9.00 : Steinkjer kulturhus / 12.00: Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1233",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 10,
+  "dato": "2026-01-29T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1230/MI/4995"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1230/MP/4998"
+   }
+  ],
+  "mote_id": 1230,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1230",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-02-04T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1235/MI/5035"
+   }
+  ],
+  "mote_id": 1235,
+  "rom": "Olve/Teams",
+  "slutt": "13:00",
+  "sted": "Steinkjer rådhus/Teams",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1235",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-02-04T18:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1240/MI/5030"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1240/MP/5033"
+   }
+  ],
+  "mote_id": 1240,
+  "rom": "Weidemannsalen",
+  "slutt": "21:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1240",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-02-10T14:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1338/MI/5052"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1338/MP/5055"
+   }
+  ],
+  "mote_id": 1338,
+  "rom": "Laura Kieler 5.etasje",
+  "slutt": "16:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1338",
+  "utvalg": "SSKO",
+  "utvalg_navn": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-02-12T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1318/MI/5057"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1318/MP/5060"
+   }
+  ],
+  "mote_id": 1318,
+  "rom": "Fredrikkesalen",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1318",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-02-12T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1245/MI/5041"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1245/MP/5044"
+   }
+  ],
+  "mote_id": 1245,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1245",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 2,
+  "dato": "2026-02-12T14:15",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1336/MI/5046"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1336/MP/5049"
+   }
+  ],
+  "mote_id": 1336,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1336",
+  "utvalg": "KN",
+  "utvalg_navn": "Klagenemnda"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-02-23T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1247/MI/5072"
+   }
+  ],
+  "mote_id": 1247,
+  "rom": "Olve",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1247",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-02-25T14:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1337/MI/5067"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1337/MP/5070"
+   }
+  ],
+  "mote_id": 1337,
+  "rom": "Hilmar Alexandersen",
+  "slutt": "16:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1337",
+  "utvalg": "FOR",
+  "utvalg_navn": "Forretningsutvalget"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-02-25T15:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1341/MI/5093"
+   }
+  ],
+  "mote_id": 1341,
+  "rom": null,
+  "slutt": "",
+  "sted": "Galleriet/Teams",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1341",
+  "utvalg": "UGW",
+  "utvalg_navn": "Utvalg Galleri Widegren"
+ },
+ {
+  "antall_saker": 7,
+  "dato": "2026-03-05T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1248/MI/5077"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1248/MP/5080"
+   }
+  ],
+  "mote_id": 1248,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:15",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1248",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 2,
+  "dato": "2026-03-05T14:15",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1340/MI/5082"
+   }
+  ],
+  "mote_id": 1340,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1340",
+  "utvalg": "KN",
+  "utvalg_navn": "Klagenemnda"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-03-10T13:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1312/MI/5133"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1312/MP/5136"
+   }
+  ],
+  "mote_id": 1312,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1312",
+  "utvalg": "AMU",
+  "utvalg_navn": "Arbeidsmiljøutvalget"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-03-10T17:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1329/MI/5123"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1329/MP/5126"
+   }
+  ],
+  "mote_id": 1329,
+  "rom": "Sigrid Toresdatter, 2.etasje",
+  "slutt": "19:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1329",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 10,
+  "dato": "2026-03-11T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1249/MI/5118"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1249/MP/5121"
+   }
+  ],
+  "mote_id": 1249,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1249",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-03-11T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1250/MI/5088"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1250/MP/5091"
+   }
+  ],
+  "mote_id": 1250,
+  "rom": "Olve",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1250",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 6,
+  "dato": "2026-03-17T10:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1325/MI/5098"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1325/MP/5101"
+   }
+  ],
+  "mote_id": 1325,
+  "rom": "Fredrikkesalen",
+  "slutt": "12:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1325",
+  "utvalg": "KTU",
+  "utvalg_navn": "Trafikksikkerhetsutvalget"
+ },
+ {
+  "antall_saker": 13,
+  "dato": "2026-03-17T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1251/MI/5103"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1251/MP/5106"
+   }
+  ],
+  "mote_id": 1251,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1251",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 6,
+  "dato": "2026-03-18T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1252/MI/5113"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1252/MP/5116"
+   }
+  ],
+  "mote_id": 1252,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1252",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 13,
+  "dato": "2026-03-18T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1253/MI/5108"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1253/MP/5111"
+   }
+  ],
+  "mote_id": 1253,
+  "rom": "kl.09.00: Weidemannsalen/ kl.12.00: Fredrikkesalen",
+  "slutt": "13:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1253",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-03-19T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1319/MI/5143"
+   }
+  ],
+  "mote_id": 1319,
+  "rom": "Fredrikkesalen",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1319",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 12,
+  "dato": "2026-03-19T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1254/MI/5128"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1254/MP/5131"
+   }
+  ],
+  "mote_id": 1254,
+  "rom": "Fredrikkesalen",
+  "slutt": "16:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1254",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-03-23T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1349/MI/5158"
+   }
+  ],
+  "mote_id": 1349,
+  "rom": "Olve",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1349",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-03-23T18:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1348/MP/5156"
+   }
+  ],
+  "mote_id": 1348,
+  "rom": null,
+  "slutt": "19:00",
+  "sted": "Mokk gård",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1348",
+  "utvalg": "SSKO",
+  "utvalg_navn": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-03-25T13:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1350/MI/5163"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1350/MP/5166"
+   }
+  ],
+  "mote_id": 1350,
+  "rom": null,
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1350",
+  "utvalg": "SSBY",
+  "utvalg_navn": "Styre for Steinkjerbygg KF"
+ },
+ {
+  "antall_saker": 12,
+  "dato": "2026-03-25T16:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1255/MI/5148"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1255/MP/5151"
+   }
+  ],
+  "mote_id": 1255,
+  "rom": "Weidemannsalen",
+  "slutt": "21:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1255",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-04-15T08:30",
+  "dokumenter": [],
+  "mote_id": 1256,
+  "rom": "Olve",
+  "slutt": "12:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1256",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-04-20T15:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1353/MI/5205"
+   }
+  ],
+  "mote_id": 1353,
+  "rom": null,
+  "slutt": "15:30",
+  "sted": "Teams",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1353",
+  "utvalg": "FOR",
+  "utvalg_navn": "Forretningsutvalget"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-04-23T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1320/MI/5216"
+   }
+  ],
+  "mote_id": 1320,
+  "rom": "Fredrikkesalen",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1320",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 12,
+  "dato": "2026-04-23T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1257/MI/5179"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1257/MP/5182"
+   }
+  ],
+  "mote_id": 1257,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:15",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1257",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-04-23T15:15",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1342/MI/5200"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1342/MP/5203"
+   }
+  ],
+  "mote_id": 1342,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1342",
+  "utvalg": "VN",
+  "utvalg_navn": "Valgstyre"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-04-28T10:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1344/MI/5190"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1344/MP/5193"
+   }
+  ],
+  "mote_id": 1344,
+  "rom": "10.00: Bergmannsparken, 12.30 Malm samfunnshus",
+  "slutt": "13:15",
+  "sted": "Bergmannsparken/Malm samfunnshus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1344",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-04-28T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1351/MI/5195"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1351/MP/5198"
+   }
+  ],
+  "mote_id": 1351,
+  "rom": null,
+  "slutt": "12:30",
+  "sted": "Malm samfunnshus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1351",
+  "utvalg": "KTU",
+  "utvalg_navn": "Trafikksikkerhetsutvalget"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-05-04T10:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1258/MI/5231"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1258/MP/5234"
+   }
+  ],
+  "mote_id": 1258,
+  "rom": "Kommunestyresalen",
+  "slutt": "15:00",
+  "sted": "Snåsa herredshus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1258",
+  "utvalg": "INR",
+  "utvalg_navn": "Innherred regionråd"
+ },
+ {
+  "antall_saker": 7,
+  "dato": "2026-05-05T17:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1330/MI/5241"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1330/MP/5244"
+   }
+  ],
+  "mote_id": 1330,
+  "rom": "Sigrid Toresdatter",
+  "slutt": "18:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1330",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 8,
+  "dato": "2026-05-06T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1259/MI/5261"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1259/MP/5264"
+   }
+  ],
+  "mote_id": 1259,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1259",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-05-06T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1260/MI/5256"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1260/MP/5259"
+   }
+  ],
+  "mote_id": 1260,
+  "rom": "Olve",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1260",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 9,
+  "dato": "2026-05-11T08:45",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1261/MI/5226"
+   }
+  ],
+  "mote_id": 1261,
+  "rom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+  "slutt": "13:45",
+  "sted": "Byafossen/Nortrafo/Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1261",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 12,
+  "dato": "2026-05-12T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1262/MI/5236"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1262/MP/5239"
+   }
+  ],
+  "mote_id": 1262,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1262",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 21,
+  "dato": "2026-05-12T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1263/MI/5251"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1263/MP/5254"
+   }
+  ],
+  "mote_id": 1263,
+  "rom": "Fredrikkesalen fra kl.12.00",
+  "slutt": "14:15",
+  "sted": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1263",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 20,
+  "dato": "2026-05-13T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1264/MP/5249"
+   }
+  ],
+  "mote_id": 1264,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1264",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-05-13T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1352/MI/5185"
+   }
+  ],
+  "mote_id": 1352,
+  "rom": "Sigrid Toresdatter 2. etg",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1352",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 2,
+  "dato": "2026-05-18T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1265/MI/5271"
+   }
+  ],
+  "mote_id": 1265,
+  "rom": "Olve",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1265",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 27,
+  "dato": "2026-05-20T18:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1266/MI/5266"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1266/MP/5269"
+   }
+  ],
+  "mote_id": 1266,
+  "rom": "Weidemannsalen",
+  "slutt": "22:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1266",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ },
+ {
+  "antall_saker": 7,
+  "dato": "2026-06-02T17:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1331/MI/5321"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1331/MP/5324"
+   }
+  ],
+  "mote_id": 1331,
+  "rom": "Sigrid Toresdatter 2.etasje",
+  "slutt": "19:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1331",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-03T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1357/MI/5306"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1357/MP/5309"
+   }
+  ],
+  "mote_id": 1357,
+  "rom": null,
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1357",
+  "utvalg": "SSBY",
+  "utvalg_navn": "Styre for Steinkjerbygg KF"
+ },
+ {
+  "antall_saker": 9,
+  "dato": "2026-06-03T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1267/MI/5316"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1267/MP/5319"
+   }
+  ],
+  "mote_id": 1267,
+  "rom": "Olve",
+  "slutt": "14:15",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1267",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 8,
+  "dato": "2026-06-03T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1268/MI/5311"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1268/MP/5314"
+   }
+  ],
+  "mote_id": 1268,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:15",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1268",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-04T14:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1358/MI/5332"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1358/MP/5335"
+   }
+  ],
+  "mote_id": 1358,
+  "rom": null,
+  "slutt": "15:15",
+  "sted": "Teams",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1358",
+  "utvalg": "FOR",
+  "utvalg_navn": "Forretningsutvalget"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-09T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1321/MI/5344"
+   }
+  ],
+  "mote_id": 1321,
+  "rom": "Laura Kieler, 5.etasje",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1321",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 7,
+  "dato": "2026-06-09T10:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1326/MI/5286"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1326/MP/5289"
+   }
+  ],
+  "mote_id": 1326,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1326",
+  "utvalg": "KTU",
+  "utvalg_navn": "Trafikksikkerhetsutvalget"
+ },
+ {
+  "antall_saker": 13,
+  "dato": "2026-06-09T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1269/MI/5281"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1269/MP/5284"
+   }
+  ],
+  "mote_id": 1269,
+  "rom": "Fredrikkesalen",
+  "slutt": "14:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1269",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-10T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1270/MI/5296"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1270/MP/5299"
+   }
+  ],
+  "mote_id": 1270,
+  "rom": "Kl.9.00 NAV/ca.kl.9.30 Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "O2-huset/Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1270",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-06-10T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1271/MI/5291"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1271/MP/5294"
+   }
+  ],
+  "mote_id": 1271,
+  "rom": "Kl 12 Svedjan/kl 13 Fredrikkesalen",
+  "slutt": "14:30",
+  "sted": "Svedjan/Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1271",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 20,
+  "dato": "2026-06-11T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1272/MI/5301"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1272/MP/5304"
+   }
+  ],
+  "mote_id": 1272,
+  "rom": "Fredrikkesalen",
+  "slutt": "17:15",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1272",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-06-11T17:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1343/MI/5337"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1343/MP/5340"
+   }
+  ],
+  "mote_id": 1343,
+  "rom": "Fredrikkesalen",
+  "slutt": "17:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1343",
+  "utvalg": "KN",
+  "utvalg_navn": "Klagenemnda"
+ },
+ {
+  "antall_saker": 2,
+  "dato": "2026-06-16T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1359/MI/5350"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1359/MP/5353"
+   }
+  ],
+  "mote_id": 1359,
+  "rom": null,
+  "slutt": "15:30",
+  "sted": "Lia, Steinkjer skistadion",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1359",
+  "utvalg": "SSKO",
+  "utvalg_navn": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-06-17T17:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1274/MI/5360"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1274/MP/5363"
+   }
+  ],
+  "mote_id": 1274,
+  "rom": "Weidemannsalen",
+  "slutt": "17:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1274",
+  "utvalg": "FSKO",
+  "utvalg_navn": "Foretaksmøte Steinkjer kommuneskoger - Ogndalsbruket KF"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-06-17T17:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1275/MI/5365"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1275/MP/5368"
+   }
+  ],
+  "mote_id": 1275,
+  "rom": "Weidemannsalen",
+  "slutt": "18:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1275",
+  "utvalg": "FSB",
+  "utvalg_navn": "Foretaksmøte Steinkjerbygg KF"
+ },
+ {
+  "antall_saker": 27,
+  "dato": "2026-06-17T18:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1273/MI/5355"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1273/MP/5358"
+   }
+  ],
+  "mote_id": 1273,
+  "rom": "Weidemannsalen.",
+  "slutt": "23:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1273",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ },
+ {
+  "antall_saker": 9,
+  "dato": "2026-06-19T13:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1360/MI/5375"
+   }
+  ],
+  "mote_id": 1360,
+  "rom": null,
+  "slutt": "",
+  "sted": "Galleriet/Teams",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1360",
+  "utvalg": "UGW",
+  "utvalg_navn": "Utvalg Galleri Widegren"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-22T12:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1361/MI/5380"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1361/MP/5383"
+   }
+  ],
+  "mote_id": 1361,
+  "rom": "Olve",
+  "slutt": "13:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1361",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-06-25T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1276/MI/5370"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1276/MP/5373"
+   }
+  ],
+  "mote_id": 1276,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1276",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-25T11:15",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1362/MI/5385"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1362/MP/5388"
+   }
+  ],
+  "mote_id": 1362,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1362",
+  "utvalg": "KN",
+  "utvalg_navn": "Klagenemnda"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-06-30T10:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1363/MI/5391"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1363/MP/5394"
+   }
+  ],
+  "mote_id": 1363,
+  "rom": "",
+  "slutt": "",
+  "sted": "Epostmøte",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1363",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-08-18T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1364/MI/5401"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1364/MP/5404"
+   }
+  ],
+  "mote_id": 1364,
+  "rom": "Fredrikkesalen",
+  "slutt": "12:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1364",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 14,
+  "dato": "2026-08-20T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1277/MI/5396"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1277/MP/5399"
+   }
+  ],
+  "mote_id": 1277,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1277",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-08-20T15:45",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1365/MI/5406"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1365/MP/5409"
+   }
+  ],
+  "mote_id": 1365,
+  "rom": "Fredrikkesalen",
+  "slutt": "16:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1365",
+  "utvalg": "KN",
+  "utvalg_navn": "Klagenemnda"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-08-24T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1280/MI/5428"
+   }
+  ],
+  "mote_id": 1280,
+  "rom": "Olve",
+  "slutt": "11:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1280",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-08-26T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1278/MI/5438"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1278/MP/5441"
+   }
+  ],
+  "mote_id": 1278,
+  "rom": "Olve",
+  "slutt": "13:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1278",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 5,
+  "dato": "2026-08-26T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1279/MI/5433"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1279/MP/5436"
+   }
+  ],
+  "mote_id": 1279,
+  "rom": "Fredrikkesalen",
+  "slutt": "13:45",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1279",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-08-26T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1366/MI/5443"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1366/MP/5446"
+   }
+  ],
+  "mote_id": 1366,
+  "rom": "e-postmøte",
+  "slutt": "",
+  "sted": "E-postmøte",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1366",
+  "utvalg": "FOR",
+  "utvalg_navn": "Forretningsutvalget"
+ },
+ {
+  "antall_saker": 10,
+  "dato": "2026-09-03T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1284/MI/5449"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1284/MP/5452"
+   }
+  ],
+  "mote_id": 1284,
+  "rom": "Fredrikkesalen",
+  "slutt": "13:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1284",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-09-10T14:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1367/MI/5455"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1367/MP/5458"
+   }
+  ],
+  "mote_id": 1367,
+  "rom": "Laura Kieler, 5.etasje",
+  "slutt": "16:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1367",
+  "utvalg": "SSKO",
+  "utvalg_navn": "Styret for Steinkjer kommuneskoger Ogndalsbruket KF"
+ },
+ {
+  "antall_saker": 9,
+  "dato": "2026-09-15T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1281/MI/5412"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1281/MP/5415"
+   }
+  ],
+  "mote_id": 1281,
+  "rom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Follafoss/Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1281",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-09-16T18:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1285/MI/5466"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1285/MP/5469"
+   }
+  ],
+  "mote_id": 1285,
+  "rom": "Weidemannsalen",
+  "slutt": "21:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1285",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ },
+ {
+  "antall_saker": 6,
+  "dato": "2026-09-23T09:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1283/MI/5422"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1283/MP/5425"
+   }
+  ],
+  "mote_id": 1283,
+  "rom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+  "slutt": "13:05",
+  "sted": "Steinkjer kulturhus/Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1283",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 3,
+  "dato": "2026-09-24T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1322/MI/5482"
+   }
+  ],
+  "mote_id": 1322,
+  "rom": "Fredrikkesalen",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1322",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 13,
+  "dato": "2026-09-24T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1286/MI/5472"
+   },
+   {
+    "tittel": "Møteprotokoll",
+    "type": "MP",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1286/MP/5475"
+   }
+  ],
+  "mote_id": 1286,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:15",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1286",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-09-29T13:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1287/MI/5487"
+   }
+  ],
+  "mote_id": 1287,
+  "rom": "Teams",
+  "slutt": "13:15",
+  "sted": "Teams",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1287",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 4,
+  "dato": "2026-09-29T17:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1368/MI/5477"
+   }
+  ],
+  "mote_id": 1368,
+  "rom": "Sigrid Toresdatter, 2. etg. Rådhuset",
+  "slutt": "19:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1368",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-10-12T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1288/MI/5502"
+   }
+  ],
+  "mote_id": 1288,
+  "rom": "Olve",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1288",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-10-12T12:00",
+  "dokumenter": [],
+  "mote_id": 1289,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1289",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-10-12T17:00",
+  "dokumenter": [],
+  "mote_id": 1333,
+  "rom": null,
+  "slutt": "19:00",
+  "sted": null,
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1333",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 2,
+  "dato": "2026-10-13T08:30",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1327/MI/5492"
+   }
+  ],
+  "mote_id": 1327,
+  "rom": "Byavegen/Følling barnehage/Kvam sentrum/Fredrikkesalen",
+  "slutt": "12:00",
+  "sted": "Byavegen/Følling barnehage/Kvam sentrum/Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1327",
+  "utvalg": "KTU",
+  "utvalg_navn": "Trafikksikkerhetsutvalget"
+ },
+ {
+  "antall_saker": 11,
+  "dato": "2026-10-13T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1290/MI/5497"
+   }
+  ],
+  "mote_id": 1290,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1290",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 2,
+  "dato": "2026-10-14T09:00",
+  "dokumenter": [],
+  "mote_id": 1291,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1291",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 9,
+  "dato": "2026-10-14T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1292/MI/5507"
+   }
+  ],
+  "mote_id": 1292,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1292",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 18,
+  "dato": "2026-10-15T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1293/MI/5518"
+   }
+  ],
+  "mote_id": 1293,
+  "rom": "Fredrikkesalen",
+  "slutt": "16:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1293",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-10-21T18:00",
+  "dokumenter": [],
+  "mote_id": 1294,
+  "rom": "Weidemannsalen",
+  "slutt": "22:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1294",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-02T08:30",
+  "dokumenter": [],
+  "mote_id": 1295,
+  "rom": "Olve",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1295",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-05T08:30",
+  "dokumenter": [],
+  "mote_id": 1323,
+  "rom": "Fredrikkesalen",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1323",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-05T12:00",
+  "dokumenter": [],
+  "mote_id": 1296,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1296",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-16T09:00",
+  "dokumenter": [],
+  "mote_id": 1297,
+  "rom": null,
+  "slutt": "15:00",
+  "sted": "Levanger",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1297",
+  "utvalg": "INR",
+  "utvalg_navn": "Innherred regionråd"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-17T17:00",
+  "dokumenter": [],
+  "mote_id": 1334,
+  "rom": null,
+  "slutt": "19:00",
+  "sted": null,
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1334",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-18T12:00",
+  "dokumenter": [],
+  "mote_id": 1298,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1298",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-18T12:00",
+  "dokumenter": [],
+  "mote_id": 1299,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1299",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-24T12:00",
+  "dokumenter": [],
+  "mote_id": 1300,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1300",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-25T09:00",
+  "dokumenter": [],
+  "mote_id": 1301,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1301",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-25T09:00",
+  "dokumenter": [],
+  "mote_id": 1302,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1302",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-11-26T12:00",
+  "dokumenter": [],
+  "mote_id": 1303,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1303",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-01T17:00",
+  "dokumenter": [],
+  "mote_id": 1335,
+  "rom": null,
+  "slutt": "19:00",
+  "sted": null,
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1335",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-02T12:00",
+  "dokumenter": [],
+  "mote_id": 1304,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1304",
+  "utvalg": "ELRÅ",
+  "utvalg_navn": "Eldrerådet"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-02T12:00",
+  "dokumenter": [],
+  "mote_id": 1305,
+  "rom": "Olve",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1305",
+  "utvalg": "RÅFIM",
+  "utvalg_navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-07T08:30",
+  "dokumenter": [],
+  "mote_id": 1306,
+  "rom": "Olve",
+  "slutt": "11:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1306",
+  "utvalg": "AUINR",
+  "utvalg_navn": "Arbeidsutvalg Innherred regionråd"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-08T10:00",
+  "dokumenter": [],
+  "mote_id": 1328,
+  "rom": "Fredrikkesalen",
+  "slutt": "12:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1328",
+  "utvalg": "KTU",
+  "utvalg_navn": "Trafikksikkerhetsutvalget"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-08T12:00",
+  "dokumenter": [],
+  "mote_id": 1307,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1307",
+  "utvalg": "HPNM",
+  "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-09T09:00",
+  "dokumenter": [],
+  "mote_id": 1308,
+  "rom": "Fredrikkesalen",
+  "slutt": "11:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1308",
+  "utvalg": "HHO",
+  "utvalg_navn": "Hovedutvalg helse og omsorg"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-09T12:00",
+  "dokumenter": [],
+  "mote_id": 1309,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1309",
+  "utvalg": "HOK",
+  "utvalg_navn": "Hovedutvalg oppvekst og kultur"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-10T08:30",
+  "dokumenter": [],
+  "mote_id": 1324,
+  "rom": "Fredrikkesalen",
+  "slutt": "10:30",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1324",
+  "utvalg": "AD",
+  "utvalg_navn": "Administrasjonsutvalget"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-10T12:00",
+  "dokumenter": [],
+  "mote_id": 1310,
+  "rom": "Fredrikkesalen",
+  "slutt": "15:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1310",
+  "utvalg": "FS",
+  "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-12-16T18:00",
+  "dokumenter": [],
+  "mote_id": 1311,
+  "rom": "Weidemannsalen",
+  "slutt": "22:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1311",
+  "utvalg": "KS",
+  "utvalg_navn": "Kommunestyre"
+ }
+]

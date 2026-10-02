@@ -1,0 +1,32 @@
+{
+ "behandlinger": [],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 36,
+   "Name": "Ungdomsrådet",
+   "ShortCode": "UNGRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 36,
+  "EndDate": "2026-12-01T19:00:00+01:00",
+  "Id": 1335,
+  "MeetingDocuments": [],
+  "MeetingLocation": null,
+  "MeetingNumber": 8,
+  "MeetingRoom": null,
+  "StartDate": "2026-12-01T17:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1335,
+  "MO_ROM": null,
+  "MO_SLUTT": "2026-12-01T19:00:00",
+  "MO_START": "2026-12-01T17:00:00",
+  "MO_STED": null,
+  "Type": 4,
+  "UT_ID": 36,
+  "UT_NAVN": "Ungdomsrådet"
+ }
+}
