@@ -1,0 +1,253 @@
+SAKSFRAMLEGG
+Saksgang
+Utvalg
+Formannskap
+
+Møtedato
+
+Utvalgssak
+
+Arkivsaksnr: 2026/16133
+Saksbehandler: Hilde Rones Jensen
+
+Spar Sentrum Steinkjer - Søknad om utvidet salgsbevilling
+med rett til netthandel
+Vedlegg:
+1
+Søknad om utvidet salgsbevilling med rett til netthandel
+2
+Foodoras opplæring til bud
+3
+Beskrivelse av rutiner
+4
+Pin validation customer
+Kommunedirektørens forslag til vedtak:
+1. Med hjemmel i alkoholloven § 1-7 og § 3-1 andre ledd, samt Rusmiddelpolitisk
+handlingsplan 2024–2028 punkt 4.8, innvilges HANDELSHUSET SENTRUM
+STEINKJER AS, org.nr. 935648858, ved Spar Sentrum Steinkjer, Kongens gate 27,
+7713 Steinkjer, utvidet salgsbevilling med rett til netthandel og hjemlevering via
+Foodora samt henting i butikk for alkoholholdig drikk gruppe 1.
+Bevillingen gjelder fra vedtaksdato til og med 30.09.2028.
+2. Spar Sentrum Steinkjer gis mulighet for å benytte seg av kommunens generelle
+salgstider. Salgs- og utleveringstiden for alkoholholdig drikk gruppe 1 kan ikke
+overskride følgende tider:
+Mandag – fredag, og dagen før Kristi Himmelfartsdag kl. 08.00 – 20.00
+Dagen før søndager og helligdager kl. 08.00 – 18.00
+Jul-, nyttårs-, påske- og pinseaften kl. 08.00 – 16.00
+Søndager og helligdager, 1. og 17. mai er salg og utlevering av alkoholholdig drikk
+ikke tillatt.
+3. Som styrer godkjennes Ronny Vang Johansen f. 28.02.1984 har bestått
+kunnskapsprøve i salg, som stedfortreder godkjennes Olav Kvamstrø f.
+23.05.1961, har bestått kunnskapsprøve i salg.
+
+Saksopplysninger:
+
+Spar Sentrum Steinkjer har i dag salgsbevilling for alkoholholdig drikk i gruppe 1 (over
+2,5 og høyst 4,7 volumprosent alkohol) i butikk.
+Virksomheten ønsker å utvide salgsbevillingen til også å omfatte nettsalg av
+alkoholholdig drikk i gruppe 1. Salget skal skje gjennom Foodoras netthandelsløsning,
+med mulighet for kunden til enten å hente varene i butikken selv via «klikk og hent» eller
+få varene levert hjem.
+Foodora benyttes som leverings- og budtjeneste for ulike virksomheter, herunder
+dagligvarebutikker og restauranter, flere steder i Norge.
+Dersom kunden velger alternativet «klikk og hent i butikk», er det butikkens ansatte på
+Spar Sentrum Steinkjer som plukker og klargjør varene. Ved kundens oppmøte i
+butikken foretas utleveringen av butikkens ansatte. Kunden må fremvise nødvendig
+legitimasjon ved kjøp og utlevering av alkoholholdig drikk gruppe 1 og andre
+aldersbetingede varer på samme måte som ved en ordinær handel i butikken.
+Dersom kunden velger hjemlevering, innebærer dette at butikkens ansatte plukker og
+klargjør bestillingen, før varene overleveres til Foodoras bud for utkjøring til kunden.
+Søker har opplyst at samtlige bud som benyttes av Foodora, er over 18 år.
+Budene er utstyrt med HMS-kort og benytter personlig innlogging og
+identitetsgjenkjenning ved innlogging på terminalen.
+Foodora har etablert rutiner for å sikre at alkoholholdige varer kun utleveres til kunder
+som oppfyller lovens alderskrav. Om alderskontrollen opplyser Foodora blant annet
+følgende:
+«Aldersbegrensede varer er i vårt system utstyrt med spesielle
+markører som gjør at de ved kjøpssituasjonen trigger aldersverifisering
+med BankID, og at de automatisk skrus utilgjengelige utenfor lovlige
+salgstider.
+Ingen kunde får gjennomført kjøp av aldersbegrensede varer uten å
+måtte bekrefte alder via BankID.»
+Foodora har videre redegjort for rutinene som gjelder ved hjemlevering:
+«Budet må be kunden vise gyldig ID. Dette kan være enten førerkort,
+nasjonalt ID-kort, bankkort med bilde eller pass. Identifikasjonen må
+vise et bilde av kunden og deres fødselsdato.
+Det må bekreftes at kunden er over 18 år gammel.
+Videre bekreftes det at kunden er den samme personen som på ID-en
+de har vist.
+
+Budet må så skrive inn kundens fødselsdato for å bekrefte at kunden er
+over 18 år. Det merkes av i boksen for å bekrefte at budet har
+gjennomført identifikasjonskontrollen.»
+Det vises til vedlegg 2 og 3 for nærmere beskrivelse av opplæringen av bud hos Foodora
+og Foodoras rutiner.
+Steinkjer kommunes rusmiddelpolitiske handlingsplan 2024–2028 punkt 4.8 stiller blant
+annet krav om at kunden ved utkjøring skal kvittere for mottak av varer og alkohol, samt
+tidspunkt for utlevering. Dokumentasjonen skal være tilgjengelig for kontroll.
+Foodora har redegjort for hvordan kravet kan ivaretas ved hjemlevering.
+Foodora har opplyst at det er innført en PIN-funksjon ved utlevering av ordre.
+Funksjonen er primært utviklet for å kontrollere at riktig kunde mottar riktig ordre.
+Når kunden legger inn en bestilling, mottar kunden en automatisk generert og unik PINkode i Foodora-appen, jf. vedlegg 4. PIN-koden er knyttet til den aktuelle ordren og er
+tilgjengelig for kunden. Ved fysisk utlevering må kunden oppgi PIN-koden til budet, som
+registrerer koden i leveringssystemet. Ordren kan ikke registreres som utlevert dersom
+PIN-koden ikke er korrekt.
+PIN-valideringen registreres sammen med ordren, og tidspunktet for den faktiske
+utleveringen registreres i systemet. Ved utlevering av aldersbestemte varer
+gjennomføres det i tillegg kontroll av kundens identitet og fødselsdato.
+Foodora har opplyst at dokumentasjonen fra utleveringen kan fremvises ved et
+eventuelt kommunalt tilsyn.
+Rettslig grunnlag
+Netthandel for omsetning av alkoholholdig drikke er lovlig i Norge. Vinmonopolet har i
+mange år hatt dette tilbudet til sine kunder.
+I Steinkjer kommune har SPAR Dampsaga og Coop Marked Obs innvilget utvidet
+salgsbevilling med rett til netthandel.
+Helsedirektoratets rundskriv om alkoholloven kapittel 3 sier i punkt 3.1.3.5 følgende om
+Nettsalg:
+«Alkoholloven har ingen særskilte regler for hvordan salg av alkohol
+bestilt på nett skal foregå med unntak av alkoholforskriften § 14-3 nr. 10
+om alkoholreklame ved nettsalg. Det har imidlertid etablert seg en
+praksis hvor § 3-1 annet ledd også anses å omfatte bevilling til nettsalg.
+Bevilling for nettsalg må knytte seg til ett bestemt lokale og en bestemt
+type virksomhet, jf. alkoholloven § 3-1 andre ledd. Virksomheten må ha
+bevilling i alle de kommuner hvor alkoholholdig drikk skal utleveres.
+
+Utlevering av alkohol bestilt på nett kan foregå ved hjemlevering,
+henting på varelager og fra særskilte utleveringspunkter. Salgsformen
+gir utfordringer når det gjelder kontroll med utlevering av varene.
+Det vises for øvrig til alkoholloven § 1-9, jf. alkoholforskriften
+kapittel 9 om kontroll.»
+Alkohollovens § 1-7 a gir kommunen stor frihet til å utforme egen lokal alkoholpolitikk og
+lovens formål er i størst mulig utstrekning å begrense de samfunnsmessige og
+individuelle saker som alkoholbruk kan innebære.
+I Rusmiddelpolitisk handlingsplan for Steinkjer kommune for bevillingsperioden fra
+01.10.2024 – 30.09.2028 står følgende i punkt 4.8 om Nettsalg
+«Før det gis salgsbevilling til nettsalg av alkoholholdig drikk, må
+bevillingshaver legge fram dokumentasjon på rutiner som omhandler
+salgstider, aldersgrenser og kontroll av nettsalg. Ved kommunens
+behandling av søknaden, skal rutinene vurderes opp mot kravene i
+alkoholloven/-forskriften.
+Slik bevilling forutsetter:
+▪ Utlevering av alkoholdig drikk må skje innenfor de åpningstider som
+gjelder for bevillingen.
+▪ Det må fremgå av søknaden om varene skal leveres fra et bestemt
+betjent lokale eller om det skal skje ved utkjøring.
+▪ Bevillingshaver skal føre en aktiv alderskontroll både ved bestilling og
+levering.
+▪ Ved utkjøring må kunden kvittere for å ha mottatt varer og alkohol,
+samt tidspunktet for utlevering. Dokumentasjon skal være lett
+tilgjengelig for kontroll.
+▪ Åpenbart rusmiddelpåvirkede personer får ikke utlevert alkohol, jf.
+alkoholforskriften § 3 1.
+▪ Søknad om bevilling må skje til kommunen der virksomheten er
+lokalisert/lokalet ligger. I tillegg må det søkes om kommunal bevilling i
+alle kommuner det skal utleveres alkoholholdig drikk.»
+Etter alkoholloven § 1-4 b skal salgsbevilling gis til den juridiske enheten som driver
+virksomheten og har den økonomiske interessen i salget.
+Etter alkoholloven § 1-7 b stilles det krav om uklanderlig vandel for bevillingshaver og
+sentrale personer i virksomheten, herunder eier og daglig leder, både etter alkoholloven
+og annet regelverk som har sammenheng med alkohollovens formål, samt skatte- og
+avgiftslovgivning.
+
+Etter forskrift om omsetning av alkoholholdig drikk mv. § 5-1 skal styrer og stedfortreder
+dokumentere kunnskap om alkoholloven og forskrifter gitt i medhold av loven.
+Søknader om nye salgs- og skjenkebevillinger blir rutinemessig oversendt
+høringsinstansene til uttalelse, jf. alkohollovens § 1-7 andre ledd.
+Det er i denne saken avgitt uttalelse til NAV (som representerer Sosialtjenesten) Politiet
+og Skatteetaten.
+Kommunal salgsbevilling etter alkohollovens §1-6, andre ledd kan gis av kommunen for
+perioder inntil 4 år, og med opphør senest 30. september året etter at nytt
+kommunestyre har tiltrådt.
+
+Saksvurderinger:
+
+Det er ingen momenter vedrørende vandel eller økonomisk vandel knyttet i foreliggende
+søknad som tilsier at utvidet salgsbevilling for alkoholholdig drikk gruppe 1 ikke kan
+tildeles, jf. uttalelser fra politiet og skatteetaten.
+NAV v/sosialtjenesten har heller ingen innsigelser mot søknaden
+Når vandelsvilkårene er vurdert, må det videre foretas en vurdering av de særlige
+kontrollutfordringene som gjør seg gjeldende ved nettsalg av alkohol.
+Det må vurderes om den foreslåtte løsningen for utlevering gir tilstrekkelig grunnlag for å
+føre kontroll med at alkohollovens bestemmelser og kommunens egne retningslinjer
+overholdes.
+Et særskilt spørsmål i saken er hvordan kravet i punkt 4.8 i kommunens
+rusmiddelpolitiske handlingsplan om at kunden skal «kvittere» for mottak av varer og
+alkohol skal forstås.
+Bestemmelsen stiller ikke krav om at kvitteringen må være en fysisk underskrift eller
+foreligge på papir. Kommunens rusmiddelpolitiske plan punkt 4.8 må derfor tolkes i lys
+av alkohollovens bestemmelser og hensynet til kontroll med utleveringen. Det følger
+ikke et særskilt krav om kundekvittering ved nettsalg direkte av alkoholloven.
+Det avgjørende formålet med kravet må være at løsningen gir et tilstrekkelig
+dokumenterbart kontrollspor, for å sikre at det i ettertid kan dokumenteres at kunden
+faktisk har mottatt varene og den alkoholholdige drikken, samt når utleveringen fant
+sted.
+Foodoras PIN-løsning innebærer at kunden får en unik kode som er knyttet til den
+konkrete ordren. Kunden må selv oppgi PIN-koden til budet ved fysisk utlevering.
+Leveringen kan ikke registreres som gjennomført dersom PIN-koden ikke er korrekt.
+Kundens medvirkning er dermed nødvendig for at ordren skal kunne registreres som
+utlevert.
+Løsningen innebærer dermed at det foreligger elektronisk dokumentasjon knyttet til den
+enkelte ordre, herunder opplysninger om at ordren er utlevert og tidspunktet for
+
+utleveringen. Dette gir et elektronisk kontrollspor som kan etterprøves ved kommunalt
+tilsyn.
+Det forhold at PIN-funksjonen opprinnelig er utviklet for å kontrollere at riktig kunde
+mottar ordren, vurderes derfor ikke som avgjørende. Det avgjørende er hvilken funksjon
+løsningen faktisk har ved utleveringen. Når kunden må oppgi PIN-koden for at leveringen
+skal kunne registreres som gjennomført, innebærer dette samtidig en elektronisk
+bekreftelse på at kunden er til stede og mottar den aktuelle ordren.
+På bakgrunn av dette vurderes det at PIN-løsningen oppfyller kravet i punkt 4.8 om at
+kunden skal kvittere for mottak av varer og alkohol. Problemstillingen er også vurdert
+juridisk, og den juridiske vurderingen støtter denne forståelsen.
+At Foodora gjennomfører de praktiske kontrollene ved hjemlevering, innebærer ikke at
+bevillingshavers ansvar etter alkohollovgivningen faller bort.
+Bevillingshaver har fortsatt ansvar for at salget og utleveringen skjer i samsvar med
+alkoholloven, alkoholforskriften, kommunens bestemmelser og vilkårene for
+bevillingen.
+Dersom Foodora endrer rutiner eller tekniske løsninger på en måte som f.eks. påvirker
+alderskontroll, identitetskontroll, dokumentasjon eller tidspunkt for utlevering, er
+bevillingshaver ansvarlig for å sikre at kravene etter alkohollovgivningen fortsatt er
+oppfylt.
+
+Konklusjon:
+Netthandel kan være en tidsbesparende og hensiktsmessig måte å handle varer på.
+Muligheten til å bestille varer på nett og enten hente dem i butikk eller få dem levert
+hjem, kan også gjøre virksomhetens tilbud mer tilgjengelig for kunder som av ulike
+årsaker har begrensede muligheter til å handle fysisk i butikken.
+Erfaringene fra koronapandemien viste også at det var økt etterspørsel etter
+hjemlevering av varer, blant annet for å begrense behovet for å oppholde seg i butikk.
+Samtidig innebærer nettsalg av alkohol særlige kontrollutfordringer.
+Det er derfor lagt vekt på at alders- og identitetskontroll, kontroll ved utlevering,
+salgstider og dokumentasjon kan ivaretas på en måte som sikrer etterlevelse av
+alkohollovens bestemmelser og gir kommunen grunnlag for effektivt tilsyn.
+Kommunedirektøren vurderer på bakgrunn av søknaden og den fremlagte
+dokumentasjonen at bevillingshaver har dokumentert rutiner som ivaretar kravene i
+alkoholloven, alkoholforskriften og Steinkjer kommunes rusmiddelpolitiske
+handlingsplan punkt 4.8.
+Det legger særlig vekt på at:
+• alderskontroll gjennomføres ved bestilling ved bruk av BankID,
+• alders- og identitetskontroll gjennomføres på nytt ved hjemlevering, og i butikk
+• ansatte og budene som foretar utleveringen er over 18 år,
+• alkoholholdige varer utleveres ikke utenfor tillatte salgstider,
+
+•
+•
+•
+•
+•
+•
+
+det er etablert rutiner for å hindre utlevering til åpenbart påvirkede personer,
+det er etablert opplæring for budene,
+kunden må oppgi en unik PIN-kode ved fysisk utlevering,
+leveringen kan ikke registreres som gjennomført uten korrekt PIN-kode,
+tidspunktet for utleveringen registreres, og
+dokumentasjonen kan gjøres tilgjengelig for kommunen ved kontroll.
+
+Kommunedirektøren fremmer på denne bakgrunn positiv innstilling til søknaden.
+Kommunedirektøren tilrår at HANDELSHUSET SENTRUM STEINKJER AS, org.nr. 935 648
+858, ved Spar Sentrum Steinkjer, Kongens gate 27, 7713 Steinkjer innvilges utvidet
+salgsbevilling med rett til netthandel og hjemlevering via Foodora samt henting i butikk
+for alkoholholdig drikk gruppe 1.
+
+

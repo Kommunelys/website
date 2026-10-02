@@ -20,10 +20,14 @@ import sys
 from pathlib import Path
 
 # I malens rekkefølge. Bare første treff etter forrige overskrift teller.
+# Variantene er funnet i 2026: «… forslag til vedtak i eldrerådet:»,
+# «Saksvurdering» og «Sakvurderinger:». Bare «Vurdering» tas ikke med; det
+# brukes også som underoverskrift inne i saksopplysningene.
 OVERSKRIFTER = (
-    ("forslag", re.compile(r"^.{0,40}\bforslag til (?:vedtak|innstilling)\s*:?$", re.I)),
+    ("forslag", re.compile(
+        r"^.{0,40}\bforslag til (?:vedtak|innstilling)(?:\s+.{1,40}:|\s*:?)$", re.I)),
     ("saksopplysninger", re.compile(r"^saksopplysninger\s*:?$", re.I)),
-    ("saksvurderinger", re.compile(r"^saksvurderinger?\s*:?$", re.I)),
+    ("saksvurderinger", re.compile(r"^saks?vurdering(?:er)?\s*:?$", re.I)),
 )
 
 

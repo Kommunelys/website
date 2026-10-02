@@ -1,0 +1,271 @@
+SAKSFRAMLEGG
+Saksgang
+Utvalg
+Formannskap
+
+Møtedato
+
+Utvalgssak
+
+Arkivsaksnr: 2026/3057
+Saksbehandler: Per Morten Bjørgum
+
+ROS Trøndelag 2027- høringsuttalelse fra Steinkjer kommune
+Vedlegg:
+1
+UTKAST 1 Hovedrapport ROS Trøndelag 2027.PDF
+2
+ROS- Trøndelag 2027 høring.pdf
+
+Kommunedirektørens forslag til vedtak:
+Steinkjer kommune har følgende innspill til ROS Trøndelag 2027:
+1. Innspill til scenarioene:
+a. Samtidig bortfall av veg (E6) og bane kunne gjerne vært vurdert som eget
+scenario og ikke bare som følge av kvikkleireras
+2. Innspill til handlingsplanarbeidet:
+a. Det forventes at kommunene og øvrige aktører får handlingsplanen på
+høring/til uttalelse før den fastsettes
+b. Det bør vurderes etablert service- og trygghetspunkter etter modell fra
+Jämtland rundt i trønderske kommuner (Scenario Mat- og
+forsyningstrygghet- men også andre)
+c. Det bør vurderes behov for distribuerte matvarelager i regionene i
+Trøndelag (Scenario Mat- og forsyningstrygghet)
+d. Det er behov for forventningsavklaringer og rammer fra nasjonalt nivå ift
+mottak av styrker og materiell (Scenario artikkel 5). Dette bør koordineres
+med tilsvarende rammer fra nasjonalt nivå når det gjelder eventuelt
+mottak av krigsutflyttede innbyggere fra andre landsdeler.
+e. Det bør utarbeides standardiserte rutiner og avtaler for
+beredskapsbistand mellom kommunene, både på ledelsesnivå og
+utførende nivå.
+f. Tydelige rolleavklaringer for statsforvalter, fylkeskommune, kommunene
+og øvrige aktører er viktige for alle scenarioene
+
+Saksopplysninger:
+
+Statsforvalteren i Trøndelag har sendt forslag til ROS (Risiko- Og Sårbarhetsanalyse)
+Trøndelag 2027 på høring til fylkesberedskapsrådet og kommunene.
+Fylkesvise ROS som dette baserer seg på nasjonale scenario som Nasjonalt
+riskikobilde, men utreder og tilpasser disse til den aktuelle regionen. Kommunene
+videreutvikler så scenarioene videre i sine kommune- ROS.
+Analysen bygger metodisk på Direktoratet for samfunnssikkerhet og beredskaps (DSB)
+veileder for fylkes-ROS (versjon 4, mars 2020). Veilederen beskriver krav til organisering,
+forankring, avgrensning, metode og kvalitet, og anbefaler scenario-baserte vurderinger
+på tvers av sektorer. Revisjonen viderefører arbeidet fra ROS-Trøndelag 2023, som la
+særlig vekt på langvarige hendelser med konsekvenser for kritisk infrastruktur og kritiske
+samfunnsfunksjoner, og som gjennomførte risikovurderinger i hele krisespekteret
+Hendelser som er analysert:
+Det er analysert 11 hendelser, disse er:
+1. Cyber
+2. Atom
+3. Mat- og forsyningssikkerhet
+4. Artikkel 5
+5. Kvikkleire
+6. Kraftig vind
+7. Skog- og lyngbrann
+8. Hendelse ved større arrangement
+9. Maritim hendelse
+10. Pandemi
+11. Farlig gods/CBRNE
+Flere av hendelsene er gjenkjennbare fra FylkesROS 2023, mens andre er nye. For
+beskrivelse av hendelsene vises til vedlagte dokument, særlig fra side 18 og utover.
+Av dokumentet framgår at de foreslåtte scenarioene er valgt med utgangspunkt i
+eksisterende kunnskapsgrunnlag, innspill fra avdelingene hos Statsforvalteren og
+endringer i det nasjonale og regionale risikobildet.
+Kommunene og øvrige samarbeidspartnere fra fylkesberedskapsråd mfl har vært
+representert i arbeidsgrupper ift analyse av ulike hendelser.
+I tråd med nevnte veileder fra DSB er hendelsene som sagt analysert, sannsynlighet og
+konsekvens er vurdert, og hendelsene er deretter plassert inn i risiko- og
+sårbarhetsmatriser for temaene liv og helse, natur og miljø, samfunnsstabilitet og
+materielle verdier. Risikomatrisene er vist på side 58 i analysedokumentet.
+ROS-analysen skal følges opp av en tiltaksplan med formål å redusere sannsynlighet
+og/eller konsekvens av hendelsene. Tiltaksplan foreligger ikke pt.
+
+Saksvurderinger:
+Valg av hendelser for analyse
+Hendelsene som er valgt ut for analyse er gjenkjennbare, både fra FylkesROS 2023 og
+Steinkjer kommunes helhetlige ROS fra 2023. Samtidig er hendelser fra øvre
+krisespekter (krig og krigslignende tilstander) gitt større rom- i lys av den
+sikkerhetspolitiske situasjonen en ser i dag.
+Flere av hendelsene har stor overføringsverdi ift andre hendelser, eksempelvis er
+analysen av hendelsen kraftig vind også relevant for konsekvensene av langvarige
+strømbrudd av andre årsaker enn vind.
+Kommunedirektøren vurderer det som et godt grep å holde antall analyserte hendelser
+på et rimelig nivå. I utgangspunktet kan en ROS-analyse bli svært omfattende og
+uoversiktlig om «alle mulige» hendelser tas inn.
+Imidlertid er det en hendelse som gjerne kunne vært analysert som separat hendelse,
+nemlig samtidig bortfall av hovedveg (E6) og jernbane. Raset ved Nesvatnet har vist en
+betydelig sårbarhet når det gjelder et slikt scenario, og det kan også være et scenario
+som kommer som følge av villede handlinger.
+I de videre vurderingene tar kommunedirektøren utgangspunkt i risikomatrisene på side
+58, og kommenterer særskilt på de hendelsene som scorer høyt både på sannsynlighet
+og konsekvens. I tillegg tas scenario kraftig vind med siden Steinkjer har nylige erfaringer
+med det.
+Pandemi
+Scenarioet Pandemi scorer høyest på både sannsynlighet og konsekvens- på tre av fire
+områder (Liv og helse, Samfunnsstabilitet og Materielle verdier). Som ulike
+medisinskfaglige rådgivere har framhevet, er det ikke spørsmål om vi får en ny pandemi,
+men når. Erfaringene fra Corona- pandemien er fortsatt sterke og tydelige i kommunene,
+og mye lærdom kan trekkes ut fra de.
+Kommunedirektøren vurderer at sårbarhetene er godt beskrevet i analysen, og er i stor
+grad enig i disse. Tilgang på personell (både fagpersonell og frivillige), testutstyr og IKTløsninger er helt sentrale momenter for håndtering av en pandemi. Som mellomstor
+kommune har også Steinkjer erfaringer med at det ble etterspurt forholdsvis mye
+bistand fra mindre nabokommuner utover i pandemien. Dette gjaldt både rutiner og
+overordnet håndtering og praktisk bistand med prøvetaking mv.
+Mat- og forsyningssikkerhet
+Mat og forsyningssikkerhet kommer også høyt på lista ift sannsynlighet og konsekvens.
+Trøndelag og Steinkjer er store råvareprodusenter ift mat. Som analysen påpeker har vi i
+Trøndelag 8 % av landets befolkning men 20 % av matproduksjonen.
+
+Mange av de øvrige hendelsene kan få stor betydning for opprettholdelse av
+matproduksjon og ikke minst distribusjon av innsatsfaktorer og ferdig produkt.
+Landbruksproduksjonen er sårbar ift strøm og ekom- bortfall, det har vi nylige erfaringer
+på i Steinkjer. Etter de to strømhendelsene 1.kvartal 2025 får vi tilbakemeldinger på at
+svært mange gårdsbruk har anskaffet eller oppgradert sine nødstrømsløsninger.
+Imidlertid var det også en klar tilbakemelding fra landbruksnæringa at bortfall av ekom
+var svært krevende, både i forhold til drift av anlegg men også i et sikkerhetsaspekt. Og i
+tillegg selvsagt også vannforsyning, der strømbrudd over tid kan gi leveringsproblemer.
+Men også krigshandlinger (se under) kan få stor betydning både i forhold til
+jordbruksproduksjon (skader på avling og jord etter store militære forflytninger) og ikke
+minst problemer med transport av innsatsfaktorer og produkt.
+En annen tydelig utfordring mht mat- og foryningssikkerhet er at stadig større deler av
+foredlingen sentraliseres til større anlegg, og gjerne da bare noen få i landet. Et
+eksempel på dette er Norturas flytting av nedskjæring av gris fra Steinkjer- noe som i
+praksis betyr at vi i en skarp situasjon får slakta grisen lokalt men mangler
+foredlingsleddet. Ulike småskalaprodusenter kan trolig bidra med noe, men de store
+volumproduksjonene er sterkt sentralisert.
+Samme sentralisering ser en ift matvaredistribusjon generelt, der noen få sentrallager
+forsyner alle matvarebutikker. I situasjoner der kapasiteten på veg og bane er begrenset,
+kan det bli problemer med å få fram forsyninger.
+Kommunedirektøren mener det er behov for både nasjonale og regionale vurderinger
+knyttet til behov for distribuerte matvarelagre. En er kjent med at det på nasjonalt nivå
+har vært jobbet noe med konseptet beredskapsbutikker, men det er ikke kjent om noen
+slike er planlagt etablert i vårt område.
+Tilgang på matvarer og drivstoff kan fort bli vanskelig under strømbrudd- uavhengig av
+hva bruddet skyldes. Mange matvarer er avhengig av strøm for kjøling, mens
+drivstoffanlegg trenger strøm for å pumpe drivstoffet ut av tankene.
+Kommunedirektøren mener det for Trøndelag sin del er interessant å se på muligheten
+for å etablere service- og trygghetspunkter rundt i distriktene- etter modell fra Jämtland.
+Disse punktene etableres i tilknytning til dagligvarebutikker med drivstoffanlegg og
+består av nødstrømforsyning for å holde butikk og drivstoffanlegg i gang samt anlegg for
+nødkommunikasjon med omverdenen. I praksis blir disse også innbyggerpunkt for
+informasjon fra kommunen og andre.
+Artikkel 5- Norge og Trøndelag i krig
+Etter kommunedirektørens vurdering er dette scenarioet det som utfordrer
+Trøndelagsregionen sterkest. Den store endringen ift dette scenarioet er Sverge og
+Finland sin inntreden i NATO, noe som aktualiserer Trøndelag som oppmarsjområde og
+logistikkhub for militær aktivitet fra NATO østover. Et massivt mottak av allierte styrker
+og ikke minst materiell som scenarioet beskriver vil kreve svært store
+
+logistikkoperasjoner- som dagens infrastruktur er lite egnet til å håndtere. Spesielt
+gjelder dette transport østover, men også til dels nordover. Vegnettet har partier med
+begrenset kapasitet både i forhold til størrelse og vekt på kjøretøy, og jernbanen har sine
+begrensninger også.
+Slik hendelsen er beskrevet i ROS- analysen, vil transportmengden øke svært raskt, og
+vedvare over tid. Alle kommuner vil bli berørt på en eller annen måte, både direkte og
+indirekte. Slik også analysen peker på, blir det sentralt å ha en helhetlig og tverrsektoriell
+samordning på plass, noe som analysen vurderer ikke er på plass i dag.
+Mottak og støtte til NATO er et nasjonalt ansvar, der nasjonale myndigheter skal og må
+ha planverk og forberedelser på plass. Men uansett er det kommunene og innbyggerne i
+Trøndelag som må stille areal, veier, jernbaner og annen infrastruktur til rådighet for at
+oppgaven skal kunne løses.
+Kommunedirektøren mener at forventningsavklaringer og rammer fra nasjonalt nivå ift
+mottak av styrker og materiell blir et viktig tiltak i tiltaksplanen til denne hendelsen. For
+at kommunene og regionale aktører for øvrig skal kunne være så forberedt som mulig er
+det viktig å få noe bedre forståelse for hva som kan treffe oss om dette scenarioet skjer.
+En er også kjent med at det på nasjonalt nivå jobbes med planverk for krigsutflytting og
+medfølgende innflytting fra andre landsdeler. Dersom Trøndelag får en rolle som
+mottaker av krigsutflyttede fra andre landsdeler, må det ses opp mot rollen ift mottak av
+allierte styrker ved artikkel 5- operasjon.
+Etter slutten på den kalde krigen har fokuset blitt gradvis svakere i alle ledd når det
+gjelder forberedelser til krig og krigslignende hendelser. Beredskapsrutiner og
+forberedelser har forsvunnet gjennom åra, eksempelvis var det til langt inn på 1990
+tallet vanlig med egne innkvarterings- og rasjoneringsnemder i kommunene. Lenge var
+det ordninger for beredskapslagring av drivstoff på gårdsbrukene, og kommunene og
+større arbeidsgivere hadde oversikt over mobiliseringsdisponerte ansatte. Tilfluktsrom
+er et kapittel for seg.
+Generelt er det behov for å øke befolkningens kompetanse og oppmerksomhet ift
+egenberedskap, men også mentalt forberede på at hendelser av denne type er mer
+aktuelle enn før. Det er viktig at slik informasjon er felles, lik for hele landet og kommer
+fra nasjonale myndigheter. Samtidig har regionale myndigheter og kommunene en rolle i
+å tolke og presentere de lokale virkningene av informasjonen som gis.
+Kraftig vind
+Steinkjer har erfaring med to nylige hendelser med kraftig vind (januar og mars 2025)
+med påfølgende langvarige strømbrudd, bortfall av Ekom og stengte veger mv. I
+etterkant av hendelsene er det gjennomført møter og evalueringer både med
+bondelagene, interne ressurser i kommunen og øvrige beredskapsaktører.
+Gjennomgående er bildet at alle involverte var bedre forberedt når hendelsen i mars
+kom. Det gjaldt både Tensio, kommunen, nødetatene og landbruksnæringa. Direkte
+
+kontakt mellom beredskapsorganisasjonene til Tensio og kommunen var helt nødvendig
+og viktig i begge hendelsene. Dette for å drøfte tiltak, særlig sårbare lokasjoner og
+prioriteringer av opprettingsarbeidet. Hadde hendelsen hatt en enda større geografisk
+utbredelse med enda flere kommuner involvert, ville det vært behov for koordinering fra
+statsforvalter med hensyn til prioriteringer av oppretting.
+Når det gjelder landbruksnæringa er tilbakemeldinga at næringa sjøl tar ansvar for
+nødstrømløsninger for å holde viktige systemer i drift. Imidlertid ble det klart uttalt at
+bortfall av ekom gir store utfordringer, både i forhold til dyrevelferd og styringssystemer.
+For kommunal drift utfordret stormen og de langvarige strømbruddene flere av
+tjenesteområdene. I første fase (mens vinden herjet) var det teknisk drift (veg) som var
+mest påvirket, i tillegg til hjemmetjenestene fra helse. Etter hvert ble både vannforsyning
+og helsetjenester for øvrig påvirket.
+Under evalueringene ble det avdekket at regelverk hindrer mobiloperatørene i å dele
+eksakt informasjon om sine anlegg med Tensio. Det gjør at nettselskapet sine
+prioriteringer av retting av feil blir mindre presis enn om denne informasjonen ble delt.
+Her er det en klar oppgave for NKOM og DSB- å sørge for at slike hindringer ryddes av
+vegen.
+Utfordringer på tvers av scenarioene
+Det er noen fellestrekk og utfordringer som går på tvers av scenarioene.
+Bortfall av strøm og ekom kan være følge av mange av scenarioene, og utfordrer
+krisehåndteringen både lokalt og regionalt. Større bortfall vil kunne kreve betydelig
+koordinering fra regionalt hold (Statsforvalteren) når det kommer til prioritering av retting
+av feil mv. Forsterket ekom i kommunesenter som er under utrulling vil kunne avhjelpe
+dette noe- det gir en mulighet for aktørene i beredskapsapparatet til å kommunisere seg
+imellom.
+Det finnes mange ulike løsninger for styrket nødkommunikasjon, men det mangler råd
+og veiledning fra nasjonalt og regionalt hold mht hvilke systemer kommunene bør gå for.
+Dette burde vært sterkere koordinert i stedet for at hver enkelt kommune skal finne sin
+egen løsning.
+Langvarige og sammenfallende hendelser vil utfordre beredskapen både lokalt og
+regionalt. Kommunene er ulike i størrelse og naturligvis også ift beredskapsressurser.
+Erfaringene fra pandemien viser at det større kommunene må være forberedt på å bistå
+de mindre kommunene når krisen pågår over tid. Spørsmålet er om slik bistand i større
+grad burde være klarert og en del av kommunenes planverk i forkant. Både i forhold til
+hvem som bistår hvem og med hva.
+Koordinering på regionalt nivå er sentralt for håndtering av hendelser som er
+kommuneoverskridende/rammer flere kommuner samtidig. Statsforvalteren har og skal
+ha en klar koordinerende rolle når flere kommuner og etater berøres. Spesielt når
+knappe ressurser skal fordeles (eksempelvis ved feilretting etter store strømbrudd) har
+
+statsforvalteren en viktig rolle. Men ikke minst også der flere kommuner og etater
+berøres, som Nesvatnet.
+Rolleavklaringer
+Både i forbindelse med uværshendelsene og raset ved Nesvatnet kan det synes å være
+behov for avklaringer mht ansvar og oppgaver i krisehåndtering mellom statsforvalter og
+fylkeskommune, og berørte kommuner. Blant annet i forhold til evaluering
+(uværshendelsene), krisekommunikasjon og koordinering (Nesvatnet) og hvem som
+organiserer hva.
+Tilsvarende gjelder for avklaring av kommunenes rolle i ulike kriser og hendelser, der det
+synes å være en utvikling i retning av at det forventes mer innsats fra kommunene enn
+tidligere, både fra beredskapsaktører, innbyggere og andre.
+Handlingsplan
+Kommunedirektøren mener forslag til handlingsplan gjerne kunne fulgt med
+analysedokumentet til uttalelse. Når handlingsplanen ikke er med nå, må det forventes
+at kommunene og øvrige aktører får handlingsplanen til uttalelse før denne vedtas.
+Kommunene og andre aktører vil trolig bli svært berørt av tiltak som kommer i
+handlingsplanen- og det er derfor viktig at den både er kjent og drøftet med
+kommunene.
+
+Handlingsrom:
+Formannskapet står fritt til å bearbeide forslag til uttalelse.
+
+Økonomi:
+Saken vurderes ikke å ha direkte økonomiske konsekvenser for kommunen.
+
+Klima/miljø:
+Klima/miljø vurderes ikke som direkte relevant tema i denne saken.
+
+Konklusjon:
+Kommunedirektøren anbefaler at Steinkjer kommune gir høringsuttalelse til ROS
+Trøndelag 2027 i tråd med forslag til vedtak.
+
+
