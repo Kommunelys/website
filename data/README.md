@@ -9,6 +9,8 @@
 | `tekst/moter/` | Tekst fra møteprotokollene, én fil per møte-ID | `hent.hent_dokumenter` |
 | `voteringer/` | Voteringer og stemmer per behandling, fra saksprotokollene | `tolk.bygg_voteringer` |
 | `oppmote/` | Oppmøte per møte, med avvik mot stemmene | `tolk.bygg_oppmote` |
+| `avvik/` | Avvik som må vurderes før voteringene publiseres | `tolk.bygg_avvik` |
+| `vurderinger.json` | Avgjørelsene for avvikene. Skrives for hånd | et menneske |
 | `raa/medlemmer/` | Dagens medlemslister, én fil per endring, uten kontaktopplysninger | `hent.hent_medlemmer` |
 | `utvalg/` | Utvalg med antall plasser, og partiene | `tolk.bygg_verv` |
 | `verv/` | Ett verv per person og utvalg, med observerte datoer | `tolk.bygg_verv` |

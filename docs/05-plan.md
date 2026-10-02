@@ -91,6 +91,8 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - [x] Bekrefte at protokolltolkningen virker på minst tre møter fra ulike
       utvalg, ikke bare kommunestyret. Alle 442 voteringer med navneliste i
       2026, fra 9 utvalg, består tellekontrollen
+- [ ] Vurdere de 10 avvikene i `data/avvik/2026.json` og skrive avgjørelsen
+      i `data/vurderinger.json`. Til da holdes 97 voteringer tilbake
 - [ ] Bestemme hvem som eier tjenesten og står som avsender
 - [ ] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret

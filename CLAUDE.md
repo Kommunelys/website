@@ -60,6 +60,8 @@ data/voteringer/  voteringer og stemmer fra saksprotokollene
 data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
 data/utvalg/   utvalg og partier
 data/verv/     verv per person og utvalg
+data/avvik/    avvik som må vurderes før voteringene publiseres
+data/vurderinger.json  avgjørelsene for avvikene, skrevet av et menneske
 data/analyse/  sammendrag og tagger fra modellen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
@@ -76,6 +78,7 @@ python -m tolk.bygg_saker               # saksgang og status -> data/saker/
 python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
 python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
 python -m tolk.bygg_verv 2026           # utvalg, partier og verv -> data/utvalg/, data/verv/
+python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data/avvik/
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
@@ -120,8 +123,9 @@ python -m tester.kontroller             # alle kontroller
 - **Oppmøtelisten og stemmene stemmer ikke alltid overens.** I 6 møter i
   2026 stemmer noen som ikke står på oppmøtelisten, eller det er flere
   stemmer enn frammøtte. Det står slik i protokollene. `tolk.bygg_oppmote`
-  flagger dem; slike voteringer publiseres ikke uten at et menneske har sett
-  på dem.
+  flagger dem; slike voteringer publiseres ikke før et menneske har skrevet
+  en vurdering i `data/vurderinger.json`. Ikke la en språkmodell avgjøre
+  dem (regel 2). Se `docs/03-datamodell.md`.
 - **GitHub Actions utløser ikke seg selv.** En commit med standardtokenet
   starter ikke andre arbeidsflyter. Derfor én arbeidsflyt med tre jobber.
 

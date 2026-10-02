@@ -162,6 +162,39 @@ gjelder det 97 voteringer i 6 møter, og alle står slik i protokollene:
 Avvikene lagres per møte. En votering med avvik publiseres ikke før et
 menneske har sett på den.
 
+### Vurdering av avvik
+
+Avvikene vurderes av et menneske, ikke av en språkmodell. Svaret står ofte
+ikke i dokumentene. Om noen var til stede eller ikke, vet bare kommunen, og
+en modell som gjetter, kan tillegge en politiker en stemme hun ikke avga.
+
+`python -m tolk.bygg_avvik` samler avvikene til `data/avvik/<år>.json`. Ett
+avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
+`oppmote:1285:lena-hanem-bartnes`, som gjelder 42 voteringer. I 2026 er det
+10 avvik og 97 voteringer.
+
+Vurderingen skrives for hånd i `data/vurderinger.json`:
+
+```json
+[{"avvik": "oppmote:1285:lena-hanem-bartnes",
+  "avgjorelse": "publiser",
+  "merknad": "Vises sammen med voteringen",
+  "begrunnelse": "Hvorfor, med kilde",
+  "vurdert_av": "Navn", "dato": "2026-10-02"}]
+```
+
+| `avgjorelse` | Virkning |
+|---|---|
+| `publiser` | Voteringene publiseres, med merknaden |
+| `ikke_publiser` | Holdes tilbake |
+| `venter_paa_kommunen` | Holdes tilbake til kommunen har svart |
+
+Et avvik uten vurdering holdes tilbake. Nettstedet viser at voteringen
+finnes, men ikke hvem som stemte hva. `tester.kontroller` stopper
+publiseringen hvis en vurdering mangler begrunnelse, har en ukjent
+avgjørelse, eller gjelder et avvik som ikke lenger finnes, for eksempel fordi
+kommunen har rettet protokollen.
+
 ## Navnevarianter
 
 Samme person skrives ulikt, også i samme dokument. Oppmøtelisten bruker ofte
