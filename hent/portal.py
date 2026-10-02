@@ -39,6 +39,14 @@ def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
                 data = r.read()
             time.sleep(PAUSE_SEKUND)
             return data if binaer else json.loads(data.decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
+            # at vi går for fort, og skal vente som andre feil.
+            if 400 <= e.code < 500 and e.code != 429:
+                time.sleep(PAUSE_SEKUND)
+                raise PortalFeil(f"{e.code} {e.reason}: {url}") from e
+            siste = e
+            time.sleep(5 * (n + 1))
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
             siste = e
             time.sleep(5 * (n + 1))

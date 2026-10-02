@@ -103,7 +103,7 @@ def _steg(bid: int, kjent: dict, ukjent: dict) -> dict:
         utvalg, navn = d.get("ShortCode"), d.get("Name")
         dato, mid = (m.get("StartDate") or "")[:16], m.get("Id")
         publisert = bool(b.get("ProtocolPublished"))
-        skjermet = False
+        skjermet = bool(b.get("ProtocolRestricted"))
 
     steg = {
         "behandling_id": bid,
