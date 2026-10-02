@@ -22,7 +22,7 @@ utvetydig uoffisielt i all presentasjon.
 | Nedlasting av dokumenter | URL-ene testet og 2026-samlingen målt. Verktøy valgt i ADR-013. Tekst ikke lagret ennå |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
 | Nettsted | Prototype finnes, se `docs/05-plan.md`. Ikke portet hit |
-| GitHub Actions | Skrevet, ikke kjørt |
+| GitHub Actions | Skrevet, ikke kjørt. Tidsplanen er slått av til ADR-007 er avklart |
 
 ## Grunnregler du ikke skal bryte
 

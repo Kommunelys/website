@@ -5,11 +5,13 @@ name: Oppdater
 # push-utløsere ville stoppet stille etter første jobb.
 
 on:
-  schedule:
-    # 05:17 UTC på hverdager. Skjevt minutt med vilje: planlagte kjøringer på
-    # hel time blir oftere forsinket. Cron i Actions er uansett ikke punktlig,
-    # noe som ikke betyr noe her siden protokoller kommer dager etter møtet.
-    - cron: "17 5 * * 1-5"
+  # Tidsplanen er slått av til innhentingen er avklart med kommunen (ADR-007),
+  # og analyse og nettsted er bygget. Fjern kommentartegnene for å slå den på.
+  # schedule:
+  #   # 05:17 UTC på hverdager. Skjevt minutt med vilje: planlagte kjøringer på
+  #   # hel time blir oftere forsinket. Cron i Actions er uansett ikke punktlig,
+  #   # noe som ikke betyr noe her siden protokoller kommer dager etter møtet.
+  #   - cron: "17 5 * * 1-5"
   workflow_dispatch:
     inputs:
       aar:
