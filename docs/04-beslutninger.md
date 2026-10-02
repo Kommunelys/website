@@ -271,3 +271,37 @@ alle mobilnumrene samlet og versjonert ville vært en ny og mer søkbar kopi.
 parti og partinavn. Alle felter som tolkes, beholdes, så hensikten med
 ADR-001, å kunne tolke på nytt, er ivaretatt. Trengs et annet felt senere,
 hentes det fra da av; eldre versjoner av listen har det ikke.
+
+---
+
+## ADR-015 — Avvik i voteringer kan vurderes av en språkmodell
+
+**Besluttet.** Supplerer ADR-002.
+
+ADR-002 holder stemmetall unna språkmodellen, fordi protokollen har en fasit
+å kontrollere mot. Men noen ganger motsier protokollen seg selv: noen stemmer
+uten å stå på oppmøtelisten, eller det er flere stemmer enn frammøtte. Da
+finnes det ingen fasit, og voteringen stoppes. I 2026 gjaldt det 97
+voteringer, samlet i 10 avvik.
+
+Prosjekteier har bestemt at avvikene kan vurderes av en språkmodell i stedet
+for et menneske, siden tjenesten uansett bygges og drives med AI.
+
+**Konsekvens:**
+
+- Vurderingen avgjør bare om voteringen publiseres og med hvilken merknad.
+  Navn og tall gjengis alltid slik protokollen oppgir dem. Modellen retter
+  aldri en navneliste.
+- Bevisene hentes ut med kode før vurderingen: hvem som står på listen uten
+  å stemme, partiet deres, vervene og vedtak om permisjon og fritak. Hver
+  påstand i en begrunnelse skal kunne etterprøves i dataene.
+- Hver vurdering står i `data/vurderinger.json` med begrunnelse og
+  `vurdert_av`, med modell og versjon. `tester.kontroller` avviser
+  vurderinger uten dem.
+- Er det uklart hvem som møtte, og de mulige personene er fra ulike partier,
+  er avgjørelsen `venter_paa_kommunen`. Da er partifordelingen usikker, og
+  den er det tjenesten skal vise.
+- Første vurdering ble gjort 2. oktober 2026 av Claude Opus 5.5: 9 av 10
+  avvik publiseres med merknad, og kommunestyret 16.09.2026 venter på
+  kommunen. En påstand i første utkast var feil, om en permisjon, og ble
+  fanget fordi den ble sjekket mot sakene før vurderingen ble lagret.

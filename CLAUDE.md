@@ -36,7 +36,7 @@ utvetydig uoffisielt i all presentasjon.
    oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av. Om en
    votering med avvik likevel skal publiseres, kan vurderes av en modell,
    men vurderingen endrer aldri navn eller tall, og den merkes med
-   `vurdert_av` (`data/vurderinger.json`).
+   `vurdert_av` (`data/vurderinger.json`, ADR-015).
 3. **Skjermet informasjon lastes aldri ned og sendes aldri til en modell.**
    Portalen merker dette med `ProtocolRestricted`, `IsRestricted` og
    `AccessCodeId`. Respekter feltene i hvert ledd.

@@ -169,7 +169,7 @@ avgjør bare om voteringen publiseres og med hvilken merknad. Navn og tall
 gjengis alltid slik protokollen oppgir dem, og `vurdert_av` sier hvem som
 har vurdert. Svaret står ofte ikke i dokumentene. Når det avgjørende er
 hvem som møtte, og det bare kommunen vet, er avgjørelsen
-`venter_paa_kommunen`.
+`venter_paa_kommunen`. Se ADR-015.
 
 `python -m tolk.bygg_avvik` samler avvikene til `data/avvik/<år>.json`. Ett
 avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
