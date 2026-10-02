@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvordan er vedtakene i hovedutvalg plan, næring og miljø fra første halvår 2026 fulgt opp?",
+ "sammendrag": "Kommunedirektøren legger fram en rapport om oppfølging av saker som hovedutvalg plan, næring og miljø sluttbehandlet i perioden 01.01.2026–30.06.2026. Rapporten er en del av kommunens internkontroll, og bygger på kommuneloven § 13-1 fjerde ledd om at kommunedirektøren skal påse at vedtak fra folkevalgte organer blir iverksatt uten ugrunnet opphold. Et vedlegg viser alle sakene, med en merknad om hvordan hvert enkelt vedtak er fulgt opp. Kommunedirektøren foreslår at rapporten tas til orientering. Saken skal behandles i hovedutvalg plan, næring og miljø 13.10.2026.",
+ "betydning": "Innbyggerne kan se om politiske vedtak innen plan, næring og miljø faktisk er satt ut i livet.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon",
+  "Plan og areal"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8514,
+ "sjekksum": "a1094598b97f08e7",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2070,
+  "ut": 438
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509167/845045"
+  }
+ ]
+}

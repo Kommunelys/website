@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal klagen på at den gamle reguleringsplanen for Hosetbukta ved Leksdalsvatnet ble opphevet, tas til følge?",
+ "sammendrag": "Reguleringsplanen for Hosetbukta ved Leksdalsvatnet fra 24.03.99 ble opphevet av kommunestyret 13.12.25, som del av en gjennomgang («planvask») av over 200 eldre reguleringsplaner i arbeidet med ny kommuneplanens arealdel. Grunneieren klaget 12.01.26 og mente planen burde forbedres i stedet for å oppheves. Kommunedirektøren foreslo å ikke ta klagen til følge og å sende den til Statsforvalteren i Trøndelag, blant annet fordi planen bare består av et plankart uten bestemmelser og fordi området ligger innenfor sikringssone for drikkevann. Formannskapet gikk 23.04.26 inn for at området i stedet settes av til utbyggingsformål/næring. Kommunestyret vedtok 20.05.26 å ta klagen til følge og be om en prosess der området settes av til fritids- og turistformål og ikke tilbakeføres til LNFR, og at kommunedirektøren kommer tilbake med bestemmelser som støtter opp om det nye formålet.",
+ "betydning": "Det betyr at området ved Hosetbukta ikke blir tilbakeført til landbruks-, natur- og friluftsformål, men at kommunen skal arbeide videre med å legge til rette for fritids- og turistformål, blant annet bobilturisme.",
+ "tagger": [
+  "Plan og areal",
+  "Klager",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "I formannskapet 23.04.26 stemte AP for kommunedirektørens innstilling om å avvise klagen, mens FRP, H, INP, PP, R, SP, SV og V støttet forslaget om å endre arealformålet; i kommunestyret 20.05.26 samlet alle partiene seg om å ta klagen til følge.",
+ "usikker": false,
+ "sak_id": 7824,
+ "sjekksum": "8143edb199c7bb3d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9942,
+  "ut": 721
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/449673/758809"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7824/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7825/Protokoll"
+  }
+ ]
+}

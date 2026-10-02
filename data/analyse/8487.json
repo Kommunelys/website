@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om forslagene i utredningen «Den nye velferdskommunen»?",
+ "sammendrag": "Helse- og omsorgsdepartementet har sendt utredningen NOU 2026:6 Den nye velferdskommunen på høring. Utredningen handler om hvordan kommuner, innbyggere, frivillige, ideelle aktører og næringsliv kan samarbeide om å utvikle framtidens helse-, omsorgs- og velferdstjenester. Kommunedirektøren foreslo at Steinkjer kommune svarer at kommunen i hovedsak støtter forslagene, blant annet et praksisnært program for velferdskommunen, et nasjonalt skaleringsfond og opprydding i regelverket for finansiering av sykehjem og hjemmetjenester. Samtidig peker høringssvaret på at nasjonale føringer må kombineres med lokalt handlingsrom, at oppgaver ikke bør flyttes videre fra sykehus til kommunene, at tilskuddets størrelse er usikker, og at forebygging, bolig, frivillighet og tidlig innsats gjennom hele livsløpet bør vektlegges. Saken ble behandlet i formannskapet 24. september 2026, men vedtaket er ikke publisert ennå.",
+ "betydning": "Høringssvaret er kommunens innspill til hvordan staten skal utforme framtidens helse-, omsorgs- og velferdstjenester, som innbyggerne i Steinkjer bruker.",
+ "tagger": [
+  "Helse og omsorg",
+  "Høring"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8487,
+ "sjekksum": "09fb53c8b00f97e2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4205,
+  "ut": 618
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/507313/842386"
+  }
+ ]
+}

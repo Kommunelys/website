@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune inngå ny samarbeidsavtale med Nord universitet?",
+ "sammendrag": "Den forrige samarbeidsavtalen mellom Steinkjer kommune og Nord universitet ble inngått i 2021 med tre års varighet, og den har nå utløpt. I 2026 har kommunen hatt dialog med universitetet om en revidert avtale, blant annet gjennom et eget dialogmøte med administrativ og politisk ledelse. Den nye avtalen skal blant annet styrke studiested Steinkjer, gjøre flere studietilbud tilgjengelige lokalt, sikre god praksis for studenter og utvikle samarbeid om studentoppgaver på bachelor- og masternivå. Avtalen legger opp til årlige møter og én kontaktperson hos hver part, har ikke direkte økonomiske konsekvenser og varer i fem år. Formannskapet godkjente avtalen i møtet 11. juni 2026.",
+ "betydning": "Avtalen skal bidra til at flere kan ta høyere utdanning i Steinkjer og at kommunen utvikles videre som universitets- og studieby.",
+ "tagger": [
+  "Næring",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8165,
+ "sjekksum": "145737eec1e4caa4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3598,
+  "ut": 460
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/481527/804632"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8165/Protokoll"
+  }
+ ]
+}

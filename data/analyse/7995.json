@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om togtilbudet i Trøndelag fra desember 2027?",
+ "sammendrag": "Trøndelag fylkeskommune ba i brev datert 10.03.2026 kommunene om innspill til ruteplan for jernbanen fra desember 2027 (R28). Innspillene skal danne grunnlag for fylkeskommunens uttalelse til Jernbanedirektoratet. Formannskapet vedtok 13.05.2026 at Steinkjer kommune ber om elektrifisering av Trønderbanen til Steinkjer så raskt som mulig, at «hull» i rutetabellen nordover lørdag kveld tettes, tog sørfra med ankomst Steinkjer om lag 06.50 på hverdager, ekstra rushavganger i begge retninger, ny avgang sørover fra Steinkjer om lag 22.30 og vurdering av ekspressavganger med stopp kun i byene og på Værnes. Kommunen ber også om økt kapasitet på rute 477 på Nordlandsbanen, gode korrespondanser mellom banene og mellom tog og buss, og samordnede billettpriser for tog og buss. Formannskapet la i tillegg inn et punkt om reisetid, der det pekes på at reisetiden allerede er kortere med bil mellom Steinkjer og Trondheim, og at både reisetid og billettpriser må reduseres betydelig om toget skal bli et reelt alternativ til bil.",
+ "betydning": "Uttalelsen er kommunens ønskeliste for togtilbudet som pendlere, flyreisende og kulturpublikum i Steinkjer kan bruke fra desember 2027, men det er fylkeskommunen og Jernbanedirektoratet som bestemmer rutene.",
+ "tagger": [
+  "Vei og trafikk",
+  "Høring",
+  "Klima og miljø"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Alle partiene i formannskapet (AP, FRP, H, INP, PP, R, SP, SV og V) sluttet seg til innspillet, og også til tilleggspunktet om reisetid som ble fremmet som alternativ til kommunedirektørens punkt om billettpriser.",
+ "usikker": false,
+ "sak_id": 7995,
+ "sjekksum": "3c5e8f5fc9ac0784",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 11725,
+  "ut": 776
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/463656/779778"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7995/Protokoll"
+  }
+ ]
+}

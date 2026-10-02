@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvilke oppgaver og rammer skal jubileumskomiteen for Nasjonaljubileet 2030 ha?",
+ "sammendrag": "Steinkjer kommune forbereder markeringen av Nasjonaljubileet i 2030. Formannskapet vedtok 23.04.2026 hvordan arbeidet skal organiseres, med formannskapet som hovedkomite, en jubileumskomite og en administrativ gruppe. Jubileumskomiteen har hatt to møter og laget et forslag til mandat for arbeidet, som er godkjent av en samlet komite. Formannskapet vedtok 03.09.2026 mandatet slik det var lagt fram. Det er varslet et åpent møte 10. september 2026 der alle interesserte kan melde inn prosjekter og aktiviteter fram mot jubileet, og det skal søkes om økonomisk støtte til driften av jubileumsarbeidet fra utviklingsfond NTE utbytte.",
+ "betydning": "Innbyggere, lag og organisasjoner kan foreslå aktiviteter til jubileet, og arbeidet fram mot 2030 får nå en fastsatt ramme.",
+ "tagger": [
+  "Kultur og idrett",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "H, INP, PP og V ønsket å legge til i mandatet at komiteen skulle lage en overordnet strategi som formannskapet vedtar, og at formannskapet også skulle vedta de økonomiske rammene, mens AP, FRP, SP og SV stemte mot begge tilleggene.",
+ "usikker": false,
+ "sak_id": 8427,
+ "sjekksum": "843ede05534cd230",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3710,
+  "ut": 566
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/502808/835587"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8427/Protokoll"
+  }
+ ]
+}

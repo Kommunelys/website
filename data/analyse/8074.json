@@ -1,0 +1,44 @@
+{
+ "tittel_klarsprak": "Hvordan ligger Steinkjer kommune an økonomisk etter de fire første månedene av 2026?",
+ "sammendrag": "Tertialrapporten for første tertial 2026, datert 29.04.26, viser status for drift, investeringer, årsverk, sykefravær og oppfølging av verbalvedtak. Kommunedirektøren varsler et mulig merforbruk ved årets slutt på rundt 24,6 millioner kroner, og har som mål at avviket skal dekkes inn med tiltak i de enkelte tjenesteområdene. Økonomisk sosialhjelp ligger an til et avvik på rundt 6,8 millioner kroner. Kommunestyret tok rapporten til orientering 20.05.2026 og vedtok å flytte 3 100 000 kroner som var satt av til flyktningetiltak i etat oppvekst og inkludering og etat helse og velferd over til økonomisk sosialhjelp.",
+ "betydning": "Rapporten varsler at kommunen må finne innsparinger i tjenestene for å unngå merforbruk i 2026, og penger satt av til flyktningetiltak brukes i stedet på økonomisk sosialhjelp.",
+ "tagger": [
+  "Økonomi",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8074,
+ "sjekksum": "6720c318b18b914c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5050,
+  "ut": 468
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470215/790087"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8074/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8075/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8077/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8078/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "tittel_klarsprak": "Skal Malm legekontor legges ned og pasientene overføres til fastlegekontor i Steinkjer sentrum?",
+ "sammendrag": "Kommunestyret vedtok 17. juni 2026 å avvikle Malm legekontor. Alle listepasienter skal overføres til fastlegekontor i Steinkjer sentrum via HELFO, og de to legehjemlene flyttes til legekontor i sentrum. Bakgrunnen er at forsøket på å rekruttere lege til et privat en-legekontor i Malm ikke førte fram: Av de to søkerne til hjemmelen trakk én søknaden, og den andre var ikke kvalifisert. Legekontoret har vært drevet av to vikarleger med avtaler ut juni 2026. Kommunestyret vedtok også kompenserende tiltak: informasjon om pasientreiser, oppfølging og enkle prøver i hjemmet fra hjemmesykepleien, sykepleier inntil en dag i uka med enkle laboratorietjenester ved Helsetunet, og tilrettelegging for e-konsultasjoner og videotimer. Tiltakene i punkt 2 og 3 skal innarbeides i økonomiplan 2027-2030.",
+ "betydning": "Innbyggere i Malm og Verran mister det lokale legekontoret og må reise til fastlegekontor i Steinkjer sentrum, men får tilbud om enkelte helsetjenester lokalt og i hjemmet.",
+ "tagger": [
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "H, INP, PP og V ville videreføre Malm legekontor med kommunal drift og ny utlysning av hjemlene, mens AP, FRP, R, SP, SV og uavhengig representant gikk inn for å avvikle kontoret; SV stemte også mot pakken med kompenserende tiltak som AP, FRP, R, SP og uavhengig representant støttet.",
+ "usikker": false,
+ "sak_id": 8194,
+ "sjekksum": "bda9e6f3f2521afc",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7748,
+  "ut": 690
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482099/805517"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-06-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8196/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-06-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8195/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-06-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8197/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8198/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8199/Protokoll"
+  }
+ ]
+}

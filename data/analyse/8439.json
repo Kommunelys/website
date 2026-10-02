@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal et nytt serveringssted i Kongens gate 19 i Steinkjer få skjenkebevilling?",
+ "sammendrag": "Steinkjer kommune mottok 30.06.2026 søknad om ny serverings- og skjenkebevilling for KG 19 Grønli Spis og Bo i Kongens gate 19. Stedet beskrives som en kombinasjon av bar og selskapslokaler med event- og intimscene, i de tidligere lokalene til Thai Thai, med planlagt oppstart i november 2026. Søknaden omfatter også uteservering på 25,2 m², i tillegg til 200 m² skjenkeareal innendørs. Politiet, Skatteetaten og NAV har ingen merknader, og kommunedirektøren foreslår at bevilling for alkoholgruppe 1, 2 og 3 gis fra vedtaksdato til og med 30.09.2028, med skjenketid senest til kl. 02.00 og med krav om at musikk ute opphører kl. 23.00. Formannskapet skal behandle saken 15.10.2026.",
+ "betydning": "Hvis bevillingen innvilges, får Steinkjer sentrum et nytt sted som kan servere øl, vin og sprit inne og ute innenfor fastsatte skjenketider.",
+ "tagger": [
+  "Næring",
+  "Helse og omsorg"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8439,
+ "sjekksum": "9a302611a27705f4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6732,
+  "ut": 506
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/505145/838992"
+  }
+ ]
+}

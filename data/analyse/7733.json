@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal kommunen bruke 4 401 000 kroner på næringsarbeid i 2026?",
+ "sammendrag": "Saken gjelder handlingsplan og budsjett for 2026 i Temaplan næring. Steinkjer utvikling AS er prosjektleder, og den overordnede målsettingen er 1000 nye sysselsatte i privat sektor innen 2032. Handlingsplanen har 25 delmål innenfor satsingsområdene bio- og sirkulærøkonomi, teknologi og grønn energi, og handel og opplevelser. Budsjettet er på kr 4 401 000, en økning på kr 400 000 fra 2025, knyttet til egenkapital til Verran Energisamfunn og ressurssymbiose. Hovedutvalget godkjente både handlingsplanen og budsjettet 27. januar 2026, finansiert av kommunalt næringsfond NTE utbytte.",
+ "betydning": "Kommunen bruker midler fra næringsfondet på tiltak som skal gi flere arbeidsplasser i privat sektor i Steinkjer.",
+ "tagger": [
+  "Næring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7733,
+ "sjekksum": "a2e5e159a17a66a6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3176,
+  "ut": 429
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/437575/744266"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-01-27",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7733/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan fylles de tomme plassene på kommunestyrets varamedlemslister?",
+ "sammendrag": "Flere kommunestyrerepresentanter har fått fritak fra vervet, og varamedlemmer har rykket opp eller falt fra. Da blir det ledige plasser på varamedlemslistene. Valgloven sier at det er valgstyret, ikke kommunestyret, som skal gjennomføre nytt valgoppgjør i slike tilfeller, og Steinkjer endrer nå praksis i tråd med dette. Valgstyret vedtok 23. april 2026 å supplere varamedlemslistene med to varamedlemmer for Arbeiderpartiet, to for Pensjonistpartiet, ett for Rødt, ett for Senterpartiet og ett for Sosialistisk Venstreparti. Etter valgloven skal hver liste ha tre flere vararepresentanter enn faste representanter, så langt det er mulig.",
+ "betydning": "Kommunestyret har nok varamedlemmer til at partiene kan stille fulltallig i møtene.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7878,
+ "sjekksum": "1c4bffafd77177e1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3968,
+  "ut": 555
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454398/766658"
+  },
+  {
+   "tittel": "Vedtak i VN 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7878/Protokoll"
+  }
+ ]
+}

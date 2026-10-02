@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Hva gjør Steinkjer kommune med det høye sykefraværet blant egne ansatte?",
+ "sammendrag": "Saken handler om sykefraværet blant ansatte i Steinkjer kommune i 2025. I saksframlegget står det at sykefraværet er vedvarende høyt og stigende i 2025, og at ledergruppa er bekymret for fraværet. Arbeidsmiljøutvalget fikk en kort muntlig orientering i møtet 10. mars 2026 og tok den foreløpige informasjonen til orientering. Det legges opp til et ekstraordinært møte i arbeidsmiljøutvalget i slutten av mars 2026 med en grundigere gjennomgang. Saken skulle også behandles i administrasjonsutvalget 19. mars 2026, men protokollen fra det møtet er ikke publisert ennå.",
+ "betydning": "Høyt sykefravær påvirker bemanningen i kommunens tjenester, og kommunen skal se nærmere på årsakene og tiltakene.",
+ "tagger": [
+  "Organisasjon"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7854,
+ "sjekksum": "4d9d21321b7a156f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2076,
+  "ut": 564
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/452833/764074"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-03-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7854/Protokoll"
+  }
+ ]
+}

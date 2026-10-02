@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Hvem får penger fra NTE-utbyttefondet i juni 2026?",
+ "sammendrag": "Saken gjelder første runde med tildelinger fra Utviklingsfond NTE-utbytte etter at kommunestyret vedtok nye retningslinjer 4. februar 2026. Kommunestyret vedtok 17. juni 2026 å gi Stiftinga Hilmar Alexandersen 225 000 kroner til Hilmarfestivalen og tilhørende aktiviteter, og 411 667 kroner som kommunens 20 prosent andel til Midt Norsk senter for folkemusikk og folkedans. Gruveteater «Eplene i messehagen» fikk 120 000 kroner, og Steinkjer eldreråd fikk 100 000 kroner til et gratis arrangement på FNs internasjonale eldredag. Innenfor gaming valgte kommunestyret eFiKS gaming med 300 000 kroner i oppstartsmidler, mens kommunedirektøren hadde foreslått 350 000 kroner til GameOut foreningen Steinkjer. I tillegg fikk Steinkjer kulturskole 100 000 kroner til en prøveordning med inntil 50 friplasser høsten 2026/2027, og kommunestyret ba om at formannskapet får vite om vanning av kunstgresset på Guldbergaunet kan dekkes innenfor den vedtatte investeringsrammen.",
+ "betydning": "Flere kultur- og fritidstilbud i Steinkjer får driftsstøtte i 2026, og barn og unge får et gratis gamingtilbud og inntil 50 friplasser i kulturskolen.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt hvem som skulle få oppstartsmidler til gaming, der AP, FRP, H, INP, PP, R og V støttet eFiKS gaming mens INP, R, SP og SV støttet GameOut, samt friplasser i kulturskolen, der AP, FRP, R og SV stemte for og H, INP, PP og V imot, og tilleggsforslaget om vanning av kunstgresset, der PP, R, SP og V stemte for og FRP, INP og SV imot.",
+ "usikker": false,
+ "sak_id": 8213,
+ "sjekksum": "40c2b5af696b9035",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 13379,
+  "ut": 819
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482580/806355"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8213/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8214/Protokoll"
+  }
+ ]
+}

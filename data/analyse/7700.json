@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer være med i samarbeidet Innherredsbyen også etter 2027?",
+ "sammendrag": "Innherredsbyen er et partnerskap mellom flere kommuner, Trøndelag fylkeskommune og statlige aktører, med en langsiktig strategi for perioden 2021–2040. Dagens finansiering og vedtak sikrer drift med egen utviklingsleder ut året 2027, og partnerskapsavtalen krever at en forlengelse avklares senest ett år før avtalen utløper. Samarbeidet handler blant annet om samferdsel i regionen, som ny E6, jernbaneinvesteringer, togtilbud og takstsamarbeid. Representantskapet i Innherred regionråd gikk 24. november 2025 enstemmig inn for videreføring. Kommunestyret vedtok 4. februar 2026 at Innherredsbyen videreføres også etter 2027, og at en egen politisk sak om tidsrammer og finansiering legges fram i løpet av 2026.",
+ "betydning": "Steinkjer fortsetter å samarbeide med nabokommuner, fylkeskommunen og staten om blant annet vei- og togsaker i regionen, mens tidsrammer og kostnader avklares i en egen sak i løpet av 2026.",
+ "tagger": [
+  "Regionalt samarbeid",
+  "Vei og trafikk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "FRP stemte mot videreføring av partnerskapet både i formannskapet og i kommunestyret, mens AP, H, INP, PP, R, SP, SV, V og den uavhengige representanten stemte for.",
+ "usikker": false,
+ "sak_id": 7700,
+ "sjekksum": "8e1618cc5f8777f1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4920,
+  "ut": 590
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/436472/742464"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-01-29",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7700/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-02-04",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7701/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal skjenkebevillingen i Steinkjer Kulturhus utvides til flere rom og fellesarealer?",
+ "sammendrag": "Selskapet som driver serveringen i Steinkjer Kulturhus har fra før skjenkebevilling for alkohol i gruppe 1 og 2 i deler av huset. Selskapet søkte om å utvide området til Kunstrom Jakob og et avgrenset område av foajeen ved Kunstrom Jakob og Telegrafen, og ved større arrangementer også foajé i 1. etasje, deler av foajé i underetasjen og trappearealet mellom underetasjen, 1. og 2. etasje. Formannskapet innvilget søknaden 20. august 2026, med vilkår om gyldig billett, tydelig fysisk avsperring mot andre publikumsområder og at det ikke samtidig skal holdes arrangementer eller utstillinger rettet mot barn og unge i Steinkaret. Bevillingen gjelder fra vedtaksdato til og med 30.09.2028, med skjenketid fra kl. 08.00 til kl. 02.00 på hverdager og fra kl. 12.00 til kl. 02.00 på søn-, hellig- og høytidsdager. Formannskapet vedtok i tillegg at heisen tas ut av skjenkeområdet.",
+ "betydning": "Det kan serveres øl og vin i flere deler av kulturhuset under arrangementer for voksne, mens kino- og bibliotekbrukere og barnearrangementer skal holdes utenfor skjenkeområdet.",
+ "tagger": [
+  "Kultur og idrett",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8204,
+ "sjekksum": "50411bbf161fffec",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9083,
+  "ut": 799
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482354/805940"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-08-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8204/Protokoll"
+  }
+ ]
+}

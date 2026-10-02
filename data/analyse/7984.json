@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Må gang- og sykkelveg være på plass før boligområdet på Kråkhaugen bygges ut?",
+ "sammendrag": "Kommuneplanens arealdel 2024-2037 har en bestemmelse om at utbygging på Kråkhaugen ikke kan skje før det er etablert gang- og sykkelveg langs fv. 6995 mellom boligområdet og skoleområdet, og tilknytning til kommunalt avløp. Formannskapet vedtok 5. mars 2026 å sende på ny høring et forslag der kravet om gang- og sykkelveg tas ut, og der alternative løsninger basert på eksisterende infrastruktur skal vurderes i arbeidet med reguleringsplanen. Strekningen uten gang- og sykkelveg er på rundt 750 meter, har 1200 kjøretøy per døgn hvorav 12 % er lange kjøretøy, og er definert som særlig farlig skoleveg vinterstid sør for 50-sonen. Kommunens trafikksikkerhetsutvalg behandlet høringen 28. april 2026 og støttet at alternative løsninger kan vurderes, men forutsatte at krav om gang- og sykkelveg før utbygging legges inn i den framtidige reguleringsplanen.",
+ "betydning": "For familier i Beitstad handler saken om hvilken trygg skoleveg som skal være på plass før det kan bygges boliger på Kråkhaugen.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7984,
+ "sjekksum": "20a30d77b1987409",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4572,
+  "ut": 564
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/462912/778659"
+  },
+  {
+   "tittel": "Vedtak i KTU 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7984/Protokoll"
+  }
+ ]
+}

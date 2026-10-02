@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan skal verneområdene i enhet Integrering og Steinkjer rehabilitering deles inn?",
+ "sammendrag": "Arbeidsmiljøutvalget har ansvar for å dele kommunen inn i verneområder. Saken gjaldt to endringer fra 1. januar 2026. Svedjan botiltak i enhet Integrering blir et eget verneområde med eget verneombud. Hjelpemiddellageret blir organisert sammen med Steinkjer rehabilitering. Arbeidsmiljøutvalget vedtok begge punktene i møtet 10. mars 2026.",
+ "betydning": "Endringen gjelder hvordan arbeidet med arbeidsmiljø og verneombud er organisert internt i kommunen, og har liten direkte betydning for innbyggerne.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7861,
+ "sjekksum": "ceca7e10ba12e028",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2426,
+  "ut": 338
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/452842/764083"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-03-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7861/Protokoll"
+  }
+ ]
+}

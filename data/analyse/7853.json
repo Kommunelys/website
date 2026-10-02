@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Skal arbeidsmiljøutvalget godkjenne årsrapporten fra AKAN-utvalget for 2025?",
+ "sammendrag": "AKAN-utvalget i Steinkjer kommune arbeider med rus og avhengighet blant kommunens ansatte. Årsrapporten for 2025 viser at det har vært liten aktivitet i utvalget. Kommunen tilbyr opplæring i rutiner og holdningsskapende kurs om rus og avhengighet til alle arbeidsplasser, men dette ble ikke etterspurt i 2025. AKAN var tema på lederopplæring for nye ledere. Arbeidsmiljøutvalget godkjente årsrapporten i møtet 10. mars 2026.",
+ "betydning": "Saken gjelder kommunens interne arbeid med rus og avhengighet blant ansatte og har ingen direkte konsekvenser for innbyggerne.",
+ "tagger": [
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7853,
+ "sjekksum": "6c10a10c866d43c9",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2298,
+  "ut": 367
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/452615/763657"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-03-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7853/Protokoll"
+  }
+ ]
+}

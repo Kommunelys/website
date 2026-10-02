@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan fordeles 60 000 kroner i tilskudd til frivillige aktivitetssentre for eldre i 2026?",
+ "sammendrag": "Steinkjer kommune deler hvert år ut tilskudd til frivillige aktivitetssentre som lager aktiviteter for eldre i grendene. Rammen for 2026 er kr. 60 000, som den har vært siden 2014. Hovedutvalg for helse og oppvekst vedtok 23. september 2026 å fordele pengene slik: Tjonstu, Beitstad Aktivitetssenter kr. 10 812,00, Hamrum aktivitetssenter kr. 16 623,00, Kjellerstua Aktivitetssenter i Stod kr. 13 920,00, Kvam aktivitetssenter kr. 10 515,00 og Ogndal aktivitet, Vålen kr. 8 130,00. Hvert senter får et grunnbeløp på kr. 2 000, ekstra tilskudd for å ha åpent mer enn én dag i uka, og kr. 340,80 per bruker. Sunnan grendehus fikk avslag, fordi de bare har hatt sju samlinger i løpet av året og ikke ukentlige aktiviteter.",
+ "betydning": "Fem aktivitetssentre for eldre i grendene får penger til å drive videre i 2026, mens Sunnan grendehus ikke får tilskudd fra denne ordningen.",
+ "tagger": [
+  "Helse og omsorg",
+  "Kultur og idrett"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8342,
+ "sjekksum": "39c839ea1138152f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5211,
+  "ut": 558
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/494540/822737"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-09-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8342/Protokoll"
+  }
+ ]
+}

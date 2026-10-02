@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal klagen på at reguleringsplanen for Øren landsted i Kvam ble opphevet, tas til følge?",
+ "sammendrag": "Reguleringsplanen for Øren landsted i Øvre Kvam ble vedtatt 25.06.1998 og la til rette for et reiselivsanlegg. Planen ble opphevet av kommunestyret 13.12.25 som del av en gjennomgang av over 200 eldre reguleringsplaner i arbeidet med ny kommuneplanens arealdel. En grunneier innenfor planområdet klaget på opphevingen og viste til at han arbeider med å endre planen for å legge til rette for oppdrettsanlegg for ørretsmolt. Kommunedirektøren viste til at det ikke er varslet planoppstart eller holdt oppstartsmøte, og at et nytt formål uansett krever en helt ny reguleringsplan. Formannskapet 23.04.2026 og kommunestyret 20.05.2026 vedtok at klagen ikke tas til følge, og at den sendes til Statsforvalteren i Trøndelag for endelig avgjørelse.",
+ "betydning": "Den gamle reguleringsplanen i Øvre Kvam blir stående som opphevet inntil Statsforvalteren i Trøndelag har avgjort klagen, og ubebygde arealer er satt av til landbruk, natur og friluftsliv.",
+ "tagger": [
+  "Plan og areal",
+  "Klager",
+  "Landbruk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7821,
+ "sjekksum": "0c6e6ae431320d74",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8432,
+  "ut": 555
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/449584/758664"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7821/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7822/Protokoll"
+  }
+ ]
+}

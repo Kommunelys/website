@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvem kan forplikte det kommunale foretaket Steinkjerbygg KF etter at driften ble overført til kommunen?",
+ "sammendrag": "Kommunestyret vedtok 30.10.2024 at Steinkjerbygg KF skulle innfusjoneres i Steinkjer kommune fra 01.04.2025. Etter dette har foretaket ikke egne ansatte eller egen driftsorganisasjon, og leier inn ressurser fra kommunen til daglig ledelse, økonomi og eiendomsdrift. Styret i Steinkjerbygg KF vedtok 03.06.2026 å oppheve alle tidligere delegerte administrative, økonomiske og personalmessige fullmakter i foretaket med øyeblikkelig virkning. All fullmakt og disposisjonsmyndighet samles inntil videre hos daglig leder, og ansatte i Steinkjer kommune kan ikke forplikte foretaket økonomisk eller rettslig uten særskilt skriftlig fullmakt fra styret eller daglig leder. Daglig leder skal sammen med styret lage forslag til en permanent fullmakts- og samarbeidsstruktur, som legges fram for styret til ny behandling.",
+ "betydning": "Det blir tydeligere hvem som kan inngå avtaler og binde Steinkjerbygg KF økonomisk, slik at ansvaret mellom kommunen og foretaket ikke blandes sammen.",
+ "tagger": [
+  "Eierskap og selskaper",
+  "Organisasjon",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8147,
+ "sjekksum": "618a9b3ee36407cc",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3761,
+  "ut": 571
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/480616/803009"
+  },
+  {
+   "tittel": "Vedtak i SSBY 2026-06-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8147/Protokoll"
+  }
+ ]
+}

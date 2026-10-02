@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal 21 kommunale veistrekninger bli private veier?",
+ "sammendrag": "Steinkjer kommune foreslår å nedklassifisere 21 kommunale veistrekninger på til sammen 4,1 km til private veier. Det betyr at brukerne av veiene selv får ansvar for drift og vedlikehold, mens kommunen i utgangspunktet beholder eiendomsretten til veigrunnen. Forslaget berører 106 husstander, og kommunen har beregnet en årlig besparelse på 400 000 kroner, hovedsakelig fra vinterdrift av 17 av strekningene. Hovedutvalg plan, næring og miljø vedtok 9. juni 2026 å sende forslaget på høring i 6 uker. Utvalget vedtok samtidig et tillegg om at omfanget av kommunale veier ikke skal reduseres ytterligere, og at det ikke skal lages nye kriterier for videre nedklassifisering.",
+ "betydning": "Beboere langs de 21 veistrekningene kan få ansvar for brøyting og vedlikehold selv, og de kan uttale seg i høringen før saken avgjøres endelig.",
+ "tagger": [
+  "Vei og trafikk",
+  "Høring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8043,
+ "sjekksum": "c78b571493ae3b39",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 13729,
+  "ut": 466
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/468471/787253"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8043/Protokoll"
+  }
+ ]
+}

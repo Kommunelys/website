@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvordan er vedtakene i hovedutvalg helse og omsorg fra andre halvår 2025 fulgt opp?",
+ "sammendrag": "Hovedutvalg helse og omsorg fikk en rapport om oppfølgingen av saker som utvalget sluttbehandlet i perioden 01.07.2025-31.12.2025. Rapporten viser hvert vedtak og hvordan det er fulgt opp, i et eget merknadsfelt. Bakgrunnen er kommuneloven § 13-1 fjerde ledd, som sier at kommunedirektøren skal påse at vedtak fra folkevalgte organer blir iverksatt uten ugrunnet opphold. Slik rapportering er en del av kommunens internkontroll. Utvalget tok rapporten til orientering i møtet 12.05.2026.",
+ "betydning": "Innbyggerne får innsyn i om politiske vedtak innen helse og omsorg faktisk blir gjennomført.",
+ "tagger": [
+  "Helse og omsorg",
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8005,
+ "sjekksum": "b89ff2a3db13183f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2242,
+  "ut": 403
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/464647/781086"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8005/Protokoll"
+  }
+ ]
+}

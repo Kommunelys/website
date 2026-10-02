@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Ble møteprotokollen fra det ekstraordinære styremøtet 11. desember 2025 godkjent?",
+ "sammendrag": "Saken gjaldt godkjenning av møteprotokollen fra et ekstraordinært styremøte som ble holdt 11. desember 2025. Protokollen er den offisielle oppsummeringen av hva som ble behandlet og bestemt i det møtet. I møtet 10. februar 2026 ble protokollen godkjent. Dette er en fast formalitet som gjentas for hvert møte.",
+ "betydning": "Godkjenningen bekrefter at den skriftlige protokollen fra møtet 11. desember 2025 er korrekt, og den er dermed offentlig tilgjengelig dokumentasjon for innbyggerne.",
+ "tagger": [
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7834,
+ "sjekksum": "a7b99f0b78d8feb4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1765,
+  "ut": 393
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i SSKO 2026-02-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7834/Protokoll"
+  }
+ ]
+}

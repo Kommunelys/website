@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal seks nye idretts- og friluftsanlegg tas inn i kommunens plan slik at de kan søke spillemidler?",
+ "sammendrag": "Kommunen har en plan for idrett, friluftsliv og fysisk aktivitet 2021-2025 med et handlingsprogram. For å kunne søke spillemidler til ordinære idrettsanlegg må anlegget stå i dette handlingsprogrammet. I 2026 er det meldt inn seks ordinære anlegg: tursti til Kvernavatnet og tursti til Follaheia (Follafoss IL), sanitæranlegg på Rismelen (Steinkjer kommune), sanitæranlegg og lager/redskapsbod på Mære stadion (Sparbu IL) og oppgradering av skiskytteranlegget på Steinkjer skistadion (Steinkjer skiklubb). Prioriteringen er gjort sammen med Steinkjer idrettsråd, etter kriterier som aktivitetspotensial, vedlikehold og renovering av eksisterende anlegg og anleggstyper kommunen har lite av. Kommunedirektøren foreslår at anleggene tas inn i handlingsprogrammet med plassering 36 til 41. Saken skal behandles i hovedutvalg for oppvekst og kultur 14. oktober 2026.",
+ "betydning": "Blir anleggene tatt inn, kan klubbene og kommunen søke spillemidler til turstier, toaletter, lager og skiskytteranlegg som innbyggerne bruker.",
+ "tagger": [
+  "Kultur og idrett",
+  "Plan og areal",
+  "Klima og miljø"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8401,
+ "sjekksum": "02ed9d43335f506c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8632,
+  "ut": 604
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/501596/833774"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal det settes opp en byste av dikteren Arne Paasche Aasen på Steinkjer torg?",
+ "sammendrag": "Foreningen Gamle Steinkjer søkte om å sette opp en byste av dikteren Arne Paasche Aasen på Steinkjer torg. Kommunen vurderte tre plasseringer, og valgte alternativ 3, i øverste del av trerekken mellom torget og Elvegata, vendt mot hovedinngangen til Samfunnshuset. Hovedutvalg for oppvekst og kultur vedtok 12. mai 2026 å gi tillatelse til plasseringen. Foreningen betaler selv for prosjektering, ferdigstillelse og montering, og monteringen skal skje etter anvisning fra enhet trafikk veg park. Kommunen tar imot bysten som gave når prosjektet er ferdig, og overtar da vedlikeholdsansvaret. Kommunen har tidligere bidratt med 150 000 kroner i tilskudd fra NTE-utbytte (sak 49/2025).",
+ "betydning": "Steinkjer torg får en permanent byste av dikteren Arne Paasche Aasen, og kommunen overtar ansvaret for å vedlikeholde den.",
+ "tagger": [
+  "Kultur og idrett",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8042,
+ "sjekksum": "f5807ad1d1ed74d2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4483,
+  "ut": 493
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/468373/787136"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8042/Protokoll"
+  }
+ ]
+}

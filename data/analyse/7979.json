@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal klagen på at reguleringsplanen for Mære grendesenter ble opphevet føre til endring?",
+ "sammendrag": "Kommunestyret opphevet 13.12.2025 reguleringsplanen for Mære grendesenter fra 1985, som ledd i en gjennomgang («planvask») av over 200 eldre reguleringsplaner. To grunneiere klaget 09.01.2026 og ba om at tidligere regulering av eiendommene 29/75, 29/194 og 29/67 ble beholdt. Kommunedirektøren mente det ikke kom fram nye opplysninger, blant annet med henvisning til jordvern og støy, og foreslo at klagen ikke skulle tas til følge. Kommunestyret vedtok 20.05.2026 at klagen ikke tas til følge og sendes Statsforvalteren i Trøndelag for endelig avgjørelse, men ba samtidig om en prosess for å endre kommuneplanens arealdel slik at hele 29/194 settes av til boligformål. Boligformålet på 29/67 videreføres, mens 29/75 beholder LNF-formål etter innsigelse fra Statsforvalteren om jordvern.",
+ "betydning": "For Mære kan det bli åpnet for flere boliger på deler av arealet, men endringen krever en egen prosess med kommuneplanens arealdel, og klagen avgjøres endelig av Statsforvalteren.",
+ "tagger": [
+  "Plan og areal",
+  "Klager",
+  "Landbruk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "I formannskapet 23.04.2026 sto kommunedirektørens innstilling om å avvise klagen, støttet av AP, R og SV, mot et alternativt forslag fra H, SP, INP, V, PP og FRP om å åpne for boligformål på 29/194; i kommunestyret 20.05.2026 var vedtaket enstemmig.",
+ "usikker": false,
+ "sak_id": 7979,
+ "sjekksum": "ed61dc515e027967",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 13947,
+  "ut": 1032
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/460410/775756"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7979/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7983/Protokoll"
+  }
+ ]
+}

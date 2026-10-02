@@ -1,0 +1,35 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune få en formell prosedyre for hvordan ansatte melder avvik?",
+ "sammendrag": "Steinkjer kommune har allerede beskrevet i kvalitetshåndboka hvordan avviksmeldinger skal meldes og håndteres, men dette har ikke vært nedfelt i en egen prosedyre. Kommunedirektøren foreslo å formalisere rutinen i en prosedyre, utarbeidet sammen med hovedverneombudet og drøftet med hovedtillitsvalgte 2. desember 2025. Prosedyren legges inn i kvalitetssystemet EQS og skal gjøres kjent for alle ansatte, både faste og vikarer, og inngå i opplæringen av nyansatte. Lederen for den enkelte enheten har hovedansvaret for å håndtere avviksmeldinger, i samarbeid med den lokale partssammensatte gruppa, og ansatte kan følge sine egne meldinger i EQS. Arbeidsmiljøutvalget godkjente prosedyren 2. desember 2025, og administrasjonsutvalget gjorde det samme 12. februar 2026.",
+ "betydning": "Ansatte i kommunen får en tydelig og felles rutine for å melde fra om feil og uheldige forhold, og kan følge med på hvordan meldingene blir fulgt opp.",
+ "tagger": [
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7625,
+ "sjekksum": "e88e7e1fcdaadda5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2667,
+  "ut": 524
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/428757/730062"
+  },
+  {
+   "tittel": "Vedtak i AMU 2025-12-02",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7624/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i AD 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7625/Protokoll"
+  }
+ ]
+}

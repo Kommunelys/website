@@ -1,0 +1,43 @@
+{
+ "tittel_klarsprak": "Hvordan ligger kommunens økonomi an etter februar 2026, og hvordan skal pensjonsmidler og inkluderingsmidler fordeles?",
+ "sammendrag": "Kommunedirektøren la fram månedsrapporten for februar 2026, datert 02.03.26. Rapporten viser et samlet avvik i størrelsesorden 9 mill kroner, i hovedsak i de to største etatene. Det er forutsatt at avvikene dekkes inn innenfor de etatene der de oppstår, og rapporten ble derfor lagt fram til orientering uten forslag til budsjettjusteringer for dette. I tillegg ble det gjort to tekniske budsjettjusteringer: fordeling av ekstra avsatte pensjonsmidler med 19 365 000 kroner fra felles, kommunedirektør og fagstaber ut til etatene, og flytting av 400 000 kroner i inkluderingsmidler fra etat oppvekst og inkludering til etat samfunn og kultur knyttet til fortsatt bruk av inkluderingsmidler ved Huzet. Kommunestyret vedtok dette 25.03.2026.",
+ "betydning": "Pengene til pensjon og til inkluderingsarbeid ved Huzet blir flyttet dit kostnadene faktisk påløper, mens etatene selv må finne dekning for merforbruket på rundt 9 mill kroner i sine egne budsjetter.",
+ "tagger": [
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "I formannskapet 19.03.2026 falt et tilleggsforslag om å avklare med Steinkjerbygg KF inndekning av ressurser i enhet Byggforvaltning som brukes på bygg tilhørende Steinkjerbygg KF, der H, INP, PP, R og V stemte for, mens AP, FRP, SP og SV stemte mot.",
+ "usikker": false,
+ "sak_id": 7881,
+ "sjekksum": "f0a482cfaed2b5c0",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6289,
+  "ut": 671
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454606/767013"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7883/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7881/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7884/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7885/Protokoll"
+  }
+ ]
+}

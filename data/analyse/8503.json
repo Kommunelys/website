@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal Ormsetfondet gi 200 000 kroner til et forskningsprosjekt om sjøørret?",
+ "sammendrag": "Saken gjelder bruk av Steinkjer kommunes fond for fisk, vilt og friluftsliv i tidligere Verran kommune, kalt Ormsetfondet. NTNU Vitenskapsmuseet har søkt om støtte til et prosjekt som kartlegger sjøørretens vandring, bruk av områder og utfordringer i indre deler av Trondheimsfjorden. Kommunedirektøren foreslår å bevilge kr 200 000, utbetalt i sin helhet i 2026, med frist for gjennomføring ut 2029. Det settes vilkår om at det merkes fisk fra Holmvikbogen og Hjellosen, at rapporten gir anbefalinger for videre fiskekultivering, at rapport og regnskap sendes kommunen innen 01.03.30, at prosjektet ikke får midler fra andre kommunale tilskuddsordninger, og at ubenyttede midler betales tilbake. I samme sak foreslås det at Malmlaga får ny frist til 01.07.27 for å rapportere og levere regnskap for sitt stiprosjekt, fordi prosjektet avventer tillatelse fra to grunneiere. Saken skal behandles i hovedutvalg for plan, næring og miljø 13. oktober 2026.",
+ "betydning": "Forslaget kan gi ny kunnskap om sjøørreten i Holmvikbogen og Hjellosen som kan brukes i framtidig fiskeforvaltning i området.",
+ "tagger": [
+  "Klima og miljø",
+  "Næring",
+  "Kultur og idrett"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8503,
+ "sjekksum": "29efe04afd67e38b",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6590,
+  "ut": 629
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/508598/844189"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om Helse Midt-Norges nye regionale utviklingsplan?",
+ "sammendrag": "Helse Midt-Norge reviderer sin regionale utviklingsplan fram mot 2040 og har bedt om innspill. Flere kommuner i Trøndelag har laget et felles innspillsdokument, som ligger til grunn for Steinkjer kommunes høringssvar. I høringssvaret peker kommunen blant annet på at sykehus og kommuner må samhandle som likeverdige partnere, at lokalsykehusfunksjoner og generalistkompetanse må styrkes, at oppgaveoverføring til kommunene ikke alene kan løse framtidens utfordringer, og at samarbeid om personell, beredskap, forskning og digitale løsninger må bli bedre. Kommunen kritiserer også prosessen, fordi høringsfristen går gjennom sommeren og gir kort tid til politisk behandling. Saken ble behandlet i formannskapet 24. september 2026, og protokollen er ikke publisert ennå.",
+ "betydning": "Høringssvaret er kommunens forsøk på å påvirke hvordan sykehustilbudet og samarbeidet mellom sykehus og kommunale helsetjenester utvikles fram mot 2040.",
+ "tagger": [
+  "Helse og omsorg",
+  "Høring",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8488,
+ "sjekksum": "6a29a09ef97b6c91",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 10691,
+  "ut": 521
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/507475/842604"
+  }
+ ]
+}

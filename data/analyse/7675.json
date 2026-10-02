@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal verneområdene Psykisk helse og rus og Fergeland/Svedjan slås sammen til ett verneområde?",
+ "sammendrag": "Saken gjaldt organiseringen av vernetjenesten i kommunen. To tidligere enheter er slått sammen til én enhet, og sektorleder for institusjon, rehabilitering og legetjenester ønsket at de to tilhørende verneområdene også skulle slås sammen. Arbeidsmiljøutvalget behandlet saken 20. januar 2026 og vedtok at verneområdene Psykisk helse og rus og Fergeland/Svedjan slås sammen til ett verneområde kalt Psykisk helse og rus. Sammenslåingen gjelder fra 1. januar 2026.",
+ "betydning": "Ansatte innen psykisk helse og rus får ett felles verneombudsområde i stedet for to.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7675,
+ "sjekksum": "60a8aadf26897ed8",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2202,
+  "ut": 371
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/433603/738018"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-01-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7675/Protokoll"
+  }
+ ]
+}

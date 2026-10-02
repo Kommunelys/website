@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om Statsforvalterens forslag til risiko- og sårbarhetsanalyse for Trøndelag 2027?",
+ "sammendrag": "Statsforvalteren i Trøndelag har sendt forslag til risiko- og sårbarhetsanalyse (ROS) for Trøndelag 2027 på høring til kommunene og fylkesberedskapsrådet. Analysen vurderer 11 hendelser, blant annet pandemi, mat- og forsyningssikkerhet, krig (artikkel 5), kvikkleire, kraftig vind og cyberangrep. Kommunedirektøren foreslår at Steinkjer kommune svarer at samtidig bortfall av E6 og jernbane burde vært et eget scenario, og kommer med innspill til den kommende handlingsplanen. Innspillene gjelder blant annet service- og trygghetspunkter etter modell fra Jämtland, distribuerte matvarelagre, nasjonale rammer for mottak av allierte styrker og krigsutflyttede, standardiserte avtaler om beredskapsbistand mellom kommuner og tydeligere rolleavklaringer. Saken ble behandlet i formannskapet 24. september 2026, men vedtaket er ikke publisert ennå.",
+ "betydning": "Høringssvaret kan påvirke hvordan beredskapen i Trøndelag planlegges, blant annet for strømbrudd, matforsyning og kommunikasjon der innbyggerne bor.",
+ "tagger": [
+  "Høring",
+  "Regionalt samarbeid",
+  "Klima og miljø"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8479,
+ "sjekksum": "fcd04cee55e21581",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9051,
+  "ut": 590
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/507226/842265"
+  }
+ ]
+}

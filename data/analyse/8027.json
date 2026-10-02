@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Får Mintage Sushi Steinkjer ny skjenkebevilling etter eierskifte?",
+ "sammendrag": "Mintage Sushi Steinkjer i Molovegen 9 skiftet eier 1. mars 2026, og ny eier søkte 7. mars 2026 om ny serverings- og skjenkebevilling. Formannskapet innvilget 13. mai 2026 skjenkebevilling for all alkoholholdig drikk, både innendørs og på det inngjerdede uteområdet mot moloen. Bevillingen gjelder fra vedtaksdatoen og til og med 30.09.2028. Åpningstiden videreføres uendret til kl. 08.00–23.00, og skjenking kan skje til kl. 22.30. Politiet, Skatteetaten og NAV hadde ingen merknader til søknaden.",
+ "betydning": "Restauranten kan fortsette å servere alkohol med samme innskrenkede tider som før, noe som er begrunnet med hensynet til bomiljøet på Jæktbyn.",
+ "tagger": [
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8027,
+ "sjekksum": "b794f4918043d9d5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9427,
+  "ut": 409
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/467061/785045"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8027/Protokoll"
+  }
+ ]
+}

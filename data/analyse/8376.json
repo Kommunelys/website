@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal forslaget til nye satser for tilskudd til private barnehager i 2027 sendes på høring?",
+ "sammendrag": "Steinkjer kommune skal fastsette en lokal forskrift om satser for beregning av grunntilskudd til private barnehager for tilskuddsåret 2027. Hovedutvalg for oppvekst og kultur vedtok 18. august 2026 å legge forslaget ut på offentlig høring. Høringsperioden er satt til 5 uker, med frist 22. september 2026. Etter høringen skal det endelige forslaget til forskrift behandles av hovedutvalget og av kommunestyret.",
+ "betydning": "Alle som vil, kan uttale seg om hvordan kommunen skal beregne tilskuddet til private barnehager i 2027, før saken avgjøres endelig.",
+ "tagger": [
+  "Skole og barnehage",
+  "Høring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8376,
+ "sjekksum": "e6567bfc920c4817",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2173,
+  "ut": 346
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i HOK 2026-08-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8376/Protokoll"
+  }
+ ]
+}

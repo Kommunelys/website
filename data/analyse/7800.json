@@ -1,0 +1,39 @@
+{
+ "tittel_klarsprak": "Skal en kommunestyrerepresentant fra Rødt få fritak fra sine folkevalgte verv?",
+ "sammendrag": "En kommunestyrerepresentant fra Rødt søkte om fritak fra sine folkevalgte verv i Steinkjer kommune av helsemessige årsaker, og la ved legeattest. Kommunedirektøren vurderte at vilkårene i kommuneloven § 7-9 om vesentlig ulempe var oppfylt, og anbefalte fritak. Kommunestyret innvilget fritaket 25. mars 2026 og valgte samtidig nytt medlem til hovedutvalg oppvekst og kultur, nytt medlem og leder av Legatet for sosiale formål og nytt 2. varamedlem til formannskapet. Alle de nye vervene gikk til representanter fra Rødt, slik kommuneloven krever. Hovedutvalg oppvekst og kultur må i tillegg velge nye representanter til samarbeidsutvalgene ved Kvam skole, Folla skole, Søndre Egge barnehage og Steinkjer kulturskole.",
+ "betydning": "Saken sikrer at plassene i kommunestyret, hovedutvalget, formannskapet og legatstyret er besatt, slik at organene er fulltallige.",
+ "tagger": [
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7800,
+ "sjekksum": "bd61520a81fb1ce5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4837,
+  "ut": 648
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/441198/749285"
+  },
+  {
+   "tittel": "Vedtak i FOR 2026-02-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7800/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7801/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7802/Protokoll"
+  }
+ ]
+}

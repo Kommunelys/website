@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Får nabogård kjøpe 154,6 dekar jordbruksareal på Sparbu som tilleggsjord?",
+ "sammendrag": "Et ektepar som driver kornproduksjon på Sparbu søkte om konsesjon for å kjøpe eiendommen gnr/bnr 31/1 som tilleggsareal til gården de eier fra før. Eiendommen er på 154,6 dekar, hvorav 132,0 dekar er fulldyrka jord, og tunet er fradelt i en tidligere sak. Avtalt kjøpesum er 1 134 000 kroner, som kommunen vurderte å ligge innenfor rammene i konsesjonsloven. Hovedutvalg plan, næring og miljø godkjente søknaden 15. september 2026, med vilkår om at søkerne bor på gården de eier i dag i minst fem sammenhengende år, at eiendommen drives landbruksmessig forsvarlig, og at gnr/bnr 31/1 slås sammen med søkernes landbrukseiendom. Den samlede eiendommen blir da 569,8 dekar, hvorav 471,4 dekar fulldyrka jord.",
+ "betydning": "Jordbruksarealet på Sparbu blir en del av en nabogård som drives videre, og nye eiere må bo på gården i minst fem år.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8312,
+ "sjekksum": "77e44a1b39d556bb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9254,
+  "ut": 545
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/487203/813564"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-09-15",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8312/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "tittel_klarsprak": "Hvilke regler skal gjelde for å dele ut penger fra kommunens utviklingsfond med NTE-utbytte?",
+ "sammendrag": "Steinkjer kommune får årlig utbytte fra NTE. 40 prosent av utbyttet går til et utviklingsfond som politikerne fordeler, og 60 prosent til et næringsfond. Kommunedirektøren foreslo tydeligere retningslinjer for hva pengene kan brukes til, hvordan man søker og hvem som avgjør søknadene. Kommunestyret vedtok 4. februar 2026 at midlene skal gå til engangstiltak som ikke gir varige driftsutgifter, blant annet tiltak for samfunnsutvikling, inkludering og aktivitet, kultur, bostedsutvikling, kompetanse samt natur og miljø. Søknader behandles av kommunedirektøren og samles i felles sak inntil fire ganger i året; formannskapet avgjør enkeltsøknader under kr 250 000, mens søknader på kr 250 000 eller mer avgjøres av kommunestyret. Årlig realavkastning fra kraftfondet skal gå til et fond for idretts- og kulturformål som hovedutvalg for oppvekst og kultur disponerer, og kommunen skal jevnlig informere om ordningen.",
+ "betydning": "Innbyggere, lag og organisasjoner får en tydeligere og mer kunngjort søknadsordning for å få støtte fra NTE-utbyttet, med faste regler for hvem som avgjør søknadene.",
+ "tagger": [
+  "Økonomi",
+  "Kultur og idrett",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "AP, FRP, R, SP, SV og uavhengig representant fikk flertall for grense på kr 250 000 for formannskapets fullmakt og for å bruke kraftfondets avkastning til idretts- og kulturformål, mens H, INP, PP og V ville at kommunestyret skulle behandle alle tildelinger, at avkastningen foreløpig ikke skulle overføres, og at folkevalgte skulle kunne foreslå tildelinger uten søknad.",
+ "usikker": false,
+ "sak_id": 7688,
+ "sjekksum": "30cb1a56f079ec9a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 21321,
+  "ut": 769
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/425598/725437"
+  },
+  {
+   "tittel": "Vedtak i HHO 2025-12-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7585/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2025-12-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7587/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2025-12-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7586/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2025-12-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7588/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-02-04",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7688/Protokoll"
+  }
+ ]
+}

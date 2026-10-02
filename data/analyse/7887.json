@@ -1,0 +1,49 @@
+{
+ "tittel_klarsprak": "Hvordan skal Steinkjer kommune bruke det økte integreringstilskuddet for flyktninger i 2026?",
+ "sammendrag": "Kommunen får statlig integreringstilskudd for å dekke merutgifter ved bosetting og integrering av flyktninger. Ut fra vedtatt bosetting i 2026 på 60 nye flyktninger er tilskuddet beregnet til 69 000 000 kroner mer enn det som allerede ligger i årsbudsjettet. Kommunedirektøren foreslo å bruke 28 390 000 kroner i etat oppvekst og inkludering og 33 550 000 kroner i etat helse og velferd, og sette av 7 060 000 kroner på disposisjonsfond flyktninger. Kommunestyret vedtok 25. mars 2026 en annen fordeling: 30 000 000 kroner til etat oppvekst og inkludering, 35 000 000 kroner til etat helse og velferd, 200 000 kroner til styrking av rammen til Råd for flerkulturelle innbyggere og mangfold, og 3 800 000 kroner til disposisjonsfond flyktninger. Pengene går blant annet til økonomisk sosialhjelp, introduksjonsprogram, flyktningetjenesten, bemanning i skoler og NAV, tolk og helsetjenester.",
+ "betydning": "Vedtaket bestemmer hvor mye penger som går til tjenester for flyktninger i Steinkjer i 2026, blant annet sosialhjelp, skole, helsetjenester og tolk, og hvor mye som settes av til uforutsette utgifter.",
+ "tagger": [
+  "Økonomi",
+  "Helse og omsorg",
+  "Skole og barnehage"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt fordelingen av tilskuddet: AP, FRP, R, SV og V ville bruke mer på tjenestene og sette av 200 000 kroner til Råd for flerkulturelle innbyggere og mangfold, mens H, INP, PP, SP og en uavhengig representant ville følge kommunedirektørens forslag med en større avsetning til disposisjonsfond.",
+ "usikker": false,
+ "sak_id": 7887,
+ "sjekksum": "0a01d252747c9e57",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7663,
+  "ut": 769
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454635/767048"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7903/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7887/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7888/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7890/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7891/Protokoll"
+  }
+ ]
+}

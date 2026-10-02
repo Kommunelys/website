@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal T:lab få 500 000 kroner fra kommunalt næringsfond til å utvikle et investeringsfond for agrifoodtech?",
+ "sammendrag": "T:lab AS søkte om 500 000 kroner fra Steinkjer kommunes næringsfond til et forprosjekt for å utvikle en modell med investornettverk, akseleratorløp og et spesialisert investeringsfond innen agrifoodtech, havnæring og skogbasert teknologi. Prosjektet har en kostnadsramme på 1 000 000 kroner for 2026–2027, der T:lab selv skulle dekke halvparten gjennom egne timeverk. Kommunedirektøren anbefalte å innvilge søknaden, men pekte også på risiko og på at tilskuddet kunne få karakter av driftstilskudd. Hovedutvalg for plan, næring og miljø sendte saken 9. juni 2026 videre til formannskapet uten realitetsbehandling, fordi formannskapet har fullmakt for tilskudd på 500 000 kroner eller mer. Formannskapet vedtok 25. juni 2026 å sende søknaden tilbake til søker for mer dokumentasjon, blant annet om andre offentlige støtteordninger, medvirkning fra øvrige eiere, avgrensning mot T:labs ordinære oppgaver og fordeling av finansieringen på delprosjekter.",
+ "betydning": "Kommunen har foreløpig ikke gitt penger fra næringsfondet til prosjektet, og en eventuell støtte avhenger av at søkeren dokumenterer mer.",
+ "tagger": [
+  "Næring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt om saken skulle behandles videre slik den forelå: AP, FRP, H, INP, SV, V og den uavhengige representanten støttet å sende søknaden tilbake for mer dokumentasjon, mens R og SP stemte mot.",
+ "usikker": false,
+ "sak_id": 8211,
+ "sjekksum": "0ff7dc57d84e04ac",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7149,
+  "ut": 702
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482578/806341"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8211/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8311/Protokoll"
+  }
+ ]
+}

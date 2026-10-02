@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvordan skal de 100 000 kronene til FNs internasjonale eldredag brukes i Steinkjer?",
+ "sammendrag": "Kommunestyret har bevilget 100 000 kroner til eldrerådet for å markere FNs internasjonale eldredag. For at pengene skulle kunne utbetales videre, måtte eldrerådet selv fatte et vedtak. I møtet 30. juni 2026 vedtok Steinkjer eldreråd å samarbeide med lokallagene til Norges pensjonistforbund i Steinkjer om markeringen. Pengene utbetales til pensjonistforbundene ved Pensjonistforbundet Sparbu, og lagene fordeler midlene etter en fordelingsnøkkel de blir enige om. Alle arrangement skal være gratis og åpne for alle pensjonister, og regnskap skal sendes Steinkjer kommune når arrangementene er gjennomført.",
+ "betydning": "Pensjonister i Steinkjer kan delta gratis på arrangementene som markerer FNs internasjonale eldredag.",
+ "tagger": [
+  "Kultur og idrett",
+  "Helse og omsorg",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8341,
+ "sjekksum": "78c817dac66b1c5a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2141,
+  "ut": 466
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/493635/821555"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-06-30",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8341/Protokoll"
+  }
+ ]
+}

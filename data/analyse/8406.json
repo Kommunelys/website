@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Hvilke regler skal gjelde for tildeling av penger fra det kommunale næringsfondet i Steinkjer?",
+ "sammendrag": "Saken gjelder reviderte vedtekter for det kommunale næringsfondet. Forslaget presiserer at søkeren må ha adresse i Steinkjer, mens regionale og nasjonale prosjekter skal håndteres av fondet kommunalt næringsfond NTE – utbytte. Det settes tydelige beløpsgrenser: kommunedirektøren avgjør tilskudd inntil 100 000 kroner, hovedutvalg for plan, næring og miljø fra 100 000 til og med 500 000 kroner, og formannskapet over 500 000 kroner. Vedtektene får også tydeligere krav om å melde fra ved avvik fra prosjektplanen og om skriftlig begrunnet søknad ved forskuddsutbetaling, og de skal tre i kraft 01.10.2026. Formannskapet utsatte saken 3. september 2026. Hovedutvalg for plan, næring og miljø vedtok 15. september 2026 vedtektene med en endring om at tilskudd under 100 000 kroner forvaltes av kommunedirektøren i nært samarbeid med Steinkjer Utvikling, og ba samtidig om forslag til egne vedtekter for fondet NTE – utbytte. Saken ble behandlet i formannskapet 24. september 2026, men protokollen er ikke publisert ennå.",
+ "betydning": "Reglene avgjør hvem som kan søke om næringsstøtte fra kommunen, og hvem i kommunen som bestemmer hvor store beløp som deles ut.",
+ "tagger": [
+  "Næring",
+  "Økonomi",
+  "Folkevalgte"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8406,
+ "sjekksum": "3942cddb36428cbb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5338,
+  "ut": 700
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/501918/834246"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8407/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-09-15",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8406/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Hva skal utredningen om ungdomsskolene i Steinkjer handle om?",
+ "sammendrag": "Kommunestyret bestilte 18.12.2025 (PS 66/2025) en utredning om ungdomsskolestrukturen i Steinkjer. Kommunedirektøren ba om å avgrense hva som skal utredes, og gikk gjennom flere alternativer som ble vurdert som uaktuelle, blant annet 1.-10. skole på Mære eller Egge, bruk av gamle fylkets hus og nedleggelse av Steinkjer ungdomsskole. Hovedutvalg for oppvekst og kultur 28.01.2026 og formannskapet 29.01.2026 vedtok at utredningen avgrenses til å se på å samle Egge ungdomsskole og Steinkjer ungdomsskole på Guldbergaunet, og å videreføre Malm skole som i dag som 1.-10. skole. Saksframlegget viser at ungdomsskolebyggene i dag har kapasitet til 1130 elever, mens elevtallet ligger mellom 802 i 2025 og 711 i 2030.",
+ "betydning": "Det er nå bestemt hvilke løsninger som skal undersøkes videre for ungdomsskolene, og barneskolestrukturen skal ikke endres i denne utredningen.",
+ "tagger": [
+  "Skole og barnehage",
+  "Plan og areal",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7776,
+ "sjekksum": "91ee7fe846bd5ead",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5744,
+  "ut": 527
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440623/748386"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-01-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7776/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-01-29",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7777/Protokoll"
+  }
+ ]
+}

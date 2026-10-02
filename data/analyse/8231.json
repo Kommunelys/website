@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer slutte seg til en felles anskaffelsespolitikk for kommunene i Innherred Anskaffelser KO?",
+ "sammendrag": "Steinkjer er med i innkjøpssamarbeidet Innherred Anskaffelser KO, som i 2025 signerte kontrakter for 380 millioner kroner, i tillegg til bygg- og anleggskontrakter. Ny lov om offentlige anskaffelser trer i kraft 1. juli 2026 og krever at alle kommuner har en vedtatt anskaffelsesstrategi som er offentlig tilgjengelig. Før en felles strategi lages, er det laget et forslag til felles anskaffelsespolitikk med prioriteringer innen bærekraft og klima, lokalt og regionalt næringsliv, seriøsitet og kamp mot arbeidslivskriminalitet, digitalisering og innovasjon, og beredskap og forsyningssikkerhet. Kommunestyret godkjente den felles anskaffelsespolitikken 17. juni 2026, etter at formannskapet hadde innstilt på det samme 11. juni 2026. Ifølge saksframlegget gir vedtaket ingen direkte økonomiske merkostnader for kommunen eller samarbeidet.",
+ "betydning": "Kommunens innkjøp skal følge felles politiske føringer om blant annet miljø, seriøsitet og beredskap, og lokale leverandører skal kunne delta i konkurranser, men kan ikke favoriseres fordi de holder til i regionen.",
+ "tagger": [
+  "Økonomi",
+  "Regionalt samarbeid",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8231,
+ "sjekksum": "3c8e93c13adacb13",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5745,
+  "ut": 602
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482799/806726"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8231/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8232/Protokoll"
+  }
+ ]
+}

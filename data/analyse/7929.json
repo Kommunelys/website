@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal arbeidet med en medvirkningsarena for innvandrere fortsette?",
+ "sammendrag": "",
+ "betydning": "Rådet har bestemt at arbeidet med en medvirkningsarena for innvandrere fortsetter, men dokumentene sier ikke hva arbeidet konkret vil bestå i.",
+ "tagger": [
+  "Organisasjon",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": true,
+ "sak_id": 7929,
+ "sjekksum": "93dac8264eff897b",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1775,
+  "ut": 620
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i RÅFIM 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7929/Protokoll"
+  }
+ ]
+}

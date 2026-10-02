@@ -1,0 +1,35 @@
+{
+ "tittel_klarsprak": "Hvem skal ha myndighet til å vie brudepar i Steinkjer kommune?",
+ "sammendrag": "Kommunene har siden 01.01.2018 hatt plikt til å tilby borgerlig vigsel. Ordfører og varaordfører har vigselsmyndighet direkte etter ekteskapsloven, mens kommunestyret kan gi slik myndighet til ansatte eller folkevalgte. Fordi vigslere må oppnevnes med navn og ikke etter stilling, måtte kommunen gjøre en ny oppnevning. Kommunestyret tok rapporten om kommunale vigsler til orientering 25.03.2026 og oppnevnte fire vigslere i tillegg til ordfører og varaordfører, blant annet lederen for Steinkjer kulturhus som ny vigsler. Antallet vigsler i Steinkjer var 43 i 2024 og 45 i 2025, og tjenesten er gratis ut over eventuelle ekstra ønsker som pynt, musikk eller vigsel utenfor rådhuset, der kjøreutgifter til vigsler må dekkes.",
+ "betydning": "Innbyggere som vil gifte seg borgerlig, kan fortsatt gjøre det i kommunen, og flere vigslere skal gjøre det lettere å få time.",
+ "tagger": [
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7792,
+ "sjekksum": "9522143806570299",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4152,
+  "ut": 664
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440874/748796"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7792/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7793/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan er vedtakene fra formannskapet i 2025 fulgt opp?",
+ "sammendrag": "Formannskapet fikk en rapport om hvordan vedtak som ble sluttbehandlet i formannskapet i 2025, er fulgt opp av administrasjonen. Rapporten er en del av kommunens internkontroll, og bygger på kommuneloven § 13-1 fjerde ledd om at kommunedirektøren skal påse at vedtak blir iverksatt uten ugrunnet opphold. Normalt rapporteres det en gang i halvåret, men på grunn av fravær i administrasjonen ble ikke første halvår 2025 rapportert for seg. Et vedlegg viser alle saker som ble sluttbehandlet i formannskapet i 2025, med merknader om oppfølgingen av hvert vedtak. Formannskapet tok rapporten til orientering i møtet 13. mai 2026.",
+ "betydning": "Innbyggerne får innsyn i om politiske vedtak faktisk blir gjennomført.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8007,
+ "sjekksum": "2f6a966b626a3040",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2246,
+  "ut": 420
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/464649/781088"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8007/Protokoll"
+  }
+ ]
+}

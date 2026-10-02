@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer bygge to nye barnehageavdelinger ved Steinkjersannan barnehage?",
+ "sammendrag": "Kommunedirektøren har utredet barnehagekapasiteten i Steinkjer sentrum og sentrumsnære områder, etter bestilling fra kommunestyret 13. desember 2023. Konklusjonen er at dagens kapasitet er nok til å oppfylle lovkravet om rett til barnehageplass i årene framover, men at ventelister gjennom barnehageåret vil fortsette. Private barnehager i sentrum og sentrumsnære områder kan til sammen ta inn maksimalt rundt 35 flere barn, og det er for lite til å erstatte Steinkjersannan barnehage. Steinkjersannan er på 2400 kvadratmeter, der 2000 kvadratmeter stammer fra tidligere militær virksomhet og ikke er bygd til barnehage. Kommunedirektøren foreslår å rive den gamle militærbrakka og bygge to nye avdelinger (alternativ 3b) med låneopptak på 23,4 millioner kroner, og at finansieringen søkes innarbeidet i budsjett- og økonomiplanen for 2027–2030. Saken skal behandles i hovedutvalg for oppvekst og kultur 14. oktober 2026 og i formannskapet 15. oktober 2026.",
+ "betydning": "Forslaget avgjør hvordan barnehagetilbudet i Steinkjer sentrum skal se ut framover, og innebærer en liten reduksjon på 6 barnehageplasser ved Steinkjersannan.",
+ "tagger": [
+  "Skole og barnehage",
+  "Økonomi",
+  "Plan og areal"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7474,
+ "sjekksum": "cf71ddf367ee7aea",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 14522,
+  "ut": 697
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/416442/711286"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvilke statlige høringer skal Steinkjer kommune svare på våren 2026?",
+ "sammendrag": "Formannskapet får jevnlig en oversikt over høringer fra regjeringen og fylkeskommunen, med anbefaling om hvilke kommunen bør svare på. Oversikten per 7. april 2026 inneholdt flere høringer med frist etter formannskapsmøtet 13. mai 2026, både der kommunen er høringspart og der den ikke er det. Kommunedirektøren anbefalte at kommunen svarer på høringen om forslag til endringer i valgloven, med frist 1. juli 2026, og at formannskapet selv avgir uttalelsen. Formannskapet vedtok dette 23. april 2026. I tillegg ble det vedtatt at hovedutvalg for plan, næring og miljø skal avgi høringssvar på forslaget til endringer i konsesjonsloven og i forskrift om overføring av myndighet til kommunene.",
+ "betydning": "Kommunen vil uttale seg om forslag til endringer i valgloven og i konsesjonsloven, som blant annet gjelder gjennomføring av valg og kommunens myndighet i landbrukssaker.",
+ "tagger": [
+  "Folkevalgte",
+  "Høring",
+  "Landbruk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7949,
+ "sjekksum": "4735acc3bb320a13",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5104,
+  "ut": 479
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/456371/769911"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7949/Protokoll"
+  }
+ ]
+}

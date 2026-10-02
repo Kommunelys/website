@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvor mange av de ansatte i Steinkjer kommune jobber heltid?",
+ "sammendrag": "Administrasjonsutvalget fikk en rapport om hel- og deltidsstillinger blant faste ansatte i Steinkjer kommune for 4. kvartal 2025. Rapporten viser at gjennomsnittlig stillingsstørrelse har økt gradvis, fra 83,2 prosent i 4. kvartal 2022 til 85,54 prosent i 4. kvartal 2025. Andelen ansatte i 100 prosent stilling gikk opp fra 58,20 prosent per 31. mars 2025 til 58,64 prosent per 31. desember 2025. Kommunen deltar i prosjektene «Smidig, hel og nær» og «Tørn – sammen om fremtidens helse og omsorg» for å øke antallet heltidsstillinger. Administrasjonsutvalget tok rapporten til orientering i møtet 12. februar 2026.",
+ "betydning": "Rapporten viser hvordan kommunen som arbeidsgiver ligger an i arbeidet med å gi flere ansatte hele stillinger.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7820,
+ "sjekksum": "dfa7bab8bb4dcaf7",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3786,
+  "ut": 457
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/449575/758642"
+  },
+  {
+   "tittel": "Vedtak i AD 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7820/Protokoll"
+  }
+ ]
+}

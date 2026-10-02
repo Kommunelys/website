@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan følger Steinkjer kommune opp trafikksikkerhetsplanen i 2026?",
+ "sammendrag": "Trafikksikkerhetsutvalget fikk en statusrapport om arbeidet med kommunens trafikksikkerhetsplan. Kommunen ble sertifisert som Trafikksikker kommune 18. desember 2025, med varighet på tre år. I 2025 ble det blant annet gjennomført fartsdempende tiltak i Infanterivegen og Tranavegen, reoppmerking av gangfelt, utdeling av refleks og fartstavler ved skoler. I 2026 er budsjettrammen 471 000 kroner, og det planlegges tiltak ved Binde skole, opplæring for 10. trinn og videre arbeid med hjertesoner rundt skoler. Utvalget tok saken til orientering og vedtok i tillegg årlige møter med kommunale etater, et årshjul for oppfølging, en plan for å søke trafikksikkerhetsmidler fra Trøndelag fylkeskommune og flere innspill til nye tiltak, blant annet på E6 mellom Følling og Øvre Kvam og utvidet 30-sone i Ogndalsvegen.",
+ "betydning": "Innbyggerne kan vente fortsatt arbeid med tryggere skoleveier, hjertesoner ved skoler og fartsdempende tiltak, men større tiltak på fylkesveg og riksveg avhenger av andre vegeiere.",
+ "tagger": [
+  "Vei og trafikk",
+  "Skole og barnehage"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8281,
+ "sjekksum": "fe5fcfc56770b639",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4832,
+  "ut": 578
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/483680/808304"
+  },
+  {
+   "tittel": "Vedtak i KTU 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8281/Protokoll"
+  }
+ ]
+}

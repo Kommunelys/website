@@ -1,0 +1,52 @@
+{
+ "tittel_klarsprak": "Hvilke økonomiske føringer skal gjelde for Steinkjer kommunes budsjett 2027 og økonomiplan 2027–2030?",
+ "sammendrag": "Kommunedirektøren la fram Økonomidokument 2027, datert 27.05.26, som skal gi politiske styringssignaler før arbeidet med årsbudsjett 2027 og økonomiplan 2027–2030. Dokumentet beskriver kommunens økonomiske utfordringer, strategier i etatene og forslag til en ny inndeling av bevilgningsrammene i budsjettet. Kommunestyret vedtok 17. juni 2026 å ta dokumentet til etterretning og legge det til grunn for det videre arbeidet. I tillegg vedtok kommunestyret mål for perioden: netto driftsresultat på 1,75 % av netto driftsutgifter, ekstra rentemargin på opptil 1 % i budsjett og økonomiplan, disposisjonsfond på 6 % av netto driftsutgifter og gjeldsportefølje redusert til 75 % av netto driftsutgifter innen utgangen av perioden. Kommunestyret støttet også ny inndeling av bevilgningsrammene med delegering til kommunedirektøren, slo fast at nytt sykehjem skal prioriteres, ba om utprøving av økt grunnbemanning med vikarmidler, utredning av økt interkommunalt samarbeid om renovasjon og analyser av flyttemønster og helse- og oppvekstprofil.",
+ "betydning": "Vedtaket legger rammene for hvor mye penger kommunen skal bruke på skole, helse og andre tjenester i årene 2027–2030, og peker ut nytt sykehjem som en prioritet.",
+ "tagger": [
+  "Økonomi",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "AP, FRP, R, SP og SV sto bak innstillingen og tilleggsforslaget om økonomiske måltall og prioriteringer, mens H, INP, PP og V ville ha andre føringer, blant annet forbehold om driftsmargin- og fondsmålene, ingen økning i eiendomsskatten, kutt i administrative stillinger framfor i tjenestene, anbud på tjenestepensjon og trinnvis utvidelse av eksisterende sykehjem framfor ett nytt stort bygg.",
+ "usikker": false,
+ "sak_id": 8215,
+ "sjekksum": "94a058d64ae25be6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 18489,
+  "ut": 845
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482210/805699"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-06-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8217/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8218/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-06-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8219/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-06-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8220/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8221/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8222/Protokoll"
+  }
+ ]
+}

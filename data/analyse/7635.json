@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune få nye retningslinjer for heltidskultur?",
+ "sammendrag": "Steinkjer kommune har revidert retningslinjene for heltidskultur, som sist ble vedtatt i 2019. Hovedregelen skal fortsatt være hele stillinger, men den nye definisjonen legger vekt på inkludering: for ansatte som av helsemessige grunner, livsfase eller andre grunner ikke har full arbeidsevne, kan en redusert stilling regnes som heltid ut fra deres situasjon. Tall i saken viser at gjennomsnittlig stillingsstørrelse i 3. kvartal har økt fra 82,3 % i 2021 til 85,6 % i 2025, og andelen 100 %-stillinger fra 50,65 % til 58,91 %. En spørreundersøkelse blant fast ansatte fikk 749 svar, og 132 av dem (17,5 %) oppga at de jobber ufrivillig deltid og ønsker å jobbe mer. Arbeidsmiljøutvalget vedtok retningslinjene 20. januar 2026 med tillegg om å informere ansatte om betydningen av å stå i deltid og kartlegge årsaker til frivillig deltid, og administrasjonsutvalget vedtok retningslinjene 12. februar 2026.",
+ "betydning": "Retningslinjene styrer hvordan kommunen som arbeidsgiver lyser ut og tildeler stillinger, og påvirker muligheten for ansatte i deltid til å få større stilling.",
+ "tagger": [
+  "Organisasjon",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7635,
+ "sjekksum": "76a6d8644d5dfef6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5674,
+  "ut": 595
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/429843/731677"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-01-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7635/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i AD 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7687/Protokoll"
+  }
+ ]
+}

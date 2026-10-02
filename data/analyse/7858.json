@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hva rapporterte de lokale partsgruppene i Steinkjer kommune om arbeidsmiljøarbeidet i 2025?",
+ "sammendrag": "Arbeidsmiljøutvalget (AMU) vedtok 5. desember 2023 at de lokale partssammensatte gruppene i kommunen skal rapportere om aktiviteten sin til AMU. For 2025 ble det laget et digitalt rapporteringsskjema i EQS, og fordi dette tok tid å ferdigstille ble det bare rapportert én gang, for hele året. Skjemaet ble sendt ut 26. november med svarfrist 17. desember, og med en påminnelse 16. januar 2026. Det kom inn rapport fra 44 av 60 enheter. Tre enheter meldte inn egne saker: bemanning og sykmeldinger ved HR og fellestjenester, ønske om at AMU besøker enhetene fra Beitstad skole, og savn av retningslinjer ved mistanke om rus og om h\\u00e5ndtering av ekstremvær fra Egge sykehjem. AMU tok rapporteringen til orientering i møtet 10. mars 2026.",
+ "betydning": "Saken viser hvordan arbeidsmiljøarbeidet følges opp på arbeidsplassene i kommunen, og hvilke utfordringer enhetene selv melder fra om.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7858,
+ "sjekksum": "4126d2652091f207",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2832,
+  "ut": 543
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/452836/764077"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-03-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7858/Protokoll"
+  }
+ ]
+}

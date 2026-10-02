@@ -1,0 +1,44 @@
+{
+ "tittel_klarsprak": "Skal skjenkesteder i Steinkjer få lov til å skjenke lenger under fotball-VM i 2026?",
+ "sammendrag": "Fotball-VM for herrer spilles 11. juni til 19. juli 2026, og flere kamper vises om natten norsk tid. Helse- og omsorgsdepartementet har foreslått at kommunene i denne perioden kan tillate lengre skjenketid for steder som viser kampene direkte. Steinkjer kommune har i dag skjenketid til kl. 02.00 og åpningstid for skjenkesteder til kl. 02.30. Kommunestyret vedtok 20. mai 2026 en midlertidig endring i den lokale forskriften: skjenkesteder som viser direktesendte kamper kan holde døgnåpent og skjenke drikk under 22 volumprosent fra kl. 08.00 til kl. 06.00 på dager Norge spiller utenfor ordinær skjenketid, samt på finaledagen hvis finalen spilles utenfor ordinær skjenketid. Ordningen gjelder bare eksisterende bevillingshavere, krever søknad, og forutsetter at Stortinget vedtar endringen i alkoholloven § 4-4.",
+ "betydning": "De som vil se nattkamper på utested i Steinkjer kan kjøpe øl og vin til kl. 06.00 på utvalgte dager, mens naboer kan oppleve mer støy på nattestid i denne perioden.",
+ "tagger": [
+  "Helse og omsorg",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "INP, R og SV stemte mot utvidet skjenketid, mens AP, FRP, PP, V og uavhengig representant stemte for, og representantene fra H og SP delte seg.",
+ "usikker": false,
+ "sak_id": 7936,
+ "sjekksum": "0d757bd40fa4431a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 10504,
+  "ut": 626
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/456034/769242"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7936/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7937/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7938/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7939/Protokoll"
+  }
+ ]
+}

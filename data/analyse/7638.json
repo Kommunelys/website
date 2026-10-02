@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal eiere av private avløpsanlegg betale gebyr for kommunens saksbehandling og tilsyn?",
+ "sammendrag": "Kommunen er pålagt å føre tilsyn med mindre private avløpsanlegg, men har ikke hatt hjemmel til å kreve gebyr for arbeidet. Kommunestyret vedtok 25. mars 2026 en ny lokal forskrift om gebyrer for saksbehandling, kontroll og tilsyn av avløpsanlegg. Forskriften gir to typer gebyr: et engangsgebyr når noen søker om ny eller endret utslippstillatelse, og et årlig kontrollgebyr for bebygd eiendom med innlagt vann som ikke er koblet til kommunalt avløp. Selve satsene fastsettes senere i kommunens gebyrregulativ, og gebyrene kan samlet ikke overstige kommunens kostnader. Saksframlegget viser til foreslåtte satser på 5 000 kroner for tett tank, 8 000 kroner for utslipp til og med 10 PE, 15 000 kroner for 11–50 PE og 600 kroner i årlig tilsynsgebyr, og at om lag 2500 private anlegg kan bli omfattet. Forskriften trer i kraft ved kunngjøringsdato.",
+ "betydning": "Eiere av boliger og hytter med innlagt vann som ikke er koblet til kommunalt avløp, må betale et årlig tilsynsgebyr og gebyr når de søker om utslippstillatelse.",
+ "tagger": [
+  "Klima og miljø",
+  "Økonomi",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7638,
+ "sjekksum": "a8ef0a311f1b26de",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 16892,
+  "ut": 601
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/425086/724323"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7879/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7880/Protokoll"
+  }
+ ]
+}

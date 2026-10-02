@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Ble møteprotokollen fra styremøtet 16. juni 2026 godkjent?",
+ "sammendrag": "Saken gjaldt godkjenning av møteprotokollen fra styremøtet 16. juni 2026. Dette er en fast formell sak der organet bekrefter at protokollen gjengir det som ble behandlet og vedtatt. I møtet 10. september 2026 ble protokollen godkjent.",
+ "betydning": "Godkjenningen bekrefter at referatet fra det tidligere møtet er korrekt, og har ingen direkte praktisk virkning for innbyggerne.",
+ "tagger": [
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8434,
+ "sjekksum": "a23ec8555278dbeb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1749,
+  "ut": 258
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i SSKO 2026-09-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8434/Protokoll"
+  }
+ ]
+}

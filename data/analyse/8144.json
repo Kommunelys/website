@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvilke høringer skal Steinkjer kommune svare på, og hvem skal behandle svarene?",
+ "sammendrag": "Formannskapet får jevnlig en oversikt over høringer fra staten og fylkeskommunen, og tar stilling til hvilke kommunen skal svare på. Kommunedirektøren anbefalte å gi høringsuttalelse på ny regional plan for samferdsel i Trøndelag 2026–2038 (frist 21.08.2026) og på framtidas tilbud i videregående opplæring, og at begge skulle behandles av formannskapet. Formannskapet vedtok 11.06.2026 at det gis uttalelse i begge sakene, men at uttalelsen om framtidas tilbud i videregående opplæring skal gis av kommunestyret, med innstilling fra hovedutvalg for oppvekst og kultur. Uttalelsen om samferdselsplanen gis av formannskapet. I tillegg ble det vedtatt at kommunestyret skal gi høringsuttalelse til utviklingsplanen for Helse Midt-Norge og Helse Nord-Trøndelag, med frist 2. oktober. Øvrige høringer på listen prioriteres ikke, blant annet på grunn av saksbehandlerkapasitet.",
+ "betydning": "Det avgjør hvilke statlige og regionale forslag kommunen uttaler seg om på vegne av innbyggerne, og hvilke folkevalgte organer som behandler uttalelsene.",
+ "tagger": [
+  "Høring",
+  "Folkevalgte",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt hvilket organ som skal gi uttalelsen om framtidas tilbud i videregående opplæring; forslaget fra H, V, PP og INP om å legge den til kommunestyret med innstilling fra hovedutvalg for oppvekst og kultur fikk støtte fra FRP, H, INP, PP, R, SP og V, mens SV stemte mot og AP delte seg.",
+ "usikker": false,
+ "sak_id": 8144,
+ "sjekksum": "e17a59ccb98924aa",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6139,
+  "ut": 733
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/480435/802666"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8144/Protokoll"
+  }
+ ]
+}

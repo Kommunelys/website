@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal kravet om gang- og sykkelveg ved nytt boligområde på Kråkhaugen endres før området får rettsvirkning?",
+ "sammendrag": "Kommuneplanens arealdel 2024–2037 ble vedtatt 17. desember 2025, men Kråkhaugen boligområde ble unntatt rettsvirkning fordi det forelå en innsigelse. Etter dialogmøte 16. januar 2026 og anmodning fra kommunen trakk Statsforvalteren innsigelsen i brev av 28. januar 2026, og kommunedirektøren foreslo at området (B15) avsettes til boligformål med en bestemmelse om at utbygging ikke kan skje før det er etablert gang- og sykkelveg langs fv. 6995 til skoleområdet og tilknytning til kommunalt avløp. Formannskapet vedtok i stedet et annet forslag: Fylkeskommunen har ikke lagt opp til investeringer i gang- og sykkelveier de nærmeste årene, og alternative løsninger basert på eksisterende infrastruktur skal vurderes i reguleringsplanarbeidet, samtidig som trafikksikkerhet og trygg skoleveg til Beitstad skole ivaretas. Formannskapet ber om en vurdering av om rekkefølgekravet kan fravikes og erstattes av en ny bestemmelse, og sendte saken tilbake til kommunedirektøren for ny høring.",
+ "betydning": "Boligområdet på Kråkhaugen får foreløpig ikke rettsvirkning, og kravet om gang- og sykkelveg før utbygging skal vurderes på nytt og ut på høring.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "AP, H, INP, PP, SP og V støttet å sende saken tilbake for ny høring med vurdering av å fravike kravet om gang- og sykkelveg, mens R og SV stemte mot.",
+ "usikker": false,
+ "sak_id": 7817,
+ "sjekksum": "1a98b2b76bc7af25",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5091,
+  "ut": 830
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/449259/758247"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7817/Protokoll"
+  }
+ ]
+}

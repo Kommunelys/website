@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvem skal erstatte en representant fra Rødt i samarbeidsutvalgene ved skoler, barnehage og kulturskolen?",
+ "sammendrag": "En representant fra Rødt fikk 25.03.2026 fritak fra sine folkevalgte verv av kommunestyret. Hun hadde vært hovedutvalgets representant i samarbeidsutvalget for Kvam skole og vararepresentant i samarbeidsutvalgene for Folla skole og kulturskolen. Saken ble lagt fram uten innstilling fra kommunedirektøren, slik at hovedutvalget selv måtte foreslå nye navn. I møtet i hovedutvalg oppvekst og kultur 12.05.2026 ble det vedtatt at én ny person velges som medlem eller varamedlem i alle samarbeidsutvalgene der den fritatte representanten hadde verv.",
+ "betydning": "Samarbeidsutvalgene ved Kvam skole, Folla skole og kulturskolen har igjen fulltallig politisk representasjon.",
+ "tagger": [
+  "Folkevalgte",
+  "Skole og barnehage"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7961,
+ "sjekksum": "7298e0997dd0bbcd",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3082,
+  "ut": 587
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/457668/771927"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7961/Protokoll"
+  }
+ ]
+}

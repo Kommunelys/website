@@ -1,0 +1,40 @@
+{
+ "tittel_klarsprak": "Hvordan skal Steinkjer kommune organisere og finansiere priser, stipender og tilskudd til kultur og idrett?",
+ "sammendrag": "Steinkjer kommune samler de kommunale støtteordningene på kulturfeltet i et eget fond for idretts- og kulturformål. Fondet finansieres av den årlige avkastningen fra kommunens kraftfond, som for 2026 utgjør 2 035 000 kroner. Fondet skal dekke kulturpris, kulturstipend, idrettsstipend, Weidemannstipend, frivillighetspris, vedlikeholdstilskudd til forsamlingshus, kulturtilskudd og støtte til Steinkjer idrettsråd. Kommunestyret vedtok 20. mai 2026 fordelingen slik den var lagt fram: kulturpris 20 000 kroner, kulturstipend 25 000 kroner, frivilligpris 15 000 kroner, idrettsstipend 20 000 kroner, Weidemannstipend 65 000 kroner og 60 000 kroner til diplomer, blomster og gjennomføring. I tillegg ble tilskudd til feiring av 8. mai og 17. mai satt til 182 000 kroner. Søknads- og nominasjonsfrist er 1. mai, mens kulturtilskudd også har frist 1. oktober. For 2026 lyses ordningene med frist 1. mai ut så raskt som mulig, med utvidet frist. Administrasjonen behandler søknadene, og hovedutvalg for oppvekst og kultur vedtar tildelingene og de årlige rammene.",
+ "betydning": "Lag, foreninger, kunstnere og andre i Steinkjer kan søke om mer penger enn før til kultur- og idrettstiltak og til vedlikehold av forsamlingshus, med faste frister og kjente kriterier.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt punktet om fordeling av beløp til priser og stipender for 2026: forslaget om 20 000 kroner til kulturpris, frivillighetspris, idrettsstipend og kulturstipend fikk støtte fra FRP og deler av AP og SP, mens fordelingen slik den var lagt fram i saken ble støttet av H, INP, PP, R, SV, V, den uavhengige representanten og deler av AP og SP.",
+ "usikker": false,
+ "sak_id": 8093,
+ "sjekksum": "e6f9798062216b64",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 14555,
+  "ut": 1257
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470691/790911"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8093/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8094/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8095/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer fortsatt drive renovasjonstjenesten selv, eller gå inn i et interkommunalt avfallsselskap?",
+ "sammendrag": "Kommunestyret ba i juni 2026 om en utredning av om Steinkjer bør søke mer interkommunalt samarbeid om renovasjon. Steinkjer driver i dag tjenesten i egen regi med 27 årsverk og tre gjenvinningsstasjoner, og har også avtale med Snåsa kommune. Kommunen når ikke miljøkravene: materialgjenvinningsgraden var 39,8 % i 2024 og 37,7 % i 2025, mens kravet er 55 % i 2025, 60 % i 2030 og 65 % i 2035. Kommunedirektøren foreslår at tjenesten drives videre i egen regi, med tiltak i organisasjonen og investeringer i gjenvinningsstasjoner, og tett samarbeid med omliggende avfallsselskap. Saken skal behandles i hovedutvalg for plan, næring og miljø 13. oktober 2026 og i formannskapet 15. oktober 2026.",
+ "betydning": "Uansett valgt løsning venter kommunedirektøren at avfallsgebyret øker betydelig; en økning på 25 % uten prisstigning i neste treårsperiode vil gi om lag 1 250 kroner mer for et standardabonnement sammenlignet med 2026.",
+ "tagger": [
+  "Klima og miljø",
+  "Regionalt samarbeid",
+  "Økonomi"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8414,
+ "sjekksum": "f9b1b8e90327d1f7",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7177,
+  "ut": 572
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/502569/835161"
+  }
+ ]
+}

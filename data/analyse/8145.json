@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva mener Innherred regionråd om fylkets nye samferdselsplan for 2026–2038?",
+ "sammendrag": "Trøndelag fylkeskommune har sendt regional plan for samferdsel 2026–2038 på høring. Planen er fylkets overordnede plan for transport og mobilitet de neste 12 årene, og den skal følges opp med fireårige handlingsprogram og egne strategier for kollektiv, regional infrastruktur og nasjonal transport. Arbeidsutvalget i Innherred regionråd vedtok 22. juni 2026 et høringsinnspill der det forventes at fylkeskommunen tar en aktiv rolle for å få på plass et takstsamarbeid mellom fylke og stat, slik at tog- og busstilbudet ses i sammenheng. Innspillet ber også om et tilfredsstillende tilbud i mindre tettsteder og spredtbygde områder som mater inn til knutepunktene der toget stopper, og peker på at Snåsa og Frosta ikke har slike knutepunkt i egen kommune. Regionrådet viser til at Innherredsbyens kommuner har om lag 72 000 innbyggere, og ønsker at planen får større ambisjoner for regionen og samkjøres med partnerskapet Innherredsbyen.",
+ "betydning": "Innspillet kan påvirke hvor godt buss- og togtilbudet mellom Innherred og Trondheim henger sammen, og hva en reise koster.",
+ "tagger": [
+  "Vei og trafikk",
+  "Regionalt samarbeid",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8145,
+ "sjekksum": "2cc6737a0e96e744",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7678,
+  "ut": 705
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/480511/802870"
+  },
+  {
+   "tittel": "Vedtak i AUINR 2026-06-22",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8145/Protokoll"
+  }
+ ]
+}

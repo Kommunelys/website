@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune skyte inn 368.500 kroner i avfallsselskapet Sesam Ressurs AS?",
+ "sammendrag": "Sesam Ressurs AS planlegger et ettersorteringsanlegg for restavfall i Midt-Norge. Steinkjer kommune er medeier med 4,5 prosent, sammen med flere avfallsselskaper i regionen. Styret i selskapet har bedt eierne om å styrke egenkapitalen med til sammen 8.187.400 kroner, og Steinkjer sin andel er 368.500 kroner. Kommunestyret vedtok 17. juni 2026 kapitalforhøyelsen, forutsatt at generalforsamlingen i selskapet vedtar den samlede forhøyelsen. Pengene tas fra ubundet investeringsfond via selvkostområdet renovasjon.",
+ "betydning": "Kommunen bruker 368.500 kroner på videre planlegging av et felles sorteringsanlegg som på sikt skal finansieres gjennom renovasjonsgebyret.",
+ "tagger": [
+  "Eierskap og selskaper",
+  "Klima og miljø",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8168,
+ "sjekksum": "040ec4fcccc330a2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4794,
+  "ut": 440
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/481855/805140"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8168/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8169/Protokoll"
+  }
+ ]
+}

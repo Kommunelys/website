@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvilke statlige høringer skal Steinkjer kommune svare på?",
+ "sammendrag": "Formannskapet får jevnlig en oversikt over saker som er sendt ut på høring fra regjeringen og fylkeskommunen, med en anbefaling om hvilke kommunen bør svare på. Anbefalingen bygger på hvor viktig temaet er for kommunen og hvor mye saksbehandlingskapasitet som er tilgjengelig. I møtet 20. august 2026 vedtok formannskapet at kommunen skal gi høringsuttalelse til to høringer: forslag om endringer i reglene om interkommunalt samarbeid, med frist 1. oktober 2026, og høringen om den nye velferdskommunen, med frist 20. september 2026. Formannskapet skal selv vedta begge høringsuttalelsene.",
+ "betydning": "Det avgjør hvilke statlige forslag Steinkjer kommune uttaler seg om, og at det er formannskapet som vedtar svarene.",
+ "tagger": [
+  "Folkevalgte",
+  "Høring",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8338,
+ "sjekksum": "34b3b164dbebeaf4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9349,
+  "ut": 417
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/492155/819902"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-08-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8338/Protokoll"
+  }
+ ]
+}

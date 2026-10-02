@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal kommuneskogen selge rundt 280 dekar skogsmark på Årholt i Ogndal?",
+ "sammendrag": "En grunneier som driver en naboeiendom på Årholt i Ogndal søkte 8. juni 2026 om å kjøpe om lag 280 dekar skogsmark av kommuneskogens eiendom g.br.nr. 141/3. Om lag 263 dekar av arealet er produktiv skogsmark, der rundt 68 prosent har høy bonitet og resten middels bonitet. Søkeren ønsket å bruke deler av arealet til nydyrking. Skogsjefen viste til at Steinkjer kommuneskoger – Ogndalsbruket KF som hovedregel ikke selger skog eller omdisponerer produktive områder, og at et salg kan gi mindre økonomisk forutsigbarhet og skape presedens for lignende saker. Styret for kommuneskogen vedtok 10. september 2026 å avslå søknaden.",
+ "betydning": "Arealet blir værende i kommunens eie som skogsmark, og kommunen holder fast ved praksisen om ikke å selge skog.",
+ "tagger": [
+  "Landbruk",
+  "Eierskap og selskaper"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8432,
+ "sjekksum": "eefe86683751f2ef",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2676,
+  "ut": 531
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/504831/838544"
+  },
+  {
+   "tittel": "Vedtak i SSKO 2026-09-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8432/Protokoll"
+  }
+ ]
+}

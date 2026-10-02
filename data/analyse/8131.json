@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Når skal eldrerådet besøke trygghetsboliger, hjemmetjenester og sykehjem?",
+ "sammendrag": "Eldrerådet i Steinkjer behandlet en sak om når rådet skal reise på besøk til ulike tjenestesteder i kommunen. Rådet vedtok å starte med trygghetsboligene, og første besøk er lagt til Stod onsdag 27. mai 2026 klokka 10.00. Deretter følger trygghetsboligene i Beitstad og Kvam. Til høsten skal rådet besøke Hjemmetjenesten Nord. Rådet satte også opp besøk til heldøgns omsorg i denne rekkefølgen: Guldbergaunet bosenter, Skjeftelia trygghetsboliger, Steinkjer sykehjem og Egge sykehjem.",
+ "betydning": "Eldrerådet skal se tjenestene for eldre på nært hold, og det kan gi rådet bedre grunnlag når det uttaler seg i saker som gjelder eldre i kommunen.",
+ "tagger": [
+  "Helse og omsorg",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8131,
+ "sjekksum": "838e15ff6c044a36",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1877,
+  "ut": 602
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i ELRÅ 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8131/Protokoll"
+  }
+ ]
+}

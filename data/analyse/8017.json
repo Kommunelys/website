@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune kjøpe Gruvbadet i Malm?",
+ "sammendrag": "Eieren av eiendommen Grunnstolvegen 33 i Malm, kjent som Gruvbadet, har bedt om en avklaring på om Steinkjer kommune vil kjøpe bygget. Kommunedirektøren foreslo at kommunen ikke kjøper eiendommen, blant annet fordi bygget er i svært dårlig stand og fordi kommunen vil redusere eiendomsmassen. En rapport fra Steinkjerbygg beskriver tre alternativer: kjøp og sanering med grunnkostnad på 600 000 kroner pluss omkostninger og 4 200 000 kroner til sanering, kjøp og sikring med 600 000 kroner pluss omkostninger og 1 000 000 kroner til inngjerding og sikring, eller kjøp og renovering for bruk. Formannskapet vedtok 23. april 2026 å utsette saken, og ba kommunedirektøren sende ut en åpen høring til lokalmiljøet i Malm/Verran, næringslivet og andre interesserte om hvordan Gruvbadet kan brukes i framtiden og hvilken rolle bygget kan ha i formidlingen av gruvehistorien.",
+ "betydning": "Innbyggere, lag og næringsliv i Malm og Verran får si sin mening om framtiden til Gruvbadet før kommunen bestemmer om bygget skal kjøpes.",
+ "tagger": [
+  "Plan og areal",
+  "Kultur og idrett",
+  "Høring"
+ ],
+ "utfall": "utsatt",
+ "uenighet": "Alle var enige om å utsette saken og hente inn innspill, men H, INP, PP, SP og V ønsket i tillegg et åpent møte med blant annet fylkeskommunen og Bergmannsparken AS, mens forslaget fra AP og FRP om kun en åpen høring fikk flertall med støtte fra AP, FRP, R og V, mot H, INP, PP, SP og SV.",
+ "usikker": false,
+ "sak_id": 8017,
+ "sjekksum": "3e1d4b2bfb0eddee",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7331,
+  "ut": 918
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/466654/784318"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8017/Protokoll"
+  }
+ ]
+}

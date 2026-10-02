@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal en restaurant i Steinkjer få én prikk fordi gjester tok med alkohol ut av skjenkeområdet?",
+ "sammendrag": "Kontrollselskapet Securitas gjennomførte skjenkekontroll ved Famille Restaurant i Kongens gate 28 den 27.06.2026. Kontrollørene observerte at to gjester tok med seg alkoholholdig drikk ut av skjenkeområdet, noe som er brudd på alkoholforskriften § 4-4. Stedet fikk forhåndsvarsel 30.06.2026 og svarte 02.07.2026 at det erkjenner avviket og vil skjerpe rutinene, blant annet med økt bemanning og vakthold ved større arrangementer. Kommunedirektøren foreslår å tildele 1 prikk med virkning fra 27.06.2026. Saken ble behandlet i formannskapet 24.09.2026, men protokollen er ikke publisert ennå.",
+ "betydning": "Prikker er en del av kommunens kontroll med skjenkesteder, og 12 prikker i løpet av to år gir inndragning av skjenkebevillingen i én uke.",
+ "tagger": [
+  "Næring",
+  "Helse og omsorg"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8391,
+ "sjekksum": "0b20c75db6264a6c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6190,
+  "ut": 461
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/500310/832033"
+  }
+ ]
+}

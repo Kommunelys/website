@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hva skjer etter revisjonsrapporten om hvordan kommunen tildeler helse- og omsorgstjenester?",
+ "sammendrag": "Revisor har undersøkt hvordan Steinkjer kommune tildeler helse- og omsorgstjenester, og laget en rapport med anbefalinger. Kommunestyret tok rapporten til orientering i møtet 17. juni 2026. Kommunestyret ba kommunedirektøren følge opp to anbefalinger: å sette opplæring og kompetanseheving hos de ansatte i system, og å sikre at alle tjenester blir gitt i tråd med innholdet i vedtakene. Kommunedirektøren skal rapportere skriftlig til kontrollutvalget innen 1. oktober 2026 om hvordan anbefalingene vil bli fulgt opp.",
+ "betydning": "Innbyggere som får helse- og omsorgstjenester, skal i større grad få de tjenestene som står i vedtaket deres, og de ansatte skal få mer systematisk opplæring.",
+ "tagger": [
+  "Helse og omsorg",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8304,
+ "sjekksum": "049a5a3fb0174cb6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2788,
+  "ut": 420
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/486188/812059"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8304/Protokoll"
+  }
+ ]
+}

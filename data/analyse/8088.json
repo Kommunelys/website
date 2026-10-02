@@ -1,0 +1,45 @@
+{
+ "tittel_klarsprak": "Skal Egge og Steinkjer ungdomsskole slås sammen på Guldbergaunet?",
+ "sammendrag": "Kommunedirektøren har utredet om Egge ungdomsskole og Steinkjer ungdomsskole kan samles i ledige lokaler på Guldbergaunet. Utredningen konkluderer med at det ikke finnes nok egnede arealer. Fylkeskommunen kunne ikke avgi lokaler, og en løsning med ombygging av lokalene til Steinkjer voksenopplæring i Steinkjerhallen og leie av modulbygg ble beregnet til 11 286 000 kroner i året mot 9 460 000 kroner for dagens drift. Utredningen peker også på utfordringer med trafikk, uteareal og oppdelte skolebygg. Kommunestyret vedtok 20. mai 2026 å avslutte arbeidet med samlokalisering på Guldbergaunet, se framtidig ungdomsskolestruktur i sammenheng med kommunens økonomi, prioritere tiltak for forsvarlig lærings- og arbeidsmiljø ved dagens skoler innenfor eksisterende rammer, og forankre framtidige vurderinger i kommuneplanens samfunnsdel.",
+ "betydning": "Elevene fortsetter inntil videre på Egge ungdomsskole og Steinkjer ungdomsskole, og en større endring av ungdomsskolestrukturen er utsatt til senere vurderinger.",
+ "tagger": [
+  "Skole og barnehage",
+  "Plan og areal",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "AP, FRP, R og SV sto bak vedtaket om å avslutte samlokaliseringsarbeidet, mens H, INP, PP og V ville gå videre med én felles ungdomsskole på Guldbergaunet, og SP og den uavhengige representanten ville utrede flere strukturalternativer med vekt på gjenbruk av bygg og idrettsanlegget.",
+ "usikker": false,
+ "sak_id": 8088,
+ "sjekksum": "b2ca59045d8989f4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 17329,
+  "ut": 713
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470624/790796"
+  },
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-05-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8088/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8089/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8090/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8091/Protokoll"
+  }
+ ]
+}

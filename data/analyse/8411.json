@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal utkastet til ny plan for legetjenester i Steinkjer 2026–2034 sendes på høring?",
+ "sammendrag": "Steinkjer kommune har laget et utkast til temaplan for legetjenester for perioden 2026–2034. Planen gjelder både allmennlegetjenesten, som fastlegeordning, legevakt, institusjonslege, helsestasjons- og skolehelsetjeneste, migrasjonshelsetjeneste og utdanningsstillinger for leger, og den samfunnsmedisinske legetjenesten med kommuneoverlegefunksjonen. Planen har fire mål, blant annet stabil og bærekraftig legetjeneste med næringsdrift som hovedmodell, leger som er spesialister eller under spesialisering, bedre pasientforløp og robust samfunnsmedisinsk kapasitet. Kommunen foreslår også endringer i kommunale tilskudd: tilskudd til kjøp av hjemmel økes fra 200 000 til 400 000 kroner, og praksiskompensasjon til næringsdrivende spesialister kan koste inntil 569 250 kroner i året. Kommunedirektøren foreslår at utkastet legges ut til offentlig ettersyn med høringsfrist 4. november 2026. Saken skal behandles i hovedutvalg for helse og omsorg 14. oktober 2026.",
+ "betydning": "Innbyggere, fastleger og andre berørte får mulighet til å uttale seg om hvordan legetjenesten i Steinkjer skal utvikles fram til 2034.",
+ "tagger": [
+  "Helse og omsorg",
+  "Høring"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8411,
+ "sjekksum": "35f300a08f0b4b8b",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6245,
+  "ut": 606
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/502275/834775"
+  }
+ ]
+}

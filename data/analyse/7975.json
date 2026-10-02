@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvordan skal Steinkjer kommune organisere arbeidet med Nasjonaljubileet 2030?",
+ "sammendrag": "Steinkjer kommune skal delta i Nasjonaljubileet 2030, som markerer at det er tusen år siden slaget på Stiklestad 29. juli 1030. Formannskapet vedtok 23. april 2026 en organisering i tre deler: formannskapet som hovedkomite, en jubileumskomite og en administrativ gruppe. Jubileumskomiteen får to politisk valgte representanter, kommunalsjef samfunn og kultur, styreleder i kirkelig fellesråd, daglig leder ved Egge Museum, en representant fra historielagene, leder for Steinkjer ungdomsråd og en representant for Steinkjer Næringsforening. Den administrative gruppen ledes av kommunalsjef samfunn og kultur og utvides med en representant for Steinkjer utvikling AS. Som politiske representanter ble ordføreren valgt, som leder, og leder i hovedutvalg oppvekst og kultur.",
+ "betydning": "Innbyggerne får en fast organisering som skal planlegge aktiviteter og markeringer i Steinkjer fram mot og i jubileumsåret 2030.",
+ "tagger": [
+  "Kultur og idrett",
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Selve organiseringen var det enighet om, mens partiene var uenige om hvilke og hvor mange folkevalgte som skulle sitte i jubileumskomiteen: forslaget som ble vedtatt, om ordfører som leder og leder i hovedutvalg oppvekst og kultur, fikk støtte fra AP, FRP, R og SV, mens H, INP, PP, SP og V stemte mot; et forslag fra V, H og PP om i tillegg å ta inn leder i hovedutvalg plan, næring og miljø fikk støtte fra H, PP, SP og V, men ble ikke vedtatt.",
+ "usikker": false,
+ "sak_id": 7975,
+ "sjekksum": "96d9cb39fe8389df",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6154,
+  "ut": 726
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/459584/774736"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7976/Protokoll"
+  }
+ ]
+}

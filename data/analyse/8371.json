@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune tillate nattoptikk på rifle under hjortejakt?",
+ "sammendrag": "Viltressursloven trådte i kraft 1. januar 2026 og gir kommunen mulighet til å vedta en forskrift som åpner for bruk av restlysforsterkende og termiske siktemidler montert på rifla under hjortejakt. Steinkjer kommune har et politisk vedtatt mål om klar reduksjon av hjortestammen, men registreringer viser at bestanden fortsetter å vokse, og hjorten gjør skade på eng og skog. Kommunedirektøren vurderer at vilkårene for en slik forskrift er oppfylt, og foreslår at bruken begrenses til jakt i åpent terreng, at jegerne rapporterer bruk i Hjorteviltregisteret, og at forskriften trer i kraft 1. september 2027. Hovedutvalg for plan, næring og miljø vedtok 15. september 2026 å sende forslaget på høring med frist til og med 13. oktober 2026. Ordningen skal vurderes på nytt hvert femte år.",
+ "betydning": "Hvis forskriften senere blir vedtatt, kan jegere i hele kommunen bruke nattoptikk ved hjortejakt i åpent terreng, noe som kan gi mer effektiv jakt og mindre beiteskader på innmark og skog.",
+ "tagger": [
+  "Landbruk",
+  "Klima og miljø",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8371,
+ "sjekksum": "cd27c44c24b6b5df",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6523,
+  "ut": 543
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/498561/829383"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-09-15",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8371/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal kommunen garantere for lånet når Innherred Flyklubb kjøper eget klubbfly?",
+ "sammendrag": "Innherred Flyklubb holder til ved gården Langli i Steinkjer og leier i dag fly av medlemmene. Klubben vil kjøpe eget klubbfly til en anslått kostnad på kr 1 250 000, finansiert med kr 300 000 i egenandeler fra medlemmene og et banklån på kr 950 000. Banken krever kommunal garanti, og klubben søkte derfor Steinkjer kommune om lånegaranti. Kommunestyret vedtok 17. juni 2026 å gi en simpel garanti for lån opptil kr 950 000, med et maksimalt garantiansvar på kr 1 045 000 inkludert renter og omkostninger. Garantien gjelder fra 2026, reduseres etter hvert som lånet nedbetales, og opphører i 2036 med tillegg av inntil 2 år.",
+ "betydning": "Kommunen tar på seg en økonomisk risiko på inntil kr 1 045 000 dersom flyklubben ikke klarer å betjene lånet, mot at klubben kan utvide flytilbudet sitt.",
+ "tagger": [
+  "Økonomi",
+  "Kultur og idrett"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt om kommunen i det hele tatt skulle stille garanti: H, INP, PP og V gikk imot og ville avslå søknaden, mens FRP og SP støttet garantien, og representanter fra AP, R og SV delte seg i kommunestyret.",
+ "usikker": false,
+ "sak_id": 8192,
+ "sjekksum": "e25ed0e228682746",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5597,
+  "ut": 577
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482226/805730"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8192/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8193/Protokoll"
+  }
+ ]
+}

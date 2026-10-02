@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om statens styring av kommunene i høringen om NOU 2026: 1?",
+ "sammendrag": "Kommunekommisjonen la 9. januar 2026 fram sin første delrapport, NOU 2026: 1 «En bærekraftig kommunesektor», med sju forslag som kan gjennomføres uten videre utredning. Rapporten var på høring med frist 16. april 2026, og formannskapet behandlet kommunens høringsuttalelse 19. mars 2026. Kommunedirektøren foreslo blant annet å støtte at lærernormen flyttes fra hovedtrinn per skole til kommunenivå, at kompetansekravene i helse- og omsorgstjenesteloven § 3-2 oppheves og at grunnskoletilskuddet avvikles. Formannskapet endret uttalelsen på flere punkter: kommunen avviser å flytte lærernormen til kommunenivå, støtter ikke at kompetansekravene i § 3-2 oppheves, og ønsker at grunnskoletilskuddet videreføres. Uttalelsen ber ellers kommisjonen prioritere tiltak som reduserer statlig styringstrykk, blant annet forenkling av plankrav, ny eiendomsskattelov, færre rapporteringskrav og full statlig kompensasjon på områder som BPA og andre ressurskrevende tjenester.",
+ "betydning": "Uttalelsen er kommunens innspill til hvordan staten bør styre kommunene, og berører blant annet lærernorm, kompetansekrav i helse og omsorg og statlige tilskudd som påvirker tjenestene innbyggerne får.",
+ "tagger": [
+  "Høring",
+  "Skole og barnehage",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt hvor langt kommunen skulle gå i å be om mindre statlig styring: R, SV, INP og V ville dempe flere av punktene om normer, kompetansekrav, klageordninger og aktørlover, mens H og SP gikk mot flere av disse endringene og AP delte seg i flere avstemninger; forslaget om forenkling av plankrav og innsigelsesinstituttet fra V, H, SP, PP og AP ble vedtatt mot stemmene til R og SV.",
+ "usikker": false,
+ "sak_id": 7950,
+ "sjekksum": "05cd681952fe6ccf",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 34068,
+  "ut": 821
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/456400/769954"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7950/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hvem skal få Steinkjer kommunes inkluderings- og mangfoldspris for 2025?",
+ "sammendrag": "Steinkjer kommune deler ut en inkluderings- og mangfoldspris for særskilt innsats for inkludering og mangfold knyttet til funksjonsnedsettelse, kjønn og/eller etnisitet. Prisen kan gå til enkeltpersoner, grupper, private eller offentlige bedrifter eller enheter i kommunen, og består av et diplom og et pengebeløp. Prisen ble lyst ut 3. desember 2025 på kommunens nettside og Facebook-side, med frist for forslag i midten av januar og planlagt utdeling 8. mars. Rådet for personer med funksjonsnedsettelse (RÅFIM) vurderer innsendte forslag og kan også selv foreslå kandidater, og skulle velge vinner i møtet 4. februar 2026. Møtet er holdt, men protokollen med vedtaket er ikke publisert ennå.",
+ "betydning": "Prisen løfter fram personer eller virksomheter i Steinkjer som har gjort en spesiell innsats for inkludering og mangfold.",
+ "tagger": [
+  "Kultur og idrett",
+  "Helse og omsorg"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7772,
+ "sjekksum": "90d8d3af437c878c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2476,
+  "ut": 474
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440260/747718"
+  }
+ ]
+}

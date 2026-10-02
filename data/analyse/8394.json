@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal forslaget til reguleringsplan for ny E6 mellom Selli og Asp legges ut til offentlig ettersyn?",
+ "sammendrag": "Nye Veier har levert forslag til detaljregulering for en 2,7 kilometer lang ny E6 fra Selli-krysset i sør til krysset med fv. 17 i nord. Planen legger til rette for tofelts veg med fartsgrense 90 km/t, tunnel ved Andsteinen, bru i Skuggedalen, overgangsbru ved Aspåsvegen, driftsbruer, kulverter og kollektivholdeplasser. Dagens E6 blir lokalveg og omkjøringsveg. Planområdet er på omtrent 1060 dekar, og forslaget beslaglegger midlertidig og/eller permanent om lag 67 dekar fulldyrka jord, mot om lag 130 dekar i reguleringsplanen fra 2016. Kommunedirektøren foreslår at planen legges ut til offentlig ettersyn i 6 uker, men med endringer først: krav om viltgjerder langs hele den nye E6 og utforming av viltkryssinger etter vegnormal N200 og håndbok V134, krav til omlegging av bekk uten vandringshindre, og at muligheten til å fravike støygrenser fordi det er for kostbart tas ut og erstattes med krav om at grenseverdiene i T-1442/2021 ikke overskrides. Saken skal behandles i Hovedutvalg for plan, næring og miljø 13.10.2026.",
+ "betydning": "Blir planen lagt ut på offentlig ettersyn, kan naboer, grunneiere og andre berørte uttale seg om ny E6-trasé, støy, jordvern og vilttiltak før planen eventuelt vedtas.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk",
+  "Klima og miljø"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8394,
+ "sjekksum": "e3c7ae437c33464b",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 16614,
+  "ut": 778
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/500826/832661"
+  }
+ ]
+}

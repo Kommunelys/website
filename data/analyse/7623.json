@@ -1,0 +1,35 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune få en ny og oppdatert kvalitetshåndbok?",
+ "sammendrag": "Steinkjer kommune har hatt en kvalitetshåndbok som ble godkjent av rådmannen i 2015, og den er nå revidert. Håndboka beskriver kommunens kvalitetssystem EQS og hvordan kommunen skal håndtere styrende dokumenter, avvik, intern varsling om kritikkverdige forhold, tilsyn, internkontroll og revisjon, samt hvem som har ansvar for hva. Hovedverneombudet deltok i arbeidet, og forslaget ble drøftet med hovedtillitsvalgte og hovedverneombud 2. desember 2025. Arbeidsmiljøutvalget ga sin tilslutning 2. desember 2025, og administrasjonsutvalget vedtok håndboka 12. februar 2026. Administrasjonsutvalget vedtok samtidig at begrepet «kvalitetsansvarlig» skal endres til «kvalitetskoordinator» i hele håndboka.",
+ "betydning": "Kommunen får oppdaterte felles regler for hvordan ansatte skal melde avvik og hvordan kommunen kontrollerer at tjenestene drives etter lover og regler.",
+ "tagger": [
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7623,
+ "sjekksum": "dfc03f1bed237eae",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3317,
+  "ut": 497
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/428485/729738"
+  },
+  {
+   "tittel": "Vedtak i AMU 2025-12-02",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7622/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i AD 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7623/Protokoll"
+  }
+ ]
+}

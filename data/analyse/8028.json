@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal kommunen bruke inntil 2,0 millioner kroner mer på reguleringsplanen for Malm industripark?",
+ "sammendrag": "Kommunen arbeider med en detaljreguleringsplan for nye Malm industripark. Etter høringen kom det flere innsigelser, og det trengs fagfolk fra plankonsulent Sweco i tillegg til kommunens egne ansatte for å svare på dem. Kommunen har også avtalt å dekke advokatkostnadene til grunneieren som er sterkest berørt, fram til avtale er inngått. Hovedutvalg for plan, næring og miljø vedtok 28. april 2026 å bevilge inntil 2,0 millioner kroner til dette, belastet NTE-utbytte næringsfond. Tidligere er det bevilget 3.500.000 kroner (2020), 4.800.000 kroner (2021) og 1.000.000 kroner (2025), og disse midlene er brukt opp.",
+ "betydning": "Arbeidet med reguleringsplanen for Malm industripark kan fortsette, finansiert av kommunens næringsfond fra NTE-utbytte.",
+ "tagger": [
+  "Plan og areal",
+  "Næring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8028,
+ "sjekksum": "e33568e3d602f27c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3299,
+  "ut": 468
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/467589/785921"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8028/Protokoll"
+  }
+ ]
+}

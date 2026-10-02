@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hva ble oppnådd i kommunens næringsplan i 2025?",
+ "sammendrag": "Temaplan næring er kommunens prosjekt for næringsutvikling, med Steinkjer Utvikling AS som prosjektleder. Målet for prosjektet er 1000 nye sysselsatte i privat sektor innen 2032, og arbeidet er delt i satsingsområdene bio- og sirkulærøkonomi, teknologi og grønn energi, og handel og opplevelser. Sluttrapporten for 2025 viser at 23 av 30 delmål er gjennomført, 4 delvis gjennomført og 3 ikke gjennomført. Prosjektregnskapet for 2025 viser kostnader på kr 3 936 123, et mindreforbruk på kr 72 032 mot budsjettet, finansiert av kommunalt næringsfond NTE utbytte. Hovedutvalg plan næring og miljø godkjente sluttrapporten 27. januar 2026.",
+ "betydning": "Innbyggerne får vite hvordan kommunens penger til næringsutvikling ble brukt i 2025 og hvor langt arbeidet er kommet.",
+ "tagger": [
+  "Næring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7731,
+ "sjekksum": "5604a9fc83252c87",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2745,
+  "ut": 456
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/437572/744261"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-01-27",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7731/Protokoll"
+  }
+ ]
+}

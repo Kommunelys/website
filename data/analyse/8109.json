@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hvem skal representere ungdomsrådet i komiteen for TV-aksjonen?",
+ "sammendrag": "Ungdomsrådet i Steinkjer skulle velge to medlemmer til komiteen for TV-aksjonen. I møtet 5. mai 2026 kom det fram at ingen i rådet hadde mulighet til å stille i komiteen på det tidspunktet. Rådet vedtok derfor at plassene ikke ble besatt. Medlemmer som likevel ønsker å delta, kan ta kontakt med kontaktpersonen i kommunen.",
+ "betydning": "Ungdomsrådet er foreløpig ikke representert i arbeidet med TV-aksjonen i Steinkjer.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8109,
+ "sjekksum": "c8df3f9a7a9c4458",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1791,
+  "ut": 482
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-05-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8109/Protokoll"
+  }
+ ]
+}

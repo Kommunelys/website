@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvilken lønnspolitikk skal Steinkjer kommune ha for 2026–2028?",
+ "sammendrag": "Steinkjer kommune skal etter KS' hovedtariffavtale ha en lokal lønnspolitikk, og planen revideres normalt hvert annet år i forbindelse med sentrale hovedoppgjør. Forrige plan gjaldt fra 1. mai 2024 til 30. april 2026, og forslaget til ny plan gjelder perioden 1. mai 2026 til 30. april 2028. Planen er laget av en arbeidsgruppe med representanter fra de fire hovedsammenslutningene, sektorledere, kommunalsjef HR og fellestjenester og HR-rådgiver. Formannskapet vedtok planen 11. juni 2026, med forbehold om revisjon dersom det sentrale oppgjøret i 2026 gir endringer i hovedtariffavtalen. Formannskapet la også inn tre tillegg: om faglige karriereveier og lønnsuttelling for ansatte uten lederstilling, om å vurdere lønnsnivået til erfarne ansatte når det brukes rekrutteringstillegg, og om en årlig lønnspolitisk statusrapport til administrasjonsutvalget om blant annet likelønn, ufrivillig deltid, turnover og rekruttering.",
+ "betydning": "Planen styrer hvordan kommunen fastsetter lønn for sine ansatte, og påvirker dermed kommunens evne til å rekruttere og beholde folk i tjenestene innbyggerne bruker.",
+ "tagger": [
+  "Organisasjon",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Selve planen ble vedtatt enstemmig, mens SP og V stemte mot tilleggene om faglige karriereveier og om vurdering av lønnsnivå ved rekrutteringstiltak, som ble fremmet av R sammen med AP, SV og FRP og støttet av H, INP og PP.",
+ "usikker": false,
+ "sak_id": 8255,
+ "sjekksum": "4efa5359a4672dbc",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5630,
+  "ut": 709
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/483216/807518"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8256/Protokoll"
+  }
+ ]
+}

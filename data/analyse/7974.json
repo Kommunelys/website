@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal selskapet som fester parkeringstomta ved Brygga få fem nye år på seg til å kjøpe tomta?",
+ "sammendrag": "Eiendommen gnr 197 bnr 1344 er 1552 kvadratmeter, eies av Steinkjer kommune og er regulert til parkering. Selskapet som fester tomta fikk i 2020 en femårs opsjon på å kjøpe den, men opsjonen gikk ut 18.06.2025 uten at kjøp var gjennomført. Selskapet jobber med å endre reguleringsplanen for å kunne bygge boliger på parkeringsplassen, og arbeidet har tatt lengre tid enn ventet på grunn av nærhet til jernbane, støy og utfylling i elva. Formannskapet behandlet saken 23.04.2026 og ga selskapet fem nye år med opsjon på kjøp, regnet fra vedtaksdatoen. Innløsningsprisen tar utgangspunkt i kr 900,- per kvadratmeter på vedtaksdatoen og justeres med 100 prosent av konsumprisindeksen fram til kjøpet skjer.",
+ "betydning": "Tomta ved Brygga holdes av til selskapet i fem nye år, mens spørsmålet om det kan bygges boliger der avgjøres i en egen reguleringsplanprosess.",
+ "tagger": [
+  "Plan og areal",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "H, INP, SP, V og PP fremmet et endringsforslag om at prisen skal justeres etter 100 prosent av konsumprisindeksen, og dette fikk tilslutning fra alle partiene i formannskapet.",
+ "usikker": false,
+ "sak_id": 7974,
+ "sjekksum": "0023e1ccc9112f8f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4483,
+  "ut": 971
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/459480/774555"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7974/Protokoll"
+  }
+ ]
+}

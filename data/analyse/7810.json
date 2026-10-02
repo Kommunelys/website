@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune at NTEs nye eiermelding bør inneholde?",
+ "sammendrag": "Eiernes arbeidsutvalg i NTE ba i et notat datert 18. januar 2026 eierkommunene om innspill til en ny eiermelding for selskapet. Målet er at eiermeldingen skal vedtas på generalforsamling våren 2027, og fristen for innspill i første fase var 1. mars. Kommunedirektøren foreslo at saken ble tatt til orientering, men formannskapet vedtok 12. februar 2026 et eget innspill fra Steinkjer kommune. Innspillet sier blant annet at NTEs hovedoppgave er trygg strømforsyning, beredskap og langsiktig verdiskaping, at kommunen forventer økt utbytte som minimum er på nivå med sammenliknbare kraftselskap, at drift, vedlikehold og klimatilpasning må prioriteres høyt, og at NTE bør videreutvikle et robust hovedkontor i Steinkjer. Forslag til disposisjon for ny eiermelding kan behandles i kommunestyret 20. mai 2026.",
+ "betydning": "Innspillet viser hva Steinkjer kommune som medeier vil at NTE skal prioritere, blant annet strømforsyning, beredskap, utbytte til kommunen og arbeidsplasser i regionen.",
+ "tagger": [
+  "Eierskap og selskaper",
+  "Klima og miljø",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Det ble fremmet tre konkurrerende innspillstekster: forslaget fra AP, H, SP og SV ble vedtatt med støtte fra en uavhengig representant, mens FRP, R og V stemte mot og hadde egne forslag med sterkere vekt på blant annet lav sluttbrukerpris, politisk styring av utbyttet og tydeligere grenser for virksomhet utenfor eierkommunene.",
+ "usikker": false,
+ "sak_id": 7810,
+ "sjekksum": "7f75cbf79e65eb1d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8720,
+  "ut": 698
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/448901/757533"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7810/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om forslaget til endringer i konsesjonsloven?",
+ "sammendrag": "Landbruks- og matdepartementet har sendt forslag til endringer i konsesjonsloven og tilhørende forskrifter på høring, med frist 15. juni 2026. Forslagene gjelder blant annet regelen om bindende forhåndsuttalelse om hvor høy pris som kan godtas ved salg av landbrukseiendom, retting av en henvisning til ordfører i konsesjonsloven § 13, hjemmel for Landbruksdirektoratet til å hente taushetsbelagte opplysninger fra folkeregisteret, og at Statsforvalteren skal avgjøre konsesjonssøknader fra stiftelser. Hovedutvalg for plan, næring og miljø vedtok 9. juni 2026 høringssvaret slik kommunedirektøren foreslo: priskontroll er tidkrevende, det er hensiktsmessig at Statsforvalteren behandler søknader fra stiftelser, og kommunen har ellers få merknader ut over at det kan vurderes krav om vedlagt landbrukstakst. Om bindende forhåndsuttalelser mener kommunen at å beholde dagens regel er et dårlig alternativ, og at det beste er å oppheve konsesjonsloven § 9a andre ledd – forutsatt at kommunen fortsatt kan kreve saksbehandlingsgebyr i konsesjonssaker. Hvis gebyr ikke kan kreves, peker kommunen i stedet på forskriftshjemmel som beste løsning.",
+ "betydning": "Høringssvaret gjelder hvordan salg av landbrukseiendom skal kontrolleres og hva kommunen kan kreve av dokumentasjon og gebyr fra dem som kjøper og selger slike eiendommer.",
+ "tagger": [
+  "Landbruk",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt punkt 4 om bindende forhåndsuttalelser: FRP og H ville støtte departementets alternativ 1 med videreføring av ordningen og gebyr for slike uttalelser, mens AP, INP, R og SP støttet innstillingen om at det beste er å oppheve konsesjonsloven § 9a andre ledd.",
+ "usikker": false,
+ "sak_id": 8170,
+ "sjekksum": "3931dc570fde03d8",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 16149,
+  "ut": 996
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482078/805482"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8170/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal forslaget til lokal forskrift om telling og rapportering i private barnehager sendes på høring?",
+ "sammendrag": "Den nye finansieringsforskriften for private barnehager krever at kommuner med flere telletidspunkter i tilskuddsåret fastsetter disse i en lokal forskrift. Steinkjer kommune har fire telletidspunkter, og forskriften skal gjøre det tydelig når det telles og hva som kan utløse mertilskudd mellom telletidspunktene. Barnehagene skal rapportere antall barn, barnas alder og oppholdstid, som er grunnlag for grunntilskudd og eiendomstilskudd, og antall ansatte barnehagen har pensjonsforpliktelser for, som er grunnlag for pensjonstilskudd. Hovedutvalg for oppvekst og kultur vedtok 18.08.2026 å legge forslaget ut på offentlig høring, med høringsfrist på fem uker med frist 22.09.2026. Endelig forslag til forskrift skal behandles av hovedutvalget og kommunestyret etter høringen.",
+ "betydning": "Private barnehager og andre interesserte kan uttale seg om reglene som avgjør hvordan tilskuddene til private barnehager beregnes.",
+ "tagger": [
+  "Skole og barnehage",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8377,
+ "sjekksum": "1decb3af1ba3b65f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3366,
+  "ut": 795
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/499518/830892"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-08-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8377/Protokoll"
+  }
+ ]
+}

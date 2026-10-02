@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvor mye tilskudd skal private barnehager i Steinkjer få i 2027, og hvordan skal satsene fastsettes?",
+ "sammendrag": "Nytt nasjonalt regelverk krever at kommunen fastsetter satsene for grunntilskudd til private barnehager i en lokal forskrift, i stedet for i årlige enkeltvedtak. Satsene er beregnet ut fra kommunens regnskap for 2025, med et administrasjonspåslag på 4,7 prosent og indeksregulering med anslått kommunal deflator på 4,1 prosent for 2026 og 3,4-3,5 prosent for 2027. Forslaget var på høring fra 18. august 2026 til 22. september 2026, og innspill fra blant andre PBL, NHO Geneo og private barnehager førte til korrigeringer som økte satsene noe. Kommunedirektøren foreslår at kommunestyret vedtar forskriften, at administrasjonen kan justere satsene ved endringer i maksimalpris, deflator eller nasjonalt regelverk, og at forskriften kunngjøres i Norsk Lovtidend og trer i kraft 1. januar 2027. Saken skal behandles i Hovedutvalg for oppvekst og kultur 14. oktober 2026 og er ikke avgjort.",
+ "betydning": "Satsene avgjør hvor mye penger de private barnehagene i Steinkjer får per barn i 2027, og dermed rammene for driften av barnehageplassene mange familier bruker.",
+ "tagger": [
+  "Skole og barnehage",
+  "Økonomi",
+  "Høring"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8522,
+ "sjekksum": "5cdebd44cbaf3a45",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 11075,
+  "ut": 594
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509543/845606"
+  }
+ ]
+}

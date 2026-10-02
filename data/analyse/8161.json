@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune gi penger til TV-aksjonen 2026?",
+ "sammendrag": "Saken gjaldt om Steinkjer kommune skulle gi et pengebidrag til TV-aksjonen 2026. TV-aksjonen går søndag 18. oktober og går til NRC Flyktninghjelpen, som skal gi 400 000 mennesker på flukt i Syria, Gaza, Afghanistan, Tsjad, Sudan og DR Kongo et trygt hjem. Kommunen har tradisjon for å støtte aksjonen, og ga 24 000 kroner i 2025. Formannskapet vedtok 11. juni 2026 å bevilge 24 000 kroner, som belastes kommunens budsjett ansvar 1101.",
+ "betydning": "Kommunen bidrar med 24 000 kroner til den nasjonale innsamlingsaksjonen på vegne av innbyggerne.",
+ "tagger": [
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8161,
+ "sjekksum": "b0dada7be7f2182c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2703,
+  "ut": 373
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/481364/804293"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8161/Protokoll"
+  }
+ ]
+}

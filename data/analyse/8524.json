@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune vedta en egen forskrift om hvordan private barnehager rapporterer barnetall og årsverk?",
+ "sammendrag": "Den nye finansieringsforskriften for private barnehager krever at kommuner med flere telletidspunkter i året fastsetter disse i en lokal forskrift. Steinkjer kommune har fire telletidspunkter, og foreslår nå en egen forskrift som også viser hva som skal til for at tilskuddet endres i løpet av året. Forslaget var på høring fra 18. august 2026 til 22. september 2026, og kommunen mottok svar fra NHO Geneo og PBL lokallag Steinkjer. Etter høringen foreslår kommunedirektøren blant annet et nytt tredje ledd i § 3 om at nytt telletidspunkt gir nytt enkeltvedtak om tilskudd, tydeligere ordlyd i § 3.1 om hvilke årsverk som ikke skal rapporteres, og at tredje ledd i § 5 tas ut. Forslaget om ny tilskuddsberegning ved opptak av to eller flere barn mellom telletidspunktene blir ikke fulgt opp. Saken skal etter planen behandles i hovedutvalg for oppvekst og kultur 14. oktober 2026, og forskriften foreslås kunngjort i Norsk Lovtidend med ikrafttredelse 1. januar 2027.",
+ "betydning": "Forskriften bestemmer hvordan og når private barnehager i kommunen må rapportere barnetall og årsverk, og dermed hvordan de får tilskudd gjennom året.",
+ "tagger": [
+  "Skole og barnehage",
+  "Høring"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8524,
+ "sjekksum": "3e43000052ab98b3",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6221,
+  "ut": 626
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509544/845607"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva skal Steinkjer kommune svare KS om bærekraftig velferd og beredskap?",
+ "sammendrag": "KS ber hvert år kommunene om innspill til et debatthefte. Temaet i «Debatthefte 2026. Tid for taktskifte» er hva kommunene selv kan gjøre for bærekraftig velferd og sterkere beredskap. Formannskapet vedtok 12. februar 2026 kommunedirektørens forslag til svar på tre spørsmål, blant annet om boliger og tjenester for en aldrende befolkning, folkehelse, digitalisering, bruk av arbeidskraft, lavere sykefravær og samarbeid med nabokommuner. Til beredskapsspørsmålet ble det lagt til at samfunnsberedskap må ivaretas i alle endrings- og utviklingsprosesser. Innspillene sammenstilles av KS Trøndelag og brukes når KS Hovedstyre behandler temaene.",
+ "betydning": "Saken sier hva Steinkjer kommune mener om velferd og beredskap i KS sitt politiske arbeid, men gir ingen direkte endringer i tjenestene til innbyggerne.",
+ "tagger": [
+  "Helse og omsorg",
+  "Organisasjon",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Et tilleggsforslag fra SP om større fokus på endrings- og utviklingsprosesser framfor kutt fikk støtte fra H, SP, UAVH og V, men ble ikke vedtatt fordi AP, FRP, R og SV stemte mot; et annet tilleggsforslag fra SP om samfunnsberedskap ble vedtatt mot AP sine stemmer.",
+ "usikker": false,
+ "sak_id": 7525,
+ "sjekksum": "833f1e47bbe99dc2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 10938,
+  "ut": 615
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/421194/719048"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7525/Protokoll"
+  }
+ ]
+}

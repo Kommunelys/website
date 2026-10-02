@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Hvordan kan ungdomsrådet bidra med innhold for ungdom på Hilmarfestivalens flerkulturelle myldrearrangement?",
+ "sammendrag": "Ungdomsrådet i Steinkjer fikk 20. januar 2026 en presentasjon av et flerkulturelt myldrearrangement i regi av Hilmarfestivalen. Festivalen ønsket råd om hvordan flere ungdommer og flere aktiviteter kan involveres i arrangementet. Ungdomsrådet vedtok at eventuelle forslag til innhold for ungdom på Hilmarfestivalen sendes inn til rådets kontaktperson. Kontaktpersonen videresender forslagene til Hilmarfestivalen.",
+ "betydning": "Ungdom som har idéer til aktiviteter på Hilmarfestivalen kan spille dem inn via ungdomsrådet.",
+ "tagger": [
+  "Kultur og idrett"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7744,
+ "sjekksum": "7dcc4b9a9423f78c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1849,
+  "ut": 756
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-01-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7744/Protokoll"
+  }
+ ]
+}

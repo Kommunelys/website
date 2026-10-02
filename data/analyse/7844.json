@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan skal de politiske møtene i Steinkjer gjennomføres?",
+ "sammendrag": "Etter formannskapsmøtet 29.01.2026 kom det ønske om å gå gjennom hvordan møtene avvikles. Mye tid gikk med til orienteringer og diskusjon om saker som ble foreslått satt på saklista, slik at noen medlemmer måtte be om permisjon før sakene var ferdigbehandlet. Forretningsutvalget drøftet fire tema: rekkefølgen på saklista, når og hvordan orienteringer skal skje, spørsmål til møtelederen og krav om å få saker på saklista. Fra formannskapsmøtet 12.02.2026 er orientering fra ordfører og kommunedirektør allerede flyttet til slutten av møtet, kombinert med svar på spørsmål, og orienteringer skal føres opp som egne saker på saklista. Forretningsutvalget drøftet saken i møtet 25.02.2026 og ba administrasjonen samle innspillene i et eget notat.",
+ "betydning": "Endringene kan gjøre det lettere for innbyggere å følge med på hva som skal opp i møtene, fordi orienteringer blir synlige på saklista.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7844,
+ "sjekksum": "daf93827b6b31db2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3716,
+  "ut": 486
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/452251/763091"
+  },
+  {
+   "tittel": "Vedtak i FOR 2026-02-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7844/Protokoll"
+  }
+ ]
+}

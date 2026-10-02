@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om forslaget til nye regler for samarbeid mellom kommuner?",
+ "sammendrag": "Kommunal- og distriktsdepartementet har sendt på høring forslag til endringer i kommunelovens regler om interkommunalt samarbeid, med høringsfrist 1. oktober 2026. De viktigste forslagene er at kommunale oppgavefellesskap som er egne rettssubjekter kan få myndighet til å fatte enkeltvedtak og vedta forskrifter, at flere oppgaver kan samles i ett og samme oppgavefellesskap, og at kommuner og fylkeskommuner kan samarbeide om oppgaver de har felles. Departementet foreslår også å avvikle vertskommunemodellen med felles folkevalgt nemnd, og vil ikke gjeninnføre samkommunemodellen. Kommunedirektøren foreslår at Steinkjer kommune støtter hovedretningen, men ber om tydeligere regler om rolle- og ansvarsfordeling mellom representantskap, styre og administrativ leder, en avklaring av regnskapsplikten for oppgavefellesskap som ikke er egne rettssubjekter og som har inntekter over 5 millioner kroner, og unntak fra kravet om kjønnsbalanse i styrer der plassene er knyttet til bestemte administrative stillinger. Saken ble behandlet i formannskapet 24. september 2026, men vedtaket er ikke publisert ennå.",
+ "betydning": "Reglene avgjør hvordan Steinkjer kan samarbeide med nabokommuner om tjenester som helse, plan og bygg og IKT, og hvem som da har ansvaret for vedtak som gjelder innbyggerne.",
+ "tagger": [
+  "Regionalt samarbeid",
+  "Høring",
+  "Organisasjon"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8335,
+ "sjekksum": "906683cea5e9b699",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 14206,
+  "ut": 676
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/490321/817771"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvordan skal Steinkjer kommune organisere arbeidet med å utnytte varmen i gruvevannet i Østgruva i Malm?",
+ "sammendrag": "Østgruva i Malm er fylt med vann som holder stabil temperatur på om lag 15–20 grader. Forprosjekter viser at varmen kan brukes i et nærvarmeanlegg, med et beregnet årlig varmeuttak på rundt 20 GWh, som etter temperaturløft kan gi 25–30 GWh nyttbar varme. Kommunedirektøren foreslår at kommunen beholder eiendomsretten til gruva (gnr. 707 og 708 i tidligere Verran kommune) og i stedet leier ut en tidsavgrenset og eksklusiv rett til å ta ut energien til en ekstern, kommersiell aktør. Det kommunalt heleide selskapet Verran Utbyggingsselskap AS foreslås å lede prosessen, forhandle avtalen og følge den opp, mens ressursen skal verdsettes av en uavhengig taksator for å oppfylle reglene om statsstøtte. Endelig avtale skal etter forslaget legges fram for kommunestyret for godkjenning. Saken skal behandles i hovedutvalg plan, næring og miljø 13. oktober 2026 og i formannskapet 15. oktober 2026.",
+ "betydning": "Utnyttelse av varmen kan gi lokal industri tilgang på varme og kjøling og frigjøre anslagsvis 3–4 MW strømkapasitet i Malm, uten at kommunen selv tar investerings- eller driftsrisiko for anlegget.",
+ "tagger": [
+  "Næring",
+  "Klima og miljø",
+  "Eierskap og selskaper"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8519,
+ "sjekksum": "4acefee37e318427",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4944,
+  "ut": 646
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509516/845566"
+  }
+ ]
+}

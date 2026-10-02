@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune gi 200 000 kroner i støtte til Steinkjermartnan 2026?",
+ "sammendrag": "Steinkjer Arrangement AS, som er heleid datterselskap av Steinkjer Næringsforening AS, søkte om 200 000 kroner i støtte til Steinkjermartnan 2026. Pengene var søkt fra næringsdelen av NTE-utbyttet. Kommunedirektøren pekte på at martnan har vært arrangert siden 1964 uten direkte kommunalt driftstilskudd, at arrangementet har et kommersielt preg, og at støtte kan skape presedens for andre aktører. Hovedutvalg for plan, næring og miljø avslo søknaden i møtet 9. juni 2026.",
+ "betydning": "Steinkjermartnan 2026 får ikke de 200 000 kronene i kommunal støtte, og arrangøren må dekke kostnadene på annen måte.",
+ "tagger": [
+  "Næring",
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "H og FRP ville innvilge 200 000 kroner fra næringsfondet NTE-utbytte, mens AP, INP, R og SP gikk inn for å avslå søknaden.",
+ "usikker": false,
+ "sak_id": 8212,
+ "sjekksum": "213bed15dff0c9f5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4394,
+  "ut": 465
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482579/806344"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8212/Protokoll"
+  }
+ ]
+}

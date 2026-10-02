@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om Helse Nord-Trøndelags utviklingsplan for 2027–2030?",
+ "sammendrag": "Helse Nord-Trøndelag (HNT) har sendt sin utviklingsplan for 2027–2030 på høring, med frist 2. oktober 2026. Helsefellesskapet har laget et felles forslag til høringssvar på vegne av kommunene i Trøndelag, og Steinkjer kommunes svar bygger på dette. Kommunedirektøren foreslår at kommunen peker på at framskrivingene for sykehusopphold øker mindre enn antall eldre, noe som betyr tidligere utskriving, sykere pasienter hjemme og større behov for rehabilitering, intermediære tilbud og medisinsk spisskompetanse i kommunen. Høringssvaret støtter videreføring av akuttsykehusene i Namsos og Levanger, DPS i Kolvereid og Stjørdal og DMS i Steinkjer og Stjørdal, og at utbygging av akuttmottakene i Namsos og Levanger er øverste prioritet. Saken ble behandlet i formannskapet 24. september 2026, men protokollen er ikke publisert ennå.",
+ "betydning": "Høringssvaret handler om hvordan sykehustilbudet og samarbeidet mellom sykehus og kommune skal utvikles, noe som påvirker helsetilbudet til innbyggerne i årene framover.",
+ "tagger": [
+  "Helse og omsorg",
+  "Høring",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8500,
+ "sjekksum": "a77f391db3e87f9f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6971,
+  "ut": 577
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/508022/843321"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal planene for Mære grendesenter og Hosetbukta ved Leksdalsvatnet endres slik at det kan bygges der?",
+ "sammendrag": "Da kommuneplanens arealdel ble vedtatt 17. desember 2025, ble to tidligere utbyggingsområder gjort om til landbruks-, natur- og friluftsformål samt reindrift (LNFR). Grunneierne klaget, og kommunestyret vedtok 20. mai 2026 å sette i gang en endring av arealdelen for Mære grendesenter og Hosetbukta ved Leksdalsvatnet. Formannskapet vedtok 3. september 2026 å starte planarbeidet og sende planprogrammet på høring med seks ukers frist. Det varsles samtidig at gjeldende reguleringsplan for Hosetbukta kan bli opphevet som en del av arbeidet. I planarbeidet skal det blant annet utredes om Hosetbukta kan bli fritids- og turistformål og om den søndre delen av eiendommen 29/194 på Mære kan bli boligbebyggelse, med konsekvensutredning og ROS-analyse for begge områdene.",
+ "betydning": "Innbyggere og grunneiere kan uttale seg om planprogrammet i høringsperioden på seks uker, før det senere avgjøres om områdene kan brukes til utbygging.",
+ "tagger": [
+  "Plan og areal",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8347,
+ "sjekksum": "9b9ddd4bd7eedfd6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6682,
+  "ut": 528
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/495175/823739"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8347/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Hvem skal sitte i 17. mai-komiteen for Steinkjer sentrum i 2026?",
+ "sammendrag": "Steinkjer kommune velger hvert år en egen 17. mai-komité for sentrum. Komiteen planlegger og gjennomfører fellesaktiviteter som borgertoget og utkjøring av kaker og blomster til institusjoner i kommunen, med kulturetaten som sekretariat. Saksframlegget la opp til en komité på åtte medlemmer, der fire medlemmer fra 2025 fortsatte og det skulle velges ny leder og tre nye medlemmer for to år. Formannskapet behandlet saken 5. mars 2026 og valgte en komité med ni medlemmer, der lederen ble valgt for ett år. Saksframlegget omtaler også spørsmålet om hvordan tilskudd til korps som spiller 17. mai bør fordeles, men vedtaket gjelder bare hvem som skal sitte i komiteen.",
+ "betydning": "Det er nå bestemt hvem som skal planlegge og gjennomføre 17. mai-feiringen i Steinkjer sentrum i 2026.",
+ "tagger": [
+  "Kultur og idrett",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7674,
+ "sjekksum": "6caf2816523db911",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4543,
+  "ut": 591
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/433599/738014"
+  },
+  {
+   "tittel": "Vedtak i FOR 2026-02-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7682/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7674/Protokoll"
+  }
+ ]
+}

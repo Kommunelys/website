@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune øke andelen trøndersk mat i offentlige måltider til 50 prosent innen 2030?",
+ "sammendrag": "Saken følger opp et vedtak i Innherred regionråd og prosjektet «Innherred mat og reiseliv mot 2030», der seks kommuner samarbeider om mer lokal mat i offentlige måltider. En analyse av innkjøpene i tredje kvartal 2024 viste at Steinkjer kjøpte mat og drikke for kr 5 610 883, hvorav kr 984 319 var trøndersk mat. Det tilsvarer 18 prosent, mot 28 prosent for alle de seks kommunene samlet. Formannskapet vedtok 12. februar 2026 at andelen trøndersk mat og drikke i offentlige måltider skal økes til 50 prosent innen 2030, at kommunen skal tilstrebe å bruke trøndersk mat på egne arrangementer, og at det skal gjøres en ny innkjøpsanalyse i 2027 med rapportering på måloppnåelse.",
+ "betydning": "Mer av maten som serveres i kommunens institusjoner og på kommunens arrangementer skal komme fra produsenter i Trøndelag.",
+ "tagger": [
+  "Landbruk",
+  "Næring",
+  "Klima og miljø"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7791,
+ "sjekksum": "a901b3d497b11bce",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7712,
+  "ut": 491
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440870/748791"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7791/Protokoll"
+  }
+ ]
+}

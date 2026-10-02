@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal Innherredsbyen vedta et nullvekstmål for personbiltrafikken for å kunne søke staten om belønningsmidler?",
+ "sammendrag": "Partnerskapet Innherredsbyen, der Steinkjer deltar sammen med andre kommuner og fylkeskommunen, må ta stilling til et såkalt nullvekstmål. Nullvekstmålet betyr at veksten i persontransport skal tas med kollektivtransport, sykkel og gange, slik at personbiltrafikken ikke øker i avtaleperioden. Måloppnåelsen måles med trafikktellinger i utvalgte tellepunkter og suppleres med reisevaneundersøkelser. Næringstransport og gjennomgangstrafikk regnes ikke med. Et vedtatt nullvekstmål er ifølge saksframlegget en forutsetning for å få belønningsmidler eller byvekstavtale med staten, og kommunedirektøren anbefaler å slutte seg til målet under forutsetning av at det inngås en avtale med staten om slike midler. Saken ble behandlet i Innherred regionråd 4. mai 2026, og protokollen er ikke publisert ennå.",
+ "betydning": "Et nullvekstmål kan gi penger til bedre kollektivtilbud, gang- og sykkelveier i Steinkjer, men kan også bety virkemidler som strengere parkeringspolitikk for å begrense biltrafikken.",
+ "tagger": [
+  "Vei og trafikk",
+  "Plan og areal",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8025,
+ "sjekksum": "dfac6652b8a6482d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5758,
+  "ut": 675
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/467024/784977"
+  }
+ ]
+}

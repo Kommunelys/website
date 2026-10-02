@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal skjenkebevillingen i Steinkjer kulturhus også gjelde i heisene?",
+ "sammendrag": "Kakskiv AS har skjenkebevilling for alkohol i gruppe 1 og 2 i deler av Steinkjer kulturhus. Formannskapet vedtok 20.08.2026 at også trappene mellom etasjene kan inngå i skjenkearealet ved større arrangementer som ikke er rettet mot barn og unge. Selskapet søkte 03.09.2026 om at heisen mellom underetasjen og 1. etasje og heisen mellom 1. etasje og 2. etasje også skal være en del av skjenkearealet, slik at gjester som ikke kan bruke trappene kan ta med seg drikke mellom etasjene. Det skal ikke serveres i heisene, og arealet er fysisk avsperret og kun åpent for publikum med billett. Kommunedirektøren foreslår at søknaden innvilges fra vedtaksdato og ut 30.09.2028, på samme vilkår og med samme skjenketider som for trappearealene. Saken skal behandles i formannskapet 15.10.2026.",
+ "betydning": "Hvis forslaget vedtas, kan publikum på større arrangementer i kulturhuset ta med kjøpt alkoholholdig drikke mellom etasjene også når de bruker heisen.",
+ "tagger": [
+  "Kultur og idrett",
+  "Næring"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8496,
+ "sjekksum": "4629b1c854804f11",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6968,
+  "ut": 534
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/508020/843319"
+  }
+ ]
+}

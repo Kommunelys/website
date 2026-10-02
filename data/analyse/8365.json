@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Hvem får Steinkjer kommunes frivillighetspris for 2026?",
+ "sammendrag": "Steinkjer kommune deler hvert år ut en frivillighetspris til en person, lokal forening eller gruppe som har gjort en særlig innsats som frivillig. Prisen består av et diplom med kommunens emblem og et pengebeløp på kr 15 000. Fristen for å foreslå kandidater var 28. juni, og det kom inn ti nominasjoner. Hovedutvalg for oppvekst og kultur avgjør hvem som får prisen, og utvalget vedtok i møtet 23. september 2026 å tildele prisen til en enkeltperson.",
+ "betydning": "Prisen løfter fram frivillig innsats i Steinkjer, og vinneren får diplom og 15 000 kroner.",
+ "tagger": [
+  "Kultur og idrett"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8365,
+ "sjekksum": "f3ff4b300d7918ef",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3000,
+  "ut": 407
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/496568/825977"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-09-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8365/Protokoll"
+  }
+ ]
+}

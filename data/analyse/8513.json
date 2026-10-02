@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hvordan er vedtakene fra formannskapet første halvår 2026 fulgt opp?",
+ "sammendrag": "Kommunedirektøren legger fram en rapport om oppfølgingen av saker som formannskapet sluttbehandlet i perioden 01.01.2026–30.06.2026. Bakgrunnen er kommuneloven § 13-1 fjerde ledd, som sier at kommunedirektøren skal påse at vedtak fra folkevalgte organer blir satt i verk uten ugrunnet opphold. Et vedlegg lister opp alle sakene, med en merknad om hvordan hvert enkelt vedtak er fulgt opp. Slik rapportering er en del av kommunens internkontroll. Kommunedirektøren foreslår at rapporten tas til orientering i formannskapets møte 15.10.2026.",
+ "betydning": "Innbyggerne får innsyn i om politiske vedtak faktisk blir gjennomført.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8513,
+ "sjekksum": "dda4ed93188963da",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2024,
+  "ut": 394
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509165/845043"
+  }
+ ]
+}

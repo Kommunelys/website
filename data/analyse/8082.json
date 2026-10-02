@@ -1,0 +1,49 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer prøve ut trygghetsboliger med trygghetsverter i Kvam, Beitstad og Stod?",
+ "sammendrag": "Trygghetsboliger er selvstendige boliger med fellesarealer og en trygghetsvert som skal bidra til trygghet og sosiale aktiviteter, uten å erstatte hjemmetjenesten. Kommunestyret vedtok 20. mai 2026 at konseptet skal prøves ut som pilotprosjekt i Kvam, Beitstad og Stod fram til utgangen av 2027, med evaluering innen oktober 2027. Trygghetsboligene i Skjeftelia videreføres i prosjektperioden. Boligene legges til de omkringliggende boligene ved Beitstad og Kvam bosenter og tilsvarende boliger rundt tidligere Stod sykehjem, for å redusere risiko og utgifter. Trygghetsvertene finansieres med 1,5 mill. kr (helårseffekt) fordelt på de fire konseptene, dekket av NTE-utbytte. Kommunedirektøren skal også fremme saker om etterbruk av bygningsmassen, lage evalueringskriterier, vurdere transportløsninger og foreslå prinsipper for samarbeidet med frivilligheten.",
+ "betydning": "Eldre og andre med noe hjelpebehov i Kvam, Beitstad, Stod og Skjeftelia kan få bolig med fellesarealer og en trygghetsvert, mens framtiden til de gamle bosentrene og sykehjemsbygget skal avklares i egne saker.",
+ "tagger": [
+  "Helse og omsorg",
+  "Plan og areal",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt beløpet til trygghetsverter: AP, FRP, INP, PP, R, SP, SV, UAVH og V gikk inn for 1,5 mill. kr finansiert over NTE-utbytte, mens H holdt fast ved kommunedirektørens forslag på 1 mill. kr.",
+ "usikker": false,
+ "sak_id": 8082,
+ "sjekksum": "b95ae5ec1706c803",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 13461,
+  "ut": 736
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470408/790449"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8082/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8083/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8084/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8085/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8086/Protokoll"
+  }
+ ]
+}
