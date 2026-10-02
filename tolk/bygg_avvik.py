@@ -1,9 +1,12 @@
-"""Samler avvikene som et menneske må vurdere før en votering publiseres.
+"""Samler avvikene som må vurderes før en votering publiseres.
 
 ADR-002: en votering der antall navn ikke stemmer med stemmetallet, eller der
-stemmene ikke stemmer med oppmøtet, publiseres ikke før et menneske har sett
-på den. Vurderingen gjøres av et menneske, ikke av en språkmodell (CLAUDE.md
-regel 2). Svaret står ofte ikke i dokumentene; noen ganger vet bare kommunen.
+stemmene ikke stemmer med oppmøtet, publiseres ikke uten en vurdering.
+Vurderingen kan gjøres av et menneske eller en språkmodell, men den avgjør
+bare om voteringen publiseres og med hvilken merknad. Navn og tall gjengis
+alltid slik protokollen oppgir dem (CLAUDE.md regel 2), og `vurdert_av` sier
+hvem som har vurdert. Svaret står ofte ikke i dokumentene; noen ganger vet
+bare kommunen, og da er avgjørelsen `venter_paa_kommunen`.
 
 Ett avvik er én ting å vurdere, og berører ofte mange voteringer:
 
@@ -17,7 +20,8 @@ Vurderingene skrives for hånd i data/vurderinger.json, én per avvik:
      "avgjorelse": "publiser",
      "merknad": "Vises sammen med voteringen. Kan stå tom.",
      "begrunnelse": "Hvorfor, med kilde. Påkrevd.",
-     "vurdert_av": "Navn", "dato": "2026-10-02"}
+     "vurdert_av": "Navn, eller modellen med versjon. Påkrevd.",
+     "dato": "2026-10-02"}
 
 `avgjorelse` er `publiser`, `ikke_publiser` eller `venter_paa_kommunen`.
 Bare `publiser` slipper voteringene gjennom. Et avvik uten vurdering holdes
@@ -143,6 +147,8 @@ def ugyldige_vurderinger(aar: int) -> list[str]:
             feil.append(f"vurdering {n}: avgjorelse må være en av {', '.join(AVGJORELSER)}")
         if not (v.get("begrunnelse") or "").strip():
             feil.append(f"vurdering {n}: mangler begrunnelse")
+        if not (v.get("vurdert_av") or "").strip():
+            feil.append(f"vurdering {n}: mangler vurdert_av")
         if n.split(":")[0] in ("oppmote", "antall", "tall") and n not in kjente:
             # Kan skyldes at kommunen har rettet protokollen. Da skal
             # vurderingen fjernes, ikke stå igjen og se gyldig ut.

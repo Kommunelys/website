@@ -91,8 +91,11 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - [x] Bekrefte at protokolltolkningen virker på minst tre møter fra ulike
       utvalg, ikke bare kommunestyret. Alle 442 voteringer med navneliste i
       2026, fra 9 utvalg, består tellekontrollen
-- [ ] Vurdere de 10 avvikene i `data/avvik/2026.json` og skrive avgjørelsen
-      i `data/vurderinger.json`. Til da holdes 97 voteringer tilbake
+- [x] Vurdere de 10 avvikene i `data/avvik/2026.json`. 9 publiseres med
+      merknad
+- [ ] Få svar fra kommunen på hvem som møtte i kommunestyret 16.09.2026:
+      Lena Hanem Bartnes (SP) eller Anniken Bjørnes (R). Til da holdes 42
+      voteringer tilbake
 - [ ] Bestemme hvem som eier tjenesten og står som avsender
 - [ ] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret

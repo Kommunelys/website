@@ -33,7 +33,10 @@ utvetydig uoffisielt i all presentasjon.
    med kommunen ennå. Se `docs/04-beslutninger.md`, ADR-007.
 2. **Stemmetall tolkes aldri av en språkmodell.** Det gjøres med
    mønstergjenkjenning i `tolk/`, og antall navn kontrolleres alltid mot
-   oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av.
+   oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av. Om en
+   votering med avvik likevel skal publiseres, kan vurderes av en modell,
+   men vurderingen endrer aldri navn eller tall, og den merkes med
+   `vurdert_av` (`data/vurderinger.json`).
 3. **Skjermet informasjon lastes aldri ned og sendes aldri til en modell.**
    Portalen merker dette med `ProtocolRestricted`, `IsRestricted` og
    `AccessCodeId`. Respekter feltene i hvert ledd.
@@ -123,9 +126,14 @@ python -m tester.kontroller             # alle kontroller
 - **Oppmøtelisten og stemmene stemmer ikke alltid overens.** I 6 møter i
   2026 stemmer noen som ikke står på oppmøtelisten, eller det er flere
   stemmer enn frammøtte. Det står slik i protokollene. `tolk.bygg_oppmote`
-  flagger dem; slike voteringer publiseres ikke før et menneske har skrevet
-  en vurdering i `data/vurderinger.json`. Ikke la en språkmodell avgjøre
-  dem (regel 2). Se `docs/03-datamodell.md`.
+  flagger dem; slike voteringer publiseres ikke før det finnes en vurdering
+  i `data/vurderinger.json`. Sjekk bevisene med kode før du vurderer: hvem
+  som står på listen uten å stemme, partiet deres, og vedtak om permisjon og
+  fritak i sakene. Se `docs/03-datamodell.md`.
+- **Dagens medlemsliste beskriver ikke plassene tidligere i året.** Permisjon,
+  fritak og partibytte gjør at stemmer per parti ikke kan kontrolleres mot
+  dagens antall plasser. SP har for eksempel én stemme mer enn dagens faste
+  plasser i alle kommunestyremøtene i 2026.
 - **GitHub Actions utløser ikke seg selv.** En commit med standardtokenet
   starter ikke andre arbeidsflyter. Derfor én arbeidsflyt med tre jobber.
 

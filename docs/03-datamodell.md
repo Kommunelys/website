@@ -164,9 +164,12 @@ menneske har sett på den.
 
 ### Vurdering av avvik
 
-Avvikene vurderes av et menneske, ikke av en språkmodell. Svaret står ofte
-ikke i dokumentene. Om noen var til stede eller ikke, vet bare kommunen, og
-en modell som gjetter, kan tillegge en politiker en stemme hun ikke avga.
+Avvikene kan vurderes av et menneske eller en språkmodell. Vurderingen
+avgjør bare om voteringen publiseres og med hvilken merknad. Navn og tall
+gjengis alltid slik protokollen oppgir dem, og `vurdert_av` sier hvem som
+har vurdert. Svaret står ofte ikke i dokumentene. Når det avgjørende er
+hvem som møtte, og det bare kommunen vet, er avgjørelsen
+`venter_paa_kommunen`.
 
 `python -m tolk.bygg_avvik` samler avvikene til `data/avvik/<år>.json`. Ett
 avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
@@ -190,7 +193,16 @@ Vurderingen skrives for hånd i `data/vurderinger.json`:
 | `venter_paa_kommunen` | Holdes tilbake til kommunen har svart |
 
 Et avvik uten vurdering holdes tilbake. Nettstedet viser at voteringen
-finnes, men ikke hvem som stemte hva. `tester.kontroller` stopper
+finnes, men ikke hvem som stemte hva.
+
+Status 2. oktober 2026, vurdert av Claude Opus 5.5 etter beslutning fra
+prosjekteier: 9 av 10 avvik publiseres med merknad. I dem er personen på
+listen og personen i navnelisten fra samme parti, eller det mangler ett navn
+på listen hos en som fast møter og stemmer, eller det er én stemme for mye i
+en votering som endte 13–0. Partifordelingen og resultatet er da riktig. Kommunestyret 16.09.2026 venter på
+kommunen: Lena Hanem Bartnes (SP) stemmer, og Anniken Bjørnes (R) står på
+listen. De er fra ulike partier, og møtet hadde 11 voteringer på 20–19 eller
+19–20. De 42 voteringene holdes tilbake. `tester.kontroller` stopper
 publiseringen hvis en vurdering mangler begrunnelse, har en ukjent
 avgjørelse, eller gjelder et avvik som ikke lenger finnes, for eksempel fordi
 kommunen har rettet protokollen.
