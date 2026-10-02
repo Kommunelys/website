@@ -1,7 +1,19 @@
 {
- "merknad": "Importert fra første fullstendige uttrekk 1.10.2026",
- "moter_hentet": 120,
- "moter_totalt": 120,
- "moter_uendret": 0,
- "tidspunkt": "2026-10-01T22:04:00"
+ "endrede_moter": [
+  1284,
+  1367,
+  1281,
+  1285,
+  1283,
+  1322,
+  1286,
+  1287,
+  1368,
+  1370,
+  1369
+ ],
+ "moter_hentet": 11,
+ "moter_totalt": 122,
+ "moter_uendret": 111,
+ "tidspunkt": "2026-10-02T22:01:06"
 }

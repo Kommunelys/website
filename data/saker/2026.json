@@ -18651,6 +18651,50 @@
  },
  {
   "formalia": false,
+  "sak_id": 8460,
+  "saksframlegg": {
+   "dokument_id": 840807,
+   "format": "RA-PDF",
+   "tittel": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/506276/840807"
+  },
+  "saksgang": [
+   {
+    "behandling_id": 8460,
+    "dato": "2026-10-08T12:00",
+    "hentet": true,
+    "mote_id": 1370,
+    "protokoll_publisert": false,
+    "protokoll_skjermet": false,
+    "saksnr": "PS 11/2026",
+    "url_mote": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1370",
+    "url_vedtak": null,
+    "utvalg": "FOR",
+    "utvalg_navn": "Forretningsutvalget"
+   },
+   {
+    "behandling_id": 8461,
+    "dato": "2026-10-15T12:00",
+    "hentet": true,
+    "mote_id": 1293,
+    "protokoll_publisert": false,
+    "protokoll_skjermet": false,
+    "saksnr": "PS 114/2026",
+    "url_mote": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1293",
+    "url_vedtak": null,
+    "utvalg": "FS",
+    "utvalg_navn": "Formannskap"
+   }
+  ],
+  "sakstype": "PS",
+  "skjermet_tittel": false,
+  "status": "Til behandling",
+  "til_kommunestyret": false,
+  "tittel": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+  "vedlegg": []
+ },
+ {
+  "formalia": false,
   "sak_id": 8430,
   "saksframlegg": null,
   "saksgang": [
@@ -21155,37 +21199,6 @@
  },
  {
   "formalia": false,
-  "sak_id": 8461,
-  "saksframlegg": {
-   "dokument_id": 840807,
-   "format": "RA-PDF",
-   "tittel": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
-   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/506276/840807"
-  },
-  "saksgang": [
-   {
-    "behandling_id": 8461,
-    "dato": "2026-10-15T12:00",
-    "hentet": true,
-    "mote_id": 1293,
-    "protokoll_publisert": false,
-    "protokoll_skjermet": false,
-    "saksnr": "PS 114/2026",
-    "url_mote": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1293",
-    "url_vedtak": null,
-    "utvalg": "FS",
-    "utvalg_navn": "Formannskap"
-   }
-  ],
-  "sakstype": "PS",
-  "skjermet_tittel": false,
-  "status": "Til behandling",
-  "til_kommunestyret": false,
-  "tittel": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
-  "vedlegg": []
- },
- {
-  "formalia": false,
   "sak_id": 8555,
   "saksframlegg": null,
   "saksgang": [
@@ -21208,6 +21221,32 @@
   "status": "Til behandling",
   "til_kommunestyret": false,
   "tittel": "Orientering fra ordfører og kommunedirektør",
+  "vedlegg": []
+ },
+ {
+  "formalia": false,
+  "sak_id": 8378,
+  "saksframlegg": null,
+  "saksgang": [
+   {
+    "behandling_id": 8378,
+    "dato": "2026-10-15T16:00",
+    "hentet": true,
+    "mote_id": 1369,
+    "protokoll_publisert": false,
+    "protokoll_skjermet": true,
+    "saksnr": "PS 15/2026",
+    "url_mote": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1369",
+    "url_vedtak": null,
+    "utvalg": "KN",
+    "utvalg_navn": "Klagenemnda"
+   }
+  ],
+  "sakstype": "PS",
+  "skjermet_tittel": false,
+  "status": "Til behandling",
+  "til_kommunestyret": false,
+  "tittel": "Svar på klage - avslag på søknad om parkeringstillatelse for forflytningshemmede",
   "vedlegg": []
  }
 ]

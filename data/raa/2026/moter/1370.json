@@ -1,0 +1,159 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8461,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-10-15T16:00:00+02:00",
+      "Id": 1293,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 12,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-10-15T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1293,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 114,
+     "SortOrder": 2,
+     "Title": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 28,
+    "Name": "Forretningsutvalget",
+    "ShortCode": "FOR"
+   },
+   "Id": 8460,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 28,
+    "EndDate": "0001-01-01T00:00:00+00:00",
+    "Id": 1370,
+    "MeetingDocuments": [],
+    "MeetingLocation": "E-postmøte",
+    "MeetingNumber": 6,
+    "MeetingRoom": "E-postmøte",
+    "StartDate": "2026-10-08T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1370,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+       "FileFormatId": "RA-PDF",
+       "Id": 840807,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 506276,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 71305,
+    "Title": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 28,
+   "Name": "Forretningsutvalget",
+   "ShortCode": "FOR"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 28,
+  "EndDate": "0001-01-01T00:00:00+00:00",
+  "Id": 1370,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5529,
+    "IsRestricted": false,
+    "MeetingId": 1370,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "E-postmøte",
+  "MeetingNumber": 6,
+  "MeetingRoom": "E-postmøte",
+  "StartDate": "2026-10-08T12:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1370,
+  "MO_ROM": "E-postmøte",
+  "MO_SLUTT": null,
+  "MO_START": "2026-10-08T12:00:00",
+  "MO_STED": "E-postmøte",
+  "Type": 4,
+  "UT_ID": 28,
+  "UT_NAVN": "Forretningsutvalget"
+ }
+}

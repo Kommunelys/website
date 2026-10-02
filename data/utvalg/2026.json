@@ -72,7 +72,7 @@
   {
    "faste_medlemmer": 4,
    "kortnavn": "KN",
-   "moter": 5,
+   "moter": 6,
    "navn": "Klagenemnda",
    "utvalg_id": 12,
    "varamedlemmer": 5
@@ -136,7 +136,7 @@
   {
    "faste_medlemmer": 11,
    "kortnavn": "FOR",
-   "moter": 5,
+   "moter": 6,
    "navn": "Forretningsutvalget",
    "utvalg_id": 28,
    "varamedlemmer": 4

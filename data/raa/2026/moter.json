@@ -980,6 +980,17 @@
  },
  {
   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1370,
+  "MO_ROM": "E-postmøte",
+  "MO_SLUTT": null,
+  "MO_START": "2026-10-08T12:00:00",
+  "MO_STED": "E-postmøte",
+  "Type": 4,
+  "UT_ID": 28,
+  "UT_NAVN": "Forretningsutvalget"
+ },
+ {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
   "MO_ID": 1289,
   "MO_ROM": "Fredrikkesalen",
   "MO_SLUTT": "2026-10-12T15:00:00",
@@ -1065,6 +1076,17 @@
   "Type": 4,
   "UT_ID": 8,
   "UT_NAVN": "Formannskap"
+ },
+ {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1369,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": null,
+  "MO_START": "2026-10-15T16:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 12,
+  "UT_NAVN": "Klagenemnda"
  },
  {
   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",

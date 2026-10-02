@@ -1921,6 +1921,24 @@
   "utvalg_navn": "Ungdomsrådet"
  },
  {
+  "antall_saker": 1,
+  "dato": "2026-10-08T12:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1370/MI/5529"
+   }
+  ],
+  "mote_id": 1370,
+  "rom": "E-postmøte",
+  "slutt": "",
+  "sted": "E-postmøte",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1370",
+  "utvalg": "FOR",
+  "utvalg_navn": "Forretningsutvalget"
+ },
+ {
   "antall_saker": 11,
   "dato": "2026-10-12T12:00",
   "dokumenter": [
@@ -2045,6 +2063,24 @@
   "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1293",
   "utvalg": "FS",
   "utvalg_navn": "Formannskap"
+ },
+ {
+  "antall_saker": 1,
+  "dato": "2026-10-15T16:00",
+  "dokumenter": [
+   {
+    "tittel": "Møteinnkalling",
+    "type": "MI",
+    "url": "https://prod01.elementscloud.no/publikum/Documents/ShowMeetingDocument/b069d4f5-192a-4fee-be37-dc006441e271/1369/MI/5523"
+   }
+  ],
+  "mote_id": 1369,
+  "rom": "Fredrikkesalen",
+  "slutt": "",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1369",
+  "utvalg": "KN",
+  "utvalg_navn": "Klagenemnda"
  },
  {
   "antall_saker": 0,
