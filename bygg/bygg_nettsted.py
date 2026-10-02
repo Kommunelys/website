@@ -25,6 +25,7 @@ import shutil
 import sys
 from pathlib import Path
 
+from tester.kontroller import _folkevalgte, sammendrag_avvik
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 
 ROT = Path(__file__).resolve().parent.parent
@@ -33,6 +34,41 @@ MAL = Path(__file__).resolve().parent / "mal"
 UT = ROT / "nettsted"
 
 FASTE = ("Leder", "Nestleder", "Medlem")
+
+# Lenken «Meld fra om feil» under hvert sammendrag (ADR-011).
+MELD_FEIL = "https://github.com/karlaurstad/KommuneDash/issues/new"
+
+
+def _kildenavn(k: dict) -> str:
+    """«Vedtak i FS 2026-09-03» -> «vedtaket i FS 03.09.2026»."""
+    m = re.match(r"Vedtak i (\S+) (\d{4})-(\d\d)-(\d\d)", k["tittel"])
+    if m:
+        return f"vedtaket i {m.group(1)} {m.group(4)}.{m.group(3)}.{m.group(2)}"
+    return "saksframlegget" if k["tittel"] == "Saksframlegg" else k["tittel"]
+
+
+def _sammendrag(saker: list, analyser: dict) -> tuple[dict, list[str]]:
+    """Sammendragene som kan publiseres, per sak-ID, og hvorfor resten holdes tilbake.
+
+    Samme prinsipp som for voteringer: et sammendrag med avvik vises ikke,
+    men stopper ikke resten av nettstedet.
+    """
+    folkevalgte = _folkevalgte()
+    ut, holdt = {}, []
+    for s in saker:
+        a = analyser.get(s["sak_id"])
+        if not a:
+            continue
+        avvik = sammendrag_avvik(s, a, folkevalgte)
+        if avvik:
+            holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik)}")
+            continue
+        ut[s["sak_id"]] = {
+            "tk": a["tittel_klarsprak"], "sum": a["sammendrag"], "bet": a["betydning"],
+            "uen": a["uenighet"], "tags": a["tagger"], "modell": a["modell"],
+            "kilder": [{"tittel": _kildenavn(k), "url": k["url"]} for k in a["kilder"]],
+        }
+    return ut, holdt
 
 GRUNN = {
     "venter_paa_kommunen": "Holdt tilbake: protokollen er selvmotsigende om hvem som møtte. Venter på svar fra kommunen.",
@@ -64,7 +100,15 @@ def _alternativ_som_for_og_mot(v: dict) -> tuple[list[str], list[str]]:
     return list(vinner["navn"]), andre
 
 
-def _s(aar: int, saker: list, moter: list) -> dict:
+def _tema(s: dict, sammendrag: dict) -> list[str]:
+    """Tema fra modellen, pluss «Høring», som kan leses sikkert av tittelen."""
+    tema = set((sammendrag.get(s["sak_id"]) or {}).get("tags") or [])
+    if re.search(r"\bhøring", s["tittel"], re.I):
+        tema.add("Høring")
+    return sorted(tema)
+
+
+def _s(aar: int, saker: list, moter: list, sammendrag: dict) -> dict:
     """Saker, møter, utvalg og kommunestyret, i formen malen bruker."""
     politiske = collections.Counter(
         st["mote_id"] for s in saker if s["sakstype"] == "PS" and not s["formalia"]
@@ -73,8 +117,8 @@ def _s(aar: int, saker: list, moter: list) -> dict:
         "formal": s["formalia"],
         "t": s["tittel"],
         "typ": s["sakstype"],
-        # Fase 1 har ingen tema fra modellen. Høring kan leses sikkert av tittelen.
-        "tags": ["Høring"] if re.search(r"\bhøring", s["tittel"], re.I) else [],
+        "tags": _tema(s, sammendrag),
+        **({"a": sammendrag[s["sak_id"]]} if s["sak_id"] in sammendrag else {}),
         "st": [{
             "hid": st["behandling_id"], "date": st["dato"], "ut": st["utvalg_navn"],
             "sc": st["utvalg"], "nr": st["saksnr"], "pub": st["protokoll_publisert"],
@@ -106,6 +150,7 @@ def _s(aar: int, saker: list, moter: list) -> dict:
         "utvalg": {m["utvalg_navn"]: m["utvalg"] for m in moter},
         "partier": utvalg["partier"],
         "ks": {"seter": dict(seter), "hentet": utvalg["medlemsliste_hentet"]},
+        "meld": MELD_FEIL,
     }
 
 
@@ -178,7 +223,8 @@ def kjor(aar: int) -> None:
     UT.mkdir(exist_ok=True)
     (UT / "data").mkdir(exist_ok=True)
 
-    S = _s(aar, saker, moter)
+    sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
+    S = _s(aar, saker, moter, sammendrag)
     VOT, holdt = _vot(aar, saker, moter)
     (UT / "data" / "data.js").write_text(
         "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
@@ -216,10 +262,16 @@ def kjor(aar: int) -> None:
         "analyser": len(analyser),
         "voteringer": sum(len(s["v"]) for m in VOT["moter"] for s in m["saker"]),
         "voteringer_holdt_tilbake": holdt,
+        "sammendrag_publisert": len(sammendrag),
+        "sammendrag_holdt_tilbake": holdt_sammendrag,
+        # Fase 2: faktisk forbruk, for å måle kostnaden.
+        "tokens": {k: sum((a.get("tokens") or {}).get(k, 0) for a in analyser.values())
+                   for k in ("inn", "ut")},
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     print(f"nettsted/ bygget: {len(saker)} saker, {len(moter)} møter, "
-          f"{len(analyser)} analyser, {holdt} voteringer holdt tilbake")
+          f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
+          f"{holdt} voteringer holdt tilbake")
 
 
 def main() -> None:

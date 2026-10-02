@@ -75,7 +75,7 @@
 
 <!-- ALLE SAKER -->
 <section id="v-saker" hidden>
-  <div class="top"><div><h1>Alle saker <span class="aar"></span></h1><p>Politiske saker i alle utvalg, satt sammen til én linje per sak selv om den behandles flere steder. Høringssaker er merket ut fra sakstittelen.</p></div></div>
+  <div class="top"><div><h1>Alle saker <span class="aar"></span></h1><p>Politiske saker i alle utvalg, satt sammen til én linje per sak selv om den behandles flere steder. Klarspråkstitler, sammendrag og tema er skrevet av KI ut fra saksdokumentene. Trykk på en sak for å lese mer.</p></div></div>
   <div class="filters">
     <label class="search" style="flex:1"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Søk i sakstitler …" aria-label="Søk i sakstitler"></label>
     <select id="fstatus" aria-label="Status"><option value="">Alle statuser</option></select>
@@ -125,7 +125,7 @@
     <p><b>Kilder.</b> Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Kommunestyrets sammensetning hentes fra medlemslisten i portalen.</p>
     <p><b>Slik settes status.</b> En sak som behandles i flere utvalg, er slått sammen til én linje. «Til behandling» betyr at saken står på sakslisten til et kommende møte. «Til kommunestyret» betyr at neste steg er kommunestyret. «Behandlet» betyr at siste møte er holdt og protokollen er publisert. «Venter på protokoll» betyr at møtet er holdt, men at protokollen ikke er lagt ut.</p>
     <p><b>Stemmegivning.</b> Stemmetallene hentes ut av protokollene med kode, ikke med kunstig intelligens, og antall navn kontrolleres mot oppgitt stemmetall. Noen ganger motsier protokollen seg selv, for eksempel når noen stemmer uten å stå på oppmøtelisten. Da er avviket vurdert av Claude, en språkmodell fra Anthropic. Vurderingen avgjør bare om voteringen vises, og med hvilken merknad. Tall og navn vises alltid slik protokollen oppgir dem. Når det ikke kan avgjøres fra dokumentene, holdes voteringen tilbake til kommunen har svart.</p>
-    <p><b>Sammendrag og tema.</b> Denne versjonen har ingen sammendrag. Høringssaker er merket ut fra sakstittelen. Sammendrag og flere tema kommer senere, og hvert sammendrag skal lenke til kilden.</p>
+    <p><b>Sammendrag og tema.</b> Klarspråkstitler, sammendrag og tema er skrevet av KI (Claude, en språkmodell fra Anthropic) ut fra saksframlegget og vedtakene. Modellen får ikke stemmetall eller navnelister, og den skriver ikke hvem som stemte hva. Før et sammendrag vises, kontrolleres det at tallene finnes i dokumentene og at det ikke står navn på privatpersoner fra sakstittelen. Sammendrag som ikke består, eller der modellen selv var usikker, vises ikke. Hvert sammendrag lenker til dokumentene det bygger på, og dokumentene gjelder. Finner du en feil, kan du melde fra under sammendraget.</p>
     <p><b>Kjente begrensninger.</b> Portalen oppgir bare dagens medlemmer i hvert utvalg, så sammensetningen gjelder i dag, ikke nødvendigvis tidligere i året. Saker fra fjoråret som fortsatte i år, er bare delvis med. Et skannet dokument uten tekst kan ikke leses.</p>
   </div>
 </section>

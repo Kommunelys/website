@@ -27,6 +27,16 @@ PS.forEach(c=>{c.next=c.st.find(x=>isFut(x.date))||null;c.last=c.st.filter(x=>!i
 const antall=(n,en,flere)=>`${n} ${n===1?en:flere}`;
 const stCls={"Til kommunestyret":"ks","Til behandling":"tb","Vedtatt i kommunestyret":"ok","Behandlet":"bh","Venter på protokoll":"vp"};
 const stPill=s=>`<span class="st ${stCls[s]||'bh'}">${s}</span>`;
+/* Sammendrag fra KI (c.a) vises bare når det har bestått kontrollene i bygget. */
+const tittel=c=>c.a?c.a.tk:c.t;
+const sokTekst=c=>(c.t+' '+(c.a?`${c.a.tk} ${c.a.sum}`:'')).toLowerCase();
+const meldUrl=c=>`${S.meld}?title=${encodeURIComponent('Feil i sammendraget: '+(c.first||c.st[0]).nr)}&body=${encodeURIComponent(`Sak: ${c.t}\nSaksnummer: ${(c.first||c.st[0]).nr}\n\nHva er feil?\n`)}`;
+function oppsummering(c){
+  if(!c.a)return c.typ==='PS'&&!c.formal?'<div class="ai muted">Ingen sammendrag ennå. Les dokumentene i lenkene under.</div>':'';
+  const a=c.a;
+  return `<div class="ai"><p>${esc(a.sum)}</p>${a.bet?`<p><b>Hva betyr det?</b> ${esc(a.bet)}</p>`:''}${a.uen?`<p><b>Uenigheten:</b> ${esc(a.uen)}</p>`:''}
+   <div class="aikilde">Skrevet av KI (${esc(a.modell)}) ut fra ${a.kilder.map(k=>`<a href="${k.url}" target="_blank" rel="noopener">${esc(k.tittel)}</a>`).join(', ')}. Kan inneholde feil, og dokumentene gjelder. <a href="${meldUrl(c)}" target="_blank" rel="noopener">Meld fra om feil</a></div></div>`;
+}
 function pathHtml(c){
   const seen=[];c.st.forEach(x=>{if(!seen.length||seen[seen.length-1].sc!==x.sc)seen.push(x)});
   return `<div class="path">${seen.map((x,i)=>`${i?'<i>›</i>':''}<span class="${isFut(x.date)?(x===c.next?'next':''):'done'}" title="${esc(utName(x.sc))} ${ddn(x.date)}">${esc(x.sc)}</span>`).join('')}</div>`;
@@ -54,7 +64,7 @@ document.getElementById('kpis').addEventListener('keydown',e=>{if(e.key==='Enter
 
 const akt=[...tilB].sort((a,b)=>a.next.date.localeCompare(b.next.date)||(b.next.sc==='KS')-(a.next.sc==='KS'));
 const RAD=['ELRÅ','UNGRÅ','RÅFIM'];const aktPick=akt.filter(c=>!c.st.every(x=>RAD.includes(x.sc))).slice(0,9);
-document.getElementById('aktuelle').innerHTML=aktPick.map(c=>`<tr class="clk" tabindex="0" data-t="${esc(c.t)}"><td><div style="font-weight:600">${esc(c.t)}</div><div class="muted mono" style="font-size:11.5px">${esc(c.first.nr)}</div></td><td>${stPill(c.status)}</td><td>${pathHtml(c)}</td><td class="nw mono">${ddn(c.next.date)}</td></tr>`).join('')||'<tr><td colspan="4" class="muted">Ingen saker står på sakslisten til et kommende møte.</td></tr>';
+document.getElementById('aktuelle').innerHTML=aktPick.map(c=>`<tr class="clk" tabindex="0" data-t="${esc(c.t)}"><td><div style="font-weight:600">${esc(tittel(c))}</div><div class="muted mono" style="font-size:11.5px">${esc(c.first.nr)}</div></td><td>${stPill(c.status)}</td><td>${pathHtml(c)}</td><td class="nw mono">${ddn(c.next.date)}</td></tr>`).join('')||'<tr><td colspan="4" class="muted">Ingen saker står på sakslisten til et kommende møte.</td></tr>';
 document.getElementById('aktuelle').addEventListener('click',e=>{const tr=e.target.closest('tr[data-t]');if(tr)go('saker',{q:tr.dataset.t,open:true})});
 
 /* Kommunestyret: halvsirkel med plassene fra medlemslisten */
@@ -141,7 +151,7 @@ let ftag=null,limit=40,openT=null;
 const TAGS=[...new Set(PS.flatMap(c=>c.tags))].sort((a,b)=>a.localeCompare(b,'nb'));
 function filtered(){
   const q=document.getElementById('q').value.trim().toLowerCase();const st=fstatus.value;const ut=document.getElementById('fut').value;const all=document.getElementById('fall').checked;
-  return (all?ALL:PS).filter(c=>(!q||c.t.toLowerCase().includes(q))&&(!st||(st==='Til'?c.status.startsWith('Til'):c.status===st))&&(!ut||c.st.some(x=>x.sc===ut))&&(!ftag||c.tags.includes(ftag)))
+  return (all?ALL:PS).filter(c=>(!q||sokTekst(c).includes(q))&&(!st||(st==='Til'?c.status.startsWith('Til'):c.status===st))&&(!ut||c.st.some(x=>x.sc===ut))&&(!ftag||c.tags.includes(ftag)))
    .sort((a,b)=>{const ka=a.next?'1'+a.next.date:'0'+(a.last?a.last.date:'');const kb=b.next?'1'+b.next.date:'0'+(b.last?b.last.date:'');
      if(ka[0]!==kb[0])return kb[0]-ka[0];return ka[0]==='1'?ka.localeCompare(kb):kb.localeCompare(ka)});
 }
@@ -153,14 +163,14 @@ document.getElementById('tchips').addEventListener('click',e=>{const b=e.target.
 ['q','fstatus','fut','fall'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{limit=40;renderList()}));
 function detail(c){
   const typ={PS:'Politisk sak',OS:'Orienteringssak',RS:'Referatsak',FO:'Sak'}[c.typ]||'Sak';
-  return `<div class="det"><div class="muted">${typ}${c.att?` · ${c.att} vedlegg`:''}${c.doc?` · <a href="${c.doc}" target="_blank" rel="noopener">Les saksframlegget (PDF)</a>`:''}</div>
+  return `<div class="det">${oppsummering(c)}<div class="muted">${typ}${c.att?` · ${c.att} vedlegg`:''}${c.doc?` · <a href="${c.doc}" target="_blank" rel="noopener">Les saksframlegget (PDF)</a>`:''}</div>
    <div class="steps">${c.st.map(x=>`<div class="stp"><span class="mono">${ddn(x.date)}.${(x.date||'').slice(2,4)}</span><span><b>${esc(utName(x.sc)||x.ut)}</b> <span class="muted mono" style="font-size:12px">${esc(x.nr)}</span>${isFut(x.date)?' <span class="st tb" style="margin-left:4px">kommende</span>':''}</span><span class="lk">${x.prot?`<a href="${x.prot}" target="_blank" rel="noopener">Vedtak</a>`:(!isFut(x.date)?'<span class="muted">Ingen protokoll ennå</span>':'')}${x.murl?`<a href="${x.murl}" target="_blank" rel="noopener">Møtet</a>`:''}</span></div>`).join('')}</div></div>`;
 }
 function renderList(){
   const L=filtered();
   document.getElementById('count').textContent=`${L.length} saker`;
   document.getElementById('clist').innerHTML=L.slice(0,limit).map((c,i)=>{const op=openT===c.t;return `<div class="ci"><button aria-expanded="${op}" data-i="${i}">
-     <span class="t">${esc(c.t)}</span><span class="r">${stPill(c.status)}<span class="mono muted" style="font-size:12px">${c.next?ddn(c.next.date):c.last?ddn(c.last.date):''}</span></span>
+     <span class="t">${esc(tittel(c))}${c.a?`<span class="o">${esc(c.t)}</span>`:''}</span><span class="r">${stPill(c.status)}<span class="mono muted" style="font-size:12px">${c.next?ddn(c.next.date):c.last?ddn(c.last.date):''}</span></span>
      <span class="m"><span class="mono">${esc(c.first.nr)}</span>${pathHtml(c)}${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span></button>${op?detail(c):''}</div>`}).join('')||'<div class="panel muted">Ingen saker passer filtrene.</div>';
   const mb=document.getElementById('more');mb.hidden=L.length<=limit;mb.textContent=`Vis flere (${L.length-limit} til)`;
   window._L=L;
@@ -185,6 +195,7 @@ document.getElementById('mwhen').addEventListener('input',renderMeet);mut.addEve
 
 /* ---------- STEMMEGIVNING ---------- */
 const party=n=>VOT.parti[n]||'?';
+const SAK_FOR={};S.cases.forEach(c=>c.st.forEach(x=>{SAK_FOR[x.hid]=c}));
 const vsel=document.getElementById('vsel');
 (function(){
   const utv=[...new Set(VOT.moter.map(m=>m.sc))].sort((a,b)=>(b==='KS')-(a==='KS')||(b==='FS')-(a==='FS')||utName(a).localeCompare(utName(b),'nb'));
@@ -228,8 +239,10 @@ function renderStemmer(){
     const alleEn=s.v.every(v=>v.en);const holdt=s.v.filter(v=>v.holdt).length;
     const badge=alleEn?'<span class="st ok" style="justify-self:start">Enstemmig vedtatt</span>':holdt?`<span class="st ks" style="justify-self:start">${holdt} holdt tilbake</span>`:'';
     const score=omst.length?`<div class="score">${omst[0].nfor}–${omst[0].nmot}<small>jevneste votering</small></div>`:'';
-    return `<article class="vc"><div class="vtop"><div><div class="muted" style="font-size:12.5px"><span class="mono">${esc(s.nr)}</span> · ${esc(utName(s.m.sc))} ${ddn(s.m.date)}</div><h3 style="margin-top:4px">${esc(s.t)}</h3></div>
-    <div style="display:grid;gap:6px;align-content:start">${badge}${score}${omst.length?segBar(omst[0]):''}</div></div>
+    const sak=SAK_FOR[s.hid];
+    const sum=sak&&sak.a?`<div class="sum"><p>${esc(sak.a.sum)}</p>${sak.a.uen?`<p><b>Uenigheten:</b> ${esc(sak.a.uen)}</p>`:''}<div class="aikilde">Skrevet av KI. Kan inneholde feil; protokollen gjelder. <a href="${meldUrl(sak)}" target="_blank" rel="noopener">Meld fra om feil</a></div></div>`:'';
+    return `<article class="vc"><div class="vtop"><div><div class="muted" style="font-size:12.5px"><span class="mono">${esc(s.nr)}</span> · ${esc(utName(s.m.sc))} ${ddn(s.m.date)}</div><h3 style="margin-top:4px">${esc(sak?tittel(sak):s.t)}</h3>${sak&&sak.a?`<div class="muted" style="font-size:12.5px;margin-top:2px">${esc(s.t)}</div>`:''}</div>
+    <div style="display:grid;gap:6px;align-content:start">${badge}${score}${omst.length?segBar(omst[0]):''}</div></div>${sum}
     <details${s.v.length<=3?' open':''}><summary>${s.v.length} ${s.v.length===1?'votering':'voteringer'}</summary><div style="margin-top:8px">${s.v.map(vrow).join('')}</div></details></article>`}).join('')||'<div class="panel muted">Ingen voteringer for dette valget.</div>';
   document.getElementById('ncont').textContent=contested.length;
   selP=null;renderPC();renderPT();renderPP();renderHeat();
