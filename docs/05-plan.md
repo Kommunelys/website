@@ -37,14 +37,18 @@ tema fordi tittelen inneholder et ord som ligner.
 
 Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 
-| Oppgave |
-|---|
-| Prompt og skjema for sammendrag |
-| Caching på sjekksum av kildetekst og promptversjon |
-| Faste tagger, fastsatt én gang |
-| Kontroll av at tall og navn i sammendraget finnes i kilden |
-| Knapp for å melde fra om feil |
-| Måle faktisk kostnad per møte |
+| Oppgave | Status |
+|---|---|
+| Ny modell, feil håndtert per sak, tak per kjøring | Ferdig, testet uten API-kall |
+| Strukturert grunnlag: saksframlegg i avsnitt, vedtak og partienes standpunkt, ingen stemmetall | Ferdig |
+| Prompt og skjema for sammendrag | Første versjon (instruksjon v2, låst JSON-skjema) |
+| Caching på sjekksum av kildetekst og promptversjon | Ferdig |
+| Faste tagger, fastsatt én gang | Ferdig, 15 tagger |
+| Prøvekjøring på rundt ti saker, lese resultatet | Ikke gjort |
+| Kontroll av at tall og navn i sammendraget finnes i kilden | Bare tall i dag |
+| Vise sammendrag på nettstedet med kildelenke | Ikke gjort |
+| Knapp for å melde fra om feil | Ikke gjort |
+| Måle faktisk kostnad per møte | Ikke gjort |
 
 ## Fase 3 — mer enn én kommune
 
