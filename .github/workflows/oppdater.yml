@@ -26,6 +26,10 @@ on:
         description: "Prøveanalyse: sak-ID-er med komma, høyst 10. Hopper over henting og publisering"
         required: false
         default: ""
+      analyse_maks:
+        description: "Høyst antall saker AI-analysen sender inn i denne kjøringen"
+        required: false
+        default: "25"
 
 concurrency:
   group: oppdater
@@ -122,15 +126,16 @@ jobs:
           git diff --staged --quiet || git commit -m "Data: oppdatert $(date -I)"
           git push
 
-  # Fase 2. Analysen er et skjelett og publiseres ikke på nettstedet ennå, så
-  # jobben er slått av. Slå den på når analysen og kontrollene er bygget, og
-  # la «bygg» vente på den igjen.
+  # Fase 2. Sender bare nye og endrede saker, høyst analyse_maks per kjøring
+  # (25 som standard). Første gjennomgang av et helt år tar over en time, så
+  # analysen slutter å sende nye saker etter 150 minutter, og det som er gjort,
+  # lagres selv om jobben feiler.
   analyser:
     name: AI-analyse
     needs: hent
-    if: false
+    if: ${{ !inputs.proeveanalyse }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
         with:
@@ -145,9 +150,12 @@ jobs:
       - name: Analyser nye og endrede saker
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python -m analyser.analyser_saker
+          MAKS: ${{ inputs.analyse_maks || '25' }}
+          AAR: ${{ inputs.aar || '2026' }}
+        run: python -m analyser.analyser_saker "$AAR" --maks "$MAKS" --minutter 150
 
       - name: Lagre analyser
+        if: always()
         run: |
           git config user.name "oppdater-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -156,9 +164,11 @@ jobs:
           git diff --staged --quiet || git commit -m "Analyse: oppdatert $(date -I)"
           git push
 
+  # Publiserer selv om analysen feilet; sakene vises da uten nye sammendrag.
   bygg:
     name: Bygg og publiser
-    needs: hent
+    needs: [hent, analyser]
+    if: ${{ always() && needs.hent.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

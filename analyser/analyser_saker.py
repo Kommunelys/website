@@ -19,6 +19,7 @@ eller en feil i sjekksummen ikke kan sende hele året på én gang.
     python -m analyser.analyser_saker 2026 --maks 10     # høyst 10 saker
     python -m analyser.analyser_saker 2026 --vis 8356    # skriv ut grunnlaget for én sak
     python -m analyser.analyser_saker 2026 --saker 7675,8356  # bare disse sakene
+    python -m analyser.analyser_saker 2026 --minutter 150     # send ikke nye etter 150 min
 """
 
 from __future__ import annotations
@@ -29,6 +30,7 @@ import hashlib
 import json
 import re
 import sys
+import time
 from pathlib import Path
 
 from tolk.bygg_avvik import holdt_tilbake
@@ -280,7 +282,11 @@ def _finn(saker: list[dict], ident: int) -> dict | None:
 
 
 def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
-         vis: int | None = None, bare: list[int] | None = None) -> None:
+         vis: int | None = None, bare: list[int] | None = None,
+         minutter: float | None = None) -> None:
+    """minutter: slutt å sende nye saker etter så lang tid, så jobben rekker å
+    lagre det som er gjort før arbeidsflytens tidsgrense."""
+    frist = time.monotonic() + minutter * 60 if minutter else None
     saker = json.loads((SAKER / f"{aar}.json").read_text(encoding="utf-8"))
     voteringer = {b["behandling_id"]: b for b in _les(VOTERINGER / f"{aar}.json", [])}
     stopp, _ = holdt_tilbake(aar)
@@ -324,7 +330,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
         if _les(sti, {}).get("sjekksum") == sum_:
             teller["uendret"] += 1
             continue
-        if teller["sendt"] >= maks:
+        if teller["sendt"] >= maks or (frist and time.monotonic() > frist):
             teller["utsatt til neste kjøring"] += 1
             continue
         teller["sendt"] += 1
@@ -384,7 +390,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
 
 def main() -> None:
     argv = sys.argv[1:]
-    med_verdi = ("--maks", "--vis", "--saker")
+    med_verdi = ("--maks", "--vis", "--saker", "--minutter")
 
     def verdi(flagg: str) -> int | None:
         return int(argv[argv.index(flagg) + 1]) if flagg in argv else None
@@ -397,7 +403,8 @@ def main() -> None:
     bare = ([int(x) for x in argv[argv.index("--saker") + 1].split(",") if x.strip()]
             if "--saker" in argv else None)
     kjor(aar, tort_lop="--tort-lop" in argv,
-         maks=MAKS_PER_KJORING if maks is None else maks, vis=verdi("--vis"), bare=bare)
+         maks=MAKS_PER_KJORING if maks is None else maks, vis=verdi("--vis"), bare=bare,
+         minutter=verdi("--minutter"))
 
 
 if __name__ == "__main__":
