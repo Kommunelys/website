@@ -18,6 +18,7 @@ utvetydig uoffisielt i all presentasjon.
 | API-et til portalen | Kartlagt og dokumentert, se `docs/02-api.md` |
 | Innhenting av møter og saker | Virker, kjørt mot hele 2026 |
 | Tolkning av protokoll til stemmer | Virker. 42 av 42 i testmøtet, og alle 442 voteringer med navneliste i 2026 består tellekontrollen |
+| Oppmøte | Virker. Lest fra alle 67 møteprotokoller i 2026; stemmene i 6 møter avviker fra oppmøtelisten og er flagget |
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
@@ -52,8 +53,9 @@ bygg/      statisk nettsted
 data/raa/      rå API-svar, urørt. Slettes aldri
 data/moter/    normaliserte møter
 data/saker/    normaliserte saker med saksgang
-data/tekst/    tekst trukket ut av PDF og Word
+data/tekst/    tekst trukket ut av PDF og Word (møteprotokoller i tekst/moter/)
 data/voteringer/  voteringer og stemmer fra saksprotokollene
+data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
 data/analyse/  sammendrag og tagger fra modellen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
@@ -67,6 +69,7 @@ python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
 python -m hent.hent_dokumenter 2026 --mal  # bare måling -> data/maling-<år>.json
 python -m tolk.bygg_saker               # saksgang og status -> data/saker/
 python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
+python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
@@ -100,8 +103,14 @@ python -m tester.kontroller             # alle kontroller
   ofte et brev eller en protokoll fra andre. Bare dokumenter som starter med
   «SAKSFRAMLEGG», deles ved overskriftene (`tolk/saksframlegg.py`).
 - **Navnevarianter.** Samme person skrives ulikt i samme dokument, for
-  eksempel «Tor André Eide» og «Tor Andre Eide». Normaliseres i
-  `tolk/navn.py`.
+  eksempel «Tor André Eide» og «Tor Andre Eide». Oppmøtelisten bruker ofte
+  fullt navn der navnelistene i voteringene ikke gjør det, for eksempel
+  «Enok Askil Moe» og «Enok Moe». Normaliseres i `tolk/navn.py`.
+- **Oppmøtelisten og stemmene stemmer ikke alltid overens.** I 6 møter i
+  2026 stemmer noen som ikke står på oppmøtelisten, eller det er flere
+  stemmer enn frammøtte. Det står slik i protokollene. `tolk.bygg_oppmote`
+  flagger dem; slike voteringer publiseres ikke uten at et menneske har sett
+  på dem.
 - **GitHub Actions utløser ikke seg selv.** En commit med standardtokenet
   starter ikke andre arbeidsflyter. Derfor én arbeidsflyt med tre jobber.
 

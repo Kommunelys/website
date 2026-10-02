@@ -22,7 +22,7 @@ dag, og det er her kvaliteten på datagrunnlaget må sitte før noe bygges oppå
 | Teste dokument-URL-ene | Ferdig, alle tre virker |
 | Laste ned og måle hele dokumentsamlingen | Ferdig for saksframlegg og vedtak, se ADR-013 |
 | Lagre tekst fra dokumentene | Ferdig for 2026, 724 av 726 |
-| Modellere utvalg, verv og oppmøte | Ikke gjort |
+| Modellere utvalg, verv og oppmøte | Oppmøte ferdig for 2026, fra 67 møteprotokoller. Utvalg og verv gjenstår |
 | Portere nettstedet fra prototype til repo | Ikke gjort |
 | Sette opp GitHub Actions | Skrevet, ikke kjørt |
 

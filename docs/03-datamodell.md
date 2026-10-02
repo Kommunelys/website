@@ -122,20 +122,40 @@ historikk. Derfor to grep:
    står i et dokument som ikke endres i ettertid, og oppgir både rolle og hvem
    en vara møtte for.
 
+Oppmøtet ligger i `data/oppmote/<år>.json`, én post per møte, lest av
+`python -m tolk.bygg_oppmote` fra alle 67 møteprotokoller i 2026: 754 rader,
+136 av dem varamedlemmer. Kolonnen «Repr.» lagres som `repr`. Den er partiet,
+men i interkommunale utvalg er den kommunen, og i rådene ofte «ANDRE».
+
 ### Kvalitetskontroll på kjøpet
 
-Når `stemme` kontrolleres mot `oppmote`, fanges avvik automatisk. I protokollen
-fra 16.09.2026 stemmer Lena Hanem Bartnes (SP) uten å stå på oppmøtelisten.
+Når `stemme` kontrolleres mot `oppmote`, fanges avvik automatisk. I 2026
+gjelder det 97 voteringer i 6 møter, og alle står slik i protokollene:
+
+| Møte | Avvik |
+|---|---|
+| FS 29.01 | Tor Borgan stemmer uten å stå på listen. May Britt Lagesen stemmer selv om en vara møtte for henne, og to voteringer får 13 stemmer med 12 frammøtte |
+| FS 12.02 | May Britt Lagesen stemmer selv om en vara møtte for henne |
+| KS 25.03 | Linn Kristine Sandseter stemmer i 21 voteringer uten å stå på listen |
+| KS 20.05 | Gunnar Mikalsen Kvifte stemmer i 23 voteringer uten å stå på listen |
+| FSKO 17.06 | Lill Marit Sandseter stemmer uten å stå på listen |
+| KS 16.09 | Lena Hanem Bartnes (SP) stemmer i 42 voteringer uten å stå på listen |
+
+Avvikene lagres per møte. En votering med avvik publiseres ikke før et
+menneske har sett på den.
 
 ## Navnevarianter
 
-Samme person skrives ulikt i samme dokument. Observert i protokollen fra
-16.09.2026:
+Samme person skrives ulikt, også i samme dokument. Oppmøtelisten bruker ofte
+fullt navn der navnelistene i voteringene ikke gjør det:
 
-| Variant | Normalisert til |
-|---|---|
-| Tor Andre Eide | Tor André Eide |
-| Line M Nordkvelle | Line Mari Nordkvelle |
+| Variant | Normalisert til | Hvor |
+|---|---|---|
+| Tor Andre Eide | Tor André Eide | Protokollen 16.09.2026 |
+| Line M Nordkvelle | Line Mari Nordkvelle | Protokollen 16.09.2026 |
+| Monika Luktvasslimo | Monika Skoglund Luktvasslimo | Oppmøtet i HPNM, hele 2026 |
+| Enok Moe | Enok Askil Moe | Navnelistene i HOK, hele 2026 |
+| Terje Langli | Terje Bjarte Langli | Navnelistene i KS, FSKO og FSB 17.06 |
 
 Normaliseringen ligger i `tolk/navn.py`. Hver representant har en liste over
 kjente varianter, slik at nye former kan legges til uten å endre koden.
