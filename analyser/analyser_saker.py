@@ -45,8 +45,10 @@ INNSATS = "high"
 MAKS_TOKENS = 16000
 MAKS_PER_KJORING = 25
 # Endres instruksjonen eller skjemaet, må alt analyseres på nytt. Derfor inngår
-# versjonen i sjekksummen.
-INSTRUKSJON_VERSJON = 2
+# versjonen i sjekksummen. Versjon 3 retter det prøven på ti saker 3.10.2026
+# viste: avrundede tall, «skal behandles» om møter som var holdt, tidsuttrykk
+# som «til sommeren», feil partinavn og tvungne tema.
+INSTRUKSJON_VERSJON = 3
 
 # Faste tagger. Lar man modellen finne på egne, blir filtrene ubrukelige
 # etter et halvt år.
@@ -56,7 +58,15 @@ TAGGER = [
     "Klima og miljø", "Eierskap og selskaper", "Folkevalgte", "Klager",
     "Regionalt samarbeid", "Høring", "Organisasjon",
 ]
-UTFALL = ["vedtatt", "falt", "utsatt", "ikke avgjort ennå"]
+UTFALL = ["vedtatt", "falt", "utsatt", "venter på protokoll", "ikke avgjort ennå"]
+
+# Partikodene i voteringene, med navnene fra portalens medlemslister.
+PARTINAVN = {
+    "AP": "Arbeiderpartiet", "FRP": "Fremskrittspartiet", "H": "Høyre",
+    "INP": "Industri- og næringspartiet", "PP": "Pensjonistpartiet", "R": "Rødt",
+    "SP": "Senterpartiet", "SV": "Sosialistisk Venstreparti", "V": "Venstre",
+    "UAVH": "uavhengig representant",
+}
 
 SKJEMA = {
     "type": "object",
@@ -77,18 +87,23 @@ SKJEMA = {
 INSTRUKSJON = """Du forklarer en politisk sak i Steinkjer kommune for innbyggere uten forkunnskaper. Grunnlaget er dokumentene fra kommunens innsynsportal i meldingen: saksframlegget, vedtakene og voteringene.
 
 - Bruk bare det som står i dokumentene. Fyll aldri ut med generell kunnskap.
+- Gjengi tall slik de står i dokumentene, uten å runde av. Tallene kontrolleres mot kilden.
 - Ikke vurder om forslaget eller vedtaket er godt eller dårlig.
 - Skriv ikke navn på privatpersoner, selv om de står i dokumentene. Folkevalgte omtales bare i sin rolle, med det de gjorde i saken.
-- Skriv ikke stemmetall eller hvem som stemte hva. Nettstedet viser stemmene fra protokollen ved siden av teksten. I «uenighet» beskriver du hva uenigheten gjaldt og hvilke partier som sto på hver side, slik det går fram av voteringene.
+- Skriv ikke stemmetall eller hvem som stemte hva. Nettstedet viser stemmene fra protokollen ved siden av teksten. I «uenighet» beskriver du hva uenigheten gjaldt og hvilke partier som sto på hver side, slik det går fram av voteringene. Ta med alle partiene på hver side.
+- Teksten leses lenge etter at den er skrevet. Bruk datoer, ikke «i år», «til sommeren» eller «neste møte».
+- Status «Venter på protokoll» betyr at møtet er holdt, men at vedtaket ikke er publisert ennå. Skriv det slik, ikke at saken skal behandles.
 - Er saken ikke avgjort ennå, beskriv hva som skal avgjøres og hva kommunedirektøren foreslår.
 - Er grunnlaget for tynt til en dekkende forklaring, sett «usikker» til true og la «sammendrag» stå tomt.
 - Skriv klarspråk på norsk bokmål, med korte setninger.
+
+Partikodene i voteringene: """ + ", ".join(f"{k} = {v}" for k, v in PARTINAVN.items()) + """. Bruk koden eller dette navnet.
 
 Feltene:
 - tittel_klarsprak: spørsmålet saken svarer på, på én linje
 - sammendrag: tre til fem setninger om hva saken gjelder og hva som ble bestemt eller foreslått
 - betydning: én setning om hva dette betyr for innbyggerne
-- tagger: to eller tre tema fra listen
+- tagger: ett til tre tema fra listen; velg bare tema som passer
 - utfall: hvordan saken endte i siste møte som er holdt
 - uenighet: én setning, eller tom streng hvis vedtakene var enstemmige eller saken ikke er avgjort"""
 
@@ -242,7 +257,7 @@ def gyldig(a: dict) -> bool:
     """Kontroller svaret før noe lagres. Skjemaet sikrer formen; dette sikrer innholdet."""
     if not isinstance(a, dict):
         return False
-    if not 2 <= len(a.get("tagger") or []) <= 3:
+    if not 1 <= len(a.get("tagger") or []) <= 3:
         return False
     if any(t not in TAGGER for t in a["tagger"]) or a.get("utfall") not in UTFALL:
         return False
