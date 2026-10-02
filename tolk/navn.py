@@ -28,7 +28,7 @@ PARTIKODER: dict[str, str] = {
     "Arbeiderpartiet": "AP",
     "Fremskrittspartiet": "FRP",
     "Høyre": "H",
-    "Industri- og Næringspartiet": "INP",
+    "Industri- og næringspartiet": "INP",
     "Pensjonistpartiet": "PP",
     "Rødt": "R",
     "Senterpartiet": "SP",

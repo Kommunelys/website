@@ -54,6 +54,9 @@ jobs:
           python -m hent.hent_moter "${{ inputs.aar || '2026' }}" \
             ${{ inputs.alt && '--alt' || '' }}
 
+      - name: Hent medlemslister
+        run: python -m hent.hent_medlemmer "${{ inputs.aar || '2026' }}"
+
       - name: Bygg saker og saksgang
         run: python -m tolk.bygg_saker "${{ inputs.aar || '2026' }}"
 
@@ -66,6 +69,9 @@ jobs:
 
       - name: Les oppmøte og kontroller stemmene
         run: python -m tolk.bygg_oppmote "${{ inputs.aar || '2026' }}"
+
+      - name: Bygg utvalg og verv
+        run: python -m tolk.bygg_verv "${{ inputs.aar || '2026' }}"
 
       - name: Lagre endringer
         run: |
