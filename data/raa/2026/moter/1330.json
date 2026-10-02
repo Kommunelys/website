@@ -1,0 +1,768 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8113,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 10,
+   "SortOrder": 1,
+   "Title": "Godkjenning av innkalling og sakliste",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 8089,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-05-12T14:15:00+02:00",
+      "Id": 1263,
+      "MeetingDocuments": [],
+      "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1263,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 9,
+     "SortOrder": 2,
+     "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8090,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 44,
+     "SortOrder": 3,
+     "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8091,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 21,
+     "SortOrder": 4,
+     "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8088,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+       "FileFormatId": "RA-PDF",
+       "Id": 790796,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avgrensninger ungdomsskoleutredning",
+       "FileFormatId": "RA-PDF",
+       "Id": 790899,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rapport Steinkjer ungdomsskole v3",
+       "FileFormatId": "RA-PDF",
+       "Id": 790900,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Skolebruksplan 2020 2035 del 1",
+       "FileFormatId": "RA-PDF",
+       "Id": 790957,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470624,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35707,
+    "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8110,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 12,
+   "SortOrder": 1,
+   "Title": "Hilmarfestivalen 2026 ønsker innspill fra ungdomsrådet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8109,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Valg av to medlemmer til komite for TV-aksjonen",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8118,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 50,
+     "SortOrder": 2,
+     "Title": "Årsmelding ungdomsrådet 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8119,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 29,
+     "SortOrder": 3,
+     "Title": "Årsmelding ungdomsrådet 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8117,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-08T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsmelding ungdomsrådet 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 796588,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsmelding ungdomsrådet 2025 (oppdatert etter behandling i rådet)",
+       "FileFormatId": "RA-PDF",
+       "Id": 802323,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 475894,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-08T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 40976,
+    "Title": "Årsmelding ungdomsrådet 2025"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Årsmelding ungdomsrådet 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 18,
+      "Name": "Eldrerådet",
+      "ShortCode": "ELRÅ"
+     },
+     "Id": 8125,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 18,
+      "EndDate": "2026-05-06T15:00:00+02:00",
+      "Id": 1259,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-06T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "RS",
+     "MeetingId": 1259,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 5,
+     "SortOrder": 2,
+     "Title": "Notat - møte mellom ordfører og rådsledere 08.04.2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 35,
+      "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+      "ShortCode": "RÅFIM"
+     },
+     "Id": 8126,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 35,
+      "EndDate": "2026-05-06T15:00:00+02:00",
+      "Id": 1260,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Olve",
+      "StartDate": "2026-05-06T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "RS",
+     "MeetingId": 1260,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 7,
+     "SortOrder": 3,
+     "Title": "Notat - møte mellom ordfører og rådsledere 08.04.2026",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8124,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-30T00:00:00",
+    "DocumentNumber": 14,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Notat - møte mellom ordfører og rådsledere 08.04.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 797121,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 476151,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-30T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Rådene",
+    "Senders": [],
+    "SequenceNumber": 41232,
+    "Title": "Notat - møte mellom ordfører og rådsledere 08.04.2026"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Notat - møte mellom ordfører og rådsledere 08.04.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8139,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-05-05T18:45:00+02:00",
+    "Id": 1330,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Sigrid Toresdatter",
+    "StartDate": "2026-05-05T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1330,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 36,
+   "Name": "Ungdomsrådet",
+   "ShortCode": "UNGRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 36,
+  "EndDate": "2026-05-05T18:45:00+02:00",
+  "Id": 1330,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5241,
+    "IsRestricted": false,
+    "MeetingId": 1330,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5244,
+    "IsRestricted": false,
+    "MeetingId": 1330,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 3,
+  "MeetingRoom": "Sigrid Toresdatter",
+  "StartDate": "2026-05-05T17:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1330,
+  "MO_ROM": "Sigrid Toresdatter",
+  "MO_SLUTT": "2026-05-05T18:45:00",
+  "MO_START": "2026-05-05T17:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 36,
+  "UT_NAVN": "Ungdomsrådet"
+ }
+}

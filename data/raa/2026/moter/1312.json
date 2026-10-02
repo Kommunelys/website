@@ -1,0 +1,1136 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7896,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 7,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Orienteringssak - Årsrapport BHT",
+       "FileFormatId": "RA-PDF",
+       "Id": 767975,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 455224,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 20324,
+    "Title": "Orienteringssak - Årsrapport BHT"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Orienteringssak - Årsrapport BHT",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7875,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 6,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Orienteringssak - Årsrapport fra hovedverneombud",
+       "FileFormatId": "RA-PDF",
+       "Id": 766316,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsrapport HVO 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 767297,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 454172,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 19273,
+    "Title": "Orienteringssak - Årsrapport fra hovedverneombud"
+   },
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Orienteringssak - Årsrapport fra hovedverneombud",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7863,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 5,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Orienteringssak - rapport avviksmeldinger i 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 764183,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rapport - meldinger i kvalitetssystemet EQS kvartalsvis for 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 766268,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 452909,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 18013,
+    "Title": "Orienteringssak - rapport avviksmeldinger i 2025"
+   },
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Orienteringssak - rapport avviksmeldinger i 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7862,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Orienteringssak - medarbeiderkartlegging 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 764142,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 452883,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17989,
+    "Title": "Orienteringssak - medarbeiderkartlegging 2026"
+   },
+   "SequenceNumber": 6,
+   "SortOrder": 1,
+   "Title": "Orienteringssak - medarbeiderkartlegging 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 13,
+      "Name": "Administrasjonsutvalget",
+      "ShortCode": "AD"
+     },
+     "Id": 7860,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 13,
+      "EndDate": "2026-03-19T10:30:00+01:00",
+      "Id": 1319,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-19T08:30:00+01:00"
+     },
+     "MeetingCaseTypeId": "OS",
+     "MeetingId": 1319,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 1,
+     "SortOrder": 2,
+     "Title": "Orientering - Forsterket innsats for økt nærvær",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7859,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Orientering - Forsterket innsats for økt nærvær",
+       "FileFormatId": "RA-PDF",
+       "Id": 764078,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 452837,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17943,
+    "Title": "Orientering - Forsterket innsats for økt nærvær"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Orientering - Forsterket innsats for økt nærvær",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 13,
+      "Name": "Administrasjonsutvalget",
+      "ShortCode": "AD"
+     },
+     "Id": 7855,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 13,
+      "EndDate": "2026-03-19T10:30:00+01:00",
+      "Id": 1319,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-19T08:30:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1319,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 7,
+     "SortOrder": 2,
+     "Title": "Sykefravær for Steinkjer kommune 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7854,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Sykefravær for Steinkjer kommune 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 764074,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 452833,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17939,
+    "Title": "Sykefravær for Steinkjer kommune 2025"
+   },
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Sykefravær for Steinkjer kommune 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 13,
+      "Name": "Administrasjonsutvalget",
+      "ShortCode": "AD"
+     },
+     "Id": 7799,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 13,
+      "EndDate": "2026-03-19T10:30:00+01:00",
+      "Id": 1319,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-19T08:30:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1319,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 6,
+     "SortOrder": 2,
+     "Title": "Årsrapport 2025 for verne- og miljøarbeidet i Steinkjer kommune",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7798,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsrapport 2025 for verne- og miljøarbeidet i Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 748840,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsrapport verne- ogmiljøarbeidet for Steinkjer kommune 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 767462,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 440900,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 6020,
+    "Title": "Årsrapport 2025 for verne- og miljøarbeidet i Steinkjer kommune"
+   },
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Årsrapport 2025 for verne- og miljøarbeidet i Steinkjer kommune",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7853,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 5,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsrapport AKAN-utvalget 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 763657,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsrapport AKAN 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 763658,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 452615,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17721,
+    "Title": "Årsrapport AKAN-utvalget 2025"
+   },
+   "SequenceNumber": 6,
+   "SortOrder": 1,
+   "Title": "Årsrapport AKAN-utvalget 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7858,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rapport - status arbeid i lokale partsgrupper 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 764077,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Enkel oppsummering av alle rapporter fra alle innrapporterte partsgrupper 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 764376,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Fagstaber",
+       "FileFormatId": "RA-PDF",
+       "Id": 764377,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Etat teknisk, plan og miljø",
+       "FileFormatId": "RA-PDF",
+       "Id": 764378,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Etat samfunn og kultur",
+       "FileFormatId": "RA-PDF",
+       "Id": 764380,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Helse og velferd",
+       "FileFormatId": "RA-PDF",
+       "Id": 767834,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Oppvekst og inkludering",
+       "FileFormatId": "RA-PDF",
+       "Id": 767835,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 452836,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17942,
+    "Title": "Rapport - status arbeid i lokale partsgrupper 2025"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Rapport - status arbeid i lokale partsgrupper 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7861,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Endring i verneområder- enhet Integrering og enhet Steinkjer rehabilitering",
+       "FileFormatId": "RA-PDF",
+       "Id": 764083,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 452842,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 17948,
+    "Title": "Endring i verneområder- enhet Integrering og enhet Steinkjer rehabilitering"
+   },
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Endring i verneområder- enhet Integrering og enhet Steinkjer rehabilitering",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 5,
+    "Name": "Arbeidsmiljøutvalget",
+    "ShortCode": "AMU"
+   },
+   "Id": 7874,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 5,
+    "EndDate": "2026-03-10T15:30:00+01:00",
+    "Id": 1312,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-10T13:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1312,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-05T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Endring i verneområder i etat teknisk, plan og miljø",
+       "FileFormatId": "RA-PDF",
+       "Id": 766213,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 454118,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-05T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 19219,
+    "Title": "Endring i verneområder i etat teknisk, plan og miljø"
+   },
+   "SequenceNumber": 9,
+   "SortOrder": 1,
+   "Title": "Endring i verneområder i etat teknisk, plan og miljø",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 5,
+   "Name": "Arbeidsmiljøutvalget",
+   "ShortCode": "AMU"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 5,
+  "EndDate": "2026-03-10T15:30:00+01:00",
+  "Id": 1312,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5133,
+    "IsRestricted": false,
+    "MeetingId": 1312,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5136,
+    "IsRestricted": false,
+    "MeetingId": 1312,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 2,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-03-10T13:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1312,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-03-10T15:30:00",
+  "MO_START": "2026-03-10T13:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 5,
+  "UT_NAVN": "Arbeidsmiljøutvalget"
+ }
+}

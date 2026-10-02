@@ -1,0 +1,164 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 7,
+    "Name": "Hovedutvalg helse og omsorg",
+    "ShortCode": "HHO"
+   },
+   "Id": 8418,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 7,
+    "EndDate": "2026-10-14T11:30:00+02:00",
+    "Id": 1291,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-14T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1291,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Orienteringer: oppfølging av politiske vedtak, status fra helse v/kommunalsjef Anita Ulstad",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 7,
+    "Name": "Hovedutvalg helse og omsorg",
+    "ShortCode": "HHO"
+   },
+   "Id": 8411,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 7,
+    "EndDate": "2026-10-14T11:30:00+02:00",
+    "Id": 1291,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 6,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-14T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1291,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-24T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Temaplan for legetjenester i Steinkjer kommune, 2026-2034. Høringsutkast",
+       "FileFormatId": "RA-PDF",
+       "Id": 834775,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Temaplan for legetjenester i Steinkjer kommune, 2026-2034- Høringsutkast",
+       "FileFormatId": "RA-PDF",
+       "Id": 834952,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 502275,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-24T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 67313,
+    "Title": "Temaplan for legetjenester i Steinkjer kommune, 2026-2034. Høringsutkast"
+   },
+   "SequenceNumber": 18,
+   "SortOrder": 1,
+   "Title": "Temaplan for legetjenester i Steinkjer kommune, 2026-2034. Høringsutkast",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 7,
+   "Name": "Hovedutvalg helse og omsorg",
+   "ShortCode": "HHO"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 7,
+  "EndDate": "2026-10-14T11:30:00+02:00",
+  "Id": 1291,
+  "MeetingDocuments": [],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 6,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-10-14T09:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1291,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-10-14T11:30:00",
+  "MO_START": "2026-10-14T09:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 7,
+  "UT_NAVN": "Hovedutvalg helse og omsorg"
+ }
+}

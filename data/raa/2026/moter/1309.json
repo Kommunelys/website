@@ -1,0 +1,32 @@
+{
+ "behandlinger": [],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 4,
+   "Name": "Hovedutvalg oppvekst og kultur",
+   "ShortCode": "HOK"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 4,
+  "EndDate": "2026-12-09T15:00:00+01:00",
+  "Id": 1309,
+  "MeetingDocuments": [],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 8,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-12-09T12:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1309,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-12-09T15:00:00",
+  "MO_START": "2026-12-09T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 4,
+  "UT_NAVN": "Hovedutvalg oppvekst og kultur"
+ }
+}

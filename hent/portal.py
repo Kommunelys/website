@@ -1,0 +1,114 @@
+"""Klient mot Steinkjer kommunes innsynsportal (Elements Publikum).
+
+All kontakt med portalen går gjennom denne modulen, slik at takt, header og
+feilhåndtering er likt overalt. Se docs/02-api.md for endepunktene.
+"""
+
+from __future__ import annotations
+
+import json
+import time
+import urllib.error
+import urllib.request
+
+BASIS = "https://prod01.elementscloud.no/publikum/"
+TENANT = "840029212_PROD-840029212"
+DATABASE = "b069d4f5-192a-4fee-be37-dc006441e271"
+
+# ADR-007: lav takt, én tråd, identifiserbar klient.
+PAUSE_SEKUND = 1.0
+KONTAKT = "steinkjer-innsyn (uoffisiell innsynstjeneste; kontakt: karlkristian@gmail.com)"
+
+HEADERE = {
+    "Accept": "application/json",
+    "tenant": TENANT,
+    "User-Agent": KONTAKT,
+}
+
+
+class PortalFeil(Exception):
+    """Portalen svarte ikke slik vi forventer."""
+
+
+def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
+    siste = None
+    for n in range(forsok):
+        try:
+            req = urllib.request.Request(url, headers=HEADERE)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = r.read()
+            time.sleep(PAUSE_SEKUND)
+            return data if binaer else json.loads(data.decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
+            # at vi går for fort, og skal vente som andre feil.
+            if 400 <= e.code < 500 and e.code != 429:
+                time.sleep(PAUSE_SEKUND)
+                raise PortalFeil(f"{e.code} {e.reason}: {url}") from e
+            siste = e
+            time.sleep(5 * (n + 1))
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+            siste = e
+            time.sleep(5 * (n + 1))
+    raise PortalFeil(f"ga opp etter {forsok} forsøk: {url} ({siste})")
+
+
+def moter(aar: int) -> list[dict]:
+    """Alle møter i alle utvalg for ett år."""
+    d = _hent(f"{BASIS}api/PredefinedQuery/DmbMeetings?year={aar}")
+    if not isinstance(d, list):
+        raise PortalFeil("DmbMeetings ga ikke en liste")
+    for m in d:
+        if "MO_ID" not in m or "MO_START" not in m:
+            raise PortalFeil(f"møte mangler felter: {m}")
+    return d
+
+
+def mote(mote_id: int) -> dict:
+    """Ett møte med møtedokumenter."""
+    return _hent(f"{BASIS}api/Meetings/{mote_id}")
+
+
+def saksliste(mote_id: int) -> list[dict]:
+    """Sakslisten for ett møte. RegistryEntry er alltid tom her."""
+    d = _hent(f"{BASIS}api/DmbHandlings/GetByMeetingId/{mote_id}")
+    return d if isinstance(d, list) else []
+
+
+def behandling(behandling_id: int) -> dict:
+    """Én behandling med journalpost, dokumenter og saksgang."""
+    return _hent(f"{BASIS}api/DmbHandlings/{behandling_id}")
+
+
+def utvalgsmedlemmer(utvalg_id: int) -> list | dict:
+    """Medlemmer i ett utvalg.
+
+    Ikke bekreftet mot live portal ennå; stien er lest ut av app-koden.
+    Gir trolig bare dagens medlemmer, ikke historikk (ADR-008).
+    """
+    return _hent(f"{BASIS}api/DmbMembers?dmbId={utvalg_id}")
+
+
+def hent_fil(url: str) -> bytes:
+    """Last ned ett dokument. Kalleren må ha kontrollert skjermingsflagg."""
+    return _hent(url, binaer=True)
+
+
+# --- adresser til dokumenter (docs/02-api.md) ----------------------------
+
+
+def url_saksprotokoll(behandling_id: int) -> str:
+    return f"{BASIS}Documents/ShowDmbHandlingDocument/{DATABASE}/{behandling_id}/Protokoll"
+
+
+def url_motedokument(mote_id: int, typekode: str, dok_id: int) -> str:
+    return f"{BASIS}Documents/ShowMeetingDocument/{DATABASE}/{mote_id}/{typekode}/{dok_id}"
+
+
+def url_dokument(journalpost_id: int, dokument_id: int) -> str:
+    return f"{BASIS}Documents/ShowDocument/{DATABASE}/{journalpost_id}/{dokument_id}"
+
+
+def url_mote_i_portalen(mote_id: int) -> str:
+    """Adressen et menneske kan åpne."""
+    return f"{BASIS}{TENANT}/DmbMeeting/{mote_id}"

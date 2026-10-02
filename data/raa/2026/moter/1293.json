@@ -1,0 +1,2116 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8384,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 11,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Spar Sentrum Steinkjer - Søknad om utvidet salgsbevilling med rett til netthandel",
+       "FileFormatId": "RA-PDF",
+       "Id": 831045,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om utvidet salgsbevilling med rett til netthandel",
+       "FileFormatId": "RA-PDF",
+       "Id": 831963,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Foodora opplærings til bud",
+       "FileFormatId": "RA-PDF",
+       "Id": 831055,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedlegg beskrivelse rutiner",
+       "FileFormatId": "RA-PDF",
+       "Id": 831056,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Pin validation customer",
+       "FileFormatId": "RA-PDF",
+       "Id": 845407,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 499602,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 64641,
+    "Title": "Spar Sentrum Steinkjer - Søknad om utvidet salgsbevilling med rett til netthandel"
+   },
+   "SequenceNumber": 98,
+   "SortOrder": 1,
+   "Title": "Spar Sentrum Steinkjer - Søknad om utvidet salgsbevilling med rett til netthandel",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8439,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 7,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "KG 19 Grønli Spis og Bo - Søknad om ny servering- og skjenkebevilling",
+       "FileFormatId": "RA-PDF",
+       "Id": 838992,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om servering- og skjenkebevilling Kg19 Grønli Spiseri og Bo",
+       "FileFormatId": "RA-PDF",
+       "Id": 842035,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Plantegning KG Gønli spis og bo",
+       "FileFormatId": "JPEG",
+       "Id": 842048,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avtale  om uteservering  - KG 19 Grønli Spis og Bo 2027.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 847382,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 505145,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-10-01T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 70179,
+    "Title": "KG 19 Grønli Spis og Bo - Søknad om ny servering- og skjenkebevilling"
+   },
+   "SequenceNumber": 99,
+   "SortOrder": 1,
+   "Title": "KG 19 Grønli Spis og Bo - Søknad om ny servering- og skjenkebevilling",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8496,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 21,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kakskiv AS - Søknad om utvidelse av eksisterende skjenkeareal til å omfatte heiser – Steinkjer kulturhus",
+       "FileFormatId": "RA-PDF",
+       "Id": 843319,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om utvidelse av eksisterende skjenkeareal til å omfatte heiser – Steinkjer kulturhus",
+       "FileFormatId": "RA-PDF",
+       "Id": 846934,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Heis underetasje",
+       "FileFormatId": "JPEG",
+       "Id": 846937,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Heis 1 etasje - Hovedetasje",
+       "FileFormatId": "JPEG",
+       "Id": 846936,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Heis 2 etasje",
+       "FileFormatId": "JPEG",
+       "Id": 846935,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Kakskiv AS søknad om utvidelse av eksiterende bevilling - Steinkjer Kulturhus",
+       "FileFormatId": "RA-PDF",
+       "Id": 846938,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Hele skjenkeområde underetasje",
+       "FileFormatId": "JPEG",
+       "Id": 847493,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Hele skjenkeområde 1etasje",
+       "FileFormatId": "JPEG",
+       "Id": 847494,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Hele skjenke område 2etasje",
+       "FileFormatId": "JPEG",
+       "Id": 847495,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 508020,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-10-01T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 73046,
+    "Title": "Kakskiv AS - Søknad om utvidelse av eksisterende skjenkeareal til å omfatte heiser – Steinkjer kulturhus"
+   },
+   "SequenceNumber": 100,
+   "SortOrder": 1,
+   "Title": "Kakskiv AS - Søknad om utvidelse av eksisterende skjenkeareal til å omfatte heiser – Steinkjer kulturhus",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8510,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 5,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringssaker pr.25.09.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 844818,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 508998,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 74021,
+    "Title": "Høringssaker pr.25.09.2026"
+   },
+   "SequenceNumber": 101,
+   "SortOrder": 1,
+   "Title": "Høringssaker pr.25.09.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8534,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Møteplan 2027",
+       "FileFormatId": "RA-PDF",
+       "Id": 846683,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forslag til møteplan for 2027",
+       "FileFormatId": "RA-PDF",
+       "Id": 846684,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 510188,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-10-01T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 75211,
+    "Title": "Møteplan 2027"
+   },
+   "SequenceNumber": 102,
+   "SortOrder": 2,
+   "Title": "Møteplan 2027",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8539,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kirkebevaringsfondet - intensjonserkklæringer Steinkjer kommune 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846808,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260925 Intensjonserklæringer Kirkebevaringsfondet 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846785,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260925 Skei kirke - intensjonserklæring overordnet forprosjekt 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846795,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260925 Steinkjer kirke - kirketårn - intensjonserklæring særskilt forprosjekt 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846797,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260925 Beitstad kirke - intensjonserklæring særskilt forprosjekt 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846798,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260925 Egge kirke - intensjonserklæring overordnet forprosjekt 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846799,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 510260,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 75283,
+    "Title": "Kirkebevaringsfondet - intensjonserklæringer Steinkjer kommune 2026"
+   },
+   "SequenceNumber": 103,
+   "SortOrder": 1,
+   "Title": "Kirkebevaringsfondet - intensjonserklæringer Steinkjer kommune 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8513,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging - saker behandlet i formannskapet 1.halvår 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 845043,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging 1.halvår - FS.doc",
+       "FileFormatId": "RA-PDF",
+       "Id": 846826,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 509165,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-10-01T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 74188,
+    "Title": "Vedtaksoppfølging - saker behandlet i formannskapet 1.halvår 2026"
+   },
+   "SequenceNumber": 104,
+   "SortOrder": 1,
+   "Title": "Vedtaksoppfølging - saker behandlet i formannskapet 1.halvår 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8528,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tildeling utviklingsfond NTE utbytte oktober 2026 - saker til formannskap",
+       "FileFormatId": "RA-PDF",
+       "Id": 846337,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Astri Hjelmbrekke",
+       "FileFormatId": "RA-PDF",
+       "Id": 846350,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Geir Grønnesby",
+       "FileFormatId": "RA-PDF",
+       "Id": 846352,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Gisle Aarlott",
+       "FileFormatId": "RA-PDF",
+       "Id": 846353,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Gruvetater vedlegg budsjett",
+       "FileFormatId": "RA-PDF",
+       "Id": 846354,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Gruveteater",
+       "FileFormatId": "RA-PDF",
+       "Id": 846355,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Gruveteater vedlegg tilbud Steinkjer Mekaniske",
+       "FileFormatId": "RA-PDF",
+       "Id": 846356,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtatte retningslinjer utviklingsfond nte utbytte 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846474,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20261908 Referat møte i jubileumskomite Nasjonaljubileet",
+       "FileFormatId": "RA-PDF",
+       "Id": 846497,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 509921,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 74944,
+    "Title": "Tildeling utviklingsfond NTE utbytte oktober 2026 - saker til formannskap"
+   },
+   "SequenceNumber": 105,
+   "SortOrder": 1,
+   "Title": "Tildeling utviklingsfond NTE utbytte oktober 2026 - saker til formannskap",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8546,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tildeling utviklingsfond NTE utbytte oktober 2026 - saker til kommunestyret.",
+       "FileFormatId": "RA-PDF",
+       "Id": 847559,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 Vikingregionen Innherred presentasjon",
+       "FileFormatId": "RA-PDF",
+       "Id": 847623,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 søknad nte utviklingsfond Beitstad idrettslag",
+       "FileFormatId": "RA-PDF",
+       "Id": 847624,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 510757,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 75780,
+    "Title": "Tildeling utviklingsfond NTE utbytte oktober 2026 - saker til kommunestyret."
+   },
+   "SequenceNumber": 106,
+   "SortOrder": 1,
+   "Title": "Tildeling utviklingsfond NTE utbytte oktober 2026 - saker til kommunestyret.",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 8542,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-10-14T15:00:00+02:00",
+      "Id": 1292,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-10-14T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1292,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 26,
+     "SortOrder": 2,
+     "Title": "Steinkjer kommune - tertialrapport andre tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8543,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-10-13T15:00:00+02:00",
+      "Id": 1290,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-10-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1290,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 43,
+     "SortOrder": 3,
+     "Title": "Steinkjer kommune - tertialrapport andre tertial 2026",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8544,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - tertialrapport andre tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 847236,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tertialrapport andre tertial 2026, datert 28.09.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 847699,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - rapport låneportefølje 2 tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 847700,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjerbygg KF - Tertialrapport 2 - 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 847702,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 510548,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 75571,
+    "Title": "Steinkjer kommune - tertialrapport andre tertial 2026"
+   },
+   "SequenceNumber": 107,
+   "SortOrder": 4,
+   "Title": "Steinkjer kommune - tertialrapport andre tertial 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8414,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-10-13T15:00:00+02:00",
+      "Id": 1290,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-10-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1290,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 47,
+     "SortOrder": 1,
+     "Title": "Organisering av renovasjonstjenesten i Steinkjer kommune",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8415,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-26T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Organisering av renovasjonstjenesten i Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 835161,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rapport Fremm rådgiving juni 26",
+       "FileFormatId": "RA-PDF",
+       "Id": 846205,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 502569,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 67607,
+    "Title": "Organisering av renovasjonstjenesten i Steinkjer kommune"
+   },
+   "SequenceNumber": 108,
+   "SortOrder": 2,
+   "Title": "Organisering av renovasjonstjenesten i Steinkjer kommune",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 7474,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-10-14T15:00:00+02:00",
+      "Id": 1292,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-10-14T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1292,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 27,
+     "SortOrder": 1,
+     "Title": "Barnehagekapasitet sentrum og Steinkjersannan barnehage",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8537,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-30T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Barnehagekapasitet sentrum og Steinkjersannan barnehage",
+       "FileFormatId": "RA-PDF",
+       "Id": 711286,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjersannan barnehage - Utredning 2026 endelig",
+       "FileFormatId": "RA-PDF",
+       "Id": 846310,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 416442,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 60976,
+    "Title": "Barnehagekapasitet sentrum og Steinkjersannan barnehage"
+   },
+   "SequenceNumber": 109,
+   "SortOrder": 2,
+   "Title": "Barnehagekapasitet sentrum og Steinkjersannan barnehage",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8475,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-26T00:00:00",
+    "DocumentNumber": 220,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde",
+       "FileFormatId": "RA-PDF",
+       "Id": 842069,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde",
+       "FileFormatId": "RA-PDF",
+       "Id": 842918,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Fylkeskommunen trekker innsigelse til  boligområde B15 Kråkhaugen i kommuneplanens arealdel for -Steinkjer kommune 2024-2037.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 842919,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Møteprotokoll Fylkesutvalget 2023-2027 01.09.2026.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 842920,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Fylkeskommunens uttalelse til anmodning om mekling om endringsforslag knyttet til rekkefølgekrav om gang- og sykkelveg for Kråkhaugen boligområde (B15) i kommuneplanens arealdel for Steinkjer kommune 2024 2037",
+       "FileFormatId": "RA-PDF",
+       "Id": 842921,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 507106,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 72135,
+    "Title": "Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde"
+   },
+   "SequenceNumber": 110,
+   "SortOrder": 1,
+   "Title": "Kommuneplanens arealdel 2024-2037 - Kråkhaugen boligområde",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8519,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-10-13T15:00:00+02:00",
+      "Id": 1290,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-10-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1290,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 48,
+     "SortOrder": 1,
+     "Title": "Realisering av termisk energi fra Østgruva i Malm, Valg av organisatorisk modell",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8520,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Realisering av termisk energi fra Østgruva i Malm, Valg av organisatorisk modell",
+       "FileFormatId": "RA-PDF",
+       "Id": 845566,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 Steinkjer utvikling Realisering av termisk energi fra Østgruva - revidert 16.09.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 846303,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260922 Notat fra Bjerkan-Stav Østgruva  til Steinkjer kommune(1020576.1)",
+       "FileFormatId": "RA-PDF",
+       "Id": 846304,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 509516,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 74539,
+    "Title": "Realisering av termisk energi fra Østgruva i Malm, Valg av organisatorisk modell"
+   },
+   "SequenceNumber": 111,
+   "SortOrder": 2,
+   "Title": "Realisering av termisk energi fra Østgruva i Malm, Valg av organisatorisk modell",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8149,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-10-01T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Samarbeid om kommuneadvokat Innherred - kommunalt oppgavefellesskap",
+       "FileFormatId": "RA-PDF",
+       "Id": 844622,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 480790,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-10-01T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 45867,
+    "Title": "Samarbeid om kommuneadvokat Innherred - kommunalt oppgavefellesskap"
+   },
+   "SequenceNumber": 112,
+   "SortOrder": 1,
+   "Title": "Samarbeid om kommuneadvokat Innherred - kommunalt oppgavefellesskap",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8511,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-26T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging - saker behandlet i kommunestyret 1.halvår 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 845042,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging 1.halvår - KS.doc",
+       "FileFormatId": "RA-PDF",
+       "Id": 846831,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 509164,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 74187,
+    "Title": "Vedtaksoppfølging - saker behandlet i kommunestyret 1.halvår 2026"
+   },
+   "SequenceNumber": 113,
+   "SortOrder": 1,
+   "Title": "Vedtaksoppfølging - saker behandlet i kommunestyret 1.halvår 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8461,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-28T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+       "FileFormatId": "RA-PDF",
+       "Id": 840807,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 506276,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-30T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 71305,
+    "Title": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)"
+   },
+   "SequenceNumber": 114,
+   "SortOrder": 2,
+   "Title": "Valg av nytt varamedlem til kontrollutvalget etter Solvår Tangen (AP)",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 8,
+    "Name": "Formannskap",
+    "ShortCode": "FS"
+   },
+   "Id": 8555,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 8,
+    "EndDate": "2026-10-15T16:00:00+02:00",
+    "Id": 1293,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 12,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-10-15T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1293,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Orientering fra ordfører og kommunedirektør",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 8,
+   "Name": "Formannskap",
+   "ShortCode": "FS"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 8,
+  "EndDate": "2026-10-15T16:00:00+02:00",
+  "Id": 1293,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5518,
+    "IsRestricted": false,
+    "MeetingId": 1293,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 12,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-10-15T12:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1293,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-10-15T16:00:00",
+  "MO_START": "2026-10-15T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 8,
+  "UT_NAVN": "Formannskap"
+ }
+}

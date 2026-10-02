@@ -1,0 +1,2749 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8121,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Orientering v/Hilmarfestivalen",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8122,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Orientering: status drift Svedjan",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8063,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 7,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8065,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-05-11T13:45:00+02:00",
+      "Id": 1261,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+      "StartDate": "2026-05-11T08:45:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1261,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 22,
+     "SortOrder": 3,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8066,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 39,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8067,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 17,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8064,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-25T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 789976,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsregnskap Steinkjer kommune 2025 - kommunekassen 230226",
+       "FileFormatId": "RA-PDF",
+       "Id": 789977,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsregnskap Steinkjer kommune 2025 - konsolidert 230226",
+       "FileFormatId": "RA-PDF",
+       "Id": 789978,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - Årsberetning 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 789979,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Revisjonsberetning 2025 Steinkjer konsolidert - signert 07.04.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 789980,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Låneportefølje Steinkjer kommune - Årsrapport 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 790378,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kontrollutvalgets uttalelse 2025 Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 790872,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470154,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35237,
+    "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025"
+   },
+   "SequenceNumber": 6,
+   "SortOrder": 2,
+   "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8068,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 8,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8070,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-05-11T13:45:00+02:00",
+      "Id": 1261,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+      "StartDate": "2026-05-11T08:45:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1261,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 21,
+     "SortOrder": 3,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8071,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 40,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8072,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 18,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8069,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-26T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 790002,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rebudsjettering fra 2025 til 2026 - 240426",
+       "FileFormatId": "RA-PDF",
+       "Id": 790910,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470171,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35254,
+    "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 2,
+   "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8074,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 9,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8076,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-05-11T13:45:00+02:00",
+      "Id": 1261,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+      "StartDate": "2026-05-11T08:45:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1261,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 20,
+     "SortOrder": 3,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8077,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 38,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8078,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 19,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8075,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-08T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - tertialrapport første tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 790087,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinker kommune - tertialrapport første tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 796496,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjerbygg KF Tertialrapport 1 - 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 796500,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - låneportefølje - rapport første tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 802506,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470215,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-08T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35298,
+    "Title": "Steinkjer kommune - tertialrapport første tertial 2026"
+   },
+   "SequenceNumber": 8,
+   "SortOrder": 2,
+   "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 36,
+      "Name": "Ungdomsrådet",
+      "ShortCode": "UNGRÅ"
+     },
+     "Id": 8088,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 36,
+      "EndDate": "2026-05-05T18:45:00+02:00",
+      "Id": 1330,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Sigrid Toresdatter",
+      "StartDate": "2026-05-05T17:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1330,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 11,
+     "SortOrder": 1,
+     "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8090,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 44,
+     "SortOrder": 3,
+     "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8091,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 21,
+     "SortOrder": 4,
+     "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8089,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+       "FileFormatId": "RA-PDF",
+       "Id": 790796,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avgrensninger ungdomsskoleutredning",
+       "FileFormatId": "RA-PDF",
+       "Id": 790899,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rapport Steinkjer ungdomsskole v3",
+       "FileFormatId": "RA-PDF",
+       "Id": 790900,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Skolebruksplan 2020 2035 del 1",
+       "FileFormatId": "RA-PDF",
+       "Id": 790957,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470624,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35707,
+    "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet"
+   },
+   "SequenceNumber": 9,
+   "SortOrder": 2,
+   "Title": "Utredning samlokalisering ungdomsskoler i tilgjengelige areal på Guldbergaunet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 7936,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 10,
+     "SortOrder": 1,
+     "Title": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 7938,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 41,
+     "SortOrder": 3,
+     "Title": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7939,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 23,
+     "SortOrder": 4,
+     "Title": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7937,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-26T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for \nserveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, \nTrøndelag",
+       "FileFormatId": "RA-PDF",
+       "Id": 769242,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag",
+       "FileFormatId": "RA-PDF",
+       "Id": 784400,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsuttalelse fra kommuneoverlegen",
+       "FileFormatId": "RA-PDF",
+       "Id": 781451,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsuttalelse fra politiet i Steinkjer",
+       "FileFormatId": "RA-PDF",
+       "Id": 783428,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsuttalelse IOGT",
+       "FileFormatId": "RA-PDF",
+       "Id": 781452,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsuttalelse NAV",
+       "FileFormatId": "RA-PDF",
+       "Id": 781453,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Lokale politivedtekter og dispensjonsadgang fra bestemmelser om nattero - Tilknytning til fotball-VM  i juli 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 781920,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 456034,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 21133,
+    "Title": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag"
+   },
+   "SequenceNumber": 10,
+   "SortOrder": 2,
+   "Title": "Forskrift om endringer i forskrift 17 april 2024 nr. 2243 om åpningstider for serveringssteder og om salg- og skjenketider for alkoholholdig drikk, Steinkjer kommune, Trøndelag",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7961,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-23T00:00:00",
+    "DocumentNumber": 9,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Suppleringsvalg til samarbeidsutvalg etter Anniken Bjørnes (R)",
+       "FileFormatId": "RA-PDF",
+       "Id": 771927,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 457668,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-29T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 22767,
+    "Title": "Suppleringsvalg til samarbeidsutvalg etter Anniken Bjørnes (R)"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Suppleringsvalg til samarbeidsutvalg etter Anniken Bjørnes (R)",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8094,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 46,
+     "SortOrder": 2,
+     "Title": "Kommunale tilskuddsordninger og priser innenfor kulturfeltet",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8095,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 22,
+     "SortOrder": 3,
+     "Title": "Kommunale tilskuddsordninger og priser innenfor kulturfeltet",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8093,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kommunale tilskuddsordninger og priser innenfor kulturfeltet",
+       "FileFormatId": "RA-PDF",
+       "Id": 790911,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260425  Kulturtilskudd - tildelingskriterier",
+       "FileFormatId": "RA-PDF",
+       "Id": 790913,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026 0425 Kriterier Vedlikeholdstilskudd forsamlingshus",
+       "FileFormatId": "RA-PDF",
+       "Id": 790914,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260425 Tildelinger NTE utbytte kulturfeltet 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 790915,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470691,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-28T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35774,
+    "Title": "Kommunale tilskuddsordninger og priser innenfor kulturfeltet"
+   },
+   "SequenceNumber": 12,
+   "SortOrder": 1,
+   "Title": "Kommunale tilskuddsordninger og priser innenfor kulturfeltet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8042,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-25T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om plassering av byste - Arne Paasche Aasen",
+       "FileFormatId": "RA-PDF",
+       "Id": 787136,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260224 Søknad Plassering Kommunen.doc Foreningen Gamle Steinkjer Arne Paasche Aasen",
+       "FileFormatId": "RA-PDF",
+       "Id": 790821,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260205 - Byste Arne Paasche Aasen - Plassering",
+       "FileFormatId": "RA-PDF",
+       "Id": 790825,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260224 Prosjektbeskrivelse.doc Arne Paasche Aasen",
+       "FileFormatId": "RA-PDF",
+       "Id": 790826,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260218 - Referat - Byste Arne Paasche Aasen",
+       "FileFormatId": "RA-PDF",
+       "Id": 790827,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260109 - Referat - Prosjekt byste Arne Paasche Aasen - Oppstartsmøte",
+       "FileFormatId": "RA-PDF",
+       "Id": 790828,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260224 Plassering Alternativ3 Arne Paasche Aasen illustrasjon",
+       "FileFormatId": "JPEG",
+       "Id": 790829,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 468373,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-28T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 33461,
+    "Title": "Søknad om plassering av byste - Arne Paasche Aasen"
+   },
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Søknad om plassering av byste - Arne Paasche Aasen",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8004,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1263,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-26T00:00:00",
+    "DocumentNumber": 6,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging - saker behandlet i hovedutvalg oppvekst og kultur 2.halvår 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 781085,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging 2025 HOK - 2",
+       "FileFormatId": "RA-PDF",
+       "Id": 790414,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 464646,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-28T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 29742,
+    "Title": "Vedtaksoppfølging - saker behandlet i hovedutvalg oppvekst og kultur 2.halvår 2025"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Vedtaksoppfølging - saker behandlet i hovedutvalg oppvekst og kultur 2.halvår 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7973,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-16T00:00:00",
+    "DocumentNumber": 20,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat fra møte i SU_SMU 10_02_26",
+       "FileFormatId": "RA-PDF",
+       "Id": 762766,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Inkluderende skolefelleskap_ÅRSHJUL_Egge barneskole 2025-26",
+       "FileFormatId": "RA-PDF",
+       "Id": 763111,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 452080,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-19T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Tone Stein m.fl.",
+    "Senders": [],
+    "SequenceNumber": 17187,
+    "Title": "Referat fra møte i SU / SMU ved Egge barneskole 10.02.2026"
+   },
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Referat fra møte i SU / SMU ved Egge barneskole 10.02.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7963,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-12T00:00:00",
+    "DocumentNumber": 9,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "02 2026 Referat møte  SU",
+       "FileFormatId": "RA-PDF",
+       "Id": 773627,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 458953,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-16T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "ANJA LÆGRAN m.fl.",
+    "Senders": [],
+    "SequenceNumber": 24053,
+    "Title": "Referat møte SU 26.02.2026 - Mære barnehage"
+   },
+   "SequenceNumber": 15,
+   "SortOrder": 1,
+   "Title": "Referat møte SU 26.02.2026 - Mære barnehage",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8026,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-09T00:00:00",
+    "DocumentNumber": 16,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat fra SU-møte 11.03.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 785021,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 467051,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-13T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Møtedeltakere SU",
+    "Senders": [],
+    "SequenceNumber": 32144,
+    "Title": "Referat fra SU-møte i Egge barnehage 11.03.2026"
+   },
+   "SequenceNumber": 16,
+   "SortOrder": 1,
+   "Title": "Referat fra SU-møte i Egge barnehage 11.03.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8015,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-07T00:00:00",
+    "DocumentNumber": 53,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat fra samarbeidsutvalgsmøtet 26.03.2026 - Malmen barnehage",
+       "FileFormatId": "RA-PDF",
+       "Id": 783409,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 466050,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-10T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Tone Inger Lindstrøm m.fl.",
+    "Senders": [],
+    "SequenceNumber": 31146,
+    "Title": "Referat fra samarbeidsutvalgsmøtet 26.03.2026 - Malmen barnehage"
+   },
+   "SequenceNumber": 17,
+   "SortOrder": 1,
+   "Title": "Referat fra samarbeidsutvalgsmøtet 26.03.2026 - Malmen barnehage",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 7987,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-20T00:00:00",
+    "DocumentNumber": 7,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat SU-møte Lø skole - Mars",
+       "FileFormatId": "RA-PDF",
+       "Id": 778827,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 462992,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-20T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Foresatte m.fl.",
+    "Senders": [],
+    "SequenceNumber": 28089,
+    "Title": "SU - referat 05.03.26 - Lø skole"
+   },
+   "SequenceNumber": 18,
+   "SortOrder": 1,
+   "Title": "SU - referat 05.03.26 - Lø skole",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8073,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-18T00:00:00",
+    "DocumentNumber": 7,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat SU møte Malm skole 17.03.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 777483,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 462108,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-23T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "NINA BARTNES SKRATTALSRUD m.fl.",
+    "Senders": [],
+    "SequenceNumber": 27205,
+    "Title": "Referat SU møte Malm skole 17.03.2026"
+   },
+   "SequenceNumber": 19,
+   "SortOrder": 1,
+   "Title": "Referat SU møte Malm skole 17.03.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8012,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-27T00:00:00",
+    "DocumentNumber": 14,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "SU-referat mars - Mære skole - 26.03.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 781741,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vi er heldig på skolene som har FAU.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 781742,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Møtereferat SU-møte - mars 2026.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 781744,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 465050,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-07T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Foresatte m.fl.",
+    "Senders": [],
+    "SequenceNumber": 30146,
+    "Title": "SU-referat mars - Mære skole - 26.03.2026"
+   },
+   "SequenceNumber": 20,
+   "SortOrder": 1,
+   "Title": "SU-referat mars - Mære skole - 26.03.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8108,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-23T00:00:00",
+    "DocumentNumber": 6,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat SU møte Folla skole 09.04.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 784961,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 467011,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-29T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "TRINE SOLHEIM m.fl.",
+    "Senders": [],
+    "SequenceNumber": 32104,
+    "Title": "Referat SU møte Folla skole 09.04.2026"
+   },
+   "SequenceNumber": 21,
+   "SortOrder": 1,
+   "Title": "Referat SU møte Folla skole 09.04.2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8037,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-15T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "SU referat, April 2526",
+       "FileFormatId": "RA-PDF",
+       "Id": 786830,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 468163,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-15T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Foresatte m.fl.",
+    "Senders": [],
+    "SequenceNumber": 33252,
+    "Title": "Referat fra SU møte 15.04.26 - Henning skole"
+   },
+   "SequenceNumber": 22,
+   "SortOrder": 1,
+   "Title": "Referat fra SU møte 15.04.26 - Henning skole",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8058,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-05-12T14:15:00+02:00",
+    "Id": 1263,
+    "MeetingDocuments": [],
+    "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+    "MeetingNumber": 3,
+    "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+    "StartDate": "2026-05-12T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1263,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Fordeling av tilskudd til skolene 17. mai 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 788912,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 469561,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-05T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "FAU-Byafossen skole m.fl.",
+    "Senders": [],
+    "SequenceNumber": 34648,
+    "Title": "Fordeling av tilskudd til skolene 17. mai 2026"
+   },
+   "SequenceNumber": 23,
+   "SortOrder": 1,
+   "Title": "Fordeling av tilskudd til skolene 17. mai 2026",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 4,
+   "Name": "Hovedutvalg oppvekst og kultur",
+   "ShortCode": "HOK"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 4,
+  "EndDate": "2026-05-12T14:15:00+02:00",
+  "Id": 1263,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5251,
+    "IsRestricted": false,
+    "MeetingId": 1263,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5254,
+    "IsRestricted": false,
+    "MeetingId": 1263,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+  "MeetingNumber": 3,
+  "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+  "StartDate": "2026-05-12T09:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1263,
+  "MO_ROM": "Fredrikkesalen fra kl.12.00",
+  "MO_SLUTT": "2026-05-12T14:15:00",
+  "MO_START": "2026-05-12T09:00:00",
+  "MO_STED": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+  "Type": 4,
+  "UT_ID": 4,
+  "UT_NAVN": "Hovedutvalg oppvekst og kultur"
+ }
+}

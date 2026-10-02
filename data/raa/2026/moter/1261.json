@@ -1,0 +1,1561 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8074,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 9,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 8075,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-05-12T14:15:00+02:00",
+      "Id": 1263,
+      "MeetingDocuments": [],
+      "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1263,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 8,
+     "SortOrder": 2,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8077,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 38,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8078,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 19,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8076,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-08T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - tertialrapport første tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 790087,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinker kommune - tertialrapport første tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 796496,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjerbygg KF Tertialrapport 1 - 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 796500,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - låneportefølje - rapport første tertial 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 802506,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470215,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-08T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35298,
+    "Title": "Steinkjer kommune - tertialrapport første tertial 2026"
+   },
+   "SequenceNumber": 20,
+   "SortOrder": 3,
+   "Title": "Steinkjer kommune - tertialrapport første tertial 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8068,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 8,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 8069,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-05-12T14:15:00+02:00",
+      "Id": 1263,
+      "MeetingDocuments": [],
+      "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1263,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 7,
+     "SortOrder": 2,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8071,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 40,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8072,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 18,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8070,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-26T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 790002,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rebudsjettering fra 2025 til 2026 - 240426",
+       "FileFormatId": "RA-PDF",
+       "Id": 790910,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470171,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35254,
+    "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025"
+   },
+   "SequenceNumber": 21,
+   "SortOrder": 3,
+   "Title": "Steinkjer kommune - investeringsbudsjett 2026 - rebudsjettering fra 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8063,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-05-12T11:00:00+02:00",
+      "Id": 1262,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1262,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 7,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 8064,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-05-12T14:15:00+02:00",
+      "Id": 1263,
+      "MeetingDocuments": [],
+      "MeetingLocation": "9.00:Steinkjer ungdomsskole/Egge ungdomsskole/12.00:Steinkjer rådhus.",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Fredrikkesalen fra kl.12.00",
+      "StartDate": "2026-05-12T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1263,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 6,
+     "SortOrder": 2,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8066,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-05-13T15:00:00+02:00",
+      "Id": 1264,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-05-13T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1264,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 39,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8067,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-05-20T22:30:00+02:00",
+      "Id": 1266,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 3,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-05-20T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1266,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 17,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8065,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-25T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 789976,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsregnskap Steinkjer kommune 2025 - kommunekassen 230226",
+       "FileFormatId": "RA-PDF",
+       "Id": 789977,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Årsregnskap Steinkjer kommune 2025 - konsolidert 230226",
+       "FileFormatId": "RA-PDF",
+       "Id": 789978,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - Årsberetning 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 789979,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Revisjonsberetning 2025 Steinkjer konsolidert - signert 07.04.2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 789980,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Låneportefølje Steinkjer kommune - Årsrapport 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 790378,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kontrollutvalgets uttalelse 2025 Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 790872,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 470154,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 35237,
+    "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025"
+   },
+   "SequenceNumber": 22,
+   "SortOrder": 3,
+   "Title": "Steinkjer kommune - årsregnskap og årsberetning 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8006,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-26T00:00:00",
+    "DocumentNumber": 8,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging - saker behandlet i hovedutvalg plan, næring og miljø 2.halvår 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 781087,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtaksoppfølging 2025 HPNM.doc",
+       "FileFormatId": "RA-PDF",
+       "Id": 790416,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 464648,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 29744,
+    "Title": "Vedtaksoppfølging - saker behandlet i hovedutvalg plan, næring og miljø 2.halvår 2025"
+   },
+   "SequenceNumber": 23,
+   "SortOrder": 1,
+   "Title": "Vedtaksoppfølging - saker behandlet i hovedutvalg plan, næring og miljø 2.halvår 2025",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8148,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-06-09T14:00:00+02:00",
+      "Id": 1269,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-09T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1269,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 34,
+     "SortOrder": 2,
+     "Title": "Ny renovasjonsforskrift for Snåsa og Steinkjer kommuner",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8155,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-06-17T23:30:00+02:00",
+      "Id": 1273,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Weidemannsalen.",
+      "StartDate": "2026-06-17T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1273,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 40,
+     "SortOrder": 3,
+     "Title": "Ny renovasjonsforskrift for Snåsa og Steinkjer kommuner",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8047,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-26T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Ny renovasjonsforskrift for Steinkjer og Snåsa",
+       "FileFormatId": "RA-PDF",
+       "Id": 788564,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forskrift om avfall - 2025",
+       "FileFormatId": "RA-PDF",
+       "Id": 788344,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Renovasjonsteknisk plan",
+       "FileFormatId": "RA-PDF",
+       "Id": 788565,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Felles renovasjonsforskrift Snåsa - Steinkjer - Spørsmål og svar HPNM 11.5.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 803833,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 469197,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-12T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 34284,
+    "Title": "Ny renovasjonsforskrift for Snåsa og Steinkjer kommuner"
+   },
+   "SequenceNumber": 24,
+   "SortOrder": 1,
+   "Title": "Ny renovasjonsforskrift for Snåsa og Steinkjer kommuner",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7696,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-27T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Klage på avslag på søknad om tilleggsareal fra landbrukseiendommen gnr/bnr 195/37 til boligeiendommen gnr/bnr 195/280 - Jordlovsbehandling",
+       "FileFormatId": "RA-PDF",
+       "Id": 742346,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rekvisisjon av oppmålingsforretning",
+       "FileFormatId": "RA-PDF",
+       "Id": 742347,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kart",
+       "FileFormatId": "RA-PDF",
+       "Id": 742348,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "skann ketver2 2025-10-27-13-22-31.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 742350,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Svar på søknad om tilleggsareal fra landbrukseiendommen gnr/bnr 195/37 til boligeiendommen gnr/bnr 195/280 - Jordlovsbehandling",
+       "FileFormatId": "RA-PDF",
+       "Id": 742351,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Klage",
+       "FileFormatId": "RA-PDF",
+       "Id": 742352,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 436403,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 1533,
+    "Title": "Klage på avslag på søknad om tilleggsareal fra landbrukseiendommen gnr/bnr 195/37 til boligeiendommen gnr/bnr 195/280 - Jordlovsbehandling"
+   },
+   "SequenceNumber": 25,
+   "SortOrder": 1,
+   "Title": "Klage på avslag på søknad om tilleggsareal fra landbrukseiendommen gnr/bnr 195/37 til boligeiendommen gnr/bnr 195/280 - Jordlovsbehandling",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8132,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-04T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad Tindved kulturhage AS - utvikling av kreative næringer i Steinkjer",
+       "FileFormatId": "RA-PDF",
+       "Id": 797710,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026-0006 Tindved Kulturhage_innstilling",
+       "FileFormatId": "RA-PDF",
+       "Id": 798240,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026-0006 Tindved Kulturhage_søknad",
+       "FileFormatId": "RA-PDF",
+       "Id": 798246,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Intensjonsavtaler Vizlab-prosjekt",
+       "FileFormatId": "RA-PDF",
+       "Id": 798251,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Orientering Vizlab for Steinkjer kommune v1",
+       "FileFormatId": "RA-PDF",
+       "Id": 798256,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll FOR-2[47]",
+       "FileFormatId": "RA-PDF",
+       "Id": 798261,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad hovedutvalg fylket RUP midler",
+       "FileFormatId": "RA-PDF",
+       "Id": 798266,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vaskeriet arena - tilpasninger i forbindelse med utvidelse blackbox.[92]",
+       "FileFormatId": "RA-PDF",
+       "Id": 798271,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedtak hovedutvalg fylket",
+       "FileFormatId": "RA-PDF",
+       "Id": 798276,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 476380,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-04T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 41461,
+    "Title": "Søknad Tindved kulturhage AS - utvikling av kreative næringer i Steinkjer"
+   },
+   "SequenceNumber": 26,
+   "SortOrder": 1,
+   "Title": "Søknad Tindved kulturhage AS - utvikling av kreative næringer i Steinkjer",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8052,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 6,
+   "SortOrder": 1,
+   "Title": "Midlertidig skiltvedtak – Parkeringsforbud i forbindelse med gatefeiing",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8092,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-05-11T13:45:00+02:00",
+    "Id": 1261,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+    "MeetingNumber": 3,
+    "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+    "StartDate": "2026-05-11T08:45:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1261,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-24T00:00:00",
+    "DocumentNumber": 10,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rammetillatelse for etablering og oppføring av biogassanlegg på Malm industripark - Sjøvegen 6 - gnr/bnr 709/17 og 709/219",
+       "FileFormatId": "RA-PDF",
+       "Id": 790457,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 470416,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-04-27T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "LINQ PROSJEKT AS",
+    "Senders": [],
+    "SequenceNumber": 35499,
+    "Title": "Rammetillatelse for etablering og oppføring av biogassanlegg på Malm industripark - Sjøvegen 6 - gnr/bnr 709/17 og 709/219"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Rammetillatelse for etablering og oppføring av biogassanlegg på Malm industripark - Sjøvegen 6 - gnr/bnr 709/17 og 709/219",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 34,
+   "Name": "Hovedutvalg plan næring og miljø",
+   "ShortCode": "HPNM"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 34,
+  "EndDate": "2026-05-11T13:45:00+02:00",
+  "Id": 1261,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5226,
+    "IsRestricted": false,
+    "MeetingId": 1261,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Byafossen/Nortrafo/Steinkjer rådhus",
+  "MeetingNumber": 3,
+  "MeetingRoom": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+  "StartDate": "2026-05-11T08:45:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1261,
+  "MO_ROM": "08.45 Byafossen, 10.00 Nortrafo, 12.00 Fredrikkesalen",
+  "MO_SLUTT": "2026-05-11T13:45:00",
+  "MO_START": "2026-05-11T08:45:00",
+  "MO_STED": "Byafossen/Nortrafo/Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 34,
+  "UT_NAVN": "Hovedutvalg plan næring og miljø"
+ }
+}

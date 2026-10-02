@@ -1,0 +1,389 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": "Unntatt offentlighet",
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": "Unntatt offentlighet",
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 12,
+      "Name": "Klagenemnda",
+      "ShortCode": "KN"
+     },
+     "Id": 7650,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 12,
+      "EndDate": "2026-02-12T14:30:00+01:00",
+      "Id": 1336,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-02-12T14:15:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1336,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": true,
+     "Pursuant": "Offl. § 13, jf. Fvl. § 13 (1) nr. 1",
+     "RegistryEntry": null,
+     "SequenceNumber": 1,
+     "SortOrder": 1,
+     "Title": "Klage på avslag - Parkeringstillatelse for forflytningshemmede",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 12,
+    "Name": "Klagenemnda",
+    "ShortCode": "KN"
+   },
+   "Id": 7841,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 12,
+    "EndDate": "2026-03-05T14:45:00+01:00",
+    "Id": 1340,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T14:15:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1340,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": true,
+   "Pursuant": "Offl. § 13, jf. Fvl. § 13 (1) nr. 1",
+   "RegistryEntry": {
+    "AccessCode": {
+     "Description": "Unntatt offentlighet",
+     "Id": "U"
+    },
+    "AccessCodeId": "U",
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-02-15T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 431346,
+    "IsPublished": true,
+    "Pursuant": "Offl. § 13, jf. Fvl. § 13 (1) nr. 1",
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2026-02-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 75888,
+    "Title": "Klage på avslag - Parkeringstillatelse for forflytningshemmede"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 2,
+   "Title": "Klage på avslag - Parkeringstillatelse for forflytningshemmede",
+   "Year": 2026
+  },
+  {
+   "AccessCode": "Unntatt offentlighet",
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": "Unntatt offentlighet",
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 12,
+      "Name": "Klagenemnda",
+      "ShortCode": "KN"
+     },
+     "Id": 7651,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 12,
+      "EndDate": "2026-02-12T14:30:00+01:00",
+      "Id": 1336,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 1,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-02-12T14:15:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1336,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": true,
+     "Pursuant": "Offl. § 13, jf. Fvl. § 13 (1) nr. 1",
+     "RegistryEntry": null,
+     "SequenceNumber": 2,
+     "SortOrder": 1,
+     "Title": "Klage på avslag - parkeringstillatelse for forflytningshemmede",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 12,
+    "Name": "Klagenemnda",
+    "ShortCode": "KN"
+   },
+   "Id": 7842,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 12,
+    "EndDate": "2026-03-05T14:45:00+01:00",
+    "Id": 1340,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-05T14:15:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1340,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": true,
+   "Pursuant": "Offl. § 13, jf. Fvl. § 13 (1) nr. 1",
+   "RegistryEntry": {
+    "AccessCode": {
+     "Description": "Unntatt offentlighet",
+     "Id": "U"
+    },
+    "AccessCodeId": "U",
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-02-19T00:00:00",
+    "DocumentNumber": 5,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 431699,
+    "IsPublished": true,
+    "Pursuant": "Offl. § 13, jf. Fvl. § 13 (1) nr. 1",
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2026-02-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 76240,
+    "Title": "Klage på avslag - parkeringstillatelse for forflytningshemmede"
+   },
+   "SequenceNumber": 4,
+   "SortOrder": 3,
+   "Title": "Klage på avslag - parkeringstillatelse for forflytningshemmede",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 12,
+   "Name": "Klagenemnda",
+   "ShortCode": "KN"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 12,
+  "EndDate": "2026-03-05T14:45:00+01:00",
+  "Id": 1340,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5082,
+    "IsRestricted": false,
+    "MeetingId": 1340,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 2,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-03-05T14:15:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1340,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-03-05T14:45:00",
+  "MO_START": "2026-03-05T14:15:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 12,
+  "UT_NAVN": "Klagenemnda"
+ }
+}

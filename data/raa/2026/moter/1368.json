@@ -1,0 +1,211 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8490,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-09-29T19:00:00+02:00",
+    "Id": 1368,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg. Rådhuset",
+    "StartDate": "2026-09-29T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1368,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 23,
+   "SortOrder": 1,
+   "Title": "Velkommen til nye medlemmer",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8491,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-09-29T19:00:00+02:00",
+    "Id": 1368,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg. Rådhuset",
+    "StartDate": "2026-09-29T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1368,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 24,
+   "SortOrder": 1,
+   "Title": "Informasjon om ungdomsrådet",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8492,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-09-29T19:00:00+02:00",
+    "Id": 1368,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg. Rådhuset",
+    "StartDate": "2026-09-29T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1368,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 25,
+   "SortOrder": 1,
+   "Title": "Valg av leder og nestleder",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 8493,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-09-29T19:00:00+02:00",
+    "Id": 1368,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 9,
+    "MeetingRoom": "Sigrid Toresdatter, 2. etg. Rådhuset",
+    "StartDate": "2026-09-29T17:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1368,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 26,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 36,
+   "Name": "Ungdomsrådet",
+   "ShortCode": "UNGRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 36,
+  "EndDate": "2026-09-29T19:00:00+02:00",
+  "Id": 1368,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5477,
+    "IsRestricted": false,
+    "MeetingId": 1368,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 9,
+  "MeetingRoom": "Sigrid Toresdatter, 2. etg. Rådhuset",
+  "StartDate": "2026-09-29T17:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1368,
+  "MO_ROM": "Sigrid Toresdatter, 2. etg. Rådhuset",
+  "MO_SLUTT": "2026-09-29T19:00:00",
+  "MO_START": "2026-09-29T17:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 36,
+  "UT_NAVN": "Ungdomsrådet"
+ }
+}

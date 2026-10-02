@@ -1,0 +1,323 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8033,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-06-11T17:15:00+02:00",
+      "Id": 1272,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 7,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-11T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1272,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 65,
+     "SortOrder": 2,
+     "Title": "Opprettelse av komite til TV-aksjonen 2026 - 2028",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 28,
+    "Name": "Forretningsutvalget",
+    "ShortCode": "FOR"
+   },
+   "Id": 8032,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 28,
+    "EndDate": "2026-06-04T15:15:00+02:00",
+    "Id": 1358,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-04T14:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1358,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-04-20T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Opprettelse av komite til TV-aksjonen 2026 - 2028",
+       "FileFormatId": "RA-PDF",
+       "Id": 785981,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Anmodningsbrev Steinkjer 2025.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 785980,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Anmodningsbrev 1",
+       "FileFormatId": "RA-PDF",
+       "Id": 785982,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 467609,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-25T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 32700,
+    "Title": "Opprettelse av komite til TV-aksjonen 2026 - 2028"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Opprettelse av komite til TV-aksjonen 2026 - 2028",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 28,
+    "Name": "Forretningsutvalget",
+    "ShortCode": "FOR"
+   },
+   "Id": 8286,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 28,
+    "EndDate": "2026-06-04T15:15:00+02:00",
+    "Id": 1358,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-04T14:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1358,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-01T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Politisk organisering perioden 2027-2031",
+       "FileFormatId": "RA-PDF",
+       "Id": 809355,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Kommunestyret 14.12.22 - Politisk organisering valgperioden 2023-2027",
+       "FileFormatId": "RA-PDF",
+       "Id": 809397,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 484368,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-02T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 49436,
+    "Title": "Politisk organisering perioden 2027-2031"
+   },
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Politisk organisering perioden 2027-2031",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 28,
+    "Name": "Forretningsutvalget",
+    "ShortCode": "FOR"
+   },
+   "Id": 8288,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 28,
+    "EndDate": "2026-06-04T15:15:00+02:00",
+    "Id": 1358,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Teams",
+    "MeetingNumber": 4,
+    "MeetingRoom": null,
+    "StartDate": "2026-06-04T14:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1358,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 9,
+   "SortOrder": 1,
+   "Title": "Suppleringsvalg til arbeidsutvalget for Vebjørn Gorseth (AP)",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 28,
+   "Name": "Forretningsutvalget",
+   "ShortCode": "FOR"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 28,
+  "EndDate": "2026-06-04T15:15:00+02:00",
+  "Id": 1358,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5332,
+    "IsRestricted": false,
+    "MeetingId": 1358,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5335,
+    "IsRestricted": false,
+    "MeetingId": 1358,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Teams",
+  "MeetingNumber": 4,
+  "MeetingRoom": null,
+  "StartDate": "2026-06-04T14:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1358,
+  "MO_ROM": null,
+  "MO_SLUTT": "2026-06-04T15:15:00",
+  "MO_START": "2026-06-04T14:30:00",
+  "MO_STED": "Teams",
+  "Type": 4,
+  "UT_ID": 28,
+  "UT_NAVN": "Forretningsutvalget"
+ }
+}

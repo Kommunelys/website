@@ -1,0 +1,433 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8419,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-08-24T11:45:00+02:00",
+    "Id": 1280,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-08-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1280,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Orientering: status Innherredsbyen v/Antonios Bruheim Markakis",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8420,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-08-24T11:45:00+02:00",
+    "Id": 1280,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-08-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1280,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Orientering fra Oi",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 29,
+      "Name": "Arbeidsutvalg Innherred regionråd",
+      "ShortCode": "AUINR"
+     },
+     "Id": 8532,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 29,
+      "EndDate": "2026-09-29T13:15:00+02:00",
+      "Id": 1287,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Teams",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Teams",
+      "StartDate": "2026-09-29T13:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1287,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 17,
+     "SortOrder": 2,
+     "Title": "Høring av tilbudsstruktur i videregående opplæring i Trøndelag fram mot 2040",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8329,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-08-24T11:45:00+02:00",
+    "Id": 1280,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-08-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1280,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-09-24T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høring av tilbudsstruktur i videregående opplæring i Trøndelag fram mot 2040",
+       "FileFormatId": "RA-PDF",
+       "Id": 815189,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsbrev - Høring av tilbudsstruktur i videregående opplæring i Trøndelag fram mot 2040.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 833133,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Felles uttalelse fra rektorene på Innherred.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 833132,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 488270,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-09-24T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 53330,
+    "Title": "Høring av tilbudsstruktur i videregående opplæring i Trøndelag fram mot 2040"
+   },
+   "SequenceNumber": 16,
+   "SortOrder": 1,
+   "Title": "Høring av tilbudsstruktur i videregående opplæring i Trøndelag fram mot 2040",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8348,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-08-24T11:45:00+02:00",
+    "Id": 1280,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-08-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1280,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-24T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om å omprioritere midler til utvikling av regionale kompetansefora",
+       "FileFormatId": "RA-PDF",
+       "Id": 821720,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 493708,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-30T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Trøndelag fylkeskommune",
+    "Senders": [],
+    "SequenceNumber": 58760,
+    "Title": "Søknad om å omprioritere midler til utvikling av regionale kompetansefora"
+   },
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Søknad om å omprioritere midler til utvikling av regionale kompetansefora",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 29,
+    "Name": "Arbeidsutvalg Innherred regionråd",
+    "ShortCode": "AUINR"
+   },
+   "Id": 8349,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 29,
+    "EndDate": "2026-08-24T11:45:00+02:00",
+    "Id": 1280,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-08-24T08:30:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1280,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-25T00:00:00",
+    "DocumentNumber": 2,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Dokument 202443843-8 Svar på søknad fra Steinkjer kommune om å omprioritere midler til utvikling av regionale k....pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 822677,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "5775625_1_1.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 822678,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 494507,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-25T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Trøndelag Fylkeskommune",
+    "Senders": [],
+    "SequenceNumber": 59559,
+    "Title": "Svar på søknad fra Innherred regionråd om å omprioritere midler til utvikling av regionale kompetansefora"
+   },
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Svar på søknad fra Innherred regionråd om å omprioritere midler til utvikling av regionale kompetansefora",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 29,
+   "Name": "Arbeidsutvalg Innherred regionråd",
+   "ShortCode": "AUINR"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 29,
+  "EndDate": "2026-08-24T11:45:00+02:00",
+  "Id": 1280,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5428,
+    "IsRestricted": false,
+    "MeetingId": 1280,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 5,
+  "MeetingRoom": "Olve",
+  "StartDate": "2026-08-24T08:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1280,
+  "MO_ROM": "Olve",
+  "MO_SLUTT": "2026-08-24T11:45:00",
+  "MO_START": "2026-08-24T08:30:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 29,
+  "UT_NAVN": "Arbeidsutvalg Innherred regionråd"
+ }
+}

@@ -1,0 +1,1135 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8410,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Kommunedirektøren orienterer",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 7773,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 5,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Forskrift om adgang til jakt, minsteareal for jakt på elg, hjort og rådyr samt fellingsavgift for elg og hjort",
+       "FileFormatId": "RA-PDF",
+       "Id": 747743,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsuttalelse 2025_7740-74892_2025_LINASN1.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 833067,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringssvar - Høring av forslag til forskrift om adgang til jakt, minsteareal for jakt på elg, hjort og rådyr s....pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 833068,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 440272,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-18T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 5395,
+    "Title": "Forskrift om adgang til jakt, minsteareal for jakt på elg, hjort og rådyr samt fellingsavgift for elg og hjort"
+   },
+   "SequenceNumber": 37,
+   "SortOrder": 1,
+   "Title": "Forskrift om adgang til jakt, minsteareal for jakt på elg, hjort og rådyr samt fellingsavgift for elg og hjort",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8371,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-13T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsforslag - forskrift om bruk av restlysforsterkende og termiske siktemidler til bruk på jakt på hjort i Steinkjer kommune, Trøndelag",
+       "FileFormatId": "RA-PDF",
+       "Id": 829383,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Høringsforslag til forskrift om bruk av restlysforsterkende og termiske siktemidler til bruk på jakt på hjort i Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 830569,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kommunale målsettinger hjortevilt",
+       "FileFormatId": "RA-PDF",
+       "Id": 830181,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vurderinger av bestandsutvikling og skader",
+       "FileFormatId": "RA-PDF",
+       "Id": 832630,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 498561,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-18T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 63600,
+    "Title": "Høringsforslag - forskrift om bruk av restlysforsterkende og termiske siktemidler til bruk på jakt på hjort i Steinkjer kommune, Trøndelag"
+   },
+   "SequenceNumber": 38,
+   "SortOrder": 1,
+   "Title": "Høringsforslag - forskrift om bruk av restlysforsterkende og termiske siktemidler til bruk på jakt på hjort i Steinkjer kommune, Trøndelag",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8312,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv på fast eiendom - Gnr/Bnr 31/1 - Rune Kallmyr og Hilde Kristin Risholt",
+       "FileFormatId": "RA-PDF",
+       "Id": 813564,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kjøpekontrakt",
+       "FileFormatId": "RA-PDF",
+       "Id": 813566,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av fast eiendom - 31.1 - Risholt - sladdet",
+       "FileFormatId": "RA-PDF",
+       "Id": 833666,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av fast eiendom - 31.1 - Kallmyr - sladdet",
+       "FileFormatId": "RA-PDF",
+       "Id": 833667,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 487203,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-18T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 52265,
+    "Title": "Søknad om konsesjon på erverv på fast eiendom - Gnr/Bnr 31/1 - Rune Kallmyr og Hilde Kristin Risholt"
+   },
+   "SequenceNumber": 39,
+   "SortOrder": 1,
+   "Title": "Søknad om konsesjon på erverv på fast eiendom - Gnr/Bnr 31/1 - Rune Kallmyr og Hilde Kristin Risholt",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8396,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 6,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av gnr/bnr 413/2 - Svend Klefstad",
+       "FileFormatId": "RA-PDF",
+       "Id": 833314,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kjøpekontrakt Landbruk (1).pdf, Signert 05.06.2026 111502.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 833315,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rostadvegen 332 document",
+       "FileFormatId": "RA-PDF",
+       "Id": 833316,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon på erverv av fast eiendom - 413.2 - Klevstad - sladdet",
+       "FileFormatId": "RA-PDF",
+       "Id": 833647,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 501306,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-24T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 66344,
+    "Title": "Søknad om konsesjon på erverv av gnr/bnr 413/2 - Svend Klefstad"
+   },
+   "SequenceNumber": 40,
+   "SortOrder": 1,
+   "Title": "Søknad om konsesjon på erverv av gnr/bnr 413/2 - Svend Klefstad",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8402,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 18,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Klage på vedtak om konsesjon på erverv av 431/4",
+       "FileFormatId": "RA-PDF",
+       "Id": 834000,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon - Turid Sæther Hammerbeck",
+       "FileFormatId": "RA-PDF",
+       "Id": 834001,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om konsesjon - Mikkel Voll Stokkli",
+       "FileFormatId": "RA-PDF",
+       "Id": 834002,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kjøpekontrakt fast eiendom.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834003,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Digital salgsoppgave.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834013,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Konsesjonssak",
+       "FileFormatId": "RA-PDF",
+       "Id": 834011,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Innspill til sak om søknad om konsesjon på erverv av fast eiendom - GnrBnr 4314 - Turid Sæther Hammebeck og Mikkel Voll Stokkli.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834012,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 431/4 - Turid Sæther Hammebeck og Mikkel Voll Stokkli",
+       "FileFormatId": "RA-PDF",
+       "Id": 834004,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Svar på søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 431/4 - Turid Sæther Hammerbeck og Mikkel Voll Stokkli",
+       "FileFormatId": "RA-PDF",
+       "Id": 834005,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260702 - Møtereferat Steinkjer kommune Gangstad 17.6.26.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834006,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Angående klagefrist - Søknad om konsesjon på erverv av fast eiendom - Gnr/Bnr 431/4",
+       "FileFormatId": "RA-PDF",
+       "Id": 834007,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "2026-07-23 Klage over avslag om søknad konsesjopn fra Turid Sæther Hammebeck og Mikkel Voll Stokkli.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834008,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Bilag 1.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834009,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Bilag 2.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 834010,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 501781,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-18T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 66819,
+    "Title": "Klage på vedtak om konsesjon på erverv av 431/4"
+   },
+   "SequenceNumber": 41,
+   "SortOrder": 1,
+   "Title": "Klage på vedtak om konsesjon på erverv av 431/4",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8407,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-09-03T13:30:00+02:00",
+      "Id": 1284,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 10,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-09-03T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1284,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 81,
+     "SortOrder": 2,
+     "Title": "Revidering av vedtekter bruk av næringsfond",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8458,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-09-24T15:15:00+02:00",
+      "Id": 1286,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 11,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-09-24T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1286,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 92,
+     "SortOrder": 4,
+     "Title": "Revidering av vedtekter bruk av næringsfond",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8406,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1281,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 4,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Revidering av vedtekter bruk av næringsfond",
+       "FileFormatId": "RA-PDF",
+       "Id": 834246,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "20260818 Vedtekter kommunalt næringsfond Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 834836,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 501918,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-24T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 66956,
+    "Title": "Revidering av vedtekter bruk av næringsfond"
+   },
+   "SequenceNumber": 42,
+   "SortOrder": 1,
+   "Title": "Revidering av vedtekter bruk av næringsfond",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8339,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1281,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-07-02T00:00:00",
+    "DocumentNumber": 29,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Rammetillatelse - ombygging til hotell - Kongens gate 28 - 192/273",
+       "FileFormatId": "RA-PDF",
+       "Id": 821237,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Fylkeskommunens uttalelse -  Søknad om ombygging til hotell - Kongens gate 28 - 192-273 - Steinkjer kommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 821238,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Anmodning om uttalelse - ombygging til hotell - Kongens gate 28 - Eiendom 192_273.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 821239,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Svar på anmodning om uttalelse - ombygging til hotell - Kongens gate 28 - Eiendom 192_273.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 821240,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Renovasjonsteknisk plan - Steinkjer kommune - 04.04.2024.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 825275,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 493391,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-07-08T00:00:00",
+    "RegistryEntryType": "Utgående brev",
+    "RegistryEntryTypeId": "U",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "KG28 EIENDOM AS",
+    "Senders": [],
+    "SequenceNumber": 58444,
+    "Title": "Rammetillatelse - ombygging til hotell - Kongens gate 28 - 192/273"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Rammetillatelse - ombygging til hotell - Kongens gate 28 - 192/273",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 34,
+    "Name": "Hovedutvalg plan næring og miljø",
+    "ShortCode": "HPNM"
+   },
+   "Id": 8361,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 34,
+    "EndDate": "2026-09-15T15:00:00+02:00",
+    "Id": 1281,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Follafoss/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+    "StartDate": "2026-09-15T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1281,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-07-02T00:00:00",
+    "DocumentNumber": 8,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Stadfestelse av kommunens vedtak etter jordloven - fradeling av tilleggsareal til boligtomt fra .pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 824915,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 495894,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-07-02T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Statsforvalteren I Trøndelag",
+    "Senders": [],
+    "SequenceNumber": 60938,
+    "Title": "Stadfestelse av kommunens vedtak etter jordloven - fradeling av tilleggsareal til boligtomt fra eiendommen 195/37 i Steinkjer"
+   },
+   "SequenceNumber": 12,
+   "SortOrder": 1,
+   "Title": "Stadfestelse av kommunens vedtak etter jordloven - fradeling av tilleggsareal til boligtomt fra eiendommen 195/37 i Steinkjer",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 34,
+   "Name": "Hovedutvalg plan næring og miljø",
+   "ShortCode": "HPNM"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 34,
+  "EndDate": "2026-09-15T15:00:00+02:00",
+  "Id": 1281,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5412,
+    "IsRestricted": false,
+    "MeetingId": 1281,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5415,
+    "IsRestricted": false,
+    "MeetingId": 1281,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Follafoss/Steinkjer rådhus",
+  "MeetingNumber": 5,
+  "MeetingRoom": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+  "StartDate": "2026-09-15T09:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1281,
+  "MO_ROM": "9.00 MM Follacell, 12.00 Fredrikkesalen",
+  "MO_SLUTT": "2026-09-15T15:00:00",
+  "MO_START": "2026-09-15T09:00:00",
+  "MO_STED": "Follafoss/Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 34,
+  "UT_NAVN": "Hovedutvalg plan næring og miljø"
+ }
+}

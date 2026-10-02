@@ -1,0 +1,351 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7698,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-03-17T12:00:00+01:00",
+    "Id": 1325,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-17T10:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1325,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2025-12-18T00:00:00",
+    "DocumentNumber": 9,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Brev fra Steinkjer kommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 738730,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Varsel om offentlig ettersyn - Reguleringsplan (detaljregulering) Malm Industripark.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 738732,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 434083,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2025,
+    "RegistryDate": "2025-12-19T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Steinkjer Kommune - Enhet Plan Og Miljø",
+    "Senders": [],
+    "SequenceNumber": 78619,
+    "Title": "Varsel om offentlig ettersyn - Reguleringsplan (detaljregulering) Malm Industripark"
+   },
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Varsel om offentlig ettersyn - Reguleringsplan (detaljregulering) Malm Industripark",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7913,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-03-17T12:00:00+01:00",
+    "Id": 1325,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-17T10:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1325,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 1,
+   "SortOrder": 1,
+   "Title": "Orientering: Oppfølging av trafikksikkerhetsplanen",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7914,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-03-17T12:00:00+01:00",
+    "Id": 1325,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-17T10:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1325,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 2,
+   "SortOrder": 1,
+   "Title": "Orientering: Busstopp Mære",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7915,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-03-17T12:00:00+01:00",
+    "Id": 1325,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-17T10:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1325,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 3,
+   "SortOrder": 1,
+   "Title": "Orientering: Trafikkmålinger Otto Sverdrupsveg/Ogndalsvegen og Infanterivegen",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7916,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-03-17T12:00:00+01:00",
+    "Id": 1325,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-17T10:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1325,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Orientering: Vintervedlikehold",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 9,
+    "Name": "Trafikksikkerhetsutvalget",
+    "ShortCode": "KTU"
+   },
+   "Id": 7917,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 9,
+    "EndDate": "2026-03-17T12:00:00+01:00",
+    "Id": 1325,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 1,
+    "MeetingRoom": "Fredrikkesalen",
+    "StartDate": "2026-03-17T10:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1325,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Orientering: Prioriteringsliste gatelys",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 9,
+   "Name": "Trafikksikkerhetsutvalget",
+   "ShortCode": "KTU"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 9,
+  "EndDate": "2026-03-17T12:00:00+01:00",
+  "Id": 1325,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5098,
+    "IsRestricted": false,
+    "MeetingId": 1325,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5101,
+    "IsRestricted": false,
+    "MeetingId": 1325,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 1,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-03-17T10:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1325,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-03-17T12:00:00",
+  "MO_START": "2026-03-17T10:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 9,
+  "UT_NAVN": "Trafikksikkerhetsutvalget"
+ }
+}

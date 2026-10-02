@@ -1,0 +1,32 @@
+{
+ "behandlinger": [],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 8,
+   "Name": "Formannskap",
+   "ShortCode": "FS"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 8,
+  "EndDate": "2026-11-26T15:00:00+01:00",
+  "Id": 1303,
+  "MeetingDocuments": [],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 14,
+  "MeetingRoom": "Fredrikkesalen",
+  "StartDate": "2026-11-26T12:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1303,
+  "MO_ROM": "Fredrikkesalen",
+  "MO_SLUTT": "2026-11-26T15:00:00",
+  "MO_START": "2026-11-26T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 8,
+  "UT_NAVN": "Formannskap"
+ }
+}

@@ -1,0 +1,128 @@
+name: Oppdater
+
+# ADR-010: én arbeidsflyt, ikke tre. En commit som Actions dytter med
+# standardtokenet utløser IKKE andre arbeidsflyter, så en kjede av
+# push-utløsere ville stoppet stille etter første jobb.
+
+on:
+  # Tidsplanen er slått av til innhentingen er avklart med kommunen (ADR-007),
+  # og analyse og nettsted er bygget. Fjern kommentartegnene for å slå den på.
+  # schedule:
+  #   # 05:17 UTC på hverdager. Skjevt minutt med vilje: planlagte kjøringer på
+  #   # hel time blir oftere forsinket. Cron i Actions er uansett ikke punktlig,
+  #   # noe som ikke betyr noe her siden protokoller kommer dager etter møtet.
+  #   - cron: "17 5 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      aar:
+        description: "År som skal hentes"
+        required: false
+        default: "2026"
+      alt:
+        description: "Tving full henting (treg, bruk ved førstegangsoppsett)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: oppdater
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  hent:
+    name: Hent og tolk
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer avhengigheter
+        run: |
+          sudo apt-get update && sudo apt-get install -y poppler-utils
+          pip install -r krav.txt
+
+      - name: Hent møter og saker
+        run: |
+          python -m hent.hent_moter "${{ inputs.aar || '2026' }}" \
+            ${{ inputs.alt && '--alt' || '' }}
+
+      - name: Bygg saker og saksgang
+        run: python -m tolk.bygg_saker "${{ inputs.aar || '2026' }}"
+
+      - name: Lagre endringer
+        run: |
+          git config user.name "oppdater-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "Data: oppdatert $(date -I)"
+          git push
+
+  analyser:
+    name: AI-analyse
+    needs: hent
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r krav.txt
+
+      - name: Analyser nye og endrede saker
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m analyser.analyser_saker
+
+      - name: Lagre analyser
+        run: |
+          git config user.name "oppdater-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase
+          git add data/analyse/
+          git diff --staged --quiet || git commit -m "Analyse: oppdatert $(date -I)"
+          git push
+
+  bygg:
+    name: Bygg og publiser
+    needs: analyser
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publiser.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r krav.txt
+
+      # Stopper publisering hvis noe ser galt ut. Se docs/01-arkitektur.md.
+      - name: Kontroller
+        run: python -m tester.kontroller
+
+      - name: Bygg nettsted
+        run: python -m bygg.bygg_nettsted
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: nettsted
+      - id: publiser
+        uses: actions/deploy-pages@v4

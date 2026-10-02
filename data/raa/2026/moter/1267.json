@@ -1,0 +1,1305 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 36,
+      "Name": "Ungdomsrådet",
+      "ShortCode": "UNGRÅ"
+     },
+     "Id": 8215,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 36,
+      "EndDate": "2026-06-02T19:00:00+02:00",
+      "Id": 1331,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Sigrid Toresdatter 2.etasje",
+      "StartDate": "2026-06-02T17:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1331,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 17,
+     "SortOrder": 1,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 18,
+      "Name": "Eldrerådet",
+      "ShortCode": "ELRÅ"
+     },
+     "Id": 8216,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 18,
+      "EndDate": "2026-06-03T14:15:00+02:00",
+      "Id": 1268,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-03T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1268,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 11,
+     "SortOrder": 2,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 34,
+      "Name": "Hovedutvalg plan næring og miljø",
+      "ShortCode": "HPNM"
+     },
+     "Id": 8218,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 34,
+      "EndDate": "2026-06-09T14:00:00+02:00",
+      "Id": 1269,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-09T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1269,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 28,
+     "SortOrder": 4,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8219,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-06-10T11:30:00+02:00",
+      "Id": 1270,
+      "MeetingDocuments": [],
+      "MeetingLocation": "O2-huset/Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Kl.9.00 NAV/ca.kl.9.30 Fredrikkesalen",
+      "StartDate": "2026-06-10T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1270,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 13,
+     "SortOrder": 5,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 8220,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-06-10T14:30:00+02:00",
+      "Id": 1271,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Svedjan/Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Kl 12 Svedjan/kl 13 Fredrikkesalen",
+      "StartDate": "2026-06-10T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1271,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 16,
+     "SortOrder": 6,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8221,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-06-11T17:15:00+02:00",
+      "Id": 1272,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 7,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-11T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1272,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 55,
+     "SortOrder": 7,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8222,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-06-17T23:30:00+02:00",
+      "Id": 1273,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Weidemannsalen.",
+      "StartDate": "2026-06-17T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1273,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 35,
+     "SortOrder": 8,
+     "Title": "Steinkjer kommune - økonomidokument 2027",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8217,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-04T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - økonomidokument 2027",
+       "FileFormatId": "RA-PDF",
+       "Id": 805699,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Økonomidokument 2027 - 270526",
+       "FileFormatId": "RA-PDF",
+       "Id": 807717,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Steinkjer kommune - KOSTRA-analyse 2025 -  03.06.26",
+       "FileFormatId": "RA-PDF",
+       "Id": 810821,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 482210,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-04T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 47285,
+    "Title": "Steinkjer kommune - økonomidokument 2027"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 3,
+   "Title": "Steinkjer kommune - økonomidokument 2027",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 36,
+      "Name": "Ungdomsrådet",
+      "ShortCode": "UNGRÅ"
+     },
+     "Id": 8194,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 36,
+      "EndDate": "2026-06-02T19:00:00+02:00",
+      "Id": 1331,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Sigrid Toresdatter 2.etasje",
+      "StartDate": "2026-06-02T17:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1331,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 19,
+     "SortOrder": 1,
+     "Title": "Malm legekontor",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 18,
+      "Name": "Eldrerådet",
+      "ShortCode": "ELRÅ"
+     },
+     "Id": 8195,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 18,
+      "EndDate": "2026-06-03T14:15:00+02:00",
+      "Id": 1268,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-03T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1268,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 12,
+     "SortOrder": 2,
+     "Title": "Malm legekontor",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 8197,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-06-10T11:30:00+02:00",
+      "Id": 1270,
+      "MeetingDocuments": [],
+      "MeetingLocation": "O2-huset/Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Kl.9.00 NAV/ca.kl.9.30 Fredrikkesalen",
+      "StartDate": "2026-06-10T09:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1270,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 14,
+     "SortOrder": 4,
+     "Title": "Malm legekontor",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 8198,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-06-11T17:15:00+02:00",
+      "Id": 1272,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 7,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-06-11T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1272,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 59,
+     "SortOrder": 5,
+     "Title": "Malm legekontor",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 8199,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-06-17T23:30:00+02:00",
+      "Id": 1273,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Weidemannsalen.",
+      "StartDate": "2026-06-17T18:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1273,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 37,
+     "SortOrder": 6,
+     "Title": "Malm legekontor",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8196,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-23T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Malm legekontor",
+       "FileFormatId": "RA-PDF",
+       "Id": 805517,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Utlysning Malm legekontor",
+       "FileFormatId": "RA-PDF",
+       "Id": 805558,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 482099,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-27T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 47174,
+    "Title": "Malm legekontor"
+   },
+   "SequenceNumber": 12,
+   "SortOrder": 3,
+   "Title": "Malm legekontor",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8283,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 4,
+   "SortOrder": 1,
+   "Title": "Orientere om møte med AtB sammen med ordfører, eldrerådet og ungdomsrådet v/leder",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8284,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "OS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 5,
+   "SortOrder": 1,
+   "Title": "Orientering om dialogforum og valg av to til arbeidsgruppe for inkluderingsarrangement for å samle innvandrere og steinkjerbygg",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 35,
+      "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+      "ShortCode": "RÅFIM"
+     },
+     "Id": 8550,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 35,
+      "EndDate": "2026-10-12T15:00:00+02:00",
+      "Id": 1288,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 6,
+      "MeetingRoom": "Olve",
+      "StartDate": "2026-10-12T12:00:00+02:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1288,
+     "ProtocolPublished": false,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 17,
+     "SortOrder": 2,
+     "Title": "Status for arbeidet med handlingsplanen - fast sak",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8291,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-06-02T00:00:00",
+    "DocumentNumber": 20,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Status for arbeidet med handlingsplanen - fast sak",
+       "FileFormatId": "RA-PDF",
+       "Id": 809917,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Handlingsplan RÅFIM konkretisering 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 809918,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 484734,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-06-02T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 49802,
+    "Title": "Status for arbeidet med handlingsplanen - fast sak"
+   },
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Status for arbeidet med handlingsplanen - fast sak",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 7761,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 14,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8141,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-06T00:00:00",
+    "DocumentNumber": 17,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Brev fra Steinkjer kommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 802121,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Varsel om offentlig ettersyn - Reguleringsplan (detaljregulering) Heggevegen 34.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 802123,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 480111,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-07T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Steinkjer Kommune - Plan Og Miljø",
+    "Senders": [],
+    "SequenceNumber": 45190,
+    "Title": "Varsel om offentlig ettersyn - Reguleringsplan (detaljregulering) Heggevegen 34"
+   },
+   "SequenceNumber": 11,
+   "SortOrder": 1,
+   "Title": "Varsel om offentlig ettersyn - Reguleringsplan (detaljregulering) Heggevegen 34",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8266,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-06T00:00:00",
+    "DocumentNumber": 18,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Brev fra Steinkjer kommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 802557,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Varsel om offentlig ettersyn - Reguleringsendring Sørsia bydel, delområde 4.B1 (Kongens gate 42).pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 802558,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Reguleringsendring detaljregulering Områdeplan Sørsia Bydel 1.B4 - Kongensgate 42 - 1. gangs behandling.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 802559,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 480370,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-08T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Steinkjer Kommune",
+    "Senders": [],
+    "SequenceNumber": 45449,
+    "Title": "Varsel om offentlig ettersyn - Reguleringsendring Sørsia bydel delområde 4.B1 Kongens gate 42"
+   },
+   "SequenceNumber": 12,
+   "SortOrder": 1,
+   "Title": "Varsel om offentlig ettersyn - Reguleringsendring Sørsia bydel delområde 4.B1 Kongens gate 42",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 35,
+    "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+    "ShortCode": "RÅFIM"
+   },
+   "Id": 8272,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 35,
+    "EndDate": "2026-06-03T14:15:00+02:00",
+    "Id": 1267,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 4,
+    "MeetingRoom": "Olve",
+    "StartDate": "2026-06-03T12:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "RS",
+   "MeetingId": 1267,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-05-26T00:00:00",
+    "DocumentNumber": 19,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Brev fra Steinkjer kommune.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807665,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "H",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Planprogram for Kommunedelplan sentrum 2027-2037 - Høring_offentlig ettersyn med frist 21.07.26.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807666,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Planprogram for kommunedelplan sentrum, rev. 19.05.2026.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807667,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedlegg A - Veileder for innspill til kommunedelplan sentrum.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807668,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedlegg B - Kunnskapsgrunnlag og metodebeskrivelse.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807669,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedlegg C - Uregulerte utbyggingsområder for ny vurdering.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807670,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Vedlegg D - Reguleringsplaner i sentrum.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807671,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Saksprotokoll Planprogram Kommunedelplan sentrum 2026-2037 - Utlegging til høring_offentlig ettersyn.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 807672,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 483300,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-05-27T00:00:00",
+    "RegistryEntryType": "Inngående brev",
+    "RegistryEntryTypeId": "I",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": "Steinkjer Kommune",
+    "Senders": [],
+    "SequenceNumber": 48369,
+    "Title": "Planprogram for Kommunedelplan sentrum 2027-2037 - Høring/offentlig ettersyn med frist 21.07.26"
+   },
+   "SequenceNumber": 13,
+   "SortOrder": 1,
+   "Title": "Planprogram for Kommunedelplan sentrum 2027-2037 - Høring/offentlig ettersyn med frist 21.07.26",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 35,
+   "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+   "ShortCode": "RÅFIM"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 35,
+  "EndDate": "2026-06-03T14:15:00+02:00",
+  "Id": 1267,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5316,
+    "IsRestricted": false,
+    "MeetingId": 1267,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5319,
+    "IsRestricted": false,
+    "MeetingId": 1267,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 4,
+  "MeetingRoom": "Olve",
+  "StartDate": "2026-06-03T12:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1267,
+  "MO_ROM": "Olve",
+  "MO_SLUTT": "2026-06-03T14:15:00",
+  "MO_START": "2026-06-03T12:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 35,
+  "UT_NAVN": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold"
+ }
+}

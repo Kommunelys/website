@@ -1,0 +1,32 @@
+{
+ "behandlinger": [],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 29,
+   "Name": "Arbeidsutvalg Innherred regionråd",
+   "ShortCode": "AUINR"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 29,
+  "EndDate": "2026-04-15T12:00:00+02:00",
+  "Id": 1256,
+  "MeetingDocuments": [],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 3,
+  "MeetingRoom": "Olve",
+  "StartDate": "2026-04-15T08:30:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1256,
+  "MO_ROM": "Olve",
+  "MO_SLUTT": "2026-04-15T12:00:00",
+  "MO_START": "2026-04-15T08:30:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 29,
+  "UT_NAVN": "Arbeidsutvalg Innherred regionråd"
+ }
+}

@@ -1,0 +1,820 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 18,
+      "Name": "Eldrerådet",
+      "ShortCode": "ELRÅ"
+     },
+     "Id": 7923,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 18,
+      "EndDate": "2026-03-11T14:30:00+01:00",
+      "Id": 1249,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-11T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1249,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 1,
+     "SortOrder": 1,
+     "Title": "Malm legekontor, alternativanalyse og anbefaling",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 35,
+      "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+      "ShortCode": "RÅFIM"
+     },
+     "Id": 7925,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 35,
+      "EndDate": "2026-03-11T15:00:00+01:00",
+      "Id": 1250,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Olve",
+      "StartDate": "2026-03-11T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1250,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 2,
+     "SortOrder": 3,
+     "Title": "Malm legekontor, alternativanalyse og anbefaling",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 7926,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-03-18T11:30:00+01:00",
+      "Id": 1252,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-18T09:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1252,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 2,
+     "SortOrder": 4,
+     "Title": "Malm legekontor, alternativanalyse og anbefaling",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 7927,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-03-19T16:00:00+01:00",
+      "Id": 1254,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-19T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1254,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 18,
+     "SortOrder": 5,
+     "Title": "Malm legekontor, alternativanalyse og anbefaling",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7928,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-03-25T21:00:00+01:00",
+      "Id": 1255,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-03-25T16:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1255,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 6,
+     "SortOrder": 6,
+     "Title": "Malm legekontor, alternativanalyse og anbefaling",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7924,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-03-10T19:00:00+01:00",
+    "Id": 1329,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Sigrid Toresdatter, 2.etasje",
+    "StartDate": "2026-03-10T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1329,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-04T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Malm legekontor, alternativanalyse og anbefaling",
+       "FileFormatId": "RA-PDF",
+       "Id": 768718,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Malm legekontor alternativanalyse og utredning",
+       "FileFormatId": "RA-PDF",
+       "Id": 769191,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Referat SU 250226",
+       "FileFormatId": "RA-PDF",
+       "Id": 768748,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 455713,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-04T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 20812,
+    "Title": "Malm legekontor, alternativanalyse og anbefaling"
+   },
+   "SequenceNumber": 6,
+   "SortOrder": 2,
+   "Title": "Malm legekontor, alternativanalyse og anbefaling",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 35,
+      "Name": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold",
+      "ShortCode": "RÅFIM"
+     },
+     "Id": 7905,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 35,
+      "EndDate": "2026-03-11T15:00:00+01:00",
+      "Id": 1250,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Olve",
+      "StartDate": "2026-03-11T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1250,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 3,
+     "SortOrder": 3,
+     "Title": "Avvikling av kommunal matutlevering",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 18,
+      "Name": "Eldrerådet",
+      "ShortCode": "ELRÅ"
+     },
+     "Id": 7906,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 18,
+      "EndDate": "2026-03-11T14:30:00+01:00",
+      "Id": 1249,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-11T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1249,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 2,
+     "SortOrder": 4,
+     "Title": "Avvikling av kommunal matutlevering",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 7,
+      "Name": "Hovedutvalg helse og omsorg",
+      "ShortCode": "HHO"
+     },
+     "Id": 7907,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 7,
+      "EndDate": "2026-03-18T11:30:00+01:00",
+      "Id": 1252,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-18T09:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1252,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 3,
+     "SortOrder": 5,
+     "Title": "Avvikling av kommunal matutlevering",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 8,
+      "Name": "Formannskap",
+      "ShortCode": "FS"
+     },
+     "Id": 7921,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 8,
+      "EndDate": "2026-03-19T16:00:00+01:00",
+      "Id": 1254,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 4,
+      "MeetingRoom": "Fredrikkesalen",
+      "StartDate": "2026-03-19T12:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1254,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 22,
+     "SortOrder": 6,
+     "Title": "Avvikling av kommunal matutlevering",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7982,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-03-25T21:00:00+01:00",
+      "Id": 1255,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-03-25T16:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1255,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 13,
+     "SortOrder": 7,
+     "Title": "Avvikling av kommunal matutlevering",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7904,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-03-10T19:00:00+01:00",
+    "Id": 1329,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Sigrid Toresdatter, 2.etasje",
+    "StartDate": "2026-03-10T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1329,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-16T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Avvikling av kommunal matutlevering",
+       "FileFormatId": "RA-PDF",
+       "Id": 762359,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 451850,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-16T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 16959,
+    "Title": "Avvikling av kommunal matutlevering"
+   },
+   "SequenceNumber": 7,
+   "SortOrder": 1,
+   "Title": "Avvikling av kommunal matutlevering",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 4,
+      "Name": "Hovedutvalg oppvekst og kultur",
+      "ShortCode": "HOK"
+     },
+     "Id": 7680,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 4,
+      "EndDate": "2026-03-18T13:00:00+01:00",
+      "Id": 1253,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "kl.09.00: Weidemannsalen/ kl.12.00: Fredrikkesalen",
+      "StartDate": "2026-03-18T09:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1253,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 3,
+     "SortOrder": 2,
+     "Title": "Skolerute 2027-2028, Steinkjer kommune",
+     "Year": 2026
+    },
+    {
+     "AccessCode": null,
+     "AdditionalDmbHandlings": [],
+     "Case": null,
+     "CaseWorker": null,
+     "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+     "Dmb": {
+      "Description": null,
+      "Id": 10,
+      "Name": "Kommunestyre",
+      "ShortCode": "KS"
+     },
+     "Id": 7681,
+     "MatchedFields": null,
+     "Meeting": {
+      "DMB": null,
+      "Database": null,
+      "DmbHandlings": null,
+      "DmbId": 10,
+      "EndDate": "2026-03-25T21:00:00+01:00",
+      "Id": 1255,
+      "MeetingDocuments": [],
+      "MeetingLocation": "Steinkjer rådhus",
+      "MeetingNumber": 2,
+      "MeetingRoom": "Weidemannsalen",
+      "StartDate": "2026-03-25T16:00:00+01:00"
+     },
+     "MeetingCaseTypeId": "PS",
+     "MeetingId": 1255,
+     "ProtocolPublished": true,
+     "ProtocolRestricted": false,
+     "Pursuant": null,
+     "RegistryEntry": null,
+     "SequenceNumber": 7,
+     "SortOrder": 3,
+     "Title": "Skolerute 2027-2028, Steinkjer kommune",
+     "Year": 2026
+    }
+   ],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7679,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-03-10T19:00:00+01:00",
+    "Id": 1329,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Sigrid Toresdatter, 2.etasje",
+    "StartDate": "2026-03-10T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1329,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-03-03T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Skolerute 2027-2028, Steinkjer kommune",
+       "FileFormatId": "RA-PDF",
+       "Id": 740427,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Skolerute tabell 2027-2028, til vedtak",
+       "FileFormatId": "RA-PDF",
+       "Id": 740443,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 435124,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-03-04T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 254,
+    "Title": "Skolerute 2027-2028, Steinkjer kommune"
+   },
+   "SequenceNumber": 8,
+   "SortOrder": 1,
+   "Title": "Skolerute 2027-2028, Steinkjer kommune",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 36,
+    "Name": "Ungdomsrådet",
+    "ShortCode": "UNGRÅ"
+   },
+   "Id": 7970,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 36,
+    "EndDate": "2026-03-10T19:00:00+01:00",
+    "Id": 1329,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer rådhus",
+    "MeetingNumber": 2,
+    "MeetingRoom": "Sigrid Toresdatter, 2.etasje",
+    "StartDate": "2026-03-10T17:00:00+01:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1329,
+   "ProtocolPublished": false,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": null,
+   "SequenceNumber": 9,
+   "SortOrder": 1,
+   "Title": "Eventuelt",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 36,
+   "Name": "Ungdomsrådet",
+   "ShortCode": "UNGRÅ"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 36,
+  "EndDate": "2026-03-10T19:00:00+01:00",
+  "Id": 1329,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5123,
+    "IsRestricted": false,
+    "MeetingId": 1329,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5126,
+    "IsRestricted": false,
+    "MeetingId": 1329,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer rådhus",
+  "MeetingNumber": 2,
+  "MeetingRoom": "Sigrid Toresdatter, 2.etasje",
+  "StartDate": "2026-03-10T17:00:00+01:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1329,
+  "MO_ROM": "Sigrid Toresdatter, 2.etasje",
+  "MO_SLUTT": "2026-03-10T19:00:00",
+  "MO_START": "2026-03-10T17:00:00",
+  "MO_STED": "Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 36,
+  "UT_NAVN": "Ungdomsrådet"
+ }
+}

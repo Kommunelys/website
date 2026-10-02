@@ -1,0 +1,1246 @@
+{
+ "behandlinger": [
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8342,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-09-23T13:05:00+02:00",
+    "Id": 1283,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+    "StartDate": "2026-09-23T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1283,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 15,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tilskudd til frivillige aktivitetssentre 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 822737,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     }
+    ],
+    "Id": 494540,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 59590,
+    "Title": "Tilskudd til frivillige aktivitetssentre 2026"
+   },
+   "SequenceNumber": 20,
+   "SortOrder": 1,
+   "Title": "Tilskudd til frivillige aktivitetssentre 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8364,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-09-23T13:05:00+02:00",
+    "Id": 1283,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+    "StartDate": "2026-09-23T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1283,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 3,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Idrettsstipend - Steinkjer kommune - 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 825946,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Treneruttalelse.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 826628,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Idrettsstipend_Halvar_Haldorsen_Profesjonell.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 826629,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om idrettsstipend - Halvar Rochmann Haldorsen",
+       "FileFormatId": "RA-PDF",
+       "Id": 826630,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 496542,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 61585,
+    "Title": "Idrettsstipend - Steinkjer kommune - 2026"
+   },
+   "SequenceNumber": 21,
+   "SortOrder": 1,
+   "Title": "Idrettsstipend - Steinkjer kommune - 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8366,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-09-23T13:05:00+02:00",
+    "Id": 1283,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+    "StartDate": "2026-09-23T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1283,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-18T00:00:00",
+    "DocumentNumber": 5,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kulturstipend 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 826307,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kulturstipend - Emma Sandseter-Selen",
+       "FileFormatId": "RA-PDF",
+       "Id": 826382,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "CV_-_Emma_Sandseter-Selen.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 826381,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Landsfestivalen_2025.png",
+       "FileFormatId": "RA-PDF",
+       "Id": 826383,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kulturstipend - Ivar Blekastad Haugen",
+       "FileFormatId": "RA-PDF",
+       "Id": 826385,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "IMG_4326.JPG",
+       "FileFormatId": "JPEG",
+       "Id": 826384,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 496759,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 61802,
+    "Title": "Kulturstipend 2026"
+   },
+   "SequenceNumber": 22,
+   "SortOrder": 1,
+   "Title": "Kulturstipend 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8395,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-09-23T13:05:00+02:00",
+    "Id": 1283,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+    "StartDate": "2026-09-23T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1283,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": null,
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-20T00:00:00",
+    "DocumentNumber": 1,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Fellessøknad kultur- og idrettstilskudd del 1 - 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 832994,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - FANUEL RUSSOM ABRAHA",
+       "FileFormatId": "RA-PDF",
+       "Id": 832995,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - BONDEUNGDOMSLAGET I STEINKJER",
+       "FileFormatId": "RA-PDF",
+       "Id": 832996,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om tilskudd til sommertur for Danseklubben Friskus",
+       "FileFormatId": "RA-PDF",
+       "Id": 832997,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "samfunnsutbytte minsoknad p8nk6afxvp06qrh -d egw.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 832998,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - HENNING SKYTTERLAG",
+       "FileFormatId": "RA-PDF",
+       "Id": 832999,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - BYAFOSSEN IDRETTSLAG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833000,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - STEINKJER PØNKFORENING",
+       "FileFormatId": "RA-PDF",
+       "Id": 833001,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - SPARBU HUSFLIDSLAG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833002,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - SPARBU IDRETTSLAG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833003,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - HENNING OG SPARBU FRIVILLIGSENTRAL",
+       "FileFormatId": "RA-PDF",
+       "Id": 833004,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - SUNNAN GRENDEHUS SA",
+       "FileFormatId": "RA-PDF",
+       "Id": 833006,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - SPROVA IDRETTSLAG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833007,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - DIABETESFORBUNDET - STEINKJER OG OMEGN",
+       "FileFormatId": "RA-PDF",
+       "Id": 833008,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - OGNDAL IDRETTSLAG HOVEDLAGET",
+       "FileFormatId": "RA-PDF",
+       "Id": 833009,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Akktiviteter_høstgøy_2025.png",
+       "FileFormatId": "RA-PDF",
+       "Id": 833010,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - HENNING OG SPARBU FRIVILLIGSENTRAL",
+       "FileFormatId": "RA-PDF",
+       "Id": 833011,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tillegg søknad YTE-RKT",
+       "FileFormatId": "RA-PDF",
+       "Id": 833012,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - NÅ TENNES TUSEN JULELYS",
+       "FileFormatId": "RA-PDF",
+       "Id": 833013,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "602387008_1435859858547492_3274046391482969670_n.jpg",
+       "FileFormatId": "JPEG",
+       "Id": 833014,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Tusen-julelys-oppgjør-2025.pdf",
+       "FileFormatId": "RA-PDF",
+       "Id": 833015,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - GJØRAN DYRSTAD FJELLHAUG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833016,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - TRULS WALTER BARNUNG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833017,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - GAMMELLAVIN TEATERLAG",
+       "FileFormatId": "RA-PDF",
+       "Id": 833018,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - MIDT NORGE BEDRIFTSIDRETTSKRETS",
+       "FileFormatId": "RA-PDF",
+       "Id": 833019,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - KRINGLA NATUR & RIDEFELLESSKAP",
+       "FileFormatId": "RA-PDF",
+       "Id": 833020,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad_om_tilskudd_Steinkjer_kommune_–_Gratis_ride.docx",
+       "FileFormatId": "RA-PDF",
+       "Id": 833021,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Søknad om kultur- og idrettstilskudd - BEITSTAD BYGDASENTRAL SA",
+       "FileFormatId": "RA-PDF",
+       "Id": 833022,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "invitasjon_beitstadsommer_26_side_1.png",
+       "FileFormatId": "RA-PDF",
+       "Id": 833023,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "invitasjon_beitstadsommer_26_side_2.png",
+       "FileFormatId": "RA-PDF",
+       "Id": 833024,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Sommerjobb_for_ungdom.jpg",
+       "FileFormatId": "JPEG",
+       "Id": 833025,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 501074,
+    "IsPublished": true,
+    "Pursuant": null,
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-20T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 66113,
+    "Title": "Fellessøknad kultur- og idrettstilskudd del 1 - 2026"
+   },
+   "SequenceNumber": 23,
+   "SortOrder": 1,
+   "Title": "Fellessøknad kultur- og idrettstilskudd del 1 - 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8367,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-09-23T13:05:00+02:00",
+    "Id": 1283,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+    "StartDate": "2026-09-23T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1283,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": "",
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-07-08T00:00:00",
+    "DocumentNumber": 13,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Kulturpris 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 826409,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 496786,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-19T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 61829,
+    "Title": "Kulturpris 2026"
+   },
+   "SequenceNumber": 24,
+   "SortOrder": 1,
+   "Title": "Kulturpris 2026",
+   "Year": 2026
+  },
+  {
+   "AccessCode": null,
+   "AdditionalDmbHandlings": [],
+   "Case": null,
+   "CaseWorker": {
+    "AdministrativeUnit": null,
+    "Id": 0,
+    "Name": null
+   },
+   "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+   "Dmb": {
+    "Description": null,
+    "Id": 4,
+    "Name": "Hovedutvalg oppvekst og kultur",
+    "ShortCode": "HOK"
+   },
+   "Id": 8365,
+   "MatchedFields": null,
+   "Meeting": {
+    "DMB": null,
+    "Database": null,
+    "DmbHandlings": null,
+    "DmbId": 4,
+    "EndDate": "2026-09-23T13:05:00+02:00",
+    "Id": 1283,
+    "MeetingDocuments": [],
+    "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+    "MeetingNumber": 5,
+    "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+    "StartDate": "2026-09-23T09:00:00+02:00"
+   },
+   "MeetingCaseTypeId": "PS",
+   "MeetingId": 1283,
+   "ProtocolPublished": true,
+   "ProtocolRestricted": false,
+   "Pursuant": "",
+   "RegistryEntry": {
+    "AccessCode": null,
+    "AccessCodeId": null,
+    "Case": null,
+    "CaseWorker": null,
+    "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+    "DocumentDate": "2026-08-31T00:00:00",
+    "DocumentNumber": 19,
+    "Documents": [
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": "Frivillighetspris 2026",
+       "FileFormatId": "RA-PDF",
+       "Id": 825977,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": true
+      },
+      "DocumentLinkTypeId": "SF",
+      "IsMainDocument": true
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     },
+     {
+      "DocumentDescription": {
+       "AccessCodeId": null,
+       "DocumentTitle": null,
+       "FileFormatId": null,
+       "Id": 0,
+       "IsPublicVariantAvailable": false,
+       "IsPublished": false
+      },
+      "DocumentLinkTypeId": "V",
+      "IsMainDocument": false
+     }
+    ],
+    "Id": 496568,
+    "IsPublished": true,
+    "Pursuant": "",
+    "Recipients": [],
+    "RegisterYear": 2026,
+    "RegistryDate": "2026-08-31T00:00:00",
+    "RegistryEntryType": "Saksframlegg/innstilling",
+    "RegistryEntryTypeId": "S",
+    "RegistryManagementUnit": null,
+    "SenderRecipient": null,
+    "Senders": [],
+    "SequenceNumber": 61611,
+    "Title": "Frivillighetspris 2026"
+   },
+   "SequenceNumber": 25,
+   "SortOrder": 1,
+   "Title": "Frivillighetspris 2026",
+   "Year": 2026
+  }
+ ],
+ "detaljer": {
+  "DMB": {
+   "Description": null,
+   "Id": 4,
+   "Name": "Hovedutvalg oppvekst og kultur",
+   "ShortCode": "HOK"
+  },
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "DmbHandlings": null,
+  "DmbId": 4,
+  "EndDate": "2026-09-23T13:05:00+02:00",
+  "Id": 1283,
+  "MeetingDocuments": [
+   {
+    "DmbDocumentTypeId": "MI",
+    "Id": 5422,
+    "IsRestricted": false,
+    "MeetingId": 1283,
+    "StatusId": "G",
+    "Title": "Møteinnkalling ",
+    "TitleRestricted": "Møteinnkalling "
+   },
+   {
+    "DmbDocumentTypeId": "MP",
+    "Id": 5425,
+    "IsRestricted": false,
+    "MeetingId": 1283,
+    "StatusId": "G",
+    "Title": "Møteprotokoll ",
+    "TitleRestricted": "Møteprotokoll "
+   }
+  ],
+  "MeetingLocation": "Steinkjer kulturhus/Steinkjer rådhus",
+  "MeetingNumber": 5,
+  "MeetingRoom": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+  "StartDate": "2026-09-23T09:00:00+02:00"
+ },
+ "mote": {
+  "Database": "b069d4f5-192a-4fee-be37-dc006441e271",
+  "MO_ID": 1283,
+  "MO_ROM": "9.00 dialogmøte Elvesalen /12.00  Fredrikkesalen",
+  "MO_SLUTT": "2026-09-23T13:05:00",
+  "MO_START": "2026-09-23T09:00:00",
+  "MO_STED": "Steinkjer kulturhus/Steinkjer rådhus",
+  "Type": 4,
+  "UT_ID": 4,
+  "UT_NAVN": "Hovedutvalg oppvekst og kultur"
+ }
+}

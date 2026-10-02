@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+nettsted/
+# ADR-005: PDF-er lagres aldri i repoet.
+*.pdf
+*.PDF
