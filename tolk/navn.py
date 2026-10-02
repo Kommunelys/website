@@ -15,6 +15,11 @@ import re
 VARIANTER: dict[str, str] = {
     "Tor Andre Eide": "Tor André Eide",
     "Line M Nordkvelle": "Line Mari Nordkvelle",
+    # Oppmøtelisten og navnelistene i voteringene skriver navnet ulikt, i de
+    # samme møtene gjennom hele 2026.
+    "Monika Luktvasslimo": "Monika Skoglund Luktvasslimo",
+    "Enok Moe": "Enok Askil Moe",
+    "Terje Langli": "Terje Bjarte Langli",
 }
 
 # Navnelistene i protokollene bruker koder, forslagsstilleren står med fullt

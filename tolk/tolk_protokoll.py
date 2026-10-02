@@ -57,7 +57,8 @@ OPPMOTE = re.compile(
     re.M,
 )
 
-FUNKSJON_PARTI = re.compile(r"^([A-ZÆØÅ]+)\s*(.*)$")
+# Kolonnen «Repr.» er partiet, eller kommunen i interkommunale utvalg.
+FUNKSJON_PARTI = re.compile(r"^(\S+)\s*(.*)$")
 
 
 def _navneliste(tekst: str | None) -> list[tuple[str, str]]:
@@ -70,32 +71,55 @@ def _navneliste(tekst: str | None) -> list[tuple[str, str]]:
     return ut
 
 
-def les_oppmote(tekst: str) -> list[dict]:
-    """Oppmøtelisten øverst i protokollen.
+def les_oppmoteblokk(tekst: str) -> tuple[list[dict], list[str]]:
+    """Oppmøtelisten, og linjene i den som ikke kunne tolkes.
 
-    Krever -layout: funksjon, parti og «varamedlem for» står i kolonner.
+    Krever -layout: funksjon, repr. og «varamedlem for» står i kolonner.
+    Blokken går fra «Følgende medlemmer møtte» til «Følgende fra
+    administrasjonen»; alle 67 møteprotokoller i 2026 har begge.
     """
-    slutt = tekst.find("Følgende fra administrasjonen")
-    hode = tekst[:slutt] if slutt > 0 else tekst[:4000]
+    start = max(tekst.find("Følgende medlemmer møtte"), 0)
+    slutt = tekst.find("Følgende fra administrasjonen", start)
+    blokk = tekst[start:slutt] if slutt > 0 else tekst[start:start + 4000]
 
-    ut = []
-    for m in OPPMOTE.finditer(hode):
-        navn = normaliser(m.group("navn"))
-        if not navn or navn.lower().startswith("navn"):
+    ut: list[dict] = []
+    ikke_tolket: list[str] = []
+    funksjon_kol = None
+    for linje in blokk.splitlines():
+        if not linje.strip() or linje.startswith("Følgende medlemmer"):
+            continue
+        if linje.lstrip().startswith("Navn"):
+            funksjon_kol = linje.find("Funksjon")
             continue  # tabelloverskriften
-        rest = re.sub(r"\s+", " ", m.group("resten")).strip()
-        fp = FUNKSJON_PARTI.match(rest)
-        parti = fp.group(1) if fp else None
-        vara_for = normaliser(fp.group(2)) if fp and fp.group(2) else None
-        ut.append(
-            {
-                "navn": navn,
+
+        m = OPPMOTE.match(linje)
+        if m:
+            rest = re.sub(r"\s+", " ", m.group("resten")).strip()
+            fp = FUNKSJON_PARTI.match(rest)
+            ut.append({
+                "navn": normaliser(m.group("navn")),
                 "funksjon": m.group("funksjon"),
-                "parti": parti,
-                "vara_for": vara_for or None,
-            }
-        )
-    return ut
+                "repr": fp.group(1) if fp else None,
+                "vara_for": (normaliser(fp.group(2)) if fp and fp.group(2)
+                             else None),
+            })
+        elif ut:
+            # Et langt navn brutt over to linjer: «Unn-Elisabeth Tronstad» /
+            # «Kristiansen». Står fortsettelsen til høyre for navnekolonnen,
+            # hører den til «varamedlem for».
+            innrykk = len(linje) - len(linje.lstrip())
+            if funksjon_kol is None or innrykk < funksjon_kol:
+                ut[-1]["navn"] = normaliser(f"{ut[-1]['navn']} {linje}")
+            else:
+                ut[-1]["vara_for"] = normaliser(f"{ut[-1]['vara_for'] or ''} {linje}")
+        else:
+            ikke_tolket.append(linje.strip())
+    return ut, ikke_tolket
+
+
+def les_oppmote(tekst: str) -> list[dict]:
+    """Oppmøtelisten øverst i protokollen."""
+    return les_oppmoteblokk(tekst)[0]
 
 
 def _flat(tekst: str) -> str:
