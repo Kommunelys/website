@@ -44,11 +44,12 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Prompt og skjema for sammendrag | Første versjon (instruksjon v2, låst JSON-skjema) |
 | Caching på sjekksum av kildetekst og promptversjon | Ferdig |
 | Faste tagger, fastsatt én gang | Ferdig, 15 tagger |
-| Prøvekjøring på rundt ti saker, lese resultatet | Ikke gjort |
-| Kontroll av at tall og navn i sammendraget finnes i kilden | Bare tall i dag |
-| Vise sammendrag på nettstedet med kildelenke | Ikke gjort |
-| Knapp for å melde fra om feil | Ikke gjort |
-| Måle faktisk kostnad per møte | Ikke gjort |
+| Prøvekjøring på rundt ti saker, lese resultatet | Ferdig. Fem feil funnet og rettet i instruksjon v3 |
+| Kontroll av tall og navn i sammendraget | Ferdig. Tall må finnes i kilden, navn på privatpersoner fra tittelen holdes ute; ellers holdes sammendraget tilbake |
+| Vise sammendrag på nettstedet med kildelenke | Ferdig |
+| Knapp for å melde fra om feil | Ferdig, lenke til et nytt GitHub-issue. Krever GitHub-konto |
+| Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres i `nettsted/status.json` |
+| Temalisten: mangler tema for frivillighet og sosiale tjenester | Åpent |
 
 ## Fase 3 — mer enn én kommune
 

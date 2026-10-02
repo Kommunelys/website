@@ -22,7 +22,7 @@ utvetydig uoffisielt i all presentasjon.
 | Utvalg og verv | Virker. Medlemslistene hentes versjonert; vervene har observerte, ikke vedtatte, datoer |
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
-| AI-analyse | Grunnlag og API-kall er klare (fase 2), testet uten å kalle API-et. Slått av i arbeidsflyten |
+| AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
 | Nettsted | Portert fra prototypen til `bygg/mal/`. Bygges fra data, uten sammendrag (fase 1) |
 | GitHub Actions | Skrevet, ikke kjørt. Tidsplanen er slått av til ADR-007 er avklart |
 

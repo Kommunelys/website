@@ -138,6 +138,13 @@ den på Anthropics anbefalte reservemodell (`fallbacks: "default"`), og modellen
 som faktisk svarte, lagres. En feil i én sak hopper over saken, og høyst 25
 saker sendes inn per kjøring.
 
+Før et sammendrag publiseres, kontrollerer bygget at tallene i det finnes i
+kildeteksten, og at det ikke står navn på privatpersoner fra sakstittelen
+(folkevalgte unntas). Et sammendrag som ikke består, eller der modellen var
+usikker, vises ikke, men stopper ikke resten av nettstedet. På nettstedet står
+sammendraget med klarspråkstittel, lenker til dokumentene, merknaden «Skrevet
+av KI» og en lenke for å melde fra om feil.
+
 Faste tagger er viktig. Lar modellen finne på tagger selv, blir filtrene
 ubrukelige etter et halvt år.
 
