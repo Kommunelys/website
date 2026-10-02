@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer sette ned en hovedkomite for 1000-årsjubileet?",
+ "sammendrag": "Formannskapet behandlet 29. januar 2026 et forslag om å opprette en hovedkomite for markeringen av Nasjonaljubileet i Steinkjer og Steinkjer i 1000 år. Forslaget ble fremmet i møtet av Høyre. Formannskapet vedtok å be om å få lagt fram en egen sak om oppnevning av en slik hovedkomite. Forretningsutvalget skal innstille til formannskapet på hvem som skal være de politiske medlemmene i komiteen.",
+ "betydning": "Det betyr at arbeidet med å organisere jubileumsmarkeringen i Steinkjer blir forberedt i en egen politisk sak.",
+ "tagger": [
+  "Kultur og idrett",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7813,
+ "sjekksum": "1126f62f6f898603",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2138,
+  "ut": 352
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i FS 2026-01-29",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7813/Protokoll"
+  }
+ ]
+}

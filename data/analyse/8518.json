@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal en midlertidig anleggsveg over fulldyrka jord på Elverheim bli permanent adkomstveg?",
+ "sammendrag": "En grunneier på landbrukseiendommen Elverheim (gnr./bnr. 195/34) har søkt om å gjøre en midlertidig anleggsveg på rundt 60 meter over fulldyrka jord om til permanent adkomst til et nytt driftssenter. Vegen ble i 2022 godkjent som midlertidig for å flytte et verneverdig våningshus til nytt tun, med vilkår om at jorda skulle legges tilbake. Den opprinnelig tenkte traseen utenfor dyrka mark viste seg å ha for våt grunn og skrånende terreng, og en nabo har pekt på at den ville krysse en mye brukt viltovergang. Trøndelag fylkeskommune godkjente 14. mai 2025 avkjørselen som permanent. Kommunedirektøren foreslår å gi samtykke etter jordloven §§ 1 og 9 til omdisponering av til sammen 1,7 dekar fulldyrka jord (tun og veg), med forutsetning om at nabo på 195/3 har bruksrett på avkjørselen, og at saken sendes videre til byggesak.",
+ "betydning": "Saken avgjør om et stykke fulldyrka jord ved Byavegen varig kan brukes til veg inn til et gårdstun, i stedet for å bli dyrket opp igjen.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8518,
+ "sjekksum": "18c01cc5a1777ee0",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7103,
+  "ut": 673
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509515/845565"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal forslaget til ny felles forskrift om vann- og avløpsgebyrer sendes på høring?",
+ "sammendrag": "Levanger, Verdal, Inderøy og Steinkjer har hatt en felles forskrift om kommunale vann- og avløpsgebyrer siden den trådte i kraft 1. januar 2008. Ny lov om kommunale vass- og avløpsanlegg trådte i kraft 1. januar 2026, og forskriften fra 2008 viser til lover som har gått ut. Kommunedirektøren foreslår derfor en revidert forskrift som oppdaterer lovhenvisninger, tydeliggjør bestemmelsene og tilpasser dem til dagens praksis. Forslaget er at utkastet legges ut på offentlig høring i 6 uker. Saken skal behandles i hovedutvalg for plan, næring og miljø 13. oktober 2026.",
+ "betydning": "Forskriften bestemmer hvordan vann- og avløpsgebyrene beregnes og kreves inn, og hvilke rettigheter og plikter abonnentene har, mens selve gebyrsatsene fortsatt fastsettes av hver kommune i det årlige gebyrregulativet.",
+ "tagger": [
+  "Plan og areal",
+  "Høring",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8495,
+ "sjekksum": "b1c03038f6557ff3",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2956,
+  "ut": 492
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/507974/843254"
+  }
+ ]
+}

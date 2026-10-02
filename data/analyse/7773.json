@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvor store arealer må til for å få fellingstillatelse på elg, hjort og rådyr i Steinkjer, og hva skal jegerne betale i fellingsavgift?",
+ "sammendrag": "Steinkjer kommune har vedtatt en ny forskrift om jakt på elg, hjort og rådyr. Forskriften sier at det er adgang til slik jakt i hele kommunen, og fastsetter minsteareal per område for å kunne godkjenne vald og få fellingstillatelse. Minstearealet for elg varierer fra 750 dekar i Sparbu til 5500 dekar i Ytre Verran, mens rådyr har 2000 dekar i alle områder. Fellingsavgiften skrives nå direkte inn i forskriften og settes til 400 kroner for elgkalv, 670 kroner for voksen elg, 310 kroner for hjortekalv og 520 kroner for voksen hjort. Forskriften trer i kraft 1. september 2026 og erstatter fire eldre forskrifter. To søknader om lavere minsteareal (valdene Bolmset og Stavrum) ble ikke avgjort nå, men utsatt til behandling innen 15. mars 2027.",
+ "betydning": "Jegere og grunneiere i Steinkjer får nye regler for hvor store arealer som kreves for fellingstillatelse, og må betale noe høyere fellingsavgift, som går til kommunens viltfond.",
+ "tagger": [
+  "Landbruk",
+  "Klima og miljø"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7773,
+ "sjekksum": "64ca8d7806b842cb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8250,
+  "ut": 552
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440272/747743"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-09-15",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7773/Protokoll"
+  }
+ ]
+}

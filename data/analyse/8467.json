@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal planen for idrett, friluftsliv og fysisk aktivitet videreføres til 2026-2031 og sendes på høring sammen med en ny behovsvurdering av idrettsanlegg?",
+ "sammendrag": "Saken gjelder kommunens plan for idrett, friluftsliv og fysisk aktivitet. Nye regler om spillemidler fra Norsk Tipping, fastsatt 5. juni 2026 og i kraft fra 15. juni 2026, krever at et anlegg er prioritert og inngår i en kommunal plan for å få tilskudd. Kommunen og idrettsrådet har siden 2024 arbeidet med en behovsvurdering av større idrettsanlegg, der blant annet akseptable kjøreavstander, anleggsdekning, tilstand og kapasitet er kartlagt, og der anleggsregisteret er ryddet opp i. Kommunedirektøren foreslår at planen for 2021-2025 videreføres til perioden 2026-2031 uten innholdsmessig revidering, og at planen og behovsvurderingen legges ut på høring i fire uker. Saken skal behandles i hovedutvalg oppvekst og kultur 14. oktober 2026.",
+ "betydning": "Behovsvurderingen skal styre hvilke idrettsanlegg som prioriteres i kommunen og dermed hvilke anlegg som kan få spillemidler til bygging eller rehabilitering.",
+ "tagger": [
+  "Kultur og idrett",
+  "Høring",
+  "Plan og areal"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8467,
+ "sjekksum": "f6f2fbd95d0aa559",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4050,
+  "ut": 565
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/506935/841783"
+  }
+ ]
+}

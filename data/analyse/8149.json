@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer slutte seg til et interkommunalt kommuneadvokatkontor på Innherred?",
+ "sammendrag": "Steinkjer har i dag egen kommuneadvokatfunksjon med to jurister, og selger tjenester til Inderøy og Snåsa. Inderøy varslet 17. desember 2025 at kommunen avslutter avtalen, og avtalen opphører ved årsskiftet 2027. Samtidig har en av juristene varslet avgang med pensjon. Kommunedirektøren foreslår at han får fullmakt til å forhandle fram en samarbeidsavtale med oppgavefellesskapet Innherred Kommuneadvokat KO, der Levanger og Verdal deltar i dag, og at avtalen deretter legges fram for politisk behandling. Steinkjers kostnad i budsjett 2026 er kr 1 942 000, og en utvidelse med ett årsverk anslås å koste brutto om lag kr 1 770 000, fordelt med kr 1 590 000 på Steinkjer og kr 180 000 på Snåsa, som må innarbeides i budsjett 2027 og økonomiplan 2027–2030. Saken skal behandles i formannskapet 15. oktober 2026.",
+ "betydning": "Juridisk bistand til kommunen, blant annet i barnevernssaker, kan bli levert av et større felles advokatkontor på Innherred i stedet for av kommunens egne ansatte.",
+ "tagger": [
+  "Organisasjon",
+  "Regionalt samarbeid",
+  "Økonomi"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8149,
+ "sjekksum": "5a214dc981eb93cf",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7743,
+  "ut": 578
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/480790/844622"
+  }
+ ]
+}

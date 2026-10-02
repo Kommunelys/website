@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Når skal representantskapet holde møtet sitt i november 2026?",
+ "sammendrag": "Arbeidsutvalget vedtok 08.12.2025 at representantskapet skulle møtes 16.11.2026. Det viste seg senere at denne datoen kolliderer med politiske møter i Inderøy. Saken ble derfor lagt fram for arbeidsutvalget 26.01.2026 for å fastsette en ny møtedato i november 2026. Møtet er holdt, men protokollen med vedtaket er ikke publisert ennå.",
+ "betydning": "Saken gjelder kun når et møte skal holdes, og har liten direkte betydning for innbyggerne.",
+ "tagger": [
+  "Regionalt samarbeid",
+  "Folkevalgte"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7795,
+ "sjekksum": "b5695272b832b067",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1861,
+  "ut": 297
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440878/748800"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hvor står samarbeidet Innherredsbyen nå?",
+ "sammendrag": "Saken er en statusgjennomgang av samarbeidet Innherredsbyen. Saken er ferdigbehandlet i alle kommunene bortsett fra Verdal, som hadde kommunestyremøte 23.03.2026, og fylkestinget skulle behandle saken 25.03.2026. Fylkesdirektøren hadde innstilt på at Innherredsbyen videreføres som partnerskap også etter 2027, mens hovedutvalg og fylkesutvalg endret innstillingen til at en egen politisk sak om videre drift, med oppnådde resultater, finansieringsbehov, aktiviteter og planer, legges fram i løpet av 2026, og at finansieringen avgjøres i fylkestingets årlige budsjettbehandlinger. Gjennomgangen omfatter også samhandlingen mellom kommunene og fylkeskommunen, forslaget om en politisk styringsgruppe i ny partnerskapsavtale, planlegging av møte med medlemmer av transportkomiteen og en henvendelse til Samferdselsdepartementet om billettpriser på tog på Innherred. Kommunedirektøren foreslo at saken tas til orientering. Møtet er holdt, men vedtaket er ikke publisert ennå.",
+ "betydning": "Saken handler om hvordan kommunen jobber videre med nabokommunene og fylkeskommunen om felles satsing på samferdsel og utvikling på Innherred.",
+ "tagger": [
+  "Regionalt samarbeid",
+  "Vei og trafikk"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7985,
+ "sjekksum": "4913650628f78aa4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2776,
+  "ut": 667
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/462935/778713"
+  }
+ ]
+}

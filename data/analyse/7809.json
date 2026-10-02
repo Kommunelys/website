@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Får restauranten OX Grill i Kongens gate 37 utvide skjenkeområdet sitt?",
+ "sammendrag": "OX Grill AS søkte om å utvide serverings- og skjenkeområdet innendørs med et tilstøtende lokale på 120 kvadratmeter, slik at stedet til sammen får 240 kvadratmeter skjenkeareal inne. Politiet, Skatteetaten og NAV hadde ingen merknader til søknaden. Formannskapet innvilget søknaden i møtet 12. februar 2026, med bevilling for all alkoholholdig drikk fram til og med 30. september 2028. Stedet kan bruke kommunens generelle åpningstider fra kl. 08.00 til 02.30, med skjenking senest til kl. 02.00, og alkohol i gruppe 3 kan tidligst skjenkes fra kl. 13.00. Styrer og stedfortreder ble godkjent, og skjenkearealet ble godkjent slik det går fram av tegningene.",
+ "betydning": "Restauranten kan servere alkohol i et større lokale, og får plass til flere gjester og til lukkede selskaper.",
+ "tagger": [
+  "Næring",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7809,
+ "sjekksum": "967edd216eae97f7",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6947,
+  "ut": 456
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/448880/757487"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7809/Protokoll"
+  }
+ ]
+}

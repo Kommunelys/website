@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal forslaget til utbyggingsavtale for Heggevegen 34 legges ut på offentlig høring?",
+ "sammendrag": "Saken gjelder en utbyggingsavtale mellom Steinkjer kommune og utbyggeren FuglesangDahl Bolig AS for et boligprosjekt i Heggevegen 34. Prosjektet omfatter 4–8 nye boenheter med uteoppholdsareal, adkomstvei og garasjeanlegg, i tillegg til at eksisterende bolig bevares med mulighet for ombygging til tomannsbolig. Avtalen fastsetter at utbygger skal opparbeide og bekoste blant annet breddeutvidelse av Heggevegen til 4,5 meter fram til nærmeste kryss med asfaltering, fartsdumper, flytting av veglyspunkt, ny vannkum med uttak for brannvann og plugging eller fjerning av ledning AF125. Kommunen skal senere overta vei, annen veggrunn, gatelysanlegg og vannkum for drift og vedlikehold. Hovedutvalg for plan, næring og miljø vedtok 28. april 2026 å legge avtaleforslaget ut til offentlig ettersyn i seks uker, med avtalen tilgjengelig på kommunens nettside.",
+ "betydning": "Naboer og andre interesserte kan i høringsperioden si sin mening om hvilke veg- og vannanlegg utbyggeren må bygge før boligene kan tas i bruk.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8019,
+ "sjekksum": "fb61030f0d7c1fb3",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6812,
+  "ut": 583
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/466663/784341"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8019/Protokoll"
+  }
+ ]
+}

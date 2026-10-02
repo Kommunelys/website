@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal en midlertidig anleggsvei over fulldyrka jord på Elverheim bli permanent adkomstvei?",
+ "sammendrag": "En grunneier har søkt om å gjøre en midlertidig anleggsvei på rundt 60 meter over fulldyrka jord om til permanent adkomst til et nytt driftssenter på eiendommen 195/34 på Elverheim. Veien ble godkjent som midlertidig 22.03.2022 i forbindelse med flytting av våningshuset, og Trøndelag fylkeskommune ga 15.05.2025 tillatelse til permanent avkjørsel. Kommunedirektøren foreslo å gi samtykke etter jordloven §§ 1 og 9 til å omdisponere til sammen 1,7 dekar (1667 m2) fulldyrka jord, med den begrunnelse at dette er løsningen som bruker minst dyrkajord, og med forutsetning om at nabo på 195/3 har bruksrett på avkjørselen. Hovedutvalg for plan, næring og miljø vedtok 09.06.2026 å sende saken tilbake til administrasjonen for flere opplysninger om historikken, blant annet korrespondansen mellom kommunen og grunneier om premissene for husflyttingen og vilkårene for den midlertidige veien. Saken er dermed ikke avgjort.",
+ "betydning": "Spørsmålet om fulldyrka jord kan brukes til permanent vei inn til gårdstunet er utsatt til kommunen har hentet inn mer bakgrunnsinformasjon.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "utsatt",
+ "uenighet": "H og R sto bak forslaget om å sende saken tilbake til administrasjonen, mens INP og SP stemte mot, og AP delte seg.",
+ "usikker": false,
+ "sak_id": 7872,
+ "sjekksum": "50db5085687c656f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6174,
+  "ut": 808
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454006/765988"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7872/Protokoll"
+  }
+ ]
+}

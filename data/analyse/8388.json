@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om framtidens videregående skoletilbud i Trøndelag?",
+ "sammendrag": "Trøndelag fylkeskommune har sendt på høring forslag til framtidig tilbudsstruktur i videregående opplæring fram mot 2029 og 2040. Bakgrunnen er at Avdeling kompetanse skal redusere budsjettet med 118 millioner kroner innen 2029, hvorav 77 millioner kroner skal tas gjennom skoletilbud og elevtallsreduksjon, samtidig som antallet 16–18-åringer går ned. For Innherred vurderer fylkeskommunen både samling av tilbud, organisatorisk sammenslåing av skoler og mulig skolenedleggelse. Kommunestyret vedtok 16. september 2026 et høringssvar der Innherred skal utvikles som én samlet kompetanseregion med komplementære skoler, tilbudet dimensjoneres etter arbeidslivets framtidige kompetansebehov, bredest mulig tilbud på VG1 og mer spesialisering på VG2, videreføring av spisset toppidrett og et regionalt tilbud innen musikk, dans og drama. Kommunestyret la i tillegg inn punkter om utredning av et tilbud innen entreprenørskap og innovasjon ved Steinkjer videregående skole, voksenopplæring, naturbruk og skogfag ved Mære landbruksskole og restaurant- og matfag.",
+ "betydning": "Høringssvaret er Steinkjer kommunes innspill til hvilke videregående skoletilbud ungdom i regionen skal kunne velge mellom i årene framover, og hvor nær hjemmet de kan gå på skole.",
+ "tagger": [
+  "Skole og barnehage",
+  "Høring",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "I formannskapet 3. september 2026 sto H, INP, PP og V bak et mer omfattende alternativt høringssvar med blant annet sterkere vekt på Steinkjers regionale rolle og kritikk av kutt i spisset toppidrett, mens AP, FRP, SP og SV støttet kommunedirektørens kortere innstilling, som ble vedtatt; et punkt om at historiske søkertall og kortsiktige økonomiske hensyn ikke alene skal styre dimensjoneringen ble endret enstemmig.",
+ "usikker": false,
+ "sak_id": 8388,
+ "sjekksum": "4405bd2c779cf58f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 23524,
+  "ut": 853
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/500191/831887"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8388/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-09-16",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8389/Protokoll"
+  }
+ ]
+}

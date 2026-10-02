@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal ungdomsrådet i Steinkjer igjen være unge arrangører på UKM-regionfestivalen i 2026?",
+ "sammendrag": "Ungdomsrådet behandlet erfaringene fra UKM (Ung Kultur Møtes) lokalt og regionalt i 2025, og hva rådet skal bidra med i 2026. Spørsmålet var om ungdomsrådet skulle fortsette å stille med unge arrangører på regionfestivalen. Ungdomsrådet vedtok 20. januar 2026 at rådet også dette året skal prioritere å stille som unge arrangører på regionfestivalen i UKM.",
+ "betydning": "Ungdom i Steinkjer får fortsatt være med som arrangører når UKM-regionfestivalen gjennomføres.",
+ "tagger": [
+  "Kultur og idrett",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7745,
+ "sjekksum": "b699eb2b400ab2c5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1784,
+  "ut": 858
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-01-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7745/Protokoll"
+  }
+ ]
+}

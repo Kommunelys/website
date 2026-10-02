@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal kommunen garantere for lån til Stod ILs ski- og sykkelanlegg?",
+ "sammendrag": "Stod IL bygger et helårsanlegg for ski og sykkel i Stod, i samarbeid med Norges Skiforbund, Norges Cykleforbund og Trøndelag fylkeskommune. Idrettslaget søkte kommunen om garanti for et lån som dekker merverdiavgiften i byggeperioden, fordi momskompensasjon først utbetales etter at anlegget er bygd. Kommunestyret vedtok 25. mars 2026 å stille selvskyldnergaranti for lån på inntil 1 076 000 kroner, med tillegg av 10 prosent til renter og omkostninger, slik at det samlede garantiansvaret ikke overstiger 1 185 000 kroner. Garantien gjelder fra 2026, reduseres i takt med nedbetaling av lånet og opphører når momskompensasjonen utbetales, senest i 2028 med tillegg av inntil 2 år. Garantien er ugyldig dersom mottakeren forsto eller burde forstått at den er i strid med kommuneloven § 14-19.",
+ "betydning": "Idrettslaget kan komme i gang med anlegget, mens kommunen tar risikoen for lånet dersom idrettslaget ikke klarer å betale.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7892,
+ "sjekksum": "4a7477b9d3c8cbe3",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4889,
+  "ut": 527
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454642/767057"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7892/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7893/Protokoll"
+  }
+ ]
+}

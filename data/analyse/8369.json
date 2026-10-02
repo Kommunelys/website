@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om fylkets nye samferdselsplan for 2026–2038?",
+ "sammendrag": "Trøndelag fylkeskommune sendte 20. april 2026 utkast til Regional plan for samferdsel 2026–2038 på høring, med frist 21. august 2026. Formannskapet vedtok 20. august 2026 en høringsuttalelse i ti punkter. Uttalelsen peker blant annet på at togtilbudet Steinkjer–Trondheim må prioriteres, at busstilbudet Steinkjer–Namsos må videreutvikles, at kollektivtilbudet i Steinkjer by og service- og bestillingsrutene i distriktene må styrkes, og at ulike transporttjenester som skoleskyss og helsetransport bør samordnes bedre. Kommunen mener også at handlingsprogrammet burde vært behandlet parallelt med planen og sendes på høring, og at det bør avklares om planen kan kalles «regional plan» når den ikke er behandlet etter plan- og bygningsloven. I tillegg ble det vedtatt tilleggspunkter om beredskap, lokalt produsert biodrivstoff og trafikksikkerhet.",
+ "betydning": "Uttalelsen er kommunens innspill til hvordan tog-, buss- og bestillingstilbudet i og rundt Steinkjer skal utvikles de neste årene.",
+ "tagger": [
+  "Vei og trafikk",
+  "Regionalt samarbeid",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Et alternativt forslag fra AP, FRP, R og SV erstattet kommunedirektørens innstilling, og et tilleggsforslag fra SP, H, INP og PP om å løfte strategi for regional infrastruktur til første strategi fikk støtte fra H, INP, PP og SP, mens AP, FRP, R og SV stemte mot.",
+ "usikker": false,
+ "sak_id": 8369,
+ "sjekksum": "46ba67e69cbf4248",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 11630,
+  "ut": 678
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/497949/828463"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-08-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8369/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Hvordan skal verneområdene i etat teknisk, plan og miljø deles inn?",
+ "sammendrag": "Saken gjelder inndelingen av verneområder i etat teknisk, plan og miljø. Verneområder er inndelingen av arbeidsplassen som verneombudene dekker. Kommunedirektøren pekte på at dagens oppdeling av enheter i flere verneområder oppleves unaturlig, siden ansatte i samme enhet henger sammen selv om de har ulike lokasjoner og tjenesteområder. Arbeidsmiljøutvalget vedtok 10. mars 2026 en ny inndeling i seks verneområder: Teknisk sjef, Byggesak og oppmåling, Landbruk, Plan og miljø; Ernæring; Renovasjon; VA og utbygging; Veg, trafikk og park; og Byggforvaltning. Vedtaket var i tråd med forslaget i saksframlegget.",
+ "betydning": "Saken gjelder kommunens interne arbeid med helse, miljø og sikkerhet og har ikke direkte betydning for tjenestene innbyggerne mottar.",
+ "tagger": [
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7874,
+ "sjekksum": "f9a5ce5076029921",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2441,
+  "ut": 508
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454118/766213"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-03-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7874/Protokoll"
+  }
+ ]
+}

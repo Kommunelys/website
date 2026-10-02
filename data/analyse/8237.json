@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvem får penger fra Karen Vallem Aksnes legat i 2026?",
+ "sammendrag": "Karen Vallem Aksnes legat deler ut penger til sosialt arbeid blant barn og ungdom i Steinkjer. Avkastningen fra legatmidlene i 2025 ga 35.000 kroner til fordeling. Tre søkere hadde søkt om 35.000 kroner hver: Norsk Fosterhjemsforening Nord-Trøndelag, Mental helse ungdom Steinkjer og en privatperson. Hovedutvalg helse og omsorg vedtok 10. juni 2026 at Mental helse ungdom Steinkjer får 20.000 kroner og Norsk Fosterhjemsforening Nord-Trøndelag får 15.000 kroner.",
+ "betydning": "To organisasjoner som jobber med barn og unge i Steinkjer får penger til arbeidet sitt.",
+ "tagger": [
+  "Helse og omsorg",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8237,
+ "sjekksum": "675072c901f19bcd",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2783,
+  "ut": 381
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482868/806929"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-06-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8237/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Hva skal pengene fra NTE-utbyttet brukes til i januar 2026?",
+ "sammendrag": "Kommunen har et utviklingsfond som kommer fra utbytte fra NTE. Per 31.12.2025 sto det 3 585 000 kroner disponibelt på fondet. Kommunestyret behandlet 4. februar 2026 flere søknader om penger fra fondet, uten innstilling fra kommunedirektøren. Kommunestyret avslo søknaden fra Fliring Scene om HC-toalett og heis, ga Steinkjer Håndballklubb 200 000 kroner og sendte søknaden fra Game Out tilbake til administrasjonen til etter at nye retningslinjer for fordeling av midlene er vedtatt. I tillegg bevilget kommunestyret 500 000 kroner til reparasjoner i eksisterende gatelysanlegg, der kommunedirektøren skal prioritere ut fra trafikksikkerhet og øvrig risiko.",
+ "betydning": "Pengene går til håndballklubben og til utbedring av gatelys, mens flere andre søknader ble avslått eller utsatt til nye retningslinjer er på plass.",
+ "tagger": [
+  "Økonomi",
+  "Kultur og idrett",
+  "Vei og trafikk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Det var uenighet om størrelsen på tilskuddet til Steinkjer Håndballklubb, der AP, FRP, INP, R, SV og en uavhengig representant gikk for 200 000 kroner mens H, PP, SP, V og en uavhengig representant ville gi 100 000 kroner, og H, INP, R og V fikk ikke flertall for forslag om tilskudd til ny bysokkel, navnet minnelund og fasadefond.",
+ "usikker": false,
+ "sak_id": 7740,
+ "sjekksum": "becb988247269fd5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5097,
+  "ut": 634
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/438190/745228"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-01-29",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7740/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-02-04",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7741/Protokoll"
+  }
+ ]
+}

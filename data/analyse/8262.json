@@ -1,0 +1,41 @@
+{
+ "tittel_klarsprak": "Skal barn fra familier med lav inntekt få gratis plass i Steinkjer kulturskole?",
+ "sammendrag": "Saken gjelder å innføre friplasser i Steinkjer kulturskole for barn og unge fra familier med lav inntekt. En elevplass koster i dag kr 4.200 per skoleår pluss kr 100 i materiellavgift. Kommunestyret vedtok 17. juni 2026 at kostnaden på kr 215.000 fremmes som nytt tiltak i økonomiplanen for 2027, og at friplassene forbeholdes elever i alderen 0–20 år. I tillegg etableres en prøveordning med inntil 50 friplasser høsten 2026, finansiert med kr 100.000 fra Utviklingsfond NTE-utbytte. Ordningen gjelder husholdninger med samlet brutto årsinntekt under 5G (kr 650.800), eller 4G (kr 520.640) for aleneforsørgere.",
+ "betydning": "Barn og unge i familier med lav inntekt kan få gratis plass i kulturskolen, først som en prøveordning høsten 2026.",
+ "tagger": [
+  "Kultur og idrett",
+  "Skole og barnehage",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "AP, FRP, R, SP og SV støttet innstillingen med prøveordning høsten 2026 og aldersgruppe 0–20 år, mens H, INP, PP, SP og V ville at kostnaden bare skulle vurderes i økonomiplanen for 2027 og at ordningen skulle gjelde aldersgruppen 0–18 år.",
+ "usikker": false,
+ "sak_id": 8262,
+ "sjekksum": "8e083423ad88ef4c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9735,
+  "ut": 580
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/479503/801320"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-06-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8263/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8264/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8265/Protokoll"
+  }
+ ]
+}

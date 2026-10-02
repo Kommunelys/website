@@ -1,0 +1,41 @@
+{
+ "tittel_klarsprak": "Skal kommunestyret ta årsmeldingen fra rådet for personer med funksjonsnedsettelse, inkludering og mangfold til orientering?",
+ "sammendrag": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold (RÅFIM) er et rådgivende organ i Steinkjer kommune. Rådet skal arbeide for inkludering, mangfold og likestilling og mot diskriminering, og har særskilt rett til å uttale seg i saker som gjelder personer med funksjonsnedsettelse. Rådet behandler også saker som angår flyktninger og innvandrere, og samarbeider om en markering av den internasjonale kvinnedagen 8. mars. Etter forskrift om kommunale og fylkeskommunale råd for eldre, personer med funksjonsnedsettelse og ungdom skal rådene hvert år lage en årsmelding som legges fram for kommunestyret. Rådet godkjente årsmeldingen 6. mai 2026, og kommunestyret tok den til orientering 20. mai 2026.",
+ "betydning": "Innbyggerne får innsyn i hva rådet for personer med funksjonsnedsettelse, inkludering og mangfold har arbeidet med i perioden.",
+ "tagger": [
+  "Folkevalgte",
+  "Helse og omsorg",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7997,
+ "sjekksum": "00ca57df64de3ceb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2976,
+  "ut": 504
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/464395/780662"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7997/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7998/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7999/Protokoll"
+  }
+ ]
+}

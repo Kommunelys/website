@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Skal eldrerådet arrangere informasjonskvelder om velferdsteknologi?",
+ "sammendrag": "Det satses stadig mer på velferdsteknologi i helse- og omsorgstjenestene. Eldrerådets arbeidsutvalg mener eldre trenger informasjon om hvordan teknologien brukes, hvilke kriterier som gjelder for å få den tildelt og hva den koster. Arbeidsutvalget foreslo derfor informasjonsmøter i samarbeid med helseadministrasjonen, og at møtene kan holdes i de gamle kommunesentrene. Steinkjer eldreråd vedtok 11. mars 2026 å invitere alle eldre i kommunen til informasjonskvelder om velferdsteknologi. Kveldene skal arrangeres i samarbeid med kommunalsjefen for helse og velferd og lokale aktører.",
+ "betydning": "Eldre i Steinkjer vil få tilbud om å møte opp på informasjonskvelder for å lære om velferdsteknologi i kommunens helse- og omsorgstjeneste.",
+ "tagger": [
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7902,
+ "sjekksum": "d41b2e513ba92cc2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2066,
+  "ut": 498
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/455323/768151"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7902/Protokoll"
+  }
+ ]
+}

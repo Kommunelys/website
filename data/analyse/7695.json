@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal to landbrukseiendommer i Henning kunne kjøpes som tilleggsjord til nabobruk?",
+ "sammendrag": "To personer har søkt konsesjon for å kjøpe eiendommene gnr/bnr 110/2 og 116/9 i Henning i Steinkjer, som tilleggsareal til gården de allerede eier og driver (gnr/bnr 116/1). Arealet er på til sammen 49,8 dekar, hvorav 46,9 dekar er fulldyrka jord, og avtalt kjøpesum er 4 000 000 kroner. Kommunedirekt\ro\ren vurderer at prisen ligger innenfor rammene i konsesjonsloven, at kj\ro\rperne er skikket, og at kj\ro\rpet gir en driftsmessig god l\ro\rsning. Det foresl\ro\rs konsesjon med vilkår om at den samlede eiendommen drives landbruksmessig forsvarlig, og at de to eiendommene sammenf\ro\ryes med gnr/bnr 116/1. Kommunedirekt\ro\rren foresl\ro\rr ikke boplikt på den utvidede driftsenheten. Saken ble behandlet i hovedutvalg plan, næring og miljø 17. mars 2026, men protokollen er ikke publisert ennå.",
+ "betydning": "Saken avgjør om jorda i Henning blir en del av et gårdsbruk i drift i stedet for en selvstendig eiendom.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7695,
+ "sjekksum": "03e975790d4f8581",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8464,
+  "ut": 583
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/436401/742339"
+  }
+ ]
+}

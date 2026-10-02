@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvilke statlige høringer skal Steinkjer kommune svare på høsten 2026?",
+ "sammendrag": "Formannskapet får jevnlig en oversikt over høringer fra regjeringen og fylkeskommunen, og bestemmer hvilke kommunen skal svare på. Oversikten per 25.09.2026 inneholder flere høringer der kommunen er høringspart, blant annet om klimatilpasning, e-helseløsninger, utvidet barnetrygd og integreringsloven, og flere der kommunen ikke er høringspart. Kommunedirektøren anbefaler at kommunen bare gir høringsuttalelse til NOU 2026: 10 Fellesskolen – Bærebjelken i framtidens samfunn, med høringsfrist 21.12.2026. Anbefalingen begrunnes med hvor viktig temaet er for kommunen og hvilken saksbehandlingskapasitet som finnes. Det foreslås at hovedutvalg oppvekst og kultur behandler uttalelsen. Saken skal behandles i formannskapet 15.10.2026.",
+ "betydning": "Det avgjør hvilke statlige forslag Steinkjer kommune uttaler seg om på vegne av innbyggerne, og her prioriteres en utredning om fellesskolen.",
+ "tagger": [
+  "Høring",
+  "Skole og barnehage",
+  "Folkevalgte"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8510,
+ "sjekksum": "908d749bf7ca5745",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5544,
+  "ut": 518
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/508998/844818"
+  }
+ ]
+}

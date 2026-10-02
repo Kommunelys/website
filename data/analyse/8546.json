@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal kommunen gi 369 000 kroner til vikingprosjekt og 250 000 kroner til sykkelbane i Beitstad fra NTE-utviklingsfondet?",
+ "sammendrag": "Steinkjer kommune har et utviklingsfond som får 40 prosent av utbyttet fra NTE. I 2026 ble det satt av kr 9 441 195 til fondet, og samlet disponibelt beløp er kr 10 223 608. To søknader er så store at kommunestyret må avgjøre dem: kr 369 000 i kommunal medfinansiering til det regionale prosjektet Vikingregionen Innherred i perioden 2027-2029, og kr 250 000 til å ferdigstille et Pump Track-anlegg (sykkelbane) ved Beitstad idrettsanlegg. Kommunedirektøren foreslår at begge søknadene innvilges, med krav om at vikingprosjektet blir fullfinansiert og at sykkelbanen blir et gratis og åpent tilbud der idrettslaget selv står for drift og vedlikehold. Saken skal behandles i formannskapet 15. oktober 2026 før kommunestyret fatter endelig vedtak.",
+ "betydning": "Hvis søknadene innvilges, får Beitstad en gratis sykkelbane åpen for alle, og Steinkjer blir med i en regional satsing på vikinghistorie fram mot 2030.",
+ "tagger": [
+  "Økonomi",
+  "Kultur og idrett",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8546,
+ "sjekksum": "db090a7816f2cbf0",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4622,
+  "ut": 566
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/510757/847559"
+  }
+ ]
+}

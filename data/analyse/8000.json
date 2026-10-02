@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal parken i krysset Ogndalsvegen/Kristofer Uppdals gate få navn etter Otto Sverdrup?",
+ "sammendrag": "Foreningen Gamle Steinkjer har bedt kommunen om å starte navnesak for parken utenfor det tidligere Steinkjer sykehjem, i krysset mellom Ogndalsvegen og Kristofer Uppdals gate. Parken har ingen offisielt vedtatt navn i dag, men har hatt flere navn på folkemunne. Foreningen foreslår at parken får navn etter polarforskeren Otto Sverdrup, som hadde tilknytning til Steinkjer. Hovedutvalg for plan, næring og miljø vedtok 28. april 2026 å starte navnesak etter lov om stadnamn og sende saken på høring for å samle innspill til skrivemåten. Høringsperioden ble satt til 8 uker.",
+ "betydning": "Innbyggere og organisasjoner kan uttale seg om skrivemåten av navnet før parken får et offisielt stedsnavn.",
+ "tagger": [
+  "Plan og areal",
+  "Kultur og idrett",
+  "Høring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8000,
+ "sjekksum": "8fcc0354b6503a71",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3468,
+  "ut": 435
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/464490/780820"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8000/Protokoll"
+  }
+ ]
+}

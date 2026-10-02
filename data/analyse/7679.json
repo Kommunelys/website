@@ -1,0 +1,35 @@
+{
+ "tittel_klarsprak": "Når skal elevene i Steinkjer ha skole og fri i skoleåret 2027–2028?",
+ "sammendrag": "Saken gjelder skoleruta for skoleåret 2027–2028 i Steinkjer kommune. Skoleruta følger skoleruta til Trøndelag fylkeskommune, slik kommunens egen forskrift for skolerute legger opp til. Avvik fra fylkeskommunens skolerute ville gitt kommunen ekstraordinære skysskostnader. Trøndelag fylkeskommune har hatt skoleruta på høring, og Steinkjer kommune leverte høringsuttalelse etter en intern prosess i sektor skole. Kommunestyret vedtok 25. mars 2026 skoleruta for 2027–2028, etter behandling i ungdomsrådet og hovedutvalg oppvekst og kultur.",
+ "betydning": "Elever og foresatte vet nå når skoleåret 2027–2028 starter, slutter og har ferier og fridager, og disse datoene er de samme som i videregående skole i Trøndelag.",
+ "tagger": [
+  "Skole og barnehage"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7679,
+ "sjekksum": "0454533071b558c0",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2647,
+  "ut": 425
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/435124/740427"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7680/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7681/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal det bygges vanningsanlegg på hovedbanen ved Guldbergaunet fotballstadion når kunstgresset byttes?",
+ "sammendrag": "Saken gjaldt om det skulle etableres vanningsanlegg på hovedbanen ved Guldbergaunet fotballstadion samtidig med at kunstgressdekket byttes. Kommunedirektørens innstilling var at vanningsanlegg ikke skulle etableres, og formannskapet sluttet seg til dette 20. august 2026. Formannskapet behandlet saken på nytt 3. september 2026 og gikk inn for å etablere anlegget. Kommunestyret vedtok 16. september 2026 at vanningsanlegget etableres, at brutto investeringsramme økes med kr. 1.400.000 finansiert med bruk av spillemidler, og at kommunedirektøren kan sette i gang prosjektet forutsatt en langsiktig avtale med Steinkjer fotballklubb. Avtalen skal innebære at klubben dekker alle løpende driftsutgifter, at drift følger leverandørens anvisninger og utføres av kvalifisert eller godkjent personell, og at avtalens varighet og klubbens ansvar tilsvarer anleggets levetid.",
+ "betydning": "Hovedbanen på Guldbergaunet får vanningsanlegg, mens de løpende driftsutgiftene skal dekkes av fotballklubben og ikke av kommunen.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "I formannskapet 20. august 2026 gikk H, PP, R og SP inn for å etablere vanningsanlegg, mens AP, FRP, INP og SV støttet innstillingen om ikke å gjøre det; 3. september 2026 samlet AP, FRP, H, INP, PP, SP, SV og V seg om å etablere anlegget.",
+ "usikker": false,
+ "sak_id": 8392,
+ "sjekksum": "152a628f932a1838",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3557,
+  "ut": 839
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i FS 2026-08-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8392/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8453/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-09-16",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8457/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Skal Coop Extra Mære få selge øl i et større butikkareal?",
+ "sammendrag": "Coop Midt-Norge SA har utvidet butikklokalene til Coop Extra Mære i Tuvbakken 2 i Sparbu, og søker om at salgsbevillingen for alkoholholdig drikk i gruppe 1 (over 2,5 og høyst 4,7 volumprosent) skal gjelde for det nye arealet. Salgsarealet utvides fra 653 m² til 970 m². Politiet, Skatteetaten og NAV har ingen merknader, og styrer og stedfortreder har bestått kunnskapsprøve i salg. Kommunedirektøren foreslår at søknaden innvilges, med bevilling fra vedtaksdato til og med 30.09.2028 og kommunens generelle salgstider. Saken ble behandlet i formannskapet 24.09.2026, men vedtaket er ikke publisert ennå.",
+ "betydning": "Hvis bevillingen utvides, kan butikken selge øl i hele det nye butikkarealet innenfor kommunens vanlige salgstider.",
+ "tagger": [
+  "Næring"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8385,
+ "sjekksum": "ef18986d1e0d87d1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4336,
+  "ut": 471
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/499612/831058"
+  }
+ ]
+}

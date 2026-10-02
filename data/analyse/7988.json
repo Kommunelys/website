@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal regnskapet for det kommunale foretaket Steinkjerbygg KF for 2025 godkjennes?",
+ "sammendrag": "Saken gjelder årsregnskapet og årsberetningen for 2025 for det kommunale foretaket Steinkjerbygg KF. Regnskapet viser et mindreforbruk på kr 2 728 870, mot et budsjettert mindreforbruk på kr 2 282 000. Foretaket oppgir at resultatet skyldes stram kostnadsstyring, og at det er holdt tilbake på investeringer og vedlikehold. Større vedlikeholdsprosjekter er satt på vent. Tallene kan ikke sammenlignes med 2024, fordi driften ble fusjonert inn i kommunen fra 1. april 2025. Regnskapet med årsberetning ble godkjent, og mindreforbruket overføres til disposisjonsfond.",
+ "betydning": "Pengene foretaket ikke brukte i 2025 settes av på fond, samtidig som en del vedlikehold av bygg er utsatt.",
+ "tagger": [
+  "Økonomi",
+  "Eierskap og selskaper"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7988,
+ "sjekksum": "45cc63a9db7f9ce0",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2559,
+  "ut": 430
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/463054/778948"
+  },
+  {
+   "tittel": "Vedtak i SSBY 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7988/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FSB 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7992/Protokoll"
+  }
+ ]
+}

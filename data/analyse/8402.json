@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal kommunen ta til følge klagen på avslaget om konsesjon for kjøp av landbrukseiendommen gnr/bnr 431/4?",
+ "sammendrag": "Hovedutvalg for plan, næring og miljø avslo 09.06.2026 en søknad om konsesjon på kjøp av eiendommen gnr/bnr 431/4. Begrunnelsen var at avtalt kjøpesum på kr 6 100 000 lå over det kommunen regnet som maksimal konsesjonspris etter konsesjonsloven. Selgeren klaget på vedtaket og pekte blant annet på mulig inhabilitet, manglende opplysninger til utvalget, manglende begrunnelse for beregnet nyverdi på bygningene og feil beregning av verdien av dyrka jord og jaktrett. Kommunedirektøren mente klagen ikke inneholdt nye opplysninger som endret vurderingen, blant annet fordi endret kapitaliseringsrentefot på jaktretten ville endre verdien fra kr 28 000 til kr 50 000 og fordi 1,2 dekar feilaktig medregnet jord har svært liten betydning. Utvalget vedtok 15.09.2026 å ikke ta klagen til følge og å sende den til Statsforvalteren i Trøndelag for endelig avgjørelse.",
+ "betydning": "Avslaget på konsesjon står inntil Statsforvalteren i Trøndelag har avgjort klagen, slik at salget av eiendommen til avtalt pris foreløpig ikke kan gjennomføres.",
+ "tagger": [
+  "Landbruk",
+  "Klager",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "AP, R og SP støttet å ikke ta klagen til følge, mens FRP og H ville oppheve avslaget fra 09.06.2026 på grunn av saksbehandlingsfeil og sende saken tilbake til administrasjonen for ny utredning.",
+ "usikker": false,
+ "sak_id": 8402,
+ "sjekksum": "26692d2ae19b4cbc",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7165,
+  "ut": 829
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/501781/834000"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-09-15",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8402/Protokoll"
+  }
+ ]
+}

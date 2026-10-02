@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvilke statlige høringer skal Steinkjer kommune svare på?",
+ "sammendrag": "Kommunedirektøren har innført en ny praksis der formannskapet jevnlig får en oversikt over høringer fra regjeringen og fylkeskommunen, med anbefaling om hvilke kommunen bør svare på. Anbefalingen bygger på hvor viktig temaet er for kommunen og hvor mye saksbehandlingskapasitet som er tilgjengelig. Oversikten per 10.02.2026 inneholdt en rekke høringer, og kommunedirektøren anbefalte å svare på høringen av NOU 2026: 1 En bærekraftig kommunesektor, med frist 16.04.2026. Formannskapet vedtok 05.03.2026 å avgi høringsuttalelse på denne, og i tillegg på forslaget om integreringsstønad for nyankomne flyktninger. Begge uttalelsene skal behandles av formannskapet. Et forslag om også å svare på høringer om vannforskriften, overnattingsavgift og viltforskrifter ble ikke vedtatt.",
+ "betydning": "Kommunen vil gi innspill til staten om kommuneøkonomi og om integreringsstønad for nyankomne flyktninger, men ikke om de andre høringene på oversikten.",
+ "tagger": [
+  "Høring",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "H og PP ville også avgi høringsuttalelse om vannforskriften, overnattingsavgift og viltforskrifter med behandling i hovedutvalg plan, næring og miljø, mens AP, INP, R, SP, SV og V stemte mot.",
+ "usikker": false,
+ "sak_id": 7828,
+ "sjekksum": "eebac860499b908d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4934,
+  "ut": 601
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/450163/759591"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7828/Protokoll"
+  }
+ ]
+}

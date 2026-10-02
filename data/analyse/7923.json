@@ -1,0 +1,48 @@
+{
+ "tittel_klarsprak": "Hva skjer med legetilbudet i Malm når kommunen ikke får rekruttert fastleger?",
+ "sammendrag": "Malm legekontor har i mange år slitt med å få fast ansatte fastleger. I perioden 2020-25 har rundt 20 vikarleger fra vikarbyrå arbeidet ved kontoret, og vikarkostnadene i 2023-2025 var i overkant av 7,5 millioner kroner. Kontoret har 1 400 listepasienter, der 61,6 prosent er 60 år eller eldre. Kommunedirektøren anbefalte å avvikle legekontoret og overføre alle pasientene til fastlegekontor i Steinkjer sentrum, med en beregnet innsparing på 2,3 millioner kroner i året fra 2027. Kommunestyret vedtok 25. mars 2026 i stedet at kommunedirektøren skal arbeide for å etablere et privat næringsdrivende en-legekontor i Malm/Verran, finansiert innenfor rammen av de to ubesatte kommunale fastlegehjemlene, og at saken kommer tilbake til kommunestyret dersom rekrutteringen ikke lykkes innen 1. juni 2026.",
+ "betydning": "Innbyggerne i tidligere Verran kommune kan fortsatt få et lokalt legekontor, men bare hvis kommunen lykkes med å få en privat fastlege til å etablere seg i Malm innen 1. juni 2026.",
+ "tagger": [
+  "Helse og omsorg",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt hvilken løsning som skulle velges: AP, FRP, R, SP og SV sto bak vedtaket om å forsøke å etablere et privat en-legekontor, mens H, INP, PP og V ville videreføre driften med to fastlegehjemler og stimuleringstiltak, og SV og den uavhengige representanten støttet kommunedirektørens forslag om avvikling og overføring til Steinkjer sentrum.",
+ "usikker": false,
+ "sak_id": 7923,
+ "sjekksum": "9ec8796b58b1ba58",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 24173,
+  "ut": 727
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/455713/768718"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7923/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7925/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7926/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7927/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7928/Protokoll"
+  }
+ ]
+}

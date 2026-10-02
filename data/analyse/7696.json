@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Skal kommunen omgjøre avslaget på å dele av 615 kvadratmeter fra en landbrukseiendom til en boligtomt?",
+ "sammendrag": "En grunneier søkte 27.10.2025 om å dele fra om lag 615 m2 fra landbrukseiendommen gnr/bnr 195/37. Arealet var tenkt lagt til naboeiendommen gnr/bnr 195/280 som tilleggsareal til bolig. Kommunen avslo søknaden administrativt 10.12.2025 med hjemmel i jordloven §§ 1 og 12, fordi arealet i hovedsak er registrert som dyrkbar jord. Eierne klaget 07.01.2026 og mener blant annet at arealet er vått og myrlendt, mangler adkomst og ikke kan regnes som produktiv skog. Kommunedirektøren mener klagen kom inn etter fristen, men likevel kan behandles, og foreslår at avslaget opprettholdes og at saken sendes til Statsforvalteren i Trøndelag for endelig avgjørelse. Saken ble behandlet i hovedutvalg for plan, næring og miljø 11.05.2026, men protokollen er ikke publisert ennå.",
+ "betydning": "Saken avgjør om et lite areal med dyrkbar jord kan bli en del av en boligtomt, eller om jordvernet veier tyngst.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal",
+  "Klager"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7696,
+ "sjekksum": "d45dfba62bb76971",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6713,
+  "ut": 546
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/436403/742346"
+  }
+ ]
+}

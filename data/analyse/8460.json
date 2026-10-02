@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Hvem skal bli nytt varamedlem i kontrollutvalget etter at et varamedlem flyttet fra kommunen?",
+ "sammendrag": "Et 2. varamedlem i kontrollutvalget, valgt fra Arbeiderpartiet, har meldt at hun har flyttet fra Steinkjer kommune. Da er hun ikke lenger valgbar til folkevalgte verv i kommunen, og etter kommuneloven § 7-9 trer hun endelig ut av vervet. Flytter hun tilbake innen to år, kan hun tre inn i vervet igjen. Etter kommuneloven § 7-10 fjerde ledd skal det velges et nytt varamedlem fra samme gruppe, altså fra Arbeiderpartiet. Kommunedirektøren legger saken fram uten forslag til vedtak, og saken skal etter planen behandles i formannskapet 8. oktober 2026 og 15. oktober 2026.",
+ "betydning": "Kontrollutvalget, som kontrollerer kommunens virksomhet på vegne av innbyggerne, får fylt opp varamedlemslisten sin.",
+ "tagger": [
+  "Folkevalgte"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8460,
+ "sjekksum": "0c1d6b05d0e28091",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3109,
+  "ut": 449
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/506276/840807"
+  }
+ ]
+}

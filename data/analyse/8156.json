@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal kommunen selge festetomta i Ogndalsvegen 115 til bedriften som fester den, for 227 kroner per kvadratmeter?",
+ "sammendrag": "Steinkjer kommune festet i 1980 bort en tomt i Ogndalsvegen 115 på 80 år. Festekontrakten er senere overført til et firma som driver virksomhet på stedet, og som nå ønsker å kjøpe tomta. Kommunedirektøren foreslo en pris på 227 kroner per kvadratmeter, som for 751 kvadratmeter gir en kjøpesum på 170.477 kroner. I tillegg kommer behandlingsgebyr til kommunen på 4.100 kroner, dokumentavgift på 2,5 prosent av eiendommens verdi og tinglysingsgebyr på 545 kroner til staten. Kommunestyret vedtok salget 17. juni 2026, og ba samtidig kommunedirektøren legge fram en egen sak med oppdaterte kvadratmeterpriser for salg og innløsning av kommunalt eide næringstomter. Netto kjøpesum går til ubundet investeringsfond.",
+ "betydning": "Kommunen selger en næringstomt den har festet bort, og inntekten settes av på investeringsfond.",
+ "tagger": [
+  "Plan og areal",
+  "Næring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "H, INP, PP og V mente prisen på 227 kroner per kvadratmeter var for lav og ville ikke selge, mens AP, FRP, R, SP og SV støttet salget til denne prisen; forslaget om en ny sak om oppdaterte kvadratmeterpriser var alle enige om.",
+ "usikker": false,
+ "sak_id": 8156,
+ "sjekksum": "be5011724bef49f8",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4953,
+  "ut": 609
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/481157/803913"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8156/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8157/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvor mange avvik ble meldt i kommunens avvikssystem i 2025?",
+ "sammendrag": "Steinkjer kommune bruker avvikssystemet EQS til å registrere avvik, observasjoner, nestenulykker og uønskede hendelser i tjenestene. Rapporten for 2025 viser at antall meldinger har økt fra 1783 i 2022 til 3004 i 2025, og at økningen er størst i etat helse og velferd og etat oppvekst og inkludering. Kommunedirektøren peker på at meldinger behandles i ulikt tempo, at enkelte enheter og fagstaber har svært få meldinger, og at det er potensial for bedre oppfølging og mer vekt på tiltak. Administrasjonsutvalget tok rapporten til orientering i møtet 12. februar 2026.",
+ "betydning": "Rapporten viser hvordan kommunen fanger opp og følger opp feil og uønskede hendelser i tjenestene innbyggerne mottar.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7797,
+ "sjekksum": "099268a9b972ec05",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3503,
+  "ut": 416
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/440897/748836"
+  },
+  {
+   "tittel": "Vedtak i AD 2026-02-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7797/Protokoll"
+  }
+ ]
+}

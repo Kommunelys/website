@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal kravet om gang- og sykkelveg stå fast før det kan bygges boliger på Kråkhaugen?",
+ "sammendrag": "Kråkhaugen boligområde (B15) i Beitstad ble lagt inn i kommuneplanens arealdel 2024–2037 den 17. desember 2025, men uten rettsvirkning fordi det lå en uløst innsigelse. Formannskapet ba 5. mars 2026 om at rekkefølgekravet om gang- og sykkelveg langs fv. 6995 mellom boligområdet og skoleområdet ble vurdert fjernet, slik at andre trafikksikre løsninger kunne utredes i reguleringsplanen. Trøndelag fylkeskommune fremmet innsigelse mot denne endringen og mente gang- og sykkelveg må være etablert før utbygging. Kommunedirektøren anbefalte å ta innsigelsen til følge og beholde rekkefølgekravet, men formannskapet vedtok 11. juni 2026 det alternative forslaget om å be Statsforvalteren i Trøndelag kalle inn til mekling etter plan- og bygningsloven § 5-6. Saken står oppført til behandling i kommunestyret 17. juni 2026, men vedtaket derfra er ikke publisert ennå.",
+ "betydning": "Det er fortsatt ikke avklart om boliger på Kråkhaugen kan bygges før det er laget gang- og sykkelveg langs fylkesvegen til skolen.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "I formannskapet sto AP, FRP, H, INP, PP, SP og V bak å be om mekling om rekkefølgekravet, mens R og SV støttet kommunedirektørens forslag om å ta innsigelsen til følge og la kravet om gang- og sykkelveg stå fast.",
+ "usikker": false,
+ "sak_id": 8114,
+ "sjekksum": "2c16e64ea5464ea6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7674,
+  "ut": 1221
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/475744/796334"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8114/Protokoll"
+  }
+ ]
+}

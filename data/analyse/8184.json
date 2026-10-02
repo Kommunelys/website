@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjerbygg KF bruke 1 million kroner på å prosjektere ombygging av Bygg B ved InnoCamp?",
+ "sammendrag": "Bygg B ved InnoCamp ble bare delvis rehabilitert da InnoCamp ble etablert i 2019, og bygget har i dag betydelige tekniske og funksjonelle mangler. Ventilasjonsanleggene er fra 1987 og har passert forventet levetid. Nord universitet, som er største leietaker, har signalisert behov for mer arealeffektive lokaler og mindre leieareal for å kunne forlenge leieforholdet. Styret i Steinkjerbygg KF vedtok 3. juni 2026 å sette i gang prosjektering og forberedende arbeider, med en kostnadsramme på 1 000 000 kroner eksklusiv merverdiavgift. Full rehabilitering er foreløpig anslått til om lag 30,3 millioner kroner, og det skal fremmes ny sak om selve gjennomføringen og om ny leieavtale med Nord universitet for 10 år fra ferdigstillelse.",
+ "betydning": "Vedtaket er et første skritt mot å oppgradere lokalene til Nord universitet på InnoCamp og å beholde universitetet som leietaker i Steinkjer.",
+ "tagger": [
+  "Eierskap og selskaper",
+  "Plan og areal",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8184,
+ "sjekksum": "368eb9afd635b704",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4479,
+  "ut": 522
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482140/805591"
+  },
+  {
+   "tittel": "Vedtak i SSBY 2026-06-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8184/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "tittel_klarsprak": "Skal ubrukte investeringsmidler fra 2025 overføres til 2026, og noen av dem brukes til andre formål?",
+ "sammendrag": "Investeringsbudsjettet gjelder bare ett år. Prosjekter som ikke ble ferdige i 2025, må derfor budsjetteres på nytt for 2026. Kommunestyret vedtok 20. mai 2026 å rebudsjettere netto 26 820 000 kroner, som finansieres med bruk av lån innenfor ubrukte lånemidler fra tidligere år (56,7 millioner kroner ved utgangen av 2025). I tillegg ble noen midler flyttet mellom formål: IT-investeringer reduseres med 3 500 000 kroner, mens 2 000 000 kroner går til overgang fra leide til eide biler og 1 500 000 kroner til Kirkelig fellesråd for navnet minnelund. Tre mindre prosjekter i oppvekst og i avlastningsboligen (til sammen 270 000 kroner) ble avsluttet, og beløpet omdisponert til oppgradering av ungdomsklubben i Malm.",
+ "betydning": "Pågående og utsatte byggeprosjekter og innkjøp kan fullføres i 2026, og noen midler flyttes blant annet til bilpark, navnet minnelund ved Steinkjer gravplass og ungdomsklubben i Malm.",
+ "tagger": [
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8068,
+ "sjekksum": "4ac29bb006262e33",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 10622,
+  "ut": 720
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470171/790002"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8068/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8069/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8071/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8072/Protokoll"
+  }
+ ]
+}

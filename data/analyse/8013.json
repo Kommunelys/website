@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om statens forslag om ny integreringsstønad for nyankomne flyktninger?",
+ "sammendrag": "Regjeringen sendte 23. januar 2026 et forslag på høring om å erstatte dagens ytelser til nyankomne flyktninger med én samlet integreringsstønad i en femårsperiode. Høringsfristen var 23. april 2026. Formannskapet vedtok 23. april 2026 å sende en høringsuttalelse der kommunen støtter målet om arbeid, aktivitet og enklere regelverk, men advarer mot svekkede levekår for barnefamilier og økte kostnader for kommunen. Uttalelsen krever blant annet full kompensasjon for kommunale merkostnader og at barnehageplikt først skal gjelde når kommunen kan tilby plass. Formannskapet la til flere punkter, blant annet støtte til aktivitetsplikt, krav om lokal tilpasning av aktivitetskrav i distriktskommuner og at økt barnehagedeltakelse bør sikres gjennom rettigheter framfor sanksjoner. Det vises også til at utbetalingene av økonomisk sosialhjelp i kommunen har økt med om lag 50 millioner kroner fra 2021 til 2025.",
+ "betydning": "Uttalelsen er kommunens råd til staten om hvordan økonomisk støtte og krav til aktivitet for nyankomne flyktninger bør utformes, noe som kan påvirke både familiers økonomi og kommunens tjenester.",
+ "tagger": [
+  "Høring",
+  "Helse og omsorg",
+  "Skole og barnehage"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Selve høringsuttalelsen ble vedtatt enstemmig, men det var uenighet om tilleggspunktene: AP, R og SV (delvis med INP og V) ville legge mer vekt på sikkerhetsnett, barnas situasjon og kommunens merkostnader, mens H, SP, INP, PP, V og FRP fikk flertall for et tillegg som støtter aktivitetsplikt og peker på veksten i sosialhjelpsutbetalingene.",
+ "usikker": false,
+ "sak_id": 8013,
+ "sjekksum": "02d56c4e3c7720c2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9921,
+  "ut": 765
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/465121/781882"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-04-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8013/Protokoll"
+  }
+ ]
+}

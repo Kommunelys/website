@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer starte revisjon av kommunedelplan for sentrum og sende planprogrammet på høring?",
+ "sammendrag": "Kommunedelplan sentrum er kommunens overordnede plan for utviklingen av Steinkjer sentrum, og ble sist revidert og vedtatt 25.10.2018. Etter at kommuneplanens arealdel ble vedtatt 17.12.2025, foreslo kommunedirektøren å starte revisjon av sentrumsplanen og sende planprogrammet, altså «planen for planen», på høring med seks ukers frist. Revisjonen skal blant annet gå gjennom de 148 regulerings- og bebyggelsesplanene i sentrum, harmonisere planen med arealdelen, vurdere fortetting og transformasjon innenfor «10-minuttersbyen», se på grøntdrag fra Sørsia til fjorden gjennom Sørsileiret og vurdere tiltak mot biltrafikk gjennom sentrum og over torget. Det skal også bestilles trafikkanalyse, støysonekartlegging for skytebanen og oppdatering av rapporten fra 2016 om avlastningsveg til Trana. Formannskapet vedtok 13.05.2026 å starte arbeidet og sende planprogrammet på høring, og la i tillegg inn at hensynet til økte beredskapsbehov skal tas inn i planprogrammet, med utredning av areal til logistikkformål, lagerkapasitet for beredskapslagre og koblinger mellom Steinkjer havn, jernbanen og E6.",
+ "betydning": "Innbyggere, lag og næringsliv kan uttale seg om rammene for den nye sentrumsplanen i høringsperioden på seks uker, før selve planforslaget utarbeides.",
+ "tagger": [
+  "Plan og areal",
+  "Høring",
+  "Vei og trafikk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Tillegget om beredskapsbehov ble støttet av SP, AP, H, FRP, SV, R og PP, mens INP og V stemte mot, og et omfattende tilleggsforslag fra H, INP, V og PP om blant annet å nedprioritere grøntdrag og trafikkreduserende tiltak, verne næringsarealer og parkering og videreføre eksisterende utbyggingsreserver fikk ikke flertall mot AP, FRP, R, SP og SV.",
+ "usikker": false,
+ "sak_id": 8062,
+ "sjekksum": "ace54339057525b1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7881,
+  "ut": 850
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470118/789914"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8062/Protokoll"
+  }
+ ]
+}

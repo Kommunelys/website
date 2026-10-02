@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer sende forslag om lengre skjenketid under fotball-VM 2026 på høring?",
+ "sammendrag": "Helse- og omsorgsdepartementet foreslår en midlertidig endring i alkoholloven som lar kommunene tillate skjenking utover den vanlige maksimaltiden i perioden 11. juni til 19. juli 2026, for skjenkesteder som viser direktesendte kamper fra fotball-VM for herrer. Steinkjer har i dag skjenketid til kl. 02.00 og åpningstid til kl. 02.30, og må endre sin egen forskrift midlertidig for å bruke muligheten. Forslaget som sendes på høring går ut på at skjenkesteder som viser kampene kan skjenke drikke under 22 volumprosent fra kl. 08.00 til kl. 06.00 på dager Norge spiller utenfor ordinær skjenketid, samt på finaledagen, og at stedene kan holde åpent hele døgnet disse dagene. Ordningen skal være søknadsbasert, gjelde bare eksisterende bevillingshavere og ikke pop-up-arrangementer, og kommunedirektøren får myndighet til å avgjøre søknadene. Formannskapet vedtok 5. mars 2026 å sende forslaget på høring, med frist 2. april 2026 og med forbehold om at Stortinget vedtar lovendringen.",
+ "betydning": "Innbyggere, bevillingshavere og organisasjoner kan uttale seg om utestedene i Steinkjer skal få skjenke lenger på natten når Norge spiller i fotball-VM sommeren 2026.",
+ "tagger": [
+  "Høring",
+  "Næring",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7839,
+ "sjekksum": "1e23ba7feb7e4218",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6572,
+  "ut": 632
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/451891/762412"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7839/Protokoll"
+  }
+ ]
+}

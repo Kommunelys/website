@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal kommunestyremøtene i juni og desember starte tidligere på dagen?",
+ "sammendrag": "En uavhengig representant foreslo at kommunestyremøtene i juni og desember skal starte klokken 12.00, i stedet for vanlig start klokken 18.00. I saksframlegget går det fram at tidligere start ikke endrer møtegodtgjørelsen, men øker utbetalingen av tapt arbeidsfortjeneste med anslagsvis 10.000 kroner per time før klokken 16.00, altså rundt 40.000 kroner per møte ved start klokken 12.00. Forretningsutvalget tok saken til orientering i møtet 25. februar 2026. Utvalget anbefaler to møtetidspunkt for kommunestyret i desember, der det ene møtet bare brukes til budsjettsaken med tilhørende saker og foretaksmøter, og at det åpnes for tidligere eller fleksibel møtestart i juni og desember eller ved behov.",
+ "betydning": "Innbyggere som vil følge kommunestyremøter, kan oppleve at møtene i juni og desember starter tidligere på dagen, og at desember kan få to møter.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7808,
+ "sjekksum": "6fb8e38a793f76c1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2472,
+  "ut": 535
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/448870/757471"
+  },
+  {
+   "tittel": "Vedtak i FOR 2026-02-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7808/Protokoll"
+  }
+ ]
+}

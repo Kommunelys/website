@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om at SalMar Settefisk AS vil doble antall settefisk i Malm?",
+ "sammendrag": "SalMar Settefisk AS har søkt om å endre akvakulturtillatelsen TR-S-1 fra 20 000 000 til inntil 40 000 000 settefisk per år. Selskapet søker ikke om økt biomasse (9100 tonn/år) eller økt maksimal tillatt biomasse (40 tonn), men vil gå fra stor settefisk på 600-800 gram til mindre smolt på 100-200 gram, noe som krever et nytt byggetrinn. Steinkjer kommune la saken ut på høring 08.01.26 med frist 11.02.26, og det kom ingen høringsuttalelser fra andre. Kommunedirektøren foreslår en uttale til Trøndelag fylkeskommune der Beitstadsundet, Hjellbotn og utløpet til Beitstadfjorden beskrives som kommunens mest sårbare marine område, med gytefelt, ålegrasenger og fem naturreservater, og der det vises til sedimentundersøkelser fra 2025 som påviste kobber, arsen og sink i høye tilstandsklasser. Uttalen sier at føre-var-prinsippet må brukes, og at en eventuell tillatelse må hindre at utslipp sprer seg inn til Beitstadsundet og Hjellbotn. Saken ble behandlet i hovedutvalg for plan og miljø 17.03.2026, men protokollen er ikke publisert ennå.",
+ "betydning": "Uttalen avgjør hva kommunen råder fylkeskommunen til når det gjelder utslipp til et sjøområde som brukes av fisk, sjøfugl og lokalbefolkningen i Malm og Beitstad.",
+ "tagger": [
+  "Klima og miljø",
+  "Næring",
+  "Høring"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7873,
+ "sjekksum": "578a090e4ce86036",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8602,
+  "ut": 818
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454062/766103"
+  }
+ ]
+}

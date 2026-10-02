@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune støtte forslaget om å telle forhåndsstemmer per stemmekrets?",
+ "sammendrag": "Regjeringen har sendt forslag til endringer i valgloven på høring, med frist 01.07.2026. Hovedforslaget er at forhåndsstemmer skal telles opp per stemmekrets, og ikke per valglokale slik som i dag. Formannskapet behandlet saken 25.06.2026 og vedtok at Steinkjer kommune ikke støtter forslaget om kretsvis opptelling. Begrunnelsen er dårligere mulighet for kontroll og åpenhet, at det blir mer ressurskrevende fordi stemmene må sorteres på kommunens 12 stemmekretser, at velgere kan bli i tvil om valget er hemmelig når valgmedarbeidere må merke stemmeseddelen, og at nytteverdien vurderes som begrenset. Kommunen støtter de to øvrige endringene i høringen, om at minst 30 forhåndsstemmegivninger kan legges til side, og en retting av en skrivefeil i loven.",
+ "betydning": "Hvis forslaget blir vedtatt, vil valg i Steinkjer koste mer, ta lengre tid og kunne gi lengre kø i valglokalene, men gi mer informasjon om partioppslutning i hver stemmekrets.",
+ "tagger": [
+  "Høring",
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8045,
+ "sjekksum": "47ebc64a8f1ad9dc",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 10315,
+  "ut": 539
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/469042/811393"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8045/Protokoll"
+  }
+ ]
+}

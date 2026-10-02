@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvordan er vedtakene i hovedutvalg oppvekst og kultur fra første halvår 2026 fulgt opp?",
+ "sammendrag": "Kommunedirektøren legger fram en rapport om oppfølgingen av saker som hovedutvalg oppvekst og kultur sluttbehandlet i perioden 01.01.2026\ttil 30.06.2026. Bakgrunnen er kommuneloven § 13-1 fjerde ledd, som sier at kommunedirektøren skal påse at vedtak fra folkevalgte organer blir satt i verk uten ugrunnet opphold. Rapporten er et vedlegg som lister opp alle sakene, med en merknad om hvordan hvert enkelt vedtak er fulgt opp. Slik rapportering er en del av kommunens internkontroll. Kommunedirektøren foreslår at rapporten tas til orientering. Saken skal behandles i hovedutvalg oppvekst og kultur 14.10.2026.",
+ "betydning": "Innbyggerne kan se om politiske vedtak om oppvekst og kultur faktisk blir gjennomført.",
+ "tagger": [
+  "Folkevalgte",
+  "Skole og barnehage",
+  "Kultur og idrett"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8516,
+ "sjekksum": "be9bbc46a6edd3e9",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2069,
+  "ut": 504
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509170/845048"
+  }
+ ]
+}

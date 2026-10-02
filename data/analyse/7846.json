@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hva gjorde kontrollutvalget i 2025?",
+ "sammendrag": "Kontrollutvalget lager hvert år en rapport om sitt arbeid. Rapporten for 2025 ble lagt fram for kommunestyret. Kommunestyret behandlet saken 25. mars 2026 og tok årsrapporten til orientering. Det ble ikke fattet andre vedtak i saken.",
+ "betydning": "Innbyggerne kan lese kontrollutvalgets årsrapport for å se hvordan kommunens virksomhet er kontrollert i 2025.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7846,
+ "sjekksum": "e72c6744d0086a5e",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2038,
+  "ut": 257
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/452276/763151"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7846/Protokoll"
+  }
+ ]
+}

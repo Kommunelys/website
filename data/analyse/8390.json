@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Skal Crunch Steinkjer få skjenkebevilling for all alkoholholdig drikk, også ute?",
+ "sammendrag": "Steinkjer kommune mottok 20.07.2026 en søknad om ny serverings- og skjenkebevilling for Crunch Steinkjer i Elvegata 1. Stedet beskrives som en kombinasjon av kafé, bar og spiserestaurant, med 46,9 m² innendørs skjenkeareal og 7,5 m² uteservering, og planlagt oppstart i løpet av oktober 2026. Kommunedirektøren foreslo å innvilge skjenkebevilling for alkoholholdig drikk i gruppe 1, 2 og 3 fra vedtaksdato til og med 30.09.2028, med kommunens generelle åpningstid fra kl. 08.00 til 02.30 og skjenking senest til kl. 02.00. Gruppe 3 kan tidligst skjenkes fra kl. 13.00, og ved uteservering skal musikk og lignende opphøre kl. 23.00. Politiet, Skatteetaten og NAV hadde ingen merknader til søknaden. Saken ble behandlet i formannskapet 24.09.2026, men vedtaket er ikke publisert ennå.",
+ "betydning": "Dersom bevillingen innvilges, får Steinkjer sentrum et nytt serveringssted som kan servere alkohol inne og på et lite uteområde.",
+ "tagger": [
+  "Næring"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8390,
+ "sjekksum": "762018afbc101fe5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6133,
+  "ut": 615
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/500210/831921"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvordan skal Steinkjer kommune legge opp arbeidet med økonomisaker i 2026?",
+ "sammendrag": "Steinkjer kommune deltar i et to-årig nettverksprosjekt som heter «Bærekraftig kommuneøkonomi». Etter en evaluering av det første året vedtok formannskapet 19. mars 2026 et årshjul for økonomisaker i 2026. Det omfatter månedsrapport for februar 25. mars, tertialrapport for første tertial 20. mai, årsregnskap og årsberetning for 2025 og økonomidokument for 2027 den 17. juni, tertialrapport for andre tertial 21. oktober, og månedsrapport for november samt årsbudsjett 2027 og økonomiplan 2027–2030 den 16. desember. I tillegg kommer rammekonferanser om økonomi i slutten av april og i begynnelsen av september, og kommunedirektøren skal orientere formannskapet muntlig om den økonomiske situasjonen hver måned. Den lokale prosjektgruppen fikk fullmakt til å lage en plan for innbyggerinvolvering i budsjettarbeidet for 2027 og til å foreslå hvordan prosjektarbeidet og et mer permanent årshjul kan innlemmes i de ordinære politiske strukturene.",
+ "betydning": "Innbyggerne får faste tidspunkter for når kommunens økonomi behandles politisk, og det skal lages en plan for hvordan innbyggerne kan involveres i budsjettarbeidet for 2027.",
+ "tagger": [
+  "Økonomi",
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7886,
+ "sjekksum": "af91c4f1cbf8da04",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7260,
+  "ut": 606
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/454607/767015"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7886/Protokoll"
+  }
+ ]
+}

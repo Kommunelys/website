@@ -1,0 +1,43 @@
+{
+ "tittel_klarsprak": "Skal kommunestyret godkjenne Steinkjer kommunes regnskap og årsberetning for 2025?",
+ "sammendrag": "Saken gjelder godkjenning av årsregnskap 2025 for Steinkjer kommune og for kommunen konsolidert, samt årsberetningen for 2025. Regnskapet for kommunekassen viser et netto driftsresultat på 12,98 mill kroner, som korrigert for bundne fond blir 6,60 mill kroner. Kommunedirektøren beskriver dette som svakere enn kommunens egne måltall og statlige anbefalinger, men bedre enn prognosene gjennom året. Fordi budsjettavviket i drift utgjør 44,14 mill kroner, må det gjøres såkalte strykninger: bruken av disposisjonsfond reduseres med 44,14 mill kroner, og bruk av lån i investeringsregnskapet strykes med 27,37 mill kroner slik at midlene i stedet står som ubrukte lånemidler til 2026. Kommunestyret godkjente regnskapet og årsberetningen 20. mai 2026 og vedtok årsoppgjørsdisposisjonene i hovedoversikt §5-9.",
+ "betydning": "Vedtaket fastslår hvordan kommunens penger ble brukt i 2025, og gir en samlet avsetning til disposisjonsfond på 6,6 mill kroner og lavere bruk av lån.",
+ "tagger": [
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8063,
+ "sjekksum": "7e95791de07cbbf1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5239,
+  "ut": 548
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/470154/789976"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8063/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-05-12",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8064/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8066/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8067/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer være med i samarbeidet Innherredsbyen i en ny periode fra 2028 til 2031?",
+ "sammendrag": "Innherredsbyen er et samarbeid om areal- og transportutvikling mellom kommunene Steinkjer, Snåsa, Inderøy, Verdal, Levanger og Frosta, Trøndelag fylkeskommune og flere statlige aktører. Dagens partnerskapsavtale gjelder ut 2027, og saken gjaldt en revidert avtale for perioden 2028-2031. Den største endringen er at det opprettes en politisk styringsgruppe med ordførerne i de seks kommunene og fylkesordføreren, og at de økonomiske bidragene justeres årlig etter kommunal deflator. Budsjettet har vært kr. 1 543 930 per år, der kommunene dekker kr. 993 930 og Steinkjers andel er kr. 335 958. Kommunestyret vedtok 17.06.2026 å slutte seg til avtalen og finansieringsmodellen, og å opprette et politisk samarbeidsutvalg fram til den nye avtalen trer i kraft.",
+ "betydning": "Steinkjer fortsetter å betale for og delta i et regionalt samarbeid som skal jobbe for bedre vei, jernbane, kollektivtilbud og samordnet arealbruk på Innherred.",
+ "tagger": [
+  "Regionalt samarbeid",
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Kommunestyret var enstemmig, mens FRP i formannskapet stemte mot å slutte seg til avtalen.",
+ "usikker": false,
+ "sak_id": 8163,
+ "sjekksum": "1b44a58a6b412a2d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 8282,
+  "ut": 735
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/481431/804408"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8163/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8164/Protokoll"
+  }
+ ]
+}

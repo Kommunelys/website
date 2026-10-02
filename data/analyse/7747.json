@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skulle den nye kommunedirektøren møte ungdomsrådet?",
+ "sammendrag": "Saken gjaldt at den nye kommunedirektøren i Steinkjer ønsket å hilse på ungdomsrådet. Punktet ble lagt fram for ungdomsrådet i møtet 20. januar 2026. Ungdomsrådet tok saken til orientering. Det ble ikke fattet noe vedtak utover dette.",
+ "betydning": "Ungdomsrådet, som er ungdommens talerør inn i kommunen, fikk møte kommunens øverste administrative leder.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7747,
+ "sjekksum": "2410b5fc5dd7d547",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1735,
+  "ut": 583
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-01-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7747/Protokoll"
+  }
+ ]
+}

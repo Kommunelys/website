@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Hvem får Steinkjer kommunes idrettsstipend for 2026?",
+ "sammendrag": "Steinkjer kommune deler hvert år ut et idrettsstipend på 20 000 kroner til yngre idrettsutøvere. Stipendet skal gi anerkjennelse og stimulere til videre satsing, og søkeren må blant annet ha fylt 15 år i tildelingsåret, prestere på høyt nivå og ha ambisjoner om toppidrett på nasjonalt eller internasjonalt nivå. Søknadsfristen for 2026 var 28. juni, og én idrettsutøver søkte. Hovedutvalg for oppvekst og kultur vedtok 23. september 2026 å tildele stipendet til en utøver fra Steinkjer skiskyting.",
+ "betydning": "En ung lokal idrettsutøver får 20 000 kroner til trening og konkurranser.",
+ "tagger": [
+  "Kultur og idrett"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8364,
+ "sjekksum": "d0fd4bb9c2c100b0",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3414,
+  "ut": 482
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/496542/825946"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-09-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8364/Protokoll"
+  }
+ ]
+}

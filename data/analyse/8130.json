@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hva skjer med teleslynge i kommunens møterom?",
+ "sammendrag": "Saken handler om teleslynge i møterommene i Steinkjer kommune. Teleslynge er utstyr som gjør det lettere for personer med høreapparat å følge med på det som blir sagt i et rom. Eldrerådet behandlet saken 6. mai 2026 og tok den til orientering. Det betyr at rådet ble informert, og at det ikke ble gjort noe annet vedtak i saken.",
+ "betydning": "Saken gjelder tilrettelegging for personer med nedsatt hørsel i kommunens møterom, men eldrerådet tok bare saken til orientering.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": true,
+ "sak_id": 8130,
+ "sjekksum": "dcbba8b4be3b5af2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1718,
+  "ut": 292
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i ELRÅ 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8130/Protokoll"
+  }
+ ]
+}

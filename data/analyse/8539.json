@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune love å være med på å betale for istandsetting av fire kirker?",
+ "sammendrag": "Kirkebevaringsfondet er en statlig tilskuddsordning for kulturhistorisk verdifulle kirkebygg, der staten har satt av 10 milliarder kroner. For å få penger til forprosjekt må kommunen sende en intensjonserklæring om at den er villig til å dekke 50 prosent av kostnadene i et senere hovedprosjekt. Steinkjer kirkelige fellesråd har prioritert fire nye forprosjekter: Beitstad kirke, Skei kirke, Egge kirke og tårnet på Steinkjer kirke. Kommunedirektøren foreslår at kommunen bare sender intensjonserklæring for Beitstad kirke, der søylene i kirkerommet har loddavvik på mellom 25 og 143 millimeter, og viser til kommunens krevende økonomi og målet om å redusere gjeldsgraden. Saken skal behandles i formannskapet 15. oktober 2026, og søknadsfristen for forprosjekter er 2. november 2026.",
+ "betydning": "Avgjørelsen styrer hvilke kirkebygg i kommunen som kan komme i posisjon for statlige midler, og hvor mye kommunen kan bli forventet å betale selv senere.",
+ "tagger": [
+  "Økonomi",
+  "Kultur og idrett"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8539,
+ "sjekksum": "fddcb1082bbb6142",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4509,
+  "ut": 533
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/510260/846808"
+  }
+ ]
+}

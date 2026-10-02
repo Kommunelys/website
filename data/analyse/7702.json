@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Hvor mange skader, ulykker og nestenulykker ble meldt blant kommunens ansatte i fjerde kvartal 2025?",
+ "sammendrag": "Arbeidsmiljøutvalget (AMU) får hvert kvartal en oversikt over skader, ulykker og nestenulykker blant ansatte i Steinkjer kommune og de kommunale foretakene. Rapporten for fjerde kvartal 2025 bygger på meldinger i kvalitetssystemet EQS fram til 8. januar 2026. Hovedvekten av meldingene gjelder utagering, vold og trusler, og antallet ligger om lag på nivå med tidligere år, med unntak av 2024. Innen oppvekst og inkludering var antallet avviksmeldinger om vold og trusler det samme som i fjerde kvartal 2024, og klart lavere enn i samme periode i 2021, 2022 og 2023. Kommuneskogene registrerte ingen skader i fjerde kvartal 2025. AMU tok oversikten til orientering i møtet 20. januar 2026.",
+ "betydning": "Saken viser hvordan kommunen følger med på arbeidsmiljøet til egne ansatte, særlig vold og trusler i skole og helsetjenester.",
+ "tagger": [
+  "Organisasjon",
+  "Helse og omsorg",
+  "Skole og barnehage"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7702,
+ "sjekksum": "0e34680ff3d78058",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3532,
+  "ut": 503
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/436521/742566"
+  },
+  {
+   "tittel": "Vedtak i AMU 2026-01-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7702/Protokoll"
+  }
+ ]
+}

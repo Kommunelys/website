@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Hvem får Steinkjer kommunes kulturstipend for 2026?",
+ "sammendrag": "Steinkjer kommune deler hvert år ut et kulturstipend på kr 25 000 til unge kulturutøvere, både amatører og profesjonelle, som har markert seg innen sitt fagfelt. Stipendet skal brukes til konkrete oppgaver som studiereiser, kurs, treningsopphold og arbeidsstipend, eller til å hjelpe profesjonelle utøvere med å etablere seg i kommunen. Kandidatene må ha sin kulturelle aktivitet knyttet til kommunen eller på annen måte ha nær tilknytning til den. Det kom inn to søknader. Hovedutvalg for oppvekst og kultur vedtok 23. september 2026 at stipendet for 2026 deles mellom de to søkerne.",
+ "betydning": "To unge kulturutøvere med tilknytning til Steinkjer får dele kommunens kulturstipend på kr 25 000 for 2026.",
+ "tagger": [
+  "Kultur og idrett"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8366,
+ "sjekksum": "c049466ec140e9be",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3518,
+  "ut": 503
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/496759/826307"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-09-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8366/Protokoll"
+  }
+ ]
+}

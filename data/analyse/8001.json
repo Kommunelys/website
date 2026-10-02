@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer godkjenne ny selskapsavtale for det interkommunale arkivselskapet IKA Trøndelag IKS?",
+ "sammendrag": "IKA Trøndelag IKS er et interkommunalt selskap som tar seg av arkivdepot, rådgivning og dokumentasjonsforvaltning for eierne. Selskapet eies av 38 partnere: 37 kommuner og Trøndelag fylkeskommune. Selskapsavtalen må oppdateres fordi den reviderte IKS-loven trådte i kraft 1. januar 2024. Den nye avtalen beskriver blant annet formål, representantskap med én representant fra hver eier, et styre på fem medlemmer, finansiering gjennom et fast grunnbeløp og et kronebeløp per innbygger, og en samlet låneramme på inntil 5 millioner kroner. Kommunestyret vedtok 20. mai 2026 den framlagte selskapsavtalen, som erstatter alle tidligere selskapsavtaler og trer i kraft når samtlige 38 eiere har fattet likelydende vedtak.",
+ "betydning": "Kommunens arkivtjenester drives videre gjennom det felles selskapet, med oppdaterte regler for styring og økonomi.",
+ "tagger": [
+  "Eierskap og selskaper",
+  "Regionalt samarbeid",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8001,
+ "sjekksum": "078daaeb3d04f4a7",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5185,
+  "ut": 513
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/464496/780829"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8001/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8002/Protokoll"
+  }
+ ]
+}

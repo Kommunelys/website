@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer og Snåsa få en ny, felles renovasjonsforskrift fra 1. januar 2027?",
+ "sammendrag": "Kommunestyret vedtok 17. juni 2026 en ny felles renovasjonsforskrift for Snåsa og Steinkjer, med virkning fra 01.01.2027. Samtidig oppheves de to gjeldende avfallsforskriftene (FOR-2017-02-23-255 og FOR-2011-12-15-1508) fra samme dato. Den nye forskriften oppdaterer blant annet definisjoner, krav til beholdere og kjørbar veg, innfører egne paragrafer om renovasjonsteknisk plan og hytterenovasjon, og åpner for begrensninger på hva og hvor mye som kan leveres kostnadsfritt på gjenvinningsstasjon. Alle selvstendige bruksenheter, som utleieleiligheter, kårboliger og hybler, kan bli regnet som egne boenheter med eget abonnement, men det kan søkes om fritak. Kommunestyret bestemte også at rutene som ble kjørt i Snåsa per 31. desember 2009 videreføres, forutsatt at vegene oppfyller kravene til kjørbar veg i § 11, og at eventuelle merkostnader i sin helhet skal inngå i Snåsa kommunes selvkostregnskap.",
+ "betydning": "For innbyggerne betyr det nye regler for henting og levering av avfall fra 1. januar 2027, og at utleieenheter og hybler kan bli fakturert som egne renovasjonsabonnement.",
+ "tagger": [
+  "Klima og miljø",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8047,
+ "sjekksum": "7557ada79c3b393a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7843,
+  "ut": 621
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/469197/788564"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8148/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8155/Protokoll"
+  }
+ ]
+}

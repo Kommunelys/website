@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Hvem får penger fra utviklingsfondet med NTE-utbytte i første tildeling i 2026?",
+ "sammendrag": "Kommunestyret behandlet tre søknader om midler fra utviklingsfond NTE utbytte 25. mars 2026. Steinkjerfestivalen hadde søkt om 500 000 kroner i årlig støtte, men ble innvilget 365 000 kroner for 2026. Steinkjer kirkelige fellesråd fikk innvilget 1 500 000 kroner til byggetrinn 1 av navnet minnelund ved Steinkjer gravplass, finansiert ved bruk av lån. Kommunedirektøren hadde foreslått å avslå denne søknaden og i stedet henvise den til ordinær budsjettbehandling. Prosjektet Sommerjobb for ungdom fikk innvilget 300 000 kroner fra utviklingsfondet, med lønnstilskudd på 7 000 kroner per ungdom til virksomheter som tilbyr sommerjobb til ungdom mellom 13 og 20 år.",
+ "betydning": "Steinkjerfestivalen får kommunal støtte i 2026, det blir 320 nye urneplasser ved Steinkjer gravplass, og flere ungdommer kan få sommerjobb.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Uenigheten gjaldt størrelsen på støtten til Steinkjerfestivalen: V ville gi 400 000 kroner, SP, SV og den uavhengige representanten ville gi 500 000 kroner, mens AP, FRP, H, INP, PP og R fikk flertall for 365 000 kroner (SV støttet også dette i den avgjørende voteringen); de to øvrige punktene var enstemmige.",
+ "usikker": false,
+ "sak_id": 7909,
+ "sjekksum": "a1e8fe69734ce8c8",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9657,
+  "ut": 656
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/455366/768223"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7910/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7911/Protokoll"
+  }
+ ]
+}

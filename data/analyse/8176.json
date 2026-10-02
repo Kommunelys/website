@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal kommunen garantere for lån til ny pumptrack-bane i Beitstad?",
+ "sammendrag": "Beitstad IL skal bygge en pumptrack-bane ved Beitstad Stadion, et nærmiljøanlegg med bølgende sykkelbane. Prosjektet har en kostnadsramme på kr 1 385 000 og finansieres med egenkapital, spillemidler og tilskudd. Fordi spillemidler og momskompensasjon utbetales etterskuddsvis, trenger idrettslaget et byggelån i mellomtiden, og banken krever kommunal garanti. Kommunestyret vedtok 17. juni 2026 å garantere for lån på inntil kr 1 400 000, med tillegg av 10 % til renter og omkostninger, slik at kommunens maksimale garantiansvar ikke overstiger kr 1 540 000. Garantien gjelder fra 2026, reduseres i takt med nedbetalingen og opphører i 2028 med tillegg av inntil 2 år.",
+ "betydning": "Idrettslaget kan ta opp byggelån og bygge pumptrack-banen, som blir et lavterskeltilbud for barn, unge og andre i lokalsamfunnet.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8176,
+ "sjekksum": "83036cf1758db7cb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4569,
+  "ut": 485
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482112/805535"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8176/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8177/Protokoll"
+  }
+ ]
+}

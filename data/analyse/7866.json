@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvilke regler skal gjelde for skogbrukstilskudd i Steinkjer i 2026?",
+ "sammendrag": "Kommunen må hvert år fastsette retningslinjer for hvordan tilskudd til nærings- og miljøtiltak i skogbruket (NMSK) skal prioriteres. Statsforvalteren har tildelt Steinkjer kommune 1,4 millioner kroner til skogkultur i 2026, mot 1,1 millioner kroner i 2025, da forbruket endte på 1 780 307 kroner. Kommunedirektøren foreslår å senke tilskuddet til planting fra 1 krone til 0,50 krone per plante, mens ungskogpleie beholder satsen på 300 kroner per dekar. For veg og drift forvaltes 5,5 millioner kroner sammen med kommunene i Innherred og Nidaros, og satsen for opprustning og nybygging av bilveg og utbedring av bru foreslås senket fra 65 % til 50 %. Saken ble behandlet i hovedutvalg for plan, næring og miljø 17. mars 2026, og protokollen er ikke publisert ennå.",
+ "betydning": "Skogeiere i Steinkjer får mindre tilskudd per plante, mens tilskudd til ungskogpleie og skogsveger prioriteres.",
+ "tagger": [
+  "Landbruk",
+  "Næring",
+  "Klima og miljø"
+ ],
+ "utfall": "venter på protokoll",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7866,
+ "sjekksum": "bd57a2133a755cd4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5223,
+  "ut": 524
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/453612/765342"
+  }
+ ]
+}

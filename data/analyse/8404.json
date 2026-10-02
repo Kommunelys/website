@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal T:lab få 500 000 kroner fra det kommunale næringsfondet til å utvikle et investeringsfond og investornettverk?",
+ "sammendrag": "Selskapet T:lab søkte om tilskudd fra Steinkjer kommunes næringsfond til prosjektet «Utvikle en modell for et spesialisert investeringsfond og investornettverk». Formannskapet sendte 25.06.2026 søknaden tilbake til søkeren og ba om mer dokumentasjon, blant annet om andre offentlige støtteordninger var vurdert, hva eiere og samarbeidspartnere bidrar med økonomisk, hvordan prosjektet skiller seg fra selskapets ordinære drift, og hvordan finansieringen fordeles på delprosjektene. Selskapet svarte på spørsmålene, og kommunedirektøren holdt fast på forslaget om å gi støtte. I møtet 03.09.2026 vedtok formannskapet å gi et tilskudd på 500 000 kroner, med krav om at pengene brukes til aktivitetene i søknaden og at vesentlige endringer i prosjektplanen må godkjennes av kommunen.",
+ "betydning": "Kommunen bruker 500 000 kroner av næringsfondet på et prosjekt som skal utvikle et investeringsfond og et investornettverk for næringslivet i området.",
+ "tagger": [
+  "Næring",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8404,
+ "sjekksum": "edf89964cf6be515",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3137,
+  "ut": 530
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/501884/834189"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8404/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Hva mener de kommunale rådene om hvordan den politiske organiseringen bør se ut etter neste kommunevalg?",
+ "sammendrag": "Steinkjer kommune skal gjennomgå den politiske organiseringen før neste kommunevalg. Som første steg ble de lovpålagte medvirkningsrådene bedt om innspill: eldrerådet, rådet for personer med funksjonsnedsettelse, inkludering og mangfold (RÅFIM) og ungdomsrådet. Rådene ble spurt om hvordan de fungerer i dag, om oppmøte og engasjement, om tilrettelegging og oppgaver, om de kan slås sammen med andre råd, og om sammensetningen bør endres. Saken ble lagt fram uten forslag til vedtak. Både RÅFIM og eldrerådet behandlet saken 26. august 2026 og vedtok at innspillene oversendes forretningsutvalget.",
+ "betydning": "Innspillene fra rådene inngår i arbeidet med hvordan innbyggere i Steinkjer, blant annet eldre, personer med funksjonsnedsettelse og ungdom, skal få si sin mening i kommunale saker i neste valgperiode.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8421,
+ "sjekksum": "6f85c78212b582d5",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5054,
+  "ut": 541
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/502679/835391"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-08-26",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8422/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-08-26",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8421/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Skal planen for inntil 10 nye boliger i Heggevegen 34 sendes på høring?",
+ "sammendrag": "Et privat utbyggingsselskap har fått utarbeidet et forslag til detaljregulering av eiendommen Heggevegen 34 i Steinkjer. Planen åpner for inntil 10 boenheter: 4-8 boenheter i ett delområde, som kan bygges som kjedede eneboliger, rekkehus, tomannsboliger eller lav blokkbebyggelse, og 2 boenheter i et annet delområde. Det er funnet automatisk fredede kulturminner i nordøstre del mot Åsvegen, og dette arealet reguleres til uteoppholdsareal med båndlegging som ikke tillater inngrep i grunnen. All adkomst skal skje fra Heggevegen, som kan utvides til inntil 4,5 meter, og trafikksikkerhetstiltak og vann- og avløpsløsninger sikres i en egen utbyggingsavtale. Hovedutvalg plan, næring og miljø vedtok 28. april 2026 å legge planforslaget ut på høring og offentlig ettersyn i 6 uker.",
+ "betydning": "Naboer og andre berørte kan uttale seg om planen i høringsperioden før kommunen tar endelig stilling til utbyggingen.",
+ "tagger": [
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7838,
+ "sjekksum": "d3c0940fff032322",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9990,
+  "ut": 516
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/451877/762393"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7838/Protokoll"
+  }
+ ]
+}

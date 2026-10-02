@@ -1,0 +1,37 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer være med på en felles reiselivsstrategi for Innherred fram til 2032?",
+ "sammendrag": "Kommunene Snåsa, Steinkjer, Inderøy, Verdal, Levanger og Frosta har laget en felles reiselivsstrategi for perioden 2026–2032. Strategien har fire mål med tilhørende strategier og tiltak, blant annet flere helårlige opplevelser, bedre markedsføring, mer samarbeid og kompetanse i næringen, og at alle kommunene skal merkes som bærekraftige reisemål. Rundt 30 bedrifter og personer har deltatt i arbeidet, og selskapet Fossekall har bistått innenfor en ramme på 100 000 kroner fordelt på kommunene etter innbyggertall. Kommunestyret vedtok strategien 25. mars 2026, og ba kommunedirektøren klargjøre hva en felles destinasjonsledelse vil koste kommunene samlet og Steinkjer spesielt, i forbindelse med et nytt anbud på destinasjonsledelse.",
+ "betydning": "Kommunen skal jobbe sammen med fem nabokommuner om å utvikle flere opplevelser og helårs arbeidsplasser innen reiseliv, og om å styre besøket slik at natur og lokalsamfunn tåler det.",
+ "tagger": [
+  "Næring",
+  "Regionalt samarbeid",
+  "Klima og miljø"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7897,
+ "sjekksum": "5cccda98ffca155f",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6755,
+  "ut": 536
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/455299/768102"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7898/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7899/Protokoll"
+  }
+ ]
+}

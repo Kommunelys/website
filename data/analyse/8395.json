@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan skal 540 000 kroner i kultur- og idrettstilskudd fordeles i første runde i 2026?",
+ "sammendrag": "Steinkjer kommune deler ut kultur- og idrettstilskudd to ganger i året. Til første runde i 2026 kom det inn 23 søknader, med et samlet søknadsbeløp på 754 980 kroner, mens det lå 540 000 kroner til fordeling. Kommunedirektøren foreslo å fordele 304 980 kroner etter en tabell i saken, der flere søknader fikk mindre enn omsøkt og noen fikk avslag, blant annet fordi budsjettet manglet inntekter eller fordi søkeren hører til en annen kommune. Hovedutvalg oppvekst og kultur vedtok fordelingen slik den var foreslått, men med én endring: søknaden om støtte til feiring av eritreisk nasjonaldag ble strøket fra tabellen, fordi arrangementet først skal holdes i 2027 og det må søkes på nytt da.",
+ "betydning": "Lag, foreninger og arrangører i Steinkjer får vite hvor mye de får i tilskudd til aktiviteter som rideleir, ferietilbud for barn, idrettsstevner, konserter og festivaler.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8395,
+ "sjekksum": "b2c2532045608e8c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9089,
+  "ut": 735
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/501074/832994"
+  },
+  {
+   "tittel": "Vedtak i HOK 2026-09-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8395/Protokoll"
+  }
+ ]
+}

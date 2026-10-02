@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal det lages bedre kunnskap om hvor mange som reiser mellom Innherred og Trondheimsområdet?",
+ "sammendrag": "Trøndelag fylkeskommune utreder nå kollektivtilbudet før neste anbudsperiode, som er skjøvet ut mot ca. 2030–2031 etter at opsjonen på dagens busskontrakter ble utløst. Utredningsfasen skal sluttføres våren 2027. Saksframlegget peker på at det mangler tall på faktiske reiser mellom Innherred og Trondheimsområdet, og at Innherred er den eneste regionen i Trøndelag uten et fylkeskommunalt kollektivtilbud mot Trondheim. Prisen vises i saken: buss fra Sistranda, Støren og Meråker koster 94 kroner til Trondheim, mens tog fra Steinkjer koster 382 kroner og fra Levanger 265 kroner. Arbeidsutvalget i Innherred regionråd vedtok 22.06.2026 å be fylkeskommunen sørge for et oppdatert kunnskapsgrunnlag om reiser internt i Innherred og mellom Innherred og Trondheimsregionen, og at dette må inngå i utredningsarbeidet i regi av fylkeskommunen, AtB og Jernbanedirektoratet.",
+ "betydning": "Det kan få betydning for hvilket buss- og togtilbud og hvilke priser innbyggerne i Steinkjer får mot Trondheim fra neste anbudsperiode.",
+ "tagger": [
+  "Vei og trafikk",
+  "Regionalt samarbeid"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8238,
+ "sjekksum": "9f0df39c464b8eda",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 5371,
+  "ut": 720
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482869/806934"
+  },
+  {
+   "tittel": "Vedtak i AUINR 2026-06-22",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8238/Protokoll"
+  }
+ ]
+}

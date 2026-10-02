@@ -1,0 +1,39 @@
+{
+ "tittel_klarsprak": "Skal en folkevalgt få forlenget fritak fra vervene sine ut 2026?",
+ "sammendrag": "En folkevalgt fra Senterpartiet har siden 1. januar 2025 hatt midlertidig fritak fra sine folkevalgte verv i Steinkjer kommune, begrunnet med helse. Fritaket er tidligere forlenget flere ganger, sist til 30.06.2026. Representanten søkte om å få fritaket forlenget til 31.12.2026, med samme begrunnelse som før. Kommunedirektøren vurderte at helseutfordringer oppfyller kravet i kommuneloven § 7-9 om vesentlig ulempe, og anbefalte at søknaden ble innvilget. Kommunestyret vedtok 16.09.2026 at fritaket forlenges til 31.12.2026.",
+ "betydning": "Representanten møter ikke i kommunens folkevalgte organer ut 2026, og i kommunestyret kalles varamedlem inn i stedet.",
+ "tagger": [
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8358,
+ "sjekksum": "367960be968533f7",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3750,
+  "ut": 502
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/496187/825393"
+  },
+  {
+   "tittel": "Vedtak i FOR 2026-08-26",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8358/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8359/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-09-16",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8360/Protokoll"
+  }
+ ]
+}

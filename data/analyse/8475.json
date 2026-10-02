@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal Kråkhaugen bli nytt boligområde i kommuneplanens arealdel?",
+ "sammendrag": "Saken gjelder om området Kråkhaugen (kalt B15) i Beitstad skal settes av til boligformål med rettsvirkning i kommuneplanens arealdel 2024–2037. Da kommunestyret vedtok arealdelen 17. desember 2025, ble området lagt inn uten rettsvirkning fordi det var innsigelser til det. Statsforvalteren trakk sin innsigelse i brev 28. januar 2026, og Trøndelag fylkeskommune trakk sin innsigelse mot endret planbestemmelse i fylkesutvalgets vedtak 1. september 2026. Kommunedirektøren foreslår at området avsettes til boligformål, og at bestemmelse 14.2.1 c får rettsvirkning: utbygging kan ikke skje før det er koblet til kommunalt avløp langs fv. 6995, det tillates bare frittliggende småhus, og alternative løsninger til vanlig gang- og sykkelveg basert på eksisterende infrastruktur skal vurderes i reguleringsplanen, samtidig som trafikksikkerhet og trygg skoleveg til Beitstad skole skal ivaretas. Saken skal behandles i formannskapet 15. oktober 2026.",
+ "betydning": "Blir forslaget vedtatt, åpnes Kråkhaugen for bygging av eneboliger, mens valget av løsning for gående og syklende til Beitstad skole avgjøres senere i reguleringsplanen.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8475,
+ "sjekksum": "dd48845cabb6c5fb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7608,
+  "ut": 617
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/507106/842069"
+  }
+ ]
+}

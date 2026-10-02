@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune være med videre på gangbru mellom Steinkjer stasjon og Amfi/Thon senter?",
+ "sammendrag": "Saken gjaldt om kommunen skulle delta videre i prosjektering og bygging av en gangbru mellom Steinkjer stasjon og Thon senter, sammen med Bane Nor og eventuelle næringsaktører. Forprosjekt og grunnundersøkelser var gjennomført etter formannskapets vedtak 12.12.24. Kommunens andel av prosjekteringen er anslått til mellom 4,0 og 10,0 mill. kroner, og samlet kostnad for kommunen med partnere til mellom 40,7 og 57,5 mill. kroner. Kommunedirektøren anbefalte å ikke gå videre, men å stille forstudie og grunnundersøkelser til rådighet for Bane Nor eller næringsaktører. Formannskapet mente 03.09.2026 at beslutningsgrunnlaget ikke var godt nok, og utsatte saken til spørsmålet om nytt hotell er avklart, slik at konsekvensene kan vurderes samlet. Utsettelsen innebærer ingen økonomisk forpliktelse for kommunen.",
+ "betydning": "Det er foreløpig ikke avgjort om det kommer en gangbru over jernbanen og E6 mellom stasjonsområdet og kjøpesenteret, og kommunen binder seg ikke økonomisk nå.",
+ "tagger": [
+  "Plan og areal",
+  "Vei og trafikk",
+  "Økonomi"
+ ],
+ "utfall": "utsatt",
+ "uenighet": "AP, FRP, INP, SP, SV og V ville utsette saken til hotellspørsmålet er avklart, mens H og PP stemte mot utsettelsen.",
+ "usikker": false,
+ "sak_id": 8426,
+ "sjekksum": "14b45e5b4e447918",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 6668,
+  "ut": 778
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/502753/835500"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-09-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8426/Protokoll"
+  }
+ ]
+}

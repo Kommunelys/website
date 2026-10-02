@@ -1,0 +1,29 @@
+{
+ "tittel_klarsprak": "Hvordan ligger Steinkjer kommune an økonomisk etter åtte måneder i 2026, og hvilke budsjettendringer foreslås?",
+ "sammendrag": "Kommunedirektøren legger fram tertialrapport for andre tertial 2026, datert 28.09.26. Rapporten viser et mulig merforbruk på 22,5 mill kroner ved årets slutt, og det skal jobbes videre med å redusere avviket. Samtidig foreslås flere budsjettjusteringer: blant annet økte avdrags- og renteutgifter dekket av økte skatte- og renteinntekter og økt rammetilskudd, og en omdisponering i flyktningebudsjettet der integreringstilskuddet svikter med kr 12 400 000 og avsetningen på kr 3 800 000 til disposisjonsfond flyktninger reverseres. I investeringsbudsjettet foreslås kr 1 200 000 til ventilasjon ved Guldbergaunet bosenter, kr 1 150 000 til brannverntiltak og kr 1 000 000 til nødstrøm i helsebygg, finansiert ved å flytte kr 2 000 000 fra nyanlegg kommunale veger og kr 1 350 000 fra utvikling av styringssystemer. Det foreslås også kr 3 500 000 fra utviklingsfond NTE-utbytte til engangsutgifter ved ny elektronisk pasientjournal, og at kr 800 000 tidligere tildelt til skolebøker og skolebibliotek føres tilbake til fondet etter merknad fra revisjonen. Saken er til behandling i hovedutvalg og formannskap 13.–15. oktober 2026.",
+ "betydning": "Saken viser at kommunens økonomi er stram, og at nye behov må dekkes ved å flytte penger mellom tjenesteområder og utsette eller redusere andre prosjekter, blant annet nyanlegg av kommunale veger.",
+ "tagger": [
+  "Økonomi",
+  "Helse og omsorg",
+  "Skole og barnehage"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8542,
+ "sjekksum": "bb3305384b2d86e6",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 12179,
+  "ut": 749
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/510548/847236"
+  }
+ ]
+}

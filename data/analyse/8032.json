@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvem skal sitte i Steinkjer kommunes komité for TV-aksjonen i 2026–2028?",
+ "sammendrag": "Steinkjer kommune har tidligere utnevnt en ny komité for NRKs TV-aksjon hvert år. NRK har bedt kommunene om å opprette komiteer som varer i flere år, for å forenkle arbeidet og gi mer kontinuitet. Kommunedirektøren foreslo at varaordføreren leder komiteen for perioden 2026–2028, at seks medlemmer utnevnes, og at kulturetaten har sekretærfunksjonen. Formannskapet vedtok 11. juni 2026 at varaordføreren leder komiteen, og utnevnte sju medlemmer, blant annet etter forslag fra Arbeiderpartiet og Høyre. Ett av medlemmene ble valgt for to år. Saksframlegget opplyser at Steinkjer samlet inn 1.093.366 kroner til Atlasalliansen i 2025, som er 574.128 kroner mindre enn i 2024, og at TV-aksjonen 18. oktober går til Flyktninghjelpen.",
+ "betydning": "Innbyggerne får en fast komité som skal organisere den lokale innsamlingen til TV-aksjonen de neste årene.",
+ "tagger": [
+  "Kultur og idrett",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8032,
+ "sjekksum": "abddca10d5cea212",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 3988,
+  "ut": 593
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/467609/785981"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-06-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8033/Protokoll"
+  }
+ ]
+}

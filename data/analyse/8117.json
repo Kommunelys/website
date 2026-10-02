@@ -1,0 +1,40 @@
+{
+ "tittel_klarsprak": "Hva gjorde ungdomsrådet i 2025, og hvordan ble årsmeldingen behandlet?",
+ "sammendrag": "Ungdomsrådet er et rådgivende organ for kommunen og skal uttale seg i saker som gjelder ungdom. Etter forskriften om kommunale råd for eldre, personer med funksjonsnedsettelse og ungdom skal rådet hvert år lage en årsmelding som legges fram for kommunestyret. Ungdomsrådet behandlet årsmeldingen 5. mai 2026 og godkjente den med tillegg om «Leder har ordet», deltakelse i 17. mai-komiteen og deltakelse på UKM regionfestival. Formannskapet tok årsmeldingen til orientering 13. mai 2026. Kommunestyret tok årsmeldingen til orientering 20. mai 2026.",
+ "betydning": "Innbyggerne får innsyn i hva ungdomsrådet har arbeidet med på vegne av barn og unge i Steinkjer i 2025.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8117,
+ "sjekksum": "8682ec3c561e212a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2965,
+  "ut": 468
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/475894/796588"
+  },
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-05-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8117/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8118/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8119/Protokoll"
+  }
+ ]
+}

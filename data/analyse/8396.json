@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal en gårdbruker få kjøpe naboeiendommen i Beitstad som tilleggsjord?",
+ "sammendrag": "En gårdbruker i Beitstad søkte om konsesjon for å kjøpe eiendommen gnr/bnr 413/2 som tilleggsareal til landbrukseiendommen han allerede eier og driver. Avtalt kjøpesum er 6 800 000 kroner. Kommunedirektøren beregnet en samlet verdi på 5 659 025 kroner, men mente prisen kan godkjennes fordi det er kjøp av tilleggsjord, der det kan legges til inntil 50 prosent marginal verdi. Hovedutvalg plan, næring og miljø godkjente søknaden 15. september 2026, med vilkår om at søker bor på eiendommen han eier i dag i minst fem år sammenhengende, at eiendommen drives landbruksmessig forsvarlig, og at gnr/bnr 413/2 sammenføyes med søkers landbrukseiendom.",
+ "betydning": "Eiendommen blir en del av et større gårdsbruk i Beitstad, og den nye eieren må bo på bruket i minst fem år og drive arealet.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8396,
+ "sjekksum": "427e31616eea622c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 12203,
+  "ut": 525
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/501306/833314"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-09-15",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8396/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Skal ungdomsrådet gi innspill til Hilmarfestivalen 2026?",
+ "sammendrag": "",
+ "betydning": "Ungdomsrådet har foreløpig ikke gitt innspill til Hilmarfestivalen 2026.",
+ "tagger": [
+  "Kultur og idrett",
+  "Folkevalgte"
+ ],
+ "utfall": "utsatt",
+ "uenighet": "",
+ "usikker": true,
+ "sak_id": 8110,
+ "sjekksum": "612c1448f6a01755",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1744,
+  "ut": 462
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i UNGRÅ 2026-05-05",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8110/Protokoll"
+  }
+ ]
+}

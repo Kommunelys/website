@@ -1,0 +1,40 @@
+{
+ "tittel_klarsprak": "Hva har eldrerådet i Steinkjer gjort i 2025?",
+ "sammendrag": "Eldrerådet er et rådgivende organ for kommunen og kan uttale seg i saker som gjelder eldre. Rådet kan også selv ta opp saker som har betydning for eldre i kommunen. Etter forskrift om kommunale og fylkeskommunale råd for eldre, personer med funksjonsnedsettelse og ungdom skal rådet hvert år lage en årsmelding som legges fram for kommunestyret. Eldrerådet godkjente årsmeldingen for 2025 i møte 6. mai 2026. Formannskapet 13. mai 2026 og kommunestyret 20. mai 2026 tok årsmeldingen til orientering.",
+ "betydning": "Innbyggerne får en samlet oversikt over hva eldrerådet har arbeidet med på vegne av eldre i kommunen i 2025.",
+ "tagger": [
+  "Helse og omsorg",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7922,
+ "sjekksum": "45bdef2d4225fde4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2672,
+  "ut": 381
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/455670/768631"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7922/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-05-13",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7955/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-05-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7956/Protokoll"
+  }
+ ]
+}

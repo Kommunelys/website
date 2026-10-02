@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan skal rådet for personer med funksjonsnedsettelse følge opp handlingsplanen sin i 2026?",
+ "sammendrag": "Rådet for personer med funksjonsnedsettelse (RÅFIM) vedtok en handlingsplan for perioden i møtet 17. oktober 2024. For å sikre at planen blir fulgt opp, konkretiseres den med tiltak og ansvarsfordeling for ett år av gangen. Rådet gjorde dette for 2025, og i møtet 6. mai 2026 ble planen gjennomgått og oppdatert for 2026. Saken ble lagt fram uten forslag til vedtak fra kommunedirektøren.",
+ "betydning": "Oppdateringen viser hva rådet vil prioritere i arbeidet for personer med funksjonsnedsettelse i 2026.",
+ "tagger": [
+  "Folkevalgte",
+  "Helse og omsorg"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8127,
+ "sjekksum": "ec8962df28c2d1bb",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1943,
+  "ut": 352
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/476157/797129"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-05-06",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8127/Protokoll"
+  }
+ ]
+}

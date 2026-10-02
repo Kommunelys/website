@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal kommunen dekke godtgjørelse til fjellstyrets medlemmer for 2025?",
+ "sammendrag": "Steinkjer fjellstyre søkte om at kommunen skulle dekke tapt arbeidsfortjeneste, møte- og reisegodtgjørelse for fjellstyrets medlemmer for regnskapsåret 2025. Fjellstyret gikk med et lite overskudd i 2025, men viste til lav egenkapital og anstrengt likviditet. Beløpet utgjør ifølge søknaden kr 49 238,58 medregnet arbeidsgiveravgift. Etter fjelloven § 7 må kommunen dekke slike godtgjørelser bare når det ikke er nok midler i fjellkassa. Formannskapet avslo søknaden 20. august 2026 og holdt fast ved tidligere vedtak om at kommunen dekker kostnadene så lenge fjellstyret går med underskudd.",
+ "betydning": "Kommunen bruker ikke penger på godtgjørelsene for 2025, og fjellstyret må dekke dem selv når driften går med overskudd.",
+ "tagger": [
+  "Økonomi",
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8343,
+ "sjekksum": "c2a9e156b2c52da1",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4193,
+  "ut": 447
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/494556/822771"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-08-20",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8343/Protokoll"
+  }
+ ]
+}

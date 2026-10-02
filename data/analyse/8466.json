@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hvordan skal 500 000 kroner i vedlikeholdstilskudd til samfunnshus og grendehus fordeles i 2026?",
+ "sammendrag": "Steinkjer kommune deler ut vedlikeholdstilskudd til samfunnshus og grendehus. Potten for 2026 er på 500 000 kroner, økt fra 200 000 kroner. 22 hus har søkt, med en samlet søknadssum på 3 954 612,74 kroner, mens godkjent budsjettsum er 2 098 141,74 kroner. Kommunedirektøren foreslår å fordele midlene prosentvis ut fra godkjent sum, og å utbetale fra funksjon 3770. Flere søknader er redusert fordi budsjettene inneholder arbeidspenger, som ikke gir rett til tilskudd, og Beitstad Bygdesentral er foreslått avslått fordi den ikke regnes som grende- eller samfunnshus. Saken skal behandles i hovedutvalg for oppvekst og kultur 14. oktober 2026.",
+ "betydning": "Tilskuddet avgjør hvor mye penger lokale samfunnshus og grendehus får til vedlikehold av bygg og fast utstyr som innbyggerne bruker.",
+ "tagger": [
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8466,
+ "sjekksum": "22c3922571aea13d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 4636,
+  "ut": 698
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/506870/841630"
+  }
+ ]
+}

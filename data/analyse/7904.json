@@ -1,0 +1,48 @@
+{
+ "tittel_klarsprak": "Skal Steinkjer kommune slutte med kommunal matutlevering, og støtte frivillige som tar over?",
+ "sammendrag": "Steinkjer matstasjon har delt ut matkasser til innbyggere med økonomiske utfordringer, organisert av ansatte i Enhet Sentrum BOA. Kommunedirektøren viste til at tilbudet ikke er lovpålagt, koster rundt 0,4 mill. kr i året, ikke er budsjettert i 2026 og at lokalene ved Steinkjer sykehjem trengs til andre formål, og foreslo å avvikle ordningen. Kommunestyret vedtok 25. mars 2026 å avvikle den kommunale matutleveringen med umiddelbar virkning. Samtidig ble det satt av 200 000 kroner til støtte til matutlevering i regi av frivilligheten i 2026, og kommunedirektøren fikk fullmakt til å samarbeide med og utbetale tilskudd til aktuelle aktører og om nødvendig stille lokale og allerede innkjøpt inventar til rådighet uten kostnad. Kommunedirektøren skal også sørge for at berørte brukere får informasjon om alternative hjelpetiltak gjennom NAV.",
+ "betydning": "De som har fått matkasse fra kommunen, må nå henvende seg til NAV eller til frivillige aktører som kan få kommunal støtte til å drive matutlevering.",
+ "tagger": [
+  "Helse og omsorg",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "Avviklingen var det enighet om, men AP, FRP, R, SV og V ville sette av 200 000 kroner og gi fullmakt til tilskudd til frivillige, mens H, INP, PP, SP og den uavhengige representanten stemte mot denne pengestøtten.",
+ "usikker": false,
+ "sak_id": 7904,
+ "sjekksum": "b1928167129cace3",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 7090,
+  "ut": 758
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/451850/762359"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7906/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7905/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i HHO 2026-03-18",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7907/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FS 2026-03-19",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7921/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-03-25",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7982/Protokoll"
+  }
+ ]
+}

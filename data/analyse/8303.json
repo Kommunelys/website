@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hva gjør kommunen etter revisjonsrapporten om brukerstyrt personlig assistanse (BPA)?",
+ "sammendrag": "Revisor har undersøkt hvordan Steinkjer kommune behandler saker om brukerstyrt personlig assistanse (BPA). Kommunestyret tok rapporten til orientering i møtet 17. juni 2026. Kommunestyret ba kommunedirektøren følge opp revisors anbefalinger: utvikle maler som sikrer at sentrale juridiske vurderinger gjøres i tråd med gjeldende rett, lage rutiner for saksbehandling og evaluering av BPA-saker, sikre at saksbehandlere har tilgang til relevante rettskilder og/eller juridisk kompetanse, og legge til rette for målrettet kompetanseheving for mer enhetlig praksis. Kommunedirektøren skal rapportere skriftlig til kontrollutvalget innen 1. oktober 2026 om hvordan anbefalingene blir fulgt opp.",
+ "betydning": "De som søker om eller har BPA, kan få mer enhetlig og juridisk korrekt saksbehandling.",
+ "tagger": [
+  "Helse og omsorg",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8303,
+ "sjekksum": "6a7d12edfc931b58",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2905,
+  "ut": 464
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/486186/812051"
+  },
+  {
+   "tittel": "Vedtak i KS 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8303/Protokoll"
+  }
+ ]
+}

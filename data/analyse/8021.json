@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Får en gårdbruker kjøpe to jordteiger i Lysheim som tilleggsjord til gården sin?",
+ "sammendrag": "En gårdbruker i Steinkjer søkte om konsesjon for å kjøpe to ubebygde teiger, gnr/bnr 75/4 (Stene) på 28,4 dekar og gnr/bnr 76/5 (Berg) på 19,4 dekar, som tilleggsareal til sin egen landbrukseiendom gnr/bnr 68/1 med flere. Saken var behandlet politisk to ganger i 2025, da med en avtalt pris på 975 000 kr som kommunedirektøren mente var for høy, og med uavklarte privatrettslige forhold om hvem som var selger. Ny søknad kom inn 8. april 2026 med avtalt kjøpesum på 835 000 kr, og eierforholdene var da avklart. Kommunedirektøren vurderte at prisen ligger innenfor rammene i konsesjonsloven når marginal verdibetraktning på inntil 50 prosent legges til grunn, og at kjøpet gir en driftsmessig god løsning. Hovedutvalg plan, næring og miljø godkjente konsesjonen 28. april 2026, med vilkår om at den samlede eiendommen drives landbruksmessig forsvarlig og at de to teigene sammenføyes med gnr/bnr 68/1.",
+ "betydning": "To jordteiger blir lagt til et nabobruk i aktiv drift, slik at jorda fortsatt brukes til landbruk.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8021,
+ "sjekksum": "60aacfe49d2aad77",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 11330,
+  "ut": 709
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/466749/784526"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8021/Protokoll"
+  }
+ ]
+}

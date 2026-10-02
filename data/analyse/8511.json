@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Hvordan er kommunestyrets vedtak fra første halvår 2026 fulgt opp?",
+ "sammendrag": "Saken er en rapport om oppfølgingen av vedtak som kommunestyret sluttbehandlet i perioden 01.01.2026–30.06.2026. Kommuneloven § 13-1 fjerde ledd slår fast at kommunedirektøren skal sørge for at vedtak fra folkevalgte organer settes i verk uten ugrunnet opphold. Rapportering om vedtaksoppfølging er en del av kommunens internkontroll. Et vedlegg lister alle sakene som ble sluttbehandlet, med en merknad om hvordan hvert enkelt vedtak er fulgt opp. Kommunedirektøren foreslår at rapporten tas til orientering. Saken skal behandles i formannskapet 15.10.2026.",
+ "betydning": "Innbyggerne får innsyn i om de politiske vedtakene fra første halvår 2026 faktisk er gjennomført.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8511,
+ "sjekksum": "512b747faae8a17a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2028,
+  "ut": 528
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/509164/845042"
+  }
+ ]
+}

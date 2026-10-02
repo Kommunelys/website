@@ -1,0 +1,27 @@
+{
+ "tittel_klarsprak": "Ble møteprotokollen fra styremøtet 23. mars 2026 godkjent?",
+ "sammendrag": "Saken gjaldt godkjenning av protokollen fra styremøtet 23.03.2026. Protokollen er den offisielle nedtegnelsen av hva som ble behandlet og vedtatt i det møtet. I møtet 16.06.2026 ble protokollen godkjent. Dokumentene inneholder ingen merknader eller endringer til protokollen.",
+ "betydning": "Godkjenningen bekrefter at referatet fra møtet 23.03.2026 er den gjeldende dokumentasjonen av hva som ble vedtatt.",
+ "tagger": [
+  "Folkevalgte"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8296,
+ "sjekksum": "99ef71c4fa72161c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1732,
+  "ut": 541
+ },
+ "kilder": [
+  {
+   "tittel": "Vedtak i SSKO 2026-06-16",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8296/Protokoll"
+  }
+ ]
+}

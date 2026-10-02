@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal eldrerådet søke kommunen om 100 000 kroner til å markere FNs eldredag i 2026?",
+ "sammendrag": "FNs internasjonale eldredag markeres 1. oktober. Steinkjer eldreråd har i to år fått penger fra kommunestyret (NTE-midler) til markeringen, og pensjonistforeningene har fått økonomisk bidrag til å arrangere i eget nærmiljø. Arbeidsutvalget anbefalte at eldrerådet søker om midler også for 2026. Eldrerådet vedtok 11. mars 2026 å søke kommunen om 100 000 kroner til gratis arrangement for alle eldre i kommunen, og ba om svar innen utgangen av mai.",
+ "betydning": "Får eldrerådet pengene, kan eldre i Steinkjer delta gratis på arrangementer i eget nærmiljø på eldredagen 1. oktober 2026.",
+ "tagger": [
+  "Helse og omsorg",
+  "Kultur og idrett",
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7901,
+ "sjekksum": "894da0fa5e29da43",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2107,
+  "ut": 455
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/455319/768145"
+  },
+  {
+   "tittel": "Vedtak i ELRÅ 2026-03-11",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7901/Protokoll"
+  }
+ ]
+}

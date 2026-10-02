@@ -1,0 +1,33 @@
+{
+ "tittel_klarsprak": "Skal styret i Steinkjer kommuneskoger-Ogndalsbruket KF vedta foretakets eget budsjett for 2026?",
+ "sammendrag": "Saken gjaldt særbudsjettet for 2026 for det kommunale foretaket Steinkjer kommuneskoger-Ogndalsbruket KF. Skogsjefen la fram et forslag til budsjett for foretaket. Styret behandlet saken i møte 10. februar 2026. Styret fastsatte særbudsjettet for 2026 slik skogsjefen hadde foreslått.",
+ "betydning": "Budsjettet legger rammene for driften av kommunens skogforetak i 2026.",
+ "tagger": [
+  "Økonomi",
+  "Eierskap og selskaper",
+  "Landbruk"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7833,
+ "sjekksum": "1ab95d50f8368f03",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1967,
+  "ut": 300
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/450661/760285"
+  },
+  {
+   "tittel": "Vedtak i SSKO 2026-02-10",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7833/Protokoll"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal naboen få kjøpe 36,9 dekar landbruksjord i Henning som tilleggsjord?",
+ "sammendrag": "Saken gjaldt en søknad om konsesjon for kjøp av et fradelt areal på om lag 36,9 dekar fra eiendommen gnr/bnr 86/6 i Henning. Arealet består av 30,5 dekar fulldyrka jord, 6,1 dekar produktiv skog og 0,1 dekar annet markslag, og skal legges til naboeiendommen gnr/bnr 86/1, som driver melkeproduksjon, storfekjøtt, slaktegris samt gras- og kornproduksjon. Kjøpesummen er avtalt til 550 000 kroner, som kommunen vurderte å ligge under maksimal konsesjonspris. Hovedutvalg plan, næring og miljø godkjente søknaden 27. januar 2026, med vilkår om at kjøperne bor på gnr/bnr 86/1 i minst fem sammenhengende år, at eiendommen drives landbruksmessig forsvarlig, og at arealet sammenføyes med gnr/bnr 86/1.",
+ "betydning": "Jorda i Henning blir en del av et nabobruk som allerede har drevet arealet, og eierne får boplikt i fem år på gården.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7601,
+ "sjekksum": "f59cade0dd64ffdf",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 10009,
+  "ut": 534
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/426654/726857"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-01-27",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7601/Protokoll"
+  }
+ ]
+}

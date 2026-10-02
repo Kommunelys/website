@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Hvordan følger rådet opp arbeidet med handlingsplanen sin?",
+ "sammendrag": "Rådet (RÅFIM) har bestemt at status for arbeidet med handlingsplanen skal være fast sak på hvert møte. Til saken følger handlingsplanen med konkretisering for 2026 som vedlegg. I møtet 3. juni 2026 ble statusen tatt til orientering, det vil si at rådet merket seg informasjonen uten å gjøre endringer. Saken kommer opp igjen i møtet 12. oktober 2026 som PS 17/2026.",
+ "betydning": "Innbyggerne kan følge med på hvordan rådet arbeider med punktene i handlingsplanen, siden status legges fram på hvert møte.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8291,
+ "sjekksum": "4687730c2deffd2b",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1872,
+  "ut": 1040
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/484734/809917"
+  },
+  {
+   "tittel": "Vedtak i RÅFIM 2026-06-03",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8291/Protokoll"
+  }
+ ]
+}

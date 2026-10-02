@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skal planene om hotell i Kongens gate 42 i Steinkjer sentrum sendes på høring?",
+ "sammendrag": "Eier av Kongens gate 42 har foreslått å endre reguleringsplanen for å kunne etablere hotell i Kongens gate 42A i Steinkjer sentrum. Forslaget åpner for påbygg på 4–5 etasjer og at utnyttelsesgraden økes fra om lag BRA 110 % til om lag BRA 250 %, med et samlet bruksareal på rundt 5 000 m². Det verneverdige byportalbygget i Kongens gate 42 skal bevares. Kommunedirektøren peker på at høyde og utnyttelse utfordrer hensynssonen for kulturmiljøet Gjenreisningsbyen, og at inntil 4 etasjer ville passet bedre, men anbefalte likevel at forslaget sendes på høring. Hovedutvalg for plan, næring og miljø vedtok 28.04.2026 å legge planforslaget ut til offentlig ettersyn i 6 uker.",
+ "betydning": "Innbyggere og naboer kan uttale seg om hotellplanene i høringsperioden før kommunen tar endelig stilling til byggehøyde og utnyttelse i kvartalet.",
+ "tagger": [
+  "Plan og areal",
+  "Næring"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7951,
+ "sjekksum": "8e53443ac1c32ed2",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 17108,
+  "ut": 500
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/456454/770071"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7951/Protokoll"
+  }
+ ]
+}

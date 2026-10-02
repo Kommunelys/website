@@ -1,0 +1,36 @@
+{
+ "tittel_klarsprak": "Skal årsregnskapet og årsberetningen for 2025 for Steinkjer kommuneskoger-Ogndalsbruket KF godkjennes?",
+ "sammendrag": "Saken gjelder årsregnskap og årsberetning for 2025 for det kommunale foretaket Steinkjer kommuneskoger-Ogndalsbruket KF. Kommunedirektøren foreslo at begge dokumentene blir godkjent, og viste i saksframlegget til regnskapet og beretningen uten nærmere vurderinger. Styret for foretaket behandlet saken 23. mars 2026 og godkjente årsregnskapet og årsberetningen. Formannskapet behandlet saken 17. juni 2026 og gjorde samme vedtak.",
+ "betydning": "Regnskapet og beretningen for det kommunalt eide skogforetaket er formelt godkjent av kommunens organer.",
+ "tagger": [
+  "Økonomi",
+  "Eierskap og selskaper"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 7972,
+ "sjekksum": "9ca5ef6e3baf631d",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 2244,
+  "ut": 429
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/459208/774102"
+  },
+  {
+   "tittel": "Vedtak i SSKO 2026-03-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7972/Protokoll"
+  },
+  {
+   "tittel": "Vedtak i FSKO 2026-06-17",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8200/Protokoll"
+  }
+ ]
+}

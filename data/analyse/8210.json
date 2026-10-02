@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Skulle kommunen godkjenne kjøpet av en landbrukseiendom i Beitstad til 6 100 000 kroner?",
+ "sammendrag": "To kjøpere søkte om konsesjon for å overta landbrukseiendommen gnr/bnr 431/4 i Beitstad, med planer om å bruke den til bolig. Eiendommen er på 131,6 dekar, med 38,7 dekar fulldyrka jord og 83,2 dekar produktiv skog, og har våningshus fra 1970 og garasje/uthus fra 2012. Avtalt kjøpesum var 6 100 000 kroner, mens kommunens landbruksmyndighet beregnet samfunnsmessig forsvarlig pris til 4 000 000 kroner. Hovedutvalg plan, næring og miljø avslo søknaden 9. juni 2026, med den begrunnelse at prisen ligger over maksimal konsesjonspris etter konsesjonsloven.",
+ "betydning": "Avslaget betyr at eiendommen ikke kan overdras til den avtalte prisen, og at kommunen holder fast ved priskontrollen på landbrukseiendommer.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8210,
+ "sjekksum": "a57579f8976b207a",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 14806,
+  "ut": 553
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/482577/806335"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-06-09",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8210/Protokoll"
+  }
+ ]
+}

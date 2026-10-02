@@ -1,0 +1,32 @@
+{
+ "tittel_klarsprak": "Får en gårdbruker i Stod kjøpe nabogården som tilleggsjord?",
+ "sammendrag": "En gårdbruker i Stod søkte om konsesjon for å kjøpe eiendommen gnr/bnr 290/11, 299/2 og 299/5 som tilleggsareal til gården han allerede eier og driver (gnr/bnr 299/1). Eiendommen som kjøpes er på 661,9 dekar, med blant annet 198,7 dekar fulldyrka jord og 329,7 dekar produktiv skog. Avtalt kjøpesum er 4 600 000 kroner, og kommunedirektøren vurderte at prisen ligger innenfor rammene i konsesjonsloven. Hovedutvalg plan næring og miljø ga konsesjon 28. april 2026, med vilkår om at kjøperen må bo på gnr/bnr 299/1 i minst fem sammenhengende år, at eiendommen drives landbruksmessig forsvarlig, og at de kjøpte eiendommene blir sammenføyd med søkers landbrukseiendom.",
+ "betydning": "Den samla landbrukseiendommen blir på 1 130,0 dekar og skal fortsatt være bebodd og i drift, mens eiendommen som kjøpes ikke lenger vil være et selvstendig gårdsbruk.",
+ "tagger": [
+  "Landbruk",
+  "Plan og areal"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8003,
+ "sjekksum": "317e3536c01e604c",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 9172,
+  "ut": 562
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/464636/781070"
+  },
+  {
+   "tittel": "Vedtak i HPNM 2026-04-28",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/8003/Protokoll"
+  }
+ ]
+}

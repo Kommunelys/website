@@ -1,0 +1,31 @@
+{
+ "tittel_klarsprak": "Skal styret ta regnskapsrapporten per 13. mars 2026 til etterretning?",
+ "sammendrag": "",
+ "betydning": "Saken gjelder styrets løpende oppfølging av regnskapet, og dokumentene sier ikke noe om konkrete konsekvenser for innbyggerne.",
+ "tagger": [
+  "Økonomi"
+ ],
+ "utfall": "vedtatt",
+ "uenighet": "",
+ "usikker": true,
+ "sak_id": 7971,
+ "sjekksum": "255c55af451a3fc4",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-02",
+ "tokens": {
+  "inn": 1880,
+  "ut": 354
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/459202/774083"
+  },
+  {
+   "tittel": "Vedtak i SSKO 2026-03-23",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDmbHandlingDocument/b069d4f5-192a-4fee-be37-dc006441e271/7971/Protokoll"
+  }
+ ]
+}
