@@ -81,23 +81,47 @@ def _folkevalgte() -> set[str]:
             for v in json.loads(sti.read_text(encoding="utf-8"))}
 
 
-def _navn_i_tittel(tittel: str, folkevalgte: set[str] = frozenset()) -> list[str]:
+def _tillatte_navn() -> set[str]:
+    """Navn som er vurdert og kan stå i et sammendrag, for eksempel en avdød
+    dikter en byste skal reises over. Vedlikeholdes i data/tillatte-navn.json
+    med begrunnelse for hvert navn."""
+    return {n["navn"] for n in _les(ROT / "data" / "tillatte-navn.json", [])}
+
+
+def unntatte_navn() -> set[str]:
+    """Navn fra sakstitler som kan stå i et sammendrag."""
+    return _folkevalgte() | _tillatte_navn()
+
+
+# Ord som viser at et ledd i tittelen er et firma, et sted eller et bygg,
+# ikke en person: «SalMar Settefisk AS», «Steinkjer Kulturhus», «Bygg B».
+IKKE_PERSON = {
+    "as", "asa", "sa", "ba", "kf", "iks", "da", "ans", "stiftelse", "lag", "forening",
+    "stadion", "kulturhus", "hus", "bygg", "skole", "barnehage", "kirke", "senter",
+    "sentrum", "hall", "park", "veg", "vei", "gate", "plass", "kommune", "fylkeskommune",
+    "bru", "havn", "torg", "gård", "camping", "hotell", "museum",
+}
+
+
+def _navn_i_tittel(tittel: str, unntatt: set[str] = frozenset()) -> list[str]:
     """Personnavn i en sakstittel: «… - Kari Nordmann og Ola Hansen».
 
     Grovt: et ledd etter en bindestrek som bare består av ord med stor
-    forbokstav (og «og»). Stedsnavn kan slippe gjennom; det er bedre å holde
-    tilbake ett sammendrag for mye enn å publisere et navn. Folkevalgte
-    unntas.
+    forbokstav (og «og»), uten ord som viser at det er et firma eller et sted.
+    Folkevalgte og navn i data/tillatte-navn.json unntas. Det er bedre å holde
+    tilbake ett sammendrag for mye enn å publisere et navn.
     """
     navn = []
     for ledd in re.split(r"\s[-–]\s", tittel)[1:]:
         ord_ = ledd.replace(",", " ").split()
         if not 2 <= len(ord_) <= 12 or not all(o[0].isupper() or o == "og" for o in ord_):
             continue
+        if any(o.lower().strip(".") in IKKE_PERSON or len(o) == 1 for o in ord_):
+            continue
         del_ = []
         for o in ord_ + ["og"]:
             if o == "og":
-                if len(del_) >= 2 and " ".join(del_) not in folkevalgte:
+                if len(del_) >= 2 and " ".join(del_) not in unntatt:
                     navn.append(" ".join(del_))
                 del_ = []
             else:
@@ -105,13 +129,76 @@ def _navn_i_tittel(tittel: str, folkevalgte: set[str] = frozenset()) -> list[str
     return navn
 
 
-def sammendrag_avvik(sak: dict, a: dict, folkevalgte: set[str] = frozenset()) -> list[str]:
+MANEDER = {m: i for i, m in enumerate(
+    ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august",
+     "september", "oktober", "november", "desember"], 1)}
+DATO_TALL = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})(?!\d)")
+DATO_ISO = re.compile(r"\b(\d{4})-(\d{2})-(\d{2})")
+# Saksframleggene skriver «17. mars», «17.mars» og «17 mars».
+DATO_ORD = re.compile(
+    r"\b(\d{1,2})\.?\s*(" + "|".join(MANEDER) + r")\b(?:\s+(\d{4}))?", re.I)
+# Tusenskille kan være mellomrom, hardt mellomrom eller punktum: 1 780 307,
+# 1.780 307 og 1.780.307 er samme tall. Linjeskift er ikke tusenskille; i
+# tabeller fra pdftotext står hver celle på sin egen linje.
+SKILLE = r"(?:[^\S\n]|\.)"
+TALL = re.compile(r"\d+(?:" + SKILLE + r"\d{3})*(?:,\d+)?")
+# Årsintervall der tankestreken har falt ut i tekstuttrekket: «20302040».
+AARSPENN = re.compile(r"(?<!\d)((?:19|20)\d\d)((?:19|20)\d\d|\d\d)(?!\d)")
+
+
+def _tall_i_kilden(tekst: str) -> set[str]:
+    """Tall i kildeteksten, også der tabellceller er klistret sammen.
+
+    pdftotext skriver tabeller som «30000 304 980» og «54 680,2 098 141,74».
+    Et tall kan derfor begynne midt i en slik rekke, men bare der det forrige
+    leddet ikke kan være starten på samme tall: etter et ledd på fire sifre
+    eller mer, eller etter et komma. «1 304 980» gir ikke «304 980».
+    """
+    tall = set()
+    for m in re.finditer(r"(?<!\d)\d", tekst):
+        foran = re.search(r"(\d+)" + SKILLE + r"\Z", tekst[max(0, m.start() - 12):m.start()])
+        if foran and len(foran.group(1)) <= 3:
+            continue
+        tall.add(re.sub(r"[\s.]", "", TALL.match(tekst, m.start()).group()))
+    for m in AARSPENN.finditer(tekst):
+        tall.update(g for g in m.groups() if len(g) == 4)
+    return tall
+
+
+def _datoer_og_tall(tekst: str, kilde: bool = False) -> tuple[set[tuple], set[str]]:
+    """Datoer som (dag, måned, år eller None), og tall uten tusenskille.
+
+    Bare tall med minst tre sifre eller desimalkomma telles; små tall som
+    «to møter» er ofte talt opp av modellen og ikke skrevet i kilden.
+    """
+    datoer = set()
+
+    def _aar(a: str | None) -> int | None:
+        return None if not a else int(a) + (2000 if len(a) == 2 else 0)
+
+    for m in DATO_TALL.finditer(tekst):
+        datoer.add((int(m.group(1)), int(m.group(2)), _aar(m.group(3))))
+    for m in DATO_ISO.finditer(tekst):
+        datoer.add((int(m.group(3)), int(m.group(2)), int(m.group(1))))
+    for m in DATO_ORD.finditer(tekst):
+        datoer.add((int(m.group(1)), MANEDER[m.group(2).lower()], _aar(m.group(3))))
+    uten_datoer = DATO_ORD.sub(" ", DATO_ISO.sub(" ", DATO_TALL.sub(" ", tekst)))
+    if kilde:
+        tall = _tall_i_kilden(uten_datoer)
+    else:
+        tall = {re.sub(r"[\s.]", "", t) for t in TALL.findall(uten_datoer)}
+    tall = {t for t in tall if len(t) >= 3 or "," in t}
+    tall |= {str(d[2]) for d in datoer if d[2]}
+    return datoer, tall
+
+
+def sammendrag_avvik(sak: dict, a: dict, unntatt: set[str] = frozenset()) -> list[str]:
     """Hvorfor et sammendrag ikke kan publiseres. Tom liste betyr at det kan.
 
-    Tall i sammendraget må finnes i kildeteksten, og navn på privatpersoner
-    fra sakstittelen skal ikke være med (CLAUDE.md regel 6). Brukes av
-    bygget, som holder tilbake sammendrag med avvik, på samme måte som
-    voteringer.
+    Tall og datoer i sammendraget må finnes i kilden: dokumentene, tittelen og
+    møtedatoene i saksgangen. Navn på privatpersoner fra sakstittelen skal ikke
+    være med (CLAUDE.md regel 6). Brukes av bygget, som holder tilbake
+    sammendrag med avvik, på samme måte som voteringer.
     """
     if a.get("usikker"):
         return ["modellen er usikker"]
@@ -122,12 +209,23 @@ def sammendrag_avvik(sak: dict, a: dict, folkevalgte: set[str] = frozenset()) ->
     ut = []
     kilde = _kildetekst(sak)
     if kilde:
-        uten_mellomrom = re.sub(r"[\s ]", "", kilde)
-        for tall in set(re.findall(r"\b\d[\d\s .,]{2,}\b", tekst)):
-            rent = re.sub(r"[\s ]", "", tall).rstrip(".,")
-            if rent not in uten_mellomrom:
-                ut.append(f"tallet {tall.strip()!r} finnes ikke i kilden")
-    for n in _navn_i_tittel(sak["tittel"], folkevalgte):
+        kilde += " " + sak["tittel"] + " " + " ".join(st["dato"] for st in sak["saksgang"])
+        k_datoer, k_tall = _datoer_og_tall(kilde, kilde=True)
+        k_dag_mnd = {(d, m) for d, m, _ in k_datoer}
+        s_datoer, s_tall = _datoer_og_tall(tekst)
+        for d, m, aar in sorted(s_datoer, key=str):
+            # «17. mars» i kilden og «17. mars 2026» i sammendraget er samme
+            # dato hvis året også står i kilden.
+            if aar:
+                funnet = (d, m, aar) in k_datoer or (
+                    (d, m, None) in k_datoer and str(aar) in k_tall)
+            else:
+                funnet = (d, m) in k_dag_mnd
+            if not funnet:
+                ut.append(f"datoen {d}.{m}.{aar or ''} finnes ikke i kilden")
+        for t in sorted(s_tall - k_tall):
+            ut.append(f"tallet {t!r} finnes ikke i kilden")
+    for n in _navn_i_tittel(sak["tittel"], unntatt):
         etternavn = n.split()[-1]
         if n in tekst or re.search(rf"\b{re.escape(etternavn)}\b", tekst):
             ut.append(f"navnet {n!r} fra tittelen står i teksten")
@@ -137,13 +235,13 @@ def sammendrag_avvik(sak: dict, a: dict, folkevalgte: set[str] = frozenset()) ->
 def analyser_viser_til_kilden(saker: list[dict]) -> list[str]:
     """Sammendrag med avvik. Stopper ikke publiseringen; bygget holder dem tilbake."""
     etter_sak = {s["sak_id"]: s for s in saker}
-    folkevalgte = _folkevalgte()
+    unntatt = unntatte_navn()
     ut = []
     for sti in ANALYSE.glob("*.json"):
         a = _les(sti)
         sak = etter_sak.get(a.get("sak_id"))
         if sak and not a.get("usikker"):
-            ut += [f"sak {a['sak_id']}: {g}" for g in sammendrag_avvik(sak, a, folkevalgte)]
+            ut += [f"sak {a['sak_id']}: {g}" for g in sammendrag_avvik(sak, a, unntatt)]
     return ut
 
 

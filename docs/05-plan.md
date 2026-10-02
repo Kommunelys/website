@@ -24,7 +24,7 @@ dag, og det er her kvaliteten på datagrunnlaget må sitte før noe bygges oppå
 | Lagre tekst fra dokumentene | Ferdig for 2026, 724 av 726 |
 | Modellere utvalg, verv og oppmøte | Ferdig for 2026. Vervene har observerte datoer, ikke vedtatte |
 | Portere nettstedet fra prototype til repo | Ferdig. Bygges fra data, uten sammendrag |
-| Sette opp GitHub Actions | Skrevet, ikke kjørt |
+| Sette opp GitHub Actions | Ferdig. Kjøres for hånd; tidsplanen er slått av |
 
 ## Fase 2 — AI på toppen
 
@@ -45,7 +45,7 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Caching på sjekksum av kildetekst og promptversjon | Ferdig |
 | Faste tagger, fastsatt én gang | Ferdig, 15 tagger |
 | Prøvekjøring på rundt ti saker, lese resultatet | Ferdig. Fem feil funnet og rettet i instruksjon v3 |
-| Kontroll av tall og navn i sammendraget | Ferdig. Tall må finnes i kilden, navn på privatpersoner fra tittelen holdes ute; ellers holdes sammendraget tilbake |
+| Kontroll av tall og navn i sammendraget | Ferdig. Tall og datoer må finnes i kilden, uansett skrivemåte; navn på privatpersoner fra tittelen holdes ute. 215 av 221 består, de 6 andre er merket usikre av modellen |
 | Vise sammendrag på nettstedet med kildelenke | Ferdig |
 | Knapp for å melde fra om feil | Ferdig, lenke til et nytt GitHub-issue. Krever GitHub-konto |
 | Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres i `nettsted/status.json` |
@@ -108,8 +108,8 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 
 ## Kjente mangler i nettstedet
 
-- Ingen sammendrag eller tema ennå, bare høringssaker merket ut fra
-  sakstittelen. Kommer i fase 2.
+- Sammendrag og tema er maskinskrevet. Seks saker mangler sammendrag fordi
+  modellen merket dem som usikre.
 - Kommunestyrets sammensetning er dagens, fra medlemslisten. Den viser ikke
   permisjoner og bytter tidligere i året.
 - Saker fra 2025 som fortsatte i 2026, er bare delvis med.

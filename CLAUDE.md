@@ -67,8 +67,9 @@ data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
 data/utvalg/   utvalg og partier
 data/verv/     verv per person og utvalg
 data/avvik/    avvik som må vurderes før voteringene publiseres
-data/vurderinger.json  avgjørelsene for avvikene, skrevet av et menneske
+data/vurderinger.json  avgjørelsene for avvikene, med begrunnelse og hvem som vurderte (ADR-015)
 data/analyse/  sammendrag og tagger fra modellen
+data/tillatte-navn.json  navn fra sakstitler som er vurdert og kan stå i et sammendrag
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
 ```
@@ -141,6 +142,12 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt
   plasser i alle kommunestyremøtene i 2026.
 - **GitHub Actions utløser ikke seg selv.** En commit med standardtokenet
   starter ikke andre arbeidsflyter. Derfor én arbeidsflyt med tre jobber.
+- **Tall og datoer skrives på mange måter.** «kr. 550.000», «550 000» og
+  «4100,-» er vanlige tall; «17.mars», «17 mars» og «17.03.2026» er samme
+  dato. pdftotext klistrer sammen tabellceller («30000 304 980») og mister
+  tankestreken i årsintervaller («20302040»). Første versjon av kontrollen
+  holdt tilbake 53 av 221 sammendrag, nesten alle riktige. Endrer du
+  kontrollen, så plant feil i ekte sammendrag og se at de fortsatt fanges.
 
 ## Språk
 

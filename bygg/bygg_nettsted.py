@@ -25,7 +25,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from tester.kontroller import _folkevalgte, sammendrag_avvik
+from tester.kontroller import sammendrag_avvik, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 
 ROT = Path(__file__).resolve().parent.parent
@@ -53,13 +53,13 @@ def _sammendrag(saker: list, analyser: dict) -> tuple[dict, list[str]]:
     Samme prinsipp som for voteringer: et sammendrag med avvik vises ikke,
     men stopper ikke resten av nettstedet.
     """
-    folkevalgte = _folkevalgte()
+    unntatt = unntatte_navn()
     ut, holdt = {}, []
     for s in saker:
         a = analyser.get(s["sak_id"])
         if not a:
             continue
-        avvik = sammendrag_avvik(s, a, folkevalgte)
+        avvik = sammendrag_avvik(s, a, unntatt)
         if avvik:
             holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik)}")
             continue

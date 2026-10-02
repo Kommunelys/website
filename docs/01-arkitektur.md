@@ -191,12 +191,27 @@ maskinskrevet, med dato og modellnavn.
 - Antall navn i en stemmeliste stemmer ikke med oppgitt stemmetall
 - En representant stemmer både for og mot i samme votering
 - En som stemmer står ikke på oppmøtelisten
-- Et sammendrag inneholder tall eller navn som ikke finnes i kildeteksten
 - En sak mangler lenke til kilde
 - Antall saker faller mer enn 20 prosent fra forrige kjøring
 
-Den fjerde er viktigst og vanskeligst. En enkel variant som fanger mye: trekk ut
-alle tall og egennavn fra sammendraget og kontroller at de finnes i kilden.
+### Kontroll av sammendrag
+
+Et sammendrag som ikke består, holdes tilbake for den ene saken. Resten av
+nettstedet publiseres som vanlig, på samme måte som voteringer med avvik.
+
+- Hvert tall med minst tre sifre eller desimalkomma, og hver dato, må finnes i
+  kilden: saksframlegget, vedtakene, tittelen og møtedatoene i saksgangen.
+  Tall sammenlignes uten tusenskille, datoer som dag, måned og år, uansett
+  skrivemåte.
+- Personnavn fra sakstittelen skal ikke stå i teksten (CLAUDE.md regel 6).
+  Folkevalgte er unntatt, og det samme er navn i `data/tillatte-navn.json`,
+  som har begrunnelse for hvert navn. Ledd med ord som «AS», «Stadion» eller
+  «Kulturhus» regnes ikke som personnavn.
+- Sammendrag modellen selv har merket som usikre, publiseres ikke.
+
+Kontrollen ser ikke om en påstand er riktig, bare om tallene og datoene den
+bygger på, står i kilden. Fra kjøringen 2.10.2026 består 215 av 221; de 6
+andre er merket usikre av modellen.
 
 ### Skjermet informasjon
 
