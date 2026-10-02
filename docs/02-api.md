@@ -94,7 +94,8 @@ Eksempel: sak 8414 er PS 47/2026 i HPNM 13.10.2026 og har tilleggsbehandling
 
 ## Dokumentadresser
 
-Lest ut av app-koden. **Ikke testet med et nedlastingskall ennå.**
+Lest ut av app-koden. Testet 2. oktober 2026 med ett kall hver, og deretter
+med hele 2026-samlingen (ADR-013).
 
 | Dokument | Mønster |
 |---|---|
@@ -105,6 +106,19 @@ Lest ut av app-koden. **Ikke testet med et nedlastingskall ennå.**
 Vedtaksadressen gjelder bare når `ProtocolPublished` er sann og
 `ProtocolRestricted` er usann.
 
+### Svar
+
+| Egenskap | Observert |
+|---|---|
+| Status | 200. 404 når dokumentet er trukket tilbake etter uttrekket |
+| `Content-Type` | `application/pdf`, eller Word (`…wordprocessingml.document`) for vedtak fra noen møter |
+| `Content-Length` | Mangler. Størrelsen er først kjent når filen er lastet ned |
+| `Content-Disposition` | `inline` med filnavn, for eksempel `Saksprotokoll KS.PDF` |
+| Header `Accept: application/json` | Påvirker ikke svaret |
+
+Saksframlegg og vedtak er PDF 1.7, de fleste merket PDF/A-2. Møteinnkallingen
+er satt sammen av portalen og er stor: 41 MB og 221 sider for HPNM 13.10.2026.
+
 ### Eksempler
 
 Med `D` = `b069d4f5-192a-4fee-be37-dc006441e271`:
@@ -113,7 +127,7 @@ Med `D` = `b069d4f5-192a-4fee-be37-dc006441e271`:
 Documents/ShowMeetingDocument/D/1290/MI/5497     møteinnkalling HPNM 13.10
 Documents/ShowDocument/D/502569/835161            saksframlegg
 Documents/ShowDocument/D/502569/846205            vedlegg
-Documents/ShowDmbHandlingDocument/D/8414/Protokoll   vedtak
+Documents/ShowDmbHandlingDocument/D/8356/Protokoll   vedtak KS 16.09
 ```
 
 ## Kodeverdier
@@ -163,6 +177,7 @@ Documents/ShowDmbHandlingDocument/D/8414/Protokoll   vedtak
 | **Totalt å laste ned** | **1 602** |
 
 Filformat: 1 403 `RA-PDF`, 23 `JPEG`, 4 `PDF`. Samlingen er altså ikke bare PDF.
+Formatet for vedtak står ikke i API-et. Ved nedlasting var 22 av 375 Word-filer.
 
 ## Begrensninger
 

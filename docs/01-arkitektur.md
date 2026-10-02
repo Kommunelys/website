@@ -94,16 +94,19 @@ Sendt som PDF kommer hver side i tillegg som et bilde, og kostnaden mangedobles.
 Oppmøtelisten er kolonnebasert, og Markdown-konvertering risikerer å ødelegge
 nettopp den strukturen.
 
-**Saksframlegg:** Markdown lønner seg, fordi faste overskrifter som
-«Kommunedirektørens vurdering» og «Innstilling» gjør det mulig å skjære bort det
-uvesentlige.
+Noen møter har protokollene bare i Word. De leses med standardbiblioteket.
 
-Før konvertering kjøres en sortering: under noen hundre tegn per side betyr at
-dokumentet mangler tekstlag og trolig er skannet. Da må det enten gjennom
-tekstgjenkjenning eller markeres som ikke analysert, heller enn å gå videre som
-en tom tekst som ser gyldig ut.
+**Saksframlegg:** ren tekst uten `-layout`. De faste overskriftene i
+kommunens mal, «… forslag til vedtak», «Saksopplysninger» og
+«Saksvurderinger», står da på egne linjer, og teksten deles ved dem
+(`tolk/saksframlegg.py`). Det gir det samme som Markdown var tenkt å gi:
+muligheten til å skjære bort det uvesentlige.
 
-Se ADR-012: endelig verktøyvalg tas etter at hele samlingen er målt.
+Under 20 tegn per side betyr at dokumentet mangler tekstlag og trolig er
+skannet. Teksten lagres da ikke, heller enn å gå videre som en tom tekst som ser
+gyldig ut. Det brukes ingen tekstgjenkjenning; i 2026 gjaldt det ett dokument.
+
+Se ADR-013 for målingen og verktøyvalget.
 
 ## AI-analyse
 

@@ -19,8 +19,9 @@ dag, og det er her kvaliteten på datagrunnlaget må sitte før noe bygges oppå
 | Bygge saksidentitet på tvers av utvalg | Ferdig |
 | Utlede status på en sak | Ferdig |
 | Tolke protokoll til voteringer og stemmer | Ferdig, 42 av 42 i testmøtet |
-| Teste dokument-URL-ene | Ikke gjort |
-| Laste ned og måle hele dokumentsamlingen | Ikke gjort |
+| Teste dokument-URL-ene | Ferdig, alle tre virker |
+| Laste ned og måle hele dokumentsamlingen | Ferdig for saksframlegg og vedtak, se ADR-013 |
+| Lagre tekst fra dokumentene | Klar til kjøring, ikke kjørt |
 | Modellere utvalg, verv og oppmøte | Ikke gjort |
 | Portere nettstedet fra prototype til repo | Ikke gjort |
 | Sette opp GitHub Actions | Skrevet, ikke kjørt |
@@ -83,10 +84,10 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 
 - [ ] Avklare med Steinkjer kommune om innhenting er greit, og hvem som er
       kontaktpunkt (ADR-007)
-- [ ] Teste de tre dokument-URL-ene med ett nedlastingskall hver
-- [ ] Laste ned hele dokumentsamlingen for 2026 og måle den: sidetall per
+- [x] Teste de tre dokument-URL-ene med ett nedlastingskall hver
+- [x] Laste ned hele dokumentsamlingen for 2026 og måle den: sidetall per
       dokumenttype, tegn per side, andel uten tekstlag, andel som ikke er PDF
-      (ADR-012)
+      (ADR-012, avløst av ADR-013)
 - [ ] Bekrefte at protokolltolkningen virker på minst tre møter fra ulike
       utvalg, ikke bare kommunestyret
 - [ ] Bestemme hvem som eier tjenesten og står som avsender

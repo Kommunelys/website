@@ -19,7 +19,7 @@ utvetydig uoffisielt i all presentasjon.
 | Innhenting av møter og saker | Virker, kjørt mot hele 2026 |
 | Tolkning av protokoll til stemmer | Virker, 42 av 42 voteringer riktig i testmøtet |
 | Saksgang på tvers av utvalg | Virker |
-| Nedlasting av dokumenter | Ikke gjort. URL-mønstrene er lest ut av portalens kode, men ikke testet |
+| Nedlasting av dokumenter | URL-ene testet og 2026-samlingen målt. Verktøy valgt i ADR-013. Tekst ikke lagret ennå |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
 | Nettsted | Prototype finnes, se `docs/05-plan.md`. Ikke portet hit |
 | GitHub Actions | Skrevet, ikke kjørt |
@@ -62,9 +62,11 @@ tester/    kontroller som må passere før publisering
 
 ```bash
 python -m hent.hent_moter 2026          # møter, saker, saksgang
-python -m hent.hent_dokumenter          # PDF -> data/tekst/ (laster ned, tar tid)
+python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
+python -m hent.hent_dokumenter 2026 --mal  # bare måling -> data/maling-<år>.json
 python -m tolk.bygg_saker               # saksgang og status -> data/saker/
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én protokolltekst
+python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 ```
 
@@ -81,6 +83,14 @@ python -m tester.kontroller             # alle kontroller
 - **`pdftotext -layout` er nødvendig, ikke valgfritt.** Oppmøtelisten i
   protokollen er kolonnebasert. Uten `-layout` mister du koblingen mellom
   navn, funksjon og «varamedlem for».
+- **`pdftotext` må være poppler, ikke xpdf.** Den som følger med Git for
+  Windows er xpdf: den skriver Latin-1, så æøå blir ødelagt, og den mangler
+  `pdfinfo`. `hent.hent_dokumenter` stopper hvis den finner xpdf (ADR-013).
+- **Ikke alle vedtak er PDF.** Noen møter har saksprotokollene bare i Word,
+  blant annet HPNM og KTU 09.06.2026. De har voteringene og må tas med.
+- **Hoveddokumentet er ikke alltid et saksframlegg.** I referatsaker er det
+  ofte et brev eller en protokoll fra andre. Bare dokumenter som starter med
+  «SAKSFRAMLEGG», deles ved overskriftene (`tolk/saksframlegg.py`).
 - **Navnevarianter.** Samme person skrives ulikt i samme dokument, for
   eksempel «Tor André Eide» og «Tor Andre Eide». Normaliseres i
   `tolk/navn.py`.
