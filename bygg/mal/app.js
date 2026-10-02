@@ -87,7 +87,9 @@ document.getElementById('kssub').textContent=`${KSN} representanter · fra medle
   const full=PS.filter(c=>{const s=c.st.map(x=>x.sc);return s.includes('KS')&&s.includes('FS')&&s.some(x=>['HPNM','HOK','HHO'].includes(x))}).length;
   const fsks=PS.filter(c=>{const s=[...new Set(c.st.map(x=>x.sc))];return s.join()==='FS,KS'}).length;
   const ksAll=PS.filter(c=>c.ks).length;
-  document.getElementById('flowfact').innerHTML=`I ${AAR} har <b>${ksAll}</b> saker vært eller skal til kommunestyret. <b>${fsks}</b> gikk rett fra formannskapet, og <b>${full}</b> gikk hele veien fra et hovedutvalg via formannskapet.`;
+  const fsSelv=PS.filter(c=>c.st.some(x=>x.sc==='FS')&&!c.ks).length;
+  const huSelv=PS.filter(c=>c.st.some(x=>['HPNM','HOK','HHO'].includes(x.sc))&&!c.st.some(x=>['FS','KS'].includes(x.sc))).length;
+  document.getElementById('flowfact').innerHTML=`I ${AAR} har <b>${ksAll}</b> saker vært eller skal til kommunestyret. <b>${fsks}</b> gikk rett fra formannskapet, og <b>${full}</b> gikk hele veien fra et hovedutvalg via formannskapet. Formannskapet avgjorde <b>${fsSelv}</b> saker selv, og hovedutvalgene <b>${huSelv}</b>.`;
 })();
 
 /* Utvalg og roller */
@@ -97,7 +99,7 @@ document.getElementById('kssub').textContent=`${KSN} representanter · fra medle
   document.getElementById('org').innerHTML=`
    <div class="lvl l1">${b('KS','Kommunestyret',`${KSN} representanter, øverste organ`,true)}</div>
    <div class="olbl">Forbereder og avgjør</div>
-   <div class="lvl l2">${b('FS','Formannskapet','innstiller til kommunestyret')}${b('KN','Klagenemnda','behandler klager')}</div>
+   <div class="lvl l2">${b('FS','Formannskapet','avgjør selv eller innstiller')}${b('KN','Klagenemnda','behandler klager')}</div>
    <div class="olbl">Hovedutvalg</div>
    <div class="lvl l3">${b('HPNM','Plan, næring og miljø','arealplaner, landbruk')}${b('HOK','Oppvekst og kultur','skole, barnehage, kultur')}${b('HHO','Helse og omsorg','helse, omsorg, velferd')}</div>
    <div class="olbl">Råd som gir uttalelser</div>
