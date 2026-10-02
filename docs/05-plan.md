@@ -23,7 +23,7 @@ dag, og det er her kvaliteten på datagrunnlaget må sitte før noe bygges oppå
 | Laste ned og måle hele dokumentsamlingen | Ferdig for saksframlegg og vedtak, se ADR-013 |
 | Lagre tekst fra dokumentene | Ferdig for 2026, 724 av 726 |
 | Modellere utvalg, verv og oppmøte | Ferdig for 2026. Vervene har observerte datoer, ikke vedtatte |
-| Portere nettstedet fra prototype til repo | Ikke gjort |
+| Portere nettstedet fra prototype til repo | Ferdig. Bygges fra data, uten sammendrag |
 | Sette opp GitHub Actions | Skrevet, ikke kjørt |
 
 ## Fase 2 — AI på toppen
@@ -97,15 +97,17 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
       Lena Hanem Bartnes (SP) eller Anniken Bjørnes (R). Til da holdes 42
       voteringer tilbake
 - [ ] Bestemme hvem som eier tjenesten og står som avsender
-- [ ] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
+- [x] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret
 - [ ] Velge navn og domene som ikke kan forveksles med kommunens
 
-## Kjente mangler i dagens prototype
+## Kjente mangler i nettstedet
 
-- Tema settes ut fra ord i sakstittelen og blir noen ganger feil
-- Sammensetningen av kommunestyret er hentet fra oppmøtelisten i siste møte,
-  ikke fra en offisiell medlemsliste
-- Saker fra 2025 som fortsatte i 2026 er bare delvis med
-- Sammendrag finnes bare for kommunestyremøtet 16.09.2026, og er skrevet for
-  hånd som eksempel
+- Ingen sammendrag eller tema ennå, bare høringssaker merket ut fra
+  sakstittelen. Kommer i fase 2.
+- Kommunestyrets sammensetning er dagens, fra medlemslisten. Den viser ikke
+  permisjoner og bytter tidligere i året.
+- Saker fra 2025 som fortsatte i 2026, er bare delvis med.
+- Voteringene fra kommunestyret 16.09.2026 er holdt tilbake til kommunen har
+  svart på hvem som møtte.
+- Etiketten på en votering er starten av forslagsteksten, ikke et sammendrag.

@@ -229,9 +229,10 @@ er å spørre kommunen. Se ADR-007.
 kommunen som ledd i et offentlig verv, og å gjengi dem ryddig er kjernen i
 innsyn. Tre grenser ligger fast:
 
-- Bare folkevalgte og ledende ansatte omtales ved navn, og bare i sin rolle.
-  Navn på privatpersoner i bygge-, klage- og personalsaker vises ikke, selv der
-  de står i en offentlig sakstittel.
+- I tekst tjenesten skriver selv, omtales bare folkevalgte og ledende ansatte
+  ved navn, og bare i sin rolle. Sakstitler og forslagstekster fra
+  protokollene vises uendret, også når de inneholder navn på privatpersoner,
+  fordi de er offentlige dokumenter (prosjekteier, 2.10.2026).
 - Ingen profilering ut over det som følger direkte av protokollene.
 - Siden skal kunne rettes, raskt.
 

@@ -23,7 +23,7 @@ utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
-| Nettsted | Prototype finnes, se `docs/05-plan.md`. Ikke portet hit |
+| Nettsted | Portert fra prototypen til `bygg/mal/`. Bygges fra data, uten sammendrag (fase 1) |
 | GitHub Actions | Skrevet, ikke kjørt. Tidsplanen er slått av til ADR-007 er avklart |
 
 ## Grunnregler du ikke skal bryte
@@ -44,8 +44,11 @@ utvetydig uoffisielt i all presentasjon.
    portalen.
 5. **Hvert sammendrag skal ha lenke til kilden.** Uten kildelenke publiseres
    det ikke.
-6. **Navn på privatpersoner vises ikke**, selv når de står i en offentlig
-   sakstittel. Folkevalgte omtales bare i sin rolle.
+6. **Tekst tjenesten skriver selv, har ikke navn på privatpersoner.** Det
+   gjelder sammendrag, merknader og forklaringer. Folkevalgte omtales bare i
+   sin rolle. Sakstitler og forslagstekster fra protokollene vises uendret,
+   også når de inneholder navn; de er offentlige dokumenter (prosjekteier,
+   2.10.2026).
 
 ## Mappene
 
@@ -53,7 +56,7 @@ utvetydig uoffisielt i all presentasjon.
 hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
-bygg/      statisk nettsted
+bygg/      statisk nettsted; malen (HTML, CSS, JS) i bygg/mal/
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
                lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
@@ -85,6 +88,8 @@ python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
+python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
+python -m http.server 8765 --directory nettsted  # se nettstedet lokalt
 ```
 
 ## Fallgruver vi allerede har gått i
