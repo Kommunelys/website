@@ -15,6 +15,8 @@ import re
 import sys
 from pathlib import Path
 
+from tolk.bygg_avvik import ugyldige_vurderinger
+
 ROT = Path(__file__).resolve().parent.parent
 SAKER = ROT / "data" / "saker"
 MOTER = ROT / "data" / "moter"
@@ -127,6 +129,9 @@ def kjor(aar: int) -> int:
         analyser_viser_til_kilden,
     ):
         feil += kontroll(saker)
+    # En vurdering uten begrunnelse, eller av et avvik som ikke lenger finnes,
+    # skal ikke kunne slippe voteringer gjennom (ADR-002).
+    feil += ugyldige_vurderinger(aar)
     feil += antall_har_ikke_stupt(saker, aar)
 
     print(f"{len(moter)} møter, {len(saker)} saker, "

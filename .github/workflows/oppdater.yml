@@ -73,6 +73,10 @@ jobs:
       - name: Bygg utvalg og verv
         run: python -m tolk.bygg_verv "${{ inputs.aar || '2026' }}"
 
+      # Voteringer med avvik holdes tilbake i bygget til de er vurdert.
+      - name: Samle avvik til vurdering
+        run: python -m tolk.bygg_avvik "${{ inputs.aar || '2026' }}"
+
       - name: Lagre endringer
         run: |
           git config user.name "oppdater-bot"

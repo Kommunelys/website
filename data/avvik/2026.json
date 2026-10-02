@@ -1,0 +1,526 @@
+[
+ {
+  "avvik": "antall:7777:1",
+  "beskrivelse": "13 stemmer, men 12 møtte",
+  "dato": "2026-01-29",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1230",
+  "status": "ikke_vurdert",
+  "type": "antall",
+  "utvalg": "FS",
+  "voteringer": [
+   [
+    7777,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "antall:7813:1",
+  "beskrivelse": "13 stemmer, men 12 møtte",
+  "dato": "2026-01-29",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1230",
+  "status": "ikke_vurdert",
+  "type": "antall",
+  "utvalg": "FS",
+  "voteringer": [
+   [
+    7813,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1230:may-britt-lagesen",
+  "beskrivelse": "May Britt Lagesen stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-01-29",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1230",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "FS",
+  "voteringer": [
+   [
+    7813,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1230:tor-borgan",
+  "beskrivelse": "Tor Borgan stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-01-29",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1230",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "FS",
+  "voteringer": [
+   [
+    7692,
+    1
+   ],
+   [
+    7700,
+    1
+   ],
+   [
+    7740,
+    1
+   ],
+   [
+    7740,
+    2
+   ],
+   [
+    7740,
+    3
+   ],
+   [
+    7740,
+    4
+   ],
+   [
+    7740,
+    5
+   ],
+   [
+    7777,
+    1
+   ],
+   [
+    7813,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "antall:7809:1",
+  "beskrivelse": "13 stemmer, men 12 møtte",
+  "dato": "2026-02-12",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1245",
+  "status": "ikke_vurdert",
+  "type": "antall",
+  "utvalg": "FS",
+  "voteringer": [
+   [
+    7809,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1245:may-britt-lagesen",
+  "beskrivelse": "May Britt Lagesen stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-02-12",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1245",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "FS",
+  "voteringer": [
+   [
+    7809,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1255:linn-kristine-sandseter",
+  "beskrivelse": "Linn Kristine Sandseter stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-03-25",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1255",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "KS",
+  "voteringer": [
+   [
+    7681,
+    1
+   ],
+   [
+    7793,
+    1
+   ],
+   [
+    7802,
+    1
+   ],
+   [
+    7846,
+    1
+   ],
+   [
+    7880,
+    1
+   ],
+   [
+    7885,
+    1
+   ],
+   [
+    7891,
+    1
+   ],
+   [
+    7893,
+    1
+   ],
+   [
+    7899,
+    1
+   ],
+   [
+    7911,
+    1
+   ],
+   [
+    7911,
+    2
+   ],
+   [
+    7911,
+    3
+   ],
+   [
+    7911,
+    4
+   ],
+   [
+    7928,
+    1
+   ],
+   [
+    7928,
+    2
+   ],
+   [
+    7928,
+    3
+   ],
+   [
+    7982,
+    1
+   ],
+   [
+    7982,
+    2
+   ],
+   [
+    7982,
+    3
+   ],
+   [
+    7982,
+    4
+   ],
+   [
+    7982,
+    5
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1266:gunnar-mikalsen-kvifte",
+  "beskrivelse": "Gunnar Mikalsen Kvifte stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-05-20",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1266",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "KS",
+  "voteringer": [
+   [
+    7822,
+    1
+   ],
+   [
+    7825,
+    1
+   ],
+   [
+    7939,
+    1
+   ],
+   [
+    7956,
+    1
+   ],
+   [
+    7983,
+    1
+   ],
+   [
+    7983,
+    2
+   ],
+   [
+    7983,
+    3
+   ],
+   [
+    7999,
+    1
+   ],
+   [
+    8002,
+    1
+   ],
+   [
+    8009,
+    1
+   ],
+   [
+    8067,
+    1
+   ],
+   [
+    8072,
+    1
+   ],
+   [
+    8078,
+    1
+   ],
+   [
+    8086,
+    1
+   ],
+   [
+    8086,
+    2
+   ],
+   [
+    8086,
+    3
+   ],
+   [
+    8091,
+    1
+   ],
+   [
+    8091,
+    2
+   ],
+   [
+    8091,
+    3
+   ],
+   [
+    8095,
+    1
+   ],
+   [
+    8095,
+    2
+   ],
+   [
+    8095,
+    3
+   ],
+   [
+    8119,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1274:lill-marit-sandseter",
+  "beskrivelse": "Lill Marit Sandseter stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-06-17",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1274",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "FSKO",
+  "voteringer": [
+   [
+    8200,
+    1
+   ]
+  ],
+  "vurdering": null
+ },
+ {
+  "avvik": "oppmote:1285:lena-hanem-bartnes",
+  "beskrivelse": "Lena Hanem Bartnes stemmer uten å stå på oppmøtelisten",
+  "dato": "2026-09-16",
+  "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1285",
+  "status": "ikke_vurdert",
+  "type": "oppmote",
+  "utvalg": "KS",
+  "voteringer": [
+   [
+    8356,
+    1
+   ],
+   [
+    8356,
+    2
+   ],
+   [
+    8356,
+    3
+   ],
+   [
+    8356,
+    4
+   ],
+   [
+    8356,
+    5
+   ],
+   [
+    8356,
+    6
+   ],
+   [
+    8356,
+    7
+   ],
+   [
+    8356,
+    8
+   ],
+   [
+    8356,
+    9
+   ],
+   [
+    8356,
+    10
+   ],
+   [
+    8356,
+    11
+   ],
+   [
+    8356,
+    12
+   ],
+   [
+    8356,
+    13
+   ],
+   [
+    8360,
+    1
+   ],
+   [
+    8389,
+    1
+   ],
+   [
+    8389,
+    2
+   ],
+   [
+    8389,
+    3
+   ],
+   [
+    8389,
+    4
+   ],
+   [
+    8389,
+    5
+   ],
+   [
+    8389,
+    6
+   ],
+   [
+    8389,
+    7
+   ],
+   [
+    8389,
+    8
+   ],
+   [
+    8389,
+    9
+   ],
+   [
+    8389,
+    10
+   ],
+   [
+    8389,
+    11
+   ],
+   [
+    8389,
+    12
+   ],
+   [
+    8389,
+    13
+   ],
+   [
+    8389,
+    14
+   ],
+   [
+    8389,
+    15
+   ],
+   [
+    8389,
+    16
+   ],
+   [
+    8389,
+    17
+   ],
+   [
+    8389,
+    18
+   ],
+   [
+    8389,
+    19
+   ],
+   [
+    8389,
+    20
+   ],
+   [
+    8389,
+    21
+   ],
+   [
+    8389,
+    22
+   ],
+   [
+    8389,
+    23
+   ],
+   [
+    8389,
+    24
+   ],
+   [
+    8389,
+    25
+   ],
+   [
+    8389,
+    26
+   ],
+   [
+    8389,
+    27
+   ],
+   [
+    8457,
+    1
+   ]
+  ],
+  "vurdering": null
+ }
+]
