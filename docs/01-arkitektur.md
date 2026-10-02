@@ -120,10 +120,23 @@ en sjekksum av kildeteksten.
 | Stemmegivning fra protokoll | Mønstergjenkjenning i kode | Fast format, og en fasit å kontrollere mot |
 | Sammendrag, tagger, utfall | Språkmodell | Krever forståelse, ikke mønstre |
 
-Inn går sakstittel, utdrag av saksframlegget, vedtaksteksten og hvilke utvalg
-saken har vært innom. Ut kommer et fast JSON-objekt som valideres mot et skjema:
+Inn går sakstittel og saksgang, saksframlegget delt ved de faste overskriftene
+(ADR-013) og uten avkorting, selve vedtaket fra hver saksprotokoll, og
+resultatet av hver votering med hvilke partier som sto på hver side. Stemmetall
+og navnelister sendes ikke inn; dem viser nettstedet fra koden (ADR-002).
+Voteringer som er holdt tilbake (ADR-015), sendes ikke inn i det hele tatt.
+`python -m analyser.analyser_saker 2026 --vis <sak>` skriver ut grunnlaget for
+én sak.
+
+Ut kommer et JSON-objekt som modellen er låst til med strukturert svar:
 klarspråkstittel, sammendrag, hva saken betyr for innbyggeren, to til tre tagger
-fra en fast liste, utfall, en setning om uenigheten, og hvor sikker modellen er.
+fra en fast liste, utfall, en setning om uenigheten, og om modellen er usikker.
+Kildelenkene legges til av koden, ikke av modellen.
+
+Modellen er `claude-opus-5`. Avslår modellens sikkerhetsfiltre en sak, kjøres
+den på Anthropics anbefalte reservemodell (`fallbacks: "default"`), og modellen
+som faktisk svarte, lagres. En feil i én sak hopper over saken, og høyst 25
+saker sendes inn per kjøring.
 
 Faste tagger er viktig. Lar modellen finne på tagger selv, blir filtrene
 ubrukelige etter et halvt år.
@@ -132,7 +145,10 @@ ubrukelige etter et halvt år.
 
 - Bare innhold som står i dokumentene.
 - Ingen vurdering av om vedtaket er godt eller dårlig.
-- Navngitte politikere omtales bare med det de har gjort i møtet.
+- Navngitte politikere omtales bare med det de har gjort i møtet. Navn på
+  privatpersoner tas ikke med.
+- Ingen stemmetall eller hvem som stemte hva; uenigheten beskrives på
+  partinivå.
 - Er grunnlaget for tynt, settes `usikker`, og sammendraget utelates.
 
 ## Publisering
