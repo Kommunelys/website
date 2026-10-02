@@ -19,6 +19,7 @@ utvetydig uoffisielt i all presentasjon.
 | Innhenting av møter og saker | Virker, kjørt mot hele 2026 |
 | Tolkning av protokoll til stemmer | Virker. 42 av 42 i testmøtet, og alle 442 voteringer med navneliste i 2026 består tellekontrollen |
 | Oppmøte | Virker. Lest fra alle 67 møteprotokoller i 2026; stemmene i 6 møter avviker fra oppmøtelisten og er flagget |
+| Utvalg og verv | Virker. Medlemslistene hentes versjonert; vervene har observerte, ikke vedtatte, datoer |
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
@@ -50,12 +51,15 @@ hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted
-data/raa/      rå API-svar, urørt. Slettes aldri
+data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
+               lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
 data/saker/    normaliserte saker med saksgang
 data/tekst/    tekst trukket ut av PDF og Word (møteprotokoller i tekst/moter/)
 data/voteringer/  voteringer og stemmer fra saksprotokollene
 data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
+data/utvalg/   utvalg og partier
+data/verv/     verv per person og utvalg
 data/analyse/  sammendrag og tagger fra modellen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
@@ -65,11 +69,13 @@ tester/    kontroller som må passere før publisering
 
 ```bash
 python -m hent.hent_moter 2026          # møter, saker, saksgang
+python -m hent.hent_medlemmer 2026      # dagens medlemslister -> data/raa/medlemmer/
 python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
 python -m hent.hent_dokumenter 2026 --mal  # bare måling -> data/maling-<år>.json
 python -m tolk.bygg_saker               # saksgang og status -> data/saker/
 python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
 python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
+python -m tolk.bygg_verv 2026           # utvalg, partier og verv -> data/utvalg/, data/verv/
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
@@ -99,6 +105,11 @@ python -m tester.kontroller             # alle kontroller
   navnelisten, og noen ganger avgjøres det «med ordførers dobbeltstemme».
   En votering uten stemmetall har ingen fasit og skal stoppes, ikke
   registreres som 0 mot 0 (`tolk/tolk_protokoll.py`).
+- **Feil API-adresse gir 200, ikke 404.** Portalen svarer med appens forside
+  som HTML. Et svar som ikke er JSON, betyr feil adresse. Adressene i
+  `docs/02-api.md` merket «Fra koden» er ikke testet, og to av dem var feil.
+- **Medlemslisten har mobilnummer, e-post og kjønn.** Det lagres ikke
+  (`hent/hent_medlemmer.py`).
 - **Hoveddokumentet er ikke alltid et saksframlegg.** I referatsaker er det
   ofte et brev eller en protokoll fra andre. Bare dokumenter som starter med
   «SAKSFRAMLEGG», deles ved overskriftene (`tolk/saksframlegg.py`).

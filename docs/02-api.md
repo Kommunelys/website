@@ -43,10 +43,15 @@ men ikke testet.
 | `GET api/DmbHandlings/GetByMeetingId/{møteId}` | Sakslisten for møtet | Bekreftet |
 | `GET api/DmbHandlings/{sakId}` | Én sak med journalpost, dokumenter og saksgang | Bekreftet |
 | `GET api/ConfigProvider/GetConfigs` | Portaloppsett, blant annet datointervall | Bekreftet |
-| `GET api/Dmbs` | Liste over utvalg | Fra koden |
-| `GET api/DmbMembers` | Medlemmer i utvalg | Fra koden |
+| `GET api/Dmbs/{utvalgsId}` | Ett utvalg: `Id`, `Name`, `ShortCode` | Bekreftet |
+| `GET api/DmbMembers/GetByDmbBoard/{utvalgsId}` | Dagens medlemmer og varamedlemmer i utvalget | Bekreftet |
 | `GET api/DmbSearch/MeetingsSearch` | Søk i møter og saker | Fra koden |
 | `GET api/Cases`, `api/RegistryEntries` | Saksmapper og journalposter | Fra koden |
+
+Utvalgs-ID er `UT_ID` fra møtelisten, for eksempel 10 for kommunestyret.
+`api/Dmbs` og `api/DmbMembers?dmbId=…`, slik de først ble lest ut av koden,
+finnes ikke. Portalen svarer da med 200 og appens forside som HTML, ikke med
+404. Et svar som ikke er JSON, betyr altså feil adresse.
 
 ### DmbMeetings
 
@@ -91,6 +96,22 @@ Samme felter, pluss:
 
 Eksempel: sak 8414 er PS 47/2026 i HPNM 13.10.2026 og har tilleggsbehandling
 8415, PS 108/2026 i Formannskapet 15.10.2026.
+
+### DmbMembers/GetByDmbBoard/{utvalgsId}
+
+Bekreftet 2. oktober 2026 fra siden «Kalender og medlemmer»
+(`DmbBoard/{utvalgsId}`) i portalen. Flat liste, én rad per verv. Gir bare
+dagens medlemmer, ikke historikk.
+
+| Felt | Betydning |
+|---|---|
+| `UserName.Id` | Personens ID i portalen. Fast på tvers av utvalg |
+| `UserName.Name` | Navnet, slik oppmøtelisten ofte skriver det |
+| `Function.Description` | `Leder`, `Nestleder`, `Medlem` eller `Varamedlem` |
+| `Represents.ShortCode`, `Represents.Name` | Parti, eller kommune i interkommunale utvalg |
+| `UserName.User.Address`, `Gender`, `Picture` | Mobilnummer, e-post og kjønn. Lagres ikke |
+
+Kommunestyret: 39 faste medlemmer og 57 varamedlemmer.
 
 ## Dokumentadresser
 

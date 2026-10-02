@@ -9,6 +9,9 @@
 | `tekst/moter/` | Tekst fra møteprotokollene, én fil per møte-ID | `hent.hent_dokumenter` |
 | `voteringer/` | Voteringer og stemmer per behandling, fra saksprotokollene | `tolk.bygg_voteringer` |
 | `oppmote/` | Oppmøte per møte, med avvik mot stemmene | `tolk.bygg_oppmote` |
+| `raa/medlemmer/` | Dagens medlemslister, én fil per endring, uten kontaktopplysninger | `hent.hent_medlemmer` |
+| `utvalg/` | Utvalg med antall plasser, og partiene | `tolk.bygg_verv` |
+| `verv/` | Ett verv per person og utvalg, med observerte datoer | `tolk.bygg_verv` |
 | `analyse/` | Sammendrag og tagger fra modellen | `analyser.analyser_saker` |
 | `maling-<år>.json` | Størrelse, sidetall og tekstlag per dokument, uten tekst | `hent.hent_dokumenter --mal` |
 

@@ -117,10 +117,28 @@ Portalens endepunkt `api/DmbMembers` gir trolig bare dagens medlemmer, ikke
 historikk. Derfor to grep:
 
 1. Medlemslisten hentes ved hver kjøring og lagres versjonert, slik at
-   historikken bygges opp framover.
+   historikken bygges opp framover (`hent.hent_medlemmer`, til
+   `data/raa/medlemmer/<dato>.json`, ny fil bare når noe er endret).
+   Mobilnummer, e-post og kjønn fra portalen lagres ikke.
 2. Oppmøtelisten i hver protokoll leses som selvstendig kilde. Den er datert,
    står i et dokument som ikke endres i ettertid, og oppgir både rolle og hvem
    en vara møtte for.
+
+`python -m tolk.bygg_verv` setter de to sammen til `data/verv/<år>.json`, ett
+verv per person og utvalg, og `data/utvalg/<år>.json` med utvalg og partier.
+Portalen oppgir ikke når et verv begynte eller sluttet. Vervet får derfor de
+datoene det er observert: hvilke medlemslister det står i
+(`i_medlemslister`), og første og siste møte personen møtte (`forst_motte`,
+`sist_motte`). Valg, fritak og permisjon står i sakene, men er ikke lest ut.
+
+Status 2. oktober 2026: 21 utvalg og 602 verv. 750 av 754 oppmøterader finnes
+i dagens medlemsliste for utvalget; de fire som mangler, har trolig gått ut
+av utvalget i løpet av året.
+
+**Varamedlemmer uten «varamedlem for».** Noen varamedlemmer står på
+oppmøtelisten uten å møte for noen, for eksempel Tor Borgan i 9 møter i
+formannskapet. De tar ingen plass i protokollen og telles for seg. Med den
+regelen har ingen møter flere i plasser enn utvalget har faste plasser.
 
 Oppmøtet ligger i `data/oppmote/<år>.json`, én post per møte, lest av
 `python -m tolk.bygg_oppmote` fra alle 67 møteprotokoller i 2026: 754 rader,
