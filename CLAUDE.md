@@ -17,9 +17,9 @@ utvetydig uoffisielt i all presentasjon.
 |---|---|
 | API-et til portalen | Kartlagt og dokumentert, se `docs/02-api.md` |
 | Innhenting av møter og saker | Virker, kjørt mot hele 2026 |
-| Tolkning av protokoll til stemmer | Virker, 42 av 42 voteringer riktig i testmøtet |
+| Tolkning av protokoll til stemmer | Virker. 42 av 42 i testmøtet, og alle 442 voteringer med navneliste i 2026 består tellekontrollen |
 | Saksgang på tvers av utvalg | Virker |
-| Nedlasting av dokumenter | URL-ene testet og 2026-samlingen målt. Verktøy valgt i ADR-013. Tekst ikke lagret ennå |
+| Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Ikke bygget. Skjelett i `analyser/` |
 | Nettsted | Prototype finnes, se `docs/05-plan.md`. Ikke portet hit |
 | GitHub Actions | Skrevet, ikke kjørt. Tidsplanen er slått av til ADR-007 er avklart |
@@ -52,7 +52,8 @@ bygg/      statisk nettsted
 data/raa/      rå API-svar, urørt. Slettes aldri
 data/moter/    normaliserte møter
 data/saker/    normaliserte saker med saksgang
-data/tekst/    tekst trukket ut av PDF
+data/tekst/    tekst trukket ut av PDF og Word
+data/voteringer/  voteringer og stemmer fra saksprotokollene
 data/analyse/  sammendrag og tagger fra modellen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
@@ -65,7 +66,8 @@ python -m hent.hent_moter 2026          # møter, saker, saksgang
 python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
 python -m hent.hent_dokumenter 2026 --mal  # bare måling -> data/maling-<år>.json
 python -m tolk.bygg_saker               # saksgang og status -> data/saker/
-python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én protokolltekst
+python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
+python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 ```
@@ -88,6 +90,12 @@ python -m tester.kontroller             # alle kontroller
   `pdfinfo`. `hent.hent_dokumenter` stopper hvis den finner xpdf (ADR-013).
 - **Ikke alle vedtak er PDF.** Noen møter har saksprotokollene bare i Word,
   blant annet HPNM og KTU 09.06.2026. De har voteringene og må tas med.
+- **En votering har flere former enn «for» og «mot».** Ved alternativ
+  votering står «For forslag 1 stemte 4: …» for hvert forslag. Enstemmige
+  vedtak har ingen navneliste. «Ikke til stede (1): …» står inne i
+  navnelisten, og noen ganger avgjøres det «med ordførers dobbeltstemme».
+  En votering uten stemmetall har ingen fasit og skal stoppes, ikke
+  registreres som 0 mot 0 (`tolk/tolk_protokoll.py`).
 - **Hoveddokumentet er ikke alltid et saksframlegg.** I referatsaker er det
   ofte et brev eller en protokoll fra andre. Bare dokumenter som starter med
   «SAKSFRAMLEGG», deles ved overskriftene (`tolk/saksframlegg.py`).

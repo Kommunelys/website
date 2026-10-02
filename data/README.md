@@ -6,6 +6,7 @@
 | `moter/` | Normaliserte møter | `tolk.bygg_saker` |
 | `saker/` | Saker med saksgang og status | `tolk.bygg_saker` |
 | `tekst/` | Tekst trukket ut av PDF og Word, én fil per dokument-ID (vedtak: behandlings-ID) | `hent.hent_dokumenter` |
+| `voteringer/` | Voteringer og stemmer per behandling, fra saksprotokollene | `tolk.bygg_voteringer` |
 | `analyse/` | Sammendrag og tagger fra modellen | `analyser.analyser_saker` |
 | `maling-<år>.json` | Størrelse, sidetall og tekstlag per dokument, uten tekst | `hent.hent_dokumenter --mal` |
 

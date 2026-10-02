@@ -59,6 +59,30 @@ Fordeling for 2026, politiske saker uten formaliteter: 121 behandlet, 64 venter
 på protokoll, 49 vedtatt i kommunestyret, 31 til behandling. Tallene kommer fra
 `python -m tolk.bygg_saker 2026`.
 
+## Voteringer
+
+`votering` og `stemme` ligger samlet i `data/voteringer/<år>.json`, én post
+per behandling med vedtak. Hver votering har en navneliste per standpunkt, og
+partiet til hvert navn. Tolkes av `python -m tolk.bygg_voteringer` fra
+saksprotokollene i `data/tekst/`.
+
+| Form | Slik står den i protokollen | Antall i 2026 |
+|---|---|---|
+| For og mot | «For forslaget stemte 29: … Imot forslaget stemte 10: …» | 381 |
+| Alternativ votering | «For forslag 1 stemte 4: … For forslag 2 stemte 3: …» | 61 |
+| Enstemmig | «Forslag til vedtak enstemmig vedtatt.» Ingen navneliste | 45 |
+
+I tillegg avgjøres 4 voteringer med ordførers eller leders dobbeltstemme, og
+5 har «Ikke til stede» inne i navnelisten.
+
+Feltet `tall_stemmer` er kontrollen fra ADR-002: antall navn stemmer med
+oppgitt stemmetall for hvert standpunkt. En votering uten noe stemmetall har
+ingen fasit og får også `tall_stemmer: false`. Slike rader publiseres ikke
+før et menneske har sett på dem. I 2026 gjelder det ingen.
+
+Hvem som stemte i en enstemmig votering, står ikke i protokollen. Det følger
+av oppmøtet, som må hentes fra møteprotokollen (se under).
+
 ## Folkevalgte, verv og oppmøte
 
 De fem tabellene om folkevalgte bærer mer enn de ser ut til.

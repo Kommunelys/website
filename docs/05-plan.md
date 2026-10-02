@@ -18,10 +18,10 @@ dag, og det er her kvaliteten på datagrunnlaget må sitte før noe bygges oppå
 | Hente møter, saker og saksgang for et år | Ferdig, kjørt mot 2026 |
 | Bygge saksidentitet på tvers av utvalg | Ferdig |
 | Utlede status på en sak | Ferdig |
-| Tolke protokoll til voteringer og stemmer | Ferdig, 42 av 42 i testmøtet |
+| Tolke protokoll til voteringer og stemmer | Ferdig. 42 av 42 i testmøtet, 487 voteringer fra saksprotokollene i 2026 |
 | Teste dokument-URL-ene | Ferdig, alle tre virker |
 | Laste ned og måle hele dokumentsamlingen | Ferdig for saksframlegg og vedtak, se ADR-013 |
-| Lagre tekst fra dokumentene | Klar til kjøring, ikke kjørt |
+| Lagre tekst fra dokumentene | Ferdig for 2026, 724 av 726 |
 | Modellere utvalg, verv og oppmøte | Ikke gjort |
 | Portere nettstedet fra prototype til repo | Ikke gjort |
 | Sette opp GitHub Actions | Skrevet, ikke kjørt |
@@ -88,8 +88,9 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - [x] Laste ned hele dokumentsamlingen for 2026 og måle den: sidetall per
       dokumenttype, tegn per side, andel uten tekstlag, andel som ikke er PDF
       (ADR-012, avløst av ADR-013)
-- [ ] Bekrefte at protokolltolkningen virker på minst tre møter fra ulike
-      utvalg, ikke bare kommunestyret
+- [x] Bekrefte at protokolltolkningen virker på minst tre møter fra ulike
+      utvalg, ikke bare kommunestyret. Alle 442 voteringer med navneliste i
+      2026, fra 9 utvalg, består tellekontrollen
 - [ ] Bestemme hvem som eier tjenesten og står som avsender
 - [ ] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret
