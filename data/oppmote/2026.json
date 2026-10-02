@@ -1,0 +1,5933 @@
+[
+ {
+  "avvik": [],
+  "dato": "2026-01-08T14:30",
+  "ikke_tolket": [],
+  "mote_id": 1244,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Hans Einar Krokan",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Lill Astrid Widegren",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Henry Skevik",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ingrid Blekastad",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "UGW"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-01-20T13:00",
+  "ikke_tolket": [],
+  "mote_id": 1242,
+  "oppmote": [
+   {
+    "funksjon": "Medlem",
+    "navn": "Geir Olav Jensen",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ann-Karin Vang",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anders Lindstrøm",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Ulstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ingunn Ramdal",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Oddlaug Holthe Olsen",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bjørn Kristian Nesbak",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Finn Anders Blæstervold",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Aas",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ørjan Nicolaysen",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "AMU"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-01-20T17:00",
+  "ikke_tolket": [],
+  "mote_id": 1243,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Sigurd Strand",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Lotte Kornelia Damås Aasland",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Anna Kjerstina Leirvik Solbakken",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Liv Toril Malmo",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Austin McGawley",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Emma Tangstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "William Sund Bjørhusdahl",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Stokke Folstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "UNGRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-01-27T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1231,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anne Marthe Høgsnes",
+    "repr": "AP",
+    "vara_for": "Kjell Magnar Haugan"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HPNM"
+ },
+ {
+  "avvik": [
+   {
+    "behandling_id": 7692,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7700,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7740,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7740,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 7740,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 7740,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 4
+   },
+   {
+    "behandling_id": 7740,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 5
+   },
+   {
+    "behandling_id": 7777,
+    "navn": [
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7777,
+    "frammotte": 12,
+    "stemmer": 13,
+    "type": "flere_stemmer_enn_frammotte",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7813,
+    "navn": [
+     "May Britt Lagesen",
+     "Tor Borgan"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7813,
+    "frammotte": 12,
+    "stemmer": 13,
+    "type": "flere_stemmer_enn_frammotte",
+    "votering": 1
+   }
+  ],
+  "dato": "2026-01-29T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1230,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-02-04T18:00",
+  "ikke_tolket": [],
+  "mote_id": 1240,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anne Marthe Høgsnes",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anders Schjefte",
+    "repr": "AP",
+    "vara_for": "Bjørg Helland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": "Kristin Gisvold"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Wiggo Oksvold",
+    "repr": "UAVH",
+    "vara_for": "Espen Hatlinghus"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Gunnar Mikalsen Kvifte",
+    "repr": "R",
+    "vara_for": "Anniken Bjørnes"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vegard Forbord",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Morten Resve"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lillian Hatling",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Ausra Norum",
+    "repr": "V",
+    "vara_for": "Jens Fredrik Skjelstad"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kristian Hovd Sjøli",
+    "repr": "AP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-02-10T14:00",
+  "ikke_tolket": [],
+  "mote_id": 1338,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Jon Erik Finstad",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ragnhild Kvalø",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erland Kjesbu",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "SSKO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-02-12T08:30",
+  "ikke_tolket": [],
+  "mote_id": 1318,
+  "oppmote": [
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": "Gunnar Thorsen"
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": "Erik Røsegg"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": "Lill Marit Sandseter"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Geir Haagensen",
+    "repr": "ANDRE",
+    "vara_for": "Bjørn Kristian Nesbak"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Oddlaug Holthe Olsen",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "AD"
+ },
+ {
+  "avvik": [
+   {
+    "behandling_id": 7809,
+    "navn": [
+     "May Britt Lagesen"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7809,
+    "frammotte": 12,
+    "stemmer": 13,
+    "type": "flere_stemmer_enn_frammotte",
+    "votering": 1
+   }
+  ],
+  "dato": "2026-02-12T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1245,
+  "oppmote": [
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": "Gunnar Thorsen"
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": "Thorolf Antonsen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": "Tor-André Hopen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-02-12T14:15",
+  "ikke_tolket": [],
+  "mote_id": 1336,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KN"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-02-25T14:00",
+  "ikke_tolket": [],
+  "mote_id": 1337,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ragnar Andresen",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": "Erik Røsegg"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FOR"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-05T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1248,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": "Christine Agdestein"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-10T13:00",
+  "ikke_tolket": [],
+  "mote_id": 1312,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Ann-Karin Vang",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Anita Ulstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Geir Olav Jensen",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anders Lindstrøm",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ingunn Ramdal",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Thomas Herstad",
+    "repr": "ANDRE",
+    "vara_for": "Finn Anders Blæstervold"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Oddlaug Holthe Olsen",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ørjan Nicolaysen",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mona Myrslo Walmsley",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "AMU"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-10T17:00",
+  "ikke_tolket": [],
+  "mote_id": 1329,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Sigurd Strand",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Lotte Kornelia Damås Aasland",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Edvard Lånkan",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Austin McGawley",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Emma Tangstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "William Sund Bjørhusdahl",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Stokke Folstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "UNGRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-11T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1249,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kari Helene Alstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Trond Svenkerud",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rolf Bosnes",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Arnulf Vengstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Lisbet Hanem Finstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "ELRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-11T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1250,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kjell Delbekk",
+    "repr": "SAFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ausra Norum",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vigdis Nyhus",
+    "repr": "FFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": "Randi Reitan Troset"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lill Kristin Aune",
+    "repr": "SAFO",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "RÅFIM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-17T10:00",
+  "ikke_tolket": [],
+  "mote_id": 1325,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anne Marthe Høgsnes",
+    "repr": "AP",
+    "vara_for": "Monika Skoglund Luktvasslimo"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KTU"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-17T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1251,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anne Marthe Høgsnes",
+    "repr": "AP",
+    "vara_for": "Monika Skoglund Luktvasslimo"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Finn Rossing",
+    "repr": "R",
+    "vara_for": "Anita Brønstad Skavdal"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HPNM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-18T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1252,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Bjarne Jostein Arnøy",
+    "repr": "H",
+    "vara_for": "Kristin Gisvold"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bjørg Helland",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Linn Kristine Sandseter",
+    "repr": "INP",
+    "vara_for": "Torbjørn Alstad Austad"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HHO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-18T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1253,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": "Anniken Bjørnes"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lena Hanem Bartnes",
+    "repr": "SP",
+    "vara_for": "Per-Ole Austmo"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vegard Forbord",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HOK"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-19T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1254,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": "Christine Agdestein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": "Thorolf Antonsen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-23T18:00",
+  "ikke_tolket": [],
+  "mote_id": 1348,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Jon Erik Finstad",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ragnhild Kvalø",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erland Kjesbu",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "SSKO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-03-25T13:00",
+  "ikke_tolket": [],
+  "mote_id": 1350,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jon Eirik Brandtsegg",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "SSBY"
+ },
+ {
+  "avvik": [
+   {
+    "behandling_id": 7681,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7793,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7802,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7846,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7880,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7885,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7891,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7893,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7899,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7911,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7911,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 7911,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 7911,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 4
+   },
+   {
+    "behandling_id": 7928,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7928,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 7928,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 7982,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7982,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 7982,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 7982,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 4
+   },
+   {
+    "behandling_id": 7982,
+    "navn": [
+     "Linn Kristine Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 5
+   }
+  ],
+  "dato": "2026-03-25T16:00",
+  "ikke_tolket": [],
+  "mote_id": 1255,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anders Schjefte",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Hilde Grevskott",
+    "repr": "AP",
+    "vara_for": "Kjell Magnar Haugan"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bjørg Helland",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": "Christine Agdestein"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kristin Gisvold",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Gunnar Mikalsen Kvifte",
+    "repr": "R",
+    "vara_for": "Anniken Bjørnes"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Lars Myhr Sandlund"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vegard Forbord",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Morten Resve",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lillian Hatling",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Knut Egil Sjøli",
+    "repr": "AP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-04-23T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1257,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-04-23T15:15",
+  "ikke_tolket": [],
+  "mote_id": 1342,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "VN"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-04-28T10:00",
+  "ikke_tolket": [],
+  "mote_id": 1344,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Sigrun Modell"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HPNM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-04-28T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1351,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Sigrun Modell"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KTU"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-04T10:00",
+  "ikke_tolket": [],
+  "mote_id": 1258,
+  "oppmote": [
+   {
+    "funksjon": "Medlem",
+    "navn": "Arnt Bardal",
+    "repr": "SNASA",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Vibeke Arntzen",
+    "repr": "INDERØY",
+    "vara_for": "Unn-Elisabeth Tronstad Kristiansen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Geir Jostein Ørsjødal",
+    "repr": "INDERØY",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Snorre Sandnes",
+    "repr": "VERDAL",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Einar Olav Larsen",
+    "repr": "VERDAL",
+    "vara_for": "Bodil Ressem"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Trine Reitan",
+    "repr": "VERDAL",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gunnar Thorsen",
+    "repr": "STEINKJER",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Christine Agdestein",
+    "repr": "STEINKJER",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "STEINKJER",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Leder",
+    "navn": "Anita Ravlo Sand",
+    "repr": "LEVANGER",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Nina Bakken Bye",
+    "repr": "LEVANGER",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Astrid Juberg Vordal",
+    "repr": "LEVANGER",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "INR"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-05T17:00",
+  "ikke_tolket": [],
+  "mote_id": 1330,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Sigurd Strand",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Lotte Kornelia Damås Aasland",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Anna Kjerstina Leirvik Solbakken",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Austin McGawley",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Emma Tangstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "William Sund Bjørhusdahl",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Stokke Folstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "UNGRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-06T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1259,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kari Helene Alstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Trond Svenkerud",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ann Kristin Bratting",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rolf Bosnes",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Arnulf Vengstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Lisbet Hanem Finstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "ELRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-06T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1260,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kjell Delbekk",
+    "repr": "SAFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ausra Norum",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vigdis Nyhus",
+    "repr": "FFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Zaid F. Ranneh",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": "Randi Reitan Troset"
+   }
+  ],
+  "utvalg": "RÅFIM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-12T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1262,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Bjarne Jostein Arnøy",
+    "repr": "H",
+    "vara_for": "Kristin Gisvold"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bjørg Helland",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HHO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-12T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1263,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Livard Arnstein Eklo",
+    "repr": "AP",
+    "vara_for": "Terje Tømmerås"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vegard Forbord",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": "Turid Saursaunet"
+   }
+  ],
+  "utvalg": "HOK"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-05-13T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1264,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": "Christine Agdestein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [
+   {
+    "behandling_id": 7822,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7825,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7939,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7956,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7983,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 7983,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 7983,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 7999,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8002,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8009,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8067,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8072,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8078,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8086,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8086,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 8086,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 8091,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8091,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 8091,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 8095,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8095,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 8095,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 8119,
+    "navn": [
+     "Gunnar Mikalsen Kvifte"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   }
+  ],
+  "dato": "2026-05-20T18:00",
+  "ikke_tolket": [],
+  "mote_id": 1266,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Hilde Grevskott",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kristian Hovd Sjøli",
+    "repr": "AP",
+    "vara_for": "Thorolf Antonsen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anne Marthe Høgsnes",
+    "repr": "AP",
+    "vara_for": "Terje Tømmerås"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anders Schjefte",
+    "repr": "AP",
+    "vara_for": "Monika Skoglund Luktvasslimo"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bjørg Helland",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Solvor Laila Lein Lillemark",
+    "repr": "FRP",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": "Elin Rodum Agdestein"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kristin Gisvold",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anniken Bjørnes",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Vegard Forbord"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Morten Resve",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lillian Hatling",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Ingrid Bøe Sletten",
+    "repr": "SV",
+    "vara_for": "Gjertrud Holand"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-02T17:00",
+  "ikke_tolket": [],
+  "mote_id": 1331,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Sigurd Strand",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Lotte Kornelia Damås Aasland",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Anna Kjerstina Leirvik Solbakken",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Edvard Lånkan",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Emma Tangstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "William Sund Bjørhusdahl",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "UNGRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-03T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1357,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jon Eirik Brandtsegg",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "SSBY"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-03T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1267,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kjell Delbekk",
+    "repr": "SAFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Aisha Bigset",
+    "repr": "SP",
+    "vara_for": "Ausra Norum"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vigdis Nyhus",
+    "repr": "FFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Zaid F. Ranneh",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Randi Reitan Troset",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lill Kristin Aune",
+    "repr": "SAFO",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "RÅFIM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-03T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1268,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kari Helene Alstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Trond Svenkerud",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ann Kristin Bratting",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rolf Bosnes",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Arnulf Vengstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "ELRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-04T14:30",
+  "ikke_tolket": [],
+  "mote_id": 1358,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ragnar Andresen",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FOR"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-09T10:00",
+  "ikke_tolket": [],
+  "mote_id": 1326,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Lars Myhr Sandlund"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KTU"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-09T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1269,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Lars Myhr Sandlund"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HPNM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-10T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1270,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Bjarne Jostein Arnøy",
+    "repr": "H",
+    "vara_for": "Kristin Gisvold"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Bjørn Roald Andersen",
+    "repr": "R",
+    "vara_for": "Robert Ertsås"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Hilde Grevskott",
+    "repr": "AP",
+    "vara_for": "Bjørg Helland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HHO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-10T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1271,
+  "oppmote": [
+   {
+    "funksjon": "Nestleder",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": "Turid Saursaunet"
+   }
+  ],
+  "utvalg": "HOK"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-11T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1272,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": "Erik Røsegg"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-11T17:30",
+  "ikke_tolket": [],
+  "mote_id": 1343,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": "Erik Røsegg"
+   }
+  ],
+  "utvalg": "KN"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-16T08:30",
+  "ikke_tolket": [],
+  "mote_id": 1359,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Jon Erik Finstad",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ragnhild Kvalø",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erland Kjesbu",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Finn Rossing",
+    "repr": "R",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "SSKO"
+ },
+ {
+  "avvik": [
+   {
+    "behandling_id": 8200,
+    "navn": [
+     "Lill Marit Sandseter"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   }
+  ],
+  "dato": "2026-06-17T17:00",
+  "ikke_tolket": [],
+  "mote_id": 1274,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Knut Egil Sjøli",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kristian Hovd Sjøli",
+    "repr": "AP",
+    "vara_for": "Kjell Magnar Haugan"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Eli Djuvsland Rishaug",
+    "repr": "AP",
+    "vara_for": "Bjørg Helland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Hilde Grevskott",
+    "repr": "AP",
+    "vara_for": "Daniel Folladal"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Terje Bjarte Langli",
+    "repr": "FRP",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kristin Gisvold",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gunnar Mikalsen Kvifte",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lena Hanem Bartnes",
+    "repr": "SP",
+    "vara_for": "Lars Myhr Sandlund"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Vegard Forbord"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Morten Resve",
+    "repr": null,
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lillian Hatling",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FSKO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-17T17:30",
+  "ikke_tolket": [],
+  "mote_id": 1275,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Knut Egil Sjøli",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kristian Hovd Sjøli",
+    "repr": "AP",
+    "vara_for": "Kjell Magnar Haugan"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Eli Djuvsland Rishaug",
+    "repr": "AP",
+    "vara_for": "Bjørg Helland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Hilde Grevskott",
+    "repr": "AP",
+    "vara_for": "Daniel Folladal"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Terje Bjarte Langli",
+    "repr": "FRP",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kristin Gisvold",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gunnar Mikalsen Kvifte",
+    "repr": null,
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lena Hanem Bartnes",
+    "repr": "SP",
+    "vara_for": "Lars Myhr Sandlund"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Vegard Forbord"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Morten Resve",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lillian Hatling",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FSB"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-17T18:00",
+  "ikke_tolket": [],
+  "mote_id": 1273,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kristian Hovd Sjøli",
+    "repr": "AP",
+    "vara_for": "Kjell Magnar Haugan"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Eli Djuvsland Rishaug",
+    "repr": "AP",
+    "vara_for": "Bjørg Helland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Hilde Grevskott",
+    "repr": "AP",
+    "vara_for": "Daniel Folladal"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Terje Bjarte Langli",
+    "repr": "FRP",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kristin Gisvold",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gunnar Mikalsen Kvifte",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lena Hanem Bartnes",
+    "repr": "SP",
+    "vara_for": "Lars Myhr Sandlund"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Vegard Forbord"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Morten Resve",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lillian Hatling",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Knut Egil Sjøli",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-22T12:30",
+  "ikke_tolket": [],
+  "mote_id": 1361,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Arnt Bardal",
+    "repr": "SNASA",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Knut Snorre Sandnes",
+    "repr": "VERDAL",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Unn-Elisabeth Tronstad Kristiansen",
+    "repr": "INDERØY",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gunnar Thorsen",
+    "repr": "STEINKJER",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Ravlo Sand",
+    "repr": "LEVANGER",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "AUINR"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-25T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1276,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": "Tor-André Hopen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-25T11:15",
+  "ikke_tolket": [],
+  "mote_id": 1362,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KN"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-06-30T10:00",
+  "ikke_tolket": [],
+  "mote_id": 1363,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kari Helene Alstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Trond Svenkerud",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rolf Bosnes",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Arnulf Vengstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Lisbet Hanem Finstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "ELRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-08-18T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1364,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Terje Tømmerås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Vegard Forbord",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HOK"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-08-20T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1277,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": "Thorolf Antonsen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": "Jens Fredrik Skjelstad"
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-08-20T15:45",
+  "ikke_tolket": [],
+  "mote_id": 1365,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KN"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-08-26T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1278,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kjell Delbekk",
+    "repr": "SAFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ausra Norum",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Randi Reitan Troset",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lill Kristin Aune",
+    "repr": "SAFO",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "RÅFIM"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-08-26T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1279,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Kari Helene Alstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Trond Svenkerud",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ann Kristin Bratting",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Arnulf Vengstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Lisbet Hanem Finstad",
+    "repr": "ANDRE",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "ELRÅ"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-08-26T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1366,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Ragnar Andresen",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FOR"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-09-03T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1284,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": "Christine Agdestein"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": "Thorolf Antonsen"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": "Håvard Krogstad-Wiborg"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": "Mari Grøneng Bartnes"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-09-10T14:00",
+  "ikke_tolket": [],
+  "mote_id": 1367,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Jon Erik Finstad",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Ragnhild Kvalø",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erland Kjesbu",
+    "repr": "ANDRE",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "SSKO"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-09-15T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1281,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "HPNM"
+ },
+ {
+  "avvik": [
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 4
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 5
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 6
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 7
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 8
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 9
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 10
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 11
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 12
+   },
+   {
+    "behandling_id": 8356,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 13
+   },
+   {
+    "behandling_id": 8360,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 2
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 3
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 4
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 5
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 6
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 7
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 8
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 9
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 10
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 11
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 12
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 13
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 14
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 15
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 16
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 17
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 18
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 19
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 20
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 21
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 22
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 23
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 24
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 25
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 26
+   },
+   {
+    "behandling_id": 8389,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 27
+   },
+   {
+    "behandling_id": 8457,
+    "navn": [
+     "Lena Hanem Bartnes"
+    ],
+    "type": "stemte_uten_oppmote",
+    "votering": 1
+   }
+  ],
+  "dato": "2026-09-16T18:00",
+  "ikke_tolket": [],
+  "mote_id": 1285,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gunnar Thorsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Knut Egil Sjøli",
+    "repr": "AP",
+    "vara_for": "May Britt Lagesen"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Bente Merete Aune Bragstad",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kjell Magnar Haugan",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Robert Ertsås",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Eli Djuvsland Rishaug",
+    "repr": "AP",
+    "vara_for": "Terje Tømmerås"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Monika Skoglund Luktvasslimo",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per Sverre Rannem",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Anders Schjefte",
+    "repr": "AP",
+    "vara_for": "Bjørg Helland"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Daniel Folladal",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tommy Fossum Skatland",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Rune Kvaran",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Kristin Gisvold",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Torbjørn Alstad Austad",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Espen Hatlinghus",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Knut Roald Ralfsen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anniken Bjørnes",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anita Brønstad Skavdal",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Gunnar Mikalsen Kvifte",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Anne Berit Lein",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lars Myhr Sandlund",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Eirik Forås",
+    "repr": "SP",
+    "vara_for": "Vegard Forbord"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Stig Rønning",
+    "repr": "SP",
+    "vara_for": "Sigrun Modell"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Johan Kristian Daling",
+    "repr": "SP",
+    "vara_for": "Morten Resve"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Charlotte Guin",
+    "repr": "SV",
+    "vara_for": "Gjertrud Holand"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Lisbeth Melhus",
+    "repr": "UAVH",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "KS"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-09-23T09:00",
+  "ikke_tolket": [],
+  "mote_id": 1283,
+  "oppmote": [
+   {
+    "funksjon": "Leder",
+    "navn": "Gjertrud Holand",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Livard Arnstein Eklo",
+    "repr": "AP",
+    "vara_for": "Terje Tømmerås"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Mari Nordkvelle",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Amalie Rodum",
+    "repr": "H",
+    "vara_for": "Rune Kvaran"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Enok Askil Moe",
+    "repr": "R",
+    "vara_for": "Turid Saursaunet"
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Per-Ole Austmo",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Lena Hanem Bartnes",
+    "repr": "SP",
+    "vara_for": "Vegard Forbord"
+   }
+  ],
+  "utvalg": "HOK"
+ },
+ {
+  "avvik": [],
+  "dato": "2026-09-24T12:00",
+  "ikke_tolket": [],
+  "mote_id": 1286,
+  "oppmote": [
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Elin Rodum Agdestein",
+    "repr": "H",
+    "vara_for": "Gunnar Thorsen"
+   },
+   {
+    "funksjon": "Nestleder",
+    "navn": "Christine Agdestein",
+    "repr": "H",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "May Britt Lagesen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Line Anita Hammer",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Thorolf Antonsen",
+    "repr": "AP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Håvard Krogstad-Wiborg",
+    "repr": "R",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Mari Grøneng Bartnes",
+    "repr": "SV",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor André Eide",
+    "repr": "FRP",
+    "vara_for": "Tommy Fossum Skatland"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Sigrun Modell",
+    "repr": "SP",
+    "vara_for": "Anne Berit Lein"
+   },
+   {
+    "funksjon": "Varamedlem",
+    "navn": "Tor Borgan",
+    "repr": "SP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Erik Røsegg",
+    "repr": "INP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Tor-André Hopen",
+    "repr": "PP",
+    "vara_for": null
+   },
+   {
+    "funksjon": "Medlem",
+    "navn": "Jens Fredrik Skjelstad",
+    "repr": "V",
+    "vara_for": null
+   }
+  ],
+  "utvalg": "FS"
+ }
+]
