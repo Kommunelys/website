@@ -87,8 +87,10 @@ document.getElementById('kssub').textContent=`${KSN} representanter · fra medle
   const full=PS.filter(c=>{const s=c.st.map(x=>x.sc);return s.includes('KS')&&s.includes('FS')&&s.some(x=>['HPNM','HOK','HHO'].includes(x))}).length;
   const fsks=PS.filter(c=>{const s=[...new Set(c.st.map(x=>x.sc))];return s.join()==='FS,KS'}).length;
   const ksAll=PS.filter(c=>c.ks).length;
-  const fsSelv=PS.filter(c=>c.st.some(x=>x.sc==='FS')&&!c.ks).length;
-  const huSelv=PS.filter(c=>c.st.some(x=>['HPNM','HOK','HHO'].includes(x.sc))&&!c.st.some(x=>['FS','KS'].includes(x.sc))).length;
+  // Bare saker som er avgjort; de som fortsatt er til behandling, kan gå videre.
+  const avgjort=c=>c.status!=='Til behandling';
+  const fsSelv=PS.filter(c=>c.st.some(x=>x.sc==='FS')&&!c.ks&&avgjort(c)).length;
+  const huSelv=PS.filter(c=>c.st.some(x=>['HPNM','HOK','HHO'].includes(x.sc))&&!c.st.some(x=>['FS','KS'].includes(x.sc))&&avgjort(c)).length;
   document.getElementById('flowfact').innerHTML=`I ${AAR} har <b>${ksAll}</b> saker vært eller skal til kommunestyret. <b>${fsks}</b> gikk rett fra formannskapet, og <b>${full}</b> gikk hele veien fra et hovedutvalg via formannskapet. Formannskapet avgjorde <b>${fsSelv}</b> saker selv, og hovedutvalgene <b>${huSelv}</b>.`;
 })();
 
