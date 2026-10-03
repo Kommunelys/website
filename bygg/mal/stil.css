@@ -80,16 +80,19 @@ button,input,select{font:inherit;color:inherit}
 @media (max-width:600px){.hode{position:static}.meny{gap:18px}}
 @media (max-width:420px){.meny{gap:11px;font-size:15px}}
 
-/* Toppfeltet: lys blå flate med en svak lysstråle, som i merket. Ingen foto.
-   Teksten er blekk, ikke dempet, fordi strålen gjør flaten blåere. */
-.topp{position:relative;overflow:hidden;margin:24px 0 8px;padding:34px 28px 30px;border-radius:14px;border:1px solid var(--line);
+/* Toppfeltet på forsiden (.topp) og tittelblokken i de andre fanene (.ingress):
+   lys blå flate med en svak lysstråle, som i merket. Ingen foto. Teksten er
+   blekk, ikke dempet: der strålen gjør flaten blåere, har dempet tekst bare
+   4,1:1. */
+.topp,.ingress{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);
   background:linear-gradient(165deg,var(--lys-flate) 0%,var(--lys-flate) 40%,var(--bg) 100%)}
-.topp::after{content:"";position:absolute;top:0;right:0;width:62%;height:100%;pointer-events:none;
+.topp::after,.ingress::after{content:"";position:absolute;top:0;right:0;width:62%;height:100%;pointer-events:none;
   background:linear-gradient(205deg,color-mix(in srgb,var(--lys) 20%,transparent),transparent 80%);
   clip-path:polygon(58% 0,100% 0,100% 18%,42% 100%,0 100%)}
-.topp>*{position:relative;z-index:1}
+.topp>*,.ingress>*{position:relative;z-index:1}
+.topp p,.ingress p{color:var(--ink)}
+.topp{margin:24px 0 8px;padding:34px 28px 30px}
 .topp h1{font-size:clamp(28px,4.4vw,40px);max-width:22ch}
-.topp p{color:var(--ink)}
 .overtekst{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
 .ingress-tekst{font-size:17.5px;max-width:56ch;margin-top:12px}
 @media (max-width:600px){.topp{padding:26px 18px 22px;margin-top:16px}}
@@ -106,8 +109,9 @@ button,input,select{font:inherit;color:inherit}
 .rot>.blokk{max-width:760px}
 
 main{padding-bottom:56px}
-.ingress{margin:30px 0 20px}
-.ingress p{color:var(--muted);max-width:62ch;margin-top:8px}
+.ingress{margin:24px 0 22px;padding:24px 26px 22px}
+.ingress p{max-width:62ch;margin:8px 0 0}
+@media (max-width:600px){.ingress{padding:20px 18px 18px;margin-top:16px}}
 .sok{display:block;margin-top:14px}
 .sok input{width:min(100%,420px);padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
 .filter .sok{margin:0;flex:1 1 260px}
@@ -350,9 +354,10 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .partilinje b{font-size:17px}
 .tilbake{margin:24px 0 0;font-size:14px}
 .tilbake a::before{content:"← "}
-.profil .parti{font-size:15px;color:var(--muted);margin:22px 0 4px;display:flex;align-items:center}
+.profil .ingress{margin-top:12px}
+.profil .parti{font-size:15px;margin:0 0 4px;display:flex;align-items:center}
 .profil h1{margin-bottom:8px}
-.profil .fakta{color:var(--muted);max-width:64ch}
+.profil .fakta{max-width:64ch}
 .profil section{margin-top:36px}
 .profil section>h2{border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:10px}
 .profil details{margin-top:12px}
