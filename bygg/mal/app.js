@@ -580,3 +580,5 @@ document.addEventListener('click',e=>{
 renderTagChips();renderList();renderMeet();renderStemmer();
 $('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · <a href="../om/">Om ${esc(S.merke)}</a> · ${ut(S.repo,'Kode og data')}</div>`;
 window.addEventListener('hashchange',vis);vis();
+// Nådde vi hit, er siden tegnet. Ellers viser index.html en feilmelding.
+window.KL_KLAR=true;

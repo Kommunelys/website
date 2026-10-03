@@ -26,6 +26,7 @@ import collections
 import datetime as dt
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -60,6 +61,10 @@ REPO = MELD_FEIL.rsplit("/issues", 1)[0]
 # E-post for feil og innspill på Om-siden. Tom til adressen på kommunelys.no
 # er satt opp (docs/05-plan.md); så lenge den er tom, vises den ikke.
 KONTAKT_EPOST = ""
+# Roten til nettstedet på serveren. 404-siden vises på alle adresser som ikke
+# finnes, så den trenger absolutte lenker. Arbeidsflyten setter NETTSTED_BASE
+# fra GitHub Pages («/website» nå, tom med eget domene); lokalt er det «/».
+BASE = "/" + "".join(d + "/" for d in os.environ.get("NETTSTED_BASE", "").split("/") if d)
 
 # Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
 # https://<kode>.goatcounter.com. Tom streng slår tellingen av.
@@ -408,7 +413,7 @@ def _kommuneside(kommune: dict, ut: Path) -> None:
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
                  {"merke": MERKE, "merke_ikon": _merke_ikon(), "kommune": navn,
-                  "slug": kommune["slug"], "telling": _telling()})
+                  "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
     if UOFFISIELL not in (MAL / "app.js").read_text("utf-8"):
         raise SystemExit(f"bunnteksten i app.js mangler «{UOFFISIELL}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
@@ -443,20 +448,21 @@ def _kart(kommuner: list[dict]) -> str:
             f'<g class="kart-med">{"".join(farget)}</g></svg>')
 
 
-def _forside(kommuner: list[tuple[dict, dict]]) -> None:
-    """Kommunelys-forsiden på roten, med en lenke til hver kommune.
-
-    Listen skrives som HTML her, så siden virker uten skript.
-    """
-    kort = "\n".join(
-        f'<li><a class="kommunekort" href="{k["slug"]}/">'
+def _kommunekort(kommuner: list[tuple[dict, dict]], foran: str = "") -> str:
+    """Listen over kommunene som HTML, så den virker uten skript."""
+    return "\n".join(
+        f'<li><a class="kommunekort" href="{foran}{k["slug"]}/">'
         f'<b>{html.escape(k["navn"])}</b>'
         f'<span>{st["saker"]} saker og {st["moter"]} møter i {st["ar"]}</span>'
         f'<span class="liten muted">Data hentet {_dato(_hentet(st))}</span>'
         f'</a></li>'
         for k, st in kommuner)
+
+
+def _forside(kommuner: list[tuple[dict, dict]]) -> None:
+    """Kommunelys-forsiden på roten, med en lenke til hver kommune."""
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "kommuner": kort,
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "kommuner": _kommunekort(kommuner),
         "kart": _kart([k for k, _ in kommuner]),
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
@@ -494,6 +500,27 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
         "repo": REPO, "meld": MELD_FEIL, "kontakt": kontakt, "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
     (UT / "om" / "index.html").write_text(side, encoding="utf-8")
+
+
+def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
+    """404.html på roten. GitHub Pages viser den for alle adresser som ikke finnes.
+
+    Andre feil (500, 503) viser GitHub sine egne sider; de kan ikke byttes ut.
+    Siden kan vises på hvilken som helst adresse, så alle lenker må være
+    absolutte. Bygget stopper hvis en relativ lenke har sneket seg inn.
+    """
+    liste = json.dumps([{"slug": k["slug"], "navn": k["navn"]} for k, _ in kommuner],
+                       ensure_ascii=False).replace("</", "<\\/")
+    side = _fyll((MAL / "404.html").read_text("utf-8"), {
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "base": BASE,
+        "kommuner": _kommunekort(kommuner, BASE), "kommuner_json": liste,
+        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "meld": MELD_FEIL,
+        "telling": _telling()})
+    relative = sorted({a for a in re.findall(r'(?:href|src)="([^"]*)"', side)
+                       if not a.startswith(("/", "#", "https://", "mailto:"))})
+    if relative:
+        raise SystemExit(f"404.html har relative lenker, som peker feil der siden vises: {relative}")
+    (UT / "404.html").write_text(side, encoding="utf-8")
 
 
 def kjor(aar: int) -> None:
@@ -562,6 +589,7 @@ def kjor(aar: int) -> None:
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
     _forside([(kommune, status)])
     _om([(kommune, status)])
+    _ikke_funnet([(kommune, status)])
 
     # Driftssiden. Lenkes ikke fra resten av nettstedet.
     (UT / "drift").mkdir()
