@@ -372,5 +372,8 @@ bare skjult det som allerede kan leses i Actions og git.
   `noindex`. Den viser bare tall og offentlige sakstitler. Besøkstallene hentes
   i nettleseren fra GoatCounter, og det krever innstillingen «Allow adding
   visitor counts on your website».
+- Kostnaden for AI-analysen vises i kroner: tokens ganget med listeprisen i
+  `drift/kostnad.py` og kursen fra Norges Bank. Uten rabatt for caching og
+  uten mva, så det er et anslag. Prisene må oppdateres når modellen byttes.
 - Innhentingen teller kallene mot portalen og lagrer tallet i
   `data/drift/kjoringer.json`. Da kan vi vise at takten fra ADR-007 holdes.
