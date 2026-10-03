@@ -51,6 +51,9 @@ MAKS_PER_KJORING = 25
 # viste: avrundede tall, «skal behandles» om møter som var holdt, tidsuttrykk
 # som «til sommeren», feil partinavn og tvungne tema.
 INSTRUKSJON_VERSJON = 3
+# Linjen om «Protokoll ikke publisert» og «Unntatt offentlighet» kom til uten ny
+# versjon: den gjelder bare saker med de statusene, og de analyseres på nytt
+# uansett, fordi statusen står i grunnlaget.
 
 # Faste tagger. Lar man modellen finne på egne, blir filtrene ubrukelige
 # etter et halvt år.
@@ -95,6 +98,7 @@ INSTRUKSJON = """Du forklarer en politisk sak i Steinkjer kommune for innbyggere
 - Skriv ikke stemmetall eller hvem som stemte hva. Nettstedet viser stemmene fra protokollen ved siden av teksten. I «uenighet» beskriver du hva uenigheten gjaldt og hvilke partier som sto på hver side, slik det går fram av voteringene. Ta med alle partiene på hver side.
 - Teksten leses lenge etter at den er skrevet. Bruk datoer, ikke «i år», «til sommeren» eller «neste møte».
 - Status «Venter på protokoll» betyr at møtet er holdt, men at vedtaket ikke er publisert ennå. Skriv det slik, ikke at saken skal behandles.
+- Status «Protokoll ikke publisert» betyr at møtet ble holdt for over en måned siden, men at vedtaket ikke er lagt ut. «Unntatt offentlighet» betyr at vedtaket er skjermet. Velg utfallet «venter på protokoll», og skriv at vedtaket ikke er publisert, ikke at det kommer.
 - Er saken ikke avgjort ennå, beskriv hva som skal avgjøres og hva kommunedirektøren foreslår.
 - Er grunnlaget for tynt til en dekkende forklaring, sett «usikker» til true og la «sammendrag» stå tomt.
 - Skriv klarspråk på norsk bokmål, med korte setninger.
