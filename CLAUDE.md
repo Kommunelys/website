@@ -24,7 +24,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://karlaurstad.github.io/KommuneDash/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data |
+| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.github.io/website/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data |
 | GitHub Actions | Virker. Kjøres for hånd; tidsplanen er slått av |
 
 ## Grunnregler du ikke skal bryte

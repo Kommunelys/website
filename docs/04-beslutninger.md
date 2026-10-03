@@ -342,6 +342,6 @@ innholdet, ikke merkevaren.
   fortsatt Steinkjer; den endres når flere kommuner kommer, fordi en endring
   utløser ny analyse av alle sakene.
 - Domenet blir `kommunelys.no` (prosjekteier, 3.10.2026). Lenkene på
-  nettstedet er relative, så det virker både under `/KommuneDash/` og på
+  nettstedet er relative, så det virker både under `/website/` og på
   roten av domenet. Med publisering fra Actions settes domenet i
   Pages-innstillingene; en `CNAME`-fil i nettstedet brukes ikke.

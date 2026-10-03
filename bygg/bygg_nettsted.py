@@ -53,7 +53,7 @@ UOFFISIELL = "Ikke laget av {} kommune"
 FASTE = ("Leder", "Nestleder", "Medlem")
 
 # Lenken «Meld fra om feil» under hvert sammendrag (ADR-011).
-MELD_FEIL = "https://github.com/karlaurstad/KommuneDash/issues/new"
+MELD_FEIL = "https://github.com/Kommunelys/website/issues/new"
 
 
 def _kildenavn(k: dict) -> str:
