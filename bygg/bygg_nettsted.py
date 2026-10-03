@@ -31,6 +31,7 @@ import shutil
 import sys
 from pathlib import Path
 
+from bygg import drift
 from tester.kontroller import sammendrag_avvik, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 from tolk.navn import PARTIKODER, normaliser, partikode
@@ -54,6 +55,29 @@ FASTE = ("Leder", "Nestleder", "Medlem")
 
 # Lenken «Meld fra om feil» under hvert sammendrag (ADR-011).
 MELD_FEIL = "https://github.com/Kommunelys/website/issues/new"
+REPO = MELD_FEIL.rsplit("/issues", 1)[0]
+
+# Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
+# https://<kode>.goatcounter.com. Tom streng slår tellingen av.
+GOATCOUNTER = "kommunelys"
+
+
+def _telling() -> str:
+    """Skriptet som teller sidevisninger, eller ingenting.
+
+    Kommunesidene viser fanene med #saker, #person/… i adressen. GoatCounter
+    teller ikke det som står etter #, så hver visning telles for hånd med
+    stien og fanen. Søketeksten står ikke i adressen og telles ikke.
+    """
+    if not GOATCOUNTER:
+        return ""
+    return (
+        "<script>function telle(){var g=window.goatcounter;"
+        "if(g&&g.count)g.count({path:location.pathname+location.hash.split('?')[0]})}"
+        "addEventListener('hashchange',telle)</script>\n"
+        f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" '
+        """data-goatcounter-settings='{"no_onload":true}' """
+        'async src="https://gc.zgo.at/count.js" onload="telle()"></script>')
 
 
 def _kildenavn(k: dict) -> str:
@@ -365,7 +389,8 @@ def _kommuneside(kommune: dict, ut: Path) -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
-                 {"merke": MERKE, "kommune": navn, "slug": kommune["slug"]})
+                 {"merke": MERKE, "kommune": navn, "slug": kommune["slug"],
+                  "telling": _telling()})
     if UOFFISIELL.format(navn) not in side:
         raise SystemExit(f"kommunesiden mangler «{UOFFISIELL.format(navn)}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
@@ -386,7 +411,7 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
         for k, st in kommuner)
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
         "merke": MERKE, "kommuner": kort, "gamle_lenker": GAMLE_LENKER,
-        "repo": MELD_FEIL.rsplit("/issues", 1)[0]})
+        "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
 
 
@@ -455,6 +480,13 @@ def kjor(aar: int) -> None:
     (ut / "status.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
     _forside([(kommune, status)])
+
+    # Driftssiden. Lenkes ikke fra resten av nettstedet.
+    (UT / "drift").mkdir()
+    (UT / "drift" / "index.html").write_text(drift.side(
+        (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
+        collections.Counter(a["status"] for a in finn_avvik(aar)),
+        MERKE, REPO, GOATCOUNTER), encoding="utf-8")
 
     print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
           f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "

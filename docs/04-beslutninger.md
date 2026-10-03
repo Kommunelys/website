@@ -336,7 +336,8 @@ innholdet, ikke merkevaren.
   fokus og status bruker samme blåtone mørkere (`#1F5FAD`, 6:1). Blått ligger
   nær Høyres farge, så det brukes ikke til store flater i dataene.
 - Skriften er Inter (OFL), lagt lokalt i `bygg/mal/fonter/`. Det holder
-  regelen fra fase 2 om ingen eksterne skrifter eller skript.
+  regelen fra fase 2 om ingen eksterne skrifter eller skript. Unntaket er
+  besøkstellingen (ADR-017).
 - Til dataene ligger per kommune (fase 3), hører `data/` til Steinkjer, og
   bygget krever nøyaktig én kommune. Instruksjonen til analysen nevner
   fortsatt Steinkjer; den endres når flere kommuner kommer, fordi en endring
@@ -345,3 +346,31 @@ innholdet, ikke merkevaren.
   nettstedet er relative, så det virker både under `/website/` og på
   roten av domenet. Med publisering fra Actions settes domenet i
   Pages-innstillingene; en `CNAME`-fil i nettstedet brukes ikke.
+
+---
+
+## ADR-017 — Besøk telles med GoatCounter, og driften vises på /drift/
+
+**Besluttet.** Prosjekteier, 4.10.2026.
+
+Prosjekteier trenger å se hva tjenesten har gjort: kjøringer, nye saker,
+innhenting, analyse og besøk. GitHub Pages har ingen besøkslogg, og det finnes
+ingen server å logge på. Repoet er offentlig, så en lukket admin-side ville
+bare skjult det som allerede kan leses i Actions og git.
+
+**Konsekvens:**
+
+- Sidevisninger telles med GoatCounter (`kommunelys.goatcounter.com`). Det er
+  det eneste skriptet som lastes fra et annet domene. GoatCounter bruker ikke
+  informasjonskapsler og lagrer ikke IP-adresser, bare sammenlagte tall. Det
+  står under «Om» på kommunesiden og i bunnen av forsiden.
+- Kommunesidene viser fanene etter `#`. Hver visning telles derfor med sti og
+  fane (`/steinkjer/#saker`). Søketeksten står ikke i adressen og sendes ikke.
+- Kontoen hos GoatCounter opprettes og eies av prosjekteier. Skal tellingen av, settes
+  `GOATCOUNTER = ""` i `bygg/bygg_nettsted.py`.
+- `/drift/` er offentlig, men lenkes ikke fra resten av nettstedet og har
+  `noindex`. Den viser bare tall og offentlige sakstitler. Besøkstallene hentes
+  i nettleseren fra GoatCounter, og det krever innstillingen «Allow adding
+  visitor counts on your website».
+- Innhentingen teller kallene mot portalen og lagrer tallet i
+  `data/drift/kjoringer.json`. Da kan vi vise at takten fra ADR-007 holdes.
