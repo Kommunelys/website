@@ -3,16 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steinkjer i klartekst</title>
-<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i Steinkjer kommune. Ikke laget av Steinkjer kommune.">
-<link rel="stylesheet" href="stil.css">
+<title>{{kommune}} | {{merke}}</title>
+<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune. Ikke laget av {{kommune}} kommune.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../stil.css">
 </head>
 <body>
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="navn" href="#oversikt">Steinkjer i klartekst</a>
-    <span class="uoff">Uoffisiell. Ikke laget av Steinkjer kommune.</span>
+    <a class="merke" href="#oversikt"><svg class="merke-ikon" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><path d="M10.5 9 L31 14.5 V49.5 L10.5 55 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path class="rute" d="M35.5 12 L54.5 4 V60 L35.5 52 Z" fill="#60A5FA" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="merke-navn">{{merke}}</span></a>
+    <a class="kommune" href="../" title="Velg en annen kommune" aria-label="{{kommune}}. Velg en annen kommune">{{kommune}}</a>
+    <span class="uoff">Uoffisiell. Ikke laget av {{kommune}} kommune.</span>
   </div>
   <nav class="ramme meny" id="nav" aria-label="Hovedmeny">
     <a href="#oversikt" data-v="oversikt">Oversikt</a>
@@ -21,6 +24,7 @@
     <a href="#stemmer" data-v="stemmer">Stemmer</a>
     <a href="#politikere" data-v="politikere">Politikere</a>
     <a href="#om" data-v="om">Om</a>
+    <a href="#saker" class="sokeknapp" data-sok><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="vh">Søk i sakene</span></a>
   </nav>
 </header>
 
@@ -28,23 +32,35 @@
 
 <!-- OVERSIKT -->
 <section id="v-oversikt" class="forside">
-  <div class="ingress">
-    <h1>Kommunepolitikken i Steinkjer</h1>
+  <div class="topp">
+    <h1>Kommunepolitikken i {{kommune}}</h1>
+    <p class="ingress-tekst">Vi forklarer sakene i enkelt språk, viser hvordan de folkevalgte stemte, og lenker til originaldokumentene.</p>
     <p id="akkurat"></p>
-    <label class="sok"><span class="vh">Søk i sakene</span><input id="q0" type="search" placeholder="Søk i sakene"></label>
+    <label class="sok"><span class="vh">Søk i sakene</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="q0" type="search" placeholder="Søk i sakene"></label>
   </div>
 
-  <section class="blokk">
-    <div class="hode2"><h2>På vei til behandling</h2><a href="#saker" data-go="saker" data-status="Til">Alle saker på vei</a></div>
-    <p class="liten muted">Sakene på sakslisten til de neste møtene.</p>
-    <div id="paavei"></div>
-  </section>
-
-  <section class="blokk">
-    <div class="hode2"><h2>Nylig vedtatt</h2><a href="#saker">Alle saker</a></div>
-    <p class="liten muted">Det siste som er bestemt, der protokollen er publisert. Setningen under hver sak er skrevet av KI ut fra saksdokumentene.</p>
-    <ol class="liste nylig" id="nylig"></ol>
-  </section>
+  <!-- Tre spørsmål: hva skal skje, hva ble bestemt, hvordan ble det stemt.
+       Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
+  <div class="kort3">
+    <section class="kort">
+      <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span>Hva kommer opp?</h2>
+      <p class="liten muted">Sakene på sakslisten til de neste møtene.</p>
+      <div id="paavei"></div>
+      <a class="kort-lenke" href="#saker" data-go="saker" data-status="Til">Alle saker på vei</a>
+    </section>
+    <section class="kort">
+      <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span>Hva er vedtatt?</h2>
+      <p class="liten muted">Det siste som er bestemt, der protokollen er publisert. Setningen under hver sak er skrevet av KI ut fra saksdokumentene.</p>
+      <ol class="liste nylig" id="nylig"></ol>
+      <a class="kort-lenke" href="#saker">Alle saker</a>
+    </section>
+    <section class="kort">
+      <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>Se stemmene</h2>
+      <p class="liten muted">Hvordan hver folkevalgt stemte, slik protokollen viser det.</p>
+      <div id="stemkort"></div>
+      <a class="kort-lenke" id="stemlenke" href="#stemmer">Hvem stemte hva</a>
+    </section>
+  </div>
 
   <section class="blokk">
     <h2>Venter på protokoll</h2>
@@ -166,12 +182,12 @@
     </section>
     <section class="blokk">
       <h2>Utvalg og roller</h2>
-      <table class="org"><thead><tr><th>Organ</th><th>Oppgave</th><th class="num">Møter i <span class="aar"></span></th></tr></thead><tbody id="org"></tbody></table>
+      <div class="tw"><table class="org"><thead><tr><th>Organ</th><th>Oppgave</th><th class="num">Møter i <span class="aar"></span></th></tr></thead><tbody id="org"></tbody></table></div>
     </section>
   </div>
   <h2 class="mt">Om tjenesten</h2>
   <div class="tekst">
-    <p><b>Steinkjer i klartekst er en uoffisiell tjeneste.</b> Den er ikke laget av eller for Steinkjer kommune. Målet er å gjøre det lettere for innbyggere å følge hva som skjer i kommunepolitikken. Alle lenker går til originaldokumentene i kommunens innsynsportal.</p>
+    <p><b>{{merke}} er en uoffisiell tjeneste.</b> Den er ikke laget av eller for {{kommune}} kommune. Målet er å gjøre det lettere for innbyggere å følge hva som skjer i kommunepolitikken. Alle lenker går til originaldokumentene i kommunens innsynsportal.</p>
     <h3>Kilder</h3>
     <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen.</p>
     <h3>Status på en sak</h3>
@@ -191,6 +207,6 @@
 </main>
 <footer class="ramme fot" id="foot"></footer>
 <script src="data/data.js"></script>
-<script src="app.js"></script>
+<script src="../app.js"></script>
 </body>
 </html>

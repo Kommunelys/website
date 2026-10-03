@@ -1,25 +1,35 @@
-/* Steinkjer i klartekst. Systemskrift, én aksentfarge, partifarger bare der
-   de betyr noe (seter og stemmer). Linjer og overskrifter deler opp siden,
-   ikke kort og skygger. Ingen eksterne skrifter eller skript. */
+/* Kommunelys. Blekk og papir, med lys blå som pynt (ADR-016). Partifarger
+   bare der de betyr noe (seter og stemmer). Skriften ligger lokalt; ingen
+   eksterne skrifter eller skript.
+
+   Lys blå (--lys, #60A5FA) har 2,4:1 mot papirhvit og brukes aldri til tekst
+   eller fokus i lys modus. Lenker, fokus og status bruker --lenke, samme
+   blåtone mørkere (6:1). */
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;
+  src:url(fonter/inter-latin-wght-normal.woff2) format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
-  --bg:#FAFAF7; --surface:#FFFFFF; --ink:#1D2125; --muted:#5F676F; --line:#DEDDD6; --soft:#EFEEE8;
-  --accent:#1E5A86; --accent-soft:#E3ECF3;
+  --bg:#FAF9F6; --surface:#FFFFFF; --ink:#1F2937; --muted:#646B76; --line:#E5E7EB; --soft:#F1F4F8;
+  --lys:#60A5FA; --lys-flate:#EAF2FE; --lenke:#1F5FAD;
   --good:#22704A; --bad:#A33A2C; --warn:#8A5F0E; --info:#5A4A9E;
-  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --skygge:0 1px 2px rgba(31,41,55,.05),0 6px 18px rgba(31,41,55,.05);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,"SF Mono",Consolas,"Liberation Mono",monospace;
   --p-AP:#D7263D; --p-H:#2F6FD8; --p-FRP:#173F7A; --p-SP:#1F8A4C; --p-SV:#C2306B; --p-R:#7E1A12; --p-V:#0D8A84; --p-INP:#C98A12; --p-PP:#7A55A8; --p-UAVH:#8A939C;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#141618; --surface:#1B1E21; --ink:#E7E6E1; --muted:#A3A9AF; --line:#30353A; --soft:#22262A;
-  --accent:#8DB9DD; --accent-soft:#1E2E3B;
+  --bg:#111827; --surface:#1F2937; --ink:#E5E7EB; --muted:#9CA3AF; --line:#374151; --soft:#1A2230;
+  --lys:#60A5FA; --lys-flate:#1B2A40; --lenke:#60A5FA;
   --good:#6CC496; --bad:#EE8F80; --warn:#E2B660; --info:#B9AAF0;
+  --skygge:none;
   --p-FRP:#5C86C9; --p-R:#C2483C; --p-PP:#A483D0; --p-AP:#EC4B5E; --p-H:#5B92EA;
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#141618; --surface:#1B1E21; --ink:#E7E6E1; --muted:#A3A9AF; --line:#30353A; --soft:#22262A;
-  --accent:#8DB9DD; --accent-soft:#1E2E3B;
+  --bg:#111827; --surface:#1F2937; --ink:#E5E7EB; --muted:#9CA3AF; --line:#374151; --soft:#1A2230;
+  --lys:#60A5FA; --lys-flate:#1B2A40; --lenke:#60A5FA;
   --good:#6CC496; --bad:#EE8F80; --warn:#E2B660; --info:#B9AAF0;
+  --skygge:none;
   --p-FRP:#5C86C9; --p-R:#C2483C; --p-PP:#A483D0; --p-AP:#EC4B5E; --p-H:#5B92EA;
   color-scheme:dark}
 
@@ -27,14 +37,14 @@
 html{background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
 h1,h2,h3{margin:0;line-height:1.2;text-wrap:balance}
-h1{font-size:clamp(26px,4vw,34px);font-weight:750;letter-spacing:-.015em}
-h2{font-size:20px;font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(26px,4vw,34px);font-weight:700;letter-spacing:-.022em}
+h2{font-size:20px;font-weight:650;letter-spacing:-.015em}
 h3{font-size:17px;font-weight:700}
 p{margin:0 0 10px}
-a{color:var(--accent);text-underline-offset:2px}
+a{color:var(--lenke);text-underline-offset:2px}
 a:hover{text-decoration-thickness:2px}
 button,input,select{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+:focus-visible{outline:2px solid var(--lenke);outline-offset:2px}
 .muted{color:var(--muted)}
 .liten{font-size:14px}
 .mono,.num{font-variant-numeric:tabular-nums}
@@ -49,22 +59,57 @@ button,input,select{font:inherit;color:inherit}
 
 /* Topp og meny */
 .hode{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:10}
-.hode-topp{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding-top:16px}
-.navn{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-.uoff{font-size:13.5px;color:var(--muted)}
-.meny{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;margin-top:6px}
+.hode-topp{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding-top:14px}
+/* Merket: blekkramme og lys blå rute. Navnet står alene; kommunen er en egen etikett. */
+.merke{display:inline-flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none}
+.merke-ikon{width:34px;height:34px;flex:none}
+.merke-ikon .rute{fill:var(--lys);stroke:var(--lys)}
+.merke-navn{font-size:23px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.kommune{font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--surface)}
+.kommune::after{content:" ›";color:var(--muted)}
+.kommune:hover{border-color:var(--lenke);color:var(--lenke)}
+.uoff{margin-left:auto;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--surface)}
+@media (max-width:640px){.uoff{margin-left:0;flex-basis:100%;border:0;padding:0;background:none}}
+.meny{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;margin-top:6px;position:relative}
 .meny::-webkit-scrollbar{display:none}
 .meny a{padding:8px 0 9px;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;white-space:nowrap}
 .meny a:hover{border-bottom-color:var(--line)}
-.meny a[aria-current]{border-bottom-color:var(--accent);font-weight:700}
+.meny a[aria-current]{border-bottom-color:var(--lys);font-weight:700}
+.meny .sokeknapp{margin-left:auto;display:inline-flex;align-items:center;color:var(--ink)}
+.meny .sokeknapp:hover{color:var(--lenke);border-bottom-color:transparent}
 @media (max-width:600px){.hode{position:static}.meny{gap:18px}}
 @media (max-width:420px){.meny{gap:11px;font-size:15px}}
+
+/* Toppfeltet: lys blå flate med en svak lysstråle, som i merket. Ingen foto.
+   Teksten er blekk, ikke dempet, fordi strålen gjør flaten blåere. */
+.topp{position:relative;overflow:hidden;margin:24px 0 8px;padding:34px 28px 30px;border-radius:14px;border:1px solid var(--line);
+  background:linear-gradient(165deg,var(--lys-flate) 0%,var(--lys-flate) 40%,var(--bg) 100%)}
+.topp::after{content:"";position:absolute;top:0;right:0;width:62%;height:100%;pointer-events:none;
+  background:linear-gradient(205deg,color-mix(in srgb,var(--lys) 20%,transparent),transparent 80%);
+  clip-path:polygon(58% 0,100% 0,100% 18%,42% 100%,0 100%)}
+.topp>*{position:relative;z-index:1}
+.topp h1{font-size:clamp(28px,4.4vw,40px);max-width:22ch}
+.topp p{color:var(--ink)}
+.overtekst{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+.ingress-tekst{font-size:17.5px;max-width:56ch;margin-top:12px}
+@media (max-width:600px){.topp{padding:26px 18px 22px;margin-top:16px}}
+
+/* Kommunelys-forsiden */
+.kommuner{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.kommunekort{display:grid;gap:3px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);box-shadow:var(--skygge);color:var(--ink);text-decoration:none}
+.kommunekort b{font-size:19px;color:var(--lenke)}
+.kommunekort:hover{border-color:var(--lys)}
+.kommunekort:hover b{text-decoration:underline}
+.slik-ikon{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px;max-width:640px}
+.slik-ikon li{display:flex;gap:14px;align-items:center}
+.ikon{flex:none;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--lys-flate);color:var(--ink)}
+.rot>.blokk{max-width:760px}
 
 main{padding-bottom:56px}
 .ingress{margin:30px 0 20px}
 .ingress p{color:var(--muted);max-width:62ch;margin-top:8px}
 .sok{display:block;margin-top:14px}
-.sok input{width:min(100%,420px);padding:9px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.sok input{width:min(100%,420px);padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
 .filter .sok{margin:0;flex:1 1 260px}
 .filter .sok input{width:100%}
 
@@ -74,7 +119,7 @@ main{padding-bottom:56px}
 .tall button+button{padding-left:14px;border-left:1px solid var(--line)}
 .tall .n{display:block;font-size:30px;font-weight:750;line-height:1.1;font-variant-numeric:tabular-nums}
 .tall .l{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
-.tall button:hover .n{color:var(--accent)}
+.tall button:hover .n{color:var(--lenke)}
 @media (max-width:760px){.tall{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tall button{padding-left:0!important;border-left:0!important;border-bottom:1px solid var(--line)}
   .tall button:nth-child(even){padding-left:14px!important;border-left:1px solid var(--line)!important}
@@ -94,13 +139,13 @@ h2.mt{border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:10px}
 .liste .d{font-variant-numeric:tabular-nums;font-weight:650}
 .liste .d small{display:block;font-weight:400;color:var(--muted);font-size:13px}
 .liste a.t{color:var(--ink);text-decoration:none;font-weight:600}
-.liste a.t:hover{color:var(--accent);text-decoration:underline}
+.liste a.t:hover{color:var(--lenke);text-decoration:underline}
 .liste .m{font-size:13.5px;color:var(--muted)}
 
 /* Status som farget tekst med prikk */
 .st{font-size:13.5px;font-weight:600;white-space:nowrap}
 .st::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
-.st.ks{color:var(--warn)} .st.tb{color:var(--accent)} .st.ok{color:var(--good)} .st.bh{color:var(--muted)} .st.vp{color:var(--info)}
+.st.ks{color:var(--warn)} .st.tb{color:var(--lenke)} .st.ok{color:var(--good)} .st.bh{color:var(--muted)} .st.vp{color:var(--info)}
 .sti{color:var(--muted)}
 .sti b{color:var(--ink);font-weight:600}
 .tag{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 5px;white-space:nowrap}
@@ -118,7 +163,7 @@ th:last-child,td:last-child{padding-right:0}
 .sorter th[aria-sort="descending"]::after{content:" ↓"}
 tr.klikk{cursor:pointer}
 tr.klikk:hover td{background:var(--soft)}
-tr[aria-selected="true"] td{background:var(--accent-soft)}
+tr[aria-selected="true"] td{background:var(--lys-flate)}
 .dot,.sq{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:-1px;flex:none}
 .sq{border-radius:2px;width:9px;height:9px}
 
@@ -130,7 +175,7 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 #hemi circle.av{opacity:.18}
 .seter td{padding:6px 12px 6px 0}
 .seter button{background:none;border:0;padding:0;cursor:pointer;text-align:left;color:var(--ink)}
-.seter button:hover{color:var(--accent);text-decoration:underline}
+.seter button:hover{color:var(--lenke);text-decoration:underline}
 #ksparti{margin-top:18px}
 .partivisning{border-top:2px solid var(--ink);padding-top:12px}
 .partivisning .hode2{border:0;padding:0}
@@ -144,8 +189,28 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 /* Saker per måned */
 #mnd svg{width:100%;height:auto;max-height:240px;display:block}
 
-/* Forsiden: tre spørsmål i én kolonne, lett å lese */
-.forside>.ingress,.forside>.blokk:not(#ks),.forside>.ny-her{max-width:760px}
+/* Forsiden: søk i toppfeltet, tre kort, og resten i én kolonne */
+.topp .sok{position:relative;max-width:460px;margin-top:18px}
+.topp .sok svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.topp .sok input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;font-size:16px}
+.kort3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+@media (max-width:900px){.kort3{grid-template-columns:minmax(0,1fr)}}
+.kort{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--skygge);padding:18px 18px 16px;display:flex;flex-direction:column;min-width:0}
+.kort-hode{display:flex;align-items:center;gap:10px;font-size:18px;margin:0 0 6px}
+.kort-hode .ikon{width:38px;height:38px}
+.kort>.liten.muted{margin:0 0 4px}
+.kort-lenke{align-self:flex-start;margin-top:auto;padding-top:10px;font-weight:600;font-size:14.5px}
+.kort-lenke::after{content:" →"}
+/* Møtene i kortene som en tidslinje: prikk og linje i lys blå. */
+.kort .mote-gr{margin:10px 0 0;padding-left:16px;border-left:2px solid var(--line)}
+.kort .mote-gr h3{font-size:15px;position:relative}
+.kort .mote-gr h3::before{content:"";position:absolute;left:-22px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--lys);box-shadow:0 0 0 3px var(--surface)}
+.kort .mote-gr>.liten{margin:2px 0 0}
+.kort .saksliste li{padding:7px 0;font-size:15px}
+.kort .saksliste li:last-child,.kort .nylig li:last-child{border-bottom:0}
+.kort .nylig li{padding:10px 0;font-size:15px}
+.kort .bar{margin:6px 0 3px}
+.forside>.blokk:not(#ks),.forside>.ny-her{max-width:760px}
 .forside .blokk>.liten{margin:6px 0 4px}
 .mote-gr{margin-top:16px}
 .mote-gr h3{font-size:16.5px;margin:0 0 2px}
@@ -153,14 +218,14 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 .saksliste{list-style:none;margin:0;padding:0}
 .saksliste li{padding:7px 0;border-bottom:1px solid var(--line)}
 .saksliste a.t,.nylig a.t{color:var(--ink);text-decoration:none;font-weight:600}
-.saksliste a.t:hover,.nylig a.t:hover{color:var(--accent);text-decoration:underline}
+.saksliste a.t:hover,.nylig a.t:hover{color:var(--lenke);text-decoration:underline}
 .nylig li{display:block;padding:12px 0}
 .nylig .bet{margin:4px 0 2px;color:var(--ink);max-width:68ch}
 .ny-her{margin-top:40px;padding-top:14px;border-top:1px solid var(--line)}
 
 /* Saksflyt og utvalg */
 .flyt{margin:0 0 12px;padding-left:22px;display:grid;gap:8px}
-.flyt li::marker{font-weight:700;color:var(--accent)}
+.flyt li::marker{font-weight:700;color:var(--lenke)}
 .org td{font-size:14.5px}
 
 /* Siste fra kommunestyret */
@@ -168,7 +233,7 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 
 /* Saker */
 .filter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px}
-.filter select{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;max-width:100%}
+.filter select{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;max-width:100%}
 .avkr{font-size:14px;display:flex;gap:6px;align-items:center}
 .valg{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
 .valg button{font-size:14px;border:1px solid var(--line);background:none;border-radius:4px;padding:3px 9px;cursor:pointer;display:inline-flex;align-items:center}
@@ -180,7 +245,7 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 .sak{border-bottom:1px solid var(--line)}
 .sak>button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;width:100%;padding:14px 0;background:none;border:0;text-align:left;cursor:pointer}
 .sak .t{font-weight:650;font-size:16.5px;line-height:1.35}
-.sak>button:hover .t{color:var(--accent)}
+.sak>button:hover .t{color:var(--lenke)}
 .sak .o{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:2px}
 .sak .r{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:13.5px}
 .sak .m{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-size:13.5px;color:var(--muted)}
@@ -215,7 +280,7 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 .vc .sum p{margin:0}
 .score{font-size:26px;font-weight:750;line-height:1;font-variant-numeric:tabular-nums}
 .score small{font-size:13px;color:var(--muted);font-weight:500;margin-left:6px}
-details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--accent)}
+details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenke)}
 /* Én votering: hva, hvem, utfall, og et utdrag som kan foldes ut til hele forslaget */
 .vots{display:grid;margin-top:4px}
 .vot{padding:12px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
@@ -229,7 +294,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--acce
 .res{font-size:13.5px;font-weight:700}
 .res.ok{color:var(--good)} .res.no{color:var(--bad)}
 .vot .why{margin:0;font-size:13.5px;color:var(--warn)}
-.mer{justify-self:start;background:none;border:0;padding:2px 0;color:var(--accent);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.mer{justify-self:start;background:none;border:0;padding:2px 0;color:var(--lenke);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 .full{display:grid;gap:10px}
 .forslag{max-width:75ch;font-size:15px;border-left:3px solid var(--line);padding-left:14px}
 .forslag p{margin:0 0 8px}
@@ -238,7 +303,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--acce
 .klipp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ordliste{margin:12px 0 0;max-width:75ch}
 .slik{margin:0 0 18px;padding-left:22px;display:grid;gap:6px;max-width:75ch}
-.slik li::marker{font-weight:700;color:var(--accent)}
+.slik li::marker{font-weight:700;color:var(--lenke)}
 .velg{display:grid;gap:4px;font-size:14px;font-weight:600;max-width:min(100%,440px)}
 /* Lange møtenavn skal ikke gjøre siden bredere enn skjermen. */
 .velg select{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-weight:400;font-size:16px}
@@ -270,7 +335,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--acce
 @media (max-width:560px){.vrow{grid-template-columns:minmax(0,1fr) 48px 56px}.vrow>:first-child{grid-column:1/-1}}
 .v.for{color:var(--good);font-weight:700}.v.mot{color:var(--bad);font-weight:700}
 .meter{display:inline-block;width:56px;height:5px;background:var(--soft);vertical-align:middle;margin-left:8px;overflow:hidden}
-.meter i{display:block;height:100%;background:var(--accent)}
+.meter i{display:block;height:100%;background:var(--lys)}
 .utvalgt{margin-top:18px}
 .utvalgt h3{margin:2px 0 6px}
 .jevn{display:grid;gap:5px;padding:10px 0;border-bottom:1px solid var(--line)}

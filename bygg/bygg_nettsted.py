@@ -1,4 +1,4 @@
-"""Bygger det statiske nettstedet fra data/ og malen i bygg/mal/.
+"""Bygger det statiske nettstedet fra data/, kommuner/ og malen i bygg/mal/.
 
 Hele nettstedet bygges på nytt hver gang, ikke stykkevis. Det tar sekunder ved
 denne datamålestokken og fjerner en klasse feil der en gammel side blir
@@ -7,7 +7,12 @@ liggende igjen med utdatert innhold.
 Malen (index.html, stil.css, app.js) er portert fra prototypen i
 bygg/prototype.html. Alt som var skrevet for hånd om enkeltsaker og ett møte,
 er fjernet; sidene lages bare fra dataene. Dataene skrives til
-nettsted/data/data.js som to objekter, S og VOT, som malen leser.
+nettsted/<kommune>/data/data.js som to objekter, S og VOT, som malen leser.
+
+Nettstedet heter Kommunelys og skal dekke flere kommuner (ADR-016). Roten er
+Kommunelys-forsiden med en liste over kommunene; hver kommune har sin egen
+mappe. Malen nevner ingen kommune ved navn. Det som er særegent for kommunen,
+står i kommuner/<kommune>.json.
 
 ADR-002 og ADR-015: en votering med avvik som ikke er godkjent, publiseres
 ikke. Det står at den finnes og hva den gjaldt, men ikke tall eller navn.
@@ -19,6 +24,7 @@ from __future__ import annotations
 
 import collections
 import datetime as dt
+import html
 import json
 import re
 import shutil
@@ -33,6 +39,16 @@ ROT = Path(__file__).resolve().parent.parent
 DATA = ROT / "data"
 MAL = Path(__file__).resolve().parent / "mal"
 UT = ROT / "nettsted"
+KOMMUNER = ROT / "kommuner"
+
+MERKE = "Kommunelys"
+# Lenkene fra før kommunene fikk hver sin mappe (/#saker, /#person/…),
+# gjaldt alle denne kommunen. Forsiden sender dem videre dit.
+GAMLE_LENKER = "steinkjer"
+# Felles for alle kommunene, lagt på roten.
+FELLES = ("stil.css", "app.js", "favicon.svg", "apple-touch-icon.png")
+# Står på hver kommuneside. Bygget stopper uten (CLAUDE.md: utvetydig uoffisiell).
+UOFFISIELL = "Ikke laget av {} kommune"
 
 FASTE = ("Leder", "Nestleder", "Medlem")
 
@@ -80,6 +96,30 @@ GRUNN = {
 
 def _les(sti: Path, standard):
     return json.loads(sti.read_text("utf-8")) if sti.exists() else standard
+
+
+def _kommune() -> dict:
+    """Oppsettet for kommunen nettstedet bygges for.
+
+    Til dataene ligger per kommune (fase 3), hører data/ til én kommune, og det
+    må være nøyaktig én fil i kommuner/.
+    """
+    filer = sorted(KOMMUNER.glob("*.json"))
+    if len(filer) != 1:
+        raise SystemExit(f"fant {len(filer)} kommuner i kommuner/, men data/ har bare én")
+    k = json.loads(filer[0].read_text("utf-8"))
+    k.pop("merknad", None)
+    return k
+
+
+def _fyll(mal: str, verdier: dict[str, str]) -> str:
+    """Bytter ut {{navn}} i malen. Stopper hvis noe står igjen."""
+    for navn, verdi in verdier.items():
+        mal = mal.replace("{{" + navn + "}}", verdi)
+    rest = sorted(set(re.findall(r"\{\{\w+\}\}", mal)))
+    if rest:
+        raise SystemExit(f"ikke fylt inn i malen: {rest}")
+    return mal
 
 
 # Hvem som står bak et forslag, skrevet først i teksten: «På vegne av H, V,
@@ -204,7 +244,7 @@ def _folk(verv: list) -> list[dict]:
     return sorted(ut, key=lambda p: p["n"])
 
 
-def _s(aar: int, saker: list, moter: list, sammendrag: dict) -> dict:
+def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> dict:
     """Saker, møter, utvalg og kommunestyret, i formen malen bruker."""
     politiske = collections.Counter(
         st["mote_id"] for s in saker if s["sakstype"] == "PS" and not s["formalia"]
@@ -242,6 +282,8 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict) -> dict:
     protokoller = collections.Counter(
         o["utvalg"] for o in _les(DATA / "oppmote" / f"{aar}.json", []))
     return {
+        "merke": MERKE,
+        "kommune": kommune,
         "aar": aar,
         "today": dt.date.today().isoformat(),
         "cases": cases,
@@ -319,7 +361,37 @@ def _saksnr_sortering(nr: str) -> tuple:
     return (m.group(1) != "PS", int(m.group(3)), int(m.group(2))) if m else (True, 0, 0)
 
 
+def _kommuneside(kommune: dict, ut: Path) -> None:
+    """index.html for én kommune, med navnet fylt inn i malen."""
+    navn = html.escape(kommune["navn"])
+    side = _fyll((MAL / "index.html").read_text("utf-8"),
+                 {"merke": MERKE, "kommune": navn, "slug": kommune["slug"]})
+    if UOFFISIELL.format(navn) not in side:
+        raise SystemExit(f"kommunesiden mangler «{UOFFISIELL.format(navn)}»")
+    (ut / "index.html").write_text(side, encoding="utf-8")
+
+
+def _forside(kommuner: list[tuple[dict, dict]]) -> None:
+    """Kommunelys-forsiden på roten, med en lenke til hver kommune.
+
+    Listen skrives som HTML her, så siden virker uten skript.
+    """
+    hentet = dt.date.today()
+    kort = "\n".join(
+        f'<li><a class="kommunekort" href="{k["slug"]}/">'
+        f'<b>{html.escape(k["navn"])}</b>'
+        f'<span>{st["saker"]} saker og {st["moter"]} møter i {st["ar"]}</span>'
+        f'<span class="liten muted">Data hentet {hentet.day}.{hentet.month}.{hentet.year}</span>'
+        f'</a></li>'
+        for k, st in kommuner)
+    side = _fyll((MAL / "forside.html").read_text("utf-8"), {
+        "merke": MERKE, "kommuner": kort, "gamle_lenker": GAMLE_LENKER,
+        "repo": MELD_FEIL.rsplit("/issues", 1)[0]})
+    (UT / "index.html").write_text(side, encoding="utf-8")
+
+
 def kjor(aar: int) -> None:
+    kommune = _kommune()
     saker = json.loads((DATA / "saker" / f"{aar}.json").read_text("utf-8"))
     moter = json.loads((DATA / "moter" / f"{aar}.json").read_text("utf-8"))
 
@@ -328,25 +400,29 @@ def kjor(aar: int) -> None:
         a = json.loads(sti.read_text("utf-8"))
         analyser[a["sak_id"]] = a
 
-    UT.mkdir(exist_ok=True)
-    (UT / "data").mkdir(exist_ok=True)
+    # Alt bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
+    shutil.rmtree(UT, ignore_errors=True)
+    ut = UT / kommune["slug"]
+    (ut / "data").mkdir(parents=True, exist_ok=True)
 
     sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
-    S = _s(aar, saker, moter, sammendrag)
+    S = _s(aar, saker, moter, sammendrag, kommune)
     VOT, holdt = _vot(aar, saker, moter)
-    (UT / "data" / "data.js").write_text(
+    (ut / "data" / "data.js").write_text(
         "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
         "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
         encoding="utf-8")
-    for navn in ("index.html", "stil.css", "app.js"):
+    _kommuneside(kommune, ut)
+    for navn in FELLES:
         shutil.copy(MAL / navn, UT / navn)
+    shutil.copytree(MAL / "fonter", UT / "fonter")
 
     # Data ved siden av sidene, for andre som vil bruke dem.
     for navn, innhold in (("saker", saker), ("moter", moter), ("analyser", analyser)):
-        (UT / "data" / f"{navn}-{aar}.json").write_text(
+        (ut / "data" / f"{navn}-{aar}.json").write_text(
             json.dumps(innhold, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
-    (UT / "data" / f"voteringer-{aar}.json").write_text(
+    (ut / "data" / f"voteringer-{aar}.json").write_text(
         json.dumps(VOT, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     # Søkeindeks bygget på forhånd, kjører i nettleseren.
@@ -358,11 +434,11 @@ def kjor(aar: int) -> None:
         "s": s["status"],
         "g": [steg["utvalg"] for steg in s["saksgang"]],
     } for s in saker if not s["formalia"]]
-    (UT / "data" / f"indeks-{aar}.json").write_text(
+    (ut / "data" / f"indeks-{aar}.json").write_text(
         json.dumps(indeks, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8")
 
-    (UT / "status.json").write_text(json.dumps({
+    status = {
         "bygget": dt.datetime.now().isoformat(timespec="seconds"),
         "ar": aar,
         "saker": len(saker),
@@ -375,9 +451,12 @@ def kjor(aar: int) -> None:
         # Fase 2: faktisk forbruk, for å måle kostnaden.
         "tokens": {k: sum((a.get("tokens") or {}).get(k, 0) for a in analyser.values())
                    for k in ("inn", "ut")},
-    }, ensure_ascii=False, indent=1), encoding="utf-8")
+    }
+    (ut / "status.json").write_text(
+        json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
+    _forside([(kommune, status)])
 
-    print(f"nettsted/ bygget: {len(saker)} saker, {len(moter)} møter, "
+    print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
           f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
           f"{holdt} voteringer holdt tilbake")
 

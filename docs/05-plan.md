@@ -48,7 +48,7 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Kontroll av tall og navn i sammendraget | Ferdig. Tall og datoer må finnes i kilden, uansett skrivemåte; navn på privatpersoner fra tittelen holdes ute. 215 av 221 består, de 6 andre er merket usikre av modellen |
 | Vise sammendrag på nettstedet med kildelenke | Ferdig |
 | Knapp for å melde fra om feil | Ferdig, lenke til et nytt GitHub-issue. Krever GitHub-konto |
-| Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres i `nettsted/status.json` |
+| Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres i `nettsted/<kommune>/status.json` |
 | Temalisten: mangler tema for frivillighet og sosiale tjenester | Åpent |
 | Profil for hver folkevalgt: verv, oppmøte, stemmer og forslag, bare fra egne data | Ferdig, 103 profiler |
 | Kommunestyret på forsiden: velg et parti og se representantene, med lenke til partiet | Ferdig |
@@ -109,7 +109,10 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - [ ] Bestemme hvem som eier tjenesten og står som avsender
 - [x] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret
-- [ ] Velge navn og domene som ikke kan forveksles med kommunens
+- [x] Velge navn som ikke kan forveksles med kommunens: Kommunelys (ADR-016)
+- [x] Velge domene: kommunelys.no
+- [ ] Sette opp kommunelys.no: DNS hos registraren og eget domene i
+      Pages-innstillingene, med HTTPS
 
 ## Kjente mangler i nettstedet
 

@@ -17,7 +17,7 @@ DATABASE = "b069d4f5-192a-4fee-be37-dc006441e271"
 
 # ADR-007: lav takt, én tråd, identifiserbar klient.
 PAUSE_SEKUND = 1.0
-KONTAKT = "steinkjer-innsyn (uoffisiell innsynstjeneste; kontakt: karlkristian@gmail.com)"
+KONTAKT = "kommunelys (uoffisiell innsynstjeneste; kontakt: karlkristian@gmail.com)"
 
 HEADERE = {
     "Accept": "application/json",

@@ -305,3 +305,43 @@ for et menneske, siden tjenesten uansett bygges og drives med AI.
   avvik publiseres med merknad, og kommunestyret 16.09.2026 venter på
   kommunen. En påstand i første utkast var feil, om en permisjon, og ble
   fanget fordi den ble sjekket mot sakene før vurderingen ble lagret.
+
+---
+
+## ADR-016 — Navn og profil: Kommunelys, ett navn for alle kommunene
+
+**Besluttet.** Prosjekteier, 3.10.2026.
+
+Tjenesten het «Steinkjer i klartekst», og kommunenavnet sto i malen. Samme
+teknikk kan brukes for andre kommuner som har samme innsynsportal, så navnet
+må tåle å bli flere.
+
+Nettstedet heter **Kommunelys**, med slagordet «Et klarere blikk på
+vedtakene». Navnet står alene, ikke som «Kommunelys Steinkjer»: kommunen er
+innholdet, ikke merkevaren.
+
+**Konsekvens:**
+
+- Roten er Kommunelys-forsiden med en liste over kommunene. Hver kommune har
+  sin egen mappe, Steinkjer under `/steinkjer/`. Gamle lenker (`/#saker`,
+  `/#person/…`) sendes dit.
+- Malen i `bygg/mal/` nevner ingen kommune. Det som er særegent for kommunen,
+  står i `kommuner/<kommune>.json`. `tester.kontroller` stopper hvis malen
+  nevner en kommune, og bygget stopper hvis en kommuneside mangler
+  «Ikke laget av <kommune> kommune».
+- Merket er et åpent vindu: en blekkramme og en lys blå rute, i SVG. Ingen
+  kommunevåpen, skjold eller foto av steder.
+- Fargene er blekk og papir med lys blå (`#60A5FA`) som pynt. Lys blå har bare
+  2,4:1 mot papirhvit og brukes aldri til tekst eller fokus i lys modus; lenker,
+  fokus og status bruker samme blåtone mørkere (`#1F5FAD`, 6:1). Blått ligger
+  nær Høyres farge, så det brukes ikke til store flater i dataene.
+- Skriften er Inter (OFL), lagt lokalt i `bygg/mal/fonter/`. Det holder
+  regelen fra fase 2 om ingen eksterne skrifter eller skript.
+- Til dataene ligger per kommune (fase 3), hører `data/` til Steinkjer, og
+  bygget krever nøyaktig én kommune. Instruksjonen til analysen nevner
+  fortsatt Steinkjer; den endres når flere kommuner kommer, fordi en endring
+  utløser ny analyse av alle sakene.
+- Domenet blir `kommunelys.no` (prosjekteier, 3.10.2026). Lenkene på
+  nettstedet er relative, så det virker både under `/KommuneDash/` og på
+  roten av domenet. Med publisering fra Actions settes domenet i
+  Pages-innstillingene; en `CNAME`-fil i nettstedet brukes ikke.

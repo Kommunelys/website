@@ -4,12 +4,13 @@ Kontekst for Claude Code i dette repoet. Les denne først.
 
 ## Hva dette er
 
-En uoffisiell, offentlig nettside som gjør politiske saker i Steinkjer kommune
-forståelige for innbyggere. Data hentes fra kommunens innsynsportal, tolkes med
-en språkmodell, og publiseres på nytt automatisk.
+**Kommunelys**: en uoffisiell, offentlig nettside som gjør politiske saker i
+kommunen forståelige for innbyggere. Data hentes fra kommunens innsynsportal,
+tolkes med en språkmodell, og publiseres på nytt automatisk. Dekker i dag
+Steinkjer kommune; navnet og malen er laget for flere (ADR-016).
 
-Prosjektet er **ikke** laget av eller for Steinkjer kommune. Det må være
-utvetydig uoffisielt i all presentasjon.
+Prosjektet er **ikke** laget av eller for Steinkjer kommune eller noen annen
+kommune. Det må være utvetydig uoffisielt i all presentasjon.
 
 ## Status akkurat nå
 
@@ -23,7 +24,7 @@ utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Bygges fra data og `bygg/mal/`, publisert på https://karlaurstad.github.io/KommuneDash/. 215 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data |
+| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://karlaurstad.github.io/KommuneDash/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data |
 | GitHub Actions | Virker. Kjøres for hånd; tidsplanen er slått av |
 
 ## Grunnregler du ikke skal bryte
@@ -56,7 +57,8 @@ utvetydig uoffisielt i all presentasjon.
 hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
-bygg/      statisk nettsted; malen (HTML, CSS, JS) i bygg/mal/
+bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
+kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
                lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
@@ -91,7 +93,7 @@ python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
-python -m http.server 8765 --directory nettsted  # se nettstedet lokalt
+python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommunen under /steinkjer/
 ```
 
 ## Fallgruver vi allerede har gått i
@@ -151,6 +153,12 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt
   kontrollen, så plant feil i ekte sammendrag og se at de fortsatt fanges.
 - **Samme person kan ha to person-ID-er.** Monika Luktvasslimo i HPNM har en
   annen ID enn i de andre utvalgene. Profilene samles på normalisert navn.
+- **Malen er felles for alle kommunene.** Et kommunenavn i `bygg/mal/` ville
+  stått på de andre kommunenes sider også. Det hører hjemme i
+  `kommuner/<kommune>.json` og leses fra `S.kommune`. `tester.kontroller`
+  stopper hvis malen nevner en kommune.
+- **Lys blå er pynt, ikke tekst.** `#60A5FA` har 2,4:1 mot papirhvit. Lenker,
+  fokus og status bruker `--lenke` (ADR-016).
 - **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
   side om kredittkort. Lenker til partier og andre ligger i
   `data/partisider.json` og åpnes og sjekkes før de legges inn.

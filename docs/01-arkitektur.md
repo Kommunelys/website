@@ -293,4 +293,5 @@ innsyn. Tre grenser ligger fast:
 
 **Avsender.** Tjenesten må være utvetydig uoffisiell: eget navn, egen profil,
 ingen bruk av kommunevåpen, et domene som ikke ligner kommunens, og en tydelig
-setning på hver side om hvem som står bak.
+setning på hver side om hvem som står bak. Navnet er Kommunelys (ADR-016), og
+bygget stopper hvis en kommuneside mangler «Ikke laget av <kommune> kommune».

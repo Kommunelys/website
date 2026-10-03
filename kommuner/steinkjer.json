@@ -1,0 +1,45 @@
+{
+  "merknad": "Det som er særegent for kommunen i visningen. Malen i bygg/mal/ skal ikke nevne noen kommune ved navn; det kontrolleres av tester.kontroller.",
+  "slug": "steinkjer",
+  "navn": "Steinkjer",
+  "kommunenr": "5006",
+  "utvalg_kort": {
+    "KS": "Kommunestyret",
+    "FS": "Formannskapet",
+    "HPNM": "Hovedutvalg plan, næring og miljø",
+    "HOK": "Hovedutvalg oppvekst og kultur",
+    "HHO": "Hovedutvalg helse og omsorg",
+    "VN": "Valgstyret"
+  },
+  "utvalg_liste": {
+    "KS": "Kommunestyret",
+    "FS": "Formannskapet",
+    "HPNM": "Plan, næring og miljø",
+    "HOK": "Oppvekst og kultur",
+    "HHO": "Helse og omsorg",
+    "KN": "Klagenemnda",
+    "AD": "Administrasjonsutvalget",
+    "KTU": "Trafikksikkerhetsutvalget",
+    "VN": "Valgstyret",
+    "RÅFIM": "Rådet for personer med funksjonsnedsettelse",
+    "SSKO": "Styret for kommuneskogene",
+    "SSBY": "Styret for Steinkjerbygg",
+    "AUINR": "Arbeidsutvalget i regionrådet",
+    "INR": "Innherred regionråd"
+  },
+  "rekkefolge": ["KS", "FS", "HPNM", "HOK", "HHO", "KN", "AD", "KTU", "VN", "FSKO", "FSB"],
+  "rad": ["ELRÅ", "UNGRÅ", "RÅFIM"],
+  "foretak": ["FSKO", "FSB"],
+  "hovedutvalg": ["HPNM", "HOK", "HHO"],
+  "organer": [
+    {"kode": "KS", "navn": "Kommunestyret", "oppgave": "øverste organ", "lenke": true},
+    {"kode": "FS", "navn": "Formannskapet", "oppgave": "avgjør selv eller innstiller", "lenke": true},
+    {"kode": "KN", "navn": "Klagenemnda", "oppgave": "behandler klager", "lenke": true},
+    {"kode": "HPNM", "navn": "Hovedutvalg plan, næring og miljø", "oppgave": "arealplaner, landbruk, miljø", "lenke": true},
+    {"kode": "HOK", "navn": "Hovedutvalg oppvekst og kultur", "oppgave": "skole, barnehage, kultur", "lenke": true},
+    {"kode": "HHO", "navn": "Hovedutvalg helse og omsorg", "oppgave": "helse, omsorg, velferd", "lenke": true},
+    {"kode": "ELRÅ", "navn": "Eldrerådet", "oppgave": "gir uttalelser", "lenke": false},
+    {"kode": "UNGRÅ", "navn": "Ungdomsrådet", "oppgave": "gir uttalelser", "lenke": false},
+    {"kode": "RÅFIM", "navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold", "oppgave": "gir uttalelser", "lenke": false}
+  ]
+}
