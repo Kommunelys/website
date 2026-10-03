@@ -363,7 +363,7 @@ bare skjult det som allerede kan leses i Actions og git.
 - Sidevisninger telles med GoatCounter (`kommunelys.goatcounter.com`). Det er
   det eneste skriptet som lastes fra et annet domene. GoatCounter bruker ikke
   informasjonskapsler og lagrer ikke IP-adresser, bare sammenlagte tall. Det
-  står under «Om» på kommunesiden og i bunnen av forsiden.
+  står under «Personvern» på Om-siden.
 - Kommunesidene viser fanene etter `#`. Hver visning telles derfor med sti og
   fane (`/steinkjer/#saker`). Søketeksten står ikke i adressen og sendes ikke.
 - Kontoen hos GoatCounter opprettes og eies av prosjekteier. Skal tellingen av, settes

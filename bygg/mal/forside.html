@@ -10,9 +10,10 @@
 <link rel="stylesheet" href="stil.css">
 <script>
 /* Lenker fra før kommunene fikk hver sin mappe (/#saker, /#person/…) sendes
-   videre til kommunen de gjaldt. */
+   videre til kommunen de gjaldt. /#om er nå Om-siden, som er felles. */
 function videre(){var v=location.hash.slice(1).split('/')[0];
-if(['oversikt','saker','moter','stemmer','politikere','person','om'].indexOf(v)>=0)location.replace('{{gamle_lenker}}/'+location.hash)}
+if(v==='om')location.replace('om/');
+else if(['oversikt','saker','moter','stemmer','politikere','person','hvem-bestemmer'].indexOf(v)>=0)location.replace('{{gamle_lenker}}/'+location.hash)}
 videre();window.addEventListener('hashchange',videre);
 </script>
 </head>
@@ -20,9 +21,13 @@ videre();window.addEventListener('hashchange',videre);
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="merke" href="./"><svg class="merke-ikon" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><path d="M10.5 9 L31 14.5 V49.5 L10.5 55 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path class="rute" d="M35.5 12 L54.5 4 V60 L35.5 52 Z" fill="#60A5FA" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="merke-navn">{{merke}}</span></a>
+    <a class="merke" href="./">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
     <span class="uoff">Uoffisiell og uavhengig</span>
   </div>
+  <nav class="ramme meny" aria-label="Hovedmeny">
+    <a href="./" aria-current="page">Kommuner</a>
+    <a href="om/">Om {{merke}}</a>
+  </nav>
 </header>
 
 <main id="innhold" class="ramme rot">
@@ -39,26 +44,67 @@ videre();window.addEventListener('hashchange',videre);
     </ul>
   </section>
 
-  <!-- Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
   <section class="blokk">
-    <h2>Slik fungerer {{merke}}</h2>
-    <ul class="slik-ikon">
-      <li><span class="ikon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span>Vi går gjennom sakene og forklarer hva de handler om.</span></li>
-      <li><span class="ikon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span>Du kan se hvordan de folkevalgte stemte i hver sak.</span></li>
-      <li><span class="ikon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><span>Vi lenker til originaldokumentene i kommunens innsynsportal.</span></li>
+    <h2>Hva er {{merke}}?</h2>
+    <p class="tekst">Ett sted å følge politikken i kommunen: hva som kommer opp i møtene, hva som er vedtatt, og hvordan hver folkevalgt stemte. Alt bygges fra kommunens offentlige innsynsportal. {{merke}} er uoffisiell og uavhengig av både kommunene og partiene.</p>
+  </section>
+
+  <!-- Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
+  <section class="blokk bred">
+    <h2>Kode, KI og kontroll</h2>
+    <p class="tekst">Det meste gjøres med vanlig kode som gir samme svar hver gang. KI brukes bare til tekst som forklarer, og den er alltid merket.</p>
+    <div class="kort3">
+      <section class="kort">
+        <h3 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></span>Med kode, uten KI</h3>
+        <ul class="punkt">
+          <li>Henting av møter, saker og dokumenter fra innsynsportalen.</li>
+          <li>Saksgangen, når samme sak går gjennom flere utvalg.</li>
+          <li>Stemmetall og navn fra protokollene. Antall navn sjekkes mot stemmetallet protokollen oppgir.</li>
+          <li>Oppmøte, verv og partier.</li>
+          <li>Hvor saken står nå.</li>
+          <li>Kontroll av hvert sammendrag mot dokumentene det bygger på.</li>
+        </ul>
+      </section>
+      <section class="kort">
+        <h3 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></svg></span>Med KI</h3>
+        <p class="liten muted">Claude, en språkmodell fra Anthropic.</p>
+        <ul class="punkt">
+          <li>Tittel i klarspråk, sammendrag, hva saken betyr, hva uenigheten gjaldt, og tema. Alltid merket «KI-sammendrag», med lenke til dokumentene.</li>
+          <li>Vurdering av avstemninger der protokollen motsier seg selv. Vurderingen avgjør bare om avstemningen vises, og med hvilken merknad. Navn og tall endres aldri.</li>
+        </ul>
+      </section>
+      <section class="kort">
+        <h3 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>For hånd</h3>
+        <ul class="punkt">
+          <li>Tolkningen av avstemningene er sjekket linje for linje mot ett helt kommunestyremøte. Hvilket, står i <a href="om/#dekning">oversikten over dekningen</a>.</li>
+          <li>Lenkene til partienes egne sider er åpnet og sjekket.</li>
+        </ul>
+      </section>
+    </div>
+    <p class="aldri"><b>Aldri med KI:</b> stemmetall, navnelister, oppmøte og profilene til de folkevalgte.</p>
+  </section>
+
+  <section class="blokk">
+    <h2>Hva {{merke}} er, og ikke er</h2>
+    <ul class="pastander">
+      <li><b>Kilden er kommunen.</b> Alt kommer fra kommunens innsynsportal, og hver sak lenker til originaldokumentet.</li>
+      <li><b>Tallene er talt, ikke tolket.</b> Stemmene leses ut av protokollen med kode og vises slik de står der.</li>
+      <li><b>Sammendragene er skrevet av KI og kan ha feil.</b> Originaldokumentet gjelder alltid.</li>
+      <li><b>Ikke alt er med.</b> Noe er skjermet, noen protokoller er ikke publisert, og noe holdes tilbake til det er vurdert.</li>
+      <li><b>Ingen meninger.</b> Alle partier måles med samme mål.</li>
     </ul>
+    <p class="tekst"><a href="om/">Les mer om hvordan {{merke}} er laget</a></p>
   </section>
 
   <section class="blokk">
     <h2>Uoffisiell og uavhengig</h2>
-    <p class="tekst">{{merke}} er ikke laget av eller for noen kommune. Alt hentes fra kommunenes offentlige innsynsportaler, og hver sak lenker til originaldokumentet. Stemmetallene telles med kode og kontrolleres mot protokollen. Sammendragene er skrevet av KI og merket slik.</p>
+    <p class="tekst">{{merke}} er ikke laget av eller for noen kommune. Alt hentes fra kommunenes offentlige innsynsportaler, og hver sak lenker til originaldokumentet.</p>
   </section>
 </main>
 
 <footer class="ramme fot">
   <div>{{merke}} er en uoffisiell og uavhengig tjeneste. Ikke laget av noen kommune.</div>
-  <div>Besøk telles med GoatCounter, uten informasjonskapsler og uten å lagre IP-adresser.</div>
-  <div><a href="{{repo}}">Kode og data</a></div>
+  <div><a href="om/">Om {{merke}}</a> · <a href="{{repo}}">Kode og data</a></div>
 </footer>
 {{telling}}
 </body>

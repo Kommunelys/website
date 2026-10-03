@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Om {{merke}}</title>
+<meta name="description" content="Hvordan {{merke}} er laget: kilder, hva som gjøres med kode og hva KI gjør, kvalitet, personvern og dekning. Uoffisiell og uavhengig.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../stil.css">
+</head>
+<body>
+<a class="hopp" href="#innhold">Hopp til innholdet</a>
+<header class="hode">
+  <div class="ramme hode-topp">
+    <a class="merke" href="../">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
+    <span class="uoff">Uoffisiell og uavhengig</span>
+  </div>
+  <nav class="ramme meny" aria-label="Hovedmeny">
+    <a href="../">Kommuner</a>
+    <a href="./" aria-current="page">Om {{merke}}</a>
+  </nav>
+</header>
+
+<!-- Felles for alle kommunene. Ingen kommune nevnes ved navn her; det som
+     gjelder én kommune, står i dekningstabellen, som bygget lager. -->
+<main id="innhold" class="ramme rot om">
+  <div class="ingress"><h1>Om {{merke}}</h1>
+  <p>Hvordan tjenesten er laget, hva som gjøres med kode og hva KI gjør, og hvor grensene går.</p></div>
+
+  <nav class="innhold" aria-label="Innhold på siden">
+    <ol>
+      <li><a href="#kvalitet">Slik sikrer vi kvalitet</a></li>
+      <li><a href="#kode-og-ki">Kode og KI i detalj</a></li>
+      <li><a href="#kilder">Kilder</a></li>
+      <li><a href="#status">Status på en sak</a></li>
+      <li><a href="#stemmegivning">Stemmegivning</a></li>
+      <li><a href="#sammendrag">Sammendrag og tema</a></li>
+      <li><a href="#politikerne">Politikerne</a></li>
+      <li><a href="#begrensninger">Kjente begrensninger</a></li>
+      <li><a href="#personvern">Personvern</a></li>
+      <li><a href="#uavhengighet">Uavhengighet</a></li>
+      <li><a href="#dekning">Dekning per kommune</a></li>
+      <li><a href="#sporsmal">Spørsmål og svar</a></li>
+      <li><a href="#feil">Feil og innspill</a></li>
+    </ol>
+  </nav>
+
+  <div class="tekst">
+    <h2 id="kvalitet">Slik sikrer vi kvalitet</h2>
+    <ul>
+      <li><b>Kilden ligger ved siden av.</b> Hver sak, hvert sammendrag og hver avstemning lenker til dokumentet i kommunens innsynsportal. Et sammendrag uten kildelenke publiseres ikke.</li>
+      <li><b>Tallene telles med kode.</b> Stemmetall og navn leses ut av protokollen med mønstergjenkjenning, og antall navn må stemme med tallet protokollen oppgir.</li>
+      <li><b>KI er alltid merket.</b> Tekst som er skrevet av en språkmodell, står i en egen boks merket «KI-sammendrag», med navnet på modellen.</li>
+      <li><b>Heller holdt tilbake enn feil.</b> Et sammendrag som ikke består kontrollen, vises ikke. En avstemning der protokollen motsier seg selv, vises ikke før avviket er vurdert.</li>
+      <li><b>Samme mål for alle.</b> Alle partier og folkevalgte vises på samme måte, med de samme tallene og i samme tone.</li>
+    </ul>
+
+    <h2 id="kode-og-ki">Kode og KI i detalj</h2>
+    <h3>Med kode, uten KI</h3>
+    <p>Møter, saker, dokumentlenker og medlemslister hentes fra innsynsportalen med kode. Den samme saken får nytt saksnummer i hvert utvalg den går gjennom; koden binder behandlingene sammen til én sak og finner hvor den står nå. Stemmetall, navnelister og oppmøte leses ut av protokollene med mønstergjenkjenning. Verv og partier kommer fra medlemslistene. Hvert sammendrag kontrolleres med kode mot dokumentene det bygger på, før det publiseres.</p>
+    <h3>Med KI</h3>
+    <p>KI betyr her Claude, en språkmodell fra Anthropic. Den brukes til to ting:</p>
+    <ul>
+      <li><b>Forklaringer av sakene.</b> Modellen skriver en tittel i klarspråk, et sammendrag, hva saken betyr, hva uenigheten gjaldt, og velger tema. Den får saksframlegget og vedtakene, og for hver avstemning bare resultatet og hvilke partier som var for og mot. Den får ikke stemmetall eller navnelister, og skal ikke skrive hvem som stemte hva.</li>
+      <li><b>Vurdering av avvik.</b> Noen ganger motsier protokollen seg selv, for eksempel når noen stemmer uten å stå på oppmøtelisten. Da hentes bevisene ut med kode først, og modellen vurderer dem. Vurderingen avgjør bare om avstemningen vises, og med hvilken merknad. Navn og tall endres aldri. Hver vurdering lagres med begrunnelse og hvilken modell som gjorde den. Kan det ikke avgjøres fra dokumentene, holdes avstemningen tilbake til kommunen har svart.</li>
+    </ul>
+    <h3>For hånd</h3>
+    <p>Tolkningen av avstemningene er sjekket linje for linje mot ett helt kommunestyremøte. Lenkene til partienes egne sider er åpnet og sjekket én for én. Resten er kontrollert med kode, ikke av et menneske. Hva som er kontrollert for hånd i hver kommune, står i <a href="#dekning">tabellen over dekningen</a>.</p>
+    <p><b>Aldri med KI:</b> stemmetall, navnelister, oppmøte og profilene til de folkevalgte.</p>
+
+    <h2 id="kilder">Kilder</h2>
+    <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen. Portalen spørres sjelden, høyst én gang i sekundet.</p>
+
+    <h2 id="status">Status på en sak</h2>
+    <p>En sak som behandles i flere utvalg, er slått sammen til én linje.</p>
+    <ul>
+      <li><b>Til behandling:</b> saken står på sakslisten til et kommende møte.</li>
+      <li><b>Til kommunestyret:</b> neste steg er kommunestyret.</li>
+      <li><b>Behandlet:</b> siste møte er holdt, og protokollen er publisert.</li>
+      <li><b>Venter på protokoll:</b> møtet er holdt den siste måneden, men protokollen er ikke lagt ut ennå.</li>
+      <li><b>Protokoll ikke publisert:</b> møtet ble holdt for over en måned siden, uten at protokollen er lagt ut. I noen utvalg skjer det aldri.</li>
+      <li><b>Unntatt offentlighet:</b> vedtaket er skjermet.</li>
+    </ul>
+
+    <h2 id="stemmegivning">Stemmegivning</h2>
+    <p>Stemmetallene hentes ut av protokollene med kode, ikke med KI, og antall navn kontrolleres mot oppgitt stemmetall. Stemmer det ikke, stoppes avstemningen i stedet for å rundes av. Tall og navn vises alltid slik protokollen oppgir dem. Enstemmige vedtak har ingen navneliste i protokollen, så der vises bare resultatet.</p>
+
+    <h2 id="sammendrag">Sammendrag og tema</h2>
+    <p>Før et sammendrag vises, kontrolleres det at tallene og datoene i det finnes i dokumentene, og at det ikke står navn på privatpersoner fra sakstittelen. Sammendrag som ikke består, eller der modellen selv svarte at den var usikker, vises ikke. Hvert sammendrag lenker til dokumentene det bygger på, og dokumentene gjelder.</p>
+
+    <h2 id="politikerne">Politikerne</h2>
+    <p>Profilene viser verv, oppmøte, stemmer og forslag slik de står i medlemslistene og protokollene. De har ingen tekst skrevet av KI, og ingenting er hentet fra aviser, sosiale medier eller andre kilder. Lenkene til partiene går til partienes egne sider.</p>
+
+    <h2 id="begrensninger">Kjente begrensninger</h2>
+    <ul>
+      <li>Portalen oppgir bare dagens medlemmer i hvert utvalg, så verv og sammensetning gjelder i dag. Permisjoner og bytter tidligere i året vises ikke.</li>
+      <li>Saker fra fjoråret som fortsatte i år, er bare delvis med.</li>
+      <li>Et skannet dokument uten tekst kan ikke leses.</li>
+      <li>Lite er kontrollert av et menneske. Tolkningen av avstemningene er sjekket for hånd mot ett møte; resten er kontrollert med kode.</li>
+      <li>Sammendragene kan ha feil selv om de består kontrollen. Kontrollen finner tall, datoer og navn som ikke hører hjemme, ikke en forklaring som er misvisende.</li>
+    </ul>
+
+    <h2 id="personvern">Personvern</h2>
+    <ul>
+      <li>Tekst som {{merke}} skriver selv, har ikke navn på privatpersoner. Folkevalgte omtales bare i sin rolle. Sakstitler og forslag fra protokollene vises slik kommunen har publisert dem.</li>
+      <li>Skjermet informasjon lastes aldri ned og sendes aldri til språkmodellen.</li>
+      <li>Medlemslistene i portalen har kontaktopplysninger. De lagres ikke.</li>
+      <li>Dokumentene som sendes til Anthropic for å lage sammendrag, er offentlige, men de kan inneholde navn. Sammendragene kontrolleres for navn fra sakstittelen før de vises.</li>
+      <li>Nettstedet har ingen informasjonskapsler. Sidevisninger telles med GoatCounter, det eneste skriptet fra et annet nettsted. GoatCounter lagrer ikke IP-adresser, bare sammenlagte tall: hvor mange som har sett hver side, og fordelingen på nettleser, skjermstørrelse, land og hvilken side de kom fra. Ingen enkeltbesøk kan spores tilbake til en person.</li>
+      <li>Nettstedet ligger på GitHub Pages, og GitHub kan logge tekniske opplysninger som IP-adresse.</li>
+    </ul>
+
+    <h2 id="uavhengighet">Uavhengighet</h2>
+    <p>{{merke}} er uavhengig av kommunene og av partiene, og er ikke laget av eller for noen kommune. Koden er åpen (MIT-lisens), og dataene ligger åpent ved siden av sidene og i <a href="{{repo}}">prosjektet på GitHub</a>. Hvem som står bak, blir beskrevet her når eierskapet er avklart.</p>
+  </div>
+
+  <section class="blokk bred">
+    <h2 id="dekning">Dekning per kommune</h2>
+    <p class="tekst liten muted">Tallene regnes ut av dataene hver gang nettstedet bygges. «Holdt tilbake» er avstemninger der protokollen motsier seg selv, og som ikke er vurdert eller ikke kan publiseres ennå.</p>
+{{dekning}}
+  </section>
+
+  <div class="tekst">
+    <h2 id="sporsmal">Spørsmål og svar</h2>
+    <details class="faq"><summary>Hva er {{merke}}?</summary>
+      <p>Et uoffisielt nettsted der du kan følge politikken i kommunen: hva som skal opp i møtene, hva som er vedtatt, og hvordan hver folkevalgt stemte.</p></details>
+    <details class="faq"><summary>Hvor kommer dataene fra?</summary>
+      <p>Fra kommunens offentlige innsynsportal: møtekalenderen, saksframleggene, protokollene og medlemslistene. Se <a href="#kilder">Kilder</a>.</p></details>
+    <details class="faq"><summary>Er dette laget av KI, og kan jeg stole på det?</summary>
+      <p>Tallene, navnene og oppmøtet er hentet ut med kode og kontrollert mot protokollen. Sammendragene er skrevet av KI og merket slik. De kontrolleres, men kan likevel ha feil. Originaldokumentet gjelder alltid, og det er lenket til fra hver sak.</p></details>
+    <details class="faq"><summary>Hva betyr «holdt tilbake»?</summary>
+      <p>At noe ikke vises fordi det kan være feil. Et sammendrag holdes tilbake når kontrollen finner et tall, en dato eller et navn som ikke stemmer med dokumentene. En avstemning holdes tilbake når protokollen motsier seg selv og avviket ikke er avklart. Det står da at avstemningen finnes, men ikke tall eller navn.</p></details>
+    <details class="faq"><summary>Hvorfor mangler en sak eller en avstemning?</summary>
+      <p>Det kan ha flere grunner. Enstemmige vedtak har ingen navneliste. Noen protokoller er ikke publisert. Noen saker er skjermet. Referat- og orienteringssaker er skjult som standard i sakslisten, men kan vises med et valg over listen.</p></details>
+    <details class="faq"><summary>Hvilke kommuner er med, og kommer det flere?</summary>
+      <p>Kommunene som er med, står i <a href="#dekning">tabellen over dekningen</a>. En kommune som bruker samme innsynsportal, kan legges til, men dataene må hentes og kontrolleres for hver kommune.</p></details>
+    <details class="faq"><summary>Kan jeg bruke dataene?</summary>
+      <p>Dataene ligger som JSON-filer i mappen <code>data/</code> under hver kommune, og i <a href="{{repo}}">prosjektet på GitHub</a>. Innholdet i dokumentene er kommunens. Det er ingen garanti for at dataene alltid vil ligge der, eller i samme form.</p></details>
+    <details class="faq"><summary>Jeg har funnet en feil. Hva gjør jeg?</summary>
+      <p>Se <a href="#feil">Feil og innspill</a> under.</p></details>
+
+    <h2 id="feil">Feil og innspill</h2>
+    <p>Finner du en feil, bruk «Meld fra om feil» under sammendraget, eller <a href="{{meld}}">meld fra på GitHub</a>. Ta med saksnummeret eller lenken til saken.{{kontakt}}</p>
+  </div>
+</main>
+
+<footer class="ramme fot">
+  <div>{{merke}} er en uoffisiell og uavhengig tjeneste. Ikke laget av noen kommune.</div>
+  <div><a href="../">Kommuner</a> · <a href="{{repo}}">Kode og data</a></div>
+</footer>
+{{telling}}
+</body>
+</html>

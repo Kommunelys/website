@@ -56,6 +56,9 @@ FASTE = ("Leder", "Nestleder", "Medlem")
 # Lenken «Meld fra om feil» under hvert sammendrag (ADR-011).
 MELD_FEIL = "https://github.com/Kommunelys/website/issues/new"
 REPO = MELD_FEIL.rsplit("/issues", 1)[0]
+# E-post for feil og innspill på Om-siden. Tom til adressen på kommunelys.no
+# er satt opp (docs/05-plan.md); så lenge den er tom, vises den ikke.
+KONTAKT_EPOST = ""
 
 # Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
 # https://<kode>.goatcounter.com. Tom streng slår tellingen av.
@@ -320,7 +323,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
         "folk": _folk(verv),
         "mprot": dict(protokoller),
         "meld": MELD_FEIL,
-        "repo": MELD_FEIL.rsplit("/issues", 1)[0],
+        "repo": REPO,
     }
 
 
@@ -385,12 +388,26 @@ def _saksnr_sortering(nr: str) -> tuple:
     return (m.group(1) != "PS", int(m.group(3)), int(m.group(2))) if m else (True, 0, 0)
 
 
+def _merke_ikon() -> str:
+    """Merket i SVG, felles for toppen på alle sidene."""
+    return (MAL / "merke.svg").read_text("utf-8").strip()
+
+
+def _dato(d: dt.date) -> str:
+    return f"{d.day}.{d.month}.{d.year}"
+
+
+def _hentet(status: dict) -> dt.date:
+    """Dataene hentes og nettstedet bygges i samme kjøring av arbeidsflyten."""
+    return dt.datetime.fromisoformat(status["bygget"]).date()
+
+
 def _kommuneside(kommune: dict, ut: Path) -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
-                 {"merke": MERKE, "kommune": navn, "slug": kommune["slug"],
-                  "telling": _telling()})
+                 {"merke": MERKE, "merke_ikon": _merke_ikon(), "kommune": navn,
+                  "slug": kommune["slug"], "telling": _telling()})
     if UOFFISIELL.format(navn) not in side:
         raise SystemExit(f"kommunesiden mangler «{UOFFISIELL.format(navn)}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
@@ -401,18 +418,51 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
 
     Listen skrives som HTML her, så siden virker uten skript.
     """
-    hentet = dt.date.today()
     kort = "\n".join(
         f'<li><a class="kommunekort" href="{k["slug"]}/">'
         f'<b>{html.escape(k["navn"])}</b>'
         f'<span>{st["saker"]} saker og {st["moter"]} møter i {st["ar"]}</span>'
-        f'<span class="liten muted">Data hentet {hentet.day}.{hentet.month}.{hentet.year}</span>'
+        f'<span class="liten muted">Data hentet {_dato(_hentet(st))}</span>'
         f'</a></li>'
         for k, st in kommuner)
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
-        "merke": MERKE, "kommuner": kort, "gamle_lenker": GAMLE_LENKER,
-        "repo": REPO, "telling": _telling()})
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "kommuner": kort,
+        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
+
+
+def _dekning(kommuner: list[tuple[dict, dict]]) -> str:
+    """Tabellen over dekningen på Om-siden, fra status for hver kommune.
+
+    Ingen tall skrives inn for hånd. Det som er kontrollert for hånd, står i
+    kommuner/<kommune>.json, fordi malen ikke kan nevne kommunen.
+    """
+    rader = "\n".join(
+        f'<tr><th scope="row"><a href="../{k["slug"]}/">{html.escape(k["navn"])}</a></th>'
+        f'<td class="num">{st["moter"]}</td><td class="num">{st["saker"]}</td>'
+        f'<td class="num">{st["voteringer"]} ({st["voteringer_holdt_tilbake"]} holdt tilbake)</td>'
+        f'<td class="num">{st["sammendrag_publisert"]} av {st["analyser"]}</td>'
+        f'<td>{html.escape(k.get("kontrollert_for_hand") or "Ingenting ennå")}</td>'
+        f'<td class="num">{_dato(_hentet(st))}</td></tr>'
+        for k, st in kommuner)
+    return (
+        '<div class="tw"><table class="dekning"><thead><tr><th scope="col">Kommune</th>'
+        '<th scope="col" class="num">Møter</th><th scope="col" class="num">Saker</th>'
+        '<th scope="col" class="num">Avstemninger</th>'
+        '<th scope="col" class="num">Sammendrag publisert</th>'
+        '<th scope="col">Kontrollert for hånd</th><th scope="col" class="num">Data hentet</th>'
+        f'</tr></thead><tbody>\n{rader}\n</tbody></table></div>')
+
+
+def _om(kommuner: list[tuple[dict, dict]]) -> None:
+    """Om-siden på roten, felles for alle kommunene, med dekningen per kommune."""
+    kontakt = (f' Du kan også skrive til <a href="mailto:{KONTAKT_EPOST}">{KONTAKT_EPOST}</a>.'
+               if KONTAKT_EPOST else "")
+    side = _fyll((MAL / "om.html").read_text("utf-8"), {
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "dekning": _dekning(kommuner),
+        "repo": REPO, "meld": MELD_FEIL, "kontakt": kontakt, "telling": _telling()})
+    (UT / "om").mkdir(exist_ok=True)
+    (UT / "om" / "index.html").write_text(side, encoding="utf-8")
 
 
 def kjor(aar: int) -> None:
@@ -480,6 +530,7 @@ def kjor(aar: int) -> None:
     (ut / "status.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
     _forside([(kommune, status)])
+    _om([(kommune, status)])
 
     # Driftssiden. Lenkes ikke fra resten av nettstedet.
     (UT / "drift").mkdir()
