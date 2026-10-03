@@ -84,9 +84,10 @@ function stemmeStat(n){
 }
 
 /* ---------- OVERSIKT ---------- */
-/* Forsiden svarer på tre spørsmål: hva skal skje, hva ble bestemt, og hva
-   venter vi på. Ingen nøkkeltall eller grafer; de hjelper ikke innbyggeren
-   med å forstå hva kommunen gjør. */
+/* Forsiden svarer på tre spørsmål i hvert sitt kort: hva skal skje, hva ble
+   bestemt, og hvordan ble det stemt. Under kortene: hva venter vi på. Ingen
+   nøkkeltall; de hjelper ikke innbyggeren med å forstå hva kommunen gjør.
+   Kortene viser lite og lenker videre til hele listen. */
 const meetings=S.meetings;
 const upcoming=meetings.filter(m=>isFut(m.date));
 const nextM=upcoming[0];
@@ -112,18 +113,18 @@ function moteHtml(g,vis,ekstra,mer){
    bare gir uttalelse, hoppes over; saken vises under neste politiske møte. */
 (function(){
   const steg=c=>c.st.find(x=>isFut(x.date)&&!RAD.includes(x.sc));
-  const gr=moteGrupper(tilB,steg,4,(a,b)=>a.x.date.localeCompare(b.x.date)||(b.x.sc==='KS')-(a.x.sc==='KS'));
-  let h=gr.map(g=>moteHtml(g,4,
+  const gr=moteGrupper(tilB,steg,2,(a,b)=>a.x.date.localeCompare(b.x.date)||(b.x.sc==='KS')-(a.x.sc==='KS'));
+  let h=gr.map(g=>moteHtml(g,3,
     (c,g)=>c.ks&&g.x.sc!=='KS'?' <span class="liten muted">· skal videre til kommunestyret</span>':'',
-    g=>`<a href="#saker" data-go="saker" data-status="Til" data-ut="${g.x.sc}">${antall(g.saker.length-4,'sak','saker')} til i dette møtet</a>`)).join('');
+    g=>`<a href="#saker" data-go="saker" data-status="Til" data-ut="${g.x.sc}">${antall(g.saker.length-3,'sak','saker')} til i dette møtet</a>`)).join('');
   const ksM=upcoming.find(m=>m.sc==='KS');
   if(ksM&&!gr.some(g=>g.x.mid===ksM.id))
     h+=`<p class="liten muted">Kommunestyret møtes ${naar(ksM.date)}.${ksM.nps?` ${antall(ksM.nps,'politisk sak','politiske saker')} står på sakslisten.`:' Sakslisten er ikke publisert ennå.'}</p>`;
   $('paavei').innerHTML=h||'<p class="muted">Ingen saker står på sakslisten til et kommende møte.</p>';
 })();
 
-/* Hva ble bestemt: siste avgjørelser med protokoll, høyst tre per møte. De
-   siste 45 dagene kommer kommunestyret først, så formannskapet, så resten. */
+/* Hva ble bestemt: de tre siste avgjørelsene med protokoll, høyst to per møte.
+   De siste 45 dagene kommer kommunestyret først, så formannskapet, så resten. */
 const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includes(c.last.sc));
 (function(){
   const nylig=c=>(Date.parse(TODAY)-Date.parse(c.last.date.slice(0,10)))/864e5<=45;
@@ -131,7 +132,7 @@ const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includ
   const avgjort=PS.filter(c=>['Vedtatt i kommunestyret','Behandlet'].includes(c.status)&&c.last&&c.last.pub&&!RAD.includes(c.last.sc))
     .sort((a,b)=>vekt(a)-vekt(b)||b.last.date.localeCompare(a.last.date));
   const perMote={},vis=[];
-  for(const c of avgjort){const k=c.last.mid;perMote[k]=(perMote[k]||0)+1;if(perMote[k]<=3)vis.push(c);if(vis.length>=8)break}
+  for(const c of avgjort){const k=c.last.mid;perMote[k]=(perMote[k]||0)+1;if(perMote[k]<=2)vis.push(c);if(vis.length>=3)break}
   const stemmer=c=>{
     const vs=ALLEV.filter(v=>v.hid===c.last.hid);
     if(!vs.length)return '';
@@ -553,6 +554,23 @@ document.addEventListener('click',e=>{
   const g=e.target.closest('a[data-go]');
   if(g){e.preventDefault();const o={};['status','tag','m','ut'].forEach(k=>{if(g.dataset[k]!==undefined)o[k]=g.dataset[k]});go(g.dataset.go,o)}
 });
+/* Forsiden, «Se stemmene»: siste kommunestyremøte med publiserte avstemninger
+   der noen stemte imot, ellers siste møte i et annet utvalg. De jevneste først.
+   Står her fordi den bruker segBar og resten av stemmedelen. */
+(function(){
+  const omstridte=m=>m.saker.flatMap(s=>s.v.filter(omstridt));
+  const ms=[...VOT.moter].reverse();
+  const m=ms.find(m=>m.sc==='KS'&&omstridte(m).length)||ms.find(m=>omstridte(m).length);
+  if(!m){$('stemkort').innerHTML='<p class="muted">Ingen avstemninger der noen stemte imot ennå.</p>';return}
+  // Én avstemning per sak, den jevneste, så kortet viser tre ulike saker.
+  const vs=omstridte(m),diff=v=>Math.abs(v.nfor-v.nmot),perSak=new Map();
+  vs.forEach(v=>{const x=perSak.get(v.hid);if(!x||diff(v)<diff(x))perSak.set(v.hid,v)});
+  const jevne=[...perSak.values()].sort((a,b)=>diff(a)-diff(b)).slice(0,3);
+  $('stemkort').innerHTML=`<div class="mote-gr"><h3>${esc(utName(m.sc))} <span class="muted">${naar(m.date)}</span></h3>
+    <p class="liten muted">${antall(vs.length,'avstemning','avstemninger')} der noen stemte imot. De jevneste:</p>
+    <ul class="saksliste">${jevne.map(v=>`<li><a class="t" href="#saker" data-sak="${v.hid}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a>${segBar(v)}<div class="liten"><b class="num">${v.nfor} for, ${v.nmot} mot</b> · <span class="res ${v.vinner||v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div></li>`).join('')}</ul></div>`;
+  const l=$('stemlenke');l.href='#stemmer/'+m.id;l.dataset.go='stemmer';l.dataset.m=m.id;
+})();
 renderTagChips();renderList();renderMeet();renderStemmer();
 $('repo').href=S.repo;
 $('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · ${ut(S.repo,'Kode og data')}</div>`;
