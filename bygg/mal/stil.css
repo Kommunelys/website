@@ -222,7 +222,21 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--acce
 .forslag ol,.forslag ul{margin:0;padding-left:22px;display:grid;gap:6px}
 .utfall{margin:6px 0 0;font-size:14.5px;font-weight:600}
 .klipp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.ordliste{margin:14px 0 0;max-width:75ch}
+.ordliste{margin:12px 0 0;max-width:75ch}
+.slik{margin:0 0 18px;padding-left:22px;display:grid;gap:6px;max-width:75ch}
+.slik li::marker{font-weight:700;color:var(--accent)}
+.velg{display:grid;gap:4px;font-size:14px;font-weight:600;max-width:min(100%,440px)}
+/* Lange møtenavn skal ikke gjøre siden bredere enn skjermen. */
+.velg select{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-weight:400;font-size:16px}
+.motehode{font-size:18px;margin:28px 0 0;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+.motelinje{margin:0 0 4px}
+.svar{margin:8px 0 4px;font-size:16px;max-width:70ch}
+.gruppe{margin-top:10px}
+.gruppe>summary{font-size:15px;font-weight:700;color:var(--ink);padding:4px 0}
+.gruppe>summary .ok{color:var(--good)} .gruppe>summary .no{color:var(--bad)} .gruppe>summary .ks{color:var(--warn)}
+.altdel{border-left:3px solid var(--line);padding:4px 0 4px 12px;display:grid;gap:4px}
+.altdel.vant{border-left-color:var(--good)}
+.forslag h4{margin:10px 0 4px;font-size:14.5px}
 .ordliste dl{margin:8px 0 0;font-size:15px}
 .ordliste dt{font-weight:700;margin-top:8px}
 .ordliste dd{margin:0}
