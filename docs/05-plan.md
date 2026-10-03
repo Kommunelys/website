@@ -110,7 +110,9 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - [x] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret
 - [x] Velge navn som ikke kan forveksles med kommunens: Kommunelys (ADR-016)
-- [ ] Velge domene
+- [x] Velge domene: kommunelys.no
+- [ ] Sette opp kommunelys.no: DNS hos registraren og eget domene i
+      Pages-innstillingene, med HTTPS
 
 ## Kjente mangler i nettstedet
 
