@@ -27,7 +27,7 @@ from pathlib import Path
 
 from tester.kontroller import sammendrag_avvik, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
-from tolk.navn import PARTIKODER
+from tolk.navn import PARTIKODER, normaliser, partikode
 
 ROT = Path(__file__).resolve().parent.parent
 DATA = ROT / "data"
@@ -112,6 +112,31 @@ def _etikett(v: dict, tekst: str) -> str:
     if len(tekst) > 160:
         tekst = tekst[:157].rsplit(" ", 1)[0] + " …"
     return tekst or {"innstilling": "Innstillingen"}.get(v["type"], v["type"].capitalize())
+
+
+# Ved alternativ votering står forslagene etter hverandre i protokollen:
+# «<forslag 1> Dette ble satt opp mot: 2) Navn (Parti) fremmet følgende
+# alternative forslag: <forslag 2>». Gjelder alle 61 i 2026.
+_SATT_OPP_MOT = "Dette ble satt opp mot:"
+_ALT_FORSLAG = re.compile(
+    r"^\s*(?P<fs>\d)\)\s*(?P<stiller>[^()]{3,80}?)\s*\((?P<parti>[^)]+)\)\s*"
+    r"fremmet følgende (?P<type>[\w ]*?forslag):\s*")
+
+
+def _alternative_deler(v: dict, tekst: str, bak: str | None) -> list[dict] | None:
+    """Forslagene i en alternativ votering, hvert for seg, med hvem som fremmet dem."""
+    if not v["alternativer"] or _SATT_OPP_MOT not in tekst:
+        return None
+    forste, andre = tekst.split(_SATT_OPP_MOT, 1)
+    del1 = {"fs": "1", "tekst": forste.strip(), "type": v["type"],
+            "stiller": v["forslagsstiller"], "parti": v["parti"], "bak": bak}
+    m = _ALT_FORSLAG.match(andre)
+    if not m:
+        return [del1, {"fs": "2", "tekst": andre.strip()}]
+    bak2, rest = _avsender_og_tekst(andre[m.end():])
+    return [del1, {"fs": m.group("fs"), "tekst": rest, "type": m.group("type").strip(),
+                   "stiller": normaliser(m.group("stiller")),
+                   "parti": partikode(m.group("parti")), "bak": bak2}]
 
 
 def _alternativ_som_for_og_mot(v: dict) -> tuple[list[str], list[str], str]:
@@ -267,6 +292,7 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
                 f, m = v["for"], v["mot"]
                 if v["alternativer"]:
                     f, m, ut["vinner"] = _alternativ_som_for_og_mot(v)
+                    ut["deler"] = _alternative_deler(v, tekst, bak)
                 ut.update(nfor=len(f) if v["alternativer"] else v["antall_for"],
                           nmot=len(m) if v["alternativer"] else v["antall_mot"],
                           f=f, m=m, borte=v["ikke_til_stede"],
