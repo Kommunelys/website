@@ -174,8 +174,8 @@ Siden bygges i sin helhet hver gang, ikke stykkevis. Det tar sekunder ved denne
 datamålestokken og fjerner en klasse feil der en gammel side blir liggende igjen
 med utdatert innhold.
 
-**Utseende.** Siden bruker systemskrift og laster ingenting fra andre
-domener: ingen eksterne skrifter, skript eller sporing. Én aksentfarge,
+**Utseende.** Siden laster ingen skrifter eller skript fra andre domener,
+med ett unntak: besøkstellingen fra GoatCounter (ADR-017). Én aksentfarge,
 partifarger bare der de bærer informasjon (seter og stemmer), og linjer i
 stedet for kort. KI-tekst er merket «KI-sammendrag» der den står; den lengre
 forklaringen ligger under «Om».
@@ -187,6 +187,15 @@ ingenting er hentet fra aviser, sosiale medier eller andre kilder. Medlemmer av
 råd som ikke er valgt for et parti, for eksempel ungdomsrådet, får ikke
 profil. Partiene lenkes til sine egne sider, fra `data/partisider.json`, der
 hver adresse er kontrollert for hånd.
+
+**Driftssiden.** `/drift/` forteller i klartekst hva tjenesten har gjort:
+kjøringene i Actions og resultatet av hver jobb, hva som var nytt i portalen,
+hvor mange kall innhentingen gjorde, hvordan AI-analysen gikk, og besøkstall
+fra GoatCounter. Teksten settes sammen av faste setninger i `bygg/drift.py`,
+ikke av en modell. Kildene er GitHub-API-et, git-historikken (hver commit fra
+`oppdater-bot` sammenlignes med forrige) og kjøreloggen i
+`data/drift/kjoringer.json` (`drift/`). Siden lenkes ikke fra resten av
+nettstedet og har `noindex`, men den er offentlig, som repoet.
 
 Saker som forsvinner fra portalen beholdes med en merknad om at de ikke lenger
 ligger i kilden. Å fjerne dem i stillhet ville gjøre tjenesten mindre

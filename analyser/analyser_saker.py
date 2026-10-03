@@ -33,6 +33,7 @@ import sys
 import time
 from pathlib import Path
 
+from drift.logg import legg_til
 from tolk.bygg_avvik import holdt_tilbake
 from tolk.saksframlegg import del_opp
 
@@ -386,6 +387,11 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
         tokens.update(forbruk)
 
     print(", ".join(f"{k}: {v}" for k, v in teller.items()))
+    if not tort_lop and not bare:
+        legg_til("analyse", {
+            "sendt": teller["sendt"], "feil": teller["feil"],
+            "utsatt": teller["utsatt til neste kjøring"],
+            "tokens_inn": tokens["inn"], "tokens_ut": tokens["ut"]})
     if tokens:
         print(f"tokens: {tokens['inn']} inn, {tokens['ut']} ut")
     if tort_lop and teller["sendt"]:

@@ -6,6 +6,7 @@ feilhåndtering er likt overalt. Se docs/02-api.md for endepunktene.
 
 from __future__ import annotations
 
+import atexit
 import json
 import time
 import urllib.error
@@ -30,16 +31,39 @@ class PortalFeil(Exception):
     """Portalen svarte ikke slik vi forventer."""
 
 
+# Tellingen for kjøreloggen (drift.logg). Viser på /drift/ at takten holdes.
+_telling = {"kall": 0, "feil": 0, "byte": 0, "start": None}
+
+
+def _logg_telling() -> None:
+    if not _telling["kall"]:
+        return
+    from drift.logg import legg_til  # noqa: PLC0415
+
+    legg_til("portal", {
+        "kall": _telling["kall"],
+        "feil": _telling["feil"],
+        "megabyte": _telling["byte"] / 1e6,
+        "sekunder": time.monotonic() - _telling["start"],
+    })
+
+
 def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
     siste = None
+    if _telling["start"] is None:
+        _telling["start"] = time.monotonic()
+        atexit.register(_logg_telling)
     for n in range(forsok):
+        _telling["kall"] += 1
         try:
             req = urllib.request.Request(url, headers=HEADERE)
             with urllib.request.urlopen(req, timeout=60) as r:
                 data = r.read()
+            _telling["byte"] += len(data)
             time.sleep(PAUSE_SEKUND)
             return data if binaer else json.loads(data.decode("utf-8"))
         except urllib.error.HTTPError as e:
+            _telling["feil"] += 1
             # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
             # at vi går for fort, og skal vente som andre feil.
             if 400 <= e.code < 500 and e.code != 429:
@@ -48,6 +72,7 @@ def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
             siste = e
             time.sleep(5 * (n + 1))
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+            _telling["feil"] += 1
             siste = e
             time.sleep(5 * (n + 1))
     raise PortalFeil(f"ga opp etter {forsok} forsøk: {url} ({siste})")
