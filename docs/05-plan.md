@@ -54,7 +54,7 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Kommunestyret på forsiden: velg et parti og se representantene, med lenke til partiet | Ferdig |
 | Roligere utseende: systemskrift, tekstmeny, linjer i stedet for kort, ingen eksterne skrifter | Ferdig |
 | Forsiden rundt tre spørsmål: hva skal skje, hva ble vedtatt, hva venter vi på. Ingen nøkkeltall eller grafer | Ferdig |
-| «Venter på protokoll» i måneder: i noen utvalg legges protokollen aldri ut i portalen (Galleri Widegren 0 av 23, arbeidsutvalget i regionrådet 3 av 22). Statusen bør skille dette fra møter som nettopp er holdt | Åpent. Forsiden viser bare de siste 30 dagene |
+| «Venter på protokoll» i måneder: i noen utvalg legges protokollen aldri ut i portalen (Galleri Widegren 0 av 23, arbeidsutvalget i regionrådet 3 av 22). Statusen bør skille dette fra møter som nettopp er holdt | Ferdig. Egen status etter 30 dager, «Protokoll ikke publisert», og «Unntatt offentlighet» for skjermede |
 
 ## Fase 3 — mer enn én kommune
 

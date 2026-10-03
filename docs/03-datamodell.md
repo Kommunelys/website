@@ -53,10 +53,18 @@ Status er utledet, ikke hentet. Reglene står i `tolk/bygg_saker.py`:
 | Til behandling | Det finnes et møte i kjeden som ikke er holdt |
 | Vedtatt i kommunestyret | Siste holdte steg er kommunestyret, og protokollen er publisert |
 | Behandlet | Siste holdte steg har publisert protokoll |
-| Venter på protokoll | Møtet er holdt, men protokollen er ikke publisert |
+| Unntatt offentlighet | Siste holdte steg har skjermet protokoll |
+| Protokoll ikke publisert | Møtet ble holdt for over 30 dager siden, og protokollen er ikke publisert |
+| Venter på protokoll | Møtet er holdt de siste 30 dagene, og protokollen er ikke publisert |
 
-Fordeling for 2026, politiske saker uten formaliteter: 121 behandlet, 64 venter
-på protokoll, 49 vedtatt i kommunestyret, 31 til behandling. Tallene kommer fra
+Grensen på 30 dager står i `VENTEGRENSE_DAGER`. I noen utvalg legges protokollen
+aldri ut i portalen: Galleri Widegren har 0 av 23 behandlinger i 2026, og
+arbeidsutvalget i Innherred regionråd 3 av 22. Uten grensen sto slike saker som
+«venter» i månedsvis.
+
+Fordeling for 2026 per 3.10.2026, politiske saker uten formaliteter: 121
+behandlet, 49 vedtatt i kommunestyret, 42 protokoll ikke publisert, 32 til
+behandling, 14 venter på protokoll, 8 unntatt offentlighet. Tallene kommer fra
 `python -m tolk.bygg_saker 2026`.
 
 ## Voteringer

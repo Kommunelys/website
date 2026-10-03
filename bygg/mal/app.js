@@ -31,7 +31,7 @@ const PS=S.cases.filter(c=>c.typ==='PS'&&!c.formal);
 const ALL=S.cases.filter(c=>!c.formal);
 ALL.forEach(c=>{c.next=c.st.find(x=>isFut(x.date))||null;c.last=c.st.filter(x=>!isFut(x.date)).pop()||null;c.first=c.st[0]});
 const SAK_FOR={};S.cases.forEach(c=>c.st.forEach(x=>{SAK_FOR[x.hid]=c}));
-const stCls={"Til kommunestyret":"ks","Til behandling":"tb","Vedtatt i kommunestyret":"ok","Behandlet":"bh","Venter på protokoll":"vp"};
+const stCls={"Til kommunestyret":"ks","Til behandling":"tb","Vedtatt i kommunestyret":"ok","Behandlet":"bh","Venter på protokoll":"vp","Protokoll ikke publisert":"bh","Unntatt offentlighet":"bh"};
 const stPill=s=>`<span class="st ${stCls[s]||'bh'}">${s}</span>`;
 /* Sammendrag fra KI (c.a) vises bare når det har bestått kontrollene i bygget. */
 const tittel=c=>c.a?c.a.tk:c.t;
@@ -123,7 +123,7 @@ function moteHtml(g,vis,ekstra,mer){
 
 /* Hva ble bestemt: siste avgjørelser med protokoll, høyst tre per møte. De
    siste 45 dagene kommer kommunestyret først, så formannskapet, så resten. */
-const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includes(c.last.sc)&&(Date.parse(TODAY)-Date.parse(c.last.date.slice(0,10)))/864e5<=30);
+const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includes(c.last.sc));
 (function(){
   const nylig=c=>(Date.parse(TODAY)-Date.parse(c.last.date.slice(0,10)))/864e5<=45;
   const vekt=c=>nylig(c)?({KS:0,FS:1}[c.last.sc]??2):3;
@@ -148,7 +148,8 @@ const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includ
     ||'<li class="muted">Ingen avgjørelser med protokoll ennå.</li>';
 })();
 
-/* Hva venter vi på: møter de siste 30 dagene der protokollen ikke er publisert. */
+/* Hva venter vi på: møter de siste 30 dagene der protokollen ikke er publisert.
+   Eldre har status «Protokoll ikke publisert» (tolk/bygg_saker.py). */
 (function(){
   const gr=moteGrupper(venter,c=>c.last,4,(a,b)=>b.x.date.localeCompare(a.x.date));
   $('venter').innerHTML=gr.map(g=>moteHtml(g,3,null,
@@ -214,7 +215,7 @@ $('ks').addEventListener('click',e=>{const t=e.target.closest('[data-p]');if(t&&
 $('q0').addEventListener('keydown',e=>{if(e.key==='Enter')go('saker',{q:e.target.value})});
 
 /* ---------- SAKER ---------- */
-const STATUSES=["Til kommunestyret","Til behandling","Vedtatt i kommunestyret","Behandlet","Venter på protokoll"];
+const STATUSES=["Til kommunestyret","Til behandling","Vedtatt i kommunestyret","Behandlet","Venter på protokoll","Protokoll ikke publisert","Unntatt offentlighet"];
 const fstatus=$('fstatus');fstatus.innerHTML+=`<option value="Til">Til behandling (alle)</option>`+STATUSES.map(s=>`<option>${s}</option>`).join('');
 const utSet=[...new Set(S.cases.flatMap(c=>c.st.map(x=>x.sc)))].filter(Boolean).sort((a,b)=>utName(a).localeCompare(utName(b),'nb'));
 $('fut').innerHTML+=utSet.map(s=>`<option value="${s}">${esc(utName(s))}</option>`).join('');

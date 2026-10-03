@@ -124,6 +124,12 @@ def _steg(bid: int, kjent: dict, ukjent: dict) -> dict:
     return steg
 
 
+# Etter så mange dager uten protokoll er det ikke lenger riktig å si at saken
+# venter: i noen utvalg legges protokollen aldri ut i portalen (Galleri
+# Widegren 0 av 23 behandlinger i 2026, arbeidsutvalget i regionrådet 3 av 22).
+VENTEGRENSE_DAGER = 30
+
+
 def _status(steg: list[dict], i_dag: str) -> str:
     kommende = [s for s in steg if s["dato"][:10] >= i_dag]
     holdt = [s for s in steg if s["dato"][:10] < i_dag]
@@ -133,6 +139,11 @@ def _status(steg: list[dict], i_dag: str) -> str:
     if holdt and holdt[-1]["protokoll_publisert"]:
         return ("Vedtatt i kommunestyret" if holdt[-1]["utvalg"] == "KS"
                 else "Behandlet")
+    if holdt and holdt[-1]["protokoll_skjermet"]:
+        return "Unntatt offentlighet"
+    if holdt and (dt.date.fromisoformat(i_dag)
+                  - dt.date.fromisoformat(holdt[-1]["dato"][:10])).days > VENTEGRENSE_DAGER:
+        return "Protokoll ikke publisert"
     return "Venter på protokoll"
 
 
