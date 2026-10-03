@@ -493,10 +493,10 @@ function renderPerson(id){
   const rad=v=>`<tr><td>${esc(utName(v.u))}${v.p&&v.p!==p.p?` <span class="liten muted">(for ${esc(PNAME[v.p]||v.p)})</span>`:''}</td><td>${rolle(v.u,v.r)}</td><td class="num">${v.m||'–'}</td><td class="num">${S.mprot[v.u]||'–'}</td></tr>`;
   const pct=st.omst.length?Math.round(st.maj/st.omst.length*100):0;
   const sakLenke=v=>`<a href="#saker" data-sak="${v.hid}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a>`;
-  el.innerHTML=`<div class="profil">
+  el.innerHTML=`<div class="profil"><div class="ingress">
     <p class="parti"><span class="dot" style="background:${pc(p.p)}"></span>${esc(PNAME[p.p]||p.p)}</p>
     <h1>${esc(p.n)}</h1>
-    <p class="fakta">${hoved}. ${antall(vv.length,'verv','verv')} ifølge medlemslisten ${dato(S.ks.hentet)}.${lenke?` Partiet: ${lenke}.`:''}</p>
+    <p class="fakta">${hoved}. ${antall(vv.length,'verv','verv')} ifølge medlemslisten ${dato(S.ks.hentet)}.${lenke?` Partiet: ${lenke}.`:''}</p></div>
     <section><h2>Verv</h2>
       <div class="tw"><table><thead><tr><th>Utvalg</th><th>Rolle</th><th class="num">Møtt</th><th class="num">Møter</th></tr></thead><tbody>${vv.map(rad).join('')}</tbody></table></div>
       ${tidl.length?`<p class="liten muted">Sett i protokollene, men ikke i dagens medlemsliste: ${tidl.map(v=>esc(utName(v.u))).join(', ')}.</p>`:''}
