@@ -26,6 +26,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
 | Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.github.io/website/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, med metode, KI-bruk og en dekningstabell regnet ut ved hvert bygg; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
 | GitHub Actions | Virker. Kjøres for hånd; tidsplanen er slått av |
+| Drift og besøk | `/drift/` viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater. Lenkes ikke fra nettstedet |
 
 ## Grunnregler du ikke skal bryte
 
@@ -58,6 +59,7 @@ hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
+drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til /drift/
 kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
 kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
@@ -74,6 +76,7 @@ data/vurderinger.json  avgjørelsene for avvikene, med begrunnelse og hvem som v
 data/analyse/  sammendrag og tagger fra modellen
 data/tillatte-navn.json  navn fra sakstitler som er vurdert og kan stå i et sammendrag
 data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
+data/drift/kjoringer.json  tall fra hver kjøring: kall mot portalen, AI-analysen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
 ```
@@ -161,6 +164,10 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommune
   stopper hvis malen nevner en kommune.
 - **Lys blå er pynt, ikke tekst.** `#60A5FA` har 2,4:1 mot papirhvit. Lenker,
   fokus og status bruker `--lenke` (ADR-016).
+- **Driftssiden henter historikk fra git og GitHub-API-et.** Bygget trenger
+  hele historikken (`fetch-depth: 0`) og `actions: read`. Lokalt brukes
+  API-et uten nøkkel, med grense på 60 kall i timen. Svarer det ikke, viser
+  siden bare endringene i dataene.
 - **Om-siden er felles, «Hvem bestemmer» er kommunens.** Tekst om metode,
   kvalitet og personvern står i `bygg/mal/om.html` og gjelder alle kommunene.
   Hver påstand der skal kunne spores til kode, en ADR eller data. Tall i

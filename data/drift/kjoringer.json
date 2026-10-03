@@ -1,0 +1,34 @@
+{
+ "37159703444": {
+  "start": "2026-10-03T22:51:36+00:00",
+  "portal": {
+   "kall": 102,
+   "feil": 1,
+   "megabyte": 1.7,
+   "sekunder": 174.3
+  },
+  "analyse": {
+   "sendt": 0,
+   "feil": 0,
+   "utsatt": 0,
+   "tokens_inn": 0,
+   "tokens_ut": 0
+  }
+ },
+ "37160818307": {
+  "start": "2026-10-03T23:11:46+00:00",
+  "portal": {
+   "kall": 102,
+   "feil": 1,
+   "megabyte": 1.7,
+   "sekunder": 182.2
+  },
+  "analyse": {
+   "sendt": 0,
+   "feil": 0,
+   "utsatt": 0,
+   "tokens_inn": 0,
+   "tokens_ut": 0
+  }
+ }
+}

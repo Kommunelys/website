@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drift | {{merke}}</title>
+<meta name="description" content="Driftsstatus for {{merke}}: kjøringer, innhenting, AI-kostnad og besøk.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<!-- ?v= gjør at nettleseren henter stilarket på nytt etter hver publisering. -->
+<link rel="stylesheet" href="../stil.css?v={{versjon}}">
+</head>
+<body>
+<a class="hopp" href="#innhold">Hopp til innholdet</a>
+<header class="hode">
+  <div class="ramme hode-topp">
+    <a class="merke" href="../"><svg class="merke-ikon" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><path d="M10.5 9 L31 14.5 V49.5 L10.5 55 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path class="rute" d="M35.5 12 L54.5 4 V60 L35.5 52 Z" fill="#60A5FA" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="merke-navn">{{merke}}</span></a>
+    <span class="drift-navn">Drift</span>
+  </div>
+</header>
+
+<main id="innhold" class="ramme drift">
+  <div class="drift-topp">
+    <h1>Drift</h1>
+    <p class="liten muted">Bygget {{bygget}}. Bygges på nytt ved hver kjøring av Oppdater. Besøkstallene hentes når siden åpnes.</p>
+  </div>
+
+  <section class="drift-besok" id="besok" data-gc="{{goatcounter}}" aria-labelledby="besok-tittel">
+    <div class="drift-besok-hode">
+      <h2 id="besok-tittel">Besøk</h2>
+      <a class="liten" href="https://{{goatcounter}}.goatcounter.com/">GoatCounter ↗</a>
+    </div>
+    <dl class="drift-tall">
+      <div><dt>I dag</dt><dd data-start="0">–</dd></div>
+      <div><dt>7 dager</dt><dd data-start="6">–</dd></div>
+      <div><dt>30 dager</dt><dd data-start="29">–</dd></div>
+      <div><dt>Totalt</dt><dd>–</dd></div>
+    </dl>
+    <p class="liten muted" id="besok-merknad">Sidevisninger. GoatCounter mellomlagrer tallene i opptil fire timer. Denne siden telles ikke.</p>
+  </section>
+
+  <div class="drift-bokser">
+    <section class="drift-boks">
+      <h2>Status</h2>
+      {{status}}
+    </section>
+    <section class="drift-boks">
+      <h2>Innhold, {{kommune}}</h2>
+      {{innhold}}
+    </section>
+    <section class="drift-boks">
+      <h2>AI-kostnad</h2>
+      {{kostnad}}
+    </section>
+  </div>
+
+  <section class="blokk">
+    <h2>Kjøringer</h2>
+    {{kjoringer}}
+    <p class="liten muted">✓ gikk bra, ✗ feilet, – hoppet over. Kall: forespørsler mot portalen, målt fra 4.10.2026; – betyr ikke målt. Møter s/h: sjekket mot portalen / hentet på nytt. Sammendrag n/o: nye / oppdaterte. Kostnad i kroner, anslått som i boksen over.</p>
+  </section>
+
+  <section class="blokk">
+    <h2>Nye saker, siste 30 dager</h2>
+    {{nye_saker}}
+  </section>
+</main>
+
+<footer class="ramme fot">
+  <div>{{merke}} er en uoffisiell og uavhengig tjeneste, laget av en privatperson.</div>
+  <div><a href="{{repo}}">Kode og data</a> · <a href="{{repo}}/actions">Alle kjøringer i GitHub</a></div>
+</footer>
+<script>
+/* Besøkstall fra GoatCounter. Krever «Allow adding visitor counts on your
+   website» i innstillingene der; ellers står strekene igjen. */
+(function(){
+  var s=document.getElementById('besok'),gc=s.dataset.gc;
+  if(!gc){s.hidden=true;return}
+  function dato(n){var d=new Date(Date.now()-n*864e5);
+    return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+  var feil=false;
+  s.querySelectorAll('dd').forEach(function(dd){
+    var st=dd.dataset.start,url='https://'+gc+'.goatcounter.com/counter/TOTAL.json'+(st?'?start='+dato(+st):'');
+    fetch(url).then(function(r){
+      if(r.status===404)return {count:'0'};
+      if(!r.ok)throw r.status;
+      return r.json();
+    }).then(function(j){dd.textContent=String(j.count).replace(/[,\s]/g,' ')})
+    .catch(function(){
+      if(feil)return;feil=true;
+      document.getElementById('besok-merknad').textContent='Fikk ikke hentet tallene fra GoatCounter. Sjekk at «Allow adding visitor counts on your website» er slått på.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
