@@ -191,10 +191,16 @@ jobs:
       - name: Kontroller
         run: python -m tester.kontroller
 
+      # Før bygget: 404-siden trenger roten til nettstedet (base_path er
+      # «/website» på github.io og tom med eget domene).
+      - id: pages
+        uses: actions/configure-pages@v5
+
       - name: Bygg nettsted
         run: python -m bygg.bygg_nettsted
+        env:
+          NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
 
-      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: nettsted

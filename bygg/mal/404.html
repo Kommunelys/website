@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siden finnes ikke | {{merke}}</title>
+<meta name="robots" content="noindex">
+<!-- GitHub Pages viser denne siden for alle adresser som ikke finnes, uansett
+     hvor dypt de ligger. Derfor er alle lenker absolutte, med roten til
+     nettstedet foran ({{base}}). Relative lenker ville pekt feil. -->
+<link rel="icon" href="{{base}}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{base}}apple-touch-icon.png">
+<link rel="stylesheet" href="{{base}}stil.css">
+<script>
+/* Adresser vi kan gjette riktig, sendes videre med en gang:
+   /Kommune -> /kommune/, /kommune/saker -> /kommune/#saker,
+   /saker (fra før kommunene fikk hver sin mappe) -> kommunen den gjaldt,
+   /om.html -> /om/. Ellers vises siden med et forslag, om vi har et. */
+var BASE='{{base}}', KOMMUNER={{kommuner_json}}, GAMLE='{{gamle_lenker}}',
+    VISNINGER=['oversikt','saker','moter','stemmer','politikere','person','hvem-bestemmer'];
+function enkel(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+  .replace(/æ/g,'ae').replace(/ø/g,'o').replace(/\.html?$/,'').replace(/[\s_]+/g,'-')}
+function hvorTil(){
+  var sti=location.pathname, rest=sti.indexOf(BASE)===0?sti.slice(BASE.length):sti.slice(1);
+  var deler;try{deler=decodeURIComponent(rest).split('/').filter(Boolean)}catch(e){return null}
+  if(!deler.length)return null;
+  var forste=enkel(deler[0]), hash=location.hash;
+  if(forste==='om')return{url:BASE+'om/'+hash,sikker:true};
+  if(VISNINGER.indexOf(forste)>=0)
+    return{url:BASE+GAMLE+'/'+(hash||'#'+deler.map(enkel).join('/')),sikker:true};
+  for(var i=0;i<KOMMUNER.length;i++){
+    var k=KOMMUNER[i];
+    if(forste!==enkel(k.slug)&&forste!==enkel(k.navn))continue;
+    var neste=deler[1]?enkel(deler[1]):'';
+    if(!neste||neste==='index')return{url:BASE+k.slug+'/'+hash,sikker:true,navn:k.navn};
+    if(VISNINGER.indexOf(neste)>=0)
+      return{url:BASE+k.slug+'/'+(hash||'#'+[neste].concat(deler.slice(2)).join('/')),sikker:true,navn:k.navn};
+    return{url:BASE+k.slug+'/',sikker:false,navn:k.navn};
+  }
+  return null;
+}
+var TIL=hvorTil();
+if(TIL&&TIL.sikker)location.replace(TIL.url);
+</script>
+</head>
+<body>
+<a class="hopp" href="#innhold">Hopp til innholdet</a>
+<header class="hode">
+  <div class="ramme hode-topp">
+    <a class="merke" href="{{base}}">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
+    <span class="uoff">Uoffisiell og uavhengig</span>
+  </div>
+  <nav class="ramme meny" aria-label="Hovedmeny">
+    <a href="{{base}}">Kommuner</a>
+    <a href="{{base}}om/">Om {{merke}}</a>
+  </nav>
+</header>
+
+<main id="innhold" class="ramme rot">
+  <div class="ingress">
+    <p class="overtekst">Feil 404</p>
+    <h1>Vi finner ikke siden</h1>
+    <p id="hva">Adressen finnes ikke på {{merke}}. Den kan være skrevet feil, eller siden kan være flyttet.</p>
+  </div>
+
+  <p class="forslag" id="forslag" hidden></p>
+
+  <section class="blokk">
+    <h2>Dette kan du gjøre</h2>
+    <ul class="punkt tekst">
+      <li>Sjekk at adressen er skrevet riktig.</li>
+      <li>Velg en kommune under, og søk etter saken der. Hver sak har sin egen lenke i sakslisten.</li>
+      <li>Kom du hit fra en lenke på {{merke}}, <a id="meld" href="{{meld}}">meld fra på GitHub</a>, så retter vi den.</li>
+    </ul>
+  </section>
+
+  <section class="blokk">
+    <h2>Velg kommune</h2>
+    <ul class="kommuner">
+{{kommuner}}
+    </ul>
+  </section>
+</main>
+
+<footer class="ramme fot">
+  <div>{{merke}} er en uoffisiell og uavhengig tjeneste. Ikke laget av noen kommune.</div>
+  <div><a href="{{base}}om/">Om {{merke}}</a> · <a href="{{repo}}">Kode og data</a></div>
+</footer>
+<script>
+(function(){
+  var sti=location.pathname;
+  try{sti=decodeURIComponent(sti)}catch(e){}
+  var hva=document.getElementById('hva');
+  hva.textContent='';
+  hva.append('Adressen ');
+  var c=document.createElement('code');c.textContent=sti;hva.append(c);
+  hva.append(' finnes ikke. Den kan være skrevet feil, eller siden kan være flyttet.');
+  var meld=document.getElementById('meld');
+  meld.href+='?title='+encodeURIComponent('Lenke som ikke virker: '+sti);
+  if(TIL&&TIL.sikker){
+    hva.textContent='Sender deg videre …';
+    return;
+  }
+  if(TIL){
+    var f=document.getElementById('forslag');
+    f.append('Lette du etter '+TIL.navn+'? ');
+    var a=document.createElement('a');a.href=TIL.url;a.textContent='Gå til '+TIL.navn;f.append(a);
+    f.hidden=false;
+  }
+})();
+</script>
+</body>
+</html>

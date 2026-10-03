@@ -165,6 +165,11 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommune
   dekningstabellen regnes ut i bygget, og det som er kontrollert for hånd,
   står i `kontrollert_for_hand` i `kommuner/<kommune>.json`. Gamle lenker til
   `#om` sendes til `/om/`.
+- **404-siden vises på alle adresser som ikke finnes.** Derfor må lenkene i
+  `bygg/mal/404.html` være absolutte, med `{{base}}` foran. Roten kommer fra
+  `NETTSTED_BASE`, som arbeidsflyten setter fra GitHub Pages («/website» nå,
+  tom med eget domene); lokalt er den «/». Bygget stopper ved relative lenker.
+  Andre feilkoder (500, 503) kan ikke tilpasses på GitHub Pages.
 - **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
   side om kredittkort. Lenker til partier og andre ligger i
   `data/partisider.json` og åpnes og sjekkes før de legges inn.

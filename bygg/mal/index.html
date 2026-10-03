@@ -31,6 +31,13 @@
 
 <main id="innhold" class="ramme">
 
+<!-- Feilmeldinger når siden ikke kan tegnes: uten JavaScript, eller når
+     data.js eller app.js ikke lastes eller stopper med en feil. -->
+<noscript><div class="lastefeil"><h2>Siden trenger JavaScript</h2>
+  <p>Sakene, møtene og stemmene tegnes med JavaScript, som er slått av i nettleseren din. Slå det på og last siden på nytt. <a href="../om/">Om {{merke}}</a> virker uten.</p></div></noscript>
+<div class="lastefeil" id="lastefeil" role="alert" hidden><h2>Siden kunne ikke vises</h2>
+  <p>Noe gikk galt da dataene for {{kommune}} skulle lastes. Prøv å laste siden på nytt om litt. Virker det fortsatt ikke, <a href="{{meld}}">meld fra på GitHub</a>.</p></div>
+
 <!-- OVERSIKT -->
 <section id="v-oversikt" class="forside">
   <div class="topp">
@@ -191,5 +198,6 @@
 <footer class="ramme fot" id="foot"></footer>
 <script src="data/data.js"></script>
 <script src="../app.js"></script>
+<script>if(!window.KL_KLAR)document.getElementById('lastefeil').hidden=false</script>
 </body>
 </html>
