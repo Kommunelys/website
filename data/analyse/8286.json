@@ -1,24 +1,23 @@
 {
- "tittel_klarsprak": "Hvordan skal Steinkjer kommune organisere politikken i perioden 2027-2031?",
- "sammendrag": "Forretningsutvalget har startet arbeidet med å vurdere den politiske organiseringen for valgperioden 2027-2031. Saken ble lagt fram uten forslag til vedtak, som et første grunnlag for diskusjon. Temaene som skal vurderes er antall medlemmer i kommunestyret (i dag 39) og formannskapet (i dag 13), om kommunen fortsatt skal ha gjennomgående representasjon og tre hovedutvalg, hva som skal skje med råd og utvalg, og godtgjøringsreglementet. Bare endring av antall kommunestyremedlemmer må vedtas av dagens kommunestyre, og det må skje innen utgangen av desember 2026. De øvrige punktene kan det nye kommunestyret endre selv. Saken ble behandlet i forretningsutvalget 4. juni 2026, men protokollen er ikke publisert ennå.",
- "betydning": "Saken handler om hvor mange folkevalgte Steinkjer skal ha og hvilke utvalg og råd som skal avgjøre saker på vegne av innbyggerne fra 2027.",
+ "tittel_klarsprak": "Hvordan skal politikken i Steinkjer organiseres i perioden 2027-2031?",
+ "sammendrag": "Forretningsutvalget skal starte arbeidet med hvordan kommunen skal organisere det politiske arbeidet i neste valgperiode. Saken gjelder blant annet antall medlemmer i kommunestyret, antall medlemmer i formannskapet, om kommunen fortsatt skal ha gjennomgående representasjon og hovedutvalg, hvilke råd og utvalg som skal bestå, og godtgjøringsreglementet. I dag har kommunestyret 39 medlemmer, formannskapet 13 medlemmer, og det er tre hovedutvalg: helse og omsorg med 7 medlemmer, kultur og oppvekst med 7 medlemmer og plan, næring og miljø med 9 medlemmer. Etter kommuneloven må Steinkjer ha minst 27 medlemmer i kommunestyret, og en eventuell endring av antallet må vedtas innen utgangen av desember 2026. Saken ble lagt fram uten forslag til vedtak, som et første innspill til diskusjon i forretningsutvalget. Møtet i forretningsutvalget ble holdt 4. juni 2026, men protokollen er ikke publisert.",
+ "betydning": "Hvor mange folkevalgte innbyggerne velger inn i kommunestyret fra 2027, og hvilke utvalg og råd som skal behandle saker, avgjøres gjennom dette arbeidet.",
  "tagger": [
   "Folkevalgte",
-  "Organisasjon",
-  "Økonomi"
+  "Organisasjon"
  ],
  "utfall": "venter på protokoll",
  "uenighet": "",
  "usikker": false,
  "sak_id": 8286,
- "sjekksum": "ef996a215a6bf245",
+ "sjekksum": "9a5e75626b0e117b",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 4109,
-  "ut": 494
+  "inn": 4236,
+  "ut": 587
  },
  "kilder": [
   {

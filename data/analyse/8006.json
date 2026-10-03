@@ -1,24 +1,24 @@
 {
- "tittel_klarsprak": "Hvordan er vedtakene fra hovedutvalg plan, næring og miljø i andre halvår 2025 fulgt opp?",
- "sammendrag": "Kommunedirektøren har laget en rapport om oppfølgingen av saker som hovedutvalg plan, næring og miljø sluttbehandlet i perioden 01.07.2025–31.12.2025. Rapporten viser i et vedlegg hver enkelt sak og hvordan vedtaket er fulgt opp. Bakgrunnen er kommuneloven § 13-1 fjerde ledd, som sier at kommunedirektøren skal påse at vedtak fra folkevalgte organer blir satt i verk uten ugrunnet opphold. Slik rapportering er en del av kommunens internkontroll. Kommunedirektøren foreslår at rapporten tas til orientering. Saken ble behandlet i hovedutvalget 11.05.2026, men protokollen er ikke publisert ennå.",
- "betydning": "Innbyggerne kan se om politiske vedtak om plan, næring og miljø faktisk blir gjennomført.",
+ "tittel_klarsprak": "Hvordan er vedtakene fra hovedutvalg plan, næring og miljø høsten 2025 fulgt opp?",
+ "sammendrag": "Kommunedirektøren har laget en rapport om oppfølgingen av saker som hovedutvalg plan, næring og miljø sluttbehandlet i perioden 01.07.2025-31.12.2025. Bakgrunnen er kommuneloven § 13-1 fjerde ledd, som sier at kommunedirektøren skal sørge for at vedtak fra folkevalgte organer blir satt i verk uten ugrunnet opphold. Rapporten er en del av internkontrollen i kommunen, og et vedlegg viser hver enkelt sak med en merknad om hvordan vedtaket er fulgt opp. Kommunedirektøren foreslo at rapporten tas til orientering. Saken var til behandling i hovedutvalg plan, næring og miljø 11.05.2026, men protokollen fra møtet er ikke publisert.",
+ "betydning": "Rapporten gir innbyggerne innsyn i om politiske vedtak i plan-, nærings- og miljøsaker faktisk blir gjennomført.",
  "tagger": [
   "Folkevalgte",
-  "Plan og areal",
-  "Organisasjon"
+  "Organisasjon",
+  "Plan og areal"
  ],
  "utfall": "venter på protokoll",
  "uenighet": "",
  "usikker": false,
  "sak_id": 8006,
- "sjekksum": "61eadcba9748324c",
+ "sjekksum": "0bcdff86e82f89c2",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 2063,
-  "ut": 448
+  "inn": 2190,
+  "ut": 633
  },
  "kilder": [
   {

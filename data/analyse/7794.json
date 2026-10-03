@@ -1,22 +1,23 @@
 {
- "tittel_klarsprak": "Hvilke spørsmål om samarbeidet Innherredsbyen skulle arbeidsutvalget i regionrådet drøfte?",
- "sammendrag": "",
- "betydning": "Saken gjelder det regionale samarbeidet Innherredsbyen, men dokumentene gir for lite informasjon til å si hva det betyr for innbyggerne.",
+ "tittel_klarsprak": "Hva ble drøftet om samarbeidet i Innherredsbyen i arbeidsutvalgets møte 26. januar 2026?",
+ "sammendrag": "Saken gjaldt en orientering og diskusjon om samarbeidet kalt Innherredsbyen. Temaene som var satt opp var å avklare roller mellom regionrådet og Frosta kommune/Trøndelag fylkeskommune, å planlegge det politiske arbeidet med Innherredsbyen, partnerskapsarena i forbindelse med regionrådsmøtet i mai, samt togpriser, takstsamarbeid og samferdsel generelt. En plan for det politiske arbeidet skulle vært lagt fram i dette møtet, men ble utsatt fordi sekretæren har vært sykmeldt, og det ble i stedet lagt opp til diskusjon og innspill. Kommunedirektørens forslag var at saken tas til orientering. Møtet i arbeidsutvalget ble holdt 26. januar 2026, men protokollen fra møtet er ikke publisert.",
+ "betydning": "Saken handler om hvordan kommunene på Innherred skal samarbeide videre, blant annet om samferdsel og togpriser, men hva som ble bestemt er foreløpig ikke offentlig.",
  "tagger": [
-  "Regionalt samarbeid"
+  "Regionalt samarbeid",
+  "Vei og trafikk"
  ],
  "utfall": "venter på protokoll",
  "uenighet": "",
- "usikker": true,
+ "usikker": false,
  "sak_id": 7794,
- "sjekksum": "3bc4379637775736",
+ "sjekksum": "8f57f67aeeb65076",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 1920,
-  "ut": 374
+  "inn": 2047,
+  "ut": 683
  },
  "kilder": [
   {

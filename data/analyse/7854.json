@@ -1,7 +1,7 @@
 {
- "tittel_klarsprak": "Hva gjør Steinkjer kommune med det høye sykefraværet blant egne ansatte?",
- "sammendrag": "Saken handler om sykefraværet blant ansatte i Steinkjer kommune i 2025. I saksframlegget står det at sykefraværet er vedvarende høyt og stigende i 2025, og at ledergruppa er bekymret for fraværet. Arbeidsmiljøutvalget fikk en kort muntlig orientering i møtet 10. mars 2026 og tok den foreløpige informasjonen til orientering. Det legges opp til et ekstraordinært møte i arbeidsmiljøutvalget i slutten av mars 2026 med en grundigere gjennomgang. Saken skulle også behandles i administrasjonsutvalget 19. mars 2026, men protokollen fra det møtet er ikke publisert ennå.",
- "betydning": "Høyt sykefravær påvirker bemanningen i kommunens tjenester, og kommunen skal se nærmere på årsakene og tiltakene.",
+ "tittel_klarsprak": "Hvordan utvikler sykefraværet i Steinkjer kommune seg i 2025?",
+ "sammendrag": "Kommunedirektøren la fram foreløpig informasjon om sykefraværet blant de ansatte i Steinkjer kommune i 2025. Ifølge saksframlegget er sykefraværet vedvarende høyt og stigende i 2025, og ledergruppa er bekymret for nivået. Kommunalsjefen ga arbeidsmiljøutvalget en kort orientering, og det ble lagt opp til et ekstraordinært møte i arbeidsmiljøutvalget i slutten av mars med en grundigere gjennomgang. Arbeidsmiljøutvalget tok informasjonen til orientering i møtet 10. mars 2026. Saken ble også satt opp i administrasjonsutvalget 19. mars 2026, men protokollen fra det møtet er ikke publisert.",
+ "betydning": "Saken handler om arbeidsgiversiden av kommunen, og høyt sykefravær kan påvirke bemanningen i kommunale tjenester.",
  "tagger": [
   "Organisasjon"
  ],
@@ -9,14 +9,14 @@
  "uenighet": "",
  "usikker": false,
  "sak_id": 7854,
- "sjekksum": "4d9d21321b7a156f",
+ "sjekksum": "fd68aec6a08dda1c",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 2076,
-  "ut": 564
+  "inn": 2203,
+  "ut": 623
  },
  "kilder": [
   {

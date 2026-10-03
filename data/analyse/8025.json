@@ -1,24 +1,24 @@
 {
- "tittel_klarsprak": "Skal Innherredsbyen vedta et nullvekstmål for personbiltrafikken for å kunne søke staten om belønningsmidler?",
- "sammendrag": "Partnerskapet Innherredsbyen, der Steinkjer deltar sammen med andre kommuner og fylkeskommunen, må ta stilling til et såkalt nullvekstmål. Nullvekstmålet betyr at veksten i persontransport skal tas med kollektivtransport, sykkel og gange, slik at personbiltrafikken ikke øker i avtaleperioden. Måloppnåelsen måles med trafikktellinger i utvalgte tellepunkter og suppleres med reisevaneundersøkelser. Næringstransport og gjennomgangstrafikk regnes ikke med. Et vedtatt nullvekstmål er ifølge saksframlegget en forutsetning for å få belønningsmidler eller byvekstavtale med staten, og kommunedirektøren anbefaler å slutte seg til målet under forutsetning av at det inngås en avtale med staten om slike midler. Saken ble behandlet i Innherred regionråd 4. mai 2026, og protokollen er ikke publisert ennå.",
- "betydning": "Et nullvekstmål kan gi penger til bedre kollektivtilbud, gang- og sykkelveier i Steinkjer, men kan også bety virkemidler som strengere parkeringspolitikk for å begrense biltrafikken.",
+ "tittel_klarsprak": "Skal Innherredsbyen gå inn for at veksten i persontransport ikke skal tas med bil?",
+ "sammendrag": "Innherred regionråd behandlet 4. mai 2026 spørsmålet om å slutte seg til et såkalt nullvekstmål for personbiltrafikk i Innherredsbyen. Nullvekstmålet betyr at veksten i persontransport skal tas med kollektivtransport, sykling og gange, slik at personbiltrafikken ikke øker i avtaleperioden. Et vedtatt nullvekstmål er et krav fra staten for å kunne få belønningsmidler eller en byvekstavtale, som kan finansiere kollektivtilbud, gang- og sykkelveger. Kommunedirektøren anbefalte å slutte seg til nullvekstmålet under forutsetning av at det inngås en avtale med staten om belønningsmidler. Vedtaket fra møtet er ikke publisert.",
+ "betydning": "Hvis målet følges opp med en avtale med staten, kan det gi mer penger til buss, gang- og sykkelveger, og en politikk som gjør det mindre attraktivt å kjøre bil i byområdene på Innherred.",
  "tagger": [
   "Vei og trafikk",
-  "Plan og areal",
-  "Regionalt samarbeid"
+  "Regionalt samarbeid",
+  "Klima og miljø"
  ],
  "utfall": "venter på protokoll",
  "uenighet": "",
  "usikker": false,
  "sak_id": 8025,
- "sjekksum": "dfac6652b8a6482d",
+ "sjekksum": "5409d20378db1448",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 5758,
-  "ut": 675
+  "inn": 5885,
+  "ut": 487
  },
  "kilder": [
   {

@@ -1,23 +1,23 @@
 {
- "tittel_klarsprak": "Hva viser årsrapporten for verne- og miljøarbeidet i Steinkjer kommune i 2025?",
- "sammendrag": "Arbeidsmiljøloven krever at kommunen hvert år lager en rapport om verne- og miljøarbeidet. Rapporten beskriver arbeidsmiljøutvalgets sammensetning, sakene utvalget har hatt, og tiltak i strategisk handlings- og aktivitetsplan for HMS for 2025–2028. Sykefraværet i 2025 var 12,28 prosent, mot 11,92 prosent i 2023 og 11,93 prosent i 2024. Antall meldte personskader gikk ned fra 2024, blant annet fordi verbal trakassering nå registreres gjennom månedlige egenerklæringsskjema i stedet for som skade; i skolene ble det meldt 155 hendelser om vold og trusler i 2025, mot 206 i 2024 og 117 i 2017. Arbeidsmiljøutvalget godkjente rapporten 10. mars 2026 som sin årsmelding, og den skal legges fram for kommunens styrende organer. Administrasjonsutvalget behandlet saken 19. mars 2026, men protokollen er ikke publisert ennå.",
- "betydning": "Rapporten gir innbyggerne innsyn i sykefravær, skader og arbeidsmiljøarbeid blant kommunens ansatte.",
+ "tittel_klarsprak": "Skal kommunen godkjenne årsrapporten for verne- og miljøarbeidet i 2025?",
+ "sammendrag": "Arbeidsmiljøloven krever at kommunen hvert år lager en rapport om verne- og miljøarbeidet og legger den fram for de styrende organene og arbeidstakerorganisasjonene. Rapporten beskriver arbeidsmiljøutvalgets sammensetning og saker, tiltak i den strategiske handlings- og aktivitetsplanen for HMS 2025–2028, sykefravær og oversikt over skader, ulykker og nestenulykker. Sykefraværet i 2025 var 12,28 prosent, mot 11,92 prosent i 2023 og 11,93 prosent i 2024. Antall meldte personskader gikk ned, blant annet fordi verbal trakassering nå følges opp med månedlige egenerklæringsskjema i stedet for skademelding, og meldinger om vold og trusler i skolene gikk ned fra 206 i 2024 til 155 i 2025. Arbeidsmiljøutvalget godkjente rapporten enstemmig 10. mars 2026 som sin årsmelding, mens protokollen fra administrasjonsutvalgets møte 19. mars 2026 ikke er publisert.",
+ "betydning": "Rapporten viser hvordan arbeidsmiljøet er for dem som jobber i kommunen, blant annet sykefravær og vold og trusler i skoler og helsetjenester.",
  "tagger": [
   "Organisasjon",
-  "Helse og omsorg"
+  "Folkevalgte"
  ],
  "utfall": "venter på protokoll",
  "uenighet": "",
  "usikker": false,
  "sak_id": 7798,
- "sjekksum": "91bbb90ece5f81f9",
+ "sjekksum": "317336031dd687a6",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 3172,
-  "ut": 554
+  "inn": 3299,
+  "ut": 770
  },
  "kilder": [
   {

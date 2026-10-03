@@ -1,24 +1,24 @@
 {
- "tittel_klarsprak": "Skal samarbeidet Innherredsbyen videreføres i en ny avtaleperiode fra 2028 til 2031?",
- "sammendrag": "Innherredsbyen er et samarbeid om areal- og transportutvikling mellom kommunene Steinkjer, Snåsa, Inderøy, Verdal, Levanger og Frosta, Trøndelag fylkeskommune og statlige aktører som Statens vegvesen, Jernbanedirektoratet, Bane NOR, Nye Veier, AtB og Statsforvalteren. Dagens partnerskapsavtale gjelder ut 2027, og saken gjelder en revidert avtale for perioden 2028-2031 med mulighet for forlengelse. Den største endringen er at det opprettes en politisk styringsgruppe med ordførerne i de seks kommunene og fylkesordføreren, for å styrke den politiske forankringen. Budsjettet har vært kr. 1 543 930 per år, der kommunene betaler kr. 993 930 og fylkeskommunen kr. 550 000; Steinkjers andel er kr. 335 958. I den nye avtalen foreslås årlig justering etter kommunal deflator, og at fordelingen mellom kommunene baseres på innbyggertall per 1. kvartal 2027. Saken ble behandlet i Innherred regionråd 4. mai 2026, og protokollen er ikke publisert ennå.",
- "betydning": "Samarbeidet skal jobbe for bedre vei, jernbane og kollektivtilbud på Innherred, og kommunen bidrar med en årlig sum over kommunebudsjettet.",
+ "tittel_klarsprak": "Skal samarbeidet Innherredsbyen videreføres med ny partnerskapsavtale for 2028-2031?",
+ "sammendrag": "Innherredsbyen er et samarbeid om areal- og transportutvikling mellom kommunene Steinkjer, Snåsa, Inderøy, Verdal, Levanger og Frosta, Trøndelag fylkeskommune og flere statlige aktører. Dagens partnerskapsavtale gjelder ut 2027, og saken gjelder en ny avtale for perioden 2028-2031 med mulighet for forlengelse. Den største endringen er at det opprettes en politisk styringsgruppe med ordførerne i de seks kommunene og fylkesordføreren, og at et tilsvarende politisk samarbeidsutvalg opprettes fram til den nye avtalen trer i kraft. Budsjettet har vært kr. 1 543 930 per år, der kommunene bidrar med kr. 993 930 og fylkeskommunen med kr. 550 000. I ny periode foreslås årlig justering etter kommunal deflator, og fordelingen mellom kommunene justeres etter innbyggertall per 1. kvartal 2027. Saken ble behandlet i Innherred regionråd 4. mai 2026, men protokollen er ikke publisert.",
+ "betydning": "Samarbeidet skal bidra til bedre vei-, bane- og kollektivtilbud og mer samordnet arealpolitikk på Innherred, og Steinkjer kommune betaler i dag kr. 335 958 i året til arbeidet.",
  "tagger": [
   "Regionalt samarbeid",
-  "Vei og trafikk",
-  "Plan og areal"
+  "Plan og areal",
+  "Vei og trafikk"
  ],
  "utfall": "venter på protokoll",
  "uenighet": "",
  "usikker": false,
  "sak_id": 8022,
- "sjekksum": "f7409d068282749b",
+ "sjekksum": "2491e4feaf2b1f15",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 7005,
-  "ut": 635
+  "inn": 7132,
+  "ut": 614
  },
  "kilder": [
   {

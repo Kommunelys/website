@@ -1,7 +1,7 @@
 {
- "tittel_klarsprak": "Skal to landbrukseiendommer i Henning kunne kjøpes som tilleggsjord til nabobruk?",
- "sammendrag": "To personer har søkt konsesjon for å kjøpe eiendommene gnr/bnr 110/2 og 116/9 i Henning i Steinkjer, som tilleggsareal til gården de allerede eier og driver (gnr/bnr 116/1). Arealet er på til sammen 49,8 dekar, hvorav 46,9 dekar er fulldyrka jord, og avtalt kjøpesum er 4 000 000 kroner. Kommunedirekt\ro\ren vurderer at prisen ligger innenfor rammene i konsesjonsloven, at kj\ro\rperne er skikket, og at kj\ro\rpet gir en driftsmessig god l\ro\rsning. Det foresl\ro\rs konsesjon med vilkår om at den samlede eiendommen drives landbruksmessig forsvarlig, og at de to eiendommene sammenf\ro\ryes med gnr/bnr 116/1. Kommunedirekt\ro\rren foresl\ro\rr ikke boplikt på den utvidede driftsenheten. Saken ble behandlet i hovedutvalg plan, næring og miljø 17. mars 2026, men protokollen er ikke publisert ennå.",
- "betydning": "Saken avgjør om jorda i Henning blir en del av et gårdsbruk i drift i stedet for en selvstendig eiendom.",
+ "tittel_klarsprak": "Skal to landbruksteiger i Henning kunne kjøpes som tilleggsjord til nabobruket?",
+ "sammendrag": "Saken gjelder en søknad om konsesjon for kjøp av eiendommene gnr/bnr 110/2 og 116/9 i Henning i Steinkjer. Kjøperne driver et gårdsbruk med melk- og kjøttproduksjon på gnr/bnr 116/1, og har leid deler av den fulldyrka jorda på arealet de siste årene. Arealet er på 49,8 dekar, hvorav 46,9 dekar er fulldyrka jord, og avtalt kjøpesum er 4 000 000 kr. Kommunedirektøren vurderer prisen som akseptabel og mener kjøpet gir en driftsmessig god løsning, og foreslår å gi konsesjon med vilkår om at eiendommen drives landbruksmessig forsvarlig og at teigene sammenføyes med gnr/bnr 116/1. Hovedutvalg plan, næring og miljø behandlet saken 17. mars 2026, men protokollen med vedtaket er ikke publisert.",
+ "betydning": "Hvis konsesjon gis, blir jorda en varig del av et gårdsbruk som allerede er i drift, og det blir ikke lenger selvstendig drift på den kjøpte eiendommen.",
  "tagger": [
   "Landbruk",
   "Plan og areal"
@@ -10,14 +10,14 @@
  "uenighet": "",
  "usikker": false,
  "sak_id": 7695,
- "sjekksum": "03e975790d4f8581",
+ "sjekksum": "d11a94babf8b8458",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 8464,
-  "ut": 583
+  "inn": 8591,
+  "ut": 745
  },
  "kilder": [
   {

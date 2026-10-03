@@ -1,7 +1,7 @@
 {
  "tittel_klarsprak": "Skal Steinkjer kommune gi 350 000 kroner i støtte til Framtidsfredag i 2026?",
- "sammendrag": "Stiftelsen Framtidsfredag har søkt Steinkjer kommune om 350 000 kroner i støtte til å arrangere Framtidsfredag i juni 2026. Steinkjer kommune er en av stifterne, sammen med Sparebank1 SMN, NTE, Trønder-Avisa og Steinkjerfestivalen. I 2025 deltok 2 500 personer på mer enn 80 sesjoner, og arrangementet i 2026 er allerede utsolgt. Kommunen ga 250 000 kroner i støtte i 2025. Kommunedirektøren foreslår å bevilge 350 000 kroner for 2026, med penger fra kommunalt næringsfond NTE utbytte. Saken ble behandlet i hovedutvalg for plan, næring og miljø 17. mars 2026, men protokollen er ikke publisert ennå.",
- "betydning": "Hvis støtten gis, bidrar kommunen med 350 000 kroner til et arrangement i Steinkjer som samler mange deltakere og foredragsholdere.",
+ "sammendrag": "Stiftelsen Framtidsfredag søkte Steinkjer kommune om 350 000 kroner i støtte til å arrangere Framtidsfredag i juni 2026. Steinkjer kommune er en av stifterne, sammen med Sparebank1 SMN, NTE, Trønder-Avisa og Steinkjerfestivalen. I 2025 fikk stiftelsen 250 000 kroner, og arrangementet hadde da 2 500 deltakere på mer enn 80 sesjoner. Kommunedirektøren foreslo å bevilge 350 000 kroner for 2026, finansiert fra kommunalt næringsfond NTE utbytte. Hovedutvalg for plan, næring og miljø behandlet saken 17. mars 2026, men protokollen er ikke publisert.",
+ "betydning": "Saken gjelder om kommunen bruker 350 000 kroner fra næringsfondet på et arrangement som samler mange deltakere i Steinkjer.",
  "tagger": [
   "Næring",
   "Økonomi",
@@ -11,14 +11,14 @@
  "uenighet": "",
  "usikker": false,
  "sak_id": 7895,
- "sjekksum": "e2f20bc180fdb589",
+ "sjekksum": "5fbb66a8c73c7759",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-03",
  "tokens": {
-  "inn": 4842,
-  "ut": 480
+  "inn": 4969,
+  "ut": 452
  },
  "kilder": [
   {
