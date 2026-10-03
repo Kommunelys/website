@@ -202,18 +202,30 @@ tr[aria-selected="true"] td{background:var(--accent-soft)}
 .score{font-size:26px;font-weight:750;line-height:1;font-variant-numeric:tabular-nums}
 .score small{font-size:13px;color:var(--muted);font-weight:500;margin-left:6px}
 details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--accent)}
-.row{display:grid;grid-template-columns:minmax(0,1fr) 130px 56px 62px;gap:10px;align-items:center;padding:8px 6px;cursor:pointer;border-bottom:1px solid var(--soft)}
-.row:hover{background:var(--soft)}
-.row.sel{background:var(--accent-soft)}
-.row .w{font-size:14.5px}
-.row .who{font-size:13px;color:var(--muted)}
-.row .nums{font-variant-numeric:tabular-nums;font-size:14px;text-align:right}
-.res{font-size:13px;font-weight:700;text-align:right}
+/* Én votering: hva, hvem, utfall, og et utdrag som kan foldes ut til hele forslaget */
+.vots{display:grid;margin-top:4px}
+.vot{padding:12px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
+.vot:last-child{border-bottom:0}
+.vot-topp{display:flex;justify-content:space-between;align-items:baseline;gap:4px 16px;flex-wrap:wrap;font-size:15px}
+.vot-res{white-space:nowrap;font-size:14px}
+.vot-res .num{font-weight:700;margin-right:6px}
+.utdrag{margin:0;max-width:75ch;font-size:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vot.apen .utdrag{display:none}
+.vot .bar{max-width:340px}
+.res{font-size:13.5px;font-weight:700}
 .res.ok{color:var(--good)} .res.no{color:var(--bad)}
-@media (max-width:640px){.row{grid-template-columns:minmax(0,1fr) 56px 56px}.row .mini{grid-column:1/-1}}
-.row.held{cursor:default}
-.row.held:hover{background:transparent}
-.row .why{grid-column:1/-1;font-size:13px;color:var(--warn)}
+.vot .why{margin:0;font-size:13.5px;color:var(--warn)}
+.mer{justify-self:start;background:none;border:0;padding:2px 0;color:var(--accent);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.full{display:grid;gap:10px}
+.forslag{max-width:75ch;font-size:15px;border-left:3px solid var(--line);padding-left:14px}
+.forslag p{margin:0 0 8px}
+.forslag ol,.forslag ul{margin:0;padding-left:22px;display:grid;gap:6px}
+.utfall{margin:6px 0 0;font-size:14.5px;font-weight:600}
+.klipp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ordliste{margin:14px 0 0;max-width:75ch}
+.ordliste dl{margin:8px 0 0;font-size:15px}
+.ordliste dt{font-weight:700;margin-top:8px}
+.ordliste dd{margin:0}
 .names{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:8px 6px 14px;font-size:14px}
 @media (max-width:560px){.names{grid-template-columns:1fr}}
 .names h4{margin:0 0 6px;font-size:14px}

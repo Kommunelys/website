@@ -118,4 +118,6 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - Saker fra 2025 som fortsatte i 2026, er bare delvis med.
 - Voteringene fra kommunestyret 16.09.2026 er holdt tilbake til kommunen har
   svart på hvem som møtte.
-- Etiketten på en votering er starten av forslagsteksten, ikke et sammendrag.
+- Hver votering viser typen (innstilling, forslag, endrings- eller tilleggsforslag),
+  hvem som fremmet det, og hele forslagsteksten. Utdraget i listen er starten av
+  teksten, ikke et sammendrag.

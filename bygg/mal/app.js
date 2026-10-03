@@ -67,7 +67,8 @@ const voteOf=(v,n)=>v.f&&v.f.includes(n)?'for':v.m&&v.m.includes(n)?'mot':null;
 function groupSide(v){const c={};v.f.forEach(n=>{const p=party(n);(c[p]=c[p]||{f:0,m:0}).f++});v.m.forEach(n=>{const p=party(n);(c[p]=c[p]||{f:0,m:0}).m++});const o={};for(const p in c)o[p]=c[p].f>=c[p].m?'for':'mot';return o}
 const SIDES=new Map(ALLEV.filter(v=>!v.holdt&&!v.en).map(v=>[v.id,groupSide(v)]));
 const omstridt=v=>!v.holdt&&!v.en&&v.nfor>0&&v.nmot>0;
-const resTxt=v=>v.res==='vedtatt'?'Vedtatt':'Falt';
+// Ved alternativ votering gjelder «vedtatt» ett av forslagene, ikke voteringen som helhet.
+const resTxt=v=>v.vinner?`Forslag ${v.vinner} vedtatt`:v.res==='vedtatt'?'Vedtatt':'Falt';
 const HOLDT=ALLEV.filter(v=>v.holdt).length;
 const MED_STEMMER=new Set(ALLEV.filter(v=>!v.holdt&&!v.en).map(v=>v.hid));
 const FORSL={};ALLEV.forEach(v=>{if(!v.holdt&&v.stiller)FORSL[v.stiller]=(FORSL[v.stiller]||0)+1});
@@ -249,14 +250,88 @@ function namesBlock(v){
   const borte=v.borte&&v.borte.length?`<div class="vmeta">Ikke til stede: ${v.borte.map(plink).join(', ')}</div>`:'';
   if(v.alt&&v.alt.length)return `<div class="names">${v.alt.map(a=>`<div><h4>Forslag ${esc(a.fs)} (${a.n})</h4>${grp(a.navn,null)}</div>`).join('')}${borte}</div>`;
   return `<div class="names"><div><h4 style="color:var(--good)">For (${v.nfor})</h4>${grp(v.f,'for')}</div><div><h4 style="color:var(--bad)">Mot (${v.nmot})</h4>${grp(v.m,'mot')}</div>${borte}</div>`}
-const stillerTxt=v=>v.type==='innstilling'?'Innstillingen':v.type==='enstemmig'?'':v.stiller?`${plink(v.stiller)}${v.parti?' ('+esc(v.parti)+')':''}`:esc(v.type);
+/* Hva det ble stemt over: typen, hvem som fremmet forslaget, og hele teksten. */
+const TYPENAVN={innstilling:'Innstillingen',forslag:'Forslag','alternative forslag':'Alternativt forslag',tilleggsforslag:'Tilleggsforslag',endringsforslag:'Endringsforslag'};
+const FLERTALL={innstilling:'voteringer over innstillingen',forslag:'forslag','alternative forslag':'alternative forslag',tilleggsforslag:'tilleggsforslag',endringsforslag:'endringsforslag'};
+const erAlt=v=>!!(v.alt&&v.alt.length);
+const typeNavn=v=>v.en?(v.lbl||'Vedtaket'):erAlt(v)?'Alternativ votering':(TYPENAVN[v.type]||v.type);
+function hvemTxt(v){
+  const d=[];
+  if(v.stiller)d.push(`fremmet av ${plink(v.stiller)}${v.parti?' ('+esc(v.parti)+')':''}`);
+  if(v.bak)d.push(`på vegne av ${esc(v.bak)}`);
+  return d.join(', ');
+}
+const stillerTxt=v=>hvemTxt(v)||(v.type==='innstilling'?'Innstillingen':'');
+/* Ved alternativ votering står forslagene etter hverandre: «… Dette ble satt
+   opp mot: 2) Navn (Parti) fremmet følgende alternative forslag: …». De deles
+   i hvert sitt avsnitt. */
+function formater(t){
+  if(!t)return '';
+  return t.split(/\s+(?=Dette ble satt opp mot:)|(?<=Dette ble satt opp mot:)\s+|\s+(?=\d\)\s+[A-ZÆØÅ])/).map(formaterDel).join('');
+}
+/* Nummererte punkter («1.», «2.» i rekkefølge) og kulepunkter («•») blir lister. */
+function formaterDel(t){
+  t=t.trim();
+  if(!t)return '';
+  const kule=t.split(/\s*•\s*/);
+  if(kule.length>1){const forst=kule.shift();return (forst?`<p>${esc(forst)}</p>`:'')+`<ul>${kule.filter(Boolean).map(d=>`<li>${esc(d)}</li>`).join('')}</ul>`}
+  const merker=[];let neste=null;
+  for(const m of t.matchAll(/(^|\s)(\d{1,2})\.(?!\d)\s?/g)){
+    const n=+m[2];
+    if(neste===null||n===neste){merker.push({n,fra:m.index+m[1].length,til:m.index+m[0].length});neste=n+1}
+  }
+  if(merker.length<2)return `<p>${esc(t)}</p>`;
+  const for_=t.slice(0,merker[0].fra).trim();
+  const punkter=merker.map((m,i)=>`<li value="${m.n}">${esc(t.slice(m.til,i+1<merker.length?merker[i+1].fra:t.length).trim())}</li>`).join('');
+  return (for_?`<p>${esc(for_)}</p>`:'')+`<ol>${punkter}</ol>`;
+}
+/* Utfallet i én linje: «Innstillingen ble vedtatt · 2 forslag falt». Bare fra dataene. */
+function utfall(vs){
+  const deler=[];
+  Object.keys(TYPENAVN).forEach(k=>{
+    const l=vs.filter(v=>!v.en&&!v.holdt&&!erAlt(v)&&v.type===k);if(!l.length)return;
+    const nv=l.filter(v=>v.res==='vedtatt').length,nf=l.length-nv;
+    if(k==='innstilling'){
+      if(l.length===1)deler.push(`Innstillingen ble ${nv?'vedtatt':'ikke vedtatt'}`);
+      else if(!nf)deler.push(`Innstillingen vedtatt i ${l.length} voteringer`);
+      else if(!nv)deler.push(`Innstillingen falt i ${l.length} voteringer`);
+      else deler.push(`Innstillingen, ${l.length} voteringer: ${nv} vedtatt, ${nf} falt`);
+    }
+    else if(l.length===1)deler.push(`${TYPENAVN[k]} ${nv?'vedtatt':'falt'}`);
+    else if(!nf)deler.push(`${l.length} ${FLERTALL[k]} vedtatt`);
+    else if(!nv)deler.push(`${l.length} ${FLERTALL[k]} falt`);
+    else deler.push(`${l.length} ${FLERTALL[k]}: ${nv} vedtatt, ${nf} falt`);
+  });
+  const alt=vs.filter(v=>!v.holdt&&erAlt(v)).length;
+  if(alt)deler.push(antall(alt,'alternativ votering','alternative voteringer'));
+  const en=vs.filter(v=>v.en).length,holdt=vs.filter(v=>v.holdt).length;
+  if(en)deler.push(en===vs.length?'Enstemmig vedtatt':`${en} enstemmig`);
+  if(holdt)deler.push(`${holdt} holdt tilbake`);
+  return deler.join(' · ');
+}
 function vrow(v){
   const merk=(v.merk||[]).map(t=>`<div class="merk">Merknad: ${esc(t)}</div>`).join('');
-  if(v.holdt)return `<div class="row held"><div><div class="w">${esc(v.lbl)}</div><div class="who">${stillerTxt(v)}</div></div><div class="nums">–</div><div class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</div><div class="why">${esc(v.holdt)}</div></div>`;
-  if(v.en)return `<div class="row held"><div><div class="w">${esc(v.lbl)}</div><div class="who">Ingen navneliste i protokollen</div></div><div class="nums"></div><div class="res ok">Enstemmig</div></div>${merk}`;
-  const tall=v.alt&&v.alt.length?v.alt.map(a=>a.n).join(' / '):`${v.nfor}–${v.nmot}`;
-  const dob=v.dob?` · avgjort med ${v.dob}s dobbeltstemme`:'';
-  return `<div class="row" tabindex="0" data-v="${v.id}"><div><div class="w">${esc(v.lbl)}</div><div class="who">${stillerTxt(v)}${v.alt&&v.alt.length?' · alternativ votering':''}${dob}</div></div><div class="mini">${segBar(v)}</div><div class="nums">${tall}</div><div class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</div></div><div data-nb="${v.id}" hidden></div>${merk}`;
+  const navn=!v.holdt&&!v.en;
+  const tekst=v.en?'':(v.tekst||'');
+  const lang=tekst.length>150;
+  const tall=v.holdt?'':v.en?'':v.alt&&v.alt.length?v.alt.map(a=>a.n).join(' / '):`${v.nfor}–${v.nmot}`;
+  const res=v.en?'<span class="res ok">Enstemmig vedtatt</span>':`<span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span>`;
+  const hvem=hvemTxt(v);
+  const ekstra=v.dob?`avgjort med ${esc(v.dob)}s dobbeltstemme`:'';
+  const knapp=navn?(lang?'Vis hele forslaget og hvem som stemte hva':'Vis hvem som stemte hva'):lang?'Vis hele forslaget':'';
+  return `<div class="vot${v.holdt?' held':''}" data-v="${v.id}">
+   <div class="vot-topp"><div><b>${esc(typeNavn(v))}</b>${hvem?` <span class="muted">${hvem}</span>`:''}${ekstra?` <span class="muted">· ${ekstra}</span>`:''}</div><div class="vot-res"><span class="num">${tall}</span> ${res}</div></div>
+   ${tekst?`<p class="utdrag">${esc(tekst)}</p>`:''}
+   ${navn?segBar(v):''}${v.holdt?`<p class="why">${esc(v.holdt)}</p>`:''}${merk}
+   ${knapp?`<button class="mer" aria-expanded="false">${knapp}</button><div class="full" hidden></div>`:''}</div>`;
+}
+function apneVot(b){
+  const el=b.closest('.vot'),v=VID[el.dataset.v],full=el.querySelector('.full');
+  const apen=b.getAttribute('aria-expanded')==='true';
+  if(!apen&&!full.innerHTML)full.innerHTML=(v.en?'':`<div class="forslag">${formater(v.tekst)}</div>`)+(!v.holdt&&!v.en?namesBlock(v):'');
+  full.hidden=apen;el.classList.toggle('apen',!apen);b.setAttribute('aria-expanded',String(!apen));
+  if(!b.dataset.lukket)b.dataset.lukket=b.textContent;
+  b.textContent=apen?b.dataset.lukket:'Skjul';
 }
 function renderStemmer(){
   const val=vsel.value;
@@ -269,23 +344,21 @@ function renderStemmer(){
   pstats=members.map(n=>{const p=party(n);let tot=0,maj=0,brk=0;contested.forEach(v=>{const s=voteOf(v,n);if(!s)return;tot++;if(s===(v.res==='vedtatt'?'for':'mot'))maj++;if(SIDES.get(v.id)[p]!==s)brk++});return {name:n,party:p,tot,maj:tot?maj/tot:0,brk,prop:V.filter(v=>v.stiller===n).length}});
   $('vcards').innerHTML=saker.map(s=>{
     const omst=s.v.filter(omstridt).sort((a,b)=>Math.abs(a.nfor-a.nmot)-Math.abs(b.nfor-b.nmot));
-    const alleEn=s.v.every(v=>v.en);const holdt=s.v.filter(v=>v.holdt).length;
-    const badge=alleEn?'<span class="st ok">Enstemmig vedtatt</span>':holdt?`<span class="st ks">${holdt} holdt tilbake</span>`:'';
     const score=omst.length?`<div class="score">${omst[0].nfor}–${omst[0].nmot}<small>jevneste</small></div>`:'';
     const sak=SAK_FOR[s.hid];
     // Her vises bare uenigheten, som gjelder stemmene. Hele sammendraget står på saken.
     const sum=sak&&sak.a&&sak.a.uen?`<div class="sum"><span class="ki">KI-sammendrag</span><p><b>Uenigheten:</b> ${esc(sak.a.uen)}</p><p class="aikilde">Protokollen gjelder. <a href="#saker" data-sak="${s.hid}">Hele saken</a> · ${ut(meldUrl(sak),'Meld fra om feil')}</p></div>`
       :sak?`<p class="liten"><a href="#saker" data-sak="${s.hid}">Om saken</a></p>`:'';
-    return `<article class="vc"><div class="vtop"><div><div class="liten muted"><span class="mono">${esc(s.nr)}</span> · ${esc(utName(s.m.sc))} ${ddn(s.m.date)}</div><h3 style="margin-top:4px">${esc(sak?tittel(sak):s.t)}</h3>${sak&&sak.a?`<div class="liten muted" style="margin-top:2px">${esc(s.t)}</div>`:''}</div>
-    <div style="display:grid;gap:6px;align-content:start">${badge}${score}${omst.length?segBar(omst[0]):''}</div></div>${sum}
-    <details${s.v.length<=3?' open':''}><summary>${antall(s.v.length,'votering','voteringer')}</summary><div style="margin-top:6px">${s.v.map(vrow).join('')}</div></details></article>`}).join('')||'<p class="muted">Ingen voteringer for dette valget.</p>';
+    return `<article class="vc"><div class="vtop"><div><div class="liten muted"><span class="mono">${esc(s.nr)}</span> · ${esc(utName(s.m.sc))} ${ddn(s.m.date)}</div><h3 style="margin-top:4px">${esc(sak?tittel(sak):s.t)}</h3>${sak&&sak.a?`<div class="liten muted" style="margin-top:2px">${esc(s.t)}</div>`:''}<p class="utfall">${utfall(s.v)}</p></div>
+    <div style="display:grid;gap:6px;align-content:start">${score}${omst.length?segBar(omst[0]):''}</div></div>${sum}
+    <details${s.v.length<=3?' open':''}><summary>${s.v.length===1?'Voteringen':`Alle ${s.v.length} voteringer`}</summary><div class="vots">${s.v.map(vrow).join('')}</div></details></article>`}).join('')||'<p class="muted">Ingen voteringer for dette valget.</p>';
   $('ncont').textContent=contested.length;
   selP=null;renderPC();renderPT();renderPP();renderHeat();
 }
-function toggleRow(r){if(!r)return;const id=r.dataset.v;const nb=document.querySelector(`[data-nb="${id}"]`);if(nb.hidden){nb.innerHTML=namesBlock(VID[id]);nb.hidden=false;r.classList.add('sel')}else{nb.hidden=true;r.classList.remove('sel')}}
-$('vcards').addEventListener('click',e=>{if(e.target.closest('a'))return;toggleRow(e.target.closest('.row[data-v]'))});
-$('vcards').addEventListener('keydown',e=>{if(e.key==='Enter')toggleRow(e.target.closest('.row[data-v]'))});
-vsel.addEventListener('input',renderStemmer);
+$('vcards').addEventListener('click',e=>{const b=e.target.closest('button.mer');if(b)apneVot(b)});
+// Valget står i adressen: #stemmer/KS for et utvalg, #stemmer/1285 for ett møte.
+const stemmeArg=val=>val.slice(2);
+vsel.addEventListener('input',()=>{history.replaceState(null,'','#stemmer/'+stemmeArg(vsel.value));renderStemmer()});
 let pf=null,sk='maj',sd=-1,selP=null;
 function renderPC(){const ps=ordne(PORDER_ALLE,[...new Set(pstats.map(x=>x.party))]);$('pchips').innerHTML=['Alle',...ps].map(p=>`<button aria-pressed="${(p==='Alle'&&!pf)||p===pf}" data-p="${p}">${p==='Alle'?'Alle partier':`<span class="sq" style="background:${pc(p)}"></span>${p}`}</button>`).join('')}
 $('pchips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;pf=b.dataset.p==='Alle'?null:b.dataset.p;renderPC();renderPT()});
@@ -297,7 +370,7 @@ function renderPT(){const rows=pstats.filter(x=>!pf||x.party===pf).sort((a,b)=>{
 const velgP=tr=>{if(!tr)return;selP=tr.dataset.n;renderPT();renderPP()};
 document.querySelector('#ptable tbody').addEventListener('click',e=>velgP(e.target.closest('tr[data-n]')));
 document.querySelector('#ptable tbody').addEventListener('keydown',e=>{if(e.key==='Enter')velgP(e.target.closest('tr[data-n]'))});
-const vlinje=(v,vo,ekstra)=>`<div class="vrow"><span class="muted">${ddn(v.dato)} ${esc(v.usc)}</span><span><a href="#saker" data-sak="${v.hid}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a><br><span class="liten muted">${esc(v.lbl)}</span>${ekstra||''}</span><span class="v ${vo||''}">${vo==='for'?'For':vo==='mot'?'Mot':''}</span><span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div>`;
+const vlinje=(v,vo,ekstra)=>`<div class="vrow"><span class="muted">${ddn(v.dato)} ${esc(v.usc)}</span><span><a href="#saker" data-sak="${v.hid}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a><br><span class="liten muted klipp">${esc(typeNavn(v))}: ${esc(v.lbl)}</span>${ekstra||''}</span><span class="v ${vo||''}">${vo==='for'?'For':vo==='mot'?'Mot':''}</span><span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div>`;
 function renderPP(){const el=$('ppanel');
   if(!selP){el.innerHTML=`<p class="liten muted">Trykk på et navn i tabellen for å se hvordan personen stemte.</p>`;return}
   const s=pstats.find(x=>x.name===selP);
@@ -310,7 +383,7 @@ function renderHeat(){
   ps.forEach(a=>{h+=`<tr><th class="rh">${esc(PNAME[a]||a)}</th>`+ps.map(b=>{if(a===b)return `<td style="background:var(--soft);color:var(--muted)">–</td>`;const r=agree(a,b);if(r===null)return '<td class="muted">·</td>';const pct=Math.round(r*100);return `<td title="${a} og ${b} stemte likt i ${pct} %" style="background:color-mix(in srgb,var(--accent) ${Math.max(6,pct)}%,var(--bg));color:${pct>55?'var(--bg)':'var(--ink)'}">${pct}</td>`}).join('')+'</tr>'});
   $('heat').innerHTML=contested.length?h:'<tr><td class="muted">Ingen omstridte voteringer.</td></tr>';
   $('close').innerHTML=contested.filter(v=>Math.abs(v.nfor-v.nmot)<=3).map(v=>{const s=SIDES.get(v.id);const cross=[...v.f.filter(n=>s[party(n)]!=='for'),...v.m.filter(n=>s[party(n)]!=='mot')];
-    return `<div class="jevn"><div><span><span class="mono muted">${esc(v.sak)}</span> ${esc(v.lbl)}</span><span><b class="num">${v.nfor}–${v.nmot}</b> <span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></span></div>${segBar(v)}<div class="liten muted">${cross.length?'Stemte mot egen gruppe: '+cross.map(n=>`<span class="cross">${plink(n)} (${party(n)})</span>`).join(', '):'Alle stemte med egen gruppe.'}</div>${(v.merk||[]).map(t=>`<div class="merk">Merknad: ${esc(t)}</div>`).join('')}</div>`}).join('')||'<p class="muted">Ingen voteringer ble avgjort med tre stemmer eller mindre.</p>';
+    return `<div class="jevn"><div><span><span class="mono muted">${esc(v.sak)}</span> <b>${esc(typeNavn(v))}:</b> ${esc(v.lbl)}</span><span><b class="num">${v.nfor}–${v.nmot}</b> <span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></span></div>${segBar(v)}<div class="liten muted">${cross.length?'Stemte mot egen gruppe: '+cross.map(n=>`<span class="cross">${plink(n)} (${party(n)})</span>`).join(', '):'Alle stemte med egen gruppe.'}</div>${(v.merk||[]).map(t=>`<div class="merk">Merknad: ${esc(t)}</div>`).join('')}</div>`}).join('')||'<p class="muted">Ingen voteringer ble avgjort med tre stemmer eller mindre.</p>';
 }
 
 /* ---------- POLITIKERE ---------- */
@@ -382,13 +455,12 @@ function renderPerson(id){
 const VIEWS=['oversikt','saker','moter','stemmer','politikere','person','om'];
 const MENY={person:'politikere'};
 const TITLER={oversikt:'',saker:'Saker',moter:'Møter',stemmer:'Stemmer',politikere:'Politikerne',om:'Om tjenesten'};
-let ventM=null;
 function go(v,o={}){
   if(v==='saker'&&('q' in o||'status' in o||'tag' in o)){
     $('q').value=o.q||'';fstatus.value=o.status||'';$('fut').value='';ftag=o.tag||null;limit=40;openT=o.open||null;
     if(o.alle)$('fall').checked=true;
   }
-  if(v==='stemmer'&&o.m)ventM=o.m;
+  if(v==='stemmer'&&o.m)o.arg=o.m;
   if(v==='politikere'&&'utv' in o){futv.value=o.utv||'';fparti=null}
   const h='#'+v+(o.arg?'/'+o.arg:'');
   if(location.hash===h)vis();else location.hash=h;
@@ -401,7 +473,7 @@ function vis(){
   document.title=(TITLER[v]?TITLER[v]+' – ':'')+'Steinkjer i klartekst';
   if(v==='saker'){renderTagChips();renderList()}
   if(v==='moter')renderMeet();
-  if(v==='stemmer'&&ventM){vsel.value='m:'+ventM;ventM=null;renderStemmer()}
+  if(v==='stemmer'&&arg){const val=(/^\d+$/.test(arg)?'m:':'u:')+arg;if(vsel.querySelector(`option[value="${val}"]`)&&vsel.value!==val){vsel.value=val;renderStemmer()}}
   // Partifilteret står i adressen (#politikere/AP), så lenker og tilbakeknappen virker.
   if(v==='politikere'){fparti=PARTI_I_FOLK.includes(arg)?arg:null;renderFChips();renderFolk()}
   if(v==='person')renderPerson(arg);

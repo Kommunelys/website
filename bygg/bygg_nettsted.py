@@ -82,23 +82,48 @@ def _les(sti: Path, standard):
     return json.loads(sti.read_text("utf-8")) if sti.exists() else standard
 
 
-def _etikett(v: dict) -> str:
-    """Hva voteringen gjaldt: starten av forslagsteksten."""
-    tekst = re.sub(r"\s+", " ", v.get("tekst") or "").strip()
-    if len(tekst) > 120:
-        tekst = tekst[:117].rsplit(" ", 1)[0] + " …"
+# Hvem som står bak et forslag, skrevet først i teksten: «På vegne av H, V,
+# INP, PP:», «Fra SV og Rødt:», «Forslag fra Rødt, AP, SV og Frp:», ofte uten
+# kolon. Listen består av partier, «uavhengig representant X» eller en
+# person med parti («Kjell Haugan Ap»). Det som ikke passer, regnes som
+# begynnelsen på selve forslaget.
+_PARTI = (r"(?:Ap|AP|Arbeiderpartiet|H|Høyre|Sp|SP|Senterpartiet|SV|Sv|R|Rødt|"
+          r"FrP|Frp|FRP|Fremskrittspartiet|INP|Inp|PP|Pp|Pensjonistpartiet|V|Venstre|KrF|Krf|"
+          r"Uavh\.?|[Uu]avhengig(?: representant(?: [A-ZÆØÅ][\wæøå-]+)?)?|alle partier)")
+_LEDD = rf"(?:(?:[A-ZÆØÅ][\wæøå-]+ ){{1,3}}{_PARTI}|{_PARTI})"
+_AVSENDER = re.compile(
+    rf"^(?:På vegne av|Fellesforslag fra|Forslag fra|Fra):?\s+"
+    rf"(?P<bak>{_LEDD}(?:(?:\s*[,;]+\s*og\s+|\s*[,;]+\s*|\s+og\s+){_LEDD})*)(?![\wæøå])"
+    r"[\s.,:]*")
+
+
+def _avsender_og_tekst(tekst: str) -> tuple[str | None, str]:
+    """«På vegne av H, V: 1. Kommunestyret …» -> («H, V», «1. Kommunestyret …»)."""
+    tekst = re.sub(r"\s+", " ", tekst or "").strip()
+    m = _AVSENDER.match(tekst)
+    if not m or not tekst[m.end():]:
+        return None, tekst
+    bak = re.sub(r"\s*[,;][\s,;]*", ", ", m.group("bak")).strip(" ,")
+    return bak, tekst[m.end():]
+
+
+def _etikett(v: dict, tekst: str) -> str:
+    """Hva voteringen gjaldt, kort: starten av forslaget, uten avsenderen."""
+    if len(tekst) > 160:
+        tekst = tekst[:157].rsplit(" ", 1)[0] + " …"
     return tekst or {"innstilling": "Innstillingen"}.get(v["type"], v["type"].capitalize())
 
 
-def _alternativ_som_for_og_mot(v: dict) -> tuple[list[str], list[str]]:
+def _alternativ_som_for_og_mot(v: dict) -> tuple[list[str], list[str], str]:
     """Alternativ votering vises per forslag. For statistikken telles stemmene
-    for forslaget som ble vedtatt, som «for», og resten som «mot»."""
+    for forslaget som ble vedtatt, som «for», og resten som «mot». Returnerer
+    også nummeret på forslaget som ble vedtatt, slik protokollen oppgir det."""
     alt = v["alternativer"]
     m = re.search(r"forslag (\S+) vedtatt", v.get("resultat_tekst") or "")
     vinner = next((a for a in alt if m and a["forslag"] == m.group(1)), None)
     vinner = vinner or max(alt, key=lambda a: a["antall"])
     andre = [n for a in alt if a is not vinner for n in a["navn"]]
-    return list(vinner["navn"]), andre
+    return list(vinner["navn"]), andre, vinner["forslag"]
 
 
 def _tema(s: dict, sammendrag: dict) -> list[str]:
@@ -227,8 +252,11 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
         vs = []
         for v in b["voteringer"]:
             nokkel = (b["behandling_id"], v["nr"])
+            bak, tekst = _avsender_og_tekst(v.get("tekst"))
+            # Hele forslagsteksten følger med; etiketten er bare starten.
             ut = {"nr": v["nr"], "type": v["type"], "stiller": v["forslagsstiller"],
-                  "parti": v["parti"], "lbl": _etikett(v), "res": v["resultat"],
+                  "parti": v["parti"], "lbl": _etikett(v, tekst), "tekst": tekst,
+                  "bak": bak, "res": v["resultat"],
                   "en": v["enstemmig"], "dob": v["dobbeltstemme"]}
             if nokkel in stopp:
                 verst = min((status.get(a, "ikke_vurdert") for a in stopp[nokkel]),
@@ -238,7 +266,7 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
             elif not v["enstemmig"]:
                 f, m = v["for"], v["mot"]
                 if v["alternativer"]:
-                    f, m = _alternativ_som_for_og_mot(v)
+                    f, m, ut["vinner"] = _alternativ_som_for_og_mot(v)
                 ut.update(nfor=len(f) if v["alternativer"] else v["antall_for"],
                           nmot=len(m) if v["alternativer"] else v["antall_mot"],
                           f=f, m=m, borte=v["ikke_til_stede"],
