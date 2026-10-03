@@ -22,6 +22,8 @@ SAKER = ROT / "data" / "saker"
 MOTER = ROT / "data" / "moter"
 ANALYSE = ROT / "data" / "analyse"
 TEKST = ROT / "data" / "tekst"
+MAL = ROT / "bygg" / "mal"
+KOMMUNER = ROT / "kommuner"
 
 # Et fall større enn dette tyder på feil i innhentingen, ikke på virkeligheten.
 MAKS_FALL = 0.20
@@ -258,6 +260,23 @@ def antall_har_ikke_stupt(saker: list[dict], aar: int) -> list[str]:
     return []
 
 
+def malen_nevner_ingen_kommune() -> list[str]:
+    """Malen er felles for alle kommunene (ADR-016).
+
+    Et kommunenavn i malen ville stått på de andre kommunenes sider også. Det
+    som er særegent for kommunen, hører hjemme i kommuner/<kommune>.json.
+    """
+    navn = [_les(f)["navn"] for f in sorted(KOMMUNER.glob("*.json"))]
+    feil = []
+    for fil in sorted(MAL.iterdir()):
+        if fil.suffix not in (".html", ".js", ".css"):
+            continue
+        tekst = fil.read_text(encoding="utf-8")
+        feil += [f"bygg/mal/{fil.name} nevner {n}; det hører hjemme i kommuner/"
+                 for n in navn if n in tekst]
+    return feil
+
+
 def kjor(aar: int) -> int:
     saker = _les(SAKER / f"{aar}.json")
     if saker is None:
@@ -281,6 +300,7 @@ def kjor(aar: int) -> int:
     # skal ikke kunne slippe voteringer gjennom (ADR-002).
     feil += ugyldige_vurderinger(aar)
     feil += antall_har_ikke_stupt(saker, aar)
+    feil += malen_nevner_ingen_kommune()
 
     print(f"{len(moter)} møter, {len(saker)} saker, "
           f"{len(list(ANALYSE.glob('*.json')))} analyser")

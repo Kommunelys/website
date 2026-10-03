@@ -1,11 +1,14 @@
-# Steinkjer i klartekst
+# Kommunelys
 
-En uoffisiell oversikt over politiske saker i Steinkjer kommune: hva som er
-vedtatt, hva som er på vei, og hvordan hver representant stemte.
+*Et klarere blikk på vedtakene.*
 
-**Dette er ikke en tjeneste fra Steinkjer kommune.** Alt innhold kommer fra
-kommunens offentlige innsynsportal, og hver sak lenker til originaldokumentet
-der.
+En uoffisiell og uavhengig oversikt over politiske saker i kommunen: hva som er
+vedtatt, hva som er på vei, og hvordan hver representant stemte. Dekker i dag
+Steinkjer kommune.
+
+**Dette er ikke en tjeneste fra Steinkjer kommune eller noen annen kommune.**
+Alt innhold kommer fra kommunens offentlige innsynsportal, og hver sak lenker
+til originaldokumentet der.
 
 ## Hvorfor
 
