@@ -159,9 +159,12 @@ jobs:
         run: |
           git config user.name "oppdater-bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase
+          # Commit før pull: endrede analyser er ucommittede endringer, og
+          # «git pull --rebase» nekter å kjøre med dem (3.10.2026 gikk 16
+          # analyser tapt slik). Hent-jobben har pushet data/ i mellomtiden.
           git add data/analyse/
           git diff --staged --quiet || git commit -m "Analyse: oppdatert $(date -I)"
+          git pull --rebase
           git push
 
   # Publiserer selv om analysen feilet; sakene vises da uten nye sammendrag.
