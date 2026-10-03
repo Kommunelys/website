@@ -83,41 +83,83 @@ function stemmeStat(n){
 }
 
 /* ---------- OVERSIKT ---------- */
+/* Forsiden svarer på tre spørsmål: hva skal skje, hva ble bestemt, og hva
+   venter vi på. Ingen nøkkeltall eller grafer; de hjelper ikke innbyggeren
+   med å forstå hva kommunen gjør. */
 const meetings=S.meetings;
 const upcoming=meetings.filter(m=>isFut(m.date));
 const nextM=upcoming[0];
 const tilB=PS.filter(c=>c.next);
-const ksDone=PS.filter(c=>c.status==='Vedtatt i kommunestyret');
-const hor=PS.filter(c=>c.tags.includes('Høring'));
-const K=[
- {n:PS.length,l:`politiske saker i ${AAR}`,go:['saker',{status:'',tag:''}]},
- {n:tilB.length,l:'til behandling',go:['saker',{status:'Til'}]},
- {n:ksDone.length,l:'vedtatt i kommunestyret',go:['saker',{status:'Vedtatt i kommunestyret'}]},
- {n:hor.length,l:'høringssaker',go:['saker',{tag:'Høring'}]},
- {n:nextM?ddn(nextM.date):'–',l:nextM?`neste møte, ${utName(nextM.sc).toLowerCase()}`:'ingen møter publisert',go:['moter',{}]},
-];
-$('kpis').innerHTML=K.map((k,i)=>`<button data-k="${i}"><span class="n">${k.n}</span><span class="l">${esc(k.l)}</span></button>`).join('');
-$('kpis').addEventListener('click',e=>{const b=e.target.closest('button');if(b){const g=K[+b.dataset.k].go;go(g[0],g[1])}});
-
 const RAD=['ELRÅ','UNGRÅ','RÅFIM'];
-const akt=[...tilB].sort((a,b)=>a.next.date.localeCompare(b.next.date)||(b.next.sc==='KS')-(a.next.sc==='KS')).filter(c=>!c.st.every(x=>RAD.includes(x.sc))).slice(0,8);
-$('aktuelle').innerHTML=akt.map(c=>`<li><div class="d">${ddn(c.next.date)}<small>${esc(c.next.sc)}</small></div><div><a class="t" href="#saker" data-sak="${c.next.hid}">${esc(tittel(c))}</a><div class="m"><span class="mono">${esc(c.first.nr)}</span> · ${pathHtml(c)}</div></div></li>`).join('')||'<li><span></span><span class="muted">Ingen saker står på sakslisten til et kommende møte.</span></li>';
-$('kommende').innerHTML=upcoming.slice(0,6).map(m=>`<li><div class="d">${ddn(m.date)}<small>kl. ${m.date.slice(11,16)}</small></div><div>${ut(m.url,esc(utName(m.sc)||m.ut)).replace('<a ','<a class="t" ')}<div class="m">${m.nps?antall(m.nps,'politisk sak','politiske saker'):m.n?antall(m.n,'sak','saker'):'Sakslisten er ikke publisert'}</div></div></li>`).join('')||'<li><span></span><span class="muted">Ingen kommende møter er publisert.</span></li>';
+const UKEDAG=['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
+const naar=d=>`${UKEDAG[new Date(d.slice(0,10)+'T12:00').getDay()]} ${ddl(d)}`;
+const sakLenke=(c,hid)=>`<a class="t" href="#saker" data-sak="${hid}">${esc(tittel(c))}</a>`;
+const smaa=s=>s.charAt(0).toLowerCase()+s.slice(1);
+/* Saker gruppert per møte: «Formannskapet onsdag 8. oktober», med de første sakene. */
+function moteGrupper(saker,steg,maks,sorter){
+  const per=new Map();
+  saker.forEach(c=>{const x=steg(c);if(!x)return;if(!per.has(x.mid))per.set(x.mid,{x,saker:[]});per.get(x.mid).saker.push(c)});
+  return [...per.values()].sort(sorter).slice(0,maks);
+}
+function moteHtml(g,vis,ekstra,mer){
+  return `<div class="mote-gr"><h3>${esc(utName(g.x.sc))} <span class="muted">${naar(g.x.date)}</span></h3>
+    <ul class="saksliste">${g.saker.slice(0,vis).map(c=>`<li>${sakLenke(c,g.x.hid)}${ekstra?ekstra(c,g):''}</li>`).join('')}</ul>
+    ${g.saker.length>vis?`<p class="liten">${mer(g)}</p>`:''}</div>`;
+}
 
-/* Siste fra kommunestyret: bare tall som regnes ut fra dataene */
+/* Hva skal skje: de neste politiske møtene og sakene på sakslisten. Råd som
+   bare gir uttalelse, hoppes over; saken vises under neste politiske møte. */
 (function(){
-  const ksAlle=VOT.moter.filter(m=>m.sc==='KS');
-  const ksM=[...ksAlle].reverse().find(m=>m.saker.some(s=>s.v.some(v=>!v.holdt)));
-  if(!ksM){$('ins').innerHTML='<p class="muted">Ingen avstemninger fra kommunestyret ennå.</p>';return}
-  const vs=ksM.saker.flatMap(s=>s.v);const holdt=vs.filter(v=>v.holdt).length;
-  const omst=vs.filter(omstridt).sort((a,b)=>Math.abs(a.nfor-a.nmot)-Math.abs(b.nfor-b.nmot));
-  const nyere=ksAlle.filter(m=>m.date>ksM.date);
-  let t=`Kommunestyret stemte ${vs.length} ganger ${ddl(ksM.date)}.`;
-  if(omst.length)t+=` I ${omst.length} av avstemningene stemte noen imot. Den jevneste endte ${omst[0].nfor} mot ${omst[0].nmot}.`;
-  if(holdt)t+=` ${holdt} er holdt tilbake fordi protokollen er selvmotsigende.`;
-  if(nyere.length)t+=` Avstemningene fra ${nyere.map(m=>ddl(m.date)).join(' og ')} er holdt tilbake til kommunen har svart på hvem som møtte.`;
-  $('ins').innerHTML=`<p>${t}</p><p><a href="#stemmer" data-go="stemmer" data-m="${ksM.id}">Se hvem som stemte hva</a></p>`;
+  const steg=c=>c.st.find(x=>isFut(x.date)&&!RAD.includes(x.sc));
+  const gr=moteGrupper(tilB,steg,4,(a,b)=>a.x.date.localeCompare(b.x.date)||(b.x.sc==='KS')-(a.x.sc==='KS'));
+  let h=gr.map(g=>moteHtml(g,4,
+    (c,g)=>c.ks&&g.x.sc!=='KS'?' <span class="liten muted">· skal videre til kommunestyret</span>':'',
+    g=>`<a href="#saker" data-go="saker" data-status="Til" data-ut="${g.x.sc}">${antall(g.saker.length-4,'sak','saker')} til i dette møtet</a>`)).join('');
+  const ksM=upcoming.find(m=>m.sc==='KS');
+  if(ksM&&!gr.some(g=>g.x.mid===ksM.id))
+    h+=`<p class="liten muted">Kommunestyret møtes ${naar(ksM.date)}.${ksM.nps?` ${antall(ksM.nps,'politisk sak','politiske saker')} står på sakslisten.`:' Sakslisten er ikke publisert ennå.'}</p>`;
+  $('paavei').innerHTML=h||'<p class="muted">Ingen saker står på sakslisten til et kommende møte.</p>';
 })();
+
+/* Hva ble bestemt: siste avgjørelser med protokoll, høyst tre per møte. De
+   siste 45 dagene kommer kommunestyret først, så formannskapet, så resten. */
+const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includes(c.last.sc)&&(Date.parse(TODAY)-Date.parse(c.last.date.slice(0,10)))/864e5<=30);
+(function(){
+  const nylig=c=>(Date.parse(TODAY)-Date.parse(c.last.date.slice(0,10)))/864e5<=45;
+  const vekt=c=>nylig(c)?({KS:0,FS:1}[c.last.sc]??2):3;
+  const avgjort=PS.filter(c=>['Vedtatt i kommunestyret','Behandlet'].includes(c.status)&&c.last&&c.last.pub&&!RAD.includes(c.last.sc))
+    .sort((a,b)=>vekt(a)-vekt(b)||b.last.date.localeCompare(a.last.date));
+  const perMote={},vis=[];
+  for(const c of avgjort){const k=c.last.mid;perMote[k]=(perMote[k]||0)+1;if(perMote[k]<=3)vis.push(c);if(vis.length>=8)break}
+  const stemmer=c=>{
+    const vs=ALLEV.filter(v=>v.hid===c.last.hid);
+    if(!vs.length)return '';
+    if(vs.every(v=>v.holdt))return 'avstemningene er holdt tilbake';
+    if(vs.every(v=>v.en))return 'enstemmig';
+    const pub=vs.filter(v=>!v.holdt&&!v.en);
+    if(vs.length===1&&!(pub[0].alt&&pub[0].alt.length))return pub[0].nmot?`${pub[0].nfor} mot ${pub[0].nmot} stemmer`:'alle stemte for';
+    return antall(vs.length,'avstemning','avstemninger');
+  };
+  $('nylig').innerHTML=vis.map(c=>{
+    const hvor=c.last.sc==='KS'?`Vedtatt i kommunestyret ${ddl(c.last.date)}`:`Avgjort i ${smaa(utName(c.last.sc))} ${ddl(c.last.date)}`;
+    const st=stemmer(c);
+    return `<li>${sakLenke(c,c.last.hid)}${c.a&&c.a.bet?`<p class="bet">${esc(c.a.bet)}</p>`:''}
+      <div class="m">${hvor}${st?` · ${st}`:''}${MED_STEMMER.has(c.last.hid)?` · <a href="#stemmer" data-go="stemmer" data-m="${c.last.mid}">hvem stemte hva</a>`:''}</div></li>`}).join('')
+    ||'<li class="muted">Ingen avgjørelser med protokoll ennå.</li>';
+})();
+
+/* Hva venter vi på: møter de siste 30 dagene der protokollen ikke er publisert. */
+(function(){
+  const gr=moteGrupper(venter,c=>c.last,4,(a,b)=>b.x.date.localeCompare(a.x.date));
+  $('venter').innerHTML=gr.map(g=>moteHtml(g,3,null,
+    g=>`<a href="#saker" data-go="saker" data-status="Venter på protokoll" data-ut="${g.x.sc}">${antall(g.saker.length-3,'sak','saker')} til fra dette møtet</a>`)).join('')
+    ||'<p class="muted">Alle møter den siste måneden har publisert protokoll.</p>';
+})();
+
+/* Én setning øverst om hvor ting står akkurat nå. */
+$('akkurat').textContent=[
+  `Akkurat nå er ${antall(tilB.length,'sak','saker')} på vei til behandling${venter.length?`, og ${venter.length} venter på protokoll`:''}.`,
+  nextM?`Neste møte er ${smaa(utName(nextM.sc))} ${naar(nextM.date)}.`:''].filter(Boolean).join(' ');
 
 /* Kommunestyret: halvsirkel og partiliste. Velg et parti for å se hvem som sitter der. */
 $('kssub').textContent=`${KSN} representanter ifølge medlemslisten ${dato(S.ks.hentet)}. Velg et parti for å se hvem som sitter der.`;
@@ -148,17 +190,6 @@ function velgParti(p){
    <div class="kol"><div><h3>Faste representanter (${faste.length})</h3><ul>${faste.map(li).join('')}</ul></div><div><h3>Varamedlemmer (${vara.length})</h3><ul>${vara.map(li).join('')||'<li class="muted">Ingen</li>'}</ul></div></div></div>`;
 }
 $('ks').addEventListener('click',e=>{const t=e.target.closest('[data-p]');if(t&&(t.tagName==='BUTTON'||t.tagName==='circle'))velgParti(t.dataset.p)});
-
-/* Saker per måned: den ene grafen på forsiden */
-(function(){
-  const n=Array(12).fill(0),fut=Array(12).fill(0);
-  PS.forEach(c=>{const d=c.first&&c.first.date;if(!d||!d.startsWith(String(AAR)))return;(isFut(d)?fut:n)[+d.slice(5,7)-1]++});
-  const max=Math.max(1,...n.map((x,i)=>x+fut[i]));
-  const W=720,H=190,bunn=H-24,hoy=bunn-26,bw=W/12;
-  const bars=n.map((x,i)=>{const h1=x/max*hoy,h2=fut[i]/max*hoy,X=i*bw+bw*.18,w=bw*.64,tot=x+fut[i];
-    return `${h1?`<rect x="${X.toFixed(1)}" y="${(bunn-h1).toFixed(1)}" width="${w.toFixed(1)}" height="${h1.toFixed(1)}" fill="var(--accent)"/>`:''}${h2?`<rect x="${X.toFixed(1)}" y="${(bunn-h1-h2).toFixed(1)}" width="${w.toFixed(1)}" height="${h2.toFixed(1)}" fill="var(--accent)" fill-opacity=".3"/>`:''}${tot?`<text x="${(X+w/2).toFixed(1)}" y="${(bunn-h1-h2-6).toFixed(1)}" text-anchor="middle" font-size="13" fill="var(--ink)">${tot}</text>`:''}<text x="${(X+w/2).toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="12.5" fill="var(--muted)">${MON[i]}</text>`}).join('');
-  $('mnd').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Politiske saker per måned i ${AAR}: ${n.map((x,i)=>`${MONL[i].toLowerCase()} ${x+fut[i]}`).join(', ')}"><line x1="0" x2="${W}" y1="${bunn}" y2="${bunn}" stroke="var(--line)"/>${bars}</svg>`;
-})();
 
 /* Saksflyt */
 (function(){
@@ -487,10 +518,10 @@ function renderPerson(id){
 /* ---------- NAVIGASJON ---------- */
 const VIEWS=['oversikt','saker','moter','stemmer','politikere','person','om'];
 const MENY={person:'politikere'};
-const TITLER={oversikt:'',saker:'Saker',moter:'Møter',stemmer:'Hvem stemte hva',politikere:'Politikerne',om:'Om tjenesten'};
+const TITLER={oversikt:'',saker:'Saker',moter:'Møter',stemmer:'Hvem stemte hva',politikere:'Politikerne',om:'Slik fungerer det'};
 function go(v,o={}){
   if(v==='saker'&&('q' in o||'status' in o||'tag' in o)){
-    $('q').value=o.q||'';fstatus.value=o.status||'';$('fut').value='';ftag=o.tag||null;limit=40;openT=o.open||null;
+    $('q').value=o.q||'';fstatus.value=o.status||'';$('fut').value=o.ut||'';ftag=o.tag||null;limit=40;openT=o.open||null;
     if(o.alle)$('fall').checked=true;
   }
   if(v==='stemmer'&&o.m)o.arg=o.m;
@@ -518,7 +549,7 @@ document.addEventListener('click',e=>{
   const u=e.target.closest('[data-utv]');
   if(u){e.preventDefault();go('politikere',{utv:u.dataset.utv});return}
   const g=e.target.closest('a[data-go]');
-  if(g){e.preventDefault();const o={};['status','tag','m'].forEach(k=>{if(g.dataset[k]!==undefined)o[k]=g.dataset[k]});go(g.dataset.go,o)}
+  if(g){e.preventDefault();const o={};['status','tag','m','ut'].forEach(k=>{if(g.dataset[k]!==undefined)o[k]=g.dataset[k]});go(g.dataset.go,o)}
 });
 renderTagChips();renderList();renderMeet();renderStemmer();
 $('repo').href=S.repo;

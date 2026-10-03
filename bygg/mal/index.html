@@ -27,26 +27,30 @@
 <main id="innhold" class="ramme">
 
 <!-- OVERSIKT -->
-<section id="v-oversikt">
+<section id="v-oversikt" class="forside">
   <div class="ingress">
-    <h1>Kommunepolitikken i Steinkjer <span class="aar"></span></h1>
-    <p>Hva som skal opp, hva som er vedtatt, og hvem som stemte hva. Hentet fra kommunens innsynsportal, med lenke til dokumentene.</p>
+    <h1>Kommunepolitikken i Steinkjer</h1>
+    <p id="akkurat"></p>
     <label class="sok"><span class="vh">Søk i sakene</span><input id="q0" type="search" placeholder="Søk i sakene"></label>
   </div>
-  <div class="tall" id="kpis"></div>
 
-  <div class="to">
-    <section>
-      <div class="hode2"><h2>Til behandling</h2><a href="#saker" data-go="saker" data-status="Til">Alle saker til behandling</a></div>
-      <ol class="liste" id="aktuelle"></ol>
-    </section>
-    <section>
-      <div class="hode2"><h2>Neste møter</h2><a href="#moter">Møtekalenderen</a></div>
-      <ol class="liste" id="kommende"></ol>
-      <h2 class="mt">Siste fra kommunestyret</h2>
-      <div id="ins"></div>
-    </section>
-  </div>
+  <section class="blokk">
+    <div class="hode2"><h2>På vei til behandling</h2><a href="#saker" data-go="saker" data-status="Til">Alle saker på vei</a></div>
+    <p class="liten muted">Sakene på sakslisten til de neste møtene.</p>
+    <div id="paavei"></div>
+  </section>
+
+  <section class="blokk">
+    <div class="hode2"><h2>Nylig vedtatt</h2><a href="#saker">Alle saker</a></div>
+    <p class="liten muted">Det siste som er bestemt, der protokollen er publisert. Setningen under hver sak er skrevet av KI ut fra saksdokumentene.</p>
+    <ol class="liste nylig" id="nylig"></ol>
+  </section>
+
+  <section class="blokk">
+    <h2>Venter på protokoll</h2>
+    <p class="liten muted">Møtet er holdt, men protokollen er ikke publisert ennå. Til den kommer, vet vi ikke sikkert hva som ble vedtatt.</p>
+    <div id="venter"></div>
+  </section>
 
   <section class="blokk" id="ks">
     <div class="hode2"><h2>Kommunestyret</h2><a href="#politikere">Alle politikerne</a></div>
@@ -58,30 +62,7 @@
     <div id="ksparti" aria-live="polite"></div>
   </section>
 
-  <section class="blokk">
-    <h2>Saker per måned</h2>
-    <p class="liten muted">Politiske saker etter måneden de ble behandlet første gang. Lysere søyler er møter som ikke er holdt ennå.</p>
-    <div id="mnd"></div>
-  </section>
-
-  <div class="to">
-    <section class="blokk">
-      <h2>Slik går en sak gjennom systemet</h2>
-      <ol class="flyt">
-        <li><b>Administrasjonen.</b> Kommunedirektøren skriver et saksframlegg med forslag til vedtak.</li>
-        <li><b>Hovedutvalg og råd.</b> Hovedutvalgene avgjør saker på sitt område eller sender dem videre. Rådene gir uttalelser.</li>
-        <li><b>Formannskapet.</b> Avgjør mange saker selv, og gir innstilling til kommunestyret i de største.</li>
-        <li><b>Kommunestyret.</b> Øverste organ. Gjør endelig vedtak i de største sakene.</li>
-        <li><b>Protokoll.</b> Vedtaket og avstemningene står i protokollen, som publiseres etter møtet.</li>
-        <li><b>Gjennomføring.</b> Administrasjonen følger opp og rapporterer tilbake.</li>
-      </ol>
-      <p class="liten muted" id="flowfact"></p>
-    </section>
-    <section class="blokk">
-      <h2>Utvalg og roller</h2>
-      <table class="org"><thead><tr><th>Organ</th><th>Oppgave</th><th class="num">Møter i <span class="aar"></span></th></tr></thead><tbody id="org"></tbody></table>
-    </section>
-  </div>
+  <p class="ny-her">Ny i kommunepolitikken? Les <a href="#om">hvordan en sak går gjennom systemet</a>.</p>
 </section>
 
 <!-- SAKER -->
@@ -168,22 +149,42 @@
 
 <!-- OM -->
 <section id="v-om" hidden>
-  <div class="ingress"><h1>Om tjenesten</h1></div>
+  <div class="ingress"><h1>Slik fungerer det</h1>
+  <p>Hvordan en sak går gjennom kommunen, hvem som bestemmer, og hvordan denne tjenesten er laget.</p></div>
+  <div class="to">
+    <section class="blokk">
+      <h2>Slik går en sak gjennom systemet</h2>
+      <ol class="flyt">
+        <li><b>Administrasjonen.</b> Kommunedirektøren skriver et saksframlegg med forslag til vedtak.</li>
+        <li><b>Hovedutvalg og råd.</b> Hovedutvalgene avgjør saker på sitt område eller sender dem videre. Rådene gir uttalelser.</li>
+        <li><b>Formannskapet.</b> Avgjør mange saker selv, og gir innstilling til kommunestyret i de største.</li>
+        <li><b>Kommunestyret.</b> Øverste organ. Gjør endelig vedtak i de største sakene.</li>
+        <li><b>Protokoll.</b> Vedtaket og avstemningene står i protokollen, som publiseres etter møtet.</li>
+        <li><b>Gjennomføring.</b> Administrasjonen følger opp og rapporterer tilbake.</li>
+      </ol>
+      <p class="liten muted" id="flowfact"></p>
+    </section>
+    <section class="blokk">
+      <h2>Utvalg og roller</h2>
+      <table class="org"><thead><tr><th>Organ</th><th>Oppgave</th><th class="num">Møter i <span class="aar"></span></th></tr></thead><tbody id="org"></tbody></table>
+    </section>
+  </div>
+  <h2 class="mt">Om tjenesten</h2>
   <div class="tekst">
     <p><b>Steinkjer i klartekst er en uoffisiell tjeneste.</b> Den er ikke laget av eller for Steinkjer kommune. Målet er å gjøre det lettere for innbyggere å følge hva som skjer i kommunepolitikken. Alle lenker går til originaldokumentene i kommunens innsynsportal.</p>
-    <h2>Kilder</h2>
+    <h3>Kilder</h3>
     <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen.</p>
-    <h2>Status på en sak</h2>
+    <h3>Status på en sak</h3>
     <p>En sak som behandles i flere utvalg, er slått sammen til én linje. «Til behandling» betyr at saken står på sakslisten til et kommende møte. «Til kommunestyret» betyr at neste steg er kommunestyret. «Behandlet» betyr at siste møte er holdt og protokollen er publisert. «Venter på protokoll» betyr at møtet er holdt, men at protokollen ikke er lagt ut.</p>
-    <h2>Stemmegivning</h2>
+    <h3>Stemmegivning</h3>
     <p>Stemmetallene hentes ut av protokollene med kode, ikke med kunstig intelligens, og antall navn kontrolleres mot oppgitt stemmetall. Noen ganger motsier protokollen seg selv, for eksempel når noen stemmer uten å stå på oppmøtelisten. Da er avviket vurdert av Claude, en språkmodell fra Anthropic. Vurderingen avgjør bare om voteringen vises, og med hvilken merknad. Tall og navn vises alltid slik protokollen oppgir dem. Når det ikke kan avgjøres fra dokumentene, holdes voteringen tilbake til kommunen har svart.</p>
-    <h2>Sammendrag og tema</h2>
+    <h3>Sammendrag og tema</h3>
     <p>Klarspråkstitler, sammendrag og tema er skrevet av KI (Claude, en språkmodell fra Anthropic) ut fra saksframlegget og vedtakene, og merket «KI-sammendrag». Modellen får ikke stemmetall eller navnelister, og den skriver ikke hvem som stemte hva. Før et sammendrag vises, kontrolleres det at tallene og datoene finnes i dokumentene, og at det ikke står navn på privatpersoner fra sakstittelen. Sammendrag som ikke består, eller der modellen selv var usikker, vises ikke. Hvert sammendrag lenker til dokumentene det bygger på, og dokumentene gjelder.</p>
-    <h2>Politikerne</h2>
+    <h3>Politikerne</h3>
     <p>Profilene viser verv, oppmøte, stemmer og forslag slik de står i medlemslistene og protokollene. De har ingen tekst skrevet av KI, og ingenting er hentet fra aviser, sosiale medier eller andre kilder. Lenkene til partiene går til partienes egne sider.</p>
-    <h2>Kjente begrensninger</h2>
+    <h3>Kjente begrensninger</h3>
     <p>Portalen oppgir bare dagens medlemmer i hvert utvalg, så verv og sammensetning gjelder i dag. Permisjoner og bytter tidligere i året vises ikke. Saker fra fjoråret som fortsatte i år, er bare delvis med. Et skannet dokument uten tekst kan ikke leses.</p>
-    <h2>Feil og innspill</h2>
+    <h3>Feil og innspill</h3>
     <p>Finner du en feil, kan du melde fra under hvert sammendrag, eller i <a id="repo" href="#">prosjektet på GitHub</a>, der også koden og dataene ligger.</p>
   </div>
 </section>
