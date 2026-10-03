@@ -425,7 +425,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .drift-tabell td,.drift-tabell th{padding:6px 10px 6px 0;white-space:nowrap}
 .drift-tabell td:last-child{white-space:normal;min-width:180px}
 .drift-tabell tbody tr:hover{background:var(--soft)}
-.drift-jobb{text-align:center;font-weight:700}
+.drift-jobb{text-align:center;font-weight:700;position:relative}
 .drift-jobb.ok{color:var(--good)}
 .drift-jobb.feilet{color:var(--bad)}
 .drift-jobb.delvis{color:var(--warn)}
