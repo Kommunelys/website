@@ -68,8 +68,6 @@ button,input,select{font:inherit;color:inherit}
 .kommune{font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--surface)}
 .kommune::after{content:" ›";color:var(--muted)}
 .kommune:hover{border-color:var(--lenke);color:var(--lenke)}
-.uoff{margin-left:auto;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--surface)}
-@media (max-width:640px){.uoff{margin-left:0;flex-basis:100%;border:0;padding:0;background:none}}
 .meny{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;margin-top:6px;position:relative}
 .meny::-webkit-scrollbar{display:none}
 .meny a{padding:8px 0 9px;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;white-space:nowrap}
@@ -99,6 +97,19 @@ button,input,select{font:inherit;color:inherit}
 
 /* Kommunelys-forsiden */
 .kommuner{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.velg-kommune{display:grid;gap:18px;margin-top:14px;align-items:start}
+@media (min-width:700px){.velg-kommune{grid-template-columns:minmax(0,560px) minmax(0,300px)}}
+.velg-kommune .kommuner{margin:0;grid-template-columns:1fr}
+.kart-ramme{margin:0;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.kart{display:block;width:100%;height:auto;max-height:70vh}
+.kart path{stroke:var(--surface);stroke-width:1;stroke-linejoin:round}
+.kart-uten path{fill:var(--line)}
+.kart text{font:600 15px var(--font);fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:3px;pointer-events:none}
+.kart-med path{fill:var(--lenke);transition:fill .15s}
+.kart-med a:hover path,.kart-med a:focus path{fill:var(--lys)}
+.kart-med a:focus{outline:none}
+.kart-med a:focus-visible path{stroke:var(--ink);stroke-width:2}
+.kart-ramme figcaption{margin-top:6px}
 .kommunekort{display:grid;gap:3px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);box-shadow:var(--skygge);color:var(--ink);text-decoration:none}
 .kommunekort b{font-size:19px;color:var(--lenke)}
 .kommunekort:hover{border-color:var(--lys)}

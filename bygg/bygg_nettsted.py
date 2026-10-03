@@ -48,8 +48,9 @@ MERKE = "Kommunelys"
 GAMLE_LENKER = "steinkjer"
 # Felles for alle kommunene, lagt på roten.
 FELLES = ("stil.css", "app.js", "favicon.svg", "apple-touch-icon.png")
-# Står på hver kommuneside. Bygget stopper uten (CLAUDE.md: utvetydig uoffisiell).
-UOFFISIELL = "Ikke laget av {} kommune"
+# Står i bunnteksten på hver kommuneside (app.js). Bygget stopper uten
+# (CLAUDE.md: utvetydig uoffisiell).
+UOFFISIELL = "Ikke laget av ${esc(K.navn)} kommune"
 
 FASTE = ("Leder", "Nestleder", "Medlem")
 
@@ -408,9 +409,38 @@ def _kommuneside(kommune: dict, ut: Path) -> None:
     side = _fyll((MAL / "index.html").read_text("utf-8"),
                  {"merke": MERKE, "merke_ikon": _merke_ikon(), "kommune": navn,
                   "slug": kommune["slug"], "telling": _telling()})
-    if UOFFISIELL.format(navn) not in side:
-        raise SystemExit(f"kommunesiden mangler «{UOFFISIELL.format(navn)}»")
+    if UOFFISIELL not in (MAL / "app.js").read_text("utf-8"):
+        raise SystemExit(f"bunnteksten i app.js mangler «{UOFFISIELL}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
+
+
+def _kart(kommuner: list[dict]) -> str:
+    """Kartet over Trøndelag på forsiden, som SVG.
+
+    Kommunene med data er lenker og farget; de andre er uten til vi har data
+    for dem. Grensene lages av bygg.lag_kart og ligger i kommuner/kart/.
+    """
+    kart = json.loads((KOMMUNER / "kart" / "trondelag.json").read_text("utf-8"))
+    med_data = {k["kommunenr"]: k for k in kommuner}
+    uten, farget = [], []
+    for k in kart["kommuner"]:
+        navn = html.escape(k["navn"])
+        if k["kommunenr"] in med_data:
+            slug = med_data[k["kommunenr"]]["slug"]
+            # Navnet midt i kommunen: snittet av hjørnene er godt nok her.
+            pkt = [tuple(map(float, xy.split(","))) for xy in re.findall(r"[\d.]+,[\d.]+", k["d"])]
+            x, y = (sum(v) / len(pkt) for v in zip(*pkt))
+            farget.append(f'<a href="{slug}/" aria-label="{navn}"><path d="{k["d"]}">'
+                          f'<title>{navn}</title></path>'
+                          f'<text x="{x:.0f}" y="{y:.0f}" text-anchor="middle" '
+                          f'dominant-baseline="middle">{navn}</text></a>')
+        else:
+            uten.append(f'<path d="{k["d"]}"><title>{navn}: kommer senere</title></path>')
+    return (f'<svg class="kart" viewBox="0 0 {kart["bredde"]} {kart["hoyde"]}" role="group" '
+            'aria-label="Kart over kommunene i Trøndelag. Kommunene med data er farget og '
+            'kan velges.">'
+            f'<g class="kart-uten">{"".join(uten)}</g>'
+            f'<g class="kart-med">{"".join(farget)}</g></svg>')
 
 
 def _forside(kommuner: list[tuple[dict, dict]]) -> None:
@@ -427,6 +457,7 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
         for k, st in kommuner)
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "kommuner": kort,
+        "kart": _kart([k for k, _ in kommuner]),
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
 

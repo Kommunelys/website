@@ -61,6 +61,7 @@ analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
 drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til /drift/
 kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
+kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
                lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
@@ -96,6 +97,7 @@ python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
+python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
 python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommunen under /steinkjer/
 ```
 
