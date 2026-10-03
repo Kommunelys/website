@@ -23,8 +23,8 @@ utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Portert fra prototypen til `bygg/mal/`. Bygges fra data, uten sammendrag (fase 1) |
-| GitHub Actions | Skrevet, ikke kjørt. Tidsplanen er slått av til ADR-007 er avklart |
+| Nettsted | Bygges fra data og `bygg/mal/`, publisert på https://karlaurstad.github.io/KommuneDash/. 215 av 221 sammendrag vises |
+| GitHub Actions | Virker. Kjøres for hånd; tidsplanen er slått av |
 
 ## Grunnregler du ikke skal bryte
 
