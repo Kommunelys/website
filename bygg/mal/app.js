@@ -549,8 +549,12 @@ document.addEventListener('click',e=>{
   if(s){e.preventDefault();const c=SAK_FOR[s.dataset.sak];if(c)go('saker',{q:c.t,open:c.t,alle:!PS.includes(c)});return}
   const u=e.target.closest('[data-utv]');
   if(u){e.preventDefault();go('politikere',{utv:u.dataset.utv});return}
-  // Søkeikonet i menyen: til sakene, med markøren i søkefeltet.
-  if(e.target.closest('[data-sok]')){e.preventDefault();go('saker');$('q').focus();return}
+  // Søkeikonet i menyen: til sakene, med markøren i søkefeltet. Feltet kan
+  // først få fokus når visningen er vist, altså etter hashchange.
+  if(e.target.closest('[data-sok]')){e.preventDefault();
+    if(location.hash==='#saker')$('q').focus();
+    else{window.addEventListener('hashchange',()=>$('q').focus(),{once:true});go('saker')}
+    return}
   const g=e.target.closest('a[data-go]');
   if(g){e.preventDefault();const o={};['status','tag','m','ut'].forEach(k=>{if(g.dataset[k]!==undefined)o[k]=g.dataset[k]});go(g.dataset.go,o)}
 });

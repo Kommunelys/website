@@ -70,7 +70,7 @@ button,input,select{font:inherit;color:inherit}
 .kommune:hover{border-color:var(--lenke);color:var(--lenke)}
 .uoff{margin-left:auto;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--surface)}
 @media (max-width:640px){.uoff{margin-left:0;flex-basis:100%;border:0;padding:0;background:none}}
-.meny{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;margin-top:6px}
+.meny{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;margin-top:6px;position:relative}
 .meny::-webkit-scrollbar{display:none}
 .meny a{padding:8px 0 9px;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;white-space:nowrap}
 .meny a:hover{border-bottom-color:var(--line)}
