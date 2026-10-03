@@ -117,6 +117,10 @@ maks ett kall i sekundet, én tråd, egen `User-Agent` med kontaktadresse, og
 umiddelbar stopp hvis kommunen ber om det. Tjenesten settes ikke i offentlig
 drift før spørsmålet er stilt.
 
+Tidsplanen ble slått på av prosjekteier 4.10.2026, mens spørsmålet fortsatt er
+åpent: én kjøring hver hverdag, med takten over. Ber kommunen om stopp,
+kommenteres `schedule` ut i `.github/workflows/oppdater.yml`.
+
 ---
 
 ## ADR-008 — Datamodellen skal inneholde folkevalgte, verv og oppmøte
@@ -372,5 +376,8 @@ bare skjult det som allerede kan leses i Actions og git.
   `noindex`. Den viser bare tall og offentlige sakstitler. Besøkstallene hentes
   i nettleseren fra GoatCounter, og det krever innstillingen «Allow adding
   visitor counts on your website».
+- Kostnaden for AI-analysen vises i kroner: tokens ganget med listeprisen i
+  `drift/kostnad.py` og kursen fra Norges Bank. Uten rabatt for caching og
+  uten mva, så det er et anslag. Prisene må oppdateres når modellen byttes.
 - Innhentingen teller kallene mot portalen og lagrer tallet i
   `data/drift/kjoringer.json`. Da kan vi vise at takten fra ADR-007 holdes.

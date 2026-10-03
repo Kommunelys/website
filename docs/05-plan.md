@@ -24,7 +24,7 @@ dag, og det er her kvaliteten på datagrunnlaget må sitte før noe bygges oppå
 | Lagre tekst fra dokumentene | Ferdig for 2026, 724 av 726 |
 | Modellere utvalg, verv og oppmøte | Ferdig for 2026. Vervene har observerte datoer, ikke vedtatte |
 | Portere nettstedet fra prototype til repo | Ferdig. Bygges fra data, uten sammendrag |
-| Sette opp GitHub Actions | Ferdig. Kjøres for hånd; tidsplanen er slått av |
+| Sette opp GitHub Actions | Ferdig. Tidsplan hver hverdag kl. 05:17 UTC, slått på 4.10.2026 |
 
 ## Fase 2 — AI på toppen
 
