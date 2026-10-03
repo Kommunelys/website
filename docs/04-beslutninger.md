@@ -117,6 +117,10 @@ maks ett kall i sekundet, én tråd, egen `User-Agent` med kontaktadresse, og
 umiddelbar stopp hvis kommunen ber om det. Tjenesten settes ikke i offentlig
 drift før spørsmålet er stilt.
 
+Tidsplanen ble slått på av prosjekteier 4.10.2026, mens spørsmålet fortsatt er
+åpent: én kjøring hver hverdag, med takten over. Ber kommunen om stopp,
+kommenteres `schedule` ut i `.github/workflows/oppdater.yml`.
+
 ---
 
 ## ADR-008 — Datamodellen skal inneholde folkevalgte, verv og oppmøte
