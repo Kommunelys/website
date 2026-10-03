@@ -6,6 +6,13 @@
    "feil": 1,
    "megabyte": 1.7,
    "sekunder": 174.3
+  },
+  "analyse": {
+   "sendt": 0,
+   "feil": 0,
+   "utsatt": 0,
+   "tokens_inn": 0,
+   "tokens_ut": 0
   }
  }
 }
