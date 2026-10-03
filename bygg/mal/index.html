@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steinkjer i klartekst</title>
-<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i Steinkjer kommune. Ikke laget av Steinkjer kommune.">
-<link rel="stylesheet" href="stil.css">
+<title>{{kommune}} | {{merke}}</title>
+<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune. Ikke laget av {{kommune}} kommune.">
+<link rel="stylesheet" href="../stil.css">
 </head>
 <body>
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="navn" href="#oversikt">Steinkjer i klartekst</a>
-    <span class="uoff">Uoffisiell. Ikke laget av Steinkjer kommune.</span>
+    <a class="navn" href="#oversikt">{{merke}}</a>
+    <span class="uoff">Uoffisiell. Ikke laget av {{kommune}} kommune.</span>
   </div>
   <nav class="ramme meny" id="nav" aria-label="Hovedmeny">
     <a href="#oversikt" data-v="oversikt">Oversikt</a>
@@ -29,7 +29,7 @@
 <!-- OVERSIKT -->
 <section id="v-oversikt" class="forside">
   <div class="ingress">
-    <h1>Kommunepolitikken i Steinkjer</h1>
+    <h1>Kommunepolitikken i {{kommune}}</h1>
     <p id="akkurat"></p>
     <label class="sok"><span class="vh">Søk i sakene</span><input id="q0" type="search" placeholder="Søk i sakene"></label>
   </div>
@@ -171,7 +171,7 @@
   </div>
   <h2 class="mt">Om tjenesten</h2>
   <div class="tekst">
-    <p><b>Steinkjer i klartekst er en uoffisiell tjeneste.</b> Den er ikke laget av eller for Steinkjer kommune. Målet er å gjøre det lettere for innbyggere å følge hva som skjer i kommunepolitikken. Alle lenker går til originaldokumentene i kommunens innsynsportal.</p>
+    <p><b>{{merke}} er en uoffisiell tjeneste.</b> Den er ikke laget av eller for {{kommune}} kommune. Målet er å gjøre det lettere for innbyggere å følge hva som skjer i kommunepolitikken. Alle lenker går til originaldokumentene i kommunens innsynsportal.</p>
     <h3>Kilder</h3>
     <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen.</p>
     <h3>Status på en sak</h3>
@@ -191,6 +191,6 @@
 </main>
 <footer class="ramme fot" id="foot"></footer>
 <script src="data/data.js"></script>
-<script src="app.js"></script>
+<script src="../app.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
-/* Steinkjer i klartekst. Bygges av bygg/bygg_nettsted.py.
+/* Kommunelys. Bygges av bygg/bygg_nettsted.py.
    Dataene ligger i data/data.js: S (saker, møter, utvalg, kommunestyret og
    de folkevalgte) og VOT (voteringer per møte). Ingenting her er skrevet for
-   hånd om enkeltsaker eller enkeltpersoner. */
-const TODAY=S.today, AAR=S.aar;
+   hånd om enkeltsaker eller enkeltpersoner, og ingen kommune nevnes ved navn:
+   det som er særegent for kommunen, står i S.kommune (kommuner/<kommune>.json). */
+const TODAY=S.today, AAR=S.aar, K=S.kommune;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const MON=['jan','feb','mar','apr','mai','jun','jul','aug','sep','okt','nov','des'];
@@ -23,7 +24,7 @@ const PORDER=ordne(PORDER_ALLE,Object.keys(SEATS));
 const SPECTRUM=ordne(SPECTRUM_ALLE,Object.keys(SEATS));
 const pc=p=>`var(--p-${p},var(--muted))`;
 const UTN={...(S.utvnavn||{})};Object.entries(S.utvalg).forEach(([n,c])=>{if(c&&!UTN[c])UTN[c]=n});
-const SHORTN={KS:"Kommunestyret",FS:"Formannskapet",HPNM:"Hovedutvalg plan, næring og miljø",HOK:"Hovedutvalg oppvekst og kultur",HHO:"Hovedutvalg helse og omsorg",VN:"Valgstyret"};
+const SHORTN=K.utvalg_kort;
 const utName=c=>SHORTN[c]||UTN[c]||c;
 document.querySelectorAll('.aar').forEach(e=>e.textContent=AAR);
 
@@ -52,7 +53,7 @@ function pathHtml(c){
 /* ---------- FOLKEVALGTE OG STEMMER ---------- */
 const FOLK=S.folk||[];const PERS={},PID={};FOLK.forEach(p=>{PERS[p.n]=p;PID[p.id]=p});
 const plink=n=>PERS[n]?`<a href="#person/${PERS[n].id}">${esc(n)}</a>`:esc(n);
-const RANG=['KS','FS','HPNM','HOK','HHO','KN','AD','KTU','VN','FSKO','FSB'];
+const RANG=K.rekkefolge;
 const rang=u=>{const i=RANG.indexOf(u);return i<0?50:i};
 const ROLLE_KS={Leder:'ordfører',Nestleder:'varaordfører',Medlem:'fast medlem',Varamedlem:'varamedlem'};
 const ROLLE={Leder:'leder',Nestleder:'nestleder',Medlem:'medlem',Varamedlem:'varamedlem'};
@@ -90,7 +91,7 @@ const meetings=S.meetings;
 const upcoming=meetings.filter(m=>isFut(m.date));
 const nextM=upcoming[0];
 const tilB=PS.filter(c=>c.next);
-const RAD=['ELRÅ','UNGRÅ','RÅFIM'];
+const RAD=K.rad;
 const UKEDAG=['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
 const naar=d=>`${UKEDAG[new Date(d.slice(0,10)+'T12:00').getDay()]} ${ddl(d)}`;
 const sakLenke=(c,hid)=>`<a class="t" href="#saker" data-sak="${hid}">${esc(tittel(c))}</a>`;
@@ -194,23 +195,22 @@ $('ks').addEventListener('click',e=>{const t=e.target.closest('[data-p]');if(t&&
 
 /* Saksflyt */
 (function(){
-  const full=PS.filter(c=>{const s=c.st.map(x=>x.sc);return s.includes('KS')&&s.includes('FS')&&s.some(x=>['HPNM','HOK','HHO'].includes(x))}).length;
+  const HU=K.hovedutvalg;
+  const full=PS.filter(c=>{const s=c.st.map(x=>x.sc);return s.includes('KS')&&s.includes('FS')&&s.some(x=>HU.includes(x))}).length;
   const fsks=PS.filter(c=>{const s=[...new Set(c.st.map(x=>x.sc))];return s.join()==='FS,KS'}).length;
   const ksAll=PS.filter(c=>c.ks).length;
   // Bare saker som er avgjort; de som fortsatt er til behandling, kan gå videre.
   const avgjort=c=>c.status!=='Til behandling';
   const fsSelv=PS.filter(c=>c.st.some(x=>x.sc==='FS')&&!c.ks&&avgjort(c)).length;
-  const huSelv=PS.filter(c=>c.st.some(x=>['HPNM','HOK','HHO'].includes(x.sc))&&!c.st.some(x=>['FS','KS'].includes(x.sc))&&avgjort(c)).length;
+  const huSelv=PS.filter(c=>c.st.some(x=>HU.includes(x.sc))&&!c.st.some(x=>['FS','KS'].includes(x.sc))&&avgjort(c)).length;
   $('flowfact').innerHTML=`I ${AAR} har ${ksAll} saker vært eller skal til kommunestyret. ${fsks} gikk rett fra formannskapet, og ${full} gikk hele veien fra et hovedutvalg via formannskapet. Formannskapet avgjorde ${fsSelv} saker selv, og hovedutvalgene ${huSelv}.`;
 })();
 
 /* Utvalg og roller */
 (function(){
   const mc={};meetings.forEach(m=>{mc[m.sc]=(mc[m.sc]||0)+1});
-  const org=[['KS','Kommunestyret',`${KSN} representanter, øverste organ`,1],['FS','Formannskapet','avgjør selv eller innstiller',1],['KN','Klagenemnda','behandler klager',1],
-    ['HPNM','Hovedutvalg plan, næring og miljø','arealplaner, landbruk, miljø',1],['HOK','Hovedutvalg oppvekst og kultur','skole, barnehage, kultur',1],['HHO','Hovedutvalg helse og omsorg','helse, omsorg, velferd',1],
-    ['ELRÅ','Eldrerådet','gir uttalelser',0],['UNGRÅ','Ungdomsrådet','gir uttalelser',0],['RÅFIM','Rådet for personer med funksjonsnedsettelse, inkludering og mangfold','gir uttalelser',0]];
-  $('org').innerHTML=org.map(([sc,n,o,lenke])=>`<tr><td>${lenke?`<a href="#politikere" data-utv="${sc}">${n}</a>`:n}</td><td class="muted">${o}</td><td class="num">${mc[sc]||'–'}</td></tr>`).join('');
+  $('org').innerHTML=K.organer.map(({kode:sc,navn:n,oppgave:o,lenke})=>{if(sc==='KS')o=`${KSN} representanter, ${o}`;
+    return `<tr><td>${lenke?`<a href="#politikere" data-utv="${sc}">${esc(n)}</a>`:esc(n)}</td><td class="muted">${esc(o)}</td><td class="num">${mc[sc]||'–'}</td></tr>`}).join('');
 })();
 $('q0').addEventListener('keydown',e=>{if(e.key==='Enter')go('saker',{q:e.target.value})});
 
@@ -452,12 +452,11 @@ function renderHeat(){
 }
 
 /* ---------- POLITIKERE ---------- */
-const KORT={KS:'Kommunestyret',FS:'Formannskapet',HPNM:'Plan, næring og miljø',HOK:'Oppvekst og kultur',HHO:'Helse og omsorg',KN:'Klagenemnda',AD:'Administrasjonsutvalget',KTU:'Trafikksikkerhetsutvalget',VN:'Valgstyret',
-  RÅFIM:'Rådet for personer med funksjonsnedsettelse',SSKO:'Styret for kommuneskogene',SSBY:'Styret for Steinkjerbygg',AUINR:'Arbeidsutvalget i regionrådet',INR:'Innherred regionråd'};
+const KORT=K.utvalg_liste;
 // Kort navn i listen, fullt navn som verktøytips.
 const kort=u=>KORT[u]?`<span title="${esc(utName(u))}">${esc(KORT[u])}</span>`:esc(utName(u));
 // Foretaksmøtene har nesten samme medlemmer som kommunestyret; de står på profilene, ikke i listen.
-const FORETAK=['FSKO','FSB'];
+const FORETAK=K.foretak;
 const PARTI_I_FOLK=ordne(PORDER_ALLE,[...new Set(FOLK.map(p=>p.p))]);
 let fparti=null,fsk='n',fsd=1;
 const futv=$('futv');
@@ -482,7 +481,7 @@ function renderFolk(){
 function renderPerson(id){
   const p=PID[id],el=$('person');
   if(!p){el.innerHTML='<div class="ingress"><h1>Fant ikke profilen</h1><p>Navnet står ikke i medlemslistene. Det kan ha blitt endret.</p></div>';return}
-  document.title=`${p.n} – Steinkjer i klartekst`;
+  document.title=`${p.n} – ${K.navn} | ${S.merke}`;
   const vv=p.verv.filter(v=>v.i).sort((a,b)=>rang(a.u)-rang(b.u)||fast(b)-fast(a)||utName(a.u).localeCompare(utName(b.u),'nb'));
   const tidl=p.verv.filter(v=>!v.i);
   const ks=vv.find(v=>v.u==='KS');
@@ -535,7 +534,7 @@ function vis(){
   const v=VIEWS.includes(v0)?v0:'oversikt';
   VIEWS.forEach(x=>$('v-'+x).hidden=x!==v);
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.v===(MENY[v]||v))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-  document.title=(TITLER[v]?TITLER[v]+' – ':'')+'Steinkjer i klartekst';
+  document.title=(TITLER[v]?TITLER[v]+' – ':'')+`${K.navn} | ${S.merke}`;
   if(v==='saker'){renderTagChips();renderList()}
   if(v==='moter')renderMeet();
   if(v==='stemmer'&&arg){const val=(/^\d+$/.test(arg)?'m:':'u:')+arg;if(vsel.querySelector(`option[value="${val}"]`)&&vsel.value!==val){vsel.value=val;renderStemmer()}}
@@ -554,5 +553,5 @@ document.addEventListener('click',e=>{
 });
 renderTagChips();renderList();renderMeet();renderStemmer();
 $('repo').href=S.repo;
-$('foot').innerHTML=`<div>Kilde: Steinkjer kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>Uoffisiell tjeneste. Ikke laget av Steinkjer kommune. ${ut(S.repo,'Kode og data')}</div>`;
+$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · ${ut(S.repo,'Kode og data')}</div>`;
 window.addEventListener('hashchange',vis);vis();
