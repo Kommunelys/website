@@ -174,6 +174,20 @@ Siden bygges i sin helhet hver gang, ikke stykkevis. Det tar sekunder ved denne
 datamålestokken og fjerner en klasse feil der en gammel side blir liggende igjen
 med utdatert innhold.
 
+**Utseende.** Siden bruker systemskrift og laster ingenting fra andre
+domener: ingen eksterne skrifter, skript eller sporing. Én aksentfarge,
+partifarger bare der de bærer informasjon (seter og stemmer), og linjer i
+stedet for kort. KI-tekst er merket «KI-sammendrag» der den står; den lengre
+forklaringen ligger under «Om».
+
+**Profiler.** Hver folkevalgt med partitilhørighet har en side
+(`#person/<navn>`) med verv, oppmøte, stemmer og forslag. Alt kommer fra
+medlemslistene og protokollene. Profilene har ingen tekst fra en modell, og
+ingenting er hentet fra aviser, sosiale medier eller andre kilder. Medlemmer av
+råd som ikke er valgt for et parti, for eksempel ungdomsrådet, får ikke
+profil. Partiene lenkes til sine egne sider, fra `data/partisider.json`, der
+hver adresse er kontrollert for hånd.
+
 Saker som forsvinner fra portalen beholdes med en merknad om at de ikke lenger
 ligger i kilden. Å fjerne dem i stillhet ville gjøre tjenesten mindre
 etterrettelig enn kilden den bygger på.
@@ -272,6 +286,9 @@ innsyn. Tre grenser ligger fast:
   protokollene vises uendret, også når de inneholder navn på privatpersoner,
   fordi de er offentlige dokumenter (prosjekteier, 2.10.2026).
 - Ingen profilering ut over det som følger direkte av protokollene.
+  Profilsidene viser bare verv, oppmøte, stemmer og forslag fra
+  medlemslistene og protokollene, ikke opplysninger fra aviser, Wikipedia
+  eller sosiale medier (prosjekteier, 3.10.2026).
 - Siden skal kunne rettes, raskt.
 
 **Avsender.** Tjenesten må være utvetydig uoffisiell: eget navn, egen profil,

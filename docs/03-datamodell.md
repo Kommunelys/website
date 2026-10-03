@@ -223,6 +223,11 @@ fullt navn der navnelistene i voteringene ikke gjør det:
 Normaliseringen ligger i `tolk/navn.py`. Hver representant har en liste over
 kjente varianter, slik at nye former kan legges til uten å endre koden.
 
+Portalen kan også ha to person-ID-er for samme person: Monika Luktvasslimo i
+HPNM har en annen ID enn Monika Skoglund Luktvasslimo i de andre utvalgene.
+Profilene på nettstedet samles derfor på normalisert navn, som stemmene, ikke
+på person-ID. Bygget stopper hvis to ulike navn gir samme profiladresse.
+
 ## Versjonering
 
 Ingenting overskrives. Når en protokoll publiseres eller en sakstittel endres,

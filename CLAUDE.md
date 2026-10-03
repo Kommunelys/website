@@ -23,7 +23,7 @@ utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Bygges fra data og `bygg/mal/`, publisert på https://karlaurstad.github.io/KommuneDash/. 215 av 221 sammendrag vises |
+| Nettsted | Bygges fra data og `bygg/mal/`, publisert på https://karlaurstad.github.io/KommuneDash/. 215 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data |
 | GitHub Actions | Virker. Kjøres for hånd; tidsplanen er slått av |
 
 ## Grunnregler du ikke skal bryte
@@ -70,6 +70,7 @@ data/avvik/    avvik som må vurderes før voteringene publiseres
 data/vurderinger.json  avgjørelsene for avvikene, med begrunnelse og hvem som vurderte (ADR-015)
 data/analyse/  sammendrag og tagger fra modellen
 data/tillatte-navn.json  navn fra sakstitler som er vurdert og kan stå i et sammendrag
+data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
 ```
@@ -148,6 +149,11 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt
   tankestreken i årsintervaller («20302040»). Første versjon av kontrollen
   holdt tilbake 53 av 221 sammendrag, nesten alle riktige. Endrer du
   kontrollen, så plant feil i ekte sammendrag og se at de fortsatt fanges.
+- **Samme person kan ha to person-ID-er.** Monika Luktvasslimo i HPNM har en
+  annen ID enn i de andre utvalgene. Profilene samles på normalisert navn.
+- **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
+  side om kredittkort. Lenker til partier og andre ligger i
+  `data/partisider.json` og åpnes og sjekkes før de legges inn.
 
 ## Språk
 

@@ -1,0 +1,15 @@
+{
+  "kontrollert": "2026-10-03",
+  "merknad": "Lenker til partienes egne sider. Lokallaget i Steinkjer der det har en egen side, ellers fylkeslaget eller partiet. Hver adresse er åpnet og sjekket for hånd; inp.no er ikke partiet.",
+  "partier": {
+    "AP": {"url": "https://steinkjer.arbeiderpartiet.no/", "tekst": "Steinkjer Arbeiderparti"},
+    "FRP": {"url": "https://www.frp.no/ditt-fylke/trondelag/steinkjer", "tekst": "Steinkjer FrP"},
+    "H": {"url": "https://hoyre.no/steinkjer/", "tekst": "Steinkjer Høyre"},
+    "INP": {"url": "https://inpartiet.no/", "tekst": "Industri- og Næringspartiet"},
+    "PP": {"url": "https://www.pensjonistpartiet.no/", "tekst": "Pensjonistpartiet"},
+    "R": {"url": "https://roedt.no/steinkjer", "tekst": "Rødt Steinkjer"},
+    "SP": {"url": "https://www.senterpartiet.no/lokallag-og-fylkeslag/trondelag/steinkjer-felleslag", "tekst": "Steinkjer Senterparti"},
+    "SV": {"url": "https://www.sv.no/partiet/fylkes-og-lokallag/tr-ndelag-sv/", "tekst": "SV i Trøndelag"},
+    "V": {"url": "https://www.venstre.no/lokal/trondelag/steinkjer/", "tekst": "Steinkjer Venstre"}
+  }
+}

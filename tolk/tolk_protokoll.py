@@ -169,9 +169,12 @@ def _voteringer(del_: str, saksnr: str) -> list[dict]:
 
         funnet.append((v.start(), {
             "saksnr": saksnr,
-            # «Behandling» er overskriften foran, ikke en del av navnet.
+            # «Behandling» er overskriften foran, ikke en del av navnet. Det
+            # er også «Det deltok ingen vararepresentant i behandling av
+            # saken», som noen ganger står rett foran, med eller uten punktum.
             "forslagsstiller": (
-                normaliser(re.sub(r"^Behandling\s+", "", g["stiller"]))
+                normaliser(re.sub(r"^(?:Behandling\s+|.*?\bbehandling av saken\.?\s+)",
+                                  "", g["stiller"]))
                 if g["stiller"] else None
             ),
             "parti": partikode(g["parti"]),

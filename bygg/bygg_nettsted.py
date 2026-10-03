@@ -27,6 +27,7 @@ from pathlib import Path
 
 from tester.kontroller import sammendrag_avvik, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
+from tolk.navn import PARTIKODER
 
 ROT = Path(__file__).resolve().parent.parent
 DATA = ROT / "data"
@@ -108,6 +109,51 @@ def _tema(s: dict, sammendrag: dict) -> list[str]:
     return sorted(tema)
 
 
+def _slug(navn: str) -> str:
+    """«Tor-André Hopen» -> «tor-andre-hopen». Adressen til en profil."""
+    s = navn.lower()
+    for a, b in (("æ", "ae"), ("ø", "o"), ("å", "a"), ("é", "e"), ("è", "e"),
+                 ("ä", "a"), ("ö", "o"), ("ü", "u")):
+        s = s.replace(a, b)
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def _folk(verv: list) -> list[dict]:
+    """De folkevalgte, med verv og oppmøte, til profilene.
+
+    Bare personer som representerer et parti i minst ett utvalg. Medlemmer av
+    råd som ikke er valgt for et parti, for eksempel ungdomsrådet, får ikke
+    profil. Alt kommer fra medlemslistene og møteprotokollene; ingenting er
+    skrevet av en modell, og ingenting er hentet fra andre kilder.
+    """
+    partier = set(PARTIKODER.values())
+    # Samlet på navn, ikke person-ID: portalen har noen ganger to ID-er for
+    # samme person (Monika Luktvasslimo i HPNM). Navnene er normalisert i
+    # tolk/navn.py, slik stemmene også er.
+    per_person: dict[str, list] = collections.defaultdict(list)
+    for v in verv:
+        per_person[v["navn"]].append(v)
+    ut = []
+    for vs in per_person.values():
+        if not any(v["repr"] in partier for v in vs):
+            continue
+        # Partiet i kommunestyret gjelder; ellers det som står i flest verv.
+        ks = [v["repr"] for v in vs if v["utvalg"] == "KS" and v["repr"] in partier]
+        parti = ks[0] if ks else collections.Counter(
+            v["repr"] for v in vs if v["repr"] in partier).most_common(1)[0][0]
+        ut.append({
+            "id": _slug(vs[0]["navn"]), "n": vs[0]["navn"], "p": parti,
+            "verv": [{"u": v["utvalg"], "r": v["rolle"], "p": v["repr"],
+                      "i": v["i_dagens_liste"], "m": sum(v["moter_som"].values()),
+                      "for": v["motte_for"]} for v in vs],
+        })
+    ider = collections.Counter(p["id"] for p in ut)
+    dobbel = [i for i, n in ider.items() if n > 1]
+    if dobbel:
+        raise SystemExit(f"to personer får samme profiladresse: {dobbel}")
+    return sorted(ut, key=lambda p: p["n"])
+
+
 def _s(aar: int, saker: list, moter: list, sammendrag: dict) -> dict:
     """Saker, møter, utvalg og kommunestyret, i formen malen bruker."""
     politiske = collections.Counter(
@@ -142,15 +188,23 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict) -> dict:
     verv = _les(DATA / "verv" / f"{aar}.json", [])
     seter = collections.Counter(v["repr"] for v in verv
                                 if v["utvalg"] == "KS" and v["rolle"] in FASTE and v["i_dagens_liste"])
+    # Møter med møteprotokoll per utvalg, som grunnlag for oppmøtet.
+    protokoller = collections.Counter(
+        o["utvalg"] for o in _les(DATA / "oppmote" / f"{aar}.json", []))
     return {
         "aar": aar,
         "today": dt.date.today().isoformat(),
         "cases": cases,
         "meetings": meetings,
         "utvalg": {m["utvalg_navn"]: m["utvalg"] for m in moter},
+        "utvnavn": {u["kortnavn"]: u["navn"] for u in utvalg.get("utvalg", [])},
         "partier": utvalg["partier"],
+        "partisider": _les(DATA / "partisider.json", {}).get("partier", {}),
         "ks": {"seter": dict(seter), "hentet": utvalg["medlemsliste_hentet"]},
+        "folk": _folk(verv),
+        "mprot": dict(protokoller),
         "meld": MELD_FEIL,
+        "repo": MELD_FEIL.rsplit("/issues", 1)[0],
     }
 
 

@@ -50,6 +50,9 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Knapp for å melde fra om feil | Ferdig, lenke til et nytt GitHub-issue. Krever GitHub-konto |
 | Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres i `nettsted/status.json` |
 | Temalisten: mangler tema for frivillighet og sosiale tjenester | Åpent |
+| Profil for hver folkevalgt: verv, oppmøte, stemmer og forslag, bare fra egne data | Ferdig, 103 profiler |
+| Kommunestyret på forsiden: velg et parti og se representantene, med lenke til partiet | Ferdig |
+| Roligere utseende: systemskrift, tekstmeny, linjer i stedet for kort, ingen eksterne skrifter | Ferdig |
 
 ## Fase 3 — mer enn én kommune
 
