@@ -13,7 +13,7 @@
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="merke" href="#oversikt"><svg class="merke-ikon" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><path d="M10.5 9 L31 14.5 V49.5 L10.5 55 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path class="rute" d="M35.5 12 L54.5 4 V60 L35.5 52 Z" fill="#60A5FA" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="merke-navn">{{merke}}</span></a>
+    <a class="merke" href="#oversikt">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
     <a class="kommune" href="../" title="Velg en annen kommune" aria-label="{{kommune}}. Velg en annen kommune">{{kommune}}</a>
     <span class="uoff">Uoffisiell. Ikke laget av {{kommune}} kommune.</span>
   </div>
@@ -23,7 +23,8 @@
     <a href="#moter" data-v="moter">Møter</a>
     <a href="#stemmer" data-v="stemmer">Stemmer</a>
     <a href="#politikere" data-v="politikere">Politikere</a>
-    <a href="#om" data-v="om">Om</a>
+    <a href="#hvem-bestemmer" data-v="hvem-bestemmer">Hvem bestemmer</a>
+    <a href="../om/">Om</a>
     <a href="#saker" class="sokeknapp" data-sok><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="vh">Søk i sakene</span></a>
   </nav>
 </header>
@@ -78,7 +79,7 @@
     <div id="ksparti" aria-live="polite"></div>
   </section>
 
-  <p class="ny-her">Ny i kommunepolitikken? Les <a href="#om">hvordan en sak går gjennom systemet</a>.</p>
+  <p class="ny-her">Ny i kommunepolitikken? Les <a href="#hvem-bestemmer">hvordan en sak går gjennom systemet</a>.</p>
 </section>
 
 <!-- SAKER -->
@@ -163,10 +164,10 @@
   <div id="person"></div>
 </section>
 
-<!-- OM -->
-<section id="v-om" hidden>
-  <div class="ingress"><h1>Slik fungerer det</h1>
-  <p>Hvordan en sak går gjennom kommunen, hvem som bestemmer, og hvordan denne tjenesten er laget.</p></div>
+<!-- HVEM BESTEMMER -->
+<section id="v-hvem-bestemmer" hidden>
+  <div class="ingress"><h1>Hvem bestemmer i {{kommune}}</h1>
+  <p>Hvordan en sak går gjennom kommunen, og hvilke utvalg som gjør hva. Hvordan {{merke}} er laget, står på <a href="../om/">Om {{merke}}</a>.</p></div>
   <div class="to">
     <section class="blokk">
       <h2>Slik går en sak gjennom systemet</h2>
@@ -184,24 +185,6 @@
       <h2>Utvalg og roller</h2>
       <div class="tw"><table class="org"><thead><tr><th>Organ</th><th>Oppgave</th><th class="num">Møter i <span class="aar"></span></th></tr></thead><tbody id="org"></tbody></table></div>
     </section>
-  </div>
-  <h2 class="mt">Om tjenesten</h2>
-  <div class="tekst">
-    <p><b>{{merke}} er en uoffisiell tjeneste.</b> Den er ikke laget av eller for {{kommune}} kommune. Målet er å gjøre det lettere for innbyggere å følge hva som skjer i kommunepolitikken. Alle lenker går til originaldokumentene i kommunens innsynsportal.</p>
-    <h3>Kilder</h3>
-    <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen.</p>
-    <h3>Status på en sak</h3>
-    <p>En sak som behandles i flere utvalg, er slått sammen til én linje. «Til behandling» betyr at saken står på sakslisten til et kommende møte. «Til kommunestyret» betyr at neste steg er kommunestyret. «Behandlet» betyr at siste møte er holdt og protokollen er publisert. «Venter på protokoll» betyr at møtet er holdt den siste måneden, men at protokollen ikke er lagt ut ennå. «Protokoll ikke publisert» betyr at møtet ble holdt for over en måned siden, uten at protokollen er lagt ut; i noen utvalg skjer det aldri. «Unntatt offentlighet» betyr at vedtaket er skjermet.</p>
-    <h3>Stemmegivning</h3>
-    <p>Stemmetallene hentes ut av protokollene med kode, ikke med kunstig intelligens, og antall navn kontrolleres mot oppgitt stemmetall. Noen ganger motsier protokollen seg selv, for eksempel når noen stemmer uten å stå på oppmøtelisten. Da er avviket vurdert av Claude, en språkmodell fra Anthropic. Vurderingen avgjør bare om voteringen vises, og med hvilken merknad. Tall og navn vises alltid slik protokollen oppgir dem. Når det ikke kan avgjøres fra dokumentene, holdes voteringen tilbake til kommunen har svart.</p>
-    <h3>Sammendrag og tema</h3>
-    <p>Klarspråkstitler, sammendrag og tema er skrevet av KI (Claude, en språkmodell fra Anthropic) ut fra saksframlegget og vedtakene, og merket «KI-sammendrag». Modellen får ikke stemmetall eller navnelister, og den skriver ikke hvem som stemte hva. Før et sammendrag vises, kontrolleres det at tallene og datoene finnes i dokumentene, og at det ikke står navn på privatpersoner fra sakstittelen. Sammendrag som ikke består, eller der modellen selv var usikker, vises ikke. Hvert sammendrag lenker til dokumentene det bygger på, og dokumentene gjelder.</p>
-    <h3>Politikerne</h3>
-    <p>Profilene viser verv, oppmøte, stemmer og forslag slik de står i medlemslistene og protokollene. De har ingen tekst skrevet av KI, og ingenting er hentet fra aviser, sosiale medier eller andre kilder. Lenkene til partiene går til partienes egne sider.</p>
-    <h3>Kjente begrensninger</h3>
-    <p>Portalen oppgir bare dagens medlemmer i hvert utvalg, så verv og sammensetning gjelder i dag. Permisjoner og bytter tidligere i året vises ikke. Saker fra fjoråret som fortsatte i år, er bare delvis med. Et skannet dokument uten tekst kan ikke leses.</p>
-    <h3>Feil og innspill</h3>
-    <p>Finner du en feil, kan du melde fra under hvert sammendrag, eller i <a id="repo" href="#">prosjektet på GitHub</a>, der også koden og dataene ligger.</p>
   </div>
 </section>
 </main>
