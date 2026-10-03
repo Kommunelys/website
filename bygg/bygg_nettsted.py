@@ -46,7 +46,7 @@ MERKE = "Kommunelys"
 # gjaldt alle denne kommunen. Forsiden sender dem videre dit.
 GAMLE_LENKER = "steinkjer"
 # Felles for alle kommunene, lagt på roten.
-FELLES = ("stil.css", "app.js")
+FELLES = ("stil.css", "app.js", "favicon.svg", "apple-touch-icon.png")
 # Står på hver kommuneside. Bygget stopper uten (CLAUDE.md: utvetydig uoffisiell).
 UOFFISIELL = "Ikke laget av {} kommune"
 
@@ -415,6 +415,7 @@ def kjor(aar: int) -> None:
     _kommuneside(kommune, ut)
     for navn in FELLES:
         shutil.copy(MAL / navn, UT / navn)
+    shutil.copytree(MAL / "fonter", UT / "fonter")
 
     # Data ved siden av sidene, for andre som vil bruke dem.
     for navn, innhold in (("saker", saker), ("moter", moter), ("analyser", analyser)):

@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{kommune}} | {{merke}}</title>
 <meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune. Ikke laget av {{kommune}} kommune.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="stylesheet" href="../stil.css">
 </head>
 <body>
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="navn" href="#oversikt">{{merke}}</a>
+    <a class="merke" href="#oversikt"><svg class="merke-ikon" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><path d="M10.5 9 L31 14.5 V49.5 L10.5 55 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path class="rute" d="M35.5 12 L54.5 4 V60 L35.5 52 Z" fill="#60A5FA" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="merke-navn">{{merke}}</span></a>
+    <a class="kommune" href="../" title="Velg en annen kommune" aria-label="{{kommune}}. Velg en annen kommune">{{kommune}}</a>
     <span class="uoff">Uoffisiell. Ikke laget av {{kommune}} kommune.</span>
   </div>
   <nav class="ramme meny" id="nav" aria-label="Hovedmeny">
@@ -21,6 +24,7 @@
     <a href="#stemmer" data-v="stemmer">Stemmer</a>
     <a href="#politikere" data-v="politikere">Politikere</a>
     <a href="#om" data-v="om">Om</a>
+    <a href="#saker" class="sokeknapp" data-sok><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="vh">Søk i sakene</span></a>
   </nav>
 </header>
 
