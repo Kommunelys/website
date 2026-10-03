@@ -32,6 +32,7 @@ import shutil
 import sys
 from pathlib import Path
 
+from bygg import drift
 from tester.kontroller import sammendrag_avvik, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 from tolk.navn import PARTIKODER, normaliser, partikode
@@ -63,6 +64,28 @@ KONTAKT_EPOST = ""
 # finnes, så den trenger absolutte lenker. Arbeidsflyten setter NETTSTED_BASE
 # fra GitHub Pages («/website» nå, tom med eget domene); lokalt er det «/».
 BASE = "/" + "".join(d + "/" for d in os.environ.get("NETTSTED_BASE", "").split("/") if d)
+
+# Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
+# https://<kode>.goatcounter.com. Tom streng slår tellingen av.
+GOATCOUNTER = "kommunelys"
+
+
+def _telling() -> str:
+    """Skriptet som teller sidevisninger, eller ingenting.
+
+    Kommunesidene viser fanene med #saker, #person/… i adressen. GoatCounter
+    teller ikke det som står etter #, så hver visning telles for hånd med
+    stien og fanen. Søketeksten står ikke i adressen og telles ikke.
+    """
+    if not GOATCOUNTER:
+        return ""
+    return (
+        "<script>function telle(){var g=window.goatcounter;"
+        "if(g&&g.count)g.count({path:location.pathname+location.hash.split('?')[0]})}"
+        "addEventListener('hashchange',telle)</script>\n"
+        f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" '
+        """data-goatcounter-settings='{"no_onload":true}' """
+        'async src="https://gc.zgo.at/count.js" onload="telle()"></script>')
 
 
 def _kildenavn(k: dict) -> str:
@@ -389,7 +412,7 @@ def _kommuneside(kommune: dict, ut: Path) -> None:
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
                  {"merke": MERKE, "merke_ikon": _merke_ikon(), "kommune": navn,
-                  "slug": kommune["slug"], "meld": MELD_FEIL})
+                  "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
     if UOFFISIELL.format(navn) not in side:
         raise SystemExit(f"kommunesiden mangler «{UOFFISIELL.format(navn)}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
@@ -410,7 +433,7 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     """Kommunelys-forsiden på roten, med en lenke til hver kommune."""
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "kommuner": _kommunekort(kommuner),
-        "gamle_lenker": GAMLE_LENKER, "repo": REPO})
+        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
 
 
@@ -443,7 +466,7 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
                if KONTAKT_EPOST else "")
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "dekning": _dekning(kommuner),
-        "repo": REPO, "meld": MELD_FEIL, "kontakt": kontakt})
+        "repo": REPO, "meld": MELD_FEIL, "kontakt": kontakt, "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
     (UT / "om" / "index.html").write_text(side, encoding="utf-8")
 
@@ -460,7 +483,8 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     side = _fyll((MAL / "404.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "base": BASE,
         "kommuner": _kommunekort(kommuner, BASE), "kommuner_json": liste,
-        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "meld": MELD_FEIL})
+        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "meld": MELD_FEIL,
+        "telling": _telling()})
     relative = sorted({a for a in re.findall(r'(?:href|src)="([^"]*)"', side)
                        if not a.startswith(("/", "#", "https://", "mailto:"))})
     if relative:
@@ -535,6 +559,13 @@ def kjor(aar: int) -> None:
     _forside([(kommune, status)])
     _om([(kommune, status)])
     _ikke_funnet([(kommune, status)])
+
+    # Driftssiden. Lenkes ikke fra resten av nettstedet.
+    (UT / "drift").mkdir()
+    (UT / "drift" / "index.html").write_text(drift.side(
+        (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
+        collections.Counter(a["status"] for a in finn_avvik(aar)),
+        MERKE, REPO, GOATCOUNTER), encoding="utf-8")
 
     print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
           f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
