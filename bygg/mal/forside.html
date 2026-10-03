@@ -22,7 +22,6 @@ videre();window.addEventListener('hashchange',videre);
 <header class="hode">
   <div class="ramme hode-topp">
     <a class="merke" href="./">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
-    <span class="uoff">Uoffisiell og uavhengig</span>
   </div>
   <nav class="ramme meny" aria-label="Hovedmeny">
     <a href="./" aria-current="page">Kommuner</a>
@@ -37,11 +36,17 @@ videre();window.addEventListener('hashchange',videre);
     <p class="ingress-tekst">{{merke}} forklarer sakene i kommunen i enkelt språk, viser hvordan de folkevalgte stemte, og lenker til originaldokumentene.</p>
   </section>
 
-  <section class="blokk">
+  <section class="blokk bred">
     <h2>Velg kommune</h2>
-    <ul class="kommuner">
+    <div class="velg-kommune">
+      <figure class="kart-ramme">
+        {{kart}}
+        <figcaption class="liten muted">Kommunegrenser: Kartverket (CC BY 4.0).</figcaption>
+      </figure>
+      <ul class="kommuner">
 {{kommuner}}
-    </ul>
+      </ul>
+    </div>
   </section>
 
   <section class="blokk">
@@ -103,7 +108,7 @@ videre();window.addEventListener('hashchange',videre);
 </main>
 
 <footer class="ramme fot">
-  <div>{{merke}} er en uoffisiell og uavhengig tjeneste. Ikke laget av noen kommune.</div>
+  <div>{{merke}} er en uoffisiell og uavhengig tjeneste, laget av en privatperson.</div>
   <div><a href="om/">Om {{merke}}</a> · <a href="{{repo}}">Kode og data</a></div>
 </footer>
 </body>
