@@ -203,9 +203,8 @@ jobs:
       - name: Bygg nettsted
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python -m bygg.bygg_nettsted
-        env:
           NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
+        run: python -m bygg.bygg_nettsted
 
       - uses: actions/upload-pages-artifact@v3
         with:
