@@ -60,7 +60,9 @@ def kjoringer(antall: int = 30, med_jobber: int = 15) -> list[dict] | None:
     som det ikke har vært kjøringer.
     """
     try:
-        svar = _api(f"actions/workflows/{ARBEIDSFLYT}/runs?per_page={antall}")
+        # Bare main: en push til en annen gren med en ugyldig arbeidsflytfil gir
+        # en «kjøring» som feiler på null sekunder, uten at noe er kjørt.
+        svar = _api(f"actions/workflows/{ARBEIDSFLYT}/runs?branch=main&per_page={antall}")
     except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
         print(f"advarsel: fikk ikke hentet kjøringene fra GitHub ({e})")
         return None
@@ -119,7 +121,9 @@ def _endringer_i(c: str, p: str) -> dict:
     e = {"nye_saker": [], "nye_moter": 0, "nye_protokoller": 0, "ny_status": 0,
          "nye_voteringer": 0, "nye_dokumenter": 0, "nye_sammendrag": 0,
          "oppdaterte_sammendrag": 0, "tokens_inn": 0, "tokens_ut": 0, "nye_avvik": 0,
-         "moter_sjekket": 0, "moter_hentet": 0}
+         "moter_sjekket": 0, "moter_hentet": 0,
+         # {modell: [inn, ut]}: prisen avhenger av modellen.
+         "tokens_per_modell": {}}
     filer = []
     for linje in _git("diff", "--name-status", "--no-renames", p, c, "--", "data/").splitlines():
         status, _, sti = linje.partition("\t")
@@ -130,9 +134,13 @@ def _endringer_i(c: str, p: str) -> dict:
             e["nye_dokumenter"] += 1
         elif sti.startswith("data/analyse/") and status in ("A", "M"):
             e["nye_sammendrag" if status == "A" else "oppdaterte_sammendrag"] += 1
-            t = (_json(c, sti) or {}).get("tokens") or {}
+            a = _json(c, sti) or {}
+            t = a.get("tokens") or {}
             e["tokens_inn"] += t.get("inn", 0)
             e["tokens_ut"] += t.get("ut", 0)
+            m = e["tokens_per_modell"].setdefault(a.get("modell") or "ukjent", [0, 0])
+            m[0] += t.get("inn", 0)
+            m[1] += t.get("ut", 0)
         elif status != "M" and status != "A":
             continue
         elif sti.endswith("/siste-kjoring.json"):
@@ -216,11 +224,16 @@ def tidslinje(kj: list[dict] | None, endr: list[dict]) -> list[dict]:
 
 
 def sum_endringer(commits: list[dict]) -> dict:
-    tot: dict = {"nye_saker": []}
+    tot: dict = {"nye_saker": [], "tokens_per_modell": {}}
     for c in commits:
         for k, v in c.items():
             if k == "nye_saker":
                 tot["nye_saker"] += v
+            elif k == "tokens_per_modell":
+                for modell, (inn, ut) in v.items():
+                    m = tot["tokens_per_modell"].setdefault(modell, [0, 0])
+                    m[0] += inn
+                    m[1] += ut
             elif isinstance(v, int):
                 tot[k] = tot.get(k, 0) + v
     return tot

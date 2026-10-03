@@ -536,7 +536,7 @@ def kjor(aar: int) -> None:
     (UT / "drift").mkdir()
     (UT / "drift" / "index.html").write_text(drift.side(
         (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
-        collections.Counter(a["status"] for a in finn_avvik(aar)),
+        collections.Counter(a["status"] for a in finn_avvik(aar)), analyser,
         MERKE, REPO, GOATCOUNTER), encoding="utf-8")
 
     print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "

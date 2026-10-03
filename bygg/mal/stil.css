@@ -394,28 +394,43 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 
 @media print{.hode,.filter,.valg,.knapp,.hopp{display:none}body{background:#fff}}
 
-/* Driftssiden /drift/ */
-.drift>.blokk{max-width:760px}
-.drift .blokk>p{max-width:68ch;margin:0 0 10px}
-.drift-tall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:4px 0 12px}
-.drift-tall>div{padding:10px 12px 12px 0;min-width:0}
-.drift-tall>div+div{padding-left:14px;border-left:1px solid var(--line)}
-.drift-tall dt{font-size:13.5px;color:var(--muted)}
-.drift-tall dd{margin:2px 0 0;font-size:28px;font-weight:750;line-height:1.1;font-variant-numeric:tabular-nums}
-@media (max-width:600px){.drift-tall{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .drift-tall>div:nth-child(odd){padding-left:0;border-left:0}
-  .drift-tall>div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-.drift-kj{padding:14px 0 12px;border-bottom:1px solid var(--line)}
-.drift-kj h3{font-size:16.5px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
-.drift-kj>p{margin:6px 0 0;max-width:68ch}
-.drift-kj>p.liten{margin-top:2px}
-.drift-merke{font-size:12.5px;font-weight:650;border-radius:999px;padding:2px 9px;border:1px solid currentColor;line-height:1.4}
+/* Driftssiden /drift/: tabeller og nøkkeltall for den som drifter tjenesten. */
+.drift-navn{font-weight:600;color:var(--muted)}
+.drift-topp{margin:24px 0 16px}
+.drift-topp p{margin:4px 0 0}
+.drift-besok{border:1px solid var(--line);border-radius:12px;background:var(--lys-flate);padding:14px 18px 10px;margin-bottom:20px}
+.drift-besok-hode{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.drift-besok h2{font-size:15px;font-weight:650}
+.drift-tall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:8px 0 6px}
+.drift-tall>div{padding:2px 14px 4px;min-width:0;border-left:1px solid var(--line)}
+.drift-tall>div:first-child{padding-left:0;border-left:0}
+.drift-tall dt{font-size:13px;color:var(--muted)}
+.drift-tall dd{margin:0;font-size:30px;font-weight:750;line-height:1.15;font-variant-numeric:tabular-nums}
+.drift-besok>p{margin:0}
+@media (max-width:600px){.drift-tall{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:10px}
+  .drift-tall>div:nth-child(3){padding-left:0;border-left:0}}
+.drift-bokser{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;align-items:start}
+.drift-boks{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--skygge);padding:14px 16px 10px;min-width:0}
+.drift-boks h2{font-size:15px;font-weight:650;margin-bottom:6px}
+.drift-boks>p.liten{margin:8px 0 2px}
+.drift-kv{font-size:14px}
+.drift-kv th{font-size:14px;font-weight:400;color:var(--muted);border-bottom:1px solid var(--line);white-space:normal;padding:6px 10px 6px 0}
+.drift-kv td{padding:6px 0;white-space:nowrap}
+.drift-kv tr:last-child>*{border-bottom:0}
+.drift-stort{font-size:32px;font-weight:750;line-height:1.1;margin:2px 0 0;font-variant-numeric:tabular-nums}
+.drift-under{margin:2px 0 6px}
+.drift .blokk{margin-top:36px}
+.drift-tabell{font-size:13.5px}
+.drift-tabell th{font-size:12.5px}
+.drift-tabell td,.drift-tabell th{padding:6px 10px 6px 0;white-space:nowrap}
+.drift-tabell td:last-child{white-space:normal;min-width:180px}
+.drift-tabell tbody tr:hover{background:var(--soft)}
+.drift-jobb{text-align:center;font-weight:700}
+.drift-jobb.ok{color:var(--good)}
+.drift-jobb.feilet{color:var(--bad)}
+.drift-jobb.delvis{color:var(--warn)}
+.drift-merke{font-size:12px;font-weight:650;border-radius:999px;padding:1px 8px;border:1px solid currentColor;line-height:1.4;white-space:nowrap}
 .drift-merke.ok{color:var(--good)}
 .drift-merke.feilet{color:var(--bad)}
 .drift-merke.delvis,.drift-merke.avbrutt{color:var(--warn)}
 .drift-merke.pagar,.drift-merke.lagret{color:var(--muted)}
-.drift details{margin-top:8px}
-.drift summary{cursor:pointer;color:var(--lenke);font-size:14.5px}
-.drift-saker{margin:6px 0 0;padding-left:20px;font-size:15px}
-.drift-saker li{margin:3px 0}
-.drift-navn{font-weight:600;color:var(--muted)}
