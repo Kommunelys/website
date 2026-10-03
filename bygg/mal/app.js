@@ -517,9 +517,9 @@ function renderPerson(id){
 }
 
 /* ---------- NAVIGASJON ---------- */
-const VIEWS=['oversikt','saker','moter','stemmer','politikere','person','om'];
+const VIEWS=['oversikt','saker','moter','stemmer','politikere','person','hvem-bestemmer'];
 const MENY={person:'politikere'};
-const TITLER={oversikt:'',saker:'Saker',moter:'Møter',stemmer:'Hvem stemte hva',politikere:'Politikerne',om:'Slik fungerer det'};
+const TITLER={oversikt:'',saker:'Saker',moter:'Møter',stemmer:'Hvem stemte hva',politikere:'Politikerne','hvem-bestemmer':'Hvem bestemmer'};
 function go(v,o={}){
   if(v==='saker'&&('q' in o||'status' in o||'tag' in o)){
     $('q').value=o.q||'';fstatus.value=o.status||'';$('fut').value=o.ut||'';ftag=o.tag||null;limit=40;openT=o.open||null;
@@ -532,6 +532,8 @@ function go(v,o={}){
 }
 function vis(){
   const [v0,arg]=decodeURIComponent(location.hash.slice(1)).split('/');
+  // Om-fanen er flyttet til Om-siden, som er felles for alle kommunene.
+  if(v0==='om'){location.replace('../om/');return}
   const v=VIEWS.includes(v0)?v0:'oversikt';
   VIEWS.forEach(x=>$('v-'+x).hidden=x!==v);
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.v===(MENY[v]||v))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
@@ -576,6 +578,5 @@ document.addEventListener('click',e=>{
   const l=$('stemlenke');l.href='#stemmer/'+m.id;l.dataset.go='stemmer';l.dataset.m=m.id;
 })();
 renderTagChips();renderList();renderMeet();renderStemmer();
-$('repo').href=S.repo;
-$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · ${ut(S.repo,'Kode og data')}</div>`;
+$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · <a href="../om/">Om ${esc(S.merke)}</a> · ${ut(S.repo,'Kode og data')}</div>`;
 window.addEventListener('hashchange',vis);vis();

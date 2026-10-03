@@ -24,7 +24,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.github.io/website/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data |
+| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.github.io/website/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, med metode, KI-bruk og en dekningstabell regnet ut ved hvert bygg; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
 | GitHub Actions | Virker. Kjøres for hånd; tidsplanen er slått av |
 
 ## Grunnregler du ikke skal bryte
@@ -159,6 +159,12 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommune
   stopper hvis malen nevner en kommune.
 - **Lys blå er pynt, ikke tekst.** `#60A5FA` har 2,4:1 mot papirhvit. Lenker,
   fokus og status bruker `--lenke` (ADR-016).
+- **Om-siden er felles, «Hvem bestemmer» er kommunens.** Tekst om metode,
+  kvalitet og personvern står i `bygg/mal/om.html` og gjelder alle kommunene.
+  Hver påstand der skal kunne spores til kode, en ADR eller data. Tall i
+  dekningstabellen regnes ut i bygget, og det som er kontrollert for hånd,
+  står i `kontrollert_for_hand` i `kommuner/<kommune>.json`. Gamle lenker til
+  `#om` sendes til `/om/`.
 - **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
   side om kredittkort. Lenker til partier og andre ligger i
   `data/partisider.json` og åpnes og sjekkes før de legges inn.
