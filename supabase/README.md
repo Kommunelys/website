@@ -1,17 +1,20 @@
 # supabase/
 
 Databaseskjemaet for Kommunelys (Postgres i Supabase). Produksjon bruker den
-ikke ennå: arbeidsflyten leser og skriver fortsatt `data/`. Lokalt kan alt
-leses fra databasen med `KOMMUNELYS_LAGER=pg` (fase 2: bare lesing).
+ikke ennå: nettstedet bygges fortsatt fra `data/`. Hver kjøring av Oppdater
+speiler `data/` inn i databasen og kontrollerer at den gir det samme (jobben
+«Speil til databasen», fase 3). Lokalt kan alt leses fra databasen med
+`KOMMUNELYS_LAGER=pg`.
 
 | Kommando | Gjør |
 |---|---|
-| `python -m lager.importer 2026` | Kopierer `data/` inn i databasen, i én transaksjon. Én gang per år og kommune |
+| `python -m lager.synk 2026` | Gjør databasen lik `data/` i én transaksjon: bare det som er endret, skrives og logges. Mot en tom database er det en import |
 | `python -m lager.paritet 2026` | Leser alt fra filene og fra databasen og sammenligner, tegn for tegn |
 | `KOMMUNELYS_LAGER=pg python -m bygg.bygg_nettsted 2026` | Bygger nettstedet fra databasen |
 
 Tilkoblingen leses fra `KOMMUNELYS_DB_URL` eller `~/.kommunelys.env` (se
-`lager/db.py`). Bruk Session pooler-adressen; den direkte er bare IPv6.
+`lager/db.py`). Bruk Session pooler-adressen; den direkte er bare IPv6. I
+GitHub Actions ligger den som hemmeligheten `KOMMUNELYS_DB_URL`.
 
 | Mappe | Innhold |
 |---|---|
