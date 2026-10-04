@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from . import _fil
+from . import _fil, fra_databasen, pg
 
 TEKST = _fil.DATA / "tekst"
 ID_ROM = ("dokument", "behandling", "mote")
@@ -32,11 +32,15 @@ def _sti(id_rom: str, ident: int) -> Path:
 
 
 def har(id_rom: str, ident: int) -> bool:
+    if fra_databasen():
+        return pg.tekst(id_rom, ident) is not None
     return _sti(id_rom, ident).exists()
 
 
 def les(id_rom: str, ident: int | None) -> str | None:
     """Teksten, eller None hvis vi ikke har den."""
+    if fra_databasen():
+        return pg.tekst(id_rom, ident)
     if not ident:
         return None
     sti = _sti(id_rom, ident)

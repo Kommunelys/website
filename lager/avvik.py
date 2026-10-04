@@ -6,13 +6,15 @@ en modell, i data/vurderinger.json.
 
 from __future__ import annotations
 
-from . import _fil
+from . import _fil, fra_databasen, pg
 
 AVVIK = _fil.DATA / "avvik"
 VURDERINGER = _fil.DATA / "vurderinger.json"
 
 
 def les(aar: int, *standard):
+    if fra_databasen():
+        return pg.avvik(aar, *standard)
     return _fil.les(AVVIK / f"{aar}.json", *standard)
 
 
@@ -22,4 +24,6 @@ def lagre(aar: int, avvik: list[dict]) -> None:
 
 def vurderinger() -> list[dict]:
     """Alle vurderingene, slik de står i filen."""
+    if fra_databasen():
+        return pg.vurderinger()
     return _fil.les(VURDERINGER, [])

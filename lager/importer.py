@@ -19,7 +19,7 @@ import json
 import sys
 
 from bygg.bygg_nettsted import _slug as profiladresse
-from lager import analyse, avvik, db, konfig, oppmote, raa, saker, tekst, verv, voteringer
+from lager import analyse, avvik, db, fra_databasen, konfig, oppmote, raa, saker, tekst, verv, voteringer
 from lager import drift as lager_drift
 from tolk.navn import VARIANTER
 
@@ -70,6 +70,8 @@ def _alle_navn(vot: list, opp: list, vervliste: list) -> set[str]:
 def kjor(aar: int) -> dict:
     from psycopg.types.json import Jsonb  # noqa: PLC0415
 
+    if fra_databasen():
+        raise SystemExit("importen leser fra filene; kjør uten KOMMUNELYS_LAGER=pg")
     kjoring_id = f"import-{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}"
     raa_moter = raa.moter(aar) or []
     moteliste = raa.moteliste(aar) or []

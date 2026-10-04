@@ -1,8 +1,17 @@
 # supabase/
 
-Databaseskjemaet for Kommunelys (Postgres i Supabase). Første steg i flyttingen
-fra JSON i git til en database. Nettstedet bruker den ikke ennå: produksjon
-leser og skriver fortsatt `data/`.
+Databaseskjemaet for Kommunelys (Postgres i Supabase). Produksjon bruker den
+ikke ennå: arbeidsflyten leser og skriver fortsatt `data/`. Lokalt kan alt
+leses fra databasen med `KOMMUNELYS_LAGER=pg` (fase 2: bare lesing).
+
+| Kommando | Gjør |
+|---|---|
+| `python -m lager.importer 2026` | Kopierer `data/` inn i databasen, i én transaksjon. Én gang per år og kommune |
+| `python -m lager.paritet 2026` | Leser alt fra filene og fra databasen og sammenligner, tegn for tegn |
+| `KOMMUNELYS_LAGER=pg python -m bygg.bygg_nettsted 2026` | Bygger nettstedet fra databasen |
+
+Tilkoblingen leses fra `KOMMUNELYS_DB_URL` eller `~/.kommunelys.env` (se
+`lager/db.py`). Bruk Session pooler-adressen; den direkte er bare IPv6.
 
 | Mappe | Innhold |
 |---|---|
