@@ -6,7 +6,7 @@ Unntak: medlemslistene lagres uten kontaktopplysninger (ADR-014).
 
 from __future__ import annotations
 
-from . import _fil
+from . import _fil, fra_databasen, pg
 
 RAA = _fil.DATA / "raa"
 MEDLEMMER = RAA / "medlemmer"
@@ -14,6 +14,8 @@ MEDLEMMER = RAA / "medlemmer"
 
 def moteliste(aar: int) -> list[dict] | None:
     """Møtelisten slik den var ved forrige henting, eller None."""
+    if fra_databasen():
+        return pg.moteliste(aar)
     return _fil.les(RAA / str(aar) / "moter.json", None)
 
 
@@ -26,6 +28,8 @@ def moter(aar: int) -> list[dict] | None:
 
     I fast rekkefølge (etter filnavn). None hvis året ikke er hentet.
     """
+    if fra_databasen():
+        return pg.moter_raa(aar)
     mappe = RAA / str(aar) / "moter"
     if not mappe.exists():
         return None
@@ -42,6 +46,8 @@ def lagre_siste_kjoring(aar: int, oppsummering: dict) -> None:
 
 def medlemslister() -> list[dict]:
     """Alle lagrede versjoner av medlemslistene, eldste først."""
+    if fra_databasen():
+        return pg.medlemslister()
     return [_fil.les(sti) for sti in sorted(MEDLEMMER.glob("*.json"))]
 
 

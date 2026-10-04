@@ -100,6 +100,9 @@ python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 KOMMUNELYS_I_DAG=2026-10-04 python -m tolk.bygg_saker 2026  # tolk og bygg som om det var en annen dag
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
+python -m lager.importer 2026          # data/ inn i databasen, én gang (~/.kommunelys.env)
+python -m lager.paritet 2026           # filene og databasen gir nøyaktig det samme
+KOMMUNELYS_LAGER=pg python -m bygg.bygg_nettsted 2026  # bygg fra databasen i stedet for data/
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
 python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommunen under /steinkjer/
 ```

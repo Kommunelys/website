@@ -8,14 +8,18 @@
 
 from __future__ import annotations
 
-from . import _fil
+from . import _fil, fra_databasen, pg
 
 
 def partisider() -> dict:
+    if fra_databasen():
+        return pg.partisider()
     return _fil.les(_fil.DATA / "partisider.json", {})
 
 
 def tillatte_navn() -> list[dict]:
+    if fra_databasen():
+        return pg.tillatte_navn()
     return _fil.les(_fil.DATA / "tillatte-navn.json", [])
 
 

@@ -17,6 +17,17 @@ import datetime as dt
 import os
 
 
+def fra_databasen() -> bool:
+    """KOMMUNELYS_LAGER=pg leser fra databasen; standard er filene (json).
+
+    Fase 2 i flyttingen: bare lesing. Skriving går fortsatt til filene.
+    """
+    verdi = os.environ.get("KOMMUNELYS_LAGER", "json")
+    if verdi not in ("json", "pg"):
+        raise SystemExit(f"KOMMUNELYS_LAGER må være json eller pg, ikke {verdi!r}")
+    return verdi == "pg"
+
+
 def i_dag() -> str:
     """Dagens dato som ISO-streng.
 
