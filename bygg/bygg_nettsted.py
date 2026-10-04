@@ -63,7 +63,7 @@ REPO = MELD_FEIL.rsplit("/issues", 1)[0]
 KONTAKT_EPOST = ""
 # Roten til nettstedet på serveren. 404-siden vises på alle adresser som ikke
 # finnes, så den trenger absolutte lenker. Arbeidsflyten setter NETTSTED_BASE
-# fra GitHub Pages («/website» nå, tom med eget domene); lokalt er det «/».
+# fra GitHub Pages (tom med eget domene, «/website» før det); lokalt er det «/».
 BASE = "/" + "".join(d + "/" for d in os.environ.get("NETTSTED_BASE", "").split("/") if d)
 
 # Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:

@@ -112,7 +112,7 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
       Actions secret
 - [x] Velge navn som ikke kan forveksles med kommunens: Kommunelys (ADR-016)
 - [x] Velge domene: kommunelys.no
-- [ ] Sette opp kommunelys.no: DNS hos registraren og eget domene i
+- [x] Sette opp kommunelys.no: DNS hos registraren og eget domene i
       Pages-innstillingene, med HTTPS
 - [ ] Opprette en e-postadresse på kommunelys.no for feil og innspill, og
       sette den i `KONTAKT_EPOST` i `bygg/bygg_nettsted.py`. Til da vises

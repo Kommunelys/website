@@ -349,7 +349,9 @@ innholdet, ikke merkevaren.
 - Domenet blir `kommunelys.no` (prosjekteier, 3.10.2026). Lenkene på
   nettstedet er relative, så det virker både under `/website/` og på
   roten av domenet. Med publisering fra Actions settes domenet i
-  Pages-innstillingene; en `CNAME`-fil i nettstedet brukes ikke.
+  Pages-innstillingene; en `CNAME`-fil i nettstedet brukes ikke. Domenet
+  ble tatt i bruk 4.10.2026, med HTTPS for både `kommunelys.no` og
+  `www.kommunelys.no`.
 
 ---
 
