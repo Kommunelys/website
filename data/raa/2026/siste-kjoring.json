@@ -1,6 +1,5 @@
 {
  "endrede_moter": [
-  1284,
   1367,
   1281,
   1285,
@@ -10,8 +9,8 @@
   1287,
   1368
  ],
- "moter_hentet": 9,
+ "moter_hentet": 8,
  "moter_totalt": 122,
- "moter_uendret": 113,
- "tidspunkt": "2026-10-03T23:41:57"
+ "moter_uendret": 114,
+ "tidspunkt": "2026-10-04T08:58:28"
 }
