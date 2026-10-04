@@ -302,13 +302,21 @@ for et menneske, siden tjenesten uansett bygges og drives med AI.
 - Hver vurdering står i `data/vurderinger.json` med begrunnelse og
   `vurdert_av`, med modell og versjon. `tester.kontroller` avviser
   vurderinger uten dem.
-- Er det uklart hvem som møtte, og de mulige personene er fra ulike partier,
-  er avgjørelsen `venter_paa_kommunen`. Da er partifordelingen usikker, og
-  den er det tjenesten skal vise.
 - Første vurdering ble gjort 2. oktober 2026 av Claude Opus 5.5: 9 av 10
-  avvik publiseres med merknad, og kommunestyret 16.09.2026 venter på
-  kommunen. En påstand i første utkast var feil, om en permisjon, og ble
-  fanget fordi den ble sjekket mot sakene før vurderingen ble lagret.
+  avvik publiseres med merknad. En påstand i første utkast var feil, om en
+  permisjon, og ble fanget fordi den ble sjekket mot sakene før vurderingen
+  ble lagret.
+
+**Endret 4. oktober 2026: vi venter ikke på kommunen.** Avgjørelsen
+`venter_paa_kommunen` er fjernet. Prosjekteier: tjenesten forholder seg til
+dokumentene, og det er ikke dens oppgave å få svar fra kommunen. Er
+protokollen selvmotsigende, publiseres voteringen slik navnelistene oppgir
+den, med en tydelig merknad om hva som er usikkert og lenke til protokollen,
+som er fasit. Nettstedet sier det øverst på møtet, ikke bare inne i hver
+votering. Kommunestyret 16.09.2026 (42 voteringer) var den eneste som ventet;
+der er usikkerheten om én stemme var fra SP eller fra R, mens stemmetallene
+og utfallet står fast. `ikke_publiser` finnes fortsatt, for avvik der
+voteringen ikke kan vises meningsfullt.
 
 ---
 
