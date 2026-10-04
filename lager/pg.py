@@ -528,3 +528,72 @@ def forrige_telling() -> dict[str, int]:
     return {str(aar): saker for aar, saker in _rader(
         "select distinct on (aar) aar, saker from drift.bygg where kommune_id = %s "
         "order by aar, bygget desc", kommune_id())}
+
+
+# Endringene per kjøring, til driftssiden ------------------------------------------------
+
+# Speilingen (fase 3) og importen skrev det samme som git-historikken viser;
+# de telles ikke på nytt.
+IKKE_KJORINGER = r"^(synk|import)-"
+
+
+def endringer(dager: int, maks: int) -> list[dict]:
+    """Hva hver kjøring endret, i samme form som drift.historikk lager fra git."""
+    k = kommune_id()
+    vilkar = ("e.kommune_id = %s and e.kjoring_id is not null and e.kjoring_id !~ %s "
+              "and e.tidspunkt > now() - make_interval(days => %s)")
+    args = (k, IKKE_KJORINGER, dager)
+    ut: dict[str, dict] = {}
+    for (kid, tid, nye_moter, nye_protokoller, ny_status, nye_voteringer, nye_dokumenter,
+         nye_avvik) in _rader(
+            "select e.kjoring_id, min(e.tidspunkt), "
+            "count(*) filter (where tabell = 'mote' and operasjon = 'I'), "
+            "count(*) filter (where tabell = 'dokument' and operasjon = 'I' and ny ->> 'slag' = 'moteprotokoll'), "
+            "count(*) filter (where tabell = 'sak' and operasjon = 'U' and 'status' = any(endrede_felt)), "
+            "greatest(0, count(*) filter (where tabell = 'votering' and operasjon = 'I') "
+            "          - count(*) filter (where tabell = 'votering' and operasjon = 'D')), "
+            "count(*) filter (where tabell = 'dokument_tekst' and operasjon = 'I'), "
+            "count(*) filter (where tabell = 'avvik' and operasjon = 'I') "
+            f"from drift.endringslogg e where {vilkar} group by e.kjoring_id", *args):
+        ut[kid] = {"commit": kid, "kjoring": kid, "tid": tid, "emne": f"Kjøring {kid}",
+                   "nye_saker": [], "nye_moter": nye_moter, "nye_protokoller": nye_protokoller,
+                   "ny_status": ny_status, "nye_voteringer": nye_voteringer,
+                   "nye_dokumenter": nye_dokumenter, "nye_sammendrag": 0, "oppdaterte_sammendrag": 0,
+                   "tokens_inn": 0, "tokens_ut": 0, "nye_avvik": nye_avvik,
+                   "moter_sjekket": 0, "moter_hentet": 0, "tokens_per_modell": {}}
+
+    for kid, sak_id, formalia, skjermet, tittel, url in _rader(
+            "select e.kjoring_id, (e.ny ->> 'sak_id')::int, (e.ny ->> 'formalia')::boolean, "
+            "(e.ny ->> 'skjermet_tittel')::boolean, e.ny ->> 'tittel', "
+            "(select st.url_mote from kjerne.saksgang_steg st where st.kommune_id = e.kommune_id "
+            " and st.sak_id = (e.ny ->> 'sak_id')::int and st.url_mote is not null "
+            " order by st.rekkefolge desc limit 1) "
+            f"from drift.endringslogg e where {vilkar} and e.tabell = 'sak' and e.operasjon = 'I' "
+            "order by e.id", *args):
+        # Skjermede titler vises ikke (CLAUDE.md regel 3).
+        ut[kid]["nye_saker"].append({"id": sak_id, "formalia": formalia,
+                                     "tittel": None if skjermet else tittel, "url": url})
+
+    for kid, modell, inn, ut_, oppdatert in _rader(
+            "select e.kjoring_id, a.modell, a.tokens_inn, a.tokens_ut, "
+            "exists (select 1 from kjerne.analyse b where b.kommune_id = a.kommune_id "
+            "        and b.sak_id = a.sak_id and b.id < a.id) "
+            "from drift.endringslogg e join kjerne.analyse a "
+            "  on a.kommune_id = e.kommune_id and a.id = (e.nokkel ->> 'id')::bigint "
+            f"where {vilkar} and e.tabell = 'analyse' and e.operasjon = 'I'", *args):
+        post = ut[kid]
+        post["oppdaterte_sammendrag" if oppdatert else "nye_sammendrag"] += 1
+        post["tokens_inn"] += inn
+        post["tokens_ut"] += ut_
+        m = post["tokens_per_modell"].setdefault(modell or "ukjent", [0, 0])
+        m[0] += inn
+        m[1] += ut_
+
+    for kid, nokkel, verdi in _rader(
+            "select kjoring_id, nokkel, verdi from drift.kjoring_tall "
+            "where kjoring_id = any(%s) and del = 'hent_moter'", list(ut)):
+        felt = {"moter_totalt": "moter_sjekket", "moter_hentet": "moter_hentet"}.get(nokkel)
+        if felt:
+            ut[kid][felt] += int(verdi)
+
+    return sorted(ut.values(), key=lambda e: e["tid"], reverse=True)[:maks]

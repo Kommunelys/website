@@ -8,6 +8,8 @@ Tre kilder, slått sammen per kjøring:
 - Git-historikken: hver commit fra oppdater-bot sammenlignes med forelderen.
   Det gir nye møter, saker, voteringer, dokumenter og sammendrag, også for
   kjøringer fra før kjøreloggen fantes.
+- Endringsloggen i databasen (KOMMUNELYS_LAGER=pg): det samme per kjøring,
+  når dataene skrives dit i stedet for å committes.
 - Kjøreloggen (drift.logg): kall mot portalen og hvordan AI-analysen gikk.
 
 Alt her er tall og offentlige sakstitler. Ingen tekst skrevet av en modell.
@@ -24,6 +26,7 @@ import urllib.request
 from pathlib import Path
 
 from drift.logg import les as les_logg
+from lager import fra_databasen
 
 ROT = Path(__file__).resolve().parent.parent
 REPO = "Kommunelys/website"
@@ -182,7 +185,20 @@ def _endringer_i(c: str, p: str) -> dict:
 
 
 def endringer(dager: int = 45, maks: int = 60) -> list[dict]:
-    """Commits fra arbeidsflyten de siste dagene, med hva de endret."""
+    """Commits fra arbeidsflyten de siste dagene, med hva de endret.
+
+    Med databasen også kjøringene i endringsloggen. Etter at dataene ikke
+    lenger committes, kommer alt nytt derfra; det eldre kommer fra git.
+    """
+    ut = _endringer_i_git(dager, maks)
+    if fra_databasen():
+        from lager import pg  # noqa: PLC0415
+
+        ut = sorted(ut + pg.endringer(dager, maks), key=lambda e: e["tid"], reverse=True)[:maks]
+    return ut
+
+
+def _endringer_i_git(dager: int, maks: int) -> list[dict]:
     ut = []
     logg = _git("log", f"--since={dager}.days", f"--max-count={maks}",
                 f"--author={BOT}", "--format=%H%x09%P%x09%cI%x09%s", "--", "data/")
@@ -208,9 +224,10 @@ def tidslinje(kj: list[dict] | None, endr: list[dict]) -> list[dict]:
     brukt = set()
     for k in kj or []:
         start, slutt = k["start"], k["slutt"]
-        commits = [c for c in endr if start and slutt
-                   and start - SLINGRING <= c["tid"] <= slutt + SLINGRING
-                   and c["commit"] not in brukt]
+        # Endringer fra databasen har kjøringen på seg; commits kobles på tid.
+        commits = [c for c in endr if c["commit"] not in brukt and (
+            c.get("kjoring") == k["id"] if c.get("kjoring") else
+            start and slutt and start - SLINGRING <= c["tid"] <= slutt + SLINGRING)]
         brukt.update(c["commit"] for c in commits)
         poster.append({**k, "commits": commits, "logg": logg.get(k["id"], {})})
     for c in endr:

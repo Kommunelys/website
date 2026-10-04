@@ -70,3 +70,23 @@ alter role kommunelys_pipeline with login password '...';
 3. Kjør `tests/regler.sql`. Svaret er en feilmelding som begynner med «RESULTAT n av m ok».
 
 En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql`.
+
+## Sikkerhetskopi
+
+Arbeidsflyten `Sikkerhetskopi` tar en kopi av skjemaene `kjerne` og `drift` hver
+natt (`pg_dump`) og lagrer den som en fil på kjøringen i 90 dager. Brukere og
+innlogging (`tilgang`, `auth`) er ikke med. Gratisplanen i Supabase har ingen
+sikkerhetskopi å stole på, så dette er den eneste kopien utenfor databasen
+når dataene ikke lenger ligger i git.
+
+Gjenopprette til en tom database:
+
+1. Kjør migreringene i `migrations/` (skjema, roller, regler).
+2. Last ned kopien fra kjøringen, og les den inn som `postgres`:
+   `gzip -dc kommunelys-<dato>.sql.gz | psql "<adresse som postgres>"`.
+   Kopien lager skjemaene selv; slett `kjerne` og `drift` fra trinn 1 først
+   (`drop schema kjerne, drift cascade`), og kjør migreringene etter `drift`
+   på nytt for policyer og rettigheter.
+3. Sett passordene på rollene på nytt; de er aldri med i en kopi.
+4. `python -m lager.paritet <år>` mot en eksport, eller bygg nettstedet med
+   `KOMMUNELYS_LAGER=pg` og sammenlign med det publiserte.
