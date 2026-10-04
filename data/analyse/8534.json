@@ -1,0 +1,28 @@
+{
+ "tittel_klarsprak": "Når skal de politiske utvalgene i Steinkjer møtes i 2027?",
+ "sammendrag": "Formannskapet skal vedta møteplanen for 2027 for kommunestyret, formannskapet, hovedutvalgene og medvirkningsrådene. Forslaget bygger i stor grad på møteplanen for 2026 og tar hensyn til skoleferier. Det foreslås 9 møter i kommunestyret, blant annet et eget konstituerende møte i oktober etter kommunevalget og to møter i desember: budsjettmøte 15. desember og et møte for øvrige saker 8. desember. Videre foreslås 17 møter i formannskapet, med møte i valgstyret i forbindelse med to av dem og et eget valgstyremøte 16. september 2027 for å godkjenne valget, samt 8 møter i hvert hovedutvalg. Rådene (eldrerådet, rådet for personer med funksjonsnedsettelse, inkludering og mangfold og ungdomsrådet) legges til uka før møtene i hovedutvalg og formannskap. Saken skal behandles i formannskapet 15. oktober 2026.",
+ "betydning": "Møteplanen viser når innbyggerne kan følge de politiske møtene og når saker tidligst kan bli avgjort i 2027.",
+ "tagger": [
+  "Folkevalgte",
+  "Organisasjon"
+ ],
+ "utfall": "ikke avgjort ennå",
+ "uenighet": "",
+ "usikker": false,
+ "sak_id": 8534,
+ "sjekksum": "fb2c701ea5e2eb89",
+ "modell": "claude-opus-5",
+ "innsats": "high",
+ "instruksjon_versjon": 3,
+ "dato": "2026-10-04",
+ "tokens": {
+  "inn": 3205,
+  "ut": 514
+ },
+ "kilder": [
+  {
+   "tittel": "Saksframlegg",
+   "url": "https://prod01.elementscloud.no/publikum/Documents/ShowDocument/b069d4f5-192a-4fee-be37-dc006441e271/510188/846683"
+  }
+ ]
+}
