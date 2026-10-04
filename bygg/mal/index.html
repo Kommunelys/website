@@ -116,14 +116,13 @@
 <section id="v-stemmer" hidden>
   <div class="ingress"><h1>Hvem stemte hva</h1>
   <p>Når politikerne bestemmer noe i et møte, stemmer de over forslag. Protokollen fra møtet viser hvordan hver enkelt stemte.</p></div>
-  <ol class="slik">
-    <li><b>En sak kommer til møtet med et forslag.</b> Det er skrevet av kommunedirektøren eller av utvalget som behandlet saken før, og kalles innstillingen.</li>
-    <li><b>Partiene kan foreslå noe annet.</b> De kan foreslå å endre forslaget, legge noe til, eller vedta noe helt annet.</li>
-    <li><b>Hvert forslag stemmes over for seg.</b> Får det flertall, er det vedtatt. Ellers faller det. Én sak kan derfor ha mange avstemninger.</li>
-  </ol>
-  <label class="velg"><span>Velg møte</span><select id="vsel"></select></label>
   <details class="ordliste">
-    <summary>Hva betyr ordene?</summary>
+    <summary>Slik leser du avstemningene</summary>
+    <ol class="slik">
+      <li><b>En sak kommer til møtet med et forslag.</b> Det er skrevet av kommunedirektøren eller av utvalget som behandlet saken før, og kalles innstillingen.</li>
+      <li><b>Partiene kan foreslå noe annet.</b> De kan foreslå å endre forslaget, legge noe til, eller vedta noe helt annet.</li>
+      <li><b>Hvert forslag stemmes over for seg.</b> Får det flertall, er det vedtatt. Ellers faller det. Én sak kan derfor ha mange avstemninger.</li>
+    </ol>
     <dl>
       <dt>Avstemning</dt><dd>Når politikerne stemmer over ett forslag. Protokollen kaller det votering.</dd>
       <dt>Forslaget saken kom med (innstillingen)</dt><dd>Forslaget til vedtak som lå i saken før møtet, fra kommunedirektøren eller fra utvalget som behandlet saken før. Store saker stemmes ofte over del for del.</dd>
@@ -133,21 +132,36 @@
       <dt>Fargestripen</dt><dd>Viser partiene. Til venstre de som stemte for, til høyre, blekere, de som stemte mot.</dd>
     </dl>
   </details>
-  <section class="blokk"><h2>Sakene</h2><div id="vcards"></div></section>
-  <section class="blokk"><h2>Hver enkelt politiker</h2>
-    <p class="liten muted">Gjelder de <b id="ncont"></b> avstemningene der noen stemte imot. Trykk på et navn for å se hver stemme.</p>
+  <!-- Tre deler med hver sin adresse: #stemmer/<møte eller utvalg>,
+       #stemmer/politikerne og #stemmer/partiene. -->
+  <nav class="faner" aria-label="Deler av Stemmer">
+    <a href="#stemmer" data-fane="saker" id="fane-saker">Sakene</a>
+    <a href="#stemmer/politikerne" data-fane="politikerne">Politikerne</a>
+    <a href="#stemmer/partiene" data-fane="partiene">Partiene</a>
+  </nav>
+  <div id="f-saker" class="fane">
+    <label class="velg"><span>Velg møte</span><select id="vsel"></select></label>
+    <p class="liten muted" id="vnokkel"></p>
+    <div id="vcards"></div>
+  </div>
+  <div id="f-politikerne" class="fane" hidden>
+    <p class="grunnlag" id="pgrunnlag"></p>
+    <p class="liten muted">Trykk på et navn for å se hver stemme.</p>
     <div class="valg" id="pchips"></div>
     <div class="tw"><table id="ptable" class="sorter"><thead><tr><th data-k="name">Navn</th><th data-k="party">Parti</th><th class="num" data-k="maj">Stemte som flertallet</th><th class="num" data-k="brk">Annerledes enn partiet</th><th class="num" data-k="prop">Fremmet forslag</th></tr></thead><tbody></tbody></table></div>
     <div id="ppanel" class="utvalgt"></div>
-  </section>
-  <section class="blokk"><h2>Hvem stemmer sammen?</h2>
-    <p class="liten muted">Hvor ofte to partier stemte likt, i prosent, i avstemningene der noen stemte imot. Mørkere betyr oftere enige.</p>
-    <div class="tw"><table class="heat" id="heat"></table></div>
-  </section>
-  <section class="blokk"><h2>De jevneste avstemningene</h2>
-    <p class="liten muted">Avgjort med tre stemmer eller mindre. De som stemte annerledes enn resten av partiet, er markert.</p>
-    <div id="close"></div>
-  </section>
+  </div>
+  <div id="f-partiene" class="fane" hidden>
+    <p class="grunnlag" id="partgrunnlag"></p>
+    <section class="blokk"><h2>Hvem stemmer sammen?</h2>
+      <p class="liten muted">Hvor ofte to partier stemte likt, i prosent. Mørkere betyr oftere enige.</p>
+      <div class="tw"><table class="heat" id="heat"></table></div>
+    </section>
+    <section class="blokk"><h2>De jevneste avstemningene</h2>
+      <p class="liten muted">Avgjort med tre stemmer eller mindre. De som stemte annerledes enn resten av partiet, er markert.</p>
+      <div id="close"></div>
+    </section>
+  </div>
 </section>
 
 <!-- POLITIKERE -->
