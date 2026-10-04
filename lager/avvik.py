@@ -12,6 +12,10 @@ AVVIK = _fil.DATA / "avvik"
 VURDERINGER = _fil.DATA / "vurderinger.json"
 
 
+def les(aar: int, *standard):
+    return _fil.les(AVVIK / f"{aar}.json", *standard)
+
+
 def lagre(aar: int, avvik: list[dict]) -> None:
     _fil.skriv(AVVIK / f"{aar}.json", avvik)
 

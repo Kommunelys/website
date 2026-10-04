@@ -4,3 +4,6 @@
 
 # Fase 2: AI-analyse. 1.x trengs for strukturert svar og fallbacks: "default".
 anthropic>=1.11
+
+# Databasen (lager/db.py, lager/importer.py). Brukes ikke av produksjon ennå.
+psycopg[binary]>=3.2
