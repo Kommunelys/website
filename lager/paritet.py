@@ -17,7 +17,8 @@ import json
 import os
 import sys
 
-from lager import analyse, avvik, konfig, oppmote, raa, saker, tekst, verv, voteringer
+from lager import analyse, avvik, konfig, oppmote, pg, raa, saker, tekst, verv, voteringer
+from lager import drift as lager_drift
 
 
 def _med(backend: str, funksjon, *args):
@@ -71,9 +72,9 @@ def kjor(aar: int) -> int:
         ("verv, alle år", verv.alle_aar, (), False),
         ("utvalg", verv.les_utvalg, (aar,), False),
         ("avvik", avvik.les, (aar,), False),
-        ("vurderinger", avvik.vurderinger, (), False),
         ("analyser", analyse.alle, (), False),
-        ("tillatte navn", konfig.tillatte_navn, (), False),
+        ("kjøreloggen", lager_drift.kjoringer, (), False),
+        ("forrige telling", konfig.forrige_telling, (), False),
         ("rådata: møteliste", raa.moteliste, (aar,), True),
         ("rådata: møter", raa.moter, (aar,), True),
         ("rådata: medlemslister", raa.medlemslister, (), True),
@@ -86,9 +87,17 @@ def kjor(aar: int) -> int:
         print(f"{'ok  ' if ok else 'ULIK'} {navn} ({antall}){'' if ok else '  ' + hvor}")
         feil += not ok
 
+    # Filene som vedlikeholdes for hånd, leses alltid fra filen. Her
+    # sammenlignes de med kopien i databasen.
+    for navn, fra_fil, fra_db in (("vurderinger", avvik.vurderinger, pg.vurderinger),
+                                  ("tillatte navn", konfig.tillatte_navn, pg.tillatte_navn)):
+        ok, hvor = _lik(fra_fil(), fra_db())
+        print(f"{'ok  ' if ok else 'ULIK'} {navn}{'' if ok else '  ' + hvor}")
+        feil += not ok
+
     # Partisidene: merknaden i filen er en kommentar og lagres ikke.
     fil = {k: v for k, v in _med("json", konfig.partisider).items() if k != "merknad"}
-    ok, hvor = _lik(fil, _med("pg", konfig.partisider))
+    ok, hvor = _lik(fil, pg.partisider())
     print(f"{'ok  ' if ok else 'ULIK'} partisider{'' if ok else '  ' + hvor}")
     feil += not ok
 

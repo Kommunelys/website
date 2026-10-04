@@ -3,8 +3,12 @@
 Databaseskjemaet for Kommunelys (Postgres i Supabase). Produksjon bruker den
 ikke ennå: nettstedet bygges fortsatt fra `data/`. Hver kjøring av Oppdater
 speiler `data/` inn i databasen og kontrollerer at den gir det samme (jobben
-«Speil til databasen», fase 3). Lokalt kan alt leses fra databasen med
-`KOMMUNELYS_LAGER=pg`.
+«Speil til databasen», fase 3).
+
+Med `KOMMUNELYS_LAGER=pg` leser og skriver hele kjeden databasen i stedet for
+`data/` (fase 4). Tre filer vedlikeholdes fortsatt for hånd i git, også da:
+`vurderinger.json`, `tillatte-navn.json` og `partisider.json`. De gjennomgås
+i en PR og speiles inn med `python -m lager.synk --konfig`.
 
 | Kommando | Gjør |
 |---|---|

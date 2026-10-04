@@ -486,3 +486,45 @@ def lagre_kontroller(resultater: dict[int, tuple[str, list[str]]]) -> None:
         "insert into kjerne.analyse_kontroll (kommune_id, analyse_id, bestatt, grunner, grunnlag) "
         "select kommune_id, id, %s, %s, %s from kjerne.analyse_gjeldende where kommune_id = %s and sak_id = %s",
         [(not grunner, grunner, g, kommune_id(), sak_id) for sak_id, (g, grunner) in resultater.items()])
+
+
+# Kjøreloggen og tellingen --------------------------------------------------------------
+
+# Rekkefølgen drift.logg legger tallene inn i.
+_KJORING_NOKLER = {"portal": ["kall", "feil", "megabyte", "sekunder"],
+                   "analyse": ["sendt", "feil", "utsatt", "tokens_inn", "tokens_ut"]}
+
+
+def _tall(verdi):
+    """numeric -> int eller float, som i filen (round(..., 1) gir 1.7, men 90)."""
+    return float(verdi) if verdi.as_tuple().exponent < 0 else int(verdi)
+
+
+def _orden(navn: str, orden: list[str]) -> tuple:
+    return (orden.index(navn) if navn in orden else len(orden), navn)
+
+
+@_husket
+def kjoringer() -> dict:
+    """Kjøreloggen slik drift.logg skriver den: bare kjøringer med tall."""
+    tall: dict[str, dict] = {}
+    for kid, del_, nokkel, verdi in _rader(
+            "select kjoring_id, del, nokkel, verdi from drift.kjoring_tall "
+            "where kommune_id = %s or kommune_id is null", kommune_id()):
+        tall.setdefault(kid, {}).setdefault(del_, {})[nokkel] = _tall(verdi)
+    ut = {}
+    for kid, start in _rader("select kjoring_id, start from drift.kjoring where kjoring_id = any(%s) "
+                             "order by start, kjoring_id", list(tall)):
+        post = {"start": start.astimezone(dt.timezone.utc).isoformat(timespec="seconds")}
+        for del_ in sorted(tall[kid], key=lambda d: _orden(d, list(_KJORING_NOKLER))):
+            orden = _KJORING_NOKLER.get(del_, [])
+            post[del_] = {n: tall[kid][del_][n] for n in sorted(tall[kid][del_], key=lambda n: _orden(n, orden))}
+        ut[kid] = post
+    return ut
+
+
+@_husket
+def forrige_telling() -> dict[str, int]:
+    return {str(aar): saker for aar, saker in _rader(
+        "select distinct on (aar) aar, saker from drift.bygg where kommune_id = %s "
+        "order by aar, bygget desc", kommune_id())}

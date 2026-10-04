@@ -18,7 +18,6 @@ from __future__ import annotations
 import hashlib
 import json
 
-from bygg.bygg_nettsted import _slug as profiladresse
 
 
 def _jsonb(verdi):
@@ -97,6 +96,8 @@ class Personer:
     def sikre(self, navn: set[str]) -> int:
         nye = sorted(n for n in navn if n and n not in self.id)
         if nye:
+            from bygg.bygg_nettsted import _slug as profiladresse  # noqa: PLC0415
+
             self.c.cursor().executemany(
                 "insert into kjerne.person (kommune_id, navn, slug) values (%s, %s, %s)",
                 [(self.k, n, profiladresse(n)) for n in nye])
@@ -382,6 +383,22 @@ def vurderinger(c, k: int, vurd: list) -> int:
     return len(nye)
 
 
+def partilenker(c, k: int, partisider: dict) -> int:
+    """Lenkene til partienes egne sider (data/partisider.json), på partiene som finnes."""
+    sider = partisider.get("partier", {})
+    kontrollert = partisider.get("kontrollert")
+    endret = 0
+    for kode, url, tekst in c.execute("select kode, url, url_tekst from kjerne.parti where kommune_id = %s",
+                                      (k,)).fetchall():
+        ny = sider.get(kode) or {}
+        if (url, tekst) != (ny.get("url"), ny.get("tekst")):
+            c.execute("update kjerne.parti set url = %s, url_tekst = %s, url_kontrollert = %s "
+                      "where kommune_id = %s and kode = %s",
+                      (ny.get("url"), ny.get("tekst"), kontrollert if ny else None, k, kode))
+            endret += 1
+    return endret
+
+
 def tillatte_navn(c, k: int, tillatte: list) -> dict:
     return synk_tabell(
         c, "kjerne.tillatt_navn", ["kommune_id", "navn", "sak_id", "begrunnelse", "vurdert"],
@@ -412,6 +429,8 @@ def analyser(c, k: int, analyser_: dict, kjoring_id: str) -> int:
 # Kjøreloggen -------------------------------------------------------------------------------
 
 def kjoringer(c, k: int, logg: dict) -> int:
+    # Tallene sendes som tekst: 168.0 og 168 er like for Postgres, men ikke i
+    # filen, og numeric beholder skalaen bare når den får teksten.
     c.cursor().executemany(
         "insert into drift.kjoring (kjoring_id, kilde, start) values (%s, %s, %s) "
         "on conflict (kjoring_id) do nothing",
@@ -419,7 +438,66 @@ def kjoringer(c, k: int, logg: dict) -> int:
     rader = [(kid, k, del_, nokkel, verdi) for kid, post in logg.items()
              for del_, tall in post.items() if isinstance(tall, dict) for nokkel, verdi in tall.items()]
     c.cursor().executemany(
-        "insert into drift.kjoring_tall (kjoring_id, kommune_id, del, nokkel, verdi) values (%s, %s, %s, %s, %s) "
+        "insert into drift.kjoring_tall (kjoring_id, kommune_id, del, nokkel, verdi) values (%s, %s, %s, %s, %s::numeric) "
         "on conflict (kjoring_id, coalesce(kommune_id, 0), del, nokkel) do update set verdi = excluded.verdi "
-        "where drift.kjoring_tall.verdi is distinct from excluded.verdi", rader)
+        "where drift.kjoring_tall.verdi::text is distinct from excluded.verdi::text",
+        [(kid, k_, d, n, str(v)) for kid, k_, d, n, v in rader])
     return len(logg)
+
+
+# Enkeltskriving fra lager/ (KOMMUNELYS_LAGER=pg) --------------------------------------
+
+def i_transaksjon(skriv):
+    """Kjører skriv(c, kommune_id) i én transaksjon, og glemmer det som er husket.
+
+    Hver lagre-funksjon i lager/ skriver i sin egen transaksjon, med
+    kjøringen satt for endringsloggen. Bryter dataene en regel, skrives
+    ingenting.
+    """
+    import os  # noqa: PLC0415
+
+    from . import db, kjoring_id, pg  # noqa: PLC0415
+
+    with db.transaksjon(kjoring_id()) as c:
+        slug = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
+        rad = c.execute("select kommune_id from kjerne.kommune where slug = %s", (slug,)).fetchone()
+        if not rad:
+            raise SystemExit(f"fant ikke kommunen {slug} i databasen")
+        resultat = skriv(c, rad[0])
+    pg.glem()
+    return resultat
+
+
+def tekst_en(c, k: int, id_rom: str, ident: int, innhold: str) -> None:
+    """Teksten for ett dokument. Dokumentet må finnes (skrives av saker og møter)."""
+    if id_rom == "mote":
+        rad = c.execute("select id from kjerne.dokument where kommune_id = %s and slag = 'moteprotokoll' "
+                        "and mote_id = %s", (k, ident)).fetchone()
+    else:
+        rad = c.execute("select id from kjerne.dokument where kommune_id = %s and id_rom = %s and portal_id = %s",
+                        (k, id_rom, ident)).fetchone()
+    if not rad:
+        raise SystemExit(f"fant ikke dokumentet {id_rom} {ident}; skriv sakene og møtene først")
+    c.execute("insert into kjerne.dokument_tekst (kommune_id, dokument_id, tekst) values (%s, %s, %s) "
+              "on conflict (kommune_id, dokument_id) do update set tekst = excluded.tekst, hentet = now() "
+              "where kjerne.dokument_tekst.tekst is distinct from excluded.tekst", (k, rad[0], innhold))
+
+
+def kjoring_tall(c, k: int, kjoring_id: str, del_: str, tall: dict) -> None:
+    """Tall for én del av kjøringen (siste-kjoring.json for henting av møter)."""
+    c.execute("insert into drift.kjoring (kjoring_id, kilde) values (%s, %s) on conflict do nothing",
+              (kjoring_id, "actions" if kjoring_id.isdigit() else "lokal"))
+    c.cursor().executemany(
+        "insert into drift.kjoring_tall (kjoring_id, kommune_id, del, nokkel, verdi) values (%s, %s, %s, %s, %s::numeric) "
+        "on conflict (kjoring_id, coalesce(kommune_id, 0), del, nokkel) do update set verdi = excluded.verdi",
+        [(kjoring_id, k, del_, n, str(v)) for n, v in tall.items()
+         if isinstance(v, (int, float)) and not isinstance(v, bool)])
+
+
+def forrige_telling(c, k: int, telling: dict[str, int]) -> int:
+    """Antall saker per år ved siste kontroll, som et bygg i drift.bygg."""
+    siste = {str(a): n for a, n in c.execute(
+        "select distinct on (aar) aar, saker from drift.bygg where kommune_id = %s order by aar, bygget desc", (k,))}
+    nye = [(k, int(a), n) for a, n in telling.items() if siste.get(a) != n]
+    c.cursor().executemany("insert into drift.bygg (kommune_id, aar, saker, status) values (%s, %s, %s, '{}')", nye)
+    return len(nye)

@@ -11,6 +11,10 @@ dem, stopper speilingen med en melding om hva som er galt, og ingenting
 skrives.
 
     python -m lager.synk 2026
+    python -m lager.synk --konfig    # bare filene som vedlikeholdes for hånd
+
+--konfig speiler vurderingene, de tillatte navnene og partilenkene. De er
+filer i git også når resten ligger i databasen, og speiles ved hver kjøring.
 """
 
 from __future__ import annotations
@@ -32,6 +36,18 @@ def _kjoring_id() -> tuple[str, str]:
         forsok = os.environ.get("GITHUB_RUN_ATTEMPT", "1")
         return f"synk-{os.environ['GITHUB_RUN_ID']}-{forsok}", "actions"
     return f"synk-{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}", "lokal"
+
+
+def _konfig(c, k: int) -> dict:
+    return {"nye_vurderinger": pg_skriv.vurderinger(c, k, avvik.vurderinger()),
+            "tillatt_navn": pg_skriv.tillatte_navn(c, k, konfig.tillatte_navn()),
+            "partilenker": pg_skriv.partilenker(c, k, konfig.partisider())}
+
+
+def kjor_konfig() -> dict:
+    """Bare filene som vedlikeholdes for hånd. Brukes når resten skrives
+    direkte til databasen (KOMMUNELYS_LAGER=pg)."""
+    return pg_skriv.i_transaksjon(_konfig)
 
 
 def kjor(aar: int) -> dict:
@@ -61,8 +77,8 @@ def kjor(aar: int) -> dict:
         ut.update(pg_skriv.voteringer(c, k, aar, personer, voteringer.les(aar, [])))
         ut.update(pg_skriv.oppmote(c, k, aar, personer, oppmote.les(aar, [])))
         ut.update(pg_skriv.avvik(c, k, aar, avvik.les(aar, [])))
-        ut["nye_vurderinger"] = pg_skriv.vurderinger(c, k, avvik.vurderinger())
-        ut["tillatt_navn"] = pg_skriv.tillatte_navn(c, k, konfig.tillatte_navn())
+        ut.update(_konfig(c, k))
+        ut["forrige_telling"] = pg_skriv.forrige_telling(c, k, konfig.forrige_telling())
         ut["nye_analyser"] = pg_skriv.analyser(c, k, analyse.alle(), kjoring_id)
         ut["kjoringer"] = pg_skriv.kjoringer(c, k, lager_drift.kjoringer())
         ut["personer"] = len(personer.id)
@@ -75,6 +91,9 @@ def kjor(aar: int) -> dict:
 
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if "--konfig" in sys.argv:
+        print(json.dumps(kjor_konfig(), ensure_ascii=False, indent=1, default=str))
+        return
     aar = int(args[0]) if args else dt.date.today().year
     print(json.dumps(kjor(aar), ensure_ascii=False, indent=1, default=str))
 

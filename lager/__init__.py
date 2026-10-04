@@ -36,3 +36,9 @@ def i_dag() -> str:
     datoen).
     """
     return os.environ.get("KOMMUNELYS_I_DAG") or dt.date.today().isoformat()
+
+
+def kjoring_id() -> str:
+    """Kjøringen som skriver: GITHUB_RUN_ID i Actions, ellers «lokal-<dato>».
+    Samme som i drift.logg, så endringsloggen og kjøreloggen kan kobles."""
+    return os.environ.get("GITHUB_RUN_ID") or f"lokal-{dt.date.today().isoformat()}"
