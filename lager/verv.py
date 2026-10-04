@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from . import _fil, fra_databasen, pg
+from . import _fil, fra_databasen, pg, pg_skriv
 
 VERV = _fil.DATA / "verv"
 UTVALG = _fil.DATA / "utvalg"
@@ -22,6 +22,9 @@ def alle_aar() -> list[dict]:
 
 
 def lagre(aar: int, verv: list[dict]) -> None:
+    if fra_databasen():
+        return pg_skriv.i_transaksjon(
+            lambda c, k: pg_skriv.verv(c, k, aar, pg_skriv.Personer(c, k), verv))
     _fil.skriv(VERV / f"{aar}.json", verv)
 
 
@@ -32,4 +35,9 @@ def les_utvalg(aar: int, *standard):
 
 
 def lagre_utvalg(aar: int, utvalg: dict) -> None:
+    if fra_databasen():
+        from . import konfig  # noqa: PLC0415
+
+        partisider = konfig.partisider()
+        return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.utvalg(c, k, aar, utvalg, partisider))
     _fil.skriv(UTVALG / f"{aar}.json", utvalg)

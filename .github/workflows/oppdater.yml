@@ -171,8 +171,8 @@ jobs:
 
   # Fase 3 i flyttingen til databasen (supabase/README.md). Speiler data/ inn
   # i Postgres og kontrollerer at databasen gir nøyaktig det samme. Filene er
-  # fortsatt kilden, og bygget venter ikke på denne jobben: feiler den,
-  # publiseres nettstedet likevel, og feilen vises på kjøringen.
+  # fortsatt kilden. Bygget venter på jobben, så driftssiden viser resultatet,
+  # men publiserer selv om den feiler; feilen vises på kjøringen.
   database:
     name: Speil til databasen
     needs: [hent, analyser]
@@ -197,13 +197,15 @@ jobs:
       - name: Speil data/ inn i databasen
         run: python -m lager.synk "${{ inputs.aar || '2026' }}"
 
+      # Resultatet lagres i drift.paritet og vises på /drift/.
       - name: Kontroller at databasen gir det samme som filene
-        run: python -m lager.paritet "${{ inputs.aar || '2026' }}"
+        run: python -m lager.paritet "${{ inputs.aar || '2026' }}" --lagre
 
-  # Publiserer selv om analysen feilet; sakene vises da uten nye sammendrag.
+  # Publiserer selv om analysen eller databasen feilet; sakene vises da uten
+  # nye sammendrag, og driftssiden sier hva som gikk galt.
   bygg:
     name: Bygg og publiser
-    needs: [hent, analyser]
+    needs: [hent, analyser, database]
     if: ${{ always() && needs.hent.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
@@ -235,6 +237,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
+          # Bare for boksen om overgangen til databasen på /drift/.
+          KOMMUNELYS_DB_URL: ${{ secrets.KOMMUNELYS_DB_URL }}
         run: python -m bygg.bygg_nettsted
 
       - uses: actions/upload-pages-artifact@v3

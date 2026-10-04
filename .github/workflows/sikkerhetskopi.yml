@@ -1,0 +1,47 @@
+name: Sikkerhetskopi
+
+# Nattlig kopi av databasen (Supabase). Gratisplanen har ingen sikkerhetskopi
+# vi kan stole på, og Supabase anbefaler egne kopier. Når dataene ikke lenger
+# ligger i git, er dette den eneste kopien utenfor databasen.
+#
+# Kopien tas med rollen kommunelys_pipeline: skjemaene kjerne og drift, ikke
+# tilgang eller auth (brukere og innlogging). Innholdet er det samme som i
+# data/ i git i dag: offentlige saksdokumenter, rådata fra portalen og
+# analysene. Den lagres som en fil på kjøringen i 90 dager.
+#
+# Gjenoppretting: se supabase/README.md.
+
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kopi:
+    name: Kopier databasen
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      KOMMUNELYS_DB_URL: ${{ secrets.KOMMUNELYS_DB_URL }}
+    steps:
+      - name: Kopier skjemaene kjerne og drift
+        # pg_dump må ha samme hovedversjon som databasen (Postgres 17).
+        # --enable-row-security: rollen leser gjennom RLS-reglene sine.
+        run: |
+          fil="kommunelys-$(date -u +%Y-%m-%d).sql.gz"
+          docker run --rm -e KOMMUNELYS_DB_URL postgres:17-alpine sh -c \
+            'pg_dump "$KOMMUNELYS_DB_URL" --schema=kjerne --schema=drift \
+               --no-owner --no-privileges --enable-row-security' | gzip -9 > "$fil"
+          test "$(gzip -dc "$fil" | grep -c '^COPY kjerne\.')" -gt 20
+          echo "FIL=$fil" >> "$GITHUB_ENV"
+          ls -l "$fil"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FIL }}
+          path: ${{ env.FIL }}
+          retention-days: 90
+          if-no-files-found: error

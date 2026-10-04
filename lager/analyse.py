@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from . import _fil, fra_databasen, pg
+from . import _fil, fra_databasen, pg, pg_skriv
 
 ANALYSE = _fil.DATA / "analyse"
 
@@ -25,4 +25,23 @@ def alle() -> dict[int, dict]:
 
 
 def lagre(analyse: dict) -> None:
+    if fra_databasen():
+        from . import kjoring_id  # noqa: PLC0415
+
+        return pg_skriv.i_transaksjon(
+            lambda c, k: pg_skriv.analyser(c, k, {analyse["sak_id"]: analyse}, kjoring_id()))
     _fil.skriv(ANALYSE / f"{analyse['sak_id']}.json", analyse, sorter=False)
+
+
+def kontroller(grunnlag: dict[int, str]) -> dict[int, list[str]]:
+    """Kontrollresultater som alt finnes for samme grunnlag, per sak.
+
+    Bare i databasen (analyse_kontroll). Filene husker ingenting, så der
+    kontrolleres alt hver gang.
+    """
+    return pg.kontroller(grunnlag) if fra_databasen() else {}
+
+
+def lagre_kontroller(resultater: dict[int, tuple[str, list[str]]]) -> None:
+    if fra_databasen():
+        pg.lagre_kontroller(resultater)

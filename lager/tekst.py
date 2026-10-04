@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from . import _fil, fra_databasen, pg
+from . import _fil, fra_databasen, pg, pg_skriv
 
 TEKST = _fil.DATA / "tekst"
 ID_ROM = ("dokument", "behandling", "mote")
@@ -33,7 +33,7 @@ def _sti(id_rom: str, ident: int) -> Path:
 
 def har(id_rom: str, ident: int) -> bool:
     if fra_databasen():
-        return pg.tekst(id_rom, ident) is not None
+        return (id_rom, ident) in pg.tekst_avtrykk()
     return _sti(id_rom, ident).exists()
 
 
@@ -48,6 +48,20 @@ def les(id_rom: str, ident: int | None) -> str | None:
 
 
 def lagre(id_rom: str, ident: int, tekst: str) -> None:
+    if fra_databasen():
+        return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.tekst_en(c, k, id_rom, ident, tekst))
     sti = _sti(id_rom, ident)
     sti.parent.mkdir(parents=True, exist_ok=True)
     sti.write_text(tekst, encoding="utf-8")
+
+
+def avtrykk() -> dict[tuple[str, int], str] | None:
+    """md5 av hver tekst i databasen, uten å hente teksten. None for filene,
+    der det er like raskt å lese teksten."""
+    return pg.tekst_avtrykk() if fra_databasen() else None
+
+
+def forhandslast(nokler) -> None:
+    """Henter mange tekster i ett kall fra databasen. Ingenting å gjøre for filene."""
+    if fra_databasen():
+        pg.forhandslast(nokler)
