@@ -80,6 +80,7 @@ data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
 data/drift/kjoringer.json  tall fra hver kjøring: kall mot portalen, AI-analysen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
+supabase/  databaseskjemaet (migreringer og tester); ikke i bruk av produksjon ennå
 ```
 
 ## Kommandoer
