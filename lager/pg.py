@@ -4,17 +4,61 @@ Brukes når KOMMUNELYS_LAGER=pg. Hver funksjon her svarer til en `les`-
 funksjon i lager/, og skal gi nøyaktig det samme tilbake, også rekkefølgen
 på nøklene: den havner i nettstedets data.js. lager.paritet kontrollerer det.
 
-Fase 2: bare lesing. Skriving går fortsatt til filene, og
-forrige telling, måling og kjøreloggen leses fortsatt derfra.
+Svarene huskes i prosessen: et bygg spør om det samme mange ganger, og
+hver spørring går over nett. glem() tømmer minnet etter skriving. Hver
+gang gis en kopi, så den som endrer svaret, ikke endrer minnet.
+
+Tekst hentes bare når den trengs. Fingeravtrykket (md5) av all tekst er
+lite og hentes samlet; selve teksten hentes per dokument, eller samlet med
+forhandslast().
 """
 
 from __future__ import annotations
 
+import copy
 import datetime as dt
+import functools
 import os
 
 _tilkobling = None
-_tekster: dict[tuple[str, int], str] | None = None
+_kommune: int | None = None
+_minne: dict = {}
+_tekster: dict[tuple[str, int], str] = {}
+_avtrykk: dict[tuple[str, int], str] | None = None
+_MANGLER = object()
+
+
+def glem() -> None:
+    """Tøm det som er husket, for eksempel etter at noe er skrevet."""
+    global _avtrykk
+    _minne.clear()
+    _tekster.clear()
+    _avtrykk = None
+
+
+def _husket(funksjon):
+    """Husker svaret per argument. «standard» (som i lager/) brukes når
+    databasen ikke har dataene, og er ikke en del av nøkkelen."""
+    @functools.wraps(funksjon)
+    def ny(*args, standard=()):
+        nokkel = (funksjon.__name__, args)
+        if nokkel not in _minne:
+            try:
+                _minne[nokkel] = funksjon(*args)
+            except FileNotFoundError:
+                _minne[nokkel] = _MANGLER
+        verdi = _minne[nokkel]
+        if verdi is _MANGLER:
+            if standard:
+                return standard[0]
+            raise FileNotFoundError(f"databasen har ikke {funksjon.__name__}{args}")
+        return copy.deepcopy(verdi)
+
+    def med_standard(*args):
+        # lager/ kaller f(aar, *standard); skill året fra standardverdien.
+        n = funksjon.__code__.co_argcount
+        return ny(*args[:n], standard=args[n:])
+    return med_standard
 
 
 def _c():
@@ -33,11 +77,14 @@ def _rader(sql: str, *args) -> list[tuple]:
 
 
 def kommune_id() -> int:
-    slug = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
-    rad = _rader("select kommune_id from kjerne.kommune where slug = %s", slug)
-    if not rad:
-        raise SystemExit(f"fant ikke kommunen {slug} i databasen")
-    return rad[0][0]
+    global _kommune
+    if _kommune is None:
+        slug = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
+        rad = _rader("select kommune_id from kjerne.kommune where slug = %s", slug)
+        if not rad:
+            raise SystemExit(f"fant ikke kommunen {slug} i databasen")
+        _kommune = rad[0][0]
+    return _kommune
 
 
 def _sortert(d: dict) -> dict:
@@ -54,20 +101,20 @@ def _tidspunkt(verdi: dt.datetime | None) -> str:
     return verdi.strftime("%Y-%m-%dT%H:%M") if verdi else ""
 
 
-def _mangler(hva: str, standard: tuple):
-    if standard:
-        return standard[0]
+def _mangler(hva: str):
     raise FileNotFoundError(f"databasen har ingen {hva}")
 
 
 # Rådata --------------------------------------------------------------------
 
+@_husket
 def moteliste(aar: int):
     rad = _rader("select innhold from kjerne.raa_svar where kommune_id = %s and kilde = 'moteliste' "
                  "and nokkel = %s order by hentet desc, id desc limit 1", kommune_id(), str(aar))
     return rad[0][0] if rad else None
 
 
+@_husket
 def moter_raa(aar: int):
     liste = moteliste(aar)
     if liste is None:
@@ -79,6 +126,7 @@ def moter_raa(aar: int):
         "order by nokkel collate \"C\", hentet desc, id desc", kommune_id(), ider)]
 
 
+@_husket
 def medlemslister():
     return [r[0] for r in _rader(
         "select distinct on (nokkel collate \"C\") innhold from kjerne.raa_svar "
@@ -88,12 +136,13 @@ def medlemslister():
 
 # Saker og møter ---------------------------------------------------------------
 
-def saker(aar: int, *standard):
+@_husket
+def saker(aar: int):
     k = kommune_id()
     rader = _rader("select sak_id, tittel, skjermet_tittel, sakstype, formalia, status, til_kommunestyret "
                    "from kjerne.sak where kommune_id = %s and aar = %s order by rekkefolge", k, aar)
     if not rader:
-        return _mangler(f"saker for {aar}", standard)
+        return _mangler(f"saker for {aar}")
 
     steg: dict[int, list] = {}
     for (sak_id, bid, dato, hentet, mote_id, publisert, skjermet, saksnr, url_mote, url_vedtak,
@@ -128,13 +177,14 @@ def saker(aar: int, *standard):
         for sak_id, tittel, skjermet, sakstype, formalia, status, til_ks in rader]
 
 
-def moter(aar: int, *standard):
+@_husket
+def moter(aar: int):
     k = kommune_id()
     rader = _rader("select mote_id, dato, slutt, utvalg, utvalg_navn, sted, rom, antall_saker, url "
                    "from kjerne.mote where kommune_id = %s and extract(year from dato) = %s "
                    "order by dato, mote_id::text collate \"C\"", k, aar)
     if not rader:
-        return _mangler(f"møter for {aar}", standard)
+        return _mangler(f"møter for {aar}")
     dokumenter: dict[int, list] = {}
     for mote_id, slag, tittel, url in _rader(
             "select mote_id, slag, tittel, url from kjerne.dokument where kommune_id = %s "
@@ -150,7 +200,8 @@ def moter(aar: int, *standard):
 
 # Voteringer --------------------------------------------------------------------
 
-def voteringer(aar: int, *standard):
+@_husket
+def voteringer(aar: int):
     k = kommune_id()
     poster = _rader(
         "select vt.behandling_id, st.dato, st.sak_id, st.saksnr, st.utvalg, vt.vedtak "
@@ -159,7 +210,7 @@ def voteringer(aar: int, *standard):
         "join kjerne.sak s on s.kommune_id = st.kommune_id and s.sak_id = st.sak_id "
         "where vt.kommune_id = %s and s.aar = %s order by st.dato, vt.behandling_id", k, aar)
     if not poster:
-        return _mangler(f"voteringer for {aar}", standard)
+        return _mangler(f"voteringer for {aar}")
 
     stemmer: dict[tuple, dict] = {}
     for bid, nr, valg, forslag, parti, navn in _rader(
@@ -210,14 +261,15 @@ def voteringer(aar: int, *standard):
 
 # Oppmøte, utvalg og verv -----------------------------------------------------------
 
-def oppmote(aar: int, *standard):
+@_husket
+def oppmote(aar: int):
     k = kommune_id()
     moter_ = _rader(
         "select om.mote_id, m.dato, m.utvalg, om.ikke_tolket from kjerne.oppmote_mote om "
         "join kjerne.mote m using (kommune_id, mote_id) "
         "where om.kommune_id = %s and extract(year from m.dato) = %s order by m.dato, om.mote_id", k, aar)
     if not moter_:
-        return _mangler(f"oppmøte for {aar}", standard)
+        return _mangler(f"oppmøte for {aar}")
     rader: dict[int, list] = {}
     for mote_id, navn, funksjon, repr_, vara in _rader(
             "select o.mote_id, p.navn, o.funksjon, o.repr, v.navn from kjerne.oppmote o "
@@ -241,14 +293,15 @@ def oppmote(aar: int, *standard):
             for mote_id, dato, utvalg, ikke_tolket in moter_]
 
 
-def utvalg(aar: int, *standard):
+@_husket
+def utvalg(aar: int):
     k = kommune_id()
     rader = _rader(
         "select ua.utvalg_id, u.kortnavn, u.navn, ua.faste_medlemmer, ua.varamedlemmer, ua.moter, "
         "ua.medlemsliste_hentet from kjerne.utvalg_aar ua join kjerne.utvalg u using (kommune_id, utvalg_id) "
         "where ua.kommune_id = %s and ua.aar = %s order by ua.utvalg_id", k, aar)
     if not rader:
-        return _mangler(f"utvalg for {aar}", standard)
+        return _mangler(f"utvalg for {aar}")
     partier = {kode: navn for kode, navn in _rader(
         "select kode, navn from kjerne.parti where kommune_id = %s", k)}
     return {
@@ -276,11 +329,13 @@ def _verv(sql_aar: str, *args) -> list[dict]:
     return sorted(ut, key=lambda v: (v["utvalg"] or "", v["rolle"] or "~", v["navn"]))
 
 
-def verv(aar: int, *standard):
+@_husket
+def verv(aar: int):
     ut = _verv(" and v.aar = %s", aar)
-    return ut if ut else _mangler(f"verv for {aar}", standard)
+    return ut if ut else _mangler(f"verv for {aar}")
 
 
+@_husket
 def verv_alle_aar() -> list[dict]:
     aar = [r[0] for r in _rader("select distinct aar from kjerne.verv where kommune_id = %s order by aar",
                                 kommune_id())]
@@ -289,14 +344,15 @@ def verv_alle_aar() -> list[dict]:
 
 # Avvik og vurderinger -----------------------------------------------------------
 
-def avvik(aar: int, *standard):
+@_husket
+def avvik(aar: int):
     """Avvikene slik tolk.bygg_avvik skrev dem, med gjeldende vurdering."""
     k = kommune_id()
     rader = _rader("select avvik, type, utvalg, dato, beskrivelse, kilde from kjerne.avvik "
                    "where kommune_id = %s and aktiv and extract(year from dato) = %s "
                    "order by dato, avvik collate \"C\"", k, aar)
     if not rader:
-        return _mangler(f"avvik for {aar}", standard)
+        return _mangler(f"avvik for {aar}")
     voteringer_: dict[str, list] = {}
     for nokkel, bid, nr in _rader("select avvik, behandling_id, nr from kjerne.avvik_votering "
                                   "where kommune_id = %s order by avvik, rekkefolge", k):
@@ -314,6 +370,7 @@ def avvik(aar: int, *standard):
     return ut
 
 
+@_husket
 def vurderinger() -> list[dict]:
     return [{"avvik": a, "avgjorelse": avg, "merknad": merknad, "begrunnelse": begrunnelse,
              "vurdert_av": vurdert_av, "dato": _dato(dato)}
@@ -345,12 +402,14 @@ def analyse(sak_id: int) -> dict | None:
     return _analyse(rader[0]) if rader else None
 
 
+@_husket
 def analyser() -> dict[int, dict]:
     return {r[0]: _analyse(r) for r in _rader(_ANALYSE + " order by sak_id", kommune_id())}
 
 
 # Det som vedlikeholdes for hånd ----------------------------------------------------
 
+@_husket
 def partisider() -> dict:
     rader = _rader("select kode, url, url_tekst, url_kontrollert from kjerne.parti "
                    "where kommune_id = %s and url is not null order by kode collate \"C\"", kommune_id())
@@ -359,6 +418,7 @@ def partisider() -> dict:
             "partier": {kode: {"url": url, "tekst": tekst} for kode, url, tekst, _ in rader}}
 
 
+@_husket
 def tillatte_navn() -> list[dict]:
     return [{"navn": navn, "sak_id": sak_id, "begrunnelse": begrunnelse, "vurdert": _dato(vurdert)}
             for navn, sak_id, begrunnelse, vurdert in _rader(
@@ -368,22 +428,61 @@ def tillatte_navn() -> list[dict]:
 
 # Tekst -------------------------------------------------------------------------------
 
-def _alle_tekster() -> dict[tuple[str, int], str]:
-    """All tekst for kommunen, lest én gang (rundt 6 MB per år)."""
-    global _tekster
-    if _tekster is None:
-        _tekster = {}
-        for id_rom, portal_id, mote_id, slag, innhold in _rader(
-                "select d.id_rom, d.portal_id, d.mote_id, d.slag, t.tekst from kjerne.dokument_tekst t "
-                "join kjerne.dokument d on d.kommune_id = t.kommune_id and d.id = t.dokument_id "
-                "where t.kommune_id = %s", kommune_id()):
-            if slag == "moteprotokoll":
-                _tekster[("mote", mote_id)] = innhold
-            else:
-                _tekster[(id_rom, portal_id)] = innhold
-    return _tekster
+_NOKKEL = ("case when d.slag = 'moteprotokoll' then 'mote' else d.id_rom end, "
+           "case when d.slag = 'moteprotokoll' then d.mote_id else d.portal_id end")
 
 
-def tekst(id_rom: str, ident: int) -> str | None:
-    return _alle_tekster().get((id_rom, ident))
+def tekst_avtrykk() -> dict[tuple[str, int], str]:
+    """md5 av hver tekst, etter (ID-rom, ID) som i lager.tekst. Lite: ett kall."""
+    global _avtrykk
+    if _avtrykk is None:
+        _avtrykk = {(rom, ident): md5 for rom, ident, md5 in _rader(
+            f"select {_NOKKEL}, md5(t.tekst) from kjerne.dokument_tekst t "
+            "join kjerne.dokument d on d.kommune_id = t.kommune_id and d.id = t.dokument_id "
+            "where t.kommune_id = %s", kommune_id())}
+    return _avtrykk
 
+
+def forhandslast(nokler) -> None:
+    """Henter teksten for mange dokumenter i ett kall."""
+    mangler = [n for n in set(nokler) if n in tekst_avtrykk() and n not in _tekster]
+    if not mangler:
+        return
+    for rom, ident, innhold in _rader(
+            f"select {_NOKKEL}, t.tekst from kjerne.dokument_tekst t "
+            "join kjerne.dokument d on d.kommune_id = t.kommune_id and d.id = t.dokument_id "
+            f"where t.kommune_id = %s and ({_NOKKEL}) in (select * from unnest(%s::text[], %s::int[]))",
+            kommune_id(), [r for r, _ in mangler], [i for _, i in mangler]):
+        _tekster[(rom, ident)] = innhold
+
+
+def tekst(id_rom: str, ident: int | None) -> str | None:
+    if not ident or (id_rom, ident) not in tekst_avtrykk():
+        return None
+    if (id_rom, ident) not in _tekster:
+        forhandslast([(id_rom, ident)])
+    return _tekster.get((id_rom, ident))
+
+
+# Kontrollen av sammendragene ---------------------------------------------------------
+
+def kontroller(grunnlag: dict[int, str]) -> dict[int, list[str]]:
+    """Resultatene som alt finnes for gjeldende analyse med samme grunnlag, per sak."""
+    ut = {}
+    for sak_id, g, grunner in _rader(
+            "select a.sak_id, k.grunnlag, k.grunner from kjerne.analyse_gjeldende a "
+            "join kjerne.analyse_kontroll k on k.kommune_id = a.kommune_id and k.analyse_id = a.id "
+            "where a.kommune_id = %s and k.grunnlag is not null order by k.kontrollert", kommune_id()):
+        if grunnlag.get(sak_id) == g:
+            ut[sak_id] = list(grunner)
+    return ut
+
+
+def lagre_kontroller(resultater: dict[int, tuple[str, list[str]]]) -> None:
+    """Nye kontrollresultater, for gjeldende analyse av hver sak."""
+    if not resultater:
+        return
+    _c().cursor().executemany(
+        "insert into kjerne.analyse_kontroll (kommune_id, analyse_id, bestatt, grunner, grunnlag) "
+        "select kommune_id, id, %s, %s, %s from kjerne.analyse_gjeldende where kommune_id = %s and sak_id = %s",
+        [(not grunner, grunner, g, kommune_id(), sak_id) for sak_id, (g, grunner) in resultater.items()])

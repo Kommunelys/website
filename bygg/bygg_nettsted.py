@@ -40,7 +40,7 @@ from lager import oppmote as lager_oppmote
 from lager import saker as lager_saker
 from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
-from tester.kontroller import sammendrag_avvik, unntatte_navn
+from tester.kontroller import sammendrag_avvik_alle, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 from tolk.navn import PARTIKODER, normaliser, partikode
 
@@ -109,13 +109,13 @@ def _sammendrag(saker: list, analyser: dict) -> tuple[dict, list[str]]:
     Samme prinsipp som for voteringer: et sammendrag med avvik vises ikke,
     men stopper ikke resten av nettstedet.
     """
-    unntatt = unntatte_navn()
+    alle_avvik = sammendrag_avvik_alle(saker, analyser, unntatte_navn())
     ut, holdt = {}, []
     for s in saker:
         a = analyser.get(s["sak_id"])
         if not a:
             continue
-        avvik = sammendrag_avvik(s, a, unntatt)
+        avvik = alle_avvik[s["sak_id"]]
         if avvik:
             holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik)}")
             continue

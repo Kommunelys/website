@@ -33,7 +33,7 @@ def _sti(id_rom: str, ident: int) -> Path:
 
 def har(id_rom: str, ident: int) -> bool:
     if fra_databasen():
-        return pg.tekst(id_rom, ident) is not None
+        return (id_rom, ident) in pg.tekst_avtrykk()
     return _sti(id_rom, ident).exists()
 
 
@@ -51,3 +51,15 @@ def lagre(id_rom: str, ident: int, tekst: str) -> None:
     sti = _sti(id_rom, ident)
     sti.parent.mkdir(parents=True, exist_ok=True)
     sti.write_text(tekst, encoding="utf-8")
+
+
+def avtrykk() -> dict[tuple[str, int], str] | None:
+    """md5 av hver tekst i databasen, uten å hente teksten. None for filene,
+    der det er like raskt å lese teksten."""
+    return pg.tekst_avtrykk() if fra_databasen() else None
+
+
+def forhandslast(nokler) -> None:
+    """Henter mange tekster i ett kall fra databasen. Ingenting å gjøre for filene."""
+    if fra_databasen():
+        pg.forhandslast(nokler)

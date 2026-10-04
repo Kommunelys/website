@@ -10,6 +10,7 @@ publiseringen heller enn å legge ut noe som kan være galt.
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import re
 import sys
@@ -68,11 +69,15 @@ def ingen_skjermet_tekst(saker: list[dict]) -> list[str]:
     return feil
 
 
-def _kildetekst(sak: dict) -> str:
+def _kilder(sak: dict) -> list[tuple[str, int]]:
+    """Dokumentene sammendraget kontrolleres mot: saksframlegget og vedtakene."""
     f = sak.get("saksframlegg") or {}
-    kandidater = ([("dokument", f.get("dokument_id"))]
-                  + [("behandling", s["behandling_id"]) for s in sak["saksgang"]])
-    return "".join(lager_tekst.les(id_rom, ident) or "" for id_rom, ident in kandidater)
+    return ([("dokument", f.get("dokument_id"))]
+            + [("behandling", s["behandling_id"]) for s in sak["saksgang"]])
+
+
+def _kildetekst(sak: dict) -> str:
+    return "".join(lager_tekst.les(id_rom, ident) or "" for id_rom, ident in _kilder(sak))
 
 
 def _folkevalgte() -> set[str]:
@@ -231,16 +236,53 @@ def sammendrag_avvik(sak: dict, a: dict, unntatt: set[str] = frozenset()) -> lis
     return ut
 
 
+# Endres koden i denne filen, kan kontrollen svare annerledes, og tidligere
+# resultater gjelder ikke lenger.
+_KODE = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+
+
+def _grunnlag(sak: dict, a: dict, avtrykk: dict, unntatt: set[str]) -> str:
+    """Fingeravtrykk av alt sammendrag_avvik bygger på. Navnelisten tas med
+    bare så langt den virker: hvilke navn i tittelen som ikke er unntatt."""
+    deler = {
+        "kode": _KODE,
+        "analyse": {k: a.get(k) for k in
+                    ("usikker", "kilder", "tittel_klarsprak", "sammendrag", "betydning", "uenighet")},
+        "sak": {"tittel": sak["tittel"], "datoer": [st["dato"] for st in sak["saksgang"]]},
+        "kilde": [avtrykk.get(n) for n in _kilder(sak)],
+        "navn": _navn_i_tittel(sak["tittel"], unntatt),
+    }
+    return hashlib.sha256(json.dumps(deler, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def sammendrag_avvik_alle(saker: list[dict], analyser: dict[int, dict],
+                          unntatt: set[str]) -> dict[int, list[str]]:
+    """sammendrag_avvik for hver analyse som har en sak, per sak-ID.
+
+    Fra databasen huskes svaret med et fingeravtrykk av grunnlaget, og bare
+    det som er endret, kontrolleres på nytt. Da slipper bygget å laste ned
+    all kildetekst hver gang.
+    """
+    etter_sak = {s["sak_id"]: s for s in saker}
+    par = {sid: (etter_sak[sid], a) for sid, a in analyser.items() if sid in etter_sak}
+    avtrykk = lager_tekst.avtrykk()
+    if avtrykk is None:
+        return {sid: sammendrag_avvik(s, a, unntatt) for sid, (s, a) in par.items()}
+    grunnlag = {sid: _grunnlag(s, a, avtrykk, unntatt) for sid, (s, a) in par.items()}
+    kjent = lager_analyse.kontroller(grunnlag)
+    nye = [sid for sid in par if sid not in kjent]
+    lager_tekst.forhandslast(n for sid in nye for n in _kilder(par[sid][0]))
+    resultat = {sid: sammendrag_avvik(*par[sid], unntatt) for sid in nye}
+    lager_analyse.lagre_kontroller({sid: (grunnlag[sid], g) for sid, g in resultat.items()})
+    return {sid: kjent.get(sid, resultat.get(sid)) for sid in par}
+
+
 def analyser_viser_til_kilden(saker: list[dict]) -> list[str]:
     """Sammendrag med avvik. Stopper ikke publiseringen; bygget holder dem tilbake."""
-    etter_sak = {s["sak_id"]: s for s in saker}
-    unntatt = unntatte_navn()
-    ut = []
-    for a in lager_analyse.alle().values():
-        sak = etter_sak.get(a.get("sak_id"))
-        if sak and not a.get("usikker"):
-            ut += [f"sak {a['sak_id']}: {g}" for g in sammendrag_avvik(sak, a, unntatt)]
-    return ut
+    analyser = {sid: a for sid, a in lager_analyse.alle().items() if not a.get("usikker")}
+    return [f"sak {sid}: {g}"
+            for sid, grunner in sammendrag_avvik_alle(saker, analyser, unntatte_navn()).items()
+            for g in grunner]
 
 
 def antall_har_ikke_stupt(saker: list[dict], aar: int) -> list[str]:
