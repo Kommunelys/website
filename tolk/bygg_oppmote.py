@@ -10,8 +10,8 @@ Stemmene i data/voteringer/ kontrolleres mot oppmøtet. To slags avvik:
 Avvikene lagres per møte. En votering med avvik skal ikke publiseres før et
 menneske har sett på den, på samme måte som `tall_stemmer` (ADR-002).
 
-Leser data/moter/<år>.json, data/tekst/moter/<møte-ID>.txt (skrives av
-`hent.hent_dokumenter`), data/saker/<år>.json og data/voteringer/<år>.json.
+Leser møtene, teksten i møteprotokollene (skrives av `hent.hent_dokumenter`),
+sakene og voteringene.
 
     python -m tolk.bygg_oppmote 2026
 """
@@ -22,28 +22,13 @@ import collections
 import datetime as dt
 import json
 import sys
-from pathlib import Path
+
+from lager import oppmote as lager_oppmote
+from lager import saker as lager_saker
+from lager import tekst as lager_tekst
+from lager import voteringer as lager_voteringer
 
 from .tolk_protokoll import les_oppmoteblokk
-
-ROT = Path(__file__).resolve().parent.parent
-MOTER = ROT / "data" / "moter"
-SAKER = ROT / "data" / "saker"
-VOTERINGER = ROT / "data" / "voteringer"
-TEKST = ROT / "data" / "tekst" / "moter"
-UT = ROT / "data" / "oppmote"
-
-
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
-
-
-def _les(sti: Path, standard):
-    return json.loads(sti.read_text(encoding="utf-8")) if sti.exists() else standard
 
 
 def _avvik(oppmote: list[dict], behandlinger: list[dict]) -> list[dict]:
@@ -64,9 +49,9 @@ def _avvik(oppmote: list[dict], behandlinger: list[dict]) -> list[dict]:
 
 
 def kjor(aar: int) -> dict:
-    moter = json.loads((MOTER / f"{aar}.json").read_text(encoding="utf-8"))
-    saker = _les(SAKER / f"{aar}.json", [])
-    voteringer = _les(VOTERINGER / f"{aar}.json", [])
+    moter = lager_saker.les_moter(aar)
+    saker = lager_saker.les(aar, [])
+    voteringer = lager_voteringer.les(aar, [])
 
     mote_for = {s["behandling_id"]: s["mote_id"]
                 for sak in saker for s in sak["saksgang"]}
@@ -76,10 +61,10 @@ def kjor(aar: int) -> dict:
 
     ut = []
     for m in moter:
-        sti = TEKST / f"{m['mote_id']}.txt"
-        if not sti.exists():
+        protokoll = lager_tekst.les("mote", m["mote_id"])
+        if protokoll is None:
             continue
-        oppmote, ikke_tolket = les_oppmoteblokk(sti.read_text(encoding="utf-8"))
+        oppmote, ikke_tolket = les_oppmoteblokk(protokoll)
         ut.append({
             "mote_id": m["mote_id"],
             "utvalg": m["utvalg"],
@@ -90,7 +75,7 @@ def kjor(aar: int) -> dict:
         })
 
     ut.sort(key=lambda m: (m["dato"], m["mote_id"]))
-    _skriv(UT / f"{aar}.json", ut)
+    lager_oppmote.lagre(aar, ut)
 
     rader = [o for m in ut for o in m["oppmote"]]
     oppsummering = {

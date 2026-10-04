@@ -31,17 +31,15 @@ import json
 import re
 import sys
 import time
-from pathlib import Path
 
+import lager
 from drift.logg import legg_til
+from lager import analyse as lager_analyse
+from lager import saker as lager_saker
+from lager import tekst as lager_tekst
+from lager import voteringer as lager_voteringer
 from tolk.bygg_avvik import holdt_tilbake
 from tolk.saksframlegg import del_opp
-
-ROT = Path(__file__).resolve().parent.parent
-SAKER = ROT / "data" / "saker"
-TEKST = ROT / "data" / "tekst"
-VOTERINGER = ROT / "data" / "voteringer"
-ANALYSE = ROT / "data" / "analyse"
 
 MODELL = "claude-opus-5"
 INNSATS = "high"
@@ -119,10 +117,6 @@ class Avvist(Exception):
     """Svaret kan ikke brukes: avslag, kuttet svar eller ugyldig JSON."""
 
 
-def _les(sti: Path, standard):
-    return json.loads(sti.read_text(encoding="utf-8")) if sti.exists() else standard
-
-
 def sjekksum(*deler: str) -> str:
     h = hashlib.sha256()
     h.update(f"{MODELL}|{INNSATS}|{INSTRUKSJON_VERSJON}".encode())
@@ -131,12 +125,9 @@ def sjekksum(*deler: str) -> str:
     return h.hexdigest()[:16]
 
 
-def _tekst(navn: str | int | None) -> str:
+def _tekst(id_rom: str, ident: int | None) -> str:
     """Tekst trukket ut av et dokument. Tom streng hvis vi ikke har den."""
-    if not navn:
-        return ""
-    sti = TEKST / f"{navn}.txt"
-    return sti.read_text(encoding="utf-8") if sti.exists() else ""
+    return lager_tekst.les(id_rom, ident) or ""
 
 
 def vedtaksdel(protokoll: str) -> str:
@@ -188,7 +179,7 @@ def kildetekst(sak: dict, voteringer: dict[int, dict],
 
     ADR-006: saksframlegget for den enkelte saken, ikke møteinnkallingen.
     """
-    i_dag = dt.date.today().isoformat()
+    i_dag = lager.i_dag()
     gang = "\n".join(
         f"- {s['utvalg']} {s['dato'][:10]} {s['saksnr']}"
         + (" (kommende møte)" if s["dato"][:10] >= i_dag else "")
@@ -197,7 +188,7 @@ def kildetekst(sak: dict, voteringer: dict[int, dict],
     kilder = []
 
     f = sak.get("saksframlegg") or {}
-    framlegg = _tekst(f.get("dokument_id"))
+    framlegg = _tekst("dokument", f.get("dokument_id"))
     if framlegg:
         avsnitt = del_opp(framlegg)
         if avsnitt:
@@ -211,7 +202,7 @@ def kildetekst(sak: dict, voteringer: dict[int, dict],
     for steg in sak["saksgang"]:
         if not steg["url_vedtak"]:
             continue  # skjermet eller ikke publisert
-        vedtak = vedtaksdel(_tekst(steg["behandling_id"]))
+        vedtak = vedtaksdel(_tekst("behandling", steg["behandling_id"]))
         b = voteringer.get(steg["behandling_id"], {"voteringer": []})
         # Voteringer med avvik som ikke er godkjent, holdes utenfor (ADR-015).
         vs = [_votering(v) for v in b["voteringer"]
@@ -292,8 +283,8 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
     """minutter: slutt å sende nye saker etter så lang tid, så jobben rekker å
     lagre det som er gjort før arbeidsflytens tidsgrense."""
     frist = time.monotonic() + minutter * 60 if minutter else None
-    saker = json.loads((SAKER / f"{aar}.json").read_text(encoding="utf-8"))
-    voteringer = {b["behandling_id"]: b for b in _les(VOTERINGER / f"{aar}.json", [])}
+    saker = lager_saker.les(aar)
+    voteringer = {b["behandling_id"]: b for b in lager_voteringer.les(aar, [])}
     stopp, _ = holdt_tilbake(aar)
 
     if vis is not None:
@@ -305,7 +296,6 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
         print(f"\n--- {len(kilde)} tegn. Kilder: {json.dumps(kilder, ensure_ascii=False)}")
         return
 
-    ANALYSE.mkdir(parents=True, exist_ok=True)
     klient = None
     if not tort_lop:
         try:
@@ -331,8 +321,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             continue  # verken saksframlegg eller vedtak å forklare ut fra
 
         sum_ = sjekksum(kilde)
-        sti = ANALYSE / f"{sak['sak_id']}.json"
-        if _les(sti, {}).get("sjekksum") == sum_:
+        if (lager_analyse.les(sak["sak_id"]) or {}).get("sjekksum") == sum_:
             teller["uendret"] += 1
             continue
         if teller["sendt"] >= maks or (frist and time.monotonic() > frist):
@@ -383,7 +372,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             # CLAUDE.md regel 5: uten kildelenke publiseres det ikke.
             "kilder": kilder,
         })
-        sti.write_text(json.dumps(resultat, ensure_ascii=False, indent=1), encoding="utf-8")
+        lager_analyse.lagre(resultat)
         tokens.update(forbruk)
 
     print(", ".join(f"{k}: {v}" for k, v in teller.items()))

@@ -15,13 +15,14 @@ import re
 import sys
 from pathlib import Path
 
+from lager import analyse as lager_analyse
+from lager import konfig
+from lager import saker as lager_saker
+from lager import tekst as lager_tekst
+from lager import verv as lager_verv
 from tolk.bygg_avvik import ugyldige_vurderinger
 
 ROT = Path(__file__).resolve().parent.parent
-SAKER = ROT / "data" / "saker"
-MOTER = ROT / "data" / "moter"
-ANALYSE = ROT / "data" / "analyse"
-TEKST = ROT / "data" / "tekst"
 MAL = ROT / "bygg" / "mal"
 KOMMUNER = ROT / "kommuner"
 
@@ -54,7 +55,7 @@ def ingen_skjermet_tekst(saker: list[dict]) -> list[str]:
     for s in saker:
         for steg in s["saksgang"]:
             if steg["protokoll_skjermet"]:
-                if (TEKST / f"{steg['behandling_id']}.txt").exists():
+                if lager_tekst.har("behandling", steg["behandling_id"]):
                     feil.append(
                         f"behandling {steg['behandling_id']} er skjermet, "
                         "men det finnes lagret tekst"
@@ -68,26 +69,22 @@ def ingen_skjermet_tekst(saker: list[dict]) -> list[str]:
 
 
 def _kildetekst(sak: dict) -> str:
-    kilde = ""
     f = sak.get("saksframlegg") or {}
-    for kandidat in [f.get("dokument_id")] + [s["behandling_id"] for s in sak["saksgang"]]:
-        p = TEKST / f"{kandidat}.txt"
-        if p.exists():
-            kilde += p.read_text(encoding="utf-8")
-    return kilde
+    kandidater = ([("dokument", f.get("dokument_id"))]
+                  + [("behandling", s["behandling_id"]) for s in sak["saksgang"]])
+    return "".join(lager_tekst.les(id_rom, ident) or "" for id_rom, ident in kandidater)
 
 
 def _folkevalgte() -> set[str]:
     """Navn i vervlistene. Folkevalgte kan omtales i sin rolle (regel 6)."""
-    return {v["navn"] for sti in (ROT / "data" / "verv").glob("*.json")
-            for v in json.loads(sti.read_text(encoding="utf-8"))}
+    return {v["navn"] for v in lager_verv.alle_aar()}
 
 
 def _tillatte_navn() -> set[str]:
     """Navn som er vurdert og kan stå i et sammendrag, for eksempel en avdød
     dikter en byste skal reises over. Vedlikeholdes i data/tillatte-navn.json
     med begrunnelse for hvert navn."""
-    return {n["navn"] for n in _les(ROT / "data" / "tillatte-navn.json", [])}
+    return {n["navn"] for n in konfig.tillatte_navn()}
 
 
 def unntatte_navn() -> set[str]:
@@ -239,8 +236,7 @@ def analyser_viser_til_kilden(saker: list[dict]) -> list[str]:
     etter_sak = {s["sak_id"]: s for s in saker}
     unntatt = unntatte_navn()
     ut = []
-    for sti in ANALYSE.glob("*.json"):
-        a = _les(sti)
+    for a in lager_analyse.alle().values():
         sak = etter_sak.get(a.get("sak_id"))
         if sak and not a.get("usikker"):
             ut += [f"sak {a['sak_id']}: {g}" for g in sammendrag_avvik(sak, a, unntatt)]
@@ -248,15 +244,13 @@ def analyser_viser_til_kilden(saker: list[dict]) -> list[str]:
 
 
 def antall_har_ikke_stupt(saker: list[dict], aar: int) -> list[str]:
-    forrige = _les(ROT / "data" / "forrige-telling.json", {})
+    forrige = konfig.forrige_telling()
     n = len(saker)
     gammel = forrige.get(str(aar))
     if gammel and n < gammel * (1 - MAKS_FALL):
         return [f"antall saker falt fra {gammel} til {n}; stopper"]
     forrige[str(aar)] = n
-    (ROT / "data" / "forrige-telling.json").write_text(
-        json.dumps(forrige, ensure_ascii=False, indent=1), encoding="utf-8"
-    )
+    konfig.lagre_forrige_telling(forrige)
     return []
 
 
@@ -278,12 +272,12 @@ def malen_nevner_ingen_kommune() -> list[str]:
 
 
 def kjor(aar: int) -> int:
-    saker = _les(SAKER / f"{aar}.json")
+    saker = lager_saker.les(aar, None)
     if saker is None:
         print(f"fant ingen saker for {aar}. Kjør tolk.bygg_saker først.")
         return 1
 
-    moter = _les(MOTER / f"{aar}.json", [])
+    moter = lager_saker.les_moter(aar, [])
     feil: list[str] = []
     for kontroll in (
         alle_saker_har_kilde,
@@ -303,7 +297,7 @@ def kjor(aar: int) -> int:
     feil += malen_nevner_ingen_kommune()
 
     print(f"{len(moter)} møter, {len(saker)} saker, "
-          f"{len(list(ANALYSE.glob('*.json')))} analyser")
+          f"{len(lager_analyse.alle())} analyser")
 
     if feil:
         print(f"\n{len(feil)} feil:")

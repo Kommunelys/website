@@ -1,7 +1,7 @@
 """Laster ned saksframlegg, saksprotokoller og møteprotokoller og lagrer teksten.
 
-ADR-005: dokumentene lagres ikke i repoet. Bare teksten, under data/tekst/.
-         Møteprotokollene ligger i data/tekst/moter/<møte-ID>.txt.
+ADR-005: dokumentene lagres ikke i repoet. Bare teksten (lager.tekst), med
+         møteprotokollene etter møte-ID.
 ADR-006: møteinnkallingen lastes aldri ned for analyse. Den er alle
          saksframleggene limt sammen, over 350 sider for kommunestyret.
          Møteprotokollen hentes bare for oppmøtelisten (ADR-008).
@@ -23,7 +23,6 @@ from __future__ import annotations
 
 import collections
 import io
-import json
 import shutil
 import subprocess
 import sys
@@ -32,14 +31,13 @@ import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 
+from lager import konfig
+from lager import raa as raadata
+from lager import saker as lager_saker
+from lager import tekst as lager_tekst
 from tolk import saksframlegg
 
 from . import portal
-
-ROT = Path(__file__).resolve().parent.parent
-RAA = ROT / "data" / "raa"
-SAKER = ROT / "data" / "saker"
-TEKST = ROT / "data" / "tekst"
 
 # Under dette mangler dokumentet tekstlag og er trolig skannet. Målt 2.10.2026:
 # det skannede dokumentet har 1 tegn per side, de korteste protokollene 82.
@@ -117,11 +115,10 @@ def filformat(data: bytes) -> str:
 
 
 def _moter_i_raadata(aar: int) -> list[dict]:
-    mappe = RAA / str(aar) / "moter"
-    if not mappe.exists():
-        raise SystemExit(f"fant ikke {mappe}. Kjør hent.hent_moter først.")
-    return [json.loads(sti.read_text(encoding="utf-8"))
-            for sti in sorted(mappe.glob("*.json"))]
+    moter = raadata.moter(aar)
+    if moter is None:
+        raise SystemExit(f"fant ingen møter for {aar}. Kjør hent.hent_moter først.")
+    return moter
 
 
 def _apne_i_raadata(aar: int) -> tuple[set[int], set[int], set[int]]:
@@ -158,7 +155,7 @@ def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
     """Hva som skal hentes. Skjermede dokumenter er allerede filtrert bort
     i tolk/bygg_saker.py, men vi stoler ikke på det alene: hver oppgave
     kontrolleres også mot flaggene i rådataene."""
-    saker = json.loads((SAKER / f"{aar}.json").read_text(encoding="utf-8"))
+    saker = lager_saker.les(aar)
     ut: list[dict] = []
 
     for sak in saker:
@@ -186,7 +183,7 @@ def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
                 ut.append({"id": d["Id"],
                            "url": portal.url_motedokument(mid, "MP", d["Id"]),
                            "slag": "moteprotokoll", "kolonner": True,
-                           "fil": f"moter/{mid}.txt"})
+                           "mote_id": mid})
 
     dok_apne, vedtak_apne, mote_apne = _apne_i_raadata(aar)
     apne_for = {"saksprotokoll": vedtak_apne, "moteprotokoll": mote_apne}
@@ -205,20 +202,30 @@ def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
     return unike
 
 
+def _hvor(o: dict) -> tuple[str, int]:
+    """Hvor teksten lagres: ID-rommet og nøkkelen (se lager.tekst).
+
+    Møteprotokollen lagres etter møte-ID, ikke dokument-ID, siden det er
+    møtet oppmøtelisten hører til.
+    """
+    if o["slag"] == "moteprotokoll":
+        return "mote", o["mote_id"]
+    if o["slag"] == "saksprotokoll":
+        return "behandling", o["id"]
+    return "dokument", o["id"]
+
+
 def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
     sjekk_poppler()
-    TEKST.mkdir(parents=True, exist_ok=True)
     oppgaver = _oppgaver(aar, med_vedlegg)
-    nye = [o for o in oppgaver
-           if mal_bare or not (TEKST / o.get("fil", f"{o['id']}.txt")).exists()]
+    nye = [o for o in oppgaver if mal_bare or not lager_tekst.har(*_hvor(o))]
     print(f"{len(oppgaver)} dokumenter, {len(nye)} skal lastes ned. Omtrent "
           f"{len(nye) * SEKUND_PER_DOKUMENT / 60:.0f} minutter.")
 
     maling: list[dict] = []
     with tempfile.TemporaryDirectory() as tmp:
         for i, o in enumerate(oppgaver, 1):
-            mal = TEKST / o.get("fil", f"{o['id']}.txt")
-            if mal.exists() and not mal_bare:
+            if lager_tekst.har(*_hvor(o)) and not mal_bare:
                 continue
 
             try:
@@ -266,13 +273,10 @@ def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
                 if post["mangler_tekstlag"]:
                     print(f"[{i}] {o['id']} mangler tekstlag, ikke lagret")
                     continue
-                mal.parent.mkdir(parents=True, exist_ok=True)
-                mal.write_text(tekst, encoding="utf-8")
+                lager_tekst.lagre(*_hvor(o), tekst)
 
     if mal_bare:
-        sti = ROT / "data" / f"maling-{aar}.json"
-        sti.write_text(json.dumps(maling, ensure_ascii=False, indent=1),
-                       encoding="utf-8")
+        konfig.lagre_maling(aar, maling)
         formater = collections.Counter(m["format"] for m in maling if "format" in m)
         pdf_er = [m for m in maling if m.get("format") == "pdf"]
         uten = [m for m in maling if m.get("mangler_tekstlag")]
@@ -289,7 +293,7 @@ def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
         if sf:
             print(f"  saksframlegg etter malen: "
                   f"{sum(m['etter_malen'] for m in sf)} av {len(sf)}")
-        print(f"  detaljer i {sti}")
+        print(f"  detaljer i data/maling-{aar}.json")
 
 
 def main() -> None:

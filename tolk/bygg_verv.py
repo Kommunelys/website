@@ -2,17 +2,17 @@
 
 ADR-008: uten medlemskap og oppmøte kan ikke stemmetall tolkes. To kilder:
 
-- Medlemslistene i data/raa/medlemmer/, som bare viser dagens medlemmer
+- Medlemslistene i rådataene, som bare viser dagens medlemmer
   (hent.hent_medlemmer). Hver lagrede versjon er en datert observasjon.
-- Oppmøtet i data/oppmote/<år>.json, som viser hvem som møtte i hvilken rolle
-  på hvert møte (tolk.bygg_oppmote).
+- Oppmøtet fra tolk.bygg_oppmote, som viser hvem som møtte i hvilken rolle
+  på hvert møte.
 
 Et verv er én person i ett utvalg. Portalen oppgir ikke når et verv begynte
 eller sluttet, så vervet får de datoene det faktisk er observert: i hvilke
 medlemslister det står, og på hvilke møter personen møtte. Valg, fritak og
 permisjon står i sakene, men leses ikke ut her.
 
-Skriver data/utvalg/<år>.json og data/verv/<år>.json.
+Skriver utvalgene med partiene, og vervene (lager.verv).
 
     python -m tolk.bygg_verv 2026
 """
@@ -23,32 +23,20 @@ import collections
 import datetime as dt
 import json
 import sys
-from pathlib import Path
+
+from lager import oppmote as lager_oppmote
+from lager import raa as raadata
+from lager import verv as lager_verv
 
 from .navn import normaliser
 
-ROT = Path(__file__).resolve().parent.parent
-RAA = ROT / "data" / "raa"
-OPPMOTE = ROT / "data" / "oppmote"
-UT_UTVALG = ROT / "data" / "utvalg"
-UT_VERV = ROT / "data" / "verv"
-
 FASTE = ("Leder", "Nestleder", "Medlem")
-
-
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
 
 
 def _utvalg_i_aar(aar: int) -> dict[int, dict]:
     """UT_ID -> navn, kortnavn og møter, fra rådataene for året."""
     ut: dict[int, dict] = {}
-    for sti in (RAA / str(aar) / "moter").glob("*.json"):
-        m = json.loads(sti.read_text(encoding="utf-8"))
+    for m in raadata.moter(aar) or []:
         uid = m["mote"]["UT_ID"]
         u = ut.setdefault(uid, {"navn": m["mote"]["UT_NAVN"], "kortnavn": None, "moter": []})
         u["kortnavn"] = u["kortnavn"] or (m["detaljer"].get("DMB") or {}).get("ShortCode")
@@ -60,8 +48,7 @@ def kjor(aar: int) -> dict:
     utvalg = _utvalg_i_aar(aar)
     mote_utvalg = {mid: uid for uid, u in utvalg.items() for mid in u["moter"]}
 
-    lister = [json.loads(p.read_text(encoding="utf-8"))
-              for p in sorted((RAA / "medlemmer").glob("*.json"))]
+    lister = raadata.medlemslister()
     if not lister:
         raise SystemExit("fant ingen medlemslister. Kjør hent.hent_medlemmer først.")
     siste = lister[-1]
@@ -95,7 +82,7 @@ def kjor(aar: int) -> dict:
                              repr=m["repr"], i_dagens_liste=True)
 
     # Oppmøtet: hvem som faktisk møtte, i hvilken rolle og når.
-    oppmote = json.loads((OPPMOTE / f"{aar}.json").read_text(encoding="utf-8"))
+    oppmote = lager_oppmote.les(aar)
     for mote in oppmote:
         uid = mote_utvalg.get(mote["mote_id"])
         dato = mote["dato"][:10]
@@ -109,7 +96,7 @@ def kjor(aar: int) -> dict:
                 v["motte_for"].append(o["vara_for"])
 
     ut_verv = sorted(verv.values(), key=lambda v: (v["utvalg"] or "", v["rolle"] or "~", v["navn"]))
-    _skriv(UT_VERV / f"{aar}.json", ut_verv)
+    lager_verv.lagre(aar, ut_verv)
 
     partier = {m["repr"]: m["repr_navn"]
                for u in siste["utvalg"].values() for m in u["medlemmer"]
@@ -125,7 +112,7 @@ def kjor(aar: int) -> dict:
             "varamedlemmer": sum(1 for m in medlemmer if m["funksjon"] == "Varamedlem"),
             "moter": len(u["moter"]),
         })
-    _skriv(UT_UTVALG / f"{aar}.json", {
+    lager_verv.lagre_utvalg(aar, {
         "medlemsliste_hentet": siste["hentet"],
         "utvalg": ut_utvalg,
         "partier": partier,
