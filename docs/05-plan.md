@@ -104,9 +104,9 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
       2026, fra 9 utvalg, består tellekontrollen
 - [x] Vurdere de 10 avvikene i `data/avvik/2026.json`. 9 publiseres med
       merknad
-- [ ] Få svar fra kommunen på hvem som møtte i kommunestyret 16.09.2026:
-      Lena Hanem Bartnes (SP) eller Anniken Bjørnes (R). Til da holdes 42
-      voteringer tilbake
+- [x] Kommunestyret 16.09.2026: de 42 voteringene publiseres med merknad om
+      at protokollen er selvmotsigende om hvem som møtte. Vi venter ikke på
+      kommunen (ADR-015, endret 4.10.2026)
 - [ ] Bestemme hvem som eier tjenesten og står som avsender
 - [x] Opprette det offentlige GitHub-repoet og legge inn API-nøkkelen som
       Actions secret
@@ -125,8 +125,8 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - Kommunestyrets sammensetning er dagens, fra medlemslisten. Den viser ikke
   permisjoner og bytter tidligere i året.
 - Saker fra 2025 som fortsatte i 2026, er bare delvis med.
-- Voteringene fra kommunestyret 16.09.2026 er holdt tilbake til kommunen har
-  svart på hvem som møtte.
+- Voteringene fra kommunestyret 16.09.2026 vises med merknad: protokollen er
+  selvmotsigende om hvem som møtte, så én stemme kan være ført på feil parti.
 - Hver votering viser typen (innstilling, forslag, endrings- eller tilleggsforslag),
   hvem som fremmet det, og hele forslagsteksten. Utdraget i listen er starten av
   teksten, ikke et sammendrag.

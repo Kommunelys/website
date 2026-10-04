@@ -167,17 +167,18 @@ gjelder det 97 voteringer i 6 møter, og alle står slik i protokollene:
 | FSKO 17.06 | Lill Marit Sandseter stemmer uten å stå på listen |
 | KS 16.09 | Lena Hanem Bartnes (SP) stemmer i 42 voteringer uten å stå på listen |
 
-Avvikene lagres per møte. En votering med avvik publiseres ikke før et
-menneske har sett på den.
+Avvikene lagres per møte. En votering med avvik publiseres ikke før avviket
+er vurdert (se under).
 
 ### Vurdering av avvik
 
 Avvikene kan vurderes av et menneske eller en språkmodell. Vurderingen
 avgjør bare om voteringen publiseres og med hvilken merknad. Navn og tall
 gjengis alltid slik protokollen oppgir dem, og `vurdert_av` sier hvem som
-har vurdert. Svaret står ofte ikke i dokumentene. Når det avgjørende er
-hvem som møtte, og det bare kommunen vet, er avgjørelsen
-`venter_paa_kommunen`. Se ADR-015.
+har vurdert. Svaret står ofte ikke i dokumentene. Tjenesten venter ikke på
+svar fra kommunen: da publiseres voteringen slik protokollen oppgir den,
+med en merknad som sier hva som er usikkert, og protokollen gjelder. Se
+ADR-015.
 
 `python -m tolk.bygg_avvik` samler avvikene til `data/avvik/<år>.json`. Ett
 avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
@@ -198,10 +199,9 @@ Vurderingen skrives for hånd i `data/vurderinger.json`:
 |---|---|
 | `publiser` | Voteringene publiseres, med merknaden |
 | `ikke_publiser` | Holdes tilbake |
-| `venter_paa_kommunen` | Holdes tilbake til kommunen har svart |
 
 Et avvik uten vurdering holdes tilbake. Nettstedet viser at voteringen
-finnes, men ikke hvem som stemte hva.
+finnes, men ikke hvem som stemte hva, og sier hvorfor øverst på møtet.
 
 Status 2. oktober 2026, vurdert av Claude Opus 5.5 etter beslutning fra
 prosjekteier: 9 av 10 avvik publiseres med merknad. I dem er personen på

@@ -68,6 +68,8 @@ const voteOf=(v,n)=>v.f&&v.f.includes(n)?'for':v.m&&v.m.includes(n)?'mot':null;
 function groupSide(v){const c={};v.f.forEach(n=>{const p=party(n);(c[p]=c[p]||{f:0,m:0}).f++});v.m.forEach(n=>{const p=party(n);(c[p]=c[p]||{f:0,m:0}).m++});const o={};for(const p in c)o[p]=c[p].f>=c[p].m?'for':'mot';return o}
 const SIDES=new Map(ALLEV.filter(v=>!v.holdt&&!v.en).map(v=>[v.id,groupSide(v)]));
 const omstridt=v=>!v.holdt&&!v.en&&v.nfor>0&&v.nmot>0;
+// Saksprotokollen for én behandling. Den gjelder når protokollen er selvmotsigende.
+const protFor=hid=>{const c=SAK_FOR[hid],x=c&&c.st.find(x=>x.hid===hid);return x&&x.prot};
 // Ved alternativ votering gjelder «vedtatt» ett av forslagene, ikke voteringen som helhet.
 const resTxt=v=>v.vinner?`Forslag ${v.vinner} vedtatt`:v.res==='vedtatt'?'Vedtatt':'Falt';
 const HOLDT=ALLEV.filter(v=>v.holdt).length;
@@ -136,7 +138,7 @@ const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includ
   const stemmer=c=>{
     const vs=ALLEV.filter(v=>v.hid===c.last.hid);
     if(!vs.length)return '';
-    if(vs.every(v=>v.holdt))return 'avstemningene er holdt tilbake';
+    if(vs.every(v=>v.holdt))return 'stemmene vises ikke';
     if(vs.every(v=>v.en))return 'enstemmig';
     const pub=vs.filter(v=>!v.holdt&&!v.en);
     if(vs.length===1&&!(pub[0].alt&&pub[0].alt.length))return pub[0].nmot?`${pub[0].nfor} mot ${pub[0].nmot} stemmer`:'alle stemte for';
@@ -287,8 +289,11 @@ function namesBlock(v){
   const sides=SIDES.get(v.id)||{};
   const grp=(ns,side)=>{const by={};ns.forEach(n=>{(by[party(n)]=by[party(n)]||[]).push(n)});return pord(ns).map(p=>`<div class="pg"><span class="sq" style="background:${pc(p)}"></span><b>${p}</b> ${by[p].map(n=>side&&sides[p]!==side?`<span class="cross" title="Stemte annerledes enn partiet">${plink(n)}</span>`:plink(n)).join(', ')}</div>`).join('')||'<span class="muted">Ingen</span>'};
   const borte=v.borte&&v.borte.length?`<div class="vmeta">Ikke til stede: ${v.borte.map(plink).join(', ')}</div>`:'';
-  const merkForklart=`<div class="vmeta">Uthevet: stemte annerledes enn resten av partiet.</div>`;
+  const brudd=[...v.f.filter(n=>sides[party(n)]&&sides[party(n)]!=='for'),...v.m.filter(n=>sides[party(n)]&&sides[party(n)]!=='mot')].length;
+  const merkForklart=brudd?`<div class="vmeta">Uthevet: stemte annerledes enn resten av partiet.</div>`:'';
   if(erAlt(v))return `<div class="names">${v.alt.map(a=>`<div><h4>Stemte for forslag ${esc(a.fs)} (${a.n})</h4>${grp(a.navn,null)}</div>`).join('')}${borte}</div>`;
+  // Alle stemte for: navnene står i protokollen, her holder det med tallet.
+  if(!v.nmot)return `<div class="names"><p class="liten">Alle ${v.nfor} som stemte, stemte for.</p>${borte}</div>`;
   return `<div class="names"><div><h4 style="color:var(--good)">Stemte for (${v.nfor})</h4>${grp(v.f,'for')}</div><div><h4 style="color:var(--bad)">Stemte mot (${v.nmot})</h4>${grp(v.m,'mot')}</div>${borte}${merkForklart}</div>`}
 
 /* Hva et forslag heter, i vanlige ord. */
@@ -333,50 +338,90 @@ function altVinner(v){
   const navn=d?forslagNavn(d):`Forslag ${v.vinner}`;
   return `${esc(navn)} vant${vinn&&andre.length?`, med ${vinn.n} mot ${andre.map(a=>a.n).join(' og ')} stemmer`:''}.`;
 }
-/* Én setning om hva som skjedde i saken. Bare fra dataene. */
+/* Hva saken endte med, regnet ut av avstemningene. Bare fra dataene.
+   Forslaget saken kom med (innstillingen) står mot forslagene fremmet i
+   møtet: ble innstillingen vedtatt, og ble noe fra møtet vedtatt i tillegg
+   eller i stedet? */
+const erInnst=v=>v.en?enNavn(v)==='Forslaget saken kom med':v.type==='innstilling';
+function utfall(s){
+  let iOk=0,iFalt=0,mOk=0,mFalt=0;
+  s.v.forEach(v=>{
+    if(erAlt(v)&&v.deler){const vinn=v.deler.find(d=>d.fs===v.vinner),har=v.deler.some(d=>d.type==='innstilling');
+      if(har){if(vinn&&vinn.type==='innstilling')iOk++;else{iFalt++;mOk++}}else mOk++;return}
+    const ok=v.en||v.res==='vedtatt';
+    if(erInnst(v))ok?iOk++:iFalt++;else ok?mOk++:mFalt++;
+  });
+  const n=k=>k===1?'Ett forslag':`${k} forslag`,tall=k=>k===1?'ett':String(k);
+  // Forslagene fremmet i møtet, i én setning: hvor mange ble vedtatt, og hvor mange falt.
+  const mote=!mOk&&!mFalt?'':!mOk?` ${n(mFalt)} fremmet i møtet falt.`:` ${n(mOk)} fremmet i møtet ble vedtatt${mFalt?`, og ${tall(mFalt)} falt`:''}.`;
+  if(!iOk&&!iFalt)return {kort:mOk?'Vedtatt':'Falt',ok:mOk>0,tekst:mote.trim()};
+  if(!iFalt&&!mOk)return {kort:mFalt?'Vedtatt uendret':'Vedtatt',ok:true,tekst:`Forslaget saken kom med ble vedtatt${mFalt?' uten endringer':''}.${mote}`};
+  if(!iFalt)return {kort:'Vedtatt med endringer',ok:true,tekst:`Forslaget saken kom med ble vedtatt, med endringer.${mote}`};
+  return {kort:iOk?'Endret i møtet':mOk?'Et annet forslag vedtatt':'Falt',ok:mOk>0,tekst:`${iOk?'Deler av forslaget saken kom med falt.':'Forslaget saken kom med falt.'}${mote}`};
+}
 function sakSvar(s){
-  const org=utName(s.m.sc),vs=s.v,pub=vs.filter(v=>!v.holdt),nh=vs.length-pub.length;
-  const holdtTxt=nh?` ${nh===1?'Én avstemning er':`${nh} avstemninger er`} holdt tilbake.`:'';
-  if(vs.length===1){
-    const v=vs[0];
-    if(v.holdt)return `${org} stemte over saken, men avstemningen er holdt tilbake.`;
+  const org=utName(s.m.sc),nh=s.v.filter(v=>v.holdt).length;
+  const holdtTxt=nh?` Stemmene vises ikke for ${nh===1?'én av avstemningene':`${nh} av avstemningene`}.`:'';
+  if(s.v.length===1){
+    const v=s.v[0];
+    if(v.holdt)return `${org} stemte over saken, men stemmene vises ikke.`;
     if(v.en)return `${org} vedtok saken. Alle stemte for.`;
     if(erAlt(v))return `${org} valgte mellom ${v.deler&&v.deler.length===2?'to':v.deler?v.deler.length:'flere'} forslag. ${altVinner(v)}`;
     const forslaget=v.type==='innstilling'?'forslaget saken kom med':'ett forslag';
     if(!v.nmot)return `${org} stemte over ${forslaget}. Det ble vedtatt. Alle ${v.nfor} stemte for.`;
     return `${org} stemte over ${forslaget}. Det ble ${v.res==='vedtatt'?'vedtatt':'ikke vedtatt'}: ${v.nfor} stemte for og ${v.nmot} mot.`;
   }
-  const innst=vs.some(v=>v.type==='innstilling'),andre=vs.some(v=>v.type!=='innstilling'&&!v.en);
-  // «Fremmet i møtet», ikke «fra partiene»: i noen utvalg sitter ansatte, ikke partier.
-  const over=innst&&andre?'over forslaget saken kom med og over andre forslag fremmet i møtet':innst?'over forslaget saken kom med, del for del':'over forslag fremmet i møtet';
-  const nv=pub.filter(vedtatt).length,nf=pub.length-nv,alle=pub.length===2?'Begge':'Alle';
-  const utfall=!pub.length?'':!nf?`${alle} ble vedtatt.`:!nv?`${alle} falt.`:`${nv} ble vedtatt og ${nf} falt.`;
-  return [`${org} stemte ${vs.length} ganger i denne saken, ${over}.`,utfall,holdtTxt.trim()].filter(Boolean).join(' ');
+  return `${org} stemte ${s.v.length} ganger. ${utfall(s).tekst}${holdtTxt}`;
+}
+/* Hvilket punkt en avstemning gjelder, bare når protokollen sier det selv:
+   «Nytt punkt 4», «Til pkt 3», eller «2.» først i innstillingen. Partienes
+   egne nummer («På vegne av H, V: 18.») er ikke punkter i innstillingen og
+   brukes ikke. */
+function punkt(t,innst){
+  t=t||'';
+  const kort=t.slice(0,100);
+  // «Pkt 5.7» er et underpunkt i et annet dokument, ikke punkt 5.
+  const m=kort.match(/\b(nytt|til)?\s*(?:punkt|pkt)\.?\s*(\d{1,2})\b(?![.,]\d)/i);
+  if(m)return (m[1]?m[1].toLowerCase()+' ':'')+'punkt '+m[2];
+  // «1.» først gjelder bare punkt 1 hvis punkt 2 ikke følger i samme tekst;
+  // ellers er det hele innstillingen.
+  const n=innst&&kort.match(/^\s*(\d{1,2})\s*\.\s*(?=[A-ZÆØÅ])/);
+  if(!n||new RegExp(`(^|\\s)${+n[1]+1}\\.\\s?\\S`).test(t))return '';
+  return 'punkt '+n[1];
+}
+const forst=t=>t.charAt(0).toUpperCase()+t.slice(1);
+// Linjen for én avstemning: hva det ble stemt over.
+// Har saken bare én avstemning, gjelder den hele innstillingen, selv om teksten starter med «1.».
+function votTittel(v,alene){
+  if(erAlt(v)&&v.deler){
+    const p=v.deler.map(d=>punkt(d.tekst,d.type==='innstilling'&&!alene)).find(Boolean);
+    const navn=v.deler.map((d,i)=>{const t=forslagNavn(d);return i?t.charAt(0).toLowerCase()+t.slice(1):t}).join(' mot ');
+    return `${p?forst(p.replace(/^(nytt|til) /,''))+': ':''}${esc(navn)}`;
+  }
+  const p=punkt(v.tekst,v.type==='innstilling'&&!alene);
+  return `${esc(typeNavn(v))}${p?`, ${p}`:''}`;
+}
+function votResultat(v){
+  if(v.holdt)return '<span class="res ks">Stemmene vises ikke</span>';
+  if(v.en)return '<span class="res ok">Enstemmig</span>';
+  if(erAlt(v)){const vinn=v.alt.find(a=>a.fs===v.vinner),andre=v.alt.filter(a=>a!==vinn),d=(v.deler||[]).find(x=>x.fs===v.vinner);
+    return `<span class="res ok">${esc(d?forslagNavn(d):'Forslag '+v.vinner)} vant</span>${vinn?` <span class="num">${vinn.n}–${andre.map(a=>a.n).join('–')}</span>`:''}`}
+  const ok=v.res==='vedtatt';
+  return `<span class="res ${ok?'ok':'no'}">${ok?'Vedtatt':'Falt'}</span> <span class="num">${v.nfor}–${v.nmot}</span>`;
 }
 
-function delBlokk(d,a,vinner){
-  const vant=d.fs===vinner;
-  return `<div class="altdel${vant?' vant':''}"><div class="vot-topp"><div><b>Forslag ${esc(d.fs)}: ${esc(forslagNavn(d))}</b>${innstMerke(d)}</div><div class="vot-res">${a?antall(a.n,'stemme','stemmer'):''}${vant?' <span class="res ok">vant</span>':''}</div></div>${d.stiller?`<div class="liten muted">${fremmetAv(d)}</div>`:''}<p class="utdrag">${esc(d.tekst)}</p></div>`;
-}
-function vrow(v){
-  const merk=(v.merk||[]).map(t=>`<div class="merk">Merknad: ${esc(t)}</div>`).join('');
+function vrow(v,nr){
+  const prot=protFor(v.hid),gjelder=prot?`${ut(prot,'Protokollen')} gjelder.`:'Protokollen gjelder.';
+  const merk=(v.merk||[]).map(t=>`<div class="merk"><b>Merk:</b> ${esc(t)} ${gjelder}</div>`).join('');
   const navn=!v.holdt&&!v.en;
-  if(erAlt(v)&&v.deler&&!v.holdt){
-    const a={};v.alt.forEach(x=>{a[x.fs]=x});
-    return `<div class="vot" data-v="${v.id}"><div class="vot-topp"><div><b>Valg mellom ${v.deler.length} forslag</b> <span class="muted">· alle stemte for ett av dem</span></div></div>
-     ${v.deler.map(d=>delBlokk(d,a[d.fs],v.vinner)).join('')}${merk}
-     <button class="mer" aria-expanded="false">Vis hele forslagene og hvem som stemte hva</button><div class="full" hidden></div></div>`;
-  }
-  const tekst=v.en?'':(v.tekst||'');
-  const tall=v.holdt?'':v.en?'Alle stemte for':`${v.nfor} for, ${v.nmot} mot`;
+  const stiller=erAlt(v)&&v.deler?v.deler.filter(d=>d.stiller).map(fremmetAv).join(' '):fremmetAv(v);
   const ekstra=v.dob?` Avgjort med ${esc(v.dob)}s dobbeltstemme.`:'';
-  const knapp=navn?(tekst.length>150?'Vis hele forslaget og hvem som stemte hva':'Vis hvem som stemte hva'):tekst.length>150?'Vis hele forslaget':'';
-  return `<div class="vot${v.holdt?' held':''}" data-v="${v.id}">
-   <div class="vot-topp"><div><b>${esc(typeNavn(v))}</b>${v.en?'':innstMerke(v)}</div><div class="vot-res num">${tall}</div></div>
-   ${v.stiller||ekstra?`<div class="liten muted">${fremmetAv(v)}${ekstra}</div>`:''}
-   ${tekst?`<p class="utdrag">${esc(tekst)}</p>`:''}
-   ${navn?segBar(v):''}${v.holdt?`<p class="why">${esc(v.holdt)}</p>`:''}${merk}
-   ${knapp?`<button class="mer" aria-expanded="false">${knapp}</button><div class="full" hidden></div>`:''}</div>`;
+  const harTekst=erAlt(v)&&v.deler?true:!v.en&&!!v.tekst;
+  const knapp=harTekst&&navn?'Vis forslaget og hvem som stemte':harTekst?'Vis forslaget':navn?'Vis hvem som stemte':'';
+  return `<li class="vot${v.holdt?' held':''}" data-v="${v.id}">
+   <div class="vot-topp">${nr?`<span class="vnr">${nr}</span>`:''}<div class="vot-hva"><b>${votTittel(v,!nr)}</b>${stiller||ekstra?`<div class="liten muted">${stiller}${ekstra}</div>`:''}</div><div class="vot-res">${votResultat(v)}</div></div>
+   ${navn?segBar(v):''}${v.holdt?`<p class="why">${esc(v.holdt)} ${gjelder}</p>`:''}${merk}
+   ${knapp?`<button class="mer" aria-expanded="false">${knapp}</button><div class="full" hidden></div>`:''}</li>`;
 }
 function apneVot(b){
   const el=b.closest('.vot'),v=VID[el.dataset.v],full=el.querySelector('.full');
@@ -389,27 +434,41 @@ function apneVot(b){
   if(!b.dataset.lukket)b.dataset.lukket=b.textContent;
   b.textContent=apen?b.dataset.lukket:'Skjul';
 }
-function gruppe(tittel,cls,liste){
-  if(!liste.length)return '';
-  return `<details class="gruppe"${liste.length<=4?' open':''}><summary><span class="${cls}">${tittel}</span> <span class="muted">(${liste.length})</span></summary><div class="vots">${liste.map(vrow).join('')}</div></details>`;
-}
 function sakKort(s,apen){
   const sak=SAK_FOR[s.hid];
-  const pub=s.v.filter(v=>!v.holdt);
-  const ja=pub.filter(vedtatt).sort((a,b)=>(b.type==='innstilling')-(a.type==='innstilling'));
-  const nei=pub.filter(v=>!vedtatt(v));
-  const nh=s.v.length-pub.length;
+  const nh=s.v.filter(v=>v.holdt).length,u=utfall(s);
+  const prot=protFor(s.hid),gjelder=prot?`${ut(prot,'Protokollen')} gjelder.`:'Protokollen gjelder.';
   // Uenigheten fra sammendraget gjelder hele saken. Hele sammendraget står på saken.
   const uen=sak&&sak.a&&sak.a.uen?`<div class="sum"><span class="ki">KI-sammendrag</span><p><b>Uenigheten:</b> ${esc(sak.a.uen)}</p><p class="aikilde">Protokollen gjelder. ${ut(meldUrl(sak),'Meld fra om feil')}</p></div>`:'';
-  // Lukket viser saken tittel, utfall og én setning; åpnet viser hver avstemning.
-  const merker=[ja.length?`<span class="res ok">${ja.length} vedtatt</span>`:'',nei.length?`<span class="res no">${nei.length} falt</span>`:'',nh?`<span class="res ks">${nh} holdt tilbake</span>`:''].filter(Boolean).join(' ');
+  // Vedtaket står først: hva saken endte med, og vedtaksteksten fra protokollen.
+  const kortVt=s.vt&&s.vt.length<=300;
+  const vedtaket=`<section class="vedtaket"><h4>Vedtaket</h4>${s.v.length>1?`<p>${u.tekst}</p>`:''}
+    ${s.vt?`<details${kortVt?' open':''}><summary>${kortVt?'Slik står vedtaket i protokollen':'Les vedtaket slik det står i protokollen'}</summary><div class="forslag">${formater(s.vt)}</div></details>`:''}
+    <p class="liten muted">${gjelder}</p></section>`;
+  const vs=[...s.v].sort((a,b)=>a.nr-b.nr);
+  const stemt=`<section class="stemt"><h4>Slik ble det stemt</h4>${vs.length>1?`<p class="liten muted">${antall(vs.length,'avstemning','avstemninger')}, i rekkefølgen fra møtet.</p>`:''}<ol class="vots">${vs.map((v,i)=>vrow(v,vs.length>1?i+1:0)).join('')}</ol></section>`;
+  // Lukket viser saken tittel, utfall og én setning; åpnet viser vedtaket og hver avstemning.
+  const merker=[`<span class="res ${u.ok?'ok':'no'}">${u.kort}</span>`,nh?`<span class="res ks">${nh} uten stemmer</span>`:''].filter(Boolean).join(' ');
   return `<details class="vc"${apen?' open':''}><summary>
     <span class="vc-topp"><span class="liten muted"><span class="mono">${esc(s.nr)}</span> · ${antall(s.v.length,'avstemning','avstemninger')}</span><span class="vc-merker">${merker}</span></span>
     <h3>${esc(sak?tittel(sak):s.t)}</h3>
     <span class="svar">${sakSvar(s)}</span></summary>
-    <div class="vc-innhold">${sak&&sak.a?`<div class="liten muted">Sakstittel i protokollen: ${esc(s.t)}</div>`:''}${uen}
-    ${gruppe('Vedtatt','ok',ja)}${gruppe('Falt','no',nei)}${gruppe('Holdt tilbake','ks',s.v.filter(v=>v.holdt))}
+    <div class="vc-innhold">${sak&&sak.a?`<div class="liten muted">Sakstittel i protokollen: ${esc(s.t)}</div>`:''}
+    ${vedtaket}${uen}${stemt}
     ${sak?`<p class="liten"><a href="#saker" data-sak="${s.hid}">Mer om saken</a></p>`:''}</div></details>`;
+}
+/* Når protokollen er selvmotsigende, sies det øverst, ikke bare inne i hver
+   avstemning: hva som er usikkert, og at protokollen gjelder. */
+function avvikBoks(ms){
+  const vs=ms.flatMap(m=>m.saker.flatMap(s=>s.v));
+  const merk=[...new Set(vs.flatMap(v=>v.merk||[]))],grunn=[...new Set(vs.filter(v=>v.holdt).map(v=>v.holdt))];
+  if(!merk.length&&!grunn.length)return '';
+  const nm=vs.filter(v=>(v.merk||[]).length).length,nh=vs.filter(v=>v.holdt).length;
+  const prot=ms.length===1&&ms[0].mp?`${ut(ms[0].mp,'Møteprotokollen')} gjelder.`:'Protokollen gjelder alltid.';
+  // Merknaden forklarer selv hva som er selvmotsigende; ellers sies det generelt.
+  const forklart=merk.length&&merk.length<=3;
+  const hode=forklart?merk.map(t=>`<p><b>Merk:</b> ${esc(t)}</p>`).join(''):`<p><b>Protokollen ${ms.length===1?'fra dette møtet ':''}er selvmotsigende.</b></p>`;
+  return `<div class="advarsel">${hode}${grunn.map(t=>`<p>${esc(t)}</p>`).join('')}<p class="liten">${[nm?`Det gjelder ${antall(nm,'avstemning','avstemninger')}, som er merket.`:'',nh?`For ${antall(nh,'avstemning','avstemninger')} vises ikke stemmene.`:'',prot].filter(Boolean).join(' ')}</p></div>`;
 }
 function renderStemmer(){
   const val=vsel.value;
@@ -417,7 +476,8 @@ function renderStemmer(){
   const saker=ms.flatMap(m=>m.saker.map(s=>({...s,m})));
   VID={};saker.forEach(s=>s.v.forEach(v=>{VID[v.id]=v}));
   const vs=saker.flatMap(s=>s.v),nh=vs.filter(v=>v.holdt).length;
-  $('vnokkel').textContent=saker.length?`${antall(saker.length,'sak','saker')} og ${antall(vs.length,'avstemning','avstemninger')}, ${vs.filter(omstridt).length} der noen stemte imot.${nh?` ${nh} holdt tilbake.`:''} Trykk på en sak for å se hver avstemning.`:'';
+  $('vnokkel').textContent=saker.length?`${antall(saker.length,'sak','saker')} og ${antall(vs.length,'avstemning','avstemninger')}, ${vs.filter(omstridt).length} der noen stemte imot. Trykk på en sak for å se hver avstemning.`:'';
+  $('vavvik').innerHTML=avvikBoks(ms);
   const flere=ms.length>1;
   $('vcards').innerHTML=ms.map(m=>{const ss=saker.filter(s=>s.m===m);
     return (flere?`<h3 class="motehode">${esc(utName(m.sc))} ${ddl(m.date)} ${m.date.slice(0,4)}</h3>`:'')+ss.map(s=>sakKort(s,saker.length===1)).join('')}).join('')||'<p class="muted">Ingen avstemninger for dette valget.</p>';
@@ -437,8 +497,9 @@ const V=KS12.flatMap(m=>m.saker.flatMap(s=>s.v)).filter(v=>!v.holdt&&!v.en);
 const contested=V.filter(v=>v.nfor>0&&v.nmot>0);
 const pstats=[...new Set(V.flatMap(v=>[...v.f,...v.m]))].map(n=>{const p=party(n);let tot=0,maj=0,brk=0;contested.forEach(v=>{const s=voteOf(v,n);if(!s)return;tot++;if(s===(v.res==='vedtatt'?'for':'mot'))maj++;if(SIDES.get(v.id)[p]!==s)brk++});return {name:n,party:p,tot,maj:tot?maj/tot:0,brk,prop:V.filter(v=>v.stiller===n).length}});
 (function(){
-  const nh=KS12.flatMap(m=>m.saker.flatMap(s=>s.v)).filter(v=>v.holdt).length;
-  const tekst=KS12.length?`<b>${esc(utName('KS'))}, siste 12 måneder.</b> ${antall(KS12.length,'møte','møter')} fra ${ddl(KS12[0].date)} ${KS12[0].date.slice(0,4)} til ${ddl(KS12.at(-1).date)} ${KS12.at(-1).date.slice(0,4)}, med ${contested.length} avstemninger der noen stemte imot. Enstemmige avstemninger telles ikke${nh?`, og ${nh} som er holdt tilbake, er ikke med`:''}.`
+  const alle=KS12.flatMap(m=>m.saker.flatMap(s=>s.v)),nh=alle.filter(v=>v.holdt).length;
+  const nm=alle.filter(v=>(v.merk||[]).length&&!v.holdt&&!v.en&&v.nfor>0&&v.nmot>0).length;
+  const tekst=KS12.length?`<b>${esc(utName('KS'))}, siste 12 måneder.</b> ${antall(KS12.length,'møte','møter')} fra ${ddl(KS12[0].date)} ${KS12[0].date.slice(0,4)} til ${ddl(KS12.at(-1).date)} ${KS12.at(-1).date.slice(0,4)}, med ${contested.length} avstemninger der noen stemte imot. Enstemmige avstemninger telles ikke${nh?`, og ${nh} der stemmene ikke vises, er ikke med`:''}.${nm?` I ${nm} av dem er protokollen selvmotsigende, oftest om hvem som møtte. De er tatt med slik navnelistene oppgir dem, og er merket under Sakene.`:''}`
     :`Ingen avstemninger i ${esc(utName('KS').toLowerCase())} de siste 12 månedene.`;
   $('pgrunnlag').innerHTML=tekst;$('partgrunnlag').innerHTML=tekst;
 })();
@@ -535,7 +596,7 @@ function renderPerson(id){
     <section><h2>Forslag</h2>
       ${st.forslag.length?st.forslag.map(v=>vlinje(v,null)).join(''):`<p class="muted">Ingen forslag med navn i protokollene i ${AAR}.</p>`}
     </section>
-    <p class="liten muted mt">Kilder: medlemslisten i innsynsportalen (${dato(S.ks.hentet)}), møteprotokollene og saksprotokollene for ${AAR}.${HOLDT?` ${antall(HOLDT,'avstemning','avstemninger')} som er holdt tilbake, er ikke med.`:''} Ingen tekst her er skrevet av KI.</p>
+    <p class="liten muted mt">Kilder: medlemslisten i innsynsportalen (${dato(S.ks.hentet)}), møteprotokollene og saksprotokollene for ${AAR}.${HOLDT?` ${antall(HOLDT,'avstemning','avstemninger')} der stemmene ikke vises, er ikke med.`:''} Ingen tekst her er skrevet av KI.</p>
   </div>`;
 }
 
@@ -600,6 +661,7 @@ document.addEventListener('click',e=>{
   const jevne=[...perSak.values()].sort((a,b)=>diff(a)-diff(b)).slice(0,3);
   $('stemkort').innerHTML=`<div class="mote-gr"><h3>${esc(utName(m.sc))} <span class="muted">${naar(m.date)}</span></h3>
     <p class="liten muted">${antall(vs.length,'avstemning','avstemninger')} der noen stemte imot. De jevneste:</p>
+    ${vs.some(v=>(v.merk||[]).length)?`<p class="liten merk">Protokollen fra møtet er selvmotsigende om hvem som møtte. Avstemningene er merket.</p>`:''}
     <ul class="saksliste">${jevne.map(v=>`<li><a class="t" href="#saker" data-sak="${v.hid}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a>${segBar(v)}<div class="liten"><b class="num">${v.nfor} for, ${v.nmot} mot</b> · <span class="res ${v.vinner||v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div></li>`).join('')}</ul></div>`;
   const l=$('stemlenke');l.href='#stemmer/'+m.id;l.dataset.go='stemmer';l.dataset.m=m.id;
 })();

@@ -5,8 +5,10 @@ stemmene ikke stemmer med oppmøtet, publiseres ikke uten en vurdering.
 Vurderingen kan gjøres av et menneske eller en språkmodell, men den avgjør
 bare om voteringen publiseres og med hvilken merknad. Navn og tall gjengis
 alltid slik protokollen oppgir dem (CLAUDE.md regel 2), og `vurdert_av` sier
-hvem som har vurdert. Svaret står ofte ikke i dokumentene; noen ganger vet
-bare kommunen, og da er avgjørelsen `venter_paa_kommunen`.
+hvem som har vurdert. Tjenesten forholder seg til dokumentene og venter ikke
+på svar fra kommunen: kan det ikke avgjøres fra dokumentene, publiseres
+voteringen slik protokollen oppgir den, med en merknad som sier hva som er
+usikkert (prosjekteier, 4.10.2026).
 
 Ett avvik er én ting å vurdere, og berører ofte mange voteringer:
 
@@ -23,7 +25,7 @@ Vurderingene skrives for hånd i data/vurderinger.json, én per avvik:
      "vurdert_av": "Navn, eller modellen med versjon. Påkrevd.",
      "dato": "2026-10-02"}
 
-`avgjorelse` er `publiser`, `ikke_publiser` eller `venter_paa_kommunen`.
+`avgjorelse` er `publiser` eller `ikke_publiser`.
 Bare `publiser` slipper voteringene gjennom. Et avvik uten vurdering holdes
 tilbake.
 
@@ -52,7 +54,7 @@ OPPMOTE = ROT / "data" / "oppmote"
 VURDERINGER = ROT / "data" / "vurderinger.json"
 UT = ROT / "data" / "avvik"
 
-AVGJORELSER = ("publiser", "ikke_publiser", "venter_paa_kommunen")
+AVGJORELSER = ("publiser", "ikke_publiser")
 
 
 def _skriv(sti: Path, data) -> None:

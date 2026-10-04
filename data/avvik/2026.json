@@ -411,7 +411,7 @@
   "beskrivelse": "Lena Hanem Bartnes stemmer uten å stå på oppmøtelisten",
   "dato": "2026-09-16",
   "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1285",
-  "status": "venter_paa_kommunen",
+  "status": "publiser",
   "type": "oppmote",
   "utvalg": "KS",
   "voteringer": [
@@ -585,11 +585,11 @@
    ]
   ],
   "vurdering": {
-   "avgjorelse": "venter_paa_kommunen",
+   "avgjorelse": "publiser",
    "avvik": "oppmote:1285:lena-hanem-bartnes",
-   "begrunnelse": "Lena Hanem Bartnes (SP, varamedlem) stemmer i alle 42 voteringer uten å stå på oppmøtelisten, mens Anniken Bjørnes (R) står på listen uten å stemme. Hver votering har 39 stemmer. Ulikt de andre avvikene er de to fra ulike partier, så det er ikke bare uklart hvem som møtte, men også hvordan stemmene fordeler seg mellom SP og R. Møtet hadde 11 voteringer som endte 20–19 eller 19–20, og partifordelingen i dem er nettopp det tjenesten skal vise. Det kan ikke avgjøres fra dokumentene. Holdes tilbake til kommunen har svart på hvem som møtte.",
-   "dato": "2026-10-02",
-   "merknad": "",
+   "begrunnelse": "Lena Hanem Bartnes (SP, varamedlem) stemmer i alle 42 voteringer uten å stå på oppmøtelisten, mens Anniken Bjørnes (R) står på listen uten å stemme. Oppmøtelisten har SP 7 og R 4, navnelistene SP 8 og R 3; begge har 39. Hvem som møtte, kan ikke avgjøres fra dokumentene. Stemmetallene og utfallet står i protokollen og endres ikke av dette; usikkerheten gjelder partifordelingen for én stemme. Tjenesten forholder seg til dokumentene og venter ikke på svar fra kommunen (prosjekteier, 4.10.2026). Voteringene publiseres slik navnelistene oppgir dem, med merknad og lenke til protokollen. Første vurdering 2.10.2026 var venter_paa_kommunen.",
+   "dato": "2026-10-04",
+   "merknad": "Protokollen er selvmotsigende om hvem som møtte. Lena Hanem Bartnes (SP, varamedlem) står i navnelistene i alle avstemningene i møtet, men ikke på oppmøtelisten. Anniken Bjørnes (R) står på oppmøtelisten, men ikke i noen navneliste. Stemmene vises slik navnelistene oppgir dem. Stemmetallene og utfallet påvirkes ikke; det som er usikkert, er om én av stemmene var fra SP eller fra R.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  }
