@@ -3,7 +3,7 @@
 ADR-003: samme sak får nytt saksnummer i hvert utvalg. `AdditionalDmbHandlings`
 oppgir koblingene, og kjeden bygges med disjunkte mengder.
 
-Leser data/raa/<år>/ og skriver data/moter/ og data/saker/.
+Leser rådataene og skriver møtene og sakene (lager.raa, lager.saker).
 
     python -m tolk.bygg_saker 2026
     python -m tolk.bygg_saker 2026 --fra-fil gammel_raadata.json
@@ -17,12 +17,10 @@ import json
 import sys
 from pathlib import Path
 
+import lager
 from hent import portal
-
-ROT = Path(__file__).resolve().parent.parent
-RAA = ROT / "data" / "raa"
-UT_MOTER = ROT / "data" / "moter"
-UT_SAKER = ROT / "data" / "saker"
+from lager import raa as raadata
+from lager import saker as lager_saker
 
 # Saker som ikke er politikk, men møteteknikk. Holdes utenfor tellingene.
 FORMALIA = (
@@ -38,16 +36,8 @@ FORMALIA = (
 )
 
 
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
-
-
 def les_raa(aar: int, fra_fil: str | None = None) -> list[dict]:
-    """Møter med behandlinger, fra data/raa/ eller fra en eldre samlefil."""
+    """Møter med behandlinger, fra rådataene eller fra en eldre samlefil."""
     if fra_fil:
         gammel = json.loads(Path(fra_fil).read_text(encoding="utf-8"))
         return [
@@ -56,11 +46,10 @@ def les_raa(aar: int, fra_fil: str | None = None) -> list[dict]:
             for m in gammel
         ]
 
-    mappe = RAA / str(aar) / "moter"
-    if not mappe.exists():
-        raise SystemExit(f"fant ikke {mappe}. Kjør hent.hent_moter først.")
-    return [json.loads(p.read_text(encoding="utf-8"))
-            for p in sorted(mappe.glob("*.json"))]
+    moter = raadata.moter(aar)
+    if moter is None:
+        raise SystemExit(f"fant ingen møter for {aar}. Kjør hent.hent_moter først.")
+    return moter
 
 
 class Grupper:
@@ -148,7 +137,7 @@ def _status(steg: list[dict], i_dag: str) -> str:
 
 
 def kjor(aar: int, fra_fil: str | None = None) -> dict:
-    i_dag = dt.date.today().isoformat()
+    i_dag = lager.i_dag()
     raa = les_raa(aar, fra_fil)
 
     kjent: dict[int, tuple[dict, dict]] = {}
@@ -219,7 +208,7 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
         })
 
     saker.sort(key=lambda s: s["saksgang"][0]["dato"])
-    _skriv(UT_SAKER / f"{aar}.json", saker)
+    lager_saker.lagre(aar, saker)
 
     moter = [{
         "mote_id": m["mote"]["MO_ID"],
@@ -240,7 +229,7 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
         "url": portal.url_mote_i_portalen(m["mote"]["MO_ID"]),
     } for m in raa]
     moter.sort(key=lambda m: m["dato"])
-    _skriv(UT_MOTER / f"{aar}.json", moter)
+    lager_saker.lagre_moter(aar, moter)
 
     politiske = [s for s in saker if s["sakstype"] == "PS" and not s["formalia"]]
     oppsummering = {

@@ -16,7 +16,8 @@ Ett avvik er én ting å vurdere, og berører ofte mange voteringer:
 - `antall`: én votering har flere stemmer enn det møtte medlemmer
 - `tall`: én votering der antall navn ikke stemmer med stemmetallet
 
-Vurderingene skrives for hånd i data/vurderinger.json, én per avvik:
+Vurderingene skrives for hånd i data/vurderinger.json (lager.avvik), én per
+avvik:
 
     {"avvik": "oppmote:1285:lena-hanem-bartnes",
      "avgjorelse": "publiser",
@@ -29,9 +30,8 @@ Vurderingene skrives for hånd i data/vurderinger.json, én per avvik:
 Bare `publiser` slipper voteringene gjennom. Et avvik uten vurdering holdes
 tilbake.
 
-Leser data/voteringer/<år>.json, data/oppmote/<år>.json og
-data/vurderinger.json. Skriver data/avvik/<år>.json, som viser hvert avvik
-med nøkkelen som skal brukes i vurderingen.
+Leser voteringene, oppmøtet og vurderingene. Skriver avvikene (lager.avvik),
+som viser hvert avvik med nøkkelen som skal brukes i vurderingen.
 
     python -m tolk.bygg_avvik 2026
 """
@@ -44,29 +44,13 @@ import json
 import re
 import sys
 import unicodedata
-from pathlib import Path
 
 from hent import portal
-
-ROT = Path(__file__).resolve().parent.parent
-VOTERINGER = ROT / "data" / "voteringer"
-OPPMOTE = ROT / "data" / "oppmote"
-VURDERINGER = ROT / "data" / "vurderinger.json"
-UT = ROT / "data" / "avvik"
+from lager import avvik as lager_avvik
+from lager import oppmote as lager_oppmote
+from lager import voteringer as lager_voteringer
 
 AVGJORELSER = ("publiser", "ikke_publiser")
-
-
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
-
-
-def _les(sti: Path, standard):
-    return json.loads(sti.read_text(encoding="utf-8")) if sti.exists() else standard
 
 
 def _slug(navn: str) -> str:
@@ -75,14 +59,14 @@ def _slug(navn: str) -> str:
 
 
 def vurderinger() -> dict[str, dict]:
-    """Vurderingene fra data/vurderinger.json, etter nøkkel."""
-    return {v["avvik"]: v for v in _les(VURDERINGER, [])}
+    """Vurderingene etter nøkkel."""
+    return {v["avvik"]: v for v in lager_avvik.vurderinger()}
 
 
 def finn_avvik(aar: int) -> list[dict]:
     """Alle avvik for året, med vurderingen hvis den finnes."""
-    voteringer = _les(VOTERINGER / f"{aar}.json", [])
-    oppmote = _les(OPPMOTE / f"{aar}.json", [])
+    voteringer = lager_voteringer.les(aar, [])
+    oppmote = lager_oppmote.les(aar, [])
     funnet: dict[str, dict] = {}
 
     def _avvik(nokkel: str, **felt) -> dict:
@@ -143,7 +127,7 @@ def ugyldige_vurderinger(aar: int) -> list[str]:
     """Vurderinger som mangler noe, eller som viser til avvik som ikke finnes."""
     kjente = {a["avvik"] for a in finn_avvik(aar)}
     feil = []
-    for v in _les(VURDERINGER, []):
+    for v in lager_avvik.vurderinger():
         n = v.get("avvik", "?")
         if v.get("avgjorelse") not in AVGJORELSER:
             feil.append(f"vurdering {n}: avgjorelse må være en av {', '.join(AVGJORELSER)}")
@@ -160,7 +144,7 @@ def ugyldige_vurderinger(aar: int) -> list[str]:
 
 def kjor(aar: int) -> dict:
     avvik = finn_avvik(aar)
-    _skriv(UT / f"{aar}.json", avvik)
+    lager_avvik.lagre(aar, avvik)
     stopp, _ = holdt_tilbake(aar)
     oppsummering = {
         "avvik": len(avvik),

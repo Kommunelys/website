@@ -4,7 +4,7 @@ ADR-002: mønstergjenkjenning, aldri språkmodell. Hver votering har feltet
 `tall_stemmer`. Er det usant, stemmer ikke antall navn med oppgitt stemmetall,
 og raden skal ikke publiseres før et menneske har sett på den.
 
-Leser data/saker/<år>.json og data/tekst/<behandlings-ID>.txt, som skrives av
+Leser sakene og teksten i saksprotokollene, som skrives av
 `hent.hent_dokumenter`.
 
     python -m tolk.bygg_voteringer 2026
@@ -15,35 +15,26 @@ from __future__ import annotations
 import datetime as dt
 import json
 import sys
-from pathlib import Path
+
+from lager import saker as lager_saker
+from lager import tekst as lager_tekst
+from lager import voteringer as lager_voteringer
 
 from .tolk_protokoll import les_vedtak, les_vedtakstekst
 
-ROT = Path(__file__).resolve().parent.parent
-SAKER = ROT / "data" / "saker"
-TEKST = ROT / "data" / "tekst"
-UT = ROT / "data" / "voteringer"
-
-
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
-
 
 def kjor(aar: int) -> dict:
-    saker = json.loads((SAKER / f"{aar}.json").read_text(encoding="utf-8"))
+    saker = lager_saker.les(aar)
 
     ut = []
     for sak in saker:
         for steg in sak["saksgang"]:
-            sti = TEKST / f"{steg['behandling_id']}.txt"
             # url_vedtak er None når vedtaket er skjermet eller upublisert.
-            if not steg["url_vedtak"] or not sti.exists():
+            if not steg["url_vedtak"]:
                 continue
-            tekst = sti.read_text(encoding="utf-8")
+            tekst = lager_tekst.les("behandling", steg["behandling_id"])
+            if tekst is None:
+                continue
             voteringer = les_vedtak(tekst, steg["saksnr"])
             for nr, v in enumerate(voteringer, 1):
                 v["nr"] = nr
@@ -59,7 +50,7 @@ def kjor(aar: int) -> dict:
             })
 
     ut.sort(key=lambda b: (b["dato"], b["behandling_id"]))
-    _skriv(UT / f"{aar}.json", ut)
+    lager_voteringer.lagre(aar, ut)
 
     alle = [v for b in ut for v in b["voteringer"]]
     oppsummering = {

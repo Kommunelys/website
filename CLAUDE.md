@@ -60,6 +60,7 @@ tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
 drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til /drift/
+lager/     all lesing og skriving av data/; resten av koden bruker bare denne
 kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
 kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
@@ -96,6 +97,7 @@ python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
+KOMMUNELYS_I_DAG=2026-10-04 python -m tolk.bygg_saker 2026  # tolk og bygg som om det var en annen dag
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
 python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommunen under /steinkjer/

@@ -2,7 +2,7 @@
 
 ADR-008: portalen gir bare dagens medlemmer, ikke historikk. Listen hentes ved
 hver kjøring og lagres versjonert, slik at historikken bygges opp framover. Det
-skrives en ny fil i data/raa/medlemmer/ bare når noe er endret.
+lagres en ny versjon (lager.raa) bare når noe er endret.
 
 Svaret fra portalen har også mobilnummer, e-post og kjønn for hver folkevalgt.
 Det lagres ikke: folkevalgte omtales bare i sin rolle (CLAUDE.md regel 6), og
@@ -15,23 +15,11 @@ lagres urørt (ADR-001); alle felter som tolkes, beholdes.
 from __future__ import annotations
 
 import datetime as dt
-import json
 import sys
-from pathlib import Path
+
+from lager import raa as raadata
 
 from . import portal
-
-ROT = Path(__file__).resolve().parent.parent
-RAA = ROT / "data" / "raa"
-MEDLEMMER = RAA / "medlemmer"
-
-
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
 
 
 def _rydd(m: dict) -> dict:
@@ -49,7 +37,9 @@ def _rydd(m: dict) -> dict:
 
 def kjor(aar: int) -> dict:
     i_dag = dt.date.today().isoformat()
-    moter = json.loads((RAA / str(aar) / "moter.json").read_text(encoding="utf-8"))
+    moter = raadata.moteliste(aar)
+    if moter is None:
+        raise SystemExit(f"fant ingen møteliste for {aar}. Kjør hent.hent_moter først.")
     utvalg = sorted({(m["UT_ID"], m["UT_NAVN"]) for m in moter})
     print(f"Henter medlemslister for {len(utvalg)} utvalg ...")
 
@@ -60,15 +50,15 @@ def kjor(aar: int) -> dict:
         lister[str(uid)] = {"navn": navn, "medlemmer": medlemmer}
         print(f"  {navn}: {len(medlemmer)}")
 
-    forrige = sorted(MEDLEMMER.glob("*.json"))
+    forrige = raadata.medlemslister()
     if forrige:
-        siste = json.loads(forrige[-1].read_text(encoding="utf-8"))
+        siste = forrige[-1]
         if siste["utvalg"] == lister:
             print(f"Uendret siden {siste['hentet']}.")
             return {"endret": False}
 
-    _skriv(MEDLEMMER / f"{i_dag}.json", {"hentet": i_dag, "utvalg": lister})
-    print(f"Ny versjon: data/raa/medlemmer/{i_dag}.json")
+    raadata.lagre_medlemsliste(i_dag, {"hentet": i_dag, "utvalg": lister})
+    print(f"Ny versjon av medlemslistene: {i_dag}")
     return {"endret": True}
 
 

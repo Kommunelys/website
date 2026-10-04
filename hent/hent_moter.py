@@ -1,6 +1,6 @@
 """Henter møter, saker og saksgang for ett år.
 
-Skriver rå API-svar til data/raa/<år>/ og rører aldri det som alt ligger der.
+Skriver rå API-svar (lager.raa) og rører aldri det som alt ligger der.
 Inkrementell: henter bare sakslister for møter som er nye eller endret, og for
 møter holdt siste 30 dager, siden protokollen kommer etterskuddsvis.
 
@@ -11,31 +11,14 @@ møter holdt siste 30 dager, siden protokollen kommer etterskuddsvis.
 from __future__ import annotations
 
 import datetime as dt
-import json
 import sys
-from pathlib import Path
+
+from lager import raa as raadata
 
 from . import portal
 
-ROT = Path(__file__).resolve().parent.parent
-RAA = ROT / "data" / "raa"
-
 # Protokollen publiseres dager etter møtet, så nylige møter sjekkes på nytt.
 ETTERSLEP_DAGER = 30
-
-
-def _les(sti: Path):
-    if sti.exists():
-        return json.loads(sti.read_text(encoding="utf-8"))
-    return None
-
-
-def _skriv(sti: Path, data) -> None:
-    sti.parent.mkdir(parents=True, exist_ok=True)
-    sti.write_text(
-        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True),
-        encoding="utf-8",
-    )
 
 
 def _ma_hentes(m: dict, forrige: dict | None, i_dag: str, alt: bool) -> bool:
@@ -58,16 +41,15 @@ def _ma_hentes(m: dict, forrige: dict | None, i_dag: str, alt: bool) -> bool:
 
 def kjor(aar: int, alt: bool = False) -> dict:
     i_dag = dt.date.today().isoformat()
-    ut = RAA / str(aar)
 
     print(f"Henter møtelisten for {aar} ...")
     liste = portal.moter(aar)
     liste.sort(key=lambda m: m["MO_START"])
     print(f"  {len(liste)} møter")
 
-    forrige_liste = _les(ut / "moter.json") or []
+    forrige_liste = raadata.moteliste(aar) or []
     forrige = {m["MO_ID"]: m for m in forrige_liste}
-    _skriv(ut / "moter.json", liste)
+    raadata.lagre_moteliste(aar, liste)
 
     endret, hoppet = [], 0
     for i, m in enumerate(liste, 1):
@@ -88,14 +70,12 @@ def kjor(aar: int, alt: bool = False) -> dict:
                 print(f"   hoppet over behandling {s.get('Id')}: {e}")
                 behandlinger.append(s)
 
-        _skriv(
-            ut / "moter" / f"{mid}.json",
-            {"mote": m, "detaljer": detaljer, "behandlinger": behandlinger},
-        )
+        raadata.lagre_mote(
+            aar, mid, {"mote": m, "detaljer": detaljer, "behandlinger": behandlinger})
         endret.append(mid)
 
-    _skriv(
-        ut / "siste-kjoring.json",
+    raadata.lagre_siste_kjoring(
+        aar,
         {"tidspunkt": dt.datetime.now().isoformat(timespec="seconds"),
          "moter_totalt": len(liste),
          "moter_hentet": len(endret),

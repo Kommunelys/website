@@ -1,4 +1,4 @@
-"""Bygger det statiske nettstedet fra data/, kommuner/ og malen i bygg/mal/.
+"""Bygger det statiske nettstedet fra dataene, kommuner/ og malen i bygg/mal/.
 
 Hele nettstedet bygges på nytt hver gang, ikke stykkevis. Det tar sekunder ved
 denne datamålestokken og fjerner en klasse feil der en gammel side blir
@@ -32,13 +32,19 @@ import shutil
 import sys
 from pathlib import Path
 
+import lager
 from bygg import drift
+from lager import analyse as lager_analyse
+from lager import konfig
+from lager import oppmote as lager_oppmote
+from lager import saker as lager_saker
+from lager import verv as lager_verv
+from lager import voteringer as lager_voteringer
 from tester.kontroller import sammendrag_avvik, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 from tolk.navn import PARTIKODER, normaliser, partikode
 
 ROT = Path(__file__).resolve().parent.parent
-DATA = ROT / "data"
 MAL = Path(__file__).resolve().parent / "mal"
 UT = ROT / "nettsted"
 KOMMUNER = ROT / "kommuner"
@@ -126,10 +132,6 @@ GRUNN = {
     "ikke_publiser": "Stemmene vises ikke: protokollen er selvmotsigende, og det går ikke an å si fra dokumentet hvordan partiene stemte.",
     "ikke_vurdert": "Stemmene vises ikke ennå: protokollen er selvmotsigende, og avviket er ikke gått gjennom.",
 }
-
-
-def _les(sti: Path, standard):
-    return json.loads(sti.read_text("utf-8")) if sti.exists() else standard
 
 
 def _kommune() -> dict:
@@ -308,24 +310,24 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
         "url": m["url"],
     } for m in moter]
 
-    utvalg = _les(DATA / "utvalg" / f"{aar}.json", {"partier": {}, "medlemsliste_hentet": ""})
-    verv = _les(DATA / "verv" / f"{aar}.json", [])
+    utvalg = lager_verv.les_utvalg(aar, {"partier": {}, "medlemsliste_hentet": ""})
+    verv = lager_verv.les(aar, [])
     seter = collections.Counter(v["repr"] for v in verv
                                 if v["utvalg"] == "KS" and v["rolle"] in FASTE and v["i_dagens_liste"])
     # Møter med møteprotokoll per utvalg, som grunnlag for oppmøtet.
     protokoller = collections.Counter(
-        o["utvalg"] for o in _les(DATA / "oppmote" / f"{aar}.json", []))
+        o["utvalg"] for o in lager_oppmote.les(aar, []))
     return {
         "merke": MERKE,
         "kommune": kommune,
         "aar": aar,
-        "today": dt.date.today().isoformat(),
+        "today": lager.i_dag(),
         "cases": cases,
         "meetings": meetings,
         "utvalg": {m["utvalg_navn"]: m["utvalg"] for m in moter},
         "utvnavn": {u["kortnavn"]: u["navn"] for u in utvalg.get("utvalg", [])},
         "partier": utvalg["partier"],
-        "partisider": _les(DATA / "partisider.json", {}).get("partier", {}),
+        "partisider": konfig.partisider().get("partier", {}),
         "ks": {"seter": dict(seter), "hentet": utvalg["medlemsliste_hentet"]},
         "folk": _folk(verv),
         "mprot": dict(protokoller),
@@ -336,7 +338,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
 
 def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
     """Voteringene per møte, med avvik som ikke er godkjent, holdt tilbake."""
-    voteringer = _les(DATA / "voteringer" / f"{aar}.json", [])
+    voteringer = lager_voteringer.les(aar, [])
     stopp, merknader = holdt_tilbake(aar)
     status = {a["avvik"]: a["status"] for a in finn_avvik(aar)}
     tittel = {st["behandling_id"]: s["tittel"] for s in saker for st in s["saksgang"]}
@@ -531,13 +533,9 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
 
 def kjor(aar: int) -> None:
     kommune = _kommune()
-    saker = json.loads((DATA / "saker" / f"{aar}.json").read_text("utf-8"))
-    moter = json.loads((DATA / "moter" / f"{aar}.json").read_text("utf-8"))
-
-    analyser = {}
-    for sti in (DATA / "analyse").glob("*.json"):
-        a = json.loads(sti.read_text("utf-8"))
-        analyser[a["sak_id"]] = a
+    saker = lager_saker.les(aar)
+    moter = lager_saker.les_moter(aar)
+    analyser = lager_analyse.alle()
 
     # Alt bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
     shutil.rmtree(UT, ignore_errors=True)
