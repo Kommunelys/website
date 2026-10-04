@@ -167,9 +167,8 @@ def _innhold(status: dict, avvik: dict[str, int], poster: list[dict], na: dt.dat
         ("Nye saker, 7 / 30 dager", f"{nye(7)} / {nye(30)}"),
         ("Sammendrag vist", f"{tall(status['sammendrag_publisert'])} av {tall(status['analyser'])}"
          + (f" ({holdt} holdt tilbake)" if holdt else "")),
-        ("Voteringer holdt tilbake", tall(status.get("voteringer_holdt_tilbake", 0))),
+        ("Voteringer der stemmene ikke vises", tall(status.get("voteringer_holdt_tilbake", 0))),
         ("Avvik ikke vurdert", tall(avvik.get("ikke_vurdert", 0))),
-        ("Avvik venter på kommunen", tall(avvik.get("venter_paa_kommunen", 0))),
     ])
 
 

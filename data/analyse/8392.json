@@ -1,23 +1,23 @@
 {
- "tittel_klarsprak": "Skal det bygges vanningsanlegg på hovedbanen ved Guldbergaunet fotballstadion når kunstgresset byttes?",
- "sammendrag": "Saken gjaldt om det skulle etableres vanningsanlegg på hovedbanen ved Guldbergaunet fotballstadion samtidig med at kunstgressdekket byttes. Kommunedirektørens innstilling var at vanningsanlegg ikke skulle etableres, og formannskapet sluttet seg til dette 20. august 2026. Formannskapet behandlet saken på nytt 3. september 2026 og gikk inn for å etablere anlegget. Kommunestyret vedtok 16. september 2026 at vanningsanlegget etableres, at brutto investeringsramme økes med kr. 1.400.000 finansiert med bruk av spillemidler, og at kommunedirektøren kan sette i gang prosjektet forutsatt en langsiktig avtale med Steinkjer fotballklubb. Avtalen skal innebære at klubben dekker alle løpende driftsutgifter, at drift følger leverandørens anvisninger og utføres av kvalifisert eller godkjent personell, og at avtalens varighet og klubbens ansvar tilsvarer anleggets levetid.",
- "betydning": "Hovedbanen på Guldbergaunet får vanningsanlegg, mens de løpende driftsutgiftene skal dekkes av fotballklubben og ikke av kommunen.",
+ "tittel_klarsprak": "Skal det bygges vanningsanlegg på hovedbanen ved Guldbergaunet fotballstadion?",
+ "sammendrag": "Saken gjaldt om kommunen skulle etablere vanningsanlegg på hovedbanen ved Guldbergaunet fotballstadion samtidig med at kunstgresset byttes. Kommunedirektørens innstilling var at det ikke skulle etableres vanningsanlegg. Formannskapet gikk først inn for innstillingen 20. august 2026, men vedtok 3. september 2026 et alternativt forslag om å bygge anlegget. Kommunestyret vedtok 16. september 2026 at vanningsanlegget etableres, og at brutto investeringsramme økes med kr. 1.400.000 finansiert med bruk av spillemidler. Kommunedirektøren fikk fullmakt til å sette i gang prosjektet, forutsatt at det inngås en langsiktig avtale med Steinkjer fotballklubb der klubben dekker alle løpende driftsutgifter, drift følger leverandørens anvisninger og utføres av kvalifisert personell, og avtalen varer like lenge som anleggets levetid.",
+ "betydning": "Hovedbanen ved Guldbergaunet får vanningsanlegg, og driftsutgiftene skal dekkes av fotballklubben og ikke av kommunen.",
  "tagger": [
   "Kultur og idrett",
   "Økonomi"
  ],
  "utfall": "vedtatt",
- "uenighet": "I formannskapet 20. august 2026 gikk H, PP, R og SP inn for å etablere vanningsanlegg, mens AP, FRP, INP og SV støttet innstillingen om ikke å gjøre det; 3. september 2026 samlet AP, FRP, H, INP, PP, SP, SV og V seg om å etablere anlegget.",
+ "uenighet": "I formannskapet 20. august 2026 ville H, PP, R og SP bygge vanningsanlegg, mens AP, FRP, INP og SV støttet kommunedirektørens forslag om ikke å bygge; i formannskapet 3. september 2026 og i kommunestyret 16. september 2026 var det ingen stemmer mot å bygge anlegget.",
  "usikker": false,
  "sak_id": 8392,
- "sjekksum": "152a628f932a1838",
+ "sjekksum": "a74c81ce7327e6b8",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-04",
  "tokens": {
-  "inn": 3557,
-  "ut": 839
+  "inn": 4092,
+  "ut": 656
  },
  "kilder": [
   {

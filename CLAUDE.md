@@ -146,6 +146,10 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommune
   i `data/vurderinger.json`. Sjekk bevisene med kode før du vurderer: hvem
   som står på listen uten å stemme, partiet deres, og vedtak om permisjon og
   fritak i sakene. Se `docs/03-datamodell.md`.
+- **Vi venter ikke på kommunen.** Dokumentene er fasit. Kan et avvik ikke
+  avgjøres fra dem, publiseres voteringen slik protokollen oppgir den, med en
+  tydelig merknad om hva som er usikkert og lenke til protokollen. Ikke skriv
+  at vi venter på svar eller har spurt kommunen (prosjekteier, 4.10.2026).
 - **Dagens medlemsliste beskriver ikke plassene tidligere i året.** Permisjon,
   fritak og partibytte gjør at stemmer per parti ikke kan kontrolleres mot
   dagens antall plasser. SP har for eksempel én stemme mer enn dagens faste

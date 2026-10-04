@@ -20,7 +20,7 @@ from lager import saker as lager_saker
 from lager import tekst as lager_tekst
 from lager import voteringer as lager_voteringer
 
-from .tolk_protokoll import les_vedtak
+from .tolk_protokoll import les_vedtak, les_vedtakstekst
 
 
 def kjor(aar: int) -> dict:
@@ -32,10 +32,10 @@ def kjor(aar: int) -> dict:
             # url_vedtak er None når vedtaket er skjermet eller upublisert.
             if not steg["url_vedtak"]:
                 continue
-            protokoll = lager_tekst.les("behandling", steg["behandling_id"])
-            if protokoll is None:
+            tekst = lager_tekst.les("behandling", steg["behandling_id"])
+            if tekst is None:
                 continue
-            voteringer = les_vedtak(protokoll, steg["saksnr"])
+            voteringer = les_vedtak(tekst, steg["saksnr"])
             for nr, v in enumerate(voteringer, 1):
                 v["nr"] = nr
             ut.append({
@@ -45,6 +45,8 @@ def kjor(aar: int) -> dict:
                 "utvalg": steg["utvalg"],
                 "dato": steg["dato"],
                 "voteringer": voteringer,
+                # Det endelige vedtaket, slik protokollen skriver det.
+                "vedtak": les_vedtakstekst(tekst),
             })
 
     ut.sort(key=lambda b: (b["dato"], b["behandling_id"]))

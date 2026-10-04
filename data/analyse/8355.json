@@ -1,24 +1,23 @@
 {
- "tittel_klarsprak": "Hva mener Steinkjer kommune om utbytte og vekst i NTE?",
- "sammendrag": "Eierkommunene i NTE arbeider med en ny eiermelding, og kommunene ble bedt om innspill om utbyttemodell, utbyttenivå og selskapets evne til vekst. Innspillene skal sendes eiernes arbeidsutvalg innen 1. oktober, og neste eiermøte er satt til 21. oktober. Kommunedirektøren foreslo å støtte den såkalte Haugalandsmodellen, der utbyttet beregnes som 50 prosent av justert resultat etter skatt ut fra et snitt av de tre siste årene, og at det settes måltall for forholdet mellom gjeld og resultat slik at selskapet beholder god kredittrating. Kommunestyret vedtok 16. september 2026 et bredere innspill i fem punkter: fortsatt heleid offentlig og regionalt eierskap, høyere, stabilt og forutsigbart utbytte etter Haugalandsmodellen med mulig nedre og øvre korridor, krav om soliditet og investeringsevne, regional verdiskaping der vekst ikke er et mål i seg selv, og bedre eierdialog. Kommunestyret ba også om at eierkommunene får størst mulig frihet til selv å disponere utbyttet.",
- "betydning": "Utbyttet fra NTE er inntekter til kommunen, og innspillet kan påvirke hvor mye penger Steinkjer får til tjenester framover, samtidig som selskapet skal ha evne til å investere i strømforsyning og beredskap.",
+ "tittel_klarsprak": "Hva mener Steinkjer kommune om utbytte fra NTE og selskapets videre vekst?",
+ "sammendrag": "Eierkommunenes arbeidsutvalg i NTE har bedt kommunene om innspill til ny eiermelding, med frist 1. oktober. Innspillene gjelder særlig utbytte til eierne, selskapets soliditet og evnen til vekst. Kommunedirektøren foreslo å legge den såkalte Haugalandsmodellen til grunn, der utbyttet beregnes som 50 prosent av justert resultat etter skatt ut fra et rullerende treårsgjennomsnitt, og å støtte at det settes måltall for forholdet mellom gjeld og resultat. Formannskapet sluttet seg til dette 3. september 2026. Kommunestyret vedtok 16. september 2026 et annet forslag med fem punkter: fortsatt heleid offentlig og regionalt eierskap, høyere og mer forutsigbart utbytte etter Haugalandsmodellen med vurdering av en nedre og øvre korridor, krav om soliditet og at kommunene fritt skal kunne bruke utbyttet, regional verdiskaping der vekst ikke er et mål i seg selv, og bedre eierdialog.",
+ "betydning": "Hvor mye penger kommunen kan få i utbytte fra NTE, påvirker kommunens økonomi og dermed handlingsrommet for tjenester til innbyggerne.",
  "tagger": [
   "Eierskap og selskaper",
-  "Økonomi",
-  "Regionalt samarbeid"
+  "Økonomi"
  ],
  "utfall": "vedtatt",
- "uenighet": "I formannskapet 3. september 2026 sto AP, FRP, SP og SV bak innstillingens punkt om utbyttenivå, mens H, INP, PP og V ville tallfeste et årlig utbytte på minimum om lag 250 mill. kroner og i tillegg kreve en oversikt over selskapets investeringsplaner og kapitalbehov før endelig behandling.",
+ "uenighet": "AP, FRP, R, SP, SV og uavhengig representant samlet seg om fellesforslaget uten tallfestet utbyttenivå, mens H, INP, PP og V ville tallfeste et årlig utbytte på om lag 250 millioner kroner og krav om minst BBB-rating, og R i tillegg foreslo en utbyttekorridor på 175–300 millioner kroner og et gjeldstak på om lag 3,5 ganger justert EBITDA.",
  "usikker": false,
  "sak_id": 8355,
- "sjekksum": "4cf6e511d29b65a1",
+ "sjekksum": "e6418a009b3d8777",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-04",
  "tokens": {
-  "inn": 7924,
-  "ut": 950
+  "inn": 13867,
+  "ut": 1010
  },
  "kilder": [
   {

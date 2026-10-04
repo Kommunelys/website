@@ -1,7 +1,7 @@
 {
- "tittel_klarsprak": "Skal en folkevalgt få forlenget fritak fra vervene sine ut 2026?",
- "sammendrag": "En folkevalgt fra Senterpartiet har siden 1. januar 2025 hatt midlertidig fritak fra sine folkevalgte verv i Steinkjer kommune, begrunnet med helse. Fritaket er tidligere forlenget flere ganger, sist til 30.06.2026. Representanten søkte om å få fritaket forlenget til 31.12.2026, med samme begrunnelse som før. Kommunedirektøren vurderte at helseutfordringer oppfyller kravet i kommuneloven § 7-9 om vesentlig ulempe, og anbefalte at søknaden ble innvilget. Kommunestyret vedtok 16.09.2026 at fritaket forlenges til 31.12.2026.",
- "betydning": "Representanten møter ikke i kommunens folkevalgte organer ut 2026, og i kommunestyret kalles varamedlem inn i stedet.",
+ "tittel_klarsprak": "Skal en folkevalgt fra Senterpartiet få forlenget permisjon fra vervene sine ut 2026?",
+ "sammendrag": "En folkevalgt fra Senterpartiet har siden 01.01.2025 hatt midlertidig fritak fra sine folkevalgte verv i Steinkjer kommune av helsemessige grunner. Fritaket er tidligere forlenget flere ganger, sist til 30.06.2026. Representanten søkte om ny forlengelse ut året, med samme begrunnelse som før. Kommunedirektøren vurderte at helseutfordringer oppfyller kommunelovens vilkår for fritak, og anbefalte at søknaden ble innvilget. Kommunestyret vedtok 16.09.2026 at det midlertidige fritaket forlenges til 31.12.2026.",
+ "betydning": "Ett av kommunestyrets medlemmer er fortsatt fritatt fra vervene ut 2026, og varamedlemmer møter i stedet.",
  "tagger": [
   "Folkevalgte"
  ],
@@ -9,14 +9,14 @@
  "uenighet": "",
  "usikker": false,
  "sak_id": 8358,
- "sjekksum": "367960be968533f7",
+ "sjekksum": "1d7f746523b7f6be",
  "modell": "claude-opus-5",
  "innsats": "high",
  "instruksjon_versjon": 3,
- "dato": "2026-10-02",
+ "dato": "2026-10-04",
  "tokens": {
-  "inn": 3750,
-  "ut": 502
+  "inn": 4061,
+  "ut": 446
  },
  "kilder": [
   {

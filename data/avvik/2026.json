@@ -18,7 +18,7 @@
    "avvik": "antall:7777:1",
    "begrunnelse": "Den trettende stemmen er Tor Borgan (SP), som stemmer i alle ni voteringer i møtet uten å stå på oppmøtelisten (se oppmote:1230:tor-borgan). Voteringen endte 13–0, så én stemme for mye endrer ikke resultatet. Navn og tall gjengis slik protokollen oppgir dem.",
    "dato": "2026-10-02",
-   "merknad": "Protokollen oppgir 13 stemmer, men 12 står på oppmøtelisten. Vedtaket var enstemmig, så utfallet påvirkes ikke.",
+   "merknad": "Protokollen oppgir flere stemmer enn det møtte medlemmer. Vedtaket var enstemmig.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -41,7 +41,7 @@
    "avvik": "antall:7813:1",
    "begrunnelse": "Siste sak i møtet (PS 7/2026). I de åtte voteringene før stemmer varamedlemmet Robert Ertsås; i denne stemmer May Britt Lagesen og ikke han. Mønsteret passer med at hun kom under møtet og overtok plassen uten at oppmøtelisten ble oppdatert. Den trettende stemmen er Tor Borgan (SP), se oppmote:1230:tor-borgan. Voteringen endte 13–0.",
    "dato": "2026-10-02",
-   "merknad": "Protokollen oppgir 13 stemmer, men 12 står på oppmøtelisten. May Britt Lagesen (AP) stemmer her i stedet for varamedlemmet som møtte for henne; hun kom trolig under møtet. Vedtaket var enstemmig, så utfallet påvirkes ikke.",
+   "merknad": "Protokollen oppgir flere stemmer enn det møtte medlemmer. Vedtaket var enstemmig.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -119,7 +119,7 @@
    "avvik": "oppmote:1230:tor-borgan",
    "begrunnelse": "Tor Borgan stemmer i alle ni voteringer i møtet. Han er varamedlem i formannskapet, og i 8 andre formannskapsmøter med voteringer i 2026 står han på oppmøtelisten uten «varamedlem for» og stemmer i alle voteringene. Det mest sannsynlige er at han ble utelatt fra oppmøtelisten denne gangen. Navnelistene er konsistente gjennom hele møtet.",
    "dato": "2026-10-02",
-   "merknad": "Tor Borgan (SP) stemmer, men står ikke på oppmøtelisten for møtet.",
+   "merknad": "Protokollen er selvmotsigende om hvem som møtte.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -142,7 +142,7 @@
    "avvik": "antall:7809:1",
    "begrunnelse": "Siste sak i møtet (PS 11/2026). I de åtte voteringene før stemmer Robert Ertsås og ikke May Britt Lagesen; i denne står begge i navnelisten. Hun kom trolig under møtet og overtok plassen, men varamedlemmet ble ikke tatt ut av voteringen. Protokollen sier ikke hvem som stemte. Voteringen endte 13–0, så én stemme for mye endrer ikke resultatet. Dobbeltregistreringen bør meldes til kommunen.",
    "dato": "2026-10-02",
-   "merknad": "Både May Britt Lagesen (AP) og varamedlemmet som møtte for henne, Robert Ertsås (AP), er registrert som stemmegivere. Én av stemmene skulle ikke vært registrert. Vedtaket var enstemmig, så utfallet påvirkes ikke.",
+   "merknad": "Protokollen oppgir flere stemmer enn det møtte medlemmer. Vedtaket var enstemmig.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -268,7 +268,7 @@
    "avvik": "oppmote:1255:linn-kristine-sandseter",
    "begrunnelse": "Hun stemmer i alle 21 voteringer, og hver votering har 39 stemmer, like mange som kommunestyret har plasser. Oppmøtelisten har 40 navn, og Espen Hatlinghus (INP) står på den uten å stemme én gang. Begge er fra INP, og hun er varamedlem for INP i kommunestyret. Mest sannsynlig møtte hun for ham, og oppmøtelisten er feil. Partiets stemmetall er det samme uansett.",
    "dato": "2026-10-02",
-   "merknad": "Linn Kristine Sandseter (INP, varamedlem) stemmer, men står ikke på oppmøtelisten. Der står i stedet Espen Hatlinghus (INP), som ikke stemmer i noen votering.",
+   "merknad": "Protokollen er selvmotsigende om hvem som møtte.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -379,7 +379,7 @@
    "avvik": "oppmote:1266:gunnar-mikalsen-kvifte",
    "begrunnelse": "Han stemmer i alle 23 voteringer; Anniken Bjørnes står på listen og stemmer aldri. Begge er faste medlemmer for R, og Rødt har like mange stemmer i hver votering uansett hvem av de to det var. Navnelistene er registrert ved hver votering og er konsistente gjennom hele møtet, mens oppmøtelisten er én liste for møtet. Det er derfor mest sannsynlig at det var han som møtte. Usikkerheten gjelder hvilken person, ikke partiets stemmer.",
    "dato": "2026-10-02",
-   "merknad": "Gunnar Mikalsen Kvifte (R) stemmer, men står ikke på oppmøtelisten. Der står i stedet Anniken Bjørnes (R), som ikke stemmer i noen votering. Protokollen er selvmotsigende om hvem av de to som møtte.",
+   "merknad": "Protokollen er selvmotsigende om hvem som møtte.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -402,7 +402,7 @@
    "avvik": "oppmote:1274:lill-marit-sandseter",
    "begrunnelse": "Én votering. Lill Marit Sandseter hadde permisjon fra vervet 01.01.2026–30.06.2026 (PS 1/2026 i forretningsutvalget), og møtet var 17.06. Sigrun Modell (SP), som også er fast medlem i foretaksmøtet, står på oppmøtelisten uten å stemme. Det er derfor trolig navnelisten som er feil, og Sigrun Modell som stemte. Begge er fra SP, så partifordelingen i voteringen er riktig. Publiseres med merknad, slik at det ikke tillegges Lill Marit Sandseter en stemme uten forbehold.",
    "dato": "2026-10-02",
-   "merknad": "Protokollen oppgir Lill Marit Sandseter (SP) som stemmegiver, men hun står ikke på oppmøtelisten og hadde permisjon fra vervet på møtedagen. Sigrun Modell (SP) står på oppmøtelisten, men ikke i navnelisten. Partiets stemmetall er det samme uansett hvem av dem som stemte.",
+   "merknad": "Protokollen er selvmotsigende om hvem som møtte.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  },
@@ -411,7 +411,7 @@
   "beskrivelse": "Lena Hanem Bartnes stemmer uten å stå på oppmøtelisten",
   "dato": "2026-09-16",
   "kilde": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1285",
-  "status": "venter_paa_kommunen",
+  "status": "publiser",
   "type": "oppmote",
   "utvalg": "KS",
   "voteringer": [
@@ -585,11 +585,11 @@
    ]
   ],
   "vurdering": {
-   "avgjorelse": "venter_paa_kommunen",
+   "avgjorelse": "publiser",
    "avvik": "oppmote:1285:lena-hanem-bartnes",
-   "begrunnelse": "Lena Hanem Bartnes (SP, varamedlem) stemmer i alle 42 voteringer uten å stå på oppmøtelisten, mens Anniken Bjørnes (R) står på listen uten å stemme. Hver votering har 39 stemmer. Ulikt de andre avvikene er de to fra ulike partier, så det er ikke bare uklart hvem som møtte, men også hvordan stemmene fordeler seg mellom SP og R. Møtet hadde 11 voteringer som endte 20–19 eller 19–20, og partifordelingen i dem er nettopp det tjenesten skal vise. Det kan ikke avgjøres fra dokumentene. Holdes tilbake til kommunen har svart på hvem som møtte.",
-   "dato": "2026-10-02",
-   "merknad": "",
+   "begrunnelse": "Lena Hanem Bartnes (SP, varamedlem) stemmer i alle 42 voteringer uten å stå på oppmøtelisten, mens Anniken Bjørnes (R) står på listen uten å stemme. Oppmøtelisten har SP 7 og R 4, navnelistene SP 8 og R 3; begge har 39. Hvem som møtte, kan ikke avgjøres fra dokumentene. Stemmetallene og utfallet står i protokollen og endres ikke av dette; usikkerheten gjelder partifordelingen for én stemme. Tjenesten forholder seg til dokumentene og venter ikke på svar fra kommunen (prosjekteier, 4.10.2026). Voteringene publiseres slik navnelistene oppgir dem, med merknad og lenke til protokollen. Første vurdering 2.10.2026 var venter_paa_kommunen.",
+   "dato": "2026-10-04",
+   "merknad": "Protokollen er selvmotsigende om hvem som møtte.",
    "vurdert_av": "Claude Opus 5.5 (claude-opus-5-5)"
   }
  }
