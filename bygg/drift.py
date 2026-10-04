@@ -213,6 +213,53 @@ def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
             + _kv(rader) + f'<p class="liten muted">{merknad}</p>')
 
 
+def _database(na: dt.datetime) -> str:
+    """Overgangen fra filene i git til databasen: er de like?
+
+    Fram til byttet speiles data/ inn i databasen ved hver kjøring, og
+    lager.paritet sammenligner alt tegn for tegn. Svarer ikke databasen,
+    står det her; resten av siden bygges likevel.
+    """
+    from lager import fra_databasen  # noqa: PLC0415
+
+    kilde = ("Kilde for nettstedet", "Databasen" if fra_databasen() else "Filene i git (data/)")
+    try:
+        from lager import pg  # noqa: PLC0415
+
+        o = pg.overgang()
+    except (Exception, SystemExit) as e:  # noqa: BLE001 (databasen trengs ikke for bygget)
+        print(f"advarsel: fikk ikke lest overgangen fra databasen ({e})")
+        return _kv([kilde]) + '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
+
+    k = o["kontroller"]
+    rader = [kilde]
+    if k:
+        siste = k[0]
+        merke = ('<span class="drift-merke ok">Like</span>' if siste["likt"]
+                 else '<span class="drift-merke feilet">Ulike</span>')
+        rader.append(("Siste kontroll", f"{tidspunkt(siste['tid'])} {merke}"))
+        rekke = next((i for i, x in enumerate(k) if not x["likt"]), len(k))
+        rader.append(("Like på rad", f"{rekke}" + (f" (siden {dato(k[rekke - 1]['tid'])})" if rekke else "")))
+        fjorten = [x for x in k if x["tid"] >= na - dt.timedelta(days=14)]
+        rader.append(("Like, 14 dager", f"{sum(x['likt'] for x in fjorten)} av {len(fjorten)}"))
+    else:
+        rader.append(("Siste kontroll", "ingen ennå"))
+    if o["speiling"]:
+        _, start, endringer = o["speiling"]
+        rader.append(("Siste speiling", f"{tidspunkt(start)}, {tall(endringer)} endringer"))
+    rader.append(("Størrelse", _e(o["storrelse"])))
+
+    ulike = ""
+    if k and not k[0]["likt"]:
+        ulike = ('<p class="liten">Dette skilte ved siste kontroll:</p><ul class="liten">'
+                 + "".join(f"<li>{_e(u['navn'])}: {_e(u['hvor'])}</li>" for u in k[0]["ulike"][:10])
+                 + "</ul>")
+    return (_kv(rader) + ulike
+            + '<p class="liten muted">Før byttet speiles dataene inn i databasen ved hver kjøring, '
+            "og alt sammenlignes tegn for tegn med filene. Nettstedet bygges fra filene til "
+            "databasen har vært lik over tid.</p>")
+
+
 # ---------- Tabeller ----------
 
 def _celle(v, kjent: bool = True) -> str:
@@ -309,6 +356,7 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
         "status": _status(poster, na),
         "innhold": _innhold(status, avvik, poster, na),
         "kostnad": _kostnad(analyser, poster, na, kurs),
+        "database": _database(na),
         "kjoringer": kjoringer,
         "nye_saker": _nye_saker(poster, na),
         "goatcounter": _e(goatcounter),

@@ -597,3 +597,21 @@ def endringer(dager: int, maks: int) -> list[dict]:
             ut[kid][felt] += int(verdi)
 
     return sorted(ut.values(), key=lambda e: e["tid"], reverse=True)[:maks]
+
+
+# Overgangen til databasen, til driftssiden --------------------------------------------
+
+def overgang(antall: int = 60) -> dict:
+    """Siste paritetskontroller og speilinger, og størrelsen på databasen."""
+    k = kommune_id()
+    kontroller = [{"tid": tid, "likt": likt, "kontroller": n, "ulike": list(ulike)}
+                  for tid, likt, n, ulike in _rader(
+                      "select kontrollert, likt, kontroller, ulike from drift.paritet "
+                      "where kommune_id = %s order by kontrollert desc limit %s", k, antall)]
+    speiling = _rader(
+        "select k.kjoring_id, k.start, (select count(*) from drift.endringslogg e "
+        "where e.kjoring_id = k.kjoring_id) from drift.kjoring k "
+        "where k.kjoring_id like 'synk-%%' and k.kilde = 'actions' order by k.start desc limit 1")
+    storrelse = _rader("select pg_size_pretty(pg_database_size(current_database()))")[0][0]
+    return {"kontroller": kontroller, "speiling": speiling[0] if speiling else None,
+            "storrelse": storrelse}
