@@ -169,6 +169,37 @@ jobs:
           git pull --rebase
           git push
 
+  # Fase 3 i flyttingen til databasen (supabase/README.md). Speiler data/ inn
+  # i Postgres og kontrollerer at databasen gir nøyaktig det samme. Filene er
+  # fortsatt kilden, og bygget venter ikke på denne jobben: feiler den,
+  # publiseres nettstedet likevel, og feilen vises på kjøringen.
+  database:
+    name: Speil til databasen
+    needs: [hent, analyser]
+    if: ${{ always() && needs.hent.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      KOMMUNELYS_DB_URL: ${{ secrets.KOMMUNELYS_DB_URL }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r krav.txt
+
+      # Én transaksjon: data som bryter reglene i databasen (stemmetall,
+      # skjerming), stopper speilingen, og ingenting skrives.
+      - name: Speil data/ inn i databasen
+        run: python -m lager.synk "${{ inputs.aar || '2026' }}"
+
+      - name: Kontroller at databasen gir det samme som filene
+        run: python -m lager.paritet "${{ inputs.aar || '2026' }}"
+
   # Publiserer selv om analysen feilet; sakene vises da uten nye sammendrag.
   bygg:
     name: Bygg og publiser
