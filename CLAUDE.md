@@ -24,7 +24,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.github.io/website/ med Steinkjer under `/steinkjer/`. Domenet blir kommunelys.no (ikke satt opp). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, med metode, KI-bruk og en dekningstabell regnet ut ved hvert bygg; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
+| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, med metode, KI-bruk og en dekningstabell regnet ut ved hvert bygg; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | `/drift/` viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater. Lenkes ikke fra nettstedet |
 
@@ -176,8 +176,9 @@ python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommune
   `#om` sendes til `/om/`.
 - **404-siden vises på alle adresser som ikke finnes.** Derfor må lenkene i
   `bygg/mal/404.html` være absolutte, med `{{base}}` foran. Roten kommer fra
-  `NETTSTED_BASE`, som arbeidsflyten setter fra GitHub Pages («/website» nå,
-  tom med eget domene); lokalt er den «/». Bygget stopper ved relative lenker.
+  `NETTSTED_BASE`, som arbeidsflyten setter fra GitHub Pages (tom med eget
+  domene, «/website» før det); lokalt er den «/». Etter bytte av domene må
+  nettstedet bygges på nytt, ellers peker 404-siden til den gamle roten. Bygget stopper ved relative lenker.
   Andre feilkoder (500, 503) kan ikke tilpasses på GitHub Pages.
 - **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
   side om kredittkort. Lenker til partier og andre ligger i
