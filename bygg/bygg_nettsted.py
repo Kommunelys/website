@@ -120,10 +120,11 @@ def _sammendrag(saker: list, analyser: dict) -> tuple[dict, list[str]]:
         }
     return ut, holdt
 
+# Hvorfor stemmene i en votering ikke vises. Står på voteringen, med lenke til
+# protokollen, som alltid gjelder.
 GRUNN = {
-    "venter_paa_kommunen": "Holdt tilbake: protokollen er selvmotsigende om hvem som møtte. Venter på svar fra kommunen.",
-    "ikke_publiser": "Holdt tilbake etter vurdering: protokollen er selvmotsigende.",
-    "ikke_vurdert": "Holdt tilbake: protokollen er selvmotsigende, og avviket er ikke vurdert ennå.",
+    "ikke_publiser": "Stemmene vises ikke: protokollen er selvmotsigende, og det går ikke an å si fra dokumentet hvordan partiene stemte.",
+    "ikke_vurdert": "Stemmene vises ikke ennå: protokollen er selvmotsigende, og avviket er ikke gått gjennom.",
 }
 
 
@@ -379,10 +380,15 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
                 ut["merk"] = merknader.get(nokkel, [])
             vs.append(ut)
         per_mote[mid].append({"hid": b["behandling_id"], "nr": b["saksnr"],
-                              "t": tittel.get(b["behandling_id"], ""), "v": vs})
+                              "t": tittel.get(b["behandling_id"], ""), "v": vs,
+                              # Det endelige vedtaket, uendret fra protokollen.
+                              "vt": b.get("vedtak")})
 
     moter_ut = [{"id": mid, "date": mote[mid]["dato"], "sc": mote[mid]["utvalg"],
                  "ut": mote[mid]["utvalg_navn"],
+                 # Møteprotokollen er fasit når protokollen er selvmotsigende.
+                 "mp": next((d["url"] for d in mote[mid].get("dokumenter") or []
+                             if d.get("type") == "MP"), None),
                  "saker": sorted(s, key=lambda x: _saksnr_sortering(x["nr"]))}
                 for mid, s in per_mote.items()]
     moter_ut.sort(key=lambda m: m["date"])

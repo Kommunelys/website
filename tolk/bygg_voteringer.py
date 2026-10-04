@@ -17,7 +17,7 @@ import json
 import sys
 from pathlib import Path
 
-from .tolk_protokoll import les_vedtak
+from .tolk_protokoll import les_vedtak, les_vedtakstekst
 
 ROT = Path(__file__).resolve().parent.parent
 SAKER = ROT / "data" / "saker"
@@ -43,7 +43,8 @@ def kjor(aar: int) -> dict:
             # url_vedtak er None når vedtaket er skjermet eller upublisert.
             if not steg["url_vedtak"] or not sti.exists():
                 continue
-            voteringer = les_vedtak(sti.read_text(encoding="utf-8"), steg["saksnr"])
+            tekst = sti.read_text(encoding="utf-8")
+            voteringer = les_vedtak(tekst, steg["saksnr"])
             for nr, v in enumerate(voteringer, 1):
                 v["nr"] = nr
             ut.append({
@@ -53,6 +54,8 @@ def kjor(aar: int) -> dict:
                 "utvalg": steg["utvalg"],
                 "dato": steg["dato"],
                 "voteringer": voteringer,
+                # Det endelige vedtaket, slik protokollen skriver det.
+                "vedtak": les_vedtakstekst(tekst),
             })
 
     ut.sort(key=lambda b: (b["dato"], b["behandling_id"]))

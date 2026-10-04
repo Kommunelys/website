@@ -251,6 +251,21 @@ def les_vedtak(tekst: str, saksnr: str) -> list[dict]:
     return _voteringer(_flat(tekst), saksnr)
 
 
+def les_vedtakstekst(tekst: str) -> str | None:
+    """Det endelige vedtaket i saksprotokollen for én sak, uendret.
+
+    Saksprotokollen slutter med en linje som bare er «Vedtak», og under den
+    står vedtaket slik det ble. Gjelder alle 241 saksprotokoller med
+    voteringer i 2026. Uten linjen finnes ikke noe vedtak å vise.
+    """
+    linjer = tekst.splitlines()
+    treff = [i for i, l in enumerate(linjer) if l.strip() == "Vedtak"]
+    if not treff:
+        return None
+    vedtak = _flat("\n".join(linjer[treff[-1] + 1:])).strip()
+    return vedtak or None
+
+
 def tolk(tekst: str) -> dict:
     oppmote = les_oppmote(tekst)
     voteringer = les_voteringer(tekst)
