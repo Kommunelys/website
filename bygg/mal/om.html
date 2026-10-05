@@ -41,7 +41,7 @@
       <li><a href="#uavhengighet">Uavhengighet</a></li>
       <li><a href="#dekning">Dekning per kommune</a></li>
       <li><a href="#sporsmal">Spørsmål og svar</a></li>
-      <li><a href="#feil">Feil og innspill</a></li>
+      <li><a href="#kontakt">Kontakt oss</a></li>
     </ol>
   </nav>
 
@@ -69,7 +69,7 @@
     <p><b>Aldri med KI:</b> stemmetall, navnelister, oppmøte og profilene til de folkevalgte.</p>
 
     <h2 id="kilder">Kilder</h2>
-    <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen. Portalen spørres sjelden, høyst én gang i sekundet.</p>
+    <p>Møter, saker og dokumentlenker hentes fra kommunens offentlige innsynsportal (Elements Publikum). Stemmegivningen leses ut av saksprotokollene, og oppmøtet av møteprotokollene. Verv og partitilhørighet hentes fra medlemslistene i portalen. Portalen spørres sjelden, høyst én gang i sekundet. Kommunegrensene i kartet på forsiden er fra Kartverket (CC BY 4.0).</p>
 
     <h2 id="status">Status på en sak</h2>
     <p>En sak som behandles i flere utvalg, er slått sammen til én linje.</p>
@@ -108,6 +108,7 @@
       <li>Dokumentene som sendes til Anthropic for å lage sammendrag, er offentlige, men de kan inneholde navn. Sammendragene kontrolleres for navn fra sakstittelen før de vises.</li>
       <li>Nettstedet har ingen informasjonskapsler. Sidevisninger telles med GoatCounter, det eneste skriptet fra et annet nettsted. GoatCounter lagrer ikke IP-adresser, bare sammenlagte tall: hvor mange som har sett hver side, og fordelingen på nettleser, skjermstørrelse, land og hvilken side de kom fra. Ingen enkeltbesøk kan spores tilbake til en person.</li>
       <li>Nettstedet ligger på GitHub Pages, og GitHub kan logge tekniske opplysninger som IP-adresse.</li>
+      {{personvern_skjema}}
     </ul>
 
     <h2 id="uavhengighet">Uavhengighet</h2>
@@ -137,17 +138,36 @@
     <details class="faq"><summary>Kan jeg bruke dataene?</summary>
       <p>Dataene ligger som JSON-filer i mappen <code>data/</code> under hver kommune, og i <a href="{{repo}}">prosjektet på GitHub</a>. Innholdet i dokumentene er kommunens. Det er ingen garanti for at dataene alltid vil ligge der, eller i samme form.</p></details>
     <details class="faq"><summary>Jeg har funnet en feil. Hva gjør jeg?</summary>
-      <p>Se <a href="#feil">Feil og innspill</a> under.</p></details>
+      <p>Se <a href="#kontakt">Kontakt oss</a> under.</p></details>
 
-    <h2 id="feil">Feil og innspill</h2>
-    <p>Finner du en feil, bruk «Meld fra om feil» under sammendraget, eller <a href="{{meld}}">meld fra på GitHub</a>. Ta med saksnummeret eller lenken til saken.{{kontakt}}</p>
+    <h2 id="kontakt">Kontakt oss</h2>
+    <span id="feil"></span>
+    {{kontakt}}
   </div>
 </main>
 
 <footer class="ramme fot">
   <div>{{merke}} er en uoffisiell og uavhengig tjeneste, laget av en privatperson.</div>
-  <div><a href="../">Kommuner</a> · <a href="{{repo}}">Kode og data</a></div>
+  <div><a href="../">Kommuner</a></div>
 </footer>
+<script>
+/* Kontaktskjemaet sendes uten å forlate siden. Uten skript sendes det
+   rett til skjematjenesten. Kommer man fra «Meld fra om feil», står saken
+   i adressen (?sak=…) og fylles inn i meldingen. */
+(function(){
+  var f=document.getElementById('kontakt-skjema');if(!f)return;
+  var q=new URLSearchParams(location.search),sak=q.get('sak');
+  if(sak){f.melding.value='Gjelder: '+sak+(q.get('lenke')?'\n'+q.get('lenke'):'')+'\n\nHva er feil?\n';f.emne.selectedIndex=0}
+  var st=document.getElementById('kontakt-status');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();st.textContent='Sender …';f.querySelector('button').disabled=true;
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
+      .then(function(r){if(!r.ok)throw r;f.reset();st.textContent='Takk! Meldingen er sendt.'})
+      .catch(function(){st.textContent='Meldingen ble ikke sendt. Prøv igjen litt senere.'})
+      .then(function(){f.querySelector('button').disabled=false});
+  });
+})();
+</script>
 {{telling}}
 </body>
 </html>
