@@ -1969,18 +1969,6 @@
   "utvalg_navn": "Eldrerådet"
  },
  {
-  "antall_saker": 0,
-  "dato": "2026-10-12T17:00",
-  "dokumenter": [],
-  "mote_id": 1333,
-  "rom": null,
-  "slutt": "19:00",
-  "sted": null,
-  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1333",
-  "utvalg": "UNGRÅ",
-  "utvalg_navn": "Ungdomsrådet"
- },
- {
   "antall_saker": 2,
   "dato": "2026-10-13T08:30",
   "dokumenter": [
@@ -2015,6 +2003,18 @@
   "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1290",
   "utvalg": "HPNM",
   "utvalg_navn": "Hovedutvalg plan næring og miljø"
+ },
+ {
+  "antall_saker": 0,
+  "dato": "2026-10-13T17:00",
+  "dokumenter": [],
+  "mote_id": 1333,
+  "rom": "Sigrid Toresdatter, 2.etasje",
+  "slutt": "19:00",
+  "sted": "Steinkjer rådhus",
+  "url": "https://prod01.elementscloud.no/publikum/840029212_PROD-840029212/DmbMeeting/1333",
+  "utvalg": "UNGRÅ",
+  "utvalg_navn": "Ungdomsrådet"
  },
  {
   "antall_saker": 2,
