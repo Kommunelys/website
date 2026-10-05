@@ -37,7 +37,8 @@ const stPill=s=>`<span class="st ${stCls[s]||'bh'}">${s}</span>`;
 /* Sammendrag fra KI (c.a) vises bare når det har bestått kontrollene i bygget. */
 const tittel=c=>c.a?c.a.tk:c.t;
 const sokTekst=c=>(c.t+' '+(c.a?`${c.a.tk} ${c.a.sum}`:'')).toLowerCase();
-const meldUrl=c=>`${S.meld}?title=${encodeURIComponent('Feil i sammendraget: '+(c.first||c.st[0]).nr)}&body=${encodeURIComponent(`Sak: ${c.t}\nSaksnummer: ${(c.first||c.st[0]).nr}\n\nHva er feil?\n`)}`;
+// Til kontaktskjemaet på Om-siden når det er satt opp, ellers til GitHub.
+const meldUrl=c=>S.skjema?`../om/?sak=${encodeURIComponent(`${(c.first||c.st[0]).nr} ${c.t}`)}&lenke=${encodeURIComponent(location.origin+location.pathname+'#saker')}#kontakt`:`${S.meld}?title=${encodeURIComponent('Feil i sammendraget: '+(c.first||c.st[0]).nr)}&body=${encodeURIComponent(`Sak: ${c.t}\nSaksnummer: ${(c.first||c.st[0]).nr}\n\nHva er feil?\n`)}`;
 const ut=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
 function oppsummering(c){
   if(!c.a)return c.typ==='PS'&&!c.formal?'<p class="liten muted">Ingen sammendrag ennå. Les dokumentene i lenkene under.</p>':'';
@@ -87,7 +88,7 @@ function stemmeStat(n){
 
 /* ---------- OVERSIKT ---------- */
 /* Forsiden svarer på tre spørsmål i hvert sitt kort: hva skal skje, hva ble
-   bestemt, og hvordan ble det stemt. Under kortene: hva venter vi på. Ingen
+   bestemt, og hvordan ble det stemt. Under kortene: kommunestyret. Ingen
    nøkkeltall; de hjelper ikke innbyggeren med å forstå hva kommunen gjør.
    Kortene viser lite og lenker videre til hele listen. */
 const meetings=S.meetings;
@@ -152,14 +153,6 @@ const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includ
     ||'<li class="muted">Ingen avgjørelser med protokoll ennå.</li>';
 })();
 
-/* Hva venter vi på: møter de siste 30 dagene der protokollen ikke er publisert.
-   Eldre har status «Protokoll ikke publisert» (tolk/bygg_saker.py). */
-(function(){
-  const gr=moteGrupper(venter,c=>c.last,4,(a,b)=>b.x.date.localeCompare(a.x.date));
-  $('venter').innerHTML=gr.map(g=>moteHtml(g,3,null,
-    g=>`<a href="#saker" data-go="saker" data-status="Venter på protokoll" data-ut="${g.x.sc}">${antall(g.saker.length-3,'sak','saker')} til fra dette møtet</a>`)).join('')
-    ||'<p class="muted">Alle møter den siste måneden har publisert protokoll.</p>';
-})();
 
 /* Én setning øverst om hvor ting står akkurat nå. */
 $('akkurat').textContent=[
@@ -666,7 +659,7 @@ document.addEventListener('click',e=>{
   const l=$('stemlenke');l.href='#stemmer/'+m.id;l.dataset.go='stemmer';l.dataset.m=m.id;
 })();
 renderTagChips();renderList();renderMeet();renderStemmer();renderPC();renderPT();renderPP();renderHeat();
-$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · <a href="../om/">Om ${esc(S.merke)}</a> · ${ut(S.repo,'Kode og data')}</div>`;
+$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste. Ikke laget av ${esc(K.navn)} kommune. <a href="../">Andre kommuner</a> · <a href="../om/">Om ${esc(S.merke)}</a></div>`;
 window.addEventListener('hashchange',vis);vis();
 // Nådde vi hit, er siden tegnet. Ellers viser index.html en feilmelding.
 window.KL_KLAR=true;
