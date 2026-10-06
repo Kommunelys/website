@@ -27,7 +27,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
-| Portal | https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Innlogging med Supabase Auth og e-post via Resend. Brukere, roller, abonnement, vurdering av avvik og driftssiden. Nettstedet er fortsatt åpent for alle |
+| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging og Min konto for alle; brukere, roller, abonnement, vurdering av avvik og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
@@ -149,6 +149,49 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
 - **Sikkerhetskopien** tas hver natt (arbeidsflyten Sikkerhetskopi). Git er
   ikke lenger sikkerhetskopien.
 
+## Portalen
+
+Innlogget del av Kommunelys på https://portal.kommunelys.no/ (ADR-020). Ble
+satt i drift 6.10.2026. Nettstedet krever fortsatt ingen innlogging; roller og
+abonnement gis for hånd, men brukes ikke til noe der ennå.
+
+| Del | Hvor |
+|---|---|
+| Appen | Repoet `Kommunelys/portal` (lokalt `C:\ClaudeCode\kommunelys-portal`): Vite, React, react-admin og ra-supabase. Publiseres på GitHub Pages ved push til `main` |
+| Innlogging | Supabase Auth. E-post fra `noreply@kommunelys.no` via Resend (SMTP). Malene ligger i `supabase/epostmaler/` og limes inn i Supabase for hånd |
+| Data | Skjemaet `portal` (`supabase/migrations/20261006181902_portal.sql`): views med `security_invoker`, så RLS gjelder. Det eneste skjemaet i Data API, og bare for innloggede |
+| Brukeradministrasjon | Edge-funksjonen `brukeradmin` (`supabase/functions/`): liste, invitere, sperre, nytt passord, slette. Service-nøkkelen finnes bare der |
+| Kontomenyen | `bygg/mal/konto.js` og `bygg/mal/konto.html` (`/konto/`) på nettstedet |
+| Driftssiden | Bygget lagrer den i `drift.side`; portalen viser den |
+
+- **Prosjektadmin gis bare med SQL** (som `postgres`, i SQL-editoren), aldri
+  fra portalen, og kan ikke sperres eller slettes der. Prosjekteier er
+  prosjektadmin.
+- **Sidene:** alle har registrering, innlogging, glemt passord og Min konto
+  (bytte passord og e-post, slette kontoen). Prosjektadmin har i tillegg
+  Brukere (med «Gi rolle» og «Gi abonnement»), Roller, Abonnement, Avvik med
+  vurderinger, og Drift.
+- **Vurderinger av avvik** registreres i portalen, eller med
+  `python -m lager.vurder` når en modell vurderer. De slår inn ved neste
+  kjøring av Oppdater.
+- **Kontomenyen** viser «Logg inn» og «Ny bruker», eller kontoen når man er
+  logget inn. Portalen sender brukeren tilbake via `/konto/` på nettstedet
+  (`bygg/mal/konto.html`), med kontoen etter `#`, og siden lagrer den i
+  localStorage. Ingen informasjonskapsler; e-postadressen går ikke til
+  nettstedets server. `?tilbake=` sier hvor brukeren skal etterpå.
+- **Utseendet** følger nettstedet: fargene fra `stil.css`, skriften Inter og
+  merket (`src/tema.ts` i portalen). Endres fargene i `stil.css`, må temaet
+  følge med.
+- **Lokalt:** `npm run dev` i portalen gir http://localhost:5173 mot den ekte
+  databasen. `KOMMUNELYS_PORTAL=http://localhost:5173 python -m bygg.bygg_nettsted 2026`
+  lar kontomenyen på nettstedet bruke den.
+- **Det som gjøres for hånd i dashbordene:** Resend (domenet og nøkkelen),
+  Supabase Auth (SMTP, Site URL og Redirect URLs, e-postmalene, minste
+  passordlengde 10), Data API (`portal` eksponert, «Automatically expose new
+  tables» av), og GitHub Pages med HTTPS for portalen.
+- **Senere:** tofaktor for prosjektadmin, captcha på registreringen,
+  tilgangsstyring på nettstedet, betaling og Pro-plan i Supabase.
+
 ## Fallgruver vi allerede har gått i
 
 - **En sak er ikke en behandling.** Samme sak får nytt saksnummer i hvert
@@ -254,6 +297,30 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
 - **Bruk Session pooler-adressen til Supabase.** Den direkte adressen
   (`db.<prosjekt>.supabase.co`) er bare IPv6 og svarer ikke herfra eller fra
   Actions. Koble aldri til som `postgres` fra koden; eieren går forbi RLS.
+- **Portalen ser bare skjemaet `portal`.** En ny tabell eller et nytt felt
+  portalen skal vise, trenger et view der (med `security_invoker`), rettigheter
+  for `authenticated` og tester i `regler.sql`. Supabase legger ikke noe til av
+  seg selv.
+- **Svar på forhåndssjekken (OPTIONS) kan ikke ha innhold.** Første utgave av
+  `brukeradmin` krasjet på det, og nettleseren meldte bare «Failed to send a
+  request to the Edge Function».
+- **Portalen bruker vanlige adresser, ikke `#`.** Lenkene i e-postene fra
+  Supabase krever det. GitHub Pages har ingen omskriving, så publiseringen
+  kopierer `index.html` til `404.html`. Undersider svarer derfor med
+  statuskode 404, men viser appen.
+- **Nettleseren holder på `stil.css` og skriptene.** De lenkes med
+  `?v=<sjekksum>`, ellers ser nye endringer feil ut hos dem som har vært
+  innom før. Nye filer i `FELLES` trenger det samme.
+- **Lenker i Supabase-e-poster går til Site URL** hvis `redirectTo` mangler,
+  og den adressen må stå i Redirect URLs. Både `https://portal.kommunelys.no/**`
+  og `http://localhost:5173/**` står der.
+- **Safari på iPhone lar ikke en ramme fra portalen lese innloggingen**,
+  selv om portalen ligger på et underdomene. Den første utgaven av
+  kontomenyen spurte portalen på den måten, og viste aldri kontoen på iPhone.
+  Kontoen må sendes med når portalen sender brukeren tilbake.
+- **Vite kan servere en gammel modul** etter mange endringer mens
+  utviklingsserveren går («X is not defined» selv om koden er riktig). Start
+  den på nytt.
 - **Hver spørring mot databasen tar rundt 50 ms, og tekst går med 0,6 MB/s.**
   `lager/pg.py` husker derfor svarene i prosessen og henter tekst bare når den
   trengs. Spør ikke i en løkke.
