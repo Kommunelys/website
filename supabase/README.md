@@ -31,8 +31,15 @@ GitHub Actions ligger den som hemmeligheten `KOMMUNELYS_DB_URL`.
 | `drift` | Kjøringer, bygg og endringsloggen, som erstatter historikken fra git |
 | `tilgang` | Hvem som ser hva: prosjektadmin, medlemskap per kommune, abonnement |
 | `publisert` | Publiseringsreglene som views: tilbakeholdte voteringer og sammendrag |
+| `portal` | Det portalen (portal.kommunelys.no) ser: views med `security_invoker` over de andre, så RLS gjelder (ADR-020) |
 
-Ingenting ligger i `public`, og ingen av skjemaene er eksponert gjennom Supabase-API-et.
+Ingenting ligger i `public`. Bare `portal` er eksponert gjennom Supabase-API-et (Data API, «Exposed schemas»), og bare for innloggede brukere.
+
+Edge-funksjonen `brukeradmin` (`functions/brukeradmin/`) gjør det portalen ikke kan med den publiserbare nøkkelen: liste, invitere, sperre og slette brukere. Bare prosjektadmin kan bruke den. Prosjektadmin gis med SQL, som `postgres`:
+
+```sql
+insert into tilgang.prosjektadmin (user_id) select id from auth.users where email = '...';
+```
 
 ## Regler databasen håndhever
 
