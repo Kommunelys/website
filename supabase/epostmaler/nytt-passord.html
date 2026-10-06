@@ -1,6 +1,6 @@
 <!-- Emne: Nytt passord til Kommunelys-portalen -->
 <h2>Nytt passord</h2>
 <p>Noen har bedt om å få nytt passord til brukeren din. Trykk på lenken for å velge et nytt.</p>
-<p><a href="{{ .ConfirmationURL }}">Velg nytt passord</a></p>
+<p><a href="{{ .SiteURL }}/bekreft?token_hash={{ .TokenHash }}&type=recovery&til={{ .RedirectTo }}">Velg nytt passord</a></p>
 <p>Har du ikke bedt om dette, kan du se bort fra e-posten. Passordet ditt er uendret.</p>
 <p>Hilsen Kommunelys<br>Kommunelys er et uoffisielt prosjekt, ikke laget av eller for noen kommune.</p>
