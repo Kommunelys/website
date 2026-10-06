@@ -1,10 +1,9 @@
-"""Lagringslaget. All lesing og skriving av data/ går gjennom denne pakken.
+"""Lagringslaget. All lesing og skriving av dataene går gjennom denne pakken.
 
 Hent-, tolke-, analyse- og byggekoden vet ikke hvor dataene ligger. Hver modul
 her svarer for én del av datamodellen og returnerer samme form som filene i
-data/ har i dag. I dag er backend JSON-filer i git. Planen er å flytte
-dataene til Postgres (Supabase) uten å endre koden som bruker dem; se
-docs/06-database.md når den finnes.
+data/ hadde. Kilden er Postgres i Supabase (ADR-019); filene i data/ ble
+brukt fram til 6.10.2026 og kan fortsatt leses med KOMMUNELYS_LAGER=json.
 
     from lager import saker, tekst
     alle = saker.les(2026)
@@ -18,11 +17,9 @@ import os
 
 
 def fra_databasen() -> bool:
-    """KOMMUNELYS_LAGER=pg leser fra databasen; standard er filene (json).
-
-    Fase 2 i flyttingen: bare lesing. Skriving går fortsatt til filene.
-    """
-    verdi = os.environ.get("KOMMUNELYS_LAGER", "json")
+    """Standard er databasen (pg). KOMMUNELYS_LAGER=json leser og skriver
+    filene i data/, som sto stille fra byttet 6.10.2026 (ADR-019)."""
+    verdi = os.environ.get("KOMMUNELYS_LAGER", "pg")
     if verdi not in ("json", "pg"):
         raise SystemExit(f"KOMMUNELYS_LAGER må være json eller pg, ikke {verdi!r}")
     return verdi == "pg"

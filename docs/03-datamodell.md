@@ -243,5 +243,8 @@ skrives en ny rad med tidsstempel, og den forrige markeres som avløst. Det gir
 to ting: en tidslinje som viser når noe faktisk ble kjent, og mulighet til å se
 hva nettsiden viste på et gitt tidspunkt.
 
-Siden data ligger som JSON i git, gir historikken det samme på et grovere nivå
-gratis.
+I databasen (ADR-019) er dette gjort for rådata, analyser og vurderinger:
+en ny versjon er en ny rad, og ingenting slettes. Endringsloggen
+(`drift.endringslogg`) viser hva hver kjøring endret i resten. Fram til
+6.10.2026 lå dataene som JSON i git, og historikken der gir det samme for
+den tiden.

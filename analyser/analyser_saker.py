@@ -20,6 +20,7 @@ eller en feil i sjekksummen ikke kan sende hele året på én gang.
     python -m analyser.analyser_saker 2026 --vis 8356    # skriv ut grunnlaget for én sak
     python -m analyser.analyser_saker 2026 --saker 7675,8356  # bare disse sakene
     python -m analyser.analyser_saker 2026 --minutter 150     # send ikke nye etter 150 min
+    python -m analyser.analyser_saker 2026 --saker 7675 --til-mappe ut  # prøve: til ut/, ikke til dataene
 """
 
 from __future__ import annotations
@@ -31,6 +32,7 @@ import json
 import re
 import sys
 import time
+from pathlib import Path
 
 import lager
 from drift.logg import legg_til
@@ -279,7 +281,7 @@ def _finn(saker: list[dict], ident: int) -> dict | None:
 
 def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
          vis: int | None = None, bare: list[int] | None = None,
-         minutter: float | None = None) -> None:
+         minutter: float | None = None, til_mappe: str | None = None) -> None:
     """minutter: slutt å sende nye saker etter så lang tid, så jobben rekker å
     lagre det som er gjort før arbeidsflytens tidsgrense."""
     frist = time.monotonic() + minutter * 60 if minutter else None
@@ -372,11 +374,17 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             # CLAUDE.md regel 5: uten kildelenke publiseres det ikke.
             "kilder": kilder,
         })
-        lager_analyse.lagre(resultat)
+        if til_mappe:
+            # Prøveanalyse: til en mappe som lastes opp, ikke til dataene.
+            ut = Path(til_mappe) / f"{sak['sak_id']}.json"
+            ut.parent.mkdir(parents=True, exist_ok=True)
+            ut.write_text(json.dumps(resultat, ensure_ascii=False, indent=1), encoding="utf-8")
+        else:
+            lager_analyse.lagre(resultat)
         tokens.update(forbruk)
 
     print(", ".join(f"{k}: {v}" for k, v in teller.items()))
-    if not tort_lop and not bare:
+    if not tort_lop and not bare and not til_mappe:
         legg_til("analyse", {
             "sendt": teller["sendt"], "feil": teller["feil"],
             "utsatt": teller["utsatt til neste kjøring"],
@@ -389,7 +397,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
 
 def main() -> None:
     argv = sys.argv[1:]
-    med_verdi = ("--maks", "--vis", "--saker", "--minutter")
+    med_verdi = ("--maks", "--vis", "--saker", "--minutter", "--til-mappe")
 
     def verdi(flagg: str) -> int | None:
         return int(argv[argv.index(flagg) + 1]) if flagg in argv else None
@@ -403,7 +411,8 @@ def main() -> None:
             if "--saker" in argv else None)
     kjor(aar, tort_lop="--tort-lop" in argv,
          maks=MAKS_PER_KJORING if maks is None else maks, vis=verdi("--vis"), bare=bare,
-         minutter=verdi("--minutter"))
+         minutter=verdi("--minutter"),
+         til_mappe=argv[argv.index("--til-mappe") + 1] if "--til-mappe" in argv else None)
 
 
 if __name__ == "__main__":

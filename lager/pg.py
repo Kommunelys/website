@@ -612,6 +612,11 @@ def overgang(antall: int = 60) -> dict:
         "select k.kjoring_id, k.start, (select count(*) from drift.endringslogg e "
         "where e.kjoring_id = k.kjoring_id) from drift.kjoring k "
         "where k.kjoring_id like 'synk-%%' and k.kilde = 'actions' order by k.start desc limit 1")
+    # Etter byttet skriver kjøringen rett i databasen, med GITHUB_RUN_ID.
+    kjoring = _rader(
+        "select k.kjoring_id, k.start, (select count(*) from drift.endringslogg e "
+        "where e.kjoring_id = k.kjoring_id) from drift.kjoring k "
+        "where k.kilde = 'actions' and k.kjoring_id ~ '^[0-9]+$' order by k.start desc limit 1")
     storrelse = _rader("select pg_size_pretty(pg_database_size(current_database()))")[0][0]
     return {"kontroller": kontroller, "speiling": speiling[0] if speiling else None,
-            "storrelse": storrelse}
+            "kjoring": kjoring[0] if kjoring else None, "storrelse": storrelse}

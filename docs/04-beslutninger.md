@@ -422,3 +422,55 @@ at den behandlingsansvarlige oppgis.
   kommune eller et parti, oppdateres avsnittet samme dag.
 - Blir tjenesten drevet av et selskap, står selskapet som avsender og
   ansvarlig, med organisasjonsnummer.
+
+---
+
+## ADR-019 — Dataene ligger i en database (Postgres i Supabase)
+
+**Besluttet.** Prosjekteier, 4.10.2026; byttet 6.10.2026. Erstatter ADR-004.
+Endrer ADR-009 og ADR-017 på punktene under.
+
+Med JSON i git ble reglene for dataene håndhevet bare i Python. Folkevalgte
+var et navn, ikke en person med ID, og ingen post visste hvilken kommune den
+hørte til. Flere kommuner og tilgangsstyring per kommune krever en database
+som selv nekter å lagre det som bryter reglene.
+
+**Konsekvens:**
+
+- Postgres i Supabase (EU, Irland) er kilden. `data/` i git står som det var
+  6.10.2026; arbeidsflyten committer ikke data lenger. All lesing og skriving
+  går gjennom `lager/`, med `KOMMUNELYS_LAGER=pg` som standard.
+- Databasen håndhever reglene i CLAUDE.md i tillegg til koden: antall navn
+  mot stemmetallet, ingen tekst fra skjermede vedtak eller fra
+  møteinnkallingen, kildelenke på hver analyse, ingen kontaktopplysninger i
+  medlemslistene. Hver rad hører til én kommune, og fremmednøklene kan ikke
+  peke på tvers. Se `supabase/README.md`.
+- Rådata, analyser, vurderinger og endringsloggen kan ikke endres eller
+  slettes; en ny versjon er en ny rad. Endringsloggen (`drift.endringslogg`)
+  tar over for git-diffene som sporbarhet: hver kjøring logger hva den satte
+  inn, endret og slettet. `/drift/` leser endringene derfra (endrer ADR-017),
+  og det som skjedde før byttet, fra git.
+- Tre filer vedlikeholdes fortsatt for hånd i git, fordi de skal gjennomgås
+  i en PR: `vurderinger.json`, `tillatte-navn.json` og `partisider.json`.
+  Hver kjøring speiler dem inn (`lager.synk --konfig`).
+- RLS på alle tabeller, og egne roller for pipelinen og bygget. Tilgang for
+  innloggede brukere gis per kommune (`tilgang`), og gir aldri mer enn det som
+  er publisert: tilbakeholdte voteringer og sammendrag holdes tilbake fordi de
+  kan være feil, ikke av andre grunner.
+- Byttet ble gjort etter at databasen var bygget opp ved siden av filene og
+  sammenlignet tegn for tegn ved hver kjøring (6 av 6 like, 5.–6.10.2026), og
+  etter en generalprøve mot portalen der kjeden med databasen ga nøyaktig det
+  samme som kjeden med filene.
+- Sikkerhetskopi: gratisplanen i Supabase har ingen å stole på, så
+  arbeidsflyten `Sikkerhetskopi` tar `pg_dump` hver natt og lagrer den på
+  kjøringen i 90 dager. Git-historikken er ikke lenger sikkerhetskopien.
+- Kostnad (endrer ADR-009): gratisplanen er nok for datamengden (28 MB). Pro
+  (rundt 25 dollar i måneden) gir daglige sikkerhetskopier hos Supabase og
+  bør vurderes når flere kommuner kommer til, eller når noen andre enn
+  prosjekteier skal logge inn.
+- Uten daglige commits kan GitHub slå av tidsplanen etter 60 dager uten
+  aktivitet. Jobben «Hold tidsplanen aktiv» slår arbeidsflytene på igjen ved
+  hver planlagte kjøring.
+- Postgres er ikke bundet til Supabase. Koden bruker vanlig Postgres
+  (`psycopg`); bare innlogging og `auth.uid()` er Supabase-spesifikt. Veien
+  til Azure (ADR-009) er fortsatt åpen.

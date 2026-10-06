@@ -35,17 +35,23 @@ concurrency:
   group: oppdater
   cancel-in-progress: false
 
+# ADR-019: dataene ligger i databasen (Postgres i Supabase), og hver jobb leser
+# og skriver der. Ingenting committes; data/ i git står som det var 6.10.2026.
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
   # Driftssiden (/drift/) leser kjøringene og jobbresultatene fra API-et.
   actions: read
 
+env:
+  KOMMUNELYS_LAGER: pg
+  KOMMUNELYS_DB_URL: ${{ secrets.KOMMUNELYS_DB_URL }}
+
 jobs:
   # Prøveanalyse: analysen kjøres på utvalgte saker, og resultatet lastes opp
-  # som en fil. Ingenting committes eller publiseres, og innhenting og bygging
-  # hoppes over, så portalen ikke kalles.
+  # som en fil. Ingenting lagres i databasen eller publiseres, og innhenting og
+  # bygging hoppes over, så portalen ikke kalles.
   proeve:
     name: Prøveanalyse (lagres ikke)
     if: ${{ inputs.proeveanalyse }}
@@ -65,13 +71,13 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SAKER: ${{ inputs.proeveanalyse }}
           AAR: ${{ inputs.aar || '2026' }}
-        run: python -m analyser.analyser_saker "$AAR" --saker "$SAKER" --maks 10
+        run: python -m analyser.analyser_saker "$AAR" --saker "$SAKER" --maks 10 --til-mappe proeveanalyse
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: proeveanalyse
-          path: data/analyse/
+          path: proeveanalyse/
           retention-days: 7
           if-no-files-found: warn
 
@@ -91,6 +97,11 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y poppler-utils
           pip install -r krav.txt
+
+      # Vurderingene, de tillatte navnene og partilenkene endres for hånd i
+      # git og gjennomgås i en PR. De speiles inn før tolkningen bruker dem.
+      - name: Speil filene som vedlikeholdes for hånd
+        run: python -m lager.synk --konfig
 
       - name: Hent møter og saker
         run: |
@@ -120,18 +131,10 @@ jobs:
       - name: Samle avvik til vurdering
         run: python -m tolk.bygg_avvik "${{ inputs.aar || '2026' }}"
 
-      - name: Lagre endringer
-        run: |
-          git config user.name "oppdater-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/
-          git diff --staged --quiet || git commit -m "Data: oppdatert $(date -I)"
-          git push
-
-  # Fase 2. Sender bare nye og endrede saker, høyst analyse_maks per kjøring
-  # (25 som standard). Første gjennomgang av et helt år tar over en time, så
-  # analysen slutter å sende nye saker etter 150 minutter, og det som er gjort,
-  # lagres selv om jobben feiler.
+  # Sender bare nye og endrede saker, høyst analyse_maks per kjøring (25 som
+  # standard). Første gjennomgang av et helt år tar over en time, så analysen
+  # slutter å sende nye saker etter 150 minutter. Hver analyse lagres i
+  # databasen med en gang, så ingenting går tapt om jobben feiler.
   analyser:
     name: AI-analyse
     needs: hent
@@ -140,8 +143,6 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
 
       - uses: actions/setup-python@v5
         with:
@@ -156,56 +157,10 @@ jobs:
           AAR: ${{ inputs.aar || '2026' }}
         run: python -m analyser.analyser_saker "$AAR" --maks "$MAKS" --minutter 150
 
-      - name: Lagre analyser
-        if: always()
-        run: |
-          git config user.name "oppdater-bot"
-          git config user.email "actions@users.noreply.github.com"
-          # Commit før pull: endrede analyser er ucommittede endringer, og
-          # «git pull --rebase» nekter å kjøre med dem (3.10.2026 gikk 16
-          # analyser tapt slik). Hent-jobben har pushet data/ i mellomtiden.
-          git add data/analyse/ data/drift/
-          git diff --staged --quiet || git commit -m "Analyse: oppdatert $(date -I)"
-          git pull --rebase
-          git push
-
-  # Fase 3 i flyttingen til databasen (supabase/README.md). Speiler data/ inn
-  # i Postgres og kontrollerer at databasen gir nøyaktig det samme. Filene er
-  # fortsatt kilden. Bygget venter på jobben, så driftssiden viser resultatet,
-  # men publiserer selv om den feiler; feilen vises på kjøringen.
-  database:
-    name: Speil til databasen
-    needs: [hent, analyser]
-    if: ${{ always() && needs.hent.result == 'success' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      KOMMUNELYS_DB_URL: ${{ secrets.KOMMUNELYS_DB_URL }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - run: pip install -r krav.txt
-
-      # Én transaksjon: data som bryter reglene i databasen (stemmetall,
-      # skjerming), stopper speilingen, og ingenting skrives.
-      - name: Speil data/ inn i databasen
-        run: python -m lager.synk "${{ inputs.aar || '2026' }}"
-
-      # Resultatet lagres i drift.paritet og vises på /drift/.
-      - name: Kontroller at databasen gir det samme som filene
-        run: python -m lager.paritet "${{ inputs.aar || '2026' }}" --lagre
-
-  # Publiserer selv om analysen eller databasen feilet; sakene vises da uten
-  # nye sammendrag, og driftssiden sier hva som gikk galt.
+  # Publiserer selv om analysen feilet; sakene vises da uten nye sammendrag.
   bygg:
     name: Bygg og publiser
-    needs: [hent, analyser, database]
+    needs: [hent, analyser]
     if: ${{ always() && needs.hent.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
@@ -214,8 +169,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
-          # Driftssiden sammenligner hver datacommit med den forrige.
+          # Driftssiden viser også endringene fra før byttet, fra git.
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -237,8 +191,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
-          # Bare for boksen om overgangen til databasen på /drift/.
-          KOMMUNELYS_DB_URL: ${{ secrets.KOMMUNELYS_DB_URL }}
         run: python -m bygg.bygg_nettsted
 
       - uses: actions/upload-pages-artifact@v3
@@ -246,3 +198,22 @@ jobs:
           path: nettsted
       - id: publiser
         uses: actions/deploy-pages@v4
+
+  # GitHub slår av planlagte kjøringer etter 60 dager uten aktivitet i repoet.
+  # Før byttet holdt de daglige datacommitene repoet aktivt; nå slås
+  # arbeidsflytene på igjen ved hver planlagte kjøring. GitHub sender også
+  # e-post før en tidsplan slås av, og /drift/ viser når siste kjøring var.
+  holdlevende:
+    name: Hold tidsplanen aktiv
+    if: ${{ github.event_name == 'schedule' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Slå på Oppdater og Sikkerhetskopi
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for fil in oppdater.yml sikkerhetskopi.yml; do
+            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$fil/enable"
+          done

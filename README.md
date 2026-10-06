@@ -24,12 +24,13 @@ ble stemt.
 
 ```
 Portalen  ->  Innhenting  ->  Lagring  ->  AI-analyse  ->  Bygg  ->  Nettsted
-   JSON        ukentlig        JSON        kun nye       statisk     Pages
-   og PDF      jobb            i git       saker         HTML
+   JSON        daglig          Postgres    kun nye       statisk     Pages
+   og PDF      jobb            (Supabase)  saker         HTML
 ```
 
-Hele kjeden kjøres av én GitHub Actions-arbeidsflyt på tidsplan. Data ligger som
-JSON i dette repoet, så enhver endring er synlig som en diff.
+Hele kjeden kjøres av én GitHub Actions-arbeidsflyt på tidsplan. Dataene ligger
+i en database (Postgres i Supabase), som logger hver endring. Fram til
+6.10.2026 lå de som JSON i dette repoet, i `data/` (ADR-019).
 
 ## Dokumentasjon
 
