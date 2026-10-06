@@ -506,6 +506,12 @@ skal forbli statisk og åpent.
   eller med `python -m lager.vurder`, og databasen er kilden.
   `data/vurderinger.json` står som den var. En vurdering slår inn ved neste
   kjøring. Tillatte navn og partilenker blir i git.
+- Kontomenyen øverst på nettstedet (`bygg/mal/konto.js`) lenker til
+  innlogging og registrering i portalen, og sender brukeren tilbake etterpå.
+  Er man logget inn, viser den kontoen. Den spør portalen gjennom en skjult
+  ramme (`konto-status.html` i portalen), og bare hvis «Logg inn» eller «Ny
+  bruker» er brukt i nettleseren før. Ingen informasjonskapsler, og
+  e-postadressen går aldri til nettstedets server.
 - Personvern: en brukerkonto lagrer e-postadresse og innloggingstider hos
   Supabase i EU. Ingen egen profiltabell. Kontoen kan slettes av brukeren
   selv. Står på Om-siden.

@@ -55,7 +55,7 @@ MERKE = "Kommunelys"
 # gjaldt alle denne kommunen. Forsiden sender dem videre dit.
 GAMLE_LENKER = "steinkjer"
 # Felles for alle kommunene, lagt på roten.
-FELLES = ("stil.css", "app.js", "favicon.svg", "apple-touch-icon.png")
+FELLES = ("stil.css", "app.js", "konto.js", "favicon.svg", "apple-touch-icon.png")
 # Står i bunnteksten på hver kommuneside (app.js). Bygget stopper uten
 # (CLAUDE.md: utvetydig uoffisiell).
 UOFFISIELL = "Ikke laget av ${esc(K.navn)} kommune"
@@ -86,6 +86,9 @@ BASE = "/" + "".join(d + "/" for d in os.environ.get("NETTSTED_BASE", "").split(
 # Nettstedet sett utenfra. Driftssiden vises i portalen og henter stilark og
 # lenker herfra.
 NETTSTED = "https://kommunelys.no"
+# Portalen, der man logger inn (ADR-020). KOMMUNELYS_PORTAL overstyrer lokalt,
+# for eksempel http://localhost:5173.
+PORTAL = os.environ.get("KOMMUNELYS_PORTAL", "https://portal.kommunelys.no")
 
 # Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
 # https://<kode>.goatcounter.com. Tom streng slår tellingen av.
@@ -419,6 +422,24 @@ def _saksnr_sortering(nr: str) -> tuple:
     return (m.group(1) != "PS", int(m.group(3)), int(m.group(2))) if m else (True, 0, 0)
 
 
+# Personikonet for «Logg inn» på smale skjermer.
+PERSON = ('<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">'
+          '<circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>'
+          '<path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="none" stroke="currentColor" '
+          'stroke-width="2" stroke-linecap="round"/></svg>')
+
+
+def _konto(rot: str) -> str:
+    """Kontomenyen øverst til høyre: lenker til portalen, og kontoen når man
+    er logget inn (konto.js). rot er veien til roten av nettstedet."""
+    p = html.escape(PORTAL)
+    return (f'<div class="konto" data-portal="{p}">'
+            f'<a href="{p}/login" data-sti="/login" aria-label="Logg inn">{PERSON}'
+            f'<span class="konto-tekst">Logg inn</span></a>'
+            f'<a class="konto-ny" href="{p}/registrer" data-sti="/registrer">Ny bruker</a>'
+            f'</div><script src="{rot}konto.js" defer></script>')
+
+
 def _merke_ikon() -> str:
     """Merket i SVG, felles for toppen på alle sidene."""
     return (MAL / "merke.svg").read_text("utf-8").strip()
@@ -437,7 +458,7 @@ def _kommuneside(kommune: dict, ut: Path) -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
-                 {"merke": MERKE, "merke_ikon": _merke_ikon(), "kommune": navn,
+                 {"merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "kommune": navn,
                   "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
     if UOFFISIELL not in (MAL / "app.js").read_text("utf-8"):
         raise SystemExit(f"bunnteksten i app.js mangler «{UOFFISIELL}»")
@@ -487,7 +508,7 @@ def _kommunekort(kommuner: list[tuple[dict, dict]], foran: str = "") -> str:
 def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     """Kommunelys-forsiden på roten, med en lenke til hver kommune."""
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "kommuner": _kommunekort(kommuner),
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(""), "kommuner": _kommunekort(kommuner),
         "kart": _kart([k for k, _ in kommuner]),
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
@@ -560,7 +581,7 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
     """Om-siden på roten, felles for alle kommunene, med dekningen per kommune."""
     kontakt, personvern = _kontakt()
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "dekning": _dekning(kommuner),
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "dekning": _dekning(kommuner),
         "repo": REPO, "kontakt": kontakt, "personvern_skjema": personvern,
         "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
@@ -579,12 +600,12 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     liste = json.dumps([{"slug": k["slug"], "navn": k["navn"]} for k, _ in kommuner],
                        ensure_ascii=False).replace("</", "<\\/")
     side = _fyll((MAL / "404.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "base": BASE,
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(BASE), "base": BASE,
         "kommuner": _kommunekort(kommuner, BASE), "kommuner_json": liste,
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "meld": MELD_FEIL,
         "telling": _telling()})
     relative = sorted({a for a in re.findall(r'(?:href|src)="([^"]*)"', side)
-                       if not a.startswith(("/", "#", "https://", "mailto:"))})
+                       if not a.startswith(("/", "#", "https://", "http://localhost", "mailto:"))})
     if relative:
         raise SystemExit(f"404.html har relative lenker, som peker feil der siden vises: {relative}")
     (UT / "404.html").write_text(side, encoding="utf-8")

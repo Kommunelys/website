@@ -111,6 +111,7 @@ python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
 python -m lager.synk --konfig          # speil tillatte navn og partilenker inn
 python -m lager.vurder <avvik> publiser --begrunnelse ... --vurdert-av ...  # vurdering fra en modell
 python -m bygg.bygg_nettsted 2026 --drift-fil drift.html  # driftssiden også lokalt
+KOMMUNELYS_PORTAL=http://localhost:5173 python -m bygg.bygg_nettsted 2026  # kontomenyen mot portalen lokalt
 KOMMUNELYS_LAGER=json python -m lager.synk 2026  # gjør databasen lik data/ (import fra filer)
 python -m lager.paritet 2026           # filene i data/ og databasen gir det samme
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
