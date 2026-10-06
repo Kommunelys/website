@@ -1,4 +1,4 @@
-"""Driftssiden /drift/: hva tjenesten har gjort, i tabeller og nøkkeltall.
+"""Driftssiden: hva tjenesten har gjort, i tabeller og nøkkeltall.
 
 Alt på siden er tall fra drift.historikk og dataene, satt inn i faste
 tabeller. Ingenting skrives av en språkmodell (CLAUDE.md, regel 2). Siden
@@ -358,7 +358,7 @@ def _nye_saker(poster: list[dict], na: dt.datetime) -> str:
 
 
 def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
-         analyser: dict, merke: str, repo: str, goatcounter: str) -> str:
+         analyser: dict, merke: str, repo: str, goatcounter: str, nettsted: str) -> str:
     na = dt.datetime.now(dt.timezone.utc)
     kj = historikk.kjoringer()
     poster = historikk.tidslinje(kj, historikk.endringer())
@@ -380,4 +380,5 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
         "nye_saker": _nye_saker(poster, na),
         "goatcounter": _e(goatcounter),
         "repo": repo,
+        "nettsted": nettsted,
     })

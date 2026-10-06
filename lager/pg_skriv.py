@@ -494,6 +494,23 @@ def kjoring_tall(c, k: int, kjoring_id: str, del_: str, tall: dict) -> None:
          if isinstance(v, (int, float)) and not isinstance(v, bool)])
 
 
+def driftsside(c, html: str) -> None:
+    """Driftssiden fra bygget. Det som er eldre enn 30 dager, ryddes bort."""
+    from . import kjoring_id  # noqa: PLC0415
+
+    c.execute("insert into drift.side (kjoring_id, html) values (%s, %s)", (kjoring_id(), html))
+    c.execute("delete from drift.side where bygget < now() - interval '30 days'")
+
+
+def vurdering(c, k: int, v: dict) -> int:
+    """Én ny vurdering (lager.vurder). Avviket må finnes."""
+    return c.execute(
+        "insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, merknad, begrunnelse, vurdert_av, dato) "
+        "values (%s, %s, %s, %s, %s, %s, %s) returning id",
+        (k, v["avvik"], v["avgjorelse"], v.get("merknad"), v["begrunnelse"], v["vurdert_av"], v["dato"]),
+    ).fetchone()[0]
+
+
 def forrige_telling(c, k: int, telling: dict[str, int]) -> int:
     """Antall saker per år ved siste kontroll, som et bygg i drift.bygg."""
     siste = {str(a): n for a, n in c.execute(

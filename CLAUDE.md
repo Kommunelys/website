@@ -26,8 +26,9 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
 | Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, med metode, KI-bruk og en dekningstabell regnet ut ved hvert bygg; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
-| Drift og besøk | `/drift/` viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater. Lenkes ikke fra nettstedet |
-| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på `/drift/` viser siste kjøring |
+| Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
+| Portal | https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Innlogging med Supabase Auth og e-post via Resend. Brukere, roller, abonnement, vurdering av avvik og driftssiden. Nettstedet er fortsatt åpent for alle |
+| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
 
@@ -39,7 +40,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
    oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av. Om en
    votering med avvik likevel skal publiseres, kan vurderes av en modell,
    men vurderingen endrer aldri navn eller tall, og den merkes med
-   `vurdert_av` (`data/vurderinger.json`, ADR-015).
+   `vurdert_av` (i databasen, fra portalen eller `lager.vurder`; ADR-015, ADR-020).
 3. **Skjermet informasjon lastes aldri ned og sendes aldri til en modell.**
    Portalen merker dette med `ProtocolRestricted`, `IsRestricted` og
    `AccessCodeId`. Respekter feltene i hvert ledd.
@@ -61,12 +62,12 @@ hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
-drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til /drift/
+drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til driftssiden
 lager/     all lesing og skriving av data/; resten av koden bruker bare denne
 kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
 kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
 data/          dataene slik de var ved byttet til databasen 6.10.2026 (ADR-019);
-               oppdateres ikke lenger, bortsett fra de tre filene for hånd
+               oppdateres ikke lenger, bortsett fra de to filene for hånd
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
                lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
@@ -77,7 +78,7 @@ data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
 data/utvalg/   utvalg og partier
 data/verv/     verv per person og utvalg
 data/avvik/    avvik som må vurderes før voteringene publiseres
-data/vurderinger.json  avgjørelsene for avvikene, med begrunnelse og hvem som vurderte (ADR-015)
+data/vurderinger.json  vurderingene av avvikene slik de var 6.10.2026; nå i databasen (ADR-020)
 data/analyse/  sammendrag og tagger fra modellen
 data/tillatte-navn.json  navn fra sakstitler som er vurdert og kan stå i et sammendrag
 data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
@@ -107,7 +108,9 @@ python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 KOMMUNELYS_I_DAG=2026-10-04 python -m tolk.bygg_saker 2026  # tolk og bygg som om det var en annen dag
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
-python -m lager.synk --konfig          # speil vurderinger, tillatte navn og partilenker inn
+python -m lager.synk --konfig          # speil tillatte navn og partilenker inn
+python -m lager.vurder <avvik> publiser --begrunnelse ... --vurdert-av ...  # vurdering fra en modell
+python -m bygg.bygg_nettsted 2026 --drift-fil drift.html  # driftssiden også lokalt
 KOMMUNELYS_LAGER=json python -m lager.synk 2026  # gjør databasen lik data/ (import fra filer)
 python -m lager.paritet 2026           # filene i data/ og databasen gir det samme
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
@@ -134,13 +137,14 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
   dataene slik de var 6.10.2026 og oppdateres ikke.
 - **`KOMMUNELYS_LAGER`** er `pg` som standard. `json` leser og skriver filene
   i `data/`, for eksempel for å lese inn et år fra filer med `lager.synk`.
-- **Tre filer vedlikeholdes for hånd og blir i git også etter byttet:**
-  `vurderinger.json`, `tillatte-navn.json` og `partisider.json`. De
-  gjennomgås i PR og speiles inn med `lager.synk --konfig`.
+- **To filer vedlikeholdes for hånd og blir i git også etter byttet:**
+  `tillatte-navn.json` og `partisider.json`. De gjennomgås i PR og speiles
+  inn med `lager.synk --konfig`. Vurderingene av avvik registreres i
+  databasen, i portalen eller med `lager.vurder` (ADR-020).
 - **Tilkoblingen** ligger i `KOMMUNELYS_DB_URL`: hemmeligheten i Actions og
   `~/.kommunelys.env` lokalt. Aldri i repoet.
 - **Endringsloggen** (`drift.endringslogg`) viser hva hver kjøring endret i
-  databasen, og har tatt over for git-historikken på `/drift/`.
+  databasen, og har tatt over for git-historikken på driftssiden.
 - **Sikkerhetskopien** tas hver natt (arbeidsflyten Sikkerhetskopi). Git er
   ikke lenger sikkerhetskopien.
 
@@ -184,7 +188,7 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
   2026 stemmer noen som ikke står på oppmøtelisten, eller det er flere
   stemmer enn frammøtte. Det står slik i protokollene. `tolk.bygg_oppmote`
   flagger dem; slike voteringer publiseres ikke før det finnes en vurdering
-  i `data/vurderinger.json`. Sjekk bevisene med kode før du vurderer: hvem
+  i databasen (portalen eller `lager.vurder`). Sjekk bevisene med kode før du vurderer: hvem
   som står på listen uten å stemme, partiet deres, og vedtak om permisjon og
   fritak i sakene. Se `docs/03-datamodell.md`.
 - **Vi venter ikke på kommunen.** Dokumentene er fasit. Kan et avvik ikke

@@ -55,7 +55,7 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Roligere utseende: systemskrift, tekstmeny, linjer i stedet for kort, ingen eksterne skrifter | Ferdig |
 | Forsiden rundt tre spørsmål: hva skal skje, hva ble vedtatt, hva venter vi på. Ingen nøkkeltall eller grafer | Ferdig |
 | «Venter på protokoll» i måneder: i noen utvalg legges protokollen aldri ut i portalen (Galleri Widegren 0 av 23, arbeidsutvalget i regionrådet 3 av 22). Statusen bør skille dette fra møter som nettopp er holdt | Ferdig. Egen status etter 30 dager, «Protokoll ikke publisert», og «Unntatt offentlighet» for skjermede |
-| Driftsside: hva tjenesten har gjort teknisk, i klartekst, og besøk | Ferdig. `/drift/`, med besøk fra GoatCounter (ADR-017) |
+| Driftsside: hva tjenesten har gjort teknisk, i klartekst, og besøk | Ferdig. I portalen for prosjektadmin, med besøk fra GoatCounter (ADR-017, ADR-020) |
 
 ## Fase 3 — mer enn én kommune
 

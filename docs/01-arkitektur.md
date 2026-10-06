@@ -188,7 +188,7 @@ råd som ikke er valgt for et parti, for eksempel ungdomsrådet, får ikke
 profil. Partiene lenkes til sine egne sider, fra `data/partisider.json`, der
 hver adresse er kontrollert for hånd.
 
-**Driftssiden.** `/drift/` viser hva tjenesten har gjort, i tabeller:
+**Driftssiden** viser hva tjenesten har gjort, i tabeller:
 besøkstall fra GoatCounter øverst, status, innhold og AI-kostnad i hver sin
 boks, og én rad per kjøring med resultatet av hver jobb, kall mot portalen,
 nye møter, saker, dokumenter, voteringer og sammendrag, og kostnad. Kostnaden
@@ -196,8 +196,9 @@ er et anslag: tokens ganget med listepris (`drift/kostnad.py`) og dagens
 dollarkurs fra Norges Bank. Tallene settes inn av `bygg/drift.py`, ikke av
 en modell. Kildene er GitHub-API-et, endringsloggen i databasen (hva hver
 kjøring satte inn, endret og slettet), git-historikken for tiden før byttet
-til databasen 6.10.2026 (ADR-019), og kjøreloggen (`drift/`). Siden lenkes ikke fra resten av
-nettstedet og har `noindex`, men den er offentlig, som repoet.
+til databasen 6.10.2026 (ADR-019), og kjøreloggen (`drift/`). Siden publiseres
+ikke på nettstedet. Bygget lagrer den i databasen (`drift.side`), og portalen
+viser den for prosjektadmin (ADR-020).
 
 Saker som forsvinner fra portalen beholdes med en merknad om at de ikke lenger
 ligger i kilden. Å fjerne dem i stillhet ville gjøre tjenesten mindre

@@ -1,7 +1,8 @@
 """Avvik som må vurderes, og vurderingene av dem (ADR-015).
 
-Avvikene skrives av tolk.bygg_avvik. Vurderingene skrives for hånd, eller av
-en modell, i data/vurderinger.json.
+Avvikene skrives av tolk.bygg_avvik. Vurderingene registreres i portalen eller
+med python -m lager.vurder, og ligger i databasen (ADR-020). data/vurderinger.json
+står som den var 6.10.2026.
 """
 
 from __future__ import annotations
@@ -25,9 +26,7 @@ def lagre(aar: int, avvik: list[dict]) -> None:
 
 
 def vurderinger() -> list[dict]:
-    """Alle vurderingene, slik de står i filen.
-
-    Filen vedlikeholdes for hånd og er kilden også når resten leses fra
-    databasen; lager.synk --konfig speiler den dit.
-    """
+    """Gjeldende vurdering for hvert avvik."""
+    if fra_databasen():
+        return pg.vurderinger()
     return _fil.les(VURDERINGER, [])
