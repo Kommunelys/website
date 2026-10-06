@@ -189,6 +189,16 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   Supabase Auth (SMTP, Site URL og Redirect URLs, e-postmalene, minste
   passordlengde 10), Data API (`portal` eksponert, «Automatically expose new
   tables» av), og GitHub Pages med HTTPS for portalen.
+- **E-post (7.10.2026):**
+  - Portalen sender fra `Kommunelys <post@kommunelys.no>` via Resend.
+    Kontrollene SPF (`rsend.kommunelys.no`), DKIM (`resend._domainkey`) og
+    DMARC består alle.
+  - DMARC er `p=quarantine`.
+  - `post@kommunelys.no` tar imot e-post hos Domeneshop (MX
+    `mx.domeneshop.no`, SPF `include:_spf.domeneshop.no`) og videresender til
+    prosjekteier. Prosjekteier svarer fra Gmail som post@ via `smtp.resend.com`.
+  - Leveres e-post («250»), men kommer ikke fram, er det filteret hos
+    mottakeren: søppelpost eller karantene i Microsoft 365.
 - **Senere:** tofaktor for prosjektadmin, captcha på registreringen,
   tilgangsstyring på nettstedet, betaling og Pro-plan i Supabase.
 
