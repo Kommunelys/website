@@ -231,5 +231,14 @@
    "tokens_inn": 0,
    "tokens_ut": 0
   }
+ },
+ "37460671740": {
+  "start": "2026-10-06T12:06:57+00:00",
+  "portal": {
+   "kall": 89,
+   "feil": 0,
+   "megabyte": 1.7,
+   "sekunder": 178.1
+  }
  }
 }
