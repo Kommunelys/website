@@ -75,7 +75,22 @@ button,input,select{font:inherit;color:inherit}
 .meny a[aria-current]{border-bottom-color:var(--lys);font-weight:700}
 .meny .sokeknapp{margin-left:auto;display:inline-flex;align-items:center;color:var(--ink)}
 .meny .sokeknapp:hover{color:var(--lenke);border-bottom-color:transparent}
-@media (max-width:600px){.hode{position:static}.meny{gap:18px}}
+/* Kontomenyen (konto.js): lenker til portalen, eller kontoen når man er logget inn. */
+.konto{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:15px}
+.konto>a{color:var(--ink);text-decoration:none;font-weight:500}
+.konto>a:hover{color:var(--lenke)}
+.konto>a{display:inline-flex;align-items:center}.konto>a svg{display:none}
+.konto .konto-ny{border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.konto-meny{position:relative}
+.konto-meny summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;font-weight:500}
+.konto-meny summary::-webkit-details-marker{display:none}
+.konto-ikon{width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:inline-grid;place-items:center;font-weight:700;font-size:14px}
+.konto-navn{max-width:24ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.konto-liste{position:absolute;right:0;top:calc(100% + 8px);background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.12);padding:6px 0;min-width:230px;z-index:20}
+.konto-liste p{margin:0;padding:6px 14px 10px;border-bottom:1px solid var(--line);font-size:14px;overflow-wrap:anywhere}
+.konto-liste a{display:block;padding:8px 14px;color:var(--ink);text-decoration:none}
+.konto-liste a:hover,.konto-liste a:focus-visible{background:var(--soft)}
+@media (max-width:600px){.hode{position:static}.meny{gap:18px}.konto-navn,.konto>.konto-ny,.konto .konto-tekst{display:none}.konto>a svg{display:block}}
 @media (max-width:420px){.meny{gap:11px;font-size:15px}}
 
 /* Toppfeltet på forsiden (.topp) og tittelblokken i de andre fanene (.ingress):
@@ -444,7 +459,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .tekst{max-width:68ch}
 .tekst h2{font-size:18px;margin:26px 0 6px}
 
-@media print{.hode,.filter,.valg,.knapp,.hopp{display:none}body{background:#fff}}
+@media print{.konto,.hode,.filter,.valg,.knapp,.hopp{display:none}body{background:#fff}}
 
 /* Driftssiden /drift/: tabeller og nøkkeltall for den som drifter tjenesten. */
 .drift-navn{font-weight:600;color:var(--muted)}
