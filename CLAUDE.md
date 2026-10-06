@@ -311,6 +311,12 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Nettleseren holder på `stil.css` og skriptene.** De lenkes med
   `?v=<sjekksum>`, ellers ser nye endringer feil ut hos dem som har vært
   innom før. Nye filer i `FELLES` trenger det samme.
+- **Lenkene i e-postene skal gå til vårt eget domene.** En e-post fra
+  kommunelys.no med lenke til `…supabase.co` ser ut som svindel for filtrene,
+  og Microsoft Safe Links åpner lenkene og bruker opp engangslenken. Malene i
+  `supabase/epostmaler/` lenker derfor til `{{ .SiteURL }}/bekreft` med
+  `{{ .TokenHash }}`, og portalen bekrefter først når mottakeren trykker på
+  knappen. Bruk aldri `{{ .ConfirmationURL }}`.
 - **Lenker i Supabase-e-poster går til Site URL** hvis `redirectTo` mangler,
   og den adressen må stå i Redirect URLs. Både `https://portal.kommunelys.no/**`
   og `http://localhost:5173/**` står der.

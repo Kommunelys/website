@@ -1,6 +1,6 @@
 <!-- Emne: Bekreft ny e-postadresse -->
 <h2>Bekreft ny e-postadresse</h2>
 <p>Du har bedt om å bytte e-postadressen for brukeren din fra {{ .Email }} til {{ .NewEmail }}. Trykk på lenken for å bekrefte.</p>
-<p><a href="{{ .ConfirmationURL }}">Bekreft ny adresse</a></p>
+<p><a href="{{ .SiteURL }}/bekreft?token_hash={{ .TokenHash }}&type=email_change&til={{ .RedirectTo }}">Bekreft ny adresse</a></p>
 <p>Har du ikke bedt om dette, kan du se bort fra e-posten.</p>
 <p>Hilsen Kommunelys<br>Kommunelys er et uoffisielt prosjekt, ikke laget av eller for noen kommune.</p>
