@@ -522,29 +522,6 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     (UT / "index.html").write_text(side, encoding="utf-8")
 
 
-def _dekning(kommuner: list[tuple[dict, dict]]) -> str:
-    """Tabellen over dekningen på Om-siden, fra status for hver kommune.
-
-    Ingen tall skrives inn for hånd. Det som er kontrollert for hånd, står i
-    kommuner/<kommune>.json, fordi malen ikke kan nevne kommunen.
-    """
-    rader = "\n".join(
-        f'<tr><th scope="row"><a href="../{k["slug"]}/">{html.escape(k["navn"])}</a></th>'
-        f'<td class="num">{st["moter"]}</td><td class="num">{st["saker"]}</td>'
-        f'<td class="num">{st["voteringer"]} ({st["voteringer_holdt_tilbake"]} holdt tilbake)</td>'
-        f'<td class="num">{st["sammendrag_publisert"]} av {st["analyser"]}</td>'
-        f'<td>{html.escape(k.get("kontrollert_for_hand") or "Ingenting ennå")}</td>'
-        f'<td class="num">{_dato(_hentet(st))}</td></tr>'
-        for k, st in kommuner)
-    return (
-        '<div class="tw"><table class="dekning"><thead><tr><th scope="col">Kommune</th>'
-        '<th scope="col" class="num">Møter</th><th scope="col" class="num">Saker</th>'
-        '<th scope="col" class="num">Avstemninger</th>'
-        '<th scope="col" class="num">Sammendrag publisert</th>'
-        '<th scope="col">Kontrollert for hånd</th><th scope="col" class="num">Data hentet</th>'
-        f'</tr></thead><tbody>\n{rader}\n</tbody></table></div>')
-
-
 def _kontakt() -> tuple[str, str]:
     """Kontaktdelen på Om-siden, og setningen om skjemaet i personverndelen.
 
@@ -560,7 +537,7 @@ def _kontakt() -> tuple[str, str]:
     tjeneste = html.escape(SKJEMA["tjeneste"] or "en skjematjeneste")
     skjulte = "".join(f'<input type="hidden" name="{html.escape(k)}" value="{html.escape(v)}">'
                       for k, v in SKJEMA["felt"].items())
-    skjema = f"""<p>Har du funnet en feil, eller har du et spørsmål eller et innspill? Skriv til oss her. Gjelder det en sak, ta med saksnummeret eller lenken.{epost}</p>
+    skjema = f"""<p>Feil, spørsmål eller innspill? Gjelder det en sak, ta med lenken.{epost}</p>
     <form class="kontakt" id="kontakt-skjema" method="post" action="{html.escape(SKJEMA["url"])}">
       {skjulte}
       <label>Hva gjelder det?
@@ -580,16 +557,16 @@ def _kontakt() -> tuple[str, str]:
       <button type="submit">Send</button>
       <p class="kontakt-status" id="kontakt-status" role="status" aria-live="polite"></p>
     </form>"""
-    personvern = (f'<li>Meldinger fra kontaktskjemaet går via {tjeneste} til oss på e-post. '
-                  'De publiseres ikke, og e-postadressen brukes bare til å svare deg.</li>')
+    personvern = (f'<li>Kontaktskjemaet sendes via {tjeneste} til oss på e-post. Det publiseres ikke, '
+                  'og e-postadressen brukes bare til å svare deg.</li>')
     return skjema, personvern
 
 
 def _om(kommuner: list[tuple[dict, dict]]) -> None:
-    """Om-siden på roten, felles for alle kommunene, med dekningen per kommune."""
+    """Om-siden på roten, felles for alle kommunene."""
     kontakt, personvern = _kontakt()
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"), "dekning": _dekning(kommuner),
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
         "repo": REPO, "kontakt": kontakt, "personvern_skjema": personvern,
         "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
