@@ -16,8 +16,8 @@ Ett avvik er én ting å vurdere, og berører ofte mange voteringer:
 - `antall`: én votering har flere stemmer enn det møtte medlemmer
 - `tall`: én votering der antall navn ikke stemmer med stemmetallet
 
-Vurderingene skrives for hånd i data/vurderinger.json (lager.avvik), én per
-avvik:
+Vurderingene ligger i databasen (lager.avvik; portalen eller lager.vurder,
+ADR-020), én gjeldende per avvik:
 
     {"avvik": "oppmote:1285:lena-hanem-bartnes",
      "avgjorelse": "publiser",

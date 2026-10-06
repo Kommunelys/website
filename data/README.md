@@ -3,9 +3,9 @@
 **Står stille fra 6.10.2026.** Dataene ligger nå i en database (Postgres i
 Supabase, ADR-019), og arbeidsflyten committer ikke hit lenger. Mappen viser
 dataene slik de var ved byttet, og kan leses med `KOMMUNELYS_LAGER=json`.
-Unntak: `vurderinger.json`, `tillatte-navn.json` og `partisider.json`
-vedlikeholdes fortsatt her for hånd og speiles inn i databasen ved hver
-kjøring.
+Unntak: `tillatte-navn.json` og `partisider.json` vedlikeholdes fortsatt her
+for hånd og speiles inn i databasen ved hver kjøring. `vurderinger.json` står
+stille fra 6.10.2026; vurderingene registreres i databasen (ADR-020).
 
 | Mappe | Innhold | Skrives av |
 |---|---|---|
@@ -17,7 +17,7 @@ kjøring.
 | `voteringer/` | Voteringer og stemmer per behandling, fra saksprotokollene | `tolk.bygg_voteringer` |
 | `oppmote/` | Oppmøte per møte, med avvik mot stemmene | `tolk.bygg_oppmote` |
 | `avvik/` | Avvik som må vurderes før voteringene publiseres | `tolk.bygg_avvik` |
-| `vurderinger.json` | Avgjørelsene for avvikene. Skrives for hånd | et menneske |
+| `vurderinger.json` | Avgjørelsene for avvikene fram til 6.10.2026. Nå i databasen (ADR-020) | – |
 | `raa/medlemmer/` | Dagens medlemslister, én fil per endring, uten kontaktopplysninger | `hent.hent_medlemmer` |
 | `utvalg/` | Utvalg med antall plasser, og partiene | `tolk.bygg_verv` |
 | `verv/` | Ett verv per person og utvalg, med observerte datoer | `tolk.bygg_verv` |

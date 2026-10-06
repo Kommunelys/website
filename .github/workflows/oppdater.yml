@@ -41,7 +41,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  # Driftssiden (/drift/) leser kjøringene og jobbresultatene fra API-et.
+  # Driftssiden (i portalen) leser kjøringene og jobbresultatene fra API-et.
   actions: read
 
 env:
@@ -202,7 +202,7 @@ jobs:
   # GitHub slår av planlagte kjøringer etter 60 dager uten aktivitet i repoet.
   # Før byttet holdt de daglige datacommitene repoet aktivt; nå slås
   # arbeidsflytene på igjen ved hver planlagte kjøring. GitHub sender også
-  # e-post før en tidsplan slås av, og /drift/ viser når siste kjøring var.
+  # e-post før en tidsplan slås av, og driftssiden viser når siste kjøring var.
   holdlevende:
     name: Hold tidsplanen aktiv
     if: ${{ github.event_name == 'schedule' }}

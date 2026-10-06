@@ -35,6 +35,7 @@ from pathlib import Path
 import lager
 from bygg import drift
 from lager import analyse as lager_analyse
+from lager import drift as lager_drift
 from lager import konfig
 from lager import oppmote as lager_oppmote
 from lager import saker as lager_saker
@@ -82,6 +83,9 @@ SKJEMA = {
 # finnes, så den trenger absolutte lenker. Arbeidsflyten setter NETTSTED_BASE
 # fra GitHub Pages (tom med eget domene, «/website» før det); lokalt er det «/».
 BASE = "/" + "".join(d + "/" for d in os.environ.get("NETTSTED_BASE", "").split("/") if d)
+# Nettstedet sett utenfra. Driftssiden vises i portalen og henter stilark og
+# lenker herfra.
+NETTSTED = "https://kommunelys.no"
 
 # Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
 # https://<kode>.goatcounter.com. Tom streng slår tellingen av.
@@ -586,7 +590,7 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     (UT / "404.html").write_text(side, encoding="utf-8")
 
 
-def kjor(aar: int) -> None:
+def kjor(aar: int, drift_fil: str | None = None) -> None:
     kommune = _kommune()
     saker = lager_saker.les(aar)
     moter = lager_saker.les_moter(aar)
@@ -650,12 +654,15 @@ def kjor(aar: int) -> None:
     _om([(kommune, status)])
     _ikke_funnet([(kommune, status)])
 
-    # Driftssiden. Lenkes ikke fra resten av nettstedet.
-    (UT / "drift").mkdir()
-    (UT / "drift" / "index.html").write_text(drift.side(
+    # Driftssiden publiseres ikke. Den lagres i databasen og vises i portalen
+    # for prosjektadmin (ADR-020); --drift-fil STI lagrer den også lokalt.
+    side = drift.side(
         (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
         collections.Counter(a["status"] for a in finn_avvik(aar)), analyser,
-        MERKE, REPO, GOATCOUNTER), encoding="utf-8")
+        MERKE, REPO, GOATCOUNTER, f"{NETTSTED}{BASE}")
+    lager_drift.lagre_side(side)
+    if drift_fil:
+        Path(drift_fil).write_text(side, encoding="utf-8")
 
     print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
           f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
@@ -663,8 +670,10 @@ def kjor(aar: int) -> None:
 
 
 def main() -> None:
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    kjor(int(args[0]) if args else dt.date.today().year)
+    argv = sys.argv[1:]
+    drift_fil = argv[argv.index("--drift-fil") + 1] if "--drift-fil" in argv else None
+    args = [a for a in argv if not a.startswith("--") and a != drift_fil]
+    kjor(int(args[0]) if args else dt.date.today().year, drift_fil)
 
 
 if __name__ == "__main__":

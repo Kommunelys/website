@@ -31,7 +31,7 @@ class PortalFeil(Exception):
     """Portalen svarte ikke slik vi forventer."""
 
 
-# Tellingen for kjøreloggen (drift.logg). Viser på /drift/ at takten holdes.
+# Tellingen for kjøreloggen (drift.logg). Viser på driftssiden at takten holdes.
 _telling = {"kall": 0, "feil": 0, "byte": 0, "start": None}
 
 

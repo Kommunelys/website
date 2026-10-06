@@ -185,7 +185,9 @@ avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
 `oppmote:1285:lena-hanem-bartnes`, som gjelder 42 voteringer. I 2026 er det
 10 avvik og 97 voteringer.
 
-Vurderingen skrives for hånd i `data/vurderinger.json`:
+Vurderingen registreres i databasen (`kjerne.vurdering`), i portalen eller med
+`python -m lager.vurder` (ADR-020). Fram til 6.10.2026 lå den i
+`data/vurderinger.json`, i denne formen:
 
 ```json
 [{"avvik": "oppmote:1285:lena-hanem-bartnes",

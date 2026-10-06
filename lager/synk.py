@@ -43,14 +43,14 @@ def _kjoring_id() -> tuple[str, str]:
 
 
 def _konfig(c, k: int) -> dict:
-    return {"nye_vurderinger": pg_skriv.vurderinger(c, k, avvik.vurderinger()),
-            "tillatt_navn": pg_skriv.tillatte_navn(c, k, konfig.tillatte_navn()),
+    return {"tillatt_navn": pg_skriv.tillatte_navn(c, k, konfig.tillatte_navn()),
             "partilenker": pg_skriv.partilenker(c, k, konfig.partisider())}
 
 
 def kjor_konfig() -> dict:
     """Bare filene som vedlikeholdes for hånd. Brukes når resten skrives
-    direkte til databasen (KOMMUNELYS_LAGER=pg)."""
+    direkte til databasen (KOMMUNELYS_LAGER=pg). Vurderingene er ikke med:
+    de registreres i databasen (ADR-020)."""
     return pg_skriv.i_transaksjon(_konfig)
 
 
@@ -82,6 +82,7 @@ def kjor(aar: int) -> dict:
         ut.update(pg_skriv.oppmote(c, k, aar, personer, oppmote.les(aar, [])))
         ut.update(pg_skriv.avvik(c, k, aar, avvik.les(aar, [])))
         ut.update(_konfig(c, k))
+        ut["nye_vurderinger"] = pg_skriv.vurderinger(c, k, avvik.vurderinger())
         ut["forrige_telling"] = pg_skriv.forrige_telling(c, k, konfig.forrige_telling())
         ut["nye_analyser"] = pg_skriv.analyser(c, k, analyse.alle(), kjoring_id)
         ut["kjoringer"] = pg_skriv.kjoringer(c, k, lager_drift.kjoringer())
