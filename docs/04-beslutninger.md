@@ -474,3 +474,38 @@ som selv nekter å lagre det som bryter reglene.
 - Postgres er ikke bundet til Supabase. Koden bruker vanlig Postgres
   (`psycopg`); bare innlogging og `auth.uid()` er Supabase-spesifikt. Veien
   til Azure (ADR-009) er fortsatt åpen.
+
+## ADR-020 — Portal med innlogging: portal.kommunelys.no
+
+**Besluttet.** Prosjekteier, 6.10.2026. Endrer ADR-017 (driftssiden) og
+ADR-019 (vurderingene i git).
+
+Det trengs brukerkontoer: for prosjekteier nå, og for tilgang per kommune
+senere (ADR-019). Vanlige kontofunksjoner skal ikke lages selv, og nettstedet
+skal forbli statisk og åpent.
+
+**Konsekvens:**
+
+- Portalen er en egen app på `portal.kommunelys.no`, bygget med react-admin
+  og ra-supabase, i repoet `Kommunelys/portal` på GitHub Pages. Innlogging,
+  registrering, bekreftelse, glemt og nytt passord er Supabase Auth. E-post
+  sendes fra `noreply@kommunelys.no` via Resend.
+- Portalen har bare den publiserbare nøkkelen og leser bare skjemaet
+  `portal` i databasen: views med `security_invoker`, så RLS-en fra ADR-019
+  bestemmer alt. `anon` får ingenting.
+- Det portalen ikke kan gjøre med den nøkkelen, gjør edge-funksjonen
+  `brukeradmin` (`supabase/functions/`): liste, invitere, sperre, sende lenke
+  for nytt passord og slette brukere. Service-nøkkelen finnes bare der.
+- Prosjektadmin gis bare med SQL, aldri fra portalen, og kan ikke sperres
+  eller slettes derfra. Roller (`medlemskap`) og abonnement gis for hånd i
+  portalen. De brukes ikke til noe på nettstedet ennå; alt der er åpent.
+- Driftssiden (endrer ADR-017) ligger bak innloggingen som prosjektadmin.
+  Bygget lagrer den i `drift.side`, og portalen viser den nyeste. `/drift/`
+  publiseres ikke lenger.
+- Vurderingene av avvik (endrer ADR-019 og ADR-015) registreres i portalen
+  eller med `python -m lager.vurder`, og databasen er kilden.
+  `data/vurderinger.json` står som den var. En vurdering slår inn ved neste
+  kjøring. Tillatte navn og partilenker blir i git.
+- Personvern: en brukerkonto lagrer e-postadresse og innloggingstider hos
+  Supabase i EU. Ingen egen profiltabell. Kontoen kan slettes av brukeren
+  selv. Står på Om-siden.

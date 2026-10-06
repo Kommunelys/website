@@ -57,12 +57,14 @@ $$;
 
 do $$
 declare
-  k smallint := (select kommune_id from kjerne.kommune where slug = 'steinkjer');
+  k smallint;
   k2 smallint;
   kari bigint;
   ola bigint;
   dok bigint;
   bruker uuid := gen_random_uuid();
+  admin uuid := gen_random_uuid();
+  vanlig uuid := gen_random_uuid();
   svar boolean;
   svar2 boolean;
   svar3 boolean;
@@ -71,6 +73,10 @@ declare
   linjer text;
 begin
   perform set_config('kommunelys.kjoring_id', 'test', true);
+
+  -- En egen kommune, så testdataene ikke kolliderer med de ekte.
+  insert into kjerne.kommune (kommunenr, slug, navn) values ('9998', 'testkommune-a', 'Testkommune A')
+    returning kommune_id into k;
 
   -- Testdata ----------------------------------------------------------------
   insert into kjerne.utvalg values (k, 100, 'KS', 'Kommunestyret');
@@ -269,7 +275,7 @@ begin
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen saker', svar);
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen stemmer', svar2);
 
-  -- Med abonnement på Steinkjer: ser Steinkjer, ikke testkommunen.
+  -- Med abonnement på testkommunen: ser den, ikke den andre testkommunen.
   begin
     insert into auth.users (id, aud, role, email)
       values (bruker, 'authenticated', 'authenticated', 'test@example.invalid');
@@ -302,6 +308,111 @@ begin
     reset role;
     insert into resultat values ('abonnent: kunne ikke kjøres', false, sqlerrm);
   end;
+
+  -- Portalen (ADR-020) --------------------------------------------------------------
+  begin
+    insert into auth.users (id, aud, role, email) values
+      (admin, 'authenticated', 'authenticated', 'admin@example.invalid'),
+      (vanlig, 'authenticated', 'authenticated', 'vanlig@example.invalid');
+    insert into tilgang.prosjektadmin (user_id) values (admin);
+    insert into tilgang.medlemskap (user_id, kommune_id, rolle) values (admin, k, 'admin');
+    insert into drift.side (kjoring_id, html) values ('test', '<p>drift</p>');
+
+    -- Prosjektadmin.
+    perform set_config('request.jwt.claims', json_build_object('sub', admin, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select (portal.meg() ->> 'er_prosjektadmin')::boolean);
+    svar2 := (select count(*) = 1 from portal.drift_side where html = '<p>drift</p>');
+    svar3 := (select saker like '%Testsak%' from portal.avvik where kommune_id = k and avvik = 'oppmote:1000:kari-test');
+    svar4 := (select count(*) >= 1 from portal.prosjektadmin where user_id = admin);
+    reset role;
+    perform pg_temp.skal_vaere('portal: prosjektadmin er prosjektadmin', svar);
+    perform pg_temp.skal_vaere('portal: prosjektadmin ser driftssiden', svar2);
+    perform pg_temp.skal_vaere('portal: avvik viser sakene', svar3);
+    perform pg_temp.skal_vaere('portal: prosjektadmin ser prosjektadminene', svar4);
+    perform pg_temp.skal_virke('portal: prosjektadmin gir rolle',
+      format($s$set local role authenticated;
+        insert into portal.medlemskap (user_id, kommune_id, rolle) values ('%s', %s, 'vurderer');
+        reset role$s$, vanlig, k));
+    perform pg_temp.skal_virke('portal: prosjektadmin gir abonnement',
+      format($s$set local role authenticated;
+        insert into portal.abonnement (user_id, kommune_id, produkt, til) values ('%s', %s, 'api', now() + interval '30 days');
+        reset role$s$, vanlig, k));
+    perform pg_temp.skal_vaere('portal: abonnementet fikk riktig periode',
+      (select lower(gyldig) = now() and upper(gyldig) = now() + interval '30 days' and kilde = 'manuell'
+         from tilgang.abonnement where user_id = vanlig));
+    perform pg_temp.skal_virke('portal: prosjektadmin avslutter abonnement',
+      format($s$set local role authenticated;
+        update portal.abonnement set til = now() + interval '1 day' where user_id = '%s';
+        reset role$s$, vanlig));
+    perform pg_temp.skal_vaere('portal: abonnementet ble avsluttet',
+      (select upper(gyldig) = now() + interval '1 day' from tilgang.abonnement where user_id = vanlig));
+    perform pg_temp.skal_virke('portal: prosjektadmin vurderer avvik',
+      format($s$set local role authenticated;
+        insert into portal.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av)
+          values (%s, 'oppmote:1000:kari-test', 'ikke_publiser', 'Begrunnelse fra portalen', 'prosjekteier');
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('portal: vurderingen fikk bruker og dato',
+      (select registrert_av = admin and dato = current_date from kjerne.vurdering_gjeldende
+        where kommune_id = k and avvik = 'oppmote:1000:kari-test'));
+    perform pg_temp.skal_feile('portal: ingen kan gjøre noen til prosjektadmin',
+      format($s$set local role authenticated; insert into portal.prosjektadmin (user_id) values ('%s')$s$, vanlig));
+    perform pg_temp.skal_feile('portal: vurdering kan ikke endres',
+      format($s$set local role authenticated; update portal.vurdering set avgjorelse = 'publiser' where kommune_id = %s$s$, k));
+    perform pg_temp.skal_virke('portal: prosjektadmin fjerner rolle og abonnement',
+      format($s$set local role authenticated;
+        delete from portal.medlemskap where user_id = '%1$s';
+        delete from portal.abonnement where user_id = '%1$s';
+        reset role$s$, vanlig));
+    perform pg_temp.skal_vaere('portal: rolle og abonnement er fjernet',
+      not exists (select 1 from tilgang.medlemskap where user_id = vanlig)
+      and not exists (select 1 from tilgang.abonnement where user_id = vanlig));
+
+    -- Vanlig innlogget bruker.
+    perform set_config('request.jwt.claims', json_build_object('sub', vanlig, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select not (portal.meg() ->> 'er_prosjektadmin')::boolean);
+    svar2 := (select count(*) = 0 from portal.drift_side);
+    svar3 := (select count(*) = 0 from portal.avvik);
+    svar4 := (select count(*) = 0 from portal.medlemskap) and (select count(*) = 0 from portal.prosjektadmin);
+    svar5 := (select count(*) > 0 from portal.kommune) and (select count(*) > 0 from portal.produkt);
+    reset role;
+    perform pg_temp.skal_vaere('portal: vanlig bruker er ikke prosjektadmin', svar);
+    perform pg_temp.skal_vaere('portal: vanlig bruker ser ikke driftssiden', svar2);
+    perform pg_temp.skal_vaere('portal: vanlig bruker ser ikke avvik', svar3);
+    perform pg_temp.skal_vaere('portal: vanlig bruker ser ikke andres roller', svar4);
+    perform pg_temp.skal_vaere('portal: vanlig bruker ser kommuner og produkter', svar5);
+    perform pg_temp.skal_feile('portal: vanlig bruker kan ikke gi seg rolle',
+      format($s$set local role authenticated;
+        insert into portal.medlemskap (user_id, kommune_id, rolle) values ('%s', %s, 'admin')$s$, vanlig, k));
+    perform pg_temp.skal_feile('portal: vanlig bruker kan ikke gi seg abonnement',
+      format($s$set local role authenticated;
+        insert into portal.abonnement (user_id, kommune_id, produkt) values ('%s', %s, 'api')$s$, vanlig, k));
+    perform pg_temp.skal_feile('portal: vanlig bruker kan ikke vurdere',
+      format($s$set local role authenticated;
+        insert into portal.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av)
+          values (%s, 'oppmote:1000:kari-test', 'publiser', 'b', 'meg')$s$, k));
+  exception when others then
+    reset role;
+    insert into resultat values ('portal: kunne ikke kjøres', false, sqlerrm);
+  end;
+
+  perform pg_temp.skal_feile('portal: anon ser ingenting',
+    'set local role anon; select count(*) from portal.kommune');
+  perform pg_temp.skal_feile('portal: anon kan ikke spørre hvem den er',
+    'set local role anon; select portal.meg()');
+  perform pg_temp.skal_feile('portal: pipeline bruker ikke portalen',
+    'set local role kommunelys_pipeline; select count(*) from portal.avvik');
+
+  -- Driftssiden: bygget skriver og rydder bort det som er eldre enn 30 dager.
+  insert into drift.side (bygget, kjoring_id, html) values (now() - interval '40 days', 'gammel', '<p>gammel</p>');
+  perform pg_temp.skal_virke('driftsside: bygget lagrer siden',
+    $s$set local role kommunelys_bygg; insert into drift.side (kjoring_id, html) values ('ny', '<p>ny</p>'); reset role$s$);
+  perform pg_temp.skal_virke('driftsside: bygget rydder',
+    $s$set local role kommunelys_bygg; delete from drift.side where kjoring_id in ('gammel', 'ny'); reset role$s$);
+  perform pg_temp.skal_vaere('driftsside: bare det gamle ble ryddet',
+    not exists (select 1 from drift.side where kjoring_id = 'gammel')
+    and exists (select 1 from drift.side where kjoring_id = 'ny'));
 
   -- Resultat --------------------------------------------------------------------
   select string_agg(case when ok then 'ok   ' else 'FEIL ' end || test
