@@ -138,6 +138,9 @@ button,input,select{font:inherit;color:inherit}
 .om .tekst ul{padding-left:20px;margin:0 0 10px}
 .om .tekst li{margin:0 0 6px}
 .om .blokk>h2{scroll-margin-top:130px}
+.utgiver{display:flex;gap:18px;align-items:center;margin:0 0 10px}
+.utgiver img{width:112px;height:112px;border-radius:50%;object-fit:cover;flex:none;background:var(--line)}
+.utgiver p{margin:0}
 .innhold ol{columns:2 220px;column-gap:28px;margin:0;padding-left:20px;max-width:68ch}
 .innhold li{margin:0 0 4px;break-inside:avoid}
 .dekning td,.dekning th[scope="row"]{font-size:14.5px}

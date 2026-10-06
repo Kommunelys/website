@@ -29,6 +29,7 @@
 
   <nav class="innhold" aria-label="Innhold på siden">
     <ol>
+      <li><a href="#hvem">Hvem står bak</a></li>
       <li><a href="#kvalitet">Slik sikrer vi kvalitet</a></li>
       <li><a href="#kode-og-ki">Kode og KI i detalj</a></li>
       <li><a href="#kilder">Kilder</a></li>
@@ -46,6 +47,27 @@
   </nav>
 
   <div class="tekst">
+    <!-- Navnet her er et bevisst unntak fra regelen om navn på privatpersoner
+         (ADR-018). Bindingene skal være sanne til enhver tid. -->
+    <h2 id="hvem">Hvem står bak</h2>
+    <div class="utgiver">
+      <img src="karl-kristian-aurstad.jpg" width="160" height="160" alt="" loading="lazy">
+      <p><b>Karl Kristian Aurstad</b><br>Jeg har laget {{merke}} og driver det på fritiden. Til daglig jobber jeg med IT.</p>
+    </div>
+    <p>Kommunepolitikken avgjør mye av hverdagen: skolen, veiene, barnehagen, eiendomsskatten. Alt som vedtas, er offentlig. Men det ligger i hundrevis av dokumenter i en portal som få klarer å finne fram i.</p>
+    <p>Jeg laget {{merke}} for at du enkelt skal se hva som skal opp, hva som ble vedtatt og hvordan hver folkevalgt stemte. Og for at du ikke skal måtte stole på meg: hver sak lenker til originaldokumentet, så du kan sjekke selv.</p>
+    <h3>Mine bindinger</h3>
+    <ul>
+      <li>Jeg er ikke medlem av noe politisk parti, og har aldri vært det.</li>
+      <li>Jeg har tidligere jobbet i Steinkjer kommune. Nå jobber jeg i et interkommunalt selskap (IKS) i en annen kommune på Innherred.</li>
+      <li>{{merke}} er ikke laget for eller med støtte fra noen av arbeidsgiverne mine.</li>
+      <li>{{merke}} får ikke penger fra kommuner eller partier. Jeg betaler driften selv.</li>
+      <li>Ingen andre bestemmer hva som publiseres. Feil rettes likt, uansett hvem eller hvilket parti de gjelder.</li>
+      <li>Endrer noe av dette seg, skriver jeg det her.</li>
+    </ul>
+    <h3>Ansvar</h3>
+    <p>Jeg er ansvarlig for innholdet og behandlingsansvarlig for personopplysningene på nettstedet. Har du funnet en feil, eller vil du si noe, bruk <a href="#kontakt">skjemaet under</a>.</p>
+
     <h2 id="kvalitet">Slik sikrer vi kvalitet</h2>
     <ul>
       <li><b>Kilden ligger ved siden av.</b> Hver sak, hvert sammendrag og hver avstemning lenker til dokumentet i kommunens innsynsportal. Et sammendrag uten kildelenke publiseres ikke.</li>
@@ -112,7 +134,7 @@
     </ul>
 
     <h2 id="uavhengighet">Uavhengighet</h2>
-    <p>{{merke}} er uavhengig av kommunene og av partiene, og er ikke laget av eller for noen kommune. Koden er åpen (MIT-lisens), og dataene ligger åpent ved siden av sidene og i <a href="{{repo}}">prosjektet på GitHub</a>. Hvem som står bak, blir beskrevet her når eierskapet er avklart.</p>
+    <p>{{merke}} er uavhengig av kommunene og av partiene, og er ikke laget av eller for noen kommune. Koden er åpen (MIT-lisens), og dataene ligger åpent ved siden av sidene og i <a href="{{repo}}">prosjektet på GitHub</a>.</p>
   </div>
 
   <section class="blokk bred">
@@ -147,7 +169,7 @@
 </main>
 
 <footer class="ramme fot">
-  <div>{{merke}} er en uoffisiell og uavhengig tjeneste, laget av en privatperson.</div>
+  <div>{{merke}} er en uoffisiell og uavhengig tjeneste, laget av Karl Kristian Aurstad.</div>
   <div><a href="../">Kommuner</a></div>
 </footer>
 <script>
