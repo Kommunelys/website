@@ -214,7 +214,7 @@ def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
 
 
 def _database(na: dt.datetime) -> str:
-    """Overgangen fra filene i git til databasen: er de like?
+    """Boksen om databasen. Før byttet: er filene i git og databasen like?
 
     Fram til byttet speiles data/ inn i databasen ved hver kjøring, og
     lager.paritet sammenligner alt tegn for tegn. Svarer ikke databasen,
@@ -232,6 +232,8 @@ def _database(na: dt.datetime) -> str:
         return _kv([kilde]) + '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
 
     k = o["kontroller"]
+    if fra_databasen():
+        return _database_etter_byttet(o, k)
     rader = [kilde]
     if k:
         siste = k[0]
@@ -258,6 +260,23 @@ def _database(na: dt.datetime) -> str:
             + '<p class="liten muted">Før byttet speiles dataene inn i databasen ved hver kjøring, '
             "og alt sammenlignes tegn for tegn med filene. Nettstedet bygges fra filene til "
             "databasen har vært lik over tid.</p>")
+
+
+def _database_etter_byttet(o: dict, k: list[dict]) -> str:
+    """Databasen er kilden (ADR-019): siste kjøring, og kontrollene før byttet."""
+    rader = [("Kilde for nettstedet", "Databasen")]
+    if o["kjoring"]:
+        _, start, endringer = o["kjoring"]
+        rader.append(("Siste kjøring", f"{tidspunkt(start)}, {tall(endringer)} endringer"))
+    if k:
+        like = sum(x["likt"] for x in k)
+        rader.append(("Kontroller før byttet",
+                      f"{like} av {len(k)} like ({dato(k[-1]['tid'])}–{dato(k[0]['tid'])})"))
+    rader.append(("Størrelse", _e(o["storrelse"])))
+    return (_kv(rader)
+            + '<p class="liten muted">Dataene ligger i en database (Postgres i Supabase), og en '
+            "kopi tas hver natt. Før byttet 6.10.2026 ble databasen sammenlignet tegn for tegn "
+            "med filene i git ved hver kjøring.</p>")
 
 
 # ---------- Tabeller ----------

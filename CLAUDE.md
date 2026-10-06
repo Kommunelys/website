@@ -27,7 +27,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, med metode, KI-bruk og en dekningstabell regnet ut ved hvert bygg; kommunen har fanen «Hvem bestemmer» for utvalg og saksgang |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | `/drift/` viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater. Lenkes ikke fra nettstedet |
-| Database (Supabase) | Under overgang, se «Flytting til databasen». Filene i `data/` er fortsatt kilden; hver kjøring speiler dem inn i Postgres og kontrollerer at alt er likt. Resultatet vises i boksen «Overgangen til databasen» på `/drift/` |
+| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på `/drift/` viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
 
@@ -65,6 +65,8 @@ drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til
 lager/     all lesing og skriving av data/; resten av koden bruker bare denne
 kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
 kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
+data/          dataene slik de var ved byttet til databasen 6.10.2026 (ADR-019);
+               oppdateres ikke lenger, bortsett fra de tre filene for hånd
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
                lagres uten kontaktopplysninger (raa/medlemmer/)
 data/moter/    normaliserte møter
@@ -82,10 +84,13 @@ data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
 data/drift/kjoringer.json  tall fra hver kjøring: kall mot portalen, AI-analysen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
-supabase/  databaseskjemaet (migreringer og tester); speiles fra data/ ved hver kjøring
+supabase/  databaseskjemaet (migreringer og tester); databasen er kilden
 ```
 
 ## Kommandoer
+
+Alle kommandoene leser og skriver databasen (`KOMMUNELYS_DB_URL` eller
+`~/.kommunelys.env`). `KOMMUNELYS_LAGER=json` bruker filene i `data/` i stedet.
 
 ```bash
 python -m hent.hent_moter 2026          # møter, saker, saksgang
@@ -102,17 +107,18 @@ python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 KOMMUNELYS_I_DAG=2026-10-04 python -m tolk.bygg_saker 2026  # tolk og bygg som om det var en annen dag
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
-python -m lager.synk 2026              # gjør databasen lik data/ (~/.kommunelys.env)
-python -m lager.paritet 2026           # filene og databasen gir nøyaktig det samme
-KOMMUNELYS_LAGER=pg python -m bygg.bygg_nettsted 2026  # bygg fra databasen i stedet for data/
+python -m lager.synk --konfig          # speil vurderinger, tillatte navn og partilenker inn
+KOMMUNELYS_LAGER=json python -m lager.synk 2026  # gjør databasen lik data/ (import fra filer)
+python -m lager.paritet 2026           # filene i data/ og databasen gir det samme
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
 python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommunen under /steinkjer/
 ```
 
 ## Flytting til databasen
 
-Dataene flyttes fra JSON i git til Postgres i Supabase, i faser. Planen ble
-vedtatt av prosjekteier 4.10.2026; `supabase/README.md` har detaljene.
+Dataene er flyttet fra JSON i git til Postgres i Supabase (ADR-019). Planen
+ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
+`supabase/README.md` har detaljene.
 
 | Fase | Status |
 |---|---|
@@ -121,20 +127,22 @@ vedtatt av prosjekteier 4.10.2026; `supabase/README.md` har detaljene.
 | 2. Import og lesing fra databasen | Ferdig (#30). Nettstedet bygget fra databasen er byte-likt |
 | 3. Speiling ved hver kjøring | Ferdig (#31). Jobben «Speil til databasen» kjører `lager.synk` og `lager.paritet --lagre` |
 | 4. Klargjort for bytte | Ferdig (#32, #33). Lesing, skriving, driftsside og nattlig sikkerhetskopi |
-| 4. Selve byttet | Venter på prosjekteier. `oppdater.yml` får `KOMMUNELYS_LAGER=pg` og slutter å committe `data/` |
-| 5. `data/` ut av git | Etter byttet, når sikkerhetskopien er prøvd |
+| 4. Selve byttet | Ferdig 6.10.2026. `oppdater.yml` bruker databasen og committer ikke `data/`. 6 av 6 kontroller var like før byttet, og en generalprøve mot portalen ga det samme |
+| 5. `data/` ut av git | Senere, når databasen har gått en stund. Til da står `data/` som ved byttet |
 
-- **Kilden nå:** filene i `data/`. Nettstedet bygges fra dem. Databasen er en
-  kopi som kontrolleres tegn for tegn ved hver kjøring.
-- **Med `KOMMUNELYS_LAGER=pg`** leser og skriver hele kjeden databasen i
-  stedet. Standard er `json`.
+- **Kilden nå:** databasen. Nettstedet bygges fra den. `data/` i git viser
+  dataene slik de var 6.10.2026 og oppdateres ikke.
+- **`KOMMUNELYS_LAGER`** er `pg` som standard. `json` leser og skriver filene
+  i `data/`, for eksempel for å lese inn et år fra filer med `lager.synk`.
 - **Tre filer vedlikeholdes for hånd og blir i git også etter byttet:**
   `vurderinger.json`, `tillatte-navn.json` og `partisider.json`. De
   gjennomgås i PR og speiles inn med `lager.synk --konfig`.
 - **Tilkoblingen** ligger i `KOMMUNELYS_DB_URL`: hemmeligheten i Actions og
   `~/.kommunelys.env` lokalt. Aldri i repoet.
 - **Endringsloggen** (`drift.endringslogg`) viser hva hver kjøring endret i
-  databasen. Den skal ta over for git-historikken på `/drift/`.
+  databasen, og har tatt over for git-historikken på `/drift/`.
+- **Sikkerhetskopien** tas hver natt (arbeidsflyten Sikkerhetskopi). Git er
+  ikke lenger sikkerhetskopien.
 
 ## Fallgruver vi allerede har gått i
 
@@ -203,8 +211,9 @@ vedtatt av prosjekteier 4.10.2026; `supabase/README.md` har detaljene.
   stopper hvis malen nevner en kommune.
 - **Lys blå er pynt, ikke tekst.** `#60A5FA` har 2,4:1 mot papirhvit. Lenker,
   fokus og status bruker `--lenke` (ADR-016).
-- **Driftssiden henter historikk fra git og GitHub-API-et.** Bygget trenger
-  hele historikken (`fetch-depth: 0`) og `actions: read`. Lokalt brukes
+- **Driftssiden henter historikk fra databasen, git og GitHub-API-et.** Bygget
+  trenger hele git-historikken for tiden før byttet (`fetch-depth: 0`) og
+  `actions: read`. Lokalt brukes
   API-et uten nøkkel, med grense på 60 kall i timen. Svarer det ikke, viser
   siden bare endringene i dataene.
 - **Om-siden er felles, «Hvem bestemmer» er kommunens.** Tekst om metode,
@@ -222,14 +231,13 @@ vedtatt av prosjekteier 4.10.2026; `supabase/README.md` har detaljene.
 - **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
   side om kredittkort. Lenker til partier og andre ligger i
   `data/partisider.json` og åpnes og sjekkes før de legges inn.
-- **Endrer du formen på dataene, må databasen følge med.** Et nytt felt, en ny
-  fil eller en ny type data i `data/` (som `vedtak` i voteringene, #27) kjenner
-  ikke databasen. Da blir paritetskontrollen «Ulike» og databasejobben rød.
-  Nettstedet publiseres likevel, men overgangen stopper. Ta med i samme PR:
-  en ny migrering i `supabase/migrations/`, lesingen i `lager/pg.py` og
-  skrivingen i `lager/pg_skriv.py`. Kjør `python -m lager.synk` og
-  `python -m lager.paritet` mot testdatabasen. Nye verdier i de samme feltene,
-  og endringer i utseendet, trenger ingenting.
+- **Endrer du formen på dataene, må databasen følge med.** Et nytt felt eller
+  en ny type data (som `vedtak` i voteringene, #27) kjenner ikke databasen, og
+  det forsvinner uten feilmelding om ingen tar det med. Ta med i samme PR: en
+  ny migrering i `supabase/migrations/`, lesingen i `lager/pg.py` og
+  skrivingen i `lager/pg_skriv.py`. Prøv lokalt mot databasen før det slås
+  sammen. Nye verdier i de samme feltene, og endringer i utseendet, trenger
+  ingenting.
 - **Gamle migreringer endres aldri.** De er allerede kjørt. En rettelse er en
   ny fil, og filnavnet er versjonen databasen registrerer. En ny tabell trenger
   RLS og policyer for rollene (se `20261004212642_tilgang.sql`). Kjør
@@ -237,8 +245,8 @@ vedtatt av prosjekteier 4.10.2026; `supabase/README.md` har detaljene.
 - **Rådata, analyser, vurderinger og endringsloggen kan ikke endres eller
   slettes i databasen.** Det er med vilje. En speiling eller import kan ikke
   angres. Prøv derfor endringer mot en kopi av dataene (`KOMMUNELYS_DATA`) før
-  de kjøres mot de ekte. Lokale prøvekjøringer legger igjen kjøringer i
-  `drift.kjoring`, og de kan gi «Ulike» i kjøreloggen neste dag: rydd dem.
+  de kjøres mot de ekte. Lokale kjøringer skriver til den samme databasen som
+  nettstedet bygges fra; det finnes ingen egen testdatabase.
 - **Bruk Session pooler-adressen til Supabase.** Den direkte adressen
   (`db.<prosjekt>.supabase.co`) er bare IPv6 og svarer ikke herfra eller fra
   Actions. Koble aldri til som `postgres` fra koden; eieren går forbi RLS.

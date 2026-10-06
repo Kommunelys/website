@@ -130,11 +130,12 @@
       <li>Dokumentene som sendes til Anthropic for å lage sammendrag, er offentlige, men de kan inneholde navn. Sammendragene kontrolleres for navn fra sakstittelen før de vises.</li>
       <li>Nettstedet har ingen informasjonskapsler. Sidevisninger telles med GoatCounter, det eneste skriptet fra et annet nettsted. GoatCounter lagrer ikke IP-adresser, bare sammenlagte tall: hvor mange som har sett hver side, og fordelingen på nettleser, skjermstørrelse, land og hvilken side de kom fra. Ingen enkeltbesøk kan spores tilbake til en person.</li>
       <li>Nettstedet ligger på GitHub Pages, og GitHub kan logge tekniske opplysninger som IP-adresse.</li>
+      <li>Dataene, også navn, verv og stemmer for folkevalgte, lagres i en database hos Supabase i EU (Irland).</li>
       {{personvern_skjema}}
     </ul>
 
     <h2 id="uavhengighet">Uavhengighet</h2>
-    <p>{{merke}} er uavhengig av kommunene og av partiene, og er ikke laget av eller for noen kommune. Koden er åpen (MIT-lisens), og dataene ligger åpent ved siden av sidene og i <a href="{{repo}}">prosjektet på GitHub</a>.</p>
+    <p>{{merke}} er uavhengig av kommunene og av partiene, og er ikke laget av eller for noen kommune. Koden er åpen (MIT-lisens) og ligger i <a href="{{repo}}">prosjektet på GitHub</a>, og dataene ligger åpent ved siden av sidene.</p>
   </div>
 
   <section class="blokk bred">
@@ -158,7 +159,7 @@
     <details class="faq"><summary>Hvilke kommuner er med, og kommer det flere?</summary>
       <p>Kommunene som er med, står i <a href="#dekning">tabellen over dekningen</a>. En kommune som bruker samme innsynsportal, kan legges til, men dataene må hentes og kontrolleres for hver kommune.</p></details>
     <details class="faq"><summary>Kan jeg bruke dataene?</summary>
-      <p>Dataene ligger som JSON-filer i mappen <code>data/</code> under hver kommune, og i <a href="{{repo}}">prosjektet på GitHub</a>. Innholdet i dokumentene er kommunens. Det er ingen garanti for at dataene alltid vil ligge der, eller i samme form.</p></details>
+      <p>Dataene ligger som JSON-filer i mappen <code>data/</code> under hver kommune, og lages på nytt fra databasen hver gang nettstedet bygges. Dataene fram til 6. oktober 2026 ligger også i <a href="{{repo}}">prosjektet på GitHub</a>. Innholdet i dokumentene er kommunens. Det er ingen garanti for at dataene alltid vil ligge der, eller i samme form.</p></details>
     <details class="faq"><summary>Jeg har funnet en feil. Hva gjør jeg?</summary>
       <p>Se <a href="#kontakt">Kontakt oss</a> under.</p></details>
 

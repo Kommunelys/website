@@ -1,5 +1,9 @@
 """Speiler data/ inn i databasen (fase 3 i flyttingen til Postgres).
 
+Etter byttet 6.10.2026 (ADR-019) er databasen kilden, og speilingen brukes
+bare med KOMMUNELYS_LAGER=json, for eksempel for å lese inn et år fra filer.
+--konfig brukes ved hver kjøring.
+
 Filene er fortsatt kilden. Denne gjør databasen lik dem for ett år: nye og
 endrede rader skrives, rader som er borte, slettes (rådata, analyser og
 vurderinger får nye versjoner i stedet). Mot en tom database er det det
@@ -52,7 +56,7 @@ def kjor_konfig() -> dict:
 
 def kjor(aar: int) -> dict:
     if fra_databasen():
-        raise SystemExit("speilingen leser fra filene; kjør uten KOMMUNELYS_LAGER=pg")
+        raise SystemExit("speilingen leser fra filene; kjør med KOMMUNELYS_LAGER=json")
     kjoring_id, kilde = _kjoring_id()
     moteliste = raa.moteliste(aar) or []
     raa_moter = raa.moter(aar) or []

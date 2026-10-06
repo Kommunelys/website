@@ -1,5 +1,12 @@
 # data/
 
+**Står stille fra 6.10.2026.** Dataene ligger nå i en database (Postgres i
+Supabase, ADR-019), og arbeidsflyten committer ikke hit lenger. Mappen viser
+dataene slik de var ved byttet, og kan leses med `KOMMUNELYS_LAGER=json`.
+Unntak: `vurderinger.json`, `tillatte-navn.json` og `partisider.json`
+vedlikeholdes fortsatt her for hånd og speiles inn i databasen ved hver
+kjøring.
+
 | Mappe | Innhold | Skrives av |
 |---|---|---|
 | `raa/<år>/` | Rå API-svar, urørt. Slettes aldri | `hent.hent_moter` |

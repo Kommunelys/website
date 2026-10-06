@@ -16,8 +16,8 @@ neste bruker, og hele kjeden kan kjøres om igjen fra bunnen uten tap av data.
   └────────────┬───────────────┘
                ▼
   ┌────────────────────────────┐
-  │ Lagring                    │ ─ ─ ▸ én fil per sak, med hele historikken
-  │ JSON i git, tekst av PDF   │
+  │ Lagring                    │ ─ ─ ▸ én rad per sak, og en logg over endringene
+  │ Postgres, tekst av PDF     │
   └────────────┬───────────────┘
                ▼ bare nye og endrede saker
   ┌════════════════════════════┐
@@ -194,9 +194,9 @@ boks, og én rad per kjøring med resultatet av hver jobb, kall mot portalen,
 nye møter, saker, dokumenter, voteringer og sammendrag, og kostnad. Kostnaden
 er et anslag: tokens ganget med listepris (`drift/kostnad.py`) og dagens
 dollarkurs fra Norges Bank. Tallene settes inn av `bygg/drift.py`, ikke av
-en modell. Kildene er GitHub-API-et, git-historikken (hver commit fra
-`oppdater-bot` sammenlignes med forrige) og kjøreloggen i
-`data/drift/kjoringer.json` (`drift/`). Siden lenkes ikke fra resten av
+en modell. Kildene er GitHub-API-et, endringsloggen i databasen (hva hver
+kjøring satte inn, endret og slettet), git-historikken for tiden før byttet
+til databasen 6.10.2026 (ADR-019), og kjøreloggen (`drift/`). Siden lenkes ikke fra resten av
 nettstedet og har `noindex`, men den er offentlig, som repoet.
 
 Saker som forsvinner fra portalen beholdes med en merknad om at de ikke lenger
@@ -273,7 +273,10 @@ var og hvor mange saker som ble oppdatert.
 
 ### Gjenoppretting
 
-Git-historikken er sikkerhetskopien. Fordi rå API-svar lagres urørt, kan hele
+Arbeidsflyten `Sikkerhetskopi` tar en kopi av databasen hver natt
+(`pg_dump`, 90 dager); gjenoppretting står i `supabase/README.md`. Fram til
+6.10.2026 var git-historikken sikkerhetskopien (ADR-019). Fordi rå API-svar
+lagres urørt, kan hele
 den normaliserte modellen bygges opp igjen uten å hente noe fra portalen. Fordi
 AI-resultatene er lagret med sjekksum av kildeteksten, må bare endrede saker
 analyseres på nytt.
