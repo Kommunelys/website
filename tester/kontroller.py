@@ -296,11 +296,20 @@ def antall_har_ikke_stupt(saker: list[dict], aar: int) -> list[str]:
     return []
 
 
+# Setninger i malen som nevner en kommune med vilje: bindingene til den som
+# står bak, under «Hvem står bak» på Om-siden (ADR-018). Hele setningen må stå
+# her, så et kommunenavn ellers i malen fortsatt stopper bygget.
+TILLATT_I_MALEN = {
+    "om.html": ("Jeg har tidligere jobbet i Steinkjer kommune.",),
+}
+
+
 def malen_nevner_ingen_kommune() -> list[str]:
     """Malen er felles for alle kommunene (ADR-016).
 
     Et kommunenavn i malen ville stått på de andre kommunenes sider også. Det
     som er særegent for kommunen, hører hjemme i kommuner/<kommune>.json.
+    Unntakene står i TILLATT_I_MALEN.
     """
     navn = [_les(f)["navn"] for f in sorted(KOMMUNER.glob("*.json"))]
     feil = []
@@ -308,6 +317,8 @@ def malen_nevner_ingen_kommune() -> list[str]:
         if fil.suffix not in (".html", ".js", ".css"):
             continue
         tekst = fil.read_text(encoding="utf-8")
+        for setning in TILLATT_I_MALEN.get(fil.name, ()):
+            tekst = tekst.replace(setning, "")
         feil += [f"bygg/mal/{fil.name} nevner {n}; det hører hjemme i kommuner/"
                  for n in navn if n in tekst]
     return feil

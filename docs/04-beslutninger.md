@@ -391,3 +391,34 @@ bare skjult det som allerede kan leses i Actions og git.
   uten mva, så det er et anslag. Prisene må oppdateres når modellen byttes.
 - Innhentingen teller kallene mot portalen og lagrer tallet i
   `data/drift/kjoringer.json`. Da kan vi vise at takten fra ADR-007 holdes.
+
+## ADR-018 — Navn og bilde på den som står bak
+
+**Besluttet.** Prosjekteier, 6.10.2026.
+
+En tjeneste som viser hvordan lokalpolitikerne stemmer, blir lest som partisk
+om ingen står fram. Kildelenker og åpen kode svarer på om tallene stemmer, men
+ikke på hvem som svarer for dem og om de har en agenda. Navnet sto dessuten
+allerede i git-historikken, og personvernforordningen (art. 13 og 14) krever
+at den behandlingsansvarlige oppgis.
+
+**Konsekvens:**
+
+- Om-siden har avsnittet «Hvem står bak», skrevet i jeg-form med navnet én
+  gang. Det har bilde, hvorfor tjenesten finnes, bindinger og hvem som er
+  ansvarlig. Bunnteksten på forsiden, Om-siden og `/drift/` sier «laget av
+  Karl Kristian Aurstad».
+- Navnet er et bevisst unntak fra regelen om at tekst tjenesten skriver selv,
+  ikke har navn på privatpersoner. Det gjelder bare prosjekteier, og bare her.
+- Arbeidsforholdene står under bindingene: tidligere ansatt i Steinkjer
+  kommune, nå i et IKS i en annen kommune på Innherred. Dagens arbeidsgiver
+  nevnes ikke ved navn. Setningen med kommunenavnet er unntatt fra kontrollen
+  av malen (`TILLATT_I_MALEN` i `tester/kontroller.py`).
+- Kontakt går gjennom skjemaet, ikke en personlig e-postadresse.
+- Bildet ligger i `bygg/mal/karl-kristian-aurstad.jpg`, 320×320 uten metadata, og
+  kopieres til `/om/` i bygget.
+- Bindingene skal være sanne til enhver tid. Endres noe, for eksempel
+  partimedlemskap, oppdrag for en kommune eller at tjenesten får betalt av en
+  kommune eller et parti, oppdateres avsnittet samme dag.
+- Blir tjenesten drevet av et selskap, står selskapet som avsender og
+  ansvarlig, med organisasjonsnummer.

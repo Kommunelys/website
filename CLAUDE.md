@@ -51,7 +51,8 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
    gjelder sammendrag, merknader og forklaringer. Folkevalgte omtales bare i
    sin rolle. Sakstitler og forslagstekster fra protokollene vises uendret,
    også når de inneholder navn; de er offentlige dokumenter (prosjekteier,
-   2.10.2026).
+   2.10.2026). Unntak: prosjekteier står med navn og bilde under «Hvem
+   står bak» på Om-siden og i bunnteksten (ADR-018).
 
 ## Mappene
 

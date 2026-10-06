@@ -561,6 +561,8 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
         "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
     (UT / "om" / "index.html").write_text(side, encoding="utf-8")
+    # Bildet under «Hvem står bak» (ADR-018).
+    shutil.copy(MAL / "karl-kristian-aurstad.jpg", UT / "om" / "karl-kristian-aurstad.jpg")
 
 
 def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
