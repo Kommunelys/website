@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import collections
 import datetime as dt
+import hashlib
 import html
 import json
 import os
@@ -429,6 +430,12 @@ PERSON = ('<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fo
           'stroke-width="2" stroke-linecap="round"/></svg>')
 
 
+def _v(navn: str) -> str:
+    """Versjonen av en fil i malen, til ?v=: nettleseren henter filen på nytt
+    når innholdet endres, og bruker den den har ellers."""
+    return hashlib.sha256((MAL / navn).read_bytes()).hexdigest()[:10]
+
+
 def _konto(rot: str) -> str:
     """Kontomenyen øverst til høyre: lenker til portalen, og kontoen når man
     er logget inn (konto.js). rot er veien til roten av nettstedet."""
@@ -437,7 +444,7 @@ def _konto(rot: str) -> str:
             f'<a href="{p}/login" data-sti="/login" aria-label="Logg inn">{PERSON}'
             f'<span class="konto-tekst">Logg inn</span></a>'
             f'<a class="konto-ny" href="{p}/registrer" data-sti="/registrer">Ny bruker</a>'
-            f'</div><script src="{rot}konto.js" defer></script>')
+            f'</div><script src="{rot}konto.js?v={_v("konto.js")}" defer></script>')
 
 
 def _merke_ikon() -> str:
@@ -458,7 +465,8 @@ def _kommuneside(kommune: dict, ut: Path) -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
-                 {"merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "kommune": navn,
+                 {"merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
+                  "v_app": _v("app.js"), "kommune": navn,
                   "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
     if UOFFISIELL not in (MAL / "app.js").read_text("utf-8"):
         raise SystemExit(f"bunnteksten i app.js mangler «{UOFFISIELL}»")
@@ -508,7 +516,7 @@ def _kommunekort(kommuner: list[tuple[dict, dict]], foran: str = "") -> str:
 def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     """Kommunelys-forsiden på roten, med en lenke til hver kommune."""
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(""), "kommuner": _kommunekort(kommuner),
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(""), "v_stil": _v("stil.css"), "kommuner": _kommunekort(kommuner),
         "kart": _kart([k for k, _ in kommuner]),
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
@@ -581,7 +589,7 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
     """Om-siden på roten, felles for alle kommunene, med dekningen per kommune."""
     kontakt, personvern = _kontakt()
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "dekning": _dekning(kommuner),
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"), "dekning": _dekning(kommuner),
         "repo": REPO, "kontakt": kontakt, "personvern_skjema": personvern,
         "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
@@ -600,7 +608,7 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     liste = json.dumps([{"slug": k["slug"], "navn": k["navn"]} for k, _ in kommuner],
                        ensure_ascii=False).replace("</", "<\\/")
     side = _fyll((MAL / "404.html").read_text("utf-8"), {
-        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(BASE), "base": BASE,
+        "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(BASE), "v_stil": _v("stil.css"), "base": BASE,
         "kommuner": _kommunekort(kommuner, BASE), "kommuner_json": liste,
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "meld": MELD_FEIL,
         "telling": _telling()})
