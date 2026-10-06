@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Kommunelys</title>
+<script>
+/* Portalen sender brukeren hit etter innlogging og utlogging (ADR-020), med
+   kontoen etter # (#epost=…&admin=1&til=… eller #ut&til=…). Det etter # sendes
+   aldri til serveren. Kontoen lagres i nettleseren for kontomenyen (konto.js),
+   og brukeren sendes videre til siden de kom fra. */
+(function () {
+  var q = new URLSearchParams(location.hash.slice(1));
+  try {
+    if (q.has('ut')) localStorage.removeItem('kommunelys-konto');
+    else if (q.get('epost')) localStorage.setItem('kommunelys-konto', JSON.stringify(
+      { epost: q.get('epost'), admin: q.get('admin') === '1', tid: Date.now() }));
+  } catch (e) {}
+  var til = q.get('til') || '';
+  var trygg = /^https:\/\/(www\.)?kommunelys\.no\//.test(til) ||
+    /^https:\/\/portal\.kommunelys\.no\//.test(til) ||
+    /^http:\/\/localhost:(8765|5173)\//.test(til);
+  location.replace(trygg ? til : '../');
+})();
+</script>
+</head>
+<body></body>
+</html>

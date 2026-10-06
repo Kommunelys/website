@@ -508,10 +508,12 @@ skal forbli statisk og åpent.
   kjøring. Tillatte navn og partilenker blir i git.
 - Kontomenyen øverst på nettstedet (`bygg/mal/konto.js`) lenker til
   innlogging og registrering i portalen, og sender brukeren tilbake etterpå.
-  Er man logget inn, viser den kontoen. Den spør portalen gjennom en skjult
-  ramme (`konto-status.html` i portalen), og bare hvis «Logg inn» eller «Ny
-  bruker» er brukt i nettleseren før. Ingen informasjonskapsler, og
-  e-postadressen går aldri til nettstedets server.
+  Er man logget inn, viser den kontoen. Etter innlogging og utlogging sender
+  portalen brukeren tilbake via `/konto/`, med kontoen etter `#`. Den delen
+  sendes aldri til serveren. Siden lagrer kontoen i nettleseren
+  (localStorage). Ingen informasjonskapsler, og e-postadressen går aldri til
+  nettstedets server. Den første utgaven spurte portalen i en skjult ramme,
+  men Safari på iPhone stopper det.
 - Personvern: en brukerkonto lagrer e-postadresse og innloggingstider hos
   Supabase i EU. Ingen egen profiltabell. Kontoen kan slettes av brukeren
   selv. Står på Om-siden.

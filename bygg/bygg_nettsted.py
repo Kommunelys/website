@@ -618,6 +618,9 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
     for navn in FELLES:
         shutil.copy(MAL / navn, UT / navn)
     shutil.copytree(MAL / "fonter", UT / "fonter")
+    # Portalen sender hit etter innlogging og utlogging (konto.js).
+    (UT / "konto").mkdir()
+    shutil.copy(MAL / "konto.html", UT / "konto" / "index.html")
 
     # Data ved siden av sidene, for andre som vil bruke dem.
     for navn, innhold in (("saker", saker), ("moter", moter), ("analyser", analyser)):

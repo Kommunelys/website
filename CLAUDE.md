@@ -161,7 +161,7 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 | Innlogging | Supabase Auth. E-post fra `noreply@kommunelys.no` via Resend (SMTP). Malene ligger i `supabase/epostmaler/` og limes inn i Supabase for hånd |
 | Data | Skjemaet `portal` (`supabase/migrations/20261006181902_portal.sql`): views med `security_invoker`, så RLS gjelder. Det eneste skjemaet i Data API, og bare for innloggede |
 | Brukeradministrasjon | Edge-funksjonen `brukeradmin` (`supabase/functions/`): liste, invitere, sperre, nytt passord, slette. Service-nøkkelen finnes bare der |
-| Kontomenyen | `bygg/mal/konto.js` på nettstedet og `konto-status.html` i portalen |
+| Kontomenyen | `bygg/mal/konto.js` og `bygg/mal/konto.html` (`/konto/`) på nettstedet |
 | Driftssiden | Bygget lagrer den i `drift.side`; portalen viser den |
 
 - **Prosjektadmin gis bare med SQL** (som `postgres`, i SQL-editoren), aldri
@@ -175,9 +175,10 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   `python -m lager.vurder` når en modell vurderer. De slår inn ved neste
   kjøring av Oppdater.
 - **Kontomenyen** viser «Logg inn» og «Ny bruker», eller kontoen når man er
-  logget inn. Den spør portalen i en skjult ramme, bare om lenkene er brukt
-  i nettleseren før. Ingen informasjonskapsler; e-postadressen går ikke til
-  nettstedet. `?tilbake=` sender brukeren tilbake etter innlogging og utlogging.
+  logget inn. Portalen sender brukeren tilbake via `/konto/` på nettstedet
+  (`bygg/mal/konto.html`), med kontoen etter `#`, og siden lagrer den i
+  localStorage. Ingen informasjonskapsler; e-postadressen går ikke til
+  nettstedets server. `?tilbake=` sier hvor brukeren skal etterpå.
 - **Utseendet** følger nettstedet: fargene fra `stil.css`, skriften Inter og
   merket (`src/tema.ts` i portalen). Endres fargene i `stil.css`, må temaet
   følge med.
@@ -313,6 +314,10 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Lenker i Supabase-e-poster går til Site URL** hvis `redirectTo` mangler,
   og den adressen må stå i Redirect URLs. Både `https://portal.kommunelys.no/**`
   og `http://localhost:5173/**` står der.
+- **Safari på iPhone lar ikke en ramme fra portalen lese innloggingen**,
+  selv om portalen ligger på et underdomene. Den første utgaven av
+  kontomenyen spurte portalen på den måten, og viste aldri kontoen på iPhone.
+  Kontoen må sendes med når portalen sender brukeren tilbake.
 - **Vite kan servere en gammel modul** etter mange endringer mens
   utviklingsserveren går («X is not defined» selv om koden er riktig). Start
   den på nytt.
