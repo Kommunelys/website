@@ -454,12 +454,11 @@ def i_transaksjon(skriv):
     kjøringen satt for endringsloggen. Bryter dataene en regel, skrives
     ingenting.
     """
-    import os  # noqa: PLC0415
-
     from . import db, kjoring_id, pg  # noqa: PLC0415
+    from .kommune import slug as kommune_slug  # noqa: PLC0415
 
     with db.transaksjon(kjoring_id()) as c:
-        slug = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
+        slug = kommune_slug()
         rad = c.execute("select kommune_id from kjerne.kommune where slug = %s", (slug,)).fetchone()
         if not rad:
             raise SystemExit(f"fant ikke kommunen {slug} i databasen")

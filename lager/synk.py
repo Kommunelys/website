@@ -30,9 +30,8 @@ import sys
 
 from lager import analyse, avvik, db, fra_databasen, konfig, oppmote, pg_skriv, raa, saker, tekst, verv, voteringer
 from lager import drift as lager_drift
+from lager import kommune
 from tolk.navn import VARIANTER
-
-KOMMUNE = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
 
 
 def _kjoring_id() -> tuple[str, str]:
@@ -62,9 +61,10 @@ def kjor(aar: int) -> dict:
     raa_moter = raa.moter(aar) or []
 
     with db.transaksjon(kjoring_id) as c:
-        rad = c.execute("select kommune_id from kjerne.kommune where slug = %s", (KOMMUNE,)).fetchone()
+        slug = kommune.slug()
+        rad = c.execute("select kommune_id from kjerne.kommune where slug = %s", (slug,)).fetchone()
         if not rad:
-            raise SystemExit(f"fant ikke kommunen {KOMMUNE} i databasen")
+            raise SystemExit(f"fant ikke kommunen {slug} i databasen")
         k = rad[0]
         c.execute("insert into drift.kjoring (kjoring_id, kilde, git_sha) values (%s, %s, %s)",
                   (kjoring_id, kilde, os.environ.get("GITHUB_SHA")))

@@ -18,7 +18,6 @@ from __future__ import annotations
 import copy
 import datetime as dt
 import functools
-import os
 
 _tilkobling = None
 _kommune: int | None = None
@@ -79,12 +78,21 @@ def _rader(sql: str, *args) -> list[tuple]:
 def kommune_id() -> int:
     global _kommune
     if _kommune is None:
-        slug = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
+        from .kommune import slug as kommune_slug  # noqa: PLC0415
+        slug = kommune_slug()
         rad = _rader("select kommune_id from kjerne.kommune where slug = %s", slug)
         if not rad:
             raise SystemExit(f"fant ikke kommunen {slug} i databasen")
         _kommune = rad[0][0]
     return _kommune
+
+
+def kilde(slug: str) -> dict:
+    """kilde_konfig for kommunen: adressen, tenant og databasen i portalen."""
+    rad = _rader("select kilde_konfig from kjerne.kommune where slug = %s", slug)
+    if not rad:
+        raise SystemExit(f"fant ikke kommunen {slug} i databasen")
+    return rad[0][0]
 
 
 def _sortert(d: dict) -> dict:

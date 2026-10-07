@@ -16,7 +16,9 @@ import re
 import sys
 from pathlib import Path
 
+import lager
 from lager import analyse as lager_analyse
+from lager import kommune
 from lager import konfig
 from lager import saker as lager_saker
 from lager import tekst as lager_tekst
@@ -324,6 +326,20 @@ def malen_nevner_ingen_kommune() -> list[str]:
     return feil
 
 
+def kilden_er_lik() -> list[str]:
+    """Kilden i kommuner/<slug>.json skal være lik kilde_konfig i databasen.
+
+    Databasen gjelder for innhentingen; filen brukes av prøvekjøringer med
+    KOMMUNELYS_LAGER=json. Ulike kilder ville gitt to forskjellige kommuner.
+    """
+    if not lager.fra_databasen():
+        return []
+    s = kommune.slug()
+    fil = kommune.oppsett(s).get("kilde")
+    db = kommune.kilde(s)
+    return [] if fil == db else [f"kilden for {s} i kommuner/{s}.json er ikke lik kilde_konfig i databasen"]
+
+
 def kjor(aar: int) -> int:
     saker = lager_saker.les(aar, None)
     if saker is None:
@@ -348,6 +364,7 @@ def kjor(aar: int) -> int:
     feil += ugyldige_vurderinger(aar)
     feil += antall_har_ikke_stupt(saker, aar)
     feil += malen_nevner_ingen_kommune()
+    feil += kilden_er_lik()
 
     print(f"{len(moter)} møter, {len(saker)} saker, "
           f"{len(lager_analyse.alle())} analyser")
@@ -363,7 +380,7 @@ def kjor(aar: int) -> int:
 
 
 def main() -> None:
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    args = [a for a in kommune.fra_argv(sys.argv[1:]) if not a.startswith("--")]
     aar = int(args[0]) if args else dt.date.today().year
     raise SystemExit(kjor(aar))
 

@@ -1,7 +1,11 @@
-"""Klient mot Steinkjer kommunes innsynsportal (Elements Publikum).
+"""Klient mot kommunenes innsynsportal (Elements Publikum).
 
 All kontakt med portalen går gjennom denne modulen, slik at takt, header og
 feilhåndtering er likt overalt. Se docs/02-api.md for endepunktene.
+
+Adressen, tenant og databasen er kommunens kilde (lager.kommune.kilde), og
+hentes første gang de trengs. Kommunene kjøres etter tur, aldri samtidig, så
+takten gjelder samlet for verten (ADR-007, ADR-021).
 """
 
 from __future__ import annotations
@@ -11,20 +15,43 @@ import json
 import time
 import urllib.error
 import urllib.request
-
-BASIS = "https://prod01.elementscloud.no/publikum/"
-TENANT = "840029212_PROD-840029212"
-DATABASE = "b069d4f5-192a-4fee-be37-dc006441e271"
+from dataclasses import dataclass
 
 # ADR-007: lav takt, én tråd, identifiserbar klient.
 PAUSE_SEKUND = 1.0
 KONTAKT = "kommunelys (uoffisiell innsynstjeneste; kontakt: karlkristian@gmail.com)"
 
-HEADERE = {
-    "Accept": "application/json",
-    "tenant": TENANT,
-    "User-Agent": KONTAKT,
-}
+
+@dataclass(frozen=True)
+class Kilde:
+    """Hvor kommunens innsynsportal ligger i Elements."""
+    basis: str
+    tenant: str
+    database: str
+
+
+_kilde: Kilde | None = None
+
+
+def bruk(kilde: Kilde | dict | None) -> None:
+    """Sett kilden for denne prosessen. None betyr: les den fra kommunen."""
+    global _kilde
+    _kilde = Kilde(**kilde) if isinstance(kilde, dict) else kilde
+
+
+def kilde() -> Kilde:
+    if _kilde is None:
+        from lager import kommune  # noqa: PLC0415
+        bruk(kommune.kilde())
+    return _kilde
+
+
+def _headere() -> dict[str, str]:
+    return {
+        "Accept": "application/json",
+        "tenant": kilde().tenant,
+        "User-Agent": KONTAKT,
+    }
 
 
 class PortalFeil(Exception):
@@ -56,7 +83,7 @@ def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
     for n in range(forsok):
         _telling["kall"] += 1
         try:
-            req = urllib.request.Request(url, headers=HEADERE)
+            req = urllib.request.Request(url, headers=_headere())
             with urllib.request.urlopen(req, timeout=60) as r:
                 data = r.read()
             _telling["byte"] += len(data)
@@ -80,7 +107,7 @@ def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
 
 def moter(aar: int) -> list[dict]:
     """Alle møter i alle utvalg for ett år."""
-    d = _hent(f"{BASIS}api/PredefinedQuery/DmbMeetings?year={aar}")
+    d = _hent(f"{kilde().basis}api/PredefinedQuery/DmbMeetings?year={aar}")
     if not isinstance(d, list):
         raise PortalFeil("DmbMeetings ga ikke en liste")
     for m in d:
@@ -91,18 +118,18 @@ def moter(aar: int) -> list[dict]:
 
 def mote(mote_id: int) -> dict:
     """Ett møte med møtedokumenter."""
-    return _hent(f"{BASIS}api/Meetings/{mote_id}")
+    return _hent(f"{kilde().basis}api/Meetings/{mote_id}")
 
 
 def saksliste(mote_id: int) -> list[dict]:
     """Sakslisten for ett møte. RegistryEntry er alltid tom her."""
-    d = _hent(f"{BASIS}api/DmbHandlings/GetByMeetingId/{mote_id}")
+    d = _hent(f"{kilde().basis}api/DmbHandlings/GetByMeetingId/{mote_id}")
     return d if isinstance(d, list) else []
 
 
 def behandling(behandling_id: int) -> dict:
     """Én behandling med journalpost, dokumenter og saksgang."""
-    return _hent(f"{BASIS}api/DmbHandlings/{behandling_id}")
+    return _hent(f"{kilde().basis}api/DmbHandlings/{behandling_id}")
 
 
 def utvalgsmedlemmer(utvalg_id: int) -> list[dict]:
@@ -113,7 +140,7 @@ def utvalgsmedlemmer(utvalg_id: int) -> list[dict]:
     (ADR-008). Svaret har også mobilnummer, e-post og kjønn; se
     hent/hent_medlemmer.py for hva som lagres.
     """
-    d = _hent(f"{BASIS}api/DmbMembers/GetByDmbBoard/{utvalg_id}")
+    d = _hent(f"{kilde().basis}api/DmbMembers/GetByDmbBoard/{utvalg_id}")
     return d if isinstance(d, list) else []
 
 
@@ -126,17 +153,17 @@ def hent_fil(url: str) -> bytes:
 
 
 def url_saksprotokoll(behandling_id: int) -> str:
-    return f"{BASIS}Documents/ShowDmbHandlingDocument/{DATABASE}/{behandling_id}/Protokoll"
+    return f"{kilde().basis}Documents/ShowDmbHandlingDocument/{kilde().database}/{behandling_id}/Protokoll"
 
 
 def url_motedokument(mote_id: int, typekode: str, dok_id: int) -> str:
-    return f"{BASIS}Documents/ShowMeetingDocument/{DATABASE}/{mote_id}/{typekode}/{dok_id}"
+    return f"{kilde().basis}Documents/ShowMeetingDocument/{kilde().database}/{mote_id}/{typekode}/{dok_id}"
 
 
 def url_dokument(journalpost_id: int, dokument_id: int) -> str:
-    return f"{BASIS}Documents/ShowDocument/{DATABASE}/{journalpost_id}/{dokument_id}"
+    return f"{kilde().basis}Documents/ShowDocument/{kilde().database}/{journalpost_id}/{dokument_id}"
 
 
 def url_mote_i_portalen(mote_id: int) -> str:
     """Adressen et menneske kan åpne."""
-    return f"{BASIS}{TENANT}/DmbMeeting/{mote_id}"
+    return f"{kilde().basis}{kilde().tenant}/DmbMeeting/{mote_id}"

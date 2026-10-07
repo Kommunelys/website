@@ -37,6 +37,7 @@ import lager
 from bygg import drift
 from lager import analyse as lager_analyse
 from lager import drift as lager_drift
+from lager import kommune as lager_kommune
 from lager import konfig
 from lager import oppmote as lager_oppmote
 from lager import saker as lager_saker
@@ -153,17 +154,16 @@ GRUNN = {
 }
 
 
-def _kommune() -> dict:
-    """Oppsettet for kommunen nettstedet bygges for.
+# Det i kommuner/<slug>.json som ikke hører til visningen, og ikke sendes til
+# nettleseren: kilden i portalen, regelsettet og nivåene.
+IKKE_VISNING = ("kilde", "tolk", "nivaa")
 
-    Til dataene ligger per kommune (fase 3), hører data/ til én kommune, og det
-    må være nøyaktig én fil i kommuner/.
-    """
-    filer = sorted(KOMMUNER.glob("*.json"))
-    if len(filer) != 1:
-        raise SystemExit(f"fant {len(filer)} kommuner i kommuner/, men data/ har bare én")
-    k = json.loads(filer[0].read_text("utf-8"))
-    k.pop("merknad", None)
+
+def _kommune() -> dict:
+    """Visningsoppsettet for kommunen bygget gjelder (KOMMUNELYS_KOMMUNE)."""
+    k = lager_kommune.oppsett()
+    for nokkel in IKKE_VISNING:
+        k.pop(nokkel, None)
     return k
 
 
@@ -709,7 +709,7 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
 
 
 def main() -> None:
-    argv = sys.argv[1:]
+    argv = lager_kommune.fra_argv(sys.argv[1:])
     drift_fil = argv[argv.index("--drift-fil") + 1] if "--drift-fil" in argv else None
     args = [a for a in argv if not a.startswith("--") and a != drift_fil]
     kjor(int(args[0]) if args else dt.date.today().year, drift_fil)
