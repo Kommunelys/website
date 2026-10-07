@@ -45,7 +45,8 @@ from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
 from tester.kontroller import sammendrag_avvik_alle, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
-from tolk.navn import PARTIKODER, normaliser, partikode
+from tolk.navn import normaliser, partikode
+from tolk.profil import profil
 
 ROT = Path(__file__).resolve().parent.parent
 MAL = Path(__file__).resolve().parent / "mal"
@@ -274,7 +275,7 @@ def _folk(verv: list) -> list[dict]:
     profil. Alt kommer fra medlemslistene og møteprotokollene; ingenting er
     skrevet av en modell, og ingenting er hentet fra andre kilder.
     """
-    partier = set(PARTIKODER.values())
+    partier = set(profil().partikoder.values())
     # Samlet på navn, ikke person-ID: portalen har noen ganger to ID-er for
     # samme person (Monika Luktvasslimo i HPNM). Navnene er normalisert i
     # tolk/navn.py, slik stemmene også er.
@@ -286,7 +287,7 @@ def _folk(verv: list) -> list[dict]:
         if not any(v["repr"] in partier for v in vs):
             continue
         # Partiet i kommunestyret gjelder; ellers det som står i flest verv.
-        ks = [v["repr"] for v in vs if v["utvalg"] == "KS" and v["repr"] in partier]
+        ks = [v["repr"] for v in vs if v["utvalg"] == profil().kommunestyre_kode and v["repr"] in partier]
         parti = ks[0] if ks else collections.Counter(
             v["repr"] for v in vs if v["repr"] in partier).most_common(1)[0][0]
         ut.append({
@@ -324,7 +325,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
         for st in s["saksgang"])
     oppmote = lager_oppmote.les(aar, [])
     opp_mote = {o["mote_id"]: o for o in oppmote}
-    partier = set(PARTIKODER.values())
+    partier = set(profil().partikoder.values())
     cases = [{
         "id": s["sak_id"],
         "formal": s["formalia"],
@@ -356,7 +357,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
     utvalg = lager_verv.les_utvalg(aar, {"partier": {}, "medlemsliste_hentet": ""})
     verv = lager_verv.les(aar, [])
     seter = collections.Counter(v["repr"] for v in verv
-                                if v["utvalg"] == "KS" and v["rolle"] in FASTE and v["i_dagens_liste"])
+                                if v["utvalg"] == profil().kommunestyre_kode and v["rolle"] in FASTE and v["i_dagens_liste"])
     # Møter med møteprotokoll per utvalg, som grunnlag for oppmøtet.
     protokoller = collections.Counter(o["utvalg"] for o in oppmote)
     return {

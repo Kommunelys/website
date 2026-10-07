@@ -25,15 +25,9 @@ STANDARD = "steinkjer"
 
 
 def slug() -> str:
-    """Kommunen denne prosessen gjelder.
-
-    Filene i data/ hører til Steinkjer. En annen kommune med KOMMUNELYS_LAGER=json
-    må ha sin egen datamappe, ellers ville den skrevet over Steinkjers filer.
-    """
-    s = os.environ.get("KOMMUNELYS_KOMMUNE") or STANDARD
-    if s != STANDARD and not fra_databasen() and not os.environ.get("KOMMUNELYS_DATA"):
-        raise SystemExit(f"data/ hører til {STANDARD}; sett KOMMUNELYS_DATA til en egen mappe for {s}")
-    return s
+    """Kommunen denne prosessen gjelder. Filene i data/ hører til Steinkjer;
+    lager/_fil.py stopper en annen kommune som vil lese eller skrive dem."""
+    return os.environ.get("KOMMUNELYS_KOMMUNE") or STANDARD
 
 
 def bruk(ny: str) -> None:

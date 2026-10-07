@@ -1,0 +1,29 @@
+name: Tester
+
+# Fasiten for tolkningen (tester/fasit/) ved hver PR. Trenger ikke databasen.
+# Endres regelsettet for én kommune eller standarden for Elements, skal
+# fasiten for alle kommunene fortsatt bestå (ADR-021).
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fasit:
+    name: Fasit for tolkningen
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r krav.txt
+
+      - name: Fasit
+        run: python -m tester.fasit

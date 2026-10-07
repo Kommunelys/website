@@ -21,19 +21,10 @@ import lager
 from hent import portal
 from lager import raa as raadata
 from lager import saker as lager_saker
+from tolk.profil import profil
 
-# Saker som ikke er politikk, men møteteknikk. Holdes utenfor tellingene.
-FORMALIA = (
-    "godkjenning av innkalling",
-    "godkjenning av møteinnkalling",
-    "godkjenning av sakliste",
-    "godkjenning av saksliste",
-    "godkjenning av protokoll",
-    "gjennomgang av protokoll",
-    "eventuelt",
-    "referatsaker",
-    "orienteringssaker",
-)
+# Formalia (saker som er møteteknikk, ikke politikk) og koden for
+# kommunestyret står i kommunens profil (tolk/profil.py).
 
 
 def les_raa(aar: int, fra_fil: str | None = None) -> list[dict]:
@@ -73,7 +64,7 @@ class Grupper:
 
 def _er_formalia(tittel: str) -> bool:
     t = tittel.lower().strip()
-    return any(t.startswith(f) for f in FORMALIA)
+    return any(t.startswith(f) for f in profil().formalia)
 
 
 def _steg(bid: int, kjent: dict, ukjent: dict) -> dict:
@@ -123,10 +114,10 @@ def _status(steg: list[dict], i_dag: str) -> str:
     kommende = [s for s in steg if s["dato"][:10] >= i_dag]
     holdt = [s for s in steg if s["dato"][:10] < i_dag]
     if kommende:
-        return ("Til kommunestyret" if kommende[0]["utvalg"] == "KS"
+        return ("Til kommunestyret" if kommende[0]["utvalg"] == profil().kommunestyre_kode
                 else "Til behandling")
     if holdt and holdt[-1]["protokoll_publisert"]:
-        return ("Vedtatt i kommunestyret" if holdt[-1]["utvalg"] == "KS"
+        return ("Vedtatt i kommunestyret" if holdt[-1]["utvalg"] == profil().kommunestyre_kode
                 else "Behandlet")
     if holdt and holdt[-1]["protokoll_skjermet"]:
         return "Unntatt offentlighet"
@@ -202,7 +193,7 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
             "formalia": _er_formalia(tittel or ""),
             "status": _status(steg, i_dag),
             "saksgang": steg,
-            "til_kommunestyret": any(s["utvalg"] == "KS" for s in steg),
+            "til_kommunestyret": any(s["utvalg"] == profil().kommunestyre_kode for s in steg),
             "saksframlegg": hoved,
             "vedlegg": vedlegg,
         })

@@ -1,0 +1,262 @@
+{
+ "voteringer": [
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Line Anita Hammer",
+   "parti": "AP",
+   "type": "forslag",
+   "tekst": "Søknad fra Fliring Scene HC toalett og Heis avslås.",
+   "enstemmig": false,
+   "antall_for": 12,
+   "antall_mot": 0,
+   "for": [
+    "Line Anita Hammer",
+    "Robert Ertsås",
+    "Thorolf Antonsen",
+    "Tommy Fossum Skatland",
+    "Christine Agdestein",
+    "Erik Røsegg",
+    "Mari Grøneng Bartnes",
+    "Tor-André Hopen",
+    "Håvard Krogstad-Wiborg",
+    "Anne Berit Lein",
+    "Tor Borgan",
+    "Jens Fredrik Skjelstad"
+   ],
+   "mot": [],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {
+    "Line Anita Hammer": "AP",
+    "Robert Ertsås": "AP",
+    "Thorolf Antonsen": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Mari Grøneng Bartnes": "SV",
+    "Tor-André Hopen": "PP",
+    "Håvard Krogstad-Wiborg": "R",
+    "Anne Berit Lein": "SP",
+    "Tor Borgan": "SP",
+    "Jens Fredrik Skjelstad": "V"
+   },
+   "resultat": "vedtatt",
+   "resultat_tekst": "forslaget vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Thorolf Antonsen",
+   "parti": "AP",
+   "type": "forslag",
+   "tekst": "Steinkjer Håndballklubb gies et tilskudd på 200.000 kr Dette ble satt opp mot: 2) Christine Agdestein (Høyre) fremmet følgende forslag: Søknaden til Steinkjer Håndballklubb gis et tilskudd på 100.000 kr.",
+   "enstemmig": false,
+   "antall_for": 0,
+   "antall_mot": 0,
+   "for": [],
+   "mot": [],
+   "alternativer": [
+    {
+     "forslag": "1",
+     "antall": 7,
+     "navn": [
+      "Line Anita Hammer",
+      "Robert Ertsås",
+      "Thorolf Antonsen",
+      "Tommy Fossum Skatland",
+      "Mari Grøneng Bartnes",
+      "Håvard Krogstad-Wiborg",
+      "Jens Fredrik Skjelstad"
+     ],
+     "partier": {
+      "Line Anita Hammer": "AP",
+      "Robert Ertsås": "AP",
+      "Thorolf Antonsen": "AP",
+      "Tommy Fossum Skatland": "FRP",
+      "Mari Grøneng Bartnes": "SV",
+      "Håvard Krogstad-Wiborg": "R",
+      "Jens Fredrik Skjelstad": "V"
+     }
+    },
+    {
+     "forslag": "2",
+     "antall": 5,
+     "navn": [
+      "Christine Agdestein",
+      "Erik Røsegg",
+      "Tor-André Hopen",
+      "Anne Berit Lein",
+      "Tor Borgan"
+     ],
+     "partier": {
+      "Christine Agdestein": "H",
+      "Erik Røsegg": "INP",
+      "Tor-André Hopen": "PP",
+      "Anne Berit Lein": "SP",
+      "Tor Borgan": "SP"
+     }
+    }
+   ],
+   "ikke_til_stede": [
+    "Gunnar Thorsen"
+   ],
+   "partier": {
+    "Line Anita Hammer": "AP",
+    "Robert Ertsås": "AP",
+    "Thorolf Antonsen": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Mari Grøneng Bartnes": "SV",
+    "Håvard Krogstad-Wiborg": "R",
+    "Jens Fredrik Skjelstad": "V",
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Tor-André Hopen": "PP",
+    "Anne Berit Lein": "SP",
+    "Tor Borgan": "SP"
+   },
+   "resultat": "vedtatt",
+   "resultat_tekst": "forslag 1 vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Tor Borgan",
+   "parti": "SP",
+   "type": "forslag",
+   "tekst": "Søknad fra Game Out sendes tilbake til Administrasjon for saksbehandling etter at nye retningslinjer og fordelingsprinsipper for tildeling av NTE utviklingsmidler er vedtatt.",
+   "enstemmig": false,
+   "antall_for": 11,
+   "antall_mot": 0,
+   "for": [
+    "Line Anita Hammer",
+    "Robert Ertsås",
+    "Thorolf Antonsen",
+    "Tommy Fossum Skatland",
+    "Christine Agdestein",
+    "Erik Røsegg",
+    "Tor-André Hopen",
+    "Håvard Krogstad-Wiborg",
+    "Anne Berit Lein",
+    "Tor Borgan",
+    "Jens Fredrik Skjelstad"
+   ],
+   "mot": [],
+   "alternativer": [],
+   "ikke_til_stede": [
+    "Mari Grøneng Bartnes"
+   ],
+   "partier": {
+    "Line Anita Hammer": "AP",
+    "Robert Ertsås": "AP",
+    "Thorolf Antonsen": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Tor-André Hopen": "PP",
+    "Håvard Krogstad-Wiborg": "R",
+    "Anne Berit Lein": "SP",
+    "Tor Borgan": "SP",
+    "Jens Fredrik Skjelstad": "V"
+   },
+   "resultat": "vedtatt",
+   "resultat_tekst": "forslaget vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Christine Agdestein",
+   "parti": "H",
+   "type": "forslag",
+   "tekst": "Fra H, V og R: Bidrag til ny sokkel for Fredrikke Marie Qvam-bysten - 35.000 kr",
+   "enstemmig": false,
+   "antall_for": 4,
+   "antall_mot": 7,
+   "for": [
+    "Christine Agdestein",
+    "Erik Røsegg",
+    "Håvard Krogstad-Wiborg",
+    "Jens Fredrik Skjelstad"
+   ],
+   "mot": [
+    "Line Anita Hammer",
+    "Robert Ertsås",
+    "Thorolf Antonsen",
+    "Tommy Fossum Skatland",
+    "Tor-André Hopen",
+    "Anne Berit Lein",
+    "Tor Borgan"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [
+    "Mari Grøneng Bartnes"
+   ],
+   "partier": {
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Håvard Krogstad-Wiborg": "R",
+    "Jens Fredrik Skjelstad": "V",
+    "Line Anita Hammer": "AP",
+    "Robert Ertsås": "AP",
+    "Thorolf Antonsen": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Tor-André Hopen": "PP",
+    "Anne Berit Lein": "SP",
+    "Tor Borgan": "SP"
+   },
+   "resultat": "falt",
+   "resultat_tekst": "forslaget ikke vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Christine Agdestein",
+   "parti": "H",
+   "type": "forslag",
+   "tekst": "Fra H og V: Midler til kommunens fasadefond: 200.000 kr",
+   "enstemmig": false,
+   "antall_for": 2,
+   "antall_mot": 9,
+   "for": [
+    "Christine Agdestein",
+    "Jens Fredrik Skjelstad"
+   ],
+   "mot": [
+    "Line Anita Hammer",
+    "Robert Ertsås",
+    "Thorolf Antonsen",
+    "Tommy Fossum Skatland",
+    "Erik Røsegg",
+    "Tor-André Hopen",
+    "Håvard Krogstad-Wiborg",
+    "Anne Berit Lein",
+    "Tor Borgan"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [
+    "Mari Grøneng Bartnes"
+   ],
+   "partier": {
+    "Christine Agdestein": "H",
+    "Jens Fredrik Skjelstad": "V",
+    "Line Anita Hammer": "AP",
+    "Robert Ertsås": "AP",
+    "Thorolf Antonsen": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Erik Røsegg": "INP",
+    "Tor-André Hopen": "PP",
+    "Håvard Krogstad-Wiborg": "R",
+    "Anne Berit Lein": "SP",
+    "Tor Borgan": "SP"
+   },
+   "resultat": "falt",
+   "resultat_tekst": "forslaget ikke vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  }
+ ],
+ "vedtak": "• Søknad fra Fliring Scene HC toalett og Heis avslås. • Steinkjer Håndballklubb gies et tilskudd på 200.000 kr • Søknad fra Game Out sendes tilbake til Administrasjon for saksbehandling etter at nye retningslinjer og fordelingsprinsipper for tildeling av NTE utviklingsmidler er vedtatt."
+}

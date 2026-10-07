@@ -31,7 +31,7 @@ import sys
 from lager import analyse, avvik, db, fra_databasen, konfig, oppmote, pg_skriv, raa, saker, tekst, verv, voteringer
 from lager import drift as lager_drift
 from lager import kommune
-from tolk.navn import VARIANTER
+from tolk.profil import profil
 
 
 def _kjoring_id() -> tuple[str, str]:
@@ -74,7 +74,7 @@ def kjor(aar: int) -> dict:
         personer = pg_skriv.Personer(c, k)
         ut.update(pg_skriv.utvalg(c, k, aar, verv.les_utvalg(aar), konfig.partisider()))
         ut.update(pg_skriv.verv(c, k, aar, personer, verv.les(aar, [])))
-        ut["navnevariant"] = pg_skriv.navnevarianter(c, k, personer, VARIANTER)
+        ut["navnevariant"] = pg_skriv.navnevarianter(c, k, personer, profil().navnevarianter)
         ut.update(pg_skriv.moter(c, k, aar, saker.les_moter(aar), raa_moter, moteliste))
         ut.update(pg_skriv.saker(c, k, aar, saker.les(aar)))
         ut["dokument_tekst"] = pg_skriv.tekster(c, k, tekst.les)
