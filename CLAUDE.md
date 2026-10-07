@@ -201,9 +201,10 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Lokalt:** `npm run dev` i portalen gir http://localhost:5173 mot den ekte
   databasen. `KOMMUNELYS_PORTAL=http://localhost:5173 python -m bygg.bygg_nettsted 2026`
   lar kontomenyen på nettstedet bruke den.
-- **Det som gjøres for hånd i dashbordene:** Resend (domenet og nøkkelen),
+- **Det som gjøres for hånd i dashbordene:** hCaptcha (hostnavnene),
+  Resend (domenet og nøkkelen),
   Supabase Auth (SMTP, Site URL og Redirect URLs, e-postmalene, minste
-  passordlengde 10), Data API (`portal` eksponert, «Automatically expose new
+  passordlengde 10, captcha), Data API (`portal` eksponert, «Automatically expose new
   tables» av), og GitHub Pages med HTTPS for portalen.
 - **E-post (7.10.2026):**
   - Portalen sender fra `Kommunelys <post@kommunelys.no>` via Resend.
@@ -215,7 +216,15 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
     prosjekteier. Prosjekteier svarer fra Gmail som post@ via `smtp.resend.com`.
   - Leveres e-post («250»), men kommer ikke fram, er det filteret hos
     mottakeren: søppelpost eller karantene i Microsoft 365.
-- **Senere:** tofaktor for prosjektadmin, captcha på registreringen,
+- **Captcha (hCaptcha):** Supabase krever den ved registrering, innlogging og
+  glemt passord (Authentication › Attack Protection, med hemmeligheten der).
+  Portalen viser den med sitekeyen i `src/captcha.tsx`; ra-supabase sine
+  skjemaer kan ikke sende den med, så innlogging og glemt passord er egne.
+  hCaptcha godtar bare hostnavn som finnes i DNS, og virker ikke på
+  localhost: lokalt brukes `http://lokal.kommunelys.no:5173`, en A-post til
+  127.0.0.1 hos Domeneshop. `brukeradmin` sender lenke for nytt passord med
+  service-nøkkelen, som slipper captcha.
+- **Senere:** tofaktor for prosjektadmin,
   tilgangsstyring på nettstedet, betaling og Pro-plan i Supabase.
 
 ## Fallgruver vi allerede har gått i

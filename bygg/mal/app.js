@@ -55,10 +55,17 @@ function oppsummering(c){
   return `<div class="ai"><span class="ki">KI-sammendrag</span><p>${esc(a.sum)}</p>${a.bet?`<p><b>Hva betyr det?</b> ${esc(a.bet)}</p>`:''}${a.uen?`<p><b>Uenigheten:</b> ${esc(a.uen)}</p>`:''}
    <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}. Dokumentene gjelder. ${ut(meldUrl(c),'Meld fra om feil')}</p></div>`;
 }
+// Saksgangen på én linje med korte navn: «Helse og omsorg › Formannskapet › Kommunestyret».
+const utvKort=sc=>(K.utvalg_liste||{})[sc]||utName(sc);
+const stiSteg=c=>{const seen=[];c.st.forEach(x=>{if(!seen.length||seen[seen.length-1].sc!==x.sc)seen.push(x)});return seen};
 function pathHtml(c){
-  const seen=[];c.st.forEach(x=>{if(!seen.length||seen[seen.length-1].sc!==x.sc)seen.push(x)});
-  return `<span class="sti">${seen.map(x=>x===c.next?`<b title="Neste: ${esc(utName(x.sc))} ${ddn(x.date)}">${esc(x.sc)}</b>`:`<span title="${esc(utName(x.sc))} ${ddn(x.date)}">${esc(x.sc)}</span>`).join(' › ')}</span>`;
+  return `<span class="sti">${stiSteg(c).map(x=>x===c.next?`<b title="Neste: ${esc(utName(x.sc))} ${ddn(x.date)}">${esc(utvKort(x.sc))}</b>`:`<span title="${esc(utName(x.sc))} ${ddn(x.date)}">${esc(utvKort(x.sc))}</span>`).join(' › ')}</span>`;
 }
+/* Utvalget med fullt navn, merket etter nivå: kommunestyret, formannskapet,
+   hovedutvalgene, og rådene og resten. Nøytrale farger, ikke fargetoner, så
+   de ikke forveksles med partifargene (ADR-016). */
+const nivaa=sc=>sc===KSK?'ks':sc==='FS'?'fs':(K.hovedutvalg||[]).includes(sc)?'hu':'andre';
+const utvMerke=sc=>`<span class="utv ${nivaa(sc)}">${esc(utName(sc))}</span>`;
 
 /* ---------- FOLKEVALGTE OG STEMMER ---------- */
 const FOLK=S.folk||[];const PERS={},PID={};FOLK.forEach(p=>{PERS[p.n]=p;PID[p.id]=p});
@@ -240,8 +247,14 @@ function filtered(){
 }
 ['q','faar','fmnd','fut','ftema','fall'].forEach(id=>$(id).addEventListener('input',()=>{limit=40;renderList()}));
 const sakRad=c=>`<div class="sak"><a href="#sak/${c.id}">
-     <span class="t">${esc(tittel(c))}${c.a?`<span class="o">${esc(c.t)}</span>`:''}</span><span class="r">${sakFane==='avgjort'?stPill(c.status):''}<span class="mono muted">${ddn(sakDato(c))}</span></span>
-     <span class="m"><span class="mono">${esc(c.first.nr)}</span>${pathHtml(c)}${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span></a></div>`;
+     <span class="t">${esc(tittel(c))}${c.a?`<span class="o">${esc(c.t)}</span>`:''}</span><span class="r">${sakFane==='avgjort'?`<span class="st ${stCls[c.status]||'bh'}">${c.status==='Vedtatt i kommunestyret'?'Vedtatt':c.status}</span>`:''}<span class="mono muted">${ddn(sakDato(c))}</span></span>
+     <span class="m">${sakMeta(c)}${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span></a></div>`;
+// Under tittelen: utvalget som avgjorde saken, eller møtet den skal opp i,
+// med saksnummeret der. Har saken gått gjennom flere utvalg, står veien etter.
+function sakMeta(c){
+  const x=sakSteg(c)||c.first;
+  return `${utvMerke(x.sc)}<span class="mono">${esc(x.nr)}</span>${stiSteg(c).length>1?pathHtml(c):''}`;
+}
 function renderList(){
   const alle=filtered();
   Object.keys(FANER).forEach(f=>{$('n-'+f).textContent=alle.filter(c=>faneFor(c)===f).length});
