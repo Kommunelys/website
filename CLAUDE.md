@@ -24,7 +24,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Saksgang på tvers av utvalg | Virker |
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Kommunelys. Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Saken står i sentrum: egen side per sak (`#sak/<id>`) med saksgangen som en tråd og forslag og stemmer i hvert møte, Saker i tre faner (avgjort, på vei, venter på protokoll), møtekalender og egen side per møte (`#mote/<id>`) med oppmøte. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» med utvalgene og medlemmene. Se `docs/01-arkitektur.md` |
+| Nettsted | Kommunelys. Viser alle år fra kommunens `fra_aar`; en sak er én tråd på tvers av år, og detaljene til en sak lastes når den åpnes (ADR-022). Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Saken står i sentrum: egen side per sak (`#sak/<id>`) med saksgangen som en tråd og forslag og stemmer i hvert møte, Saker i tre faner (avgjort, på vei, venter på protokoll), møtekalender og egen side per møte (`#mote/<id>`) med oppmøte. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» med utvalgene og medlemmene. Se `docs/01-arkitektur.md` |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
 | Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging og Min konto for alle; brukere, roller, abonnement, vurdering av avvik og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
@@ -118,7 +118,7 @@ python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
 python -m tester.fasit                  # fasiten for tolkningen, alle kommunene (uten database)
 python -m tolk.dekning 2026             # hvor mye av protokollene regelsettet leser
-python -m kjor.alle hent|analyser|bygg 2026  # alle kommunene etter tur, som arbeidsflyten
+python -m kjor.alle hent|analyser|bygg 2026  # alle kommunene etter tur, alle år fra fra_aar
 KOMMUNELYS_KOMMUNE=steinkjer python -m ...   # én kommune (standard: steinkjer)
 python -m bygg.bygg_nettsted 2026 --kommune steinkjer --uten-felles  # bare nettsted/steinkjer/
 python -m bygg.bygg_nettsted --felles   # forsiden, /om/, 404 og driftssiden fra nettsted/*/
@@ -232,6 +232,11 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **En sak er ikke en behandling.** Samme sak får nytt saksnummer i hvert
   utvalg. `AdditionalDmbHandlings` binder dem sammen. Kjeden bygges med
   disjunkte mengder i `tolk/bygg_saker.py`.
+- **En sak er ikke et år.** En sak behandlet i desember og avgjort i februar
+  fikk én ID per år da kjedene ble bygget av ett års møter. Kjedene bygges nå
+  av alle årene fra `fra_aar`. En sak hører til året den begynte, et møte,
+  oppmøtet og et avvik til møtets år. Kode som kobler stemmer og oppmøte, må
+  lese alle årene (`lager.kommune.alle_aar`), ikke ett (ADR-022).
 - **Møteinnkallingen er alle saksframleggene limt sammen.** Den for
   kommunestyret 16.09.2026 er over 350 sider. Den skal aldri sendes til
   analyse. Bruk saksframlegget for den enkelte saken.
@@ -362,7 +367,11 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   statuskode 404, men viser appen.
 - **Nettleseren holder på `stil.css` og skriptene.** De lenkes med
   `?v=<sjekksum>`, ellers ser nye endringer feil ut hos dem som har vært
-  innom før. Nye filer i `FELLES` trenger det samme.
+  innom før. Nye filer i `FELLES` trenger det samme, og det har
+  `detaljer-<år>.json` (i `S.detaljer`).
+- **Detaljene er ikke i `data.js`.** Hele sammendraget, vedtakstekstene og
+  forslagstekstene hentes når en sak åpnes (`hentDetaljer` i `app.js`). En ny
+  visning som trenger dem, må vente på `hentDetaljer`, som sakssiden gjør.
 - **Lenkene i e-postene skal gå til vårt eget domene.** En e-post fra
   kommunelys.no med lenke til `…supabase.co` ser ut som svindel for filtrene,
   og Microsoft Safe Links åpner lenkene og bruker opp engangslenken. Malene i
@@ -386,7 +395,9 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 ## Flere kommuner (ADR-021)
 
 - **En ny kommune** legges inn med en migrering (`kjerne.kommune` med
-  `kilde_konfig` og status), og med `kommuner/<slug>.json` der kilden er lik.
+  `kilde_konfig` og status), og med `kommuner/<slug>.json` der kilden er lik
+  og `fra_aar` er det første året som hentes. Sjekklisten står i skillen
+  `.claude/skills/ny-kommune/SKILL.md` (`/ny-kommune`).
   Status `kartlegging` hentes ikke, `intern` hentes og bygges uten å
   publiseres, `publisert` går ut.
 - **Regelsettet:** felt i `kommuner/<slug>.json` under `tolk` erstatter

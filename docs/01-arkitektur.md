@@ -190,9 +190,13 @@ det samme, og det finnes ingen innlogging.
 | Egenskap | Valg |
 |---|---|
 | Sideoppbygging | Statiske HTML-filer, bygget etter hver innhenting |
-| Data i siden | JSON ved siden av sidene, lastet ved behov |
+| Data i siden | `data.js` med det listene, søket, kalenderen og profilene trenger. Detaljene til sakene i `detaljer-<år>.json`, hentet når en sak åpnes (ADR-022). JSON per år ved siden av sidene, for andre som vil bruke dataene |
 | Søk | Søkeindeks bygget på forhånd, kjører i nettleseren |
 | Adresser | Fast URL per sak og per møte |
+
+**Alle år.** Nettstedet viser alle årene fra kommunens `fra_aar`. En sak er
+én tråd på tvers av år og hører til året den begynte; et møte hører til sitt
+år (ADR-022).
 
 Siden bygges i sin helhet hver gang, ikke stykkevis. Det tar sekunder ved denne
 datamålestokken og fjerner en klasse feil der en gammel side blir liggende igjen

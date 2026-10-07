@@ -567,3 +567,34 @@ sier fra.
   publisert. Kan den verken bygges eller hentes, publiseres ingenting.
   Status `intern` i `kjerne.kommune` bygges og kontrolleres, men publiseres
   ikke: det er prøvesteget før en kommune går ut.
+
+## ADR-022 — Alle år: en sak er én tråd, og detaljene lastes når saken åpnes
+
+**Besluttet.** Prosjekteier, 7.10.2026.
+
+Nettstedet viste ett kalenderår. I januar ville det vist et nesten tomt nytt
+år. En sak som ble behandlet i desember og avgjort i februar, fikk dessuten én
+ID per år, fordi kjedene ble bygget av ett års møter. Prosjekteier vil vise
+alle saker fra 2026 og framover. Valgperioden 2023–2027 og 2027–2031 kommer i
+et eget steg før august 2027.
+
+**Konsekvens:**
+
+- Hver kommune har et første år, `fra_aar` i `kommuner/<slug>.json`.
+  Innhenting, tolkning, analyse, kontroller og bygg går gjennom alle årene
+  fra det (`kjor/alle.py`). Et eldre år koster ett kall mot portalen pluss det
+  som er endret.
+- `tolk.bygg_saker` bygger kjedene av alle årene samtidig. En sak er én tråd
+  på tvers av år, og den hører til året den begynte (`kjerne.sak.aar`). Et
+  møte, oppmøtet og et avvik hører til møtets år. Det som kobler stemmer og
+  oppmøte, leser alle årene (`lager.kommune.alle_aar`).
+- Nettstedet viser alle årene. Tekstene sier «i 2026» med ett år og «siden
+  2026» med flere. Saksflyten og antall møter per utvalg gjelder inneværende
+  år. Vervene slås sammen på tvers av år, så kommunestyret og setene vises
+  også før utvalgene har møtt i det nye året.
+- Det bare sakssiden bruker (hele sammendraget, vedtakstekstene og
+  forslagstekstene) står i `data/detaljer-<år>.json` og hentes når en sak
+  fra året åpnes. `data.js` for Steinkjer 2026 gikk fra 260 til 155 KB
+  komprimert. Feiler hentingen, vises saken uten sammendraget, siden
+  kildelenkene mangler (regel 5).
+- Ingen ny migrering: `kjerne.sak.aar` betyr det samme som før.

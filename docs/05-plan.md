@@ -72,7 +72,10 @@ Koden og arbeidsflyten er gjort klare for flere kommuner (ADR-021).
 | Prøvekjøring av en ny kommune mot en kopi, med dekningsrapport (`kommune.prov`) | |
 | Lese voteringene i rådene som dekningen fant: «vedtatt mot 1 stemme», «7 stemte for» | |
 | Velge og legge inn den første nye kommunen | |
-| Flere år på nettstedet: i januar viser det bare det nye året | |
+| Alle år på nettstedet; en sak er én tråd på tvers av år (ADR-022) | Ferdig |
+| Detaljene til sakene lastes når saken åpnes (ADR-022) | Ferdig |
+| Valgperioden: frys medlemslisten for 2023–2027, merk nye, gjenvalgte og tidligere folkevalgte, Partiene per valgperiode, skille i saksgangen og en boks om overgangen. Før august 2027 | |
+| Valgresultatet fra Valgdirektoratet ved siden av partifordelingen. Eget steg etter valgperioden | |
 | Varsling på tema eller geografisk område | |
 | Debatt fra møteopptak, se under | |
 | Politisk analyse, se under | |
