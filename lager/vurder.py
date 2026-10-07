@@ -17,7 +17,7 @@ import argparse
 
 from . import fra_databasen, i_dag, pg_skriv
 
-AVGJORELSER = ("publiser", "ikke_publiser", "venter_paa_kommunen")
+AVGJORELSER = ("publiser", "ikke_publiser")
 
 
 def main() -> None:

@@ -226,6 +226,9 @@ begin
   perform pg_temp.skal_feile('vurdering: av avvik som ikke finnes, stoppes',
     format($s$insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av, dato)
       values (%s, 'oppmote:1000:ingen', 'publiser', 'b', 'test', '2026-10-04')$s$, k));
+  perform pg_temp.skal_feile('vurdering: venter_paa_kommunen stoppes',
+    format($s$insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av, dato)
+      values (%s, 'oppmote:1000:kari-test', 'venter_paa_kommunen', 'b', 'test', '2026-10-04')$s$, k));
   insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, merknad, begrunnelse, vurdert_av, dato)
     values (k, 'oppmote:1000:kari-test', 'publiser', 'Merknaden', 'Begrunnelse', 'test', '2026-10-04');
   perform pg_temp.skal_vaere('publisering: vises når vurderingen er publiser, med merknad',

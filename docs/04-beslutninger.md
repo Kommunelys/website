@@ -316,7 +316,9 @@ som er fasit. Nettstedet sier det øverst på møtet, ikke bare inne i hver
 votering. Kommunestyret 16.09.2026 (42 voteringer) var den eneste som ventet;
 der er usikkerheten om én stemme var fra SP eller fra R, mens stemmetallene
 og utfallet står fast. `ikke_publiser` finnes fortsatt, for avvik der
-voteringen ikke kan vises meningsfullt.
+voteringen ikke kan vises meningsfullt. Fra 7.10.2026 avviser også databasen,
+portalen og `lager.vurder` verdien, og bygget holder tilbake en votering med en
+avgjørelse det ikke kjenner, i stedet for å stoppe.
 
 ---
 

@@ -43,7 +43,7 @@ from lager import saker as lager_saker
 from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
 from tester.kontroller import sammendrag_avvik_alle, unntatte_navn
-from tolk.bygg_avvik import finn_avvik, holdt_tilbake
+from tolk.bygg_avvik import AVGJORELSER, finn_avvik, holdt_tilbake
 from tolk.navn import PARTIKODER, normaliser, partikode
 
 ROT = Path(__file__).resolve().parent.parent
@@ -151,6 +151,9 @@ GRUNN = {
     "ikke_publiser": "Stemmene vises ikke: protokollen er selvmotsigende, og det går ikke an å si fra dokumentet hvordan partiene stemte.",
     "ikke_vurdert": "Stemmene vises ikke ennå: protokollen er selvmotsigende, og avviket er ikke gått gjennom.",
 }
+# En avgjørelse bygget ikke kjenner, regnes som ingen vurdering: voteringen
+# holdes tilbake, og bygget sier fra (tester.kontroller stopper den også).
+UKJENT = "ikke_vurdert"
 
 
 def _kommune() -> dict:
@@ -399,6 +402,7 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
     per_mote: dict[int, list] = collections.defaultdict(list)
     parti: dict[str, str] = {}
     holdt = 0
+    ukjent: set[tuple[str, str]] = set()
     for b in voteringer:
         mid = mote_for.get(b["behandling_id"])
         if mid not in mote or not b["voteringer"]:
@@ -413,9 +417,14 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
                   "bak": bak, "res": v["resultat"],
                   "en": v["enstemmig"], "dob": v["dobbeltstemme"]}
             if nokkel in stopp:
-                verst = min((status.get(a, "ikke_vurdert") for a in stopp[nokkel]),
-                            key=list(GRUNN).index)
-                ut["holdt"] = GRUNN[verst]
+                grunner = []
+                for a in stopp[nokkel]:
+                    s = status.get(a, "ikke_vurdert")
+                    if s not in GRUNN:
+                        ukjent.add((a, s))
+                        s = UKJENT
+                    grunner.append(s)
+                ut["holdt"] = GRUNN[min(grunner, key=list(GRUNN).index)]
                 holdt += 1
             elif not v["enstemmig"]:
                 f, m = v["for"], v["mot"]
@@ -444,6 +453,9 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
                  "saker": sorted(s, key=lambda x: _saksnr_sortering(x["nr"]))}
                 for mid, s in per_mote.items()]
     moter_ut.sort(key=lambda m: m["date"])
+    for a, s in sorted(ukjent):
+        print(f"ADVARSEL: avviket {a} har ukjent avgjørelse «{s}»; voteringene holdes tilbake "
+              f"som ikke vurdert. Gyldige: {', '.join(AVGJORELSER)}.", file=sys.stderr)
     return {"moter": moter_ut, "parti": parti}, holdt
 
 
