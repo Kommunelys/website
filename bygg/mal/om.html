@@ -45,7 +45,7 @@
     <h2 id="hvem">Hvem står bak</h2>
     <div class="utgiver">
       <img src="karl-kristian-aurstad.jpg" width="160" height="160" alt="" loading="lazy">
-      <p><b>Karl Kristian Aurstad</b><br>Jeg har laget {{merke}} og driver det på fritiden. Til daglig jobber jeg med IT.</p>
+      <p><b>Karl Kristian Aurstad</b><br>Jeg har laget {{merke}} og driver det på fritiden. Til daglig jobber jeg med IT.<br>E-post: <a href="mailto:{{epost}}">{{epost}}</a></p>
     </div>
     <p>Kommunepolitikken avgjør mye av hverdagen: skolen, veiene, barnehagen, eiendomsskatten. Alt som vedtas, er offentlig. Men det ligger i hundrevis av dokumenter i en portal som få klarer å finne fram i.</p>
     <p>Jeg laget {{merke}} for at du enkelt skal se hva som skal opp, hva som ble vedtatt og hvordan hver folkevalgt stemte. Og for at du ikke skal måtte stole på meg: hver sak lenker til originaldokumentet, så du kan sjekke selv.</p>
@@ -59,7 +59,7 @@
       <li>Endrer noe av dette seg, skriver jeg det her.</li>
     </ul>
     <h3>Ansvar</h3>
-    <p>Jeg er ansvarlig for innholdet og behandlingsansvarlig for personopplysningene på nettstedet. Har du funnet en feil, eller vil du si noe, bruk <a href="#kontakt">skjemaet under</a>.</p>
+    <p>Jeg er ansvarlig for innholdet og behandlingsansvarlig for personopplysningene på nettstedet. Har du funnet en feil, eller vil du si noe, skriv til <a href="mailto:{{epost}}">{{epost}}</a>.</p>
 
     <h2 id="laget">Slik er det laget</h2>
     <p>Alt hentes fra kommunens offentlige innsynsportal: møter, saker, protokoller og medlemslister. Hver sak lenker til originaldokumentet, og det er dokumentet som gjelder.</p>
@@ -88,7 +88,7 @@
       <li>Ingen informasjonskapsler. Besøk telles med GoatCounter, uten IP-adresser og uten at enkeltbesøk kan spores. Nettstedet ligger på GitHub Pages, som kan logge IP-adresser.</li>
       <li>Dataene lagres hos Supabase i EU (Irland).</li>
       <li>Nettstedet krever ingen innlogging. Portalen (portal.kommunelys.no) lagrer e-postadresse og innloggingstider hos Supabase i EU og sender e-post via Resend. Registrering, innlogging og glemt passord er beskyttet med hCaptcha (Intuition Machines, USA), som får IP-adressen din og opplysninger om nettleseren. Kontoen kan slettes under «Min konto». Er du logget inn, husker nettleseren din e-postadressen for å vise kontoen øverst, uten informasjonskapsler og uten at den sendes til nettstedet.</li>
-      {{personvern_skjema}}
+      <li>E-post til {{epost}} publiseres ikke, og adressen din brukes bare til å svare deg.</li>
     </ul>
 
     <h2 id="sporsmal">Spørsmål og svar</h2>
@@ -103,7 +103,8 @@
 
     <h2 id="kontakt">Kontakt oss</h2>
     <span id="feil"></span>
-    {{kontakt}}
+    <p>Feil, spørsmål eller innspill? Skriv til <a href="mailto:{{epost}}">{{epost}}</a>. Gjelder det en sak, ta med lenken eller saksnummeret. «Meld fra om feil» under et sammendrag lager en e-post med saken fylt inn.</p>
+    <p>Du kan også <a href="{{repo}}/issues">melde fra på GitHub</a>. Det du skriver der, er offentlig.</p>
   </div>
 </main>
 
@@ -111,24 +112,6 @@
   <div>{{merke}} er en uoffisiell tjeneste, laget av en innbygger for innbyggerne.</div>
   <div><a href="../">Kommuner</a></div>
 </footer>
-<script>
-/* Kontaktskjemaet sendes uten å forlate siden. Uten skript sendes det
-   rett til skjematjenesten. Kommer man fra «Meld fra om feil», står saken
-   i adressen (?sak=…) og fylles inn i meldingen. */
-(function(){
-  var f=document.getElementById('kontakt-skjema');if(!f)return;
-  var q=new URLSearchParams(location.search),sak=q.get('sak');
-  if(sak){f.melding.value='Gjelder: '+sak+(q.get('lenke')?'\n'+q.get('lenke'):'')+'\n\nHva er feil?\n';f.emne.selectedIndex=0}
-  var st=document.getElementById('kontakt-status');
-  f.addEventListener('submit',function(e){
-    e.preventDefault();st.textContent='Sender …';f.querySelector('button').disabled=true;
-    fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
-      .then(function(r){if(!r.ok)throw r;f.reset();st.textContent='Takk! Meldingen er sendt.'})
-      .catch(function(){st.textContent='Meldingen ble ikke sendt. Prøv igjen litt senere.'})
-      .then(function(){f.querySelector('button').disabled=false});
-  });
-})();
-</script>
 {{telling}}
 </body>
 </html>

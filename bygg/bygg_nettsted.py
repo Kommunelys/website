@@ -69,20 +69,9 @@ FASTE = ("Leder", "Nestleder", "Medlem")
 # Lenken «Meld fra om feil» under hvert sammendrag (ADR-011).
 MELD_FEIL = "https://github.com/Kommunelys/website/issues/new"
 REPO = MELD_FEIL.rsplit("/issues", 1)[0]
-# E-post for feil og innspill på Om-siden. Tom til adressen på kommunelys.no
-# er satt opp (docs/05-plan.md); så lenge den er tom, vises den ikke.
-KONTAKT_EPOST = ""
-# Kontaktskjemaet på Om-siden sendes til en skjematjeneste, som sender det
-# videre på e-post. Nettstedet er statisk og kan ikke sende e-post selv.
-# Så lenge `url` er tom, vises ikke skjemaet, og «Meld fra om feil» lenker
-# til GitHub som før.
-SKJEMA = {
-    # Formspree godtar bare innsendinger fra kommunelys.no (satt i Formspree).
-    "url": "https://formspree.io/f/mkjondgr",
-    "tjeneste": "Formspree",  # navnet på tjenesten; står i personverndelen på Om-siden
-    "felle": "_gotcha",  # skjult felt mot spam; navnet tjenesten bruker
-    "felt": {},      # skjulte felt tjenesten krever, for eksempel {"access_key": "..."}
-}
+# E-post for feil og innspill. Står på Om-siden, og «Meld fra om feil» åpner
+# en e-post hit med saken fylt inn.
+KONTAKT_EPOST = "post@kommunelys.no"
 # Roten til nettstedet på serveren. 404-siden vises på alle adresser som ikke
 # finnes, så den trenger absolutte lenker. Arbeidsflyten setter NETTSTED_BASE
 # fra GitHub Pages (tom med eget domene, «/website» før det); lokalt er det «/».
@@ -439,8 +428,8 @@ def _s(aarene: list[int], saker: list, moter: list, sammendrag: dict, kommune: d
         "mprot": dict(protokoller),
         "meld": MELD_FEIL,
         "repo": REPO,
-        # «Meld fra om feil» går til kontaktskjemaet når det er satt opp.
-        "skjema": bool(SKJEMA["url"]),
+        # «Meld fra om feil» åpner en e-post hit når adressen er satt.
+        "epost": KONTAKT_EPOST,
         **({} if med_oppmote else {"ikke_oppmote": True}),
     }
 
@@ -658,53 +647,11 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     (UT / "index.html").write_text(side, encoding="utf-8")
 
 
-def _kontakt() -> tuple[str, str]:
-    """Kontaktdelen på Om-siden, og setningen om skjemaet i personverndelen.
-
-    Uten skjematjeneste står lenken til GitHub som før. Skjemaet virker også
-    uten skript: da sendes det rett til tjenesten, som viser sin egen kvittering.
-    """
-    epost = (f' Du kan også skrive til <a href="mailto:{KONTAKT_EPOST}">{KONTAKT_EPOST}</a>.'
-             if KONTAKT_EPOST else "")
-    if not SKJEMA["url"]:
-        return (f'<p>Finner du en feil, bruk «Meld fra om feil» under sammendraget, eller '
-                f'<a href="{MELD_FEIL}">meld fra på GitHub</a>. Ta med saksnummeret eller '
-                f'lenken til saken.{epost}</p>', "")
-    tjeneste = html.escape(SKJEMA["tjeneste"] or "en skjematjeneste")
-    skjulte = "".join(f'<input type="hidden" name="{html.escape(k)}" value="{html.escape(v)}">'
-                      for k, v in SKJEMA["felt"].items())
-    skjema = f"""<p>Feil, spørsmål eller innspill? Gjelder det en sak, ta med lenken.{epost}</p>
-    <form class="kontakt" id="kontakt-skjema" method="post" action="{html.escape(SKJEMA["url"])}">
-      {skjulte}
-      <label>Hva gjelder det?
-        <select name="emne">
-          <option>Feil i en sak eller et sammendrag</option>
-          <option>Spørsmål</option>
-          <option>Forslag eller innspill</option>
-          <option>Annet</option>
-        </select></label>
-      <label>Melding
-        <textarea name="melding" rows="6" required maxlength="5000"></textarea></label>
-      <label>Din e-post
-        <input type="email" name="email" autocomplete="email" required></label>
-      <label class="felle" aria-hidden="true">Ikke fyll ut dette feltet
-        <input type="text" name="{html.escape(SKJEMA["felle"])}" tabindex="-1" autocomplete="off"></label>
-      <p class="liten muted">Meldingen går via {tjeneste} til oss på e-post. Den publiseres ikke. Ikke skriv personopplysninger om andre.</p>
-      <button type="submit">Send</button>
-      <p class="kontakt-status" id="kontakt-status" role="status" aria-live="polite"></p>
-    </form>"""
-    personvern = (f'<li>Kontaktskjemaet sendes via {tjeneste} til oss på e-post. Det publiseres ikke, '
-                  'og e-postadressen brukes bare til å svare deg.</li>')
-    return skjema, personvern
-
-
 def _om(kommuner: list[tuple[dict, dict]]) -> None:
     """Om-siden på roten, felles for alle kommunene."""
-    kontakt, personvern = _kontakt()
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
-        "repo": REPO, "kontakt": kontakt, "personvern_skjema": personvern,
-        "telling": _telling()})
+        "repo": REPO, "epost": html.escape(KONTAKT_EPOST), "telling": _telling()})
     (UT / "om").mkdir(exist_ok=True)
     (UT / "om" / "index.html").write_text(side, encoding="utf-8")
     # Bildet under «Hvem står bak» (ADR-018).
