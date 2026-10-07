@@ -99,9 +99,9 @@ def _forrige(slug: str) -> bool:
     shutil.rmtree(ut, ignore_errors=True)
     try:
         status = json.loads(urllib.request.urlopen(rot + "status.json", timeout=60).read())
-        aar = status["ar"]
-        filer = ["status.json", "index.html", "data/data.js"] + [
-            f"data/{n}-{aar}.json" for n in ("saker", "moter", "analyser", "voteringer", "indeks")]
+        # Listen over filene står i status.json; eldre bygg hadde ett år.
+        filer = status.get("filer") or ["status.json", "index.html", "data/data.js"] + [
+            f"data/{n}-{status['ar']}.json" for n in ("saker", "moter", "analyser", "voteringer", "indeks")]
         for f in filer:
             (ut / f).parent.mkdir(parents=True, exist_ok=True)
             (ut / f).write_bytes(urllib.request.urlopen(rot + f, timeout=60).read())
