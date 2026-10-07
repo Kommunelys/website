@@ -88,6 +88,9 @@ jobs:
     if: ${{ !inputs.proeveanalyse }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    outputs:
+      # Kommunene der innhentingen feilet, med komma mellom.
+      feilet: ${{ steps.hent.outputs.feilet }}
     steps:
       - uses: actions/checkout@v4
 
@@ -100,38 +103,17 @@ jobs:
           sudo apt-get update && sudo apt-get install -y poppler-utils
           pip install -r krav.txt
 
-      # Vurderingene, de tillatte navnene og partilenkene endres for hånd i
-      # git og gjennomgås i en PR. De speiles inn før tolkningen bruker dem.
-      - name: Speil filene som vedlikeholdes for hånd
-        run: python -m lager.synk --konfig
-
-      - name: Hent møter og saker
+      # Alle kommunene med status «intern» eller «publisert», etter tur, så
+      # takten mot portalen gjelder samlet (ADR-007, ADR-021). For hver kommune:
+      # speil filene som vedlikeholdes for hånd, hent møter, saker, medlemslister
+      # og dokumenter, og tolk saksgang, voteringer, oppmøte, verv og avvik.
+      # Se kjor/alle.py. Feiler en kommune, fortsetter de andre; den beholder
+      # forrige versjon på nettstedet.
+      - name: Hent og tolk alle kommunene
+        id: hent
         run: |
-          python -m hent.hent_moter "${AAR_INN:-$(date -u +%Y)}" \
+          python -m kjor.alle hent "${AAR_INN:-$(date -u +%Y)}" \
             ${{ inputs.alt && '--alt' || '' }}
-
-      - name: Hent medlemslister
-        run: python -m hent.hent_medlemmer "${AAR_INN:-$(date -u +%Y)}"
-
-      - name: Bygg saker og saksgang
-        run: python -m tolk.bygg_saker "${AAR_INN:-$(date -u +%Y)}"
-
-      # Henter bare dokumenter som ikke har tekst fra før (ADR-013).
-      - name: Hent tekst fra saksframlegg og vedtak
-        run: python -m hent.hent_dokumenter "${AAR_INN:-$(date -u +%Y)}"
-
-      - name: Tolk voteringer
-        run: python -m tolk.bygg_voteringer "${AAR_INN:-$(date -u +%Y)}"
-
-      - name: Les oppmøte og kontroller stemmene
-        run: python -m tolk.bygg_oppmote "${AAR_INN:-$(date -u +%Y)}"
-
-      - name: Bygg utvalg og verv
-        run: python -m tolk.bygg_verv "${AAR_INN:-$(date -u +%Y)}"
-
-      # Voteringer med avvik holdes tilbake i bygget til de er vurdert.
-      - name: Samle avvik til vurdering
-        run: python -m tolk.bygg_avvik "${AAR_INN:-$(date -u +%Y)}"
 
   # Sender bare nye og endrede saker, høyst analyse_maks per kjøring (25 som
   # standard). Første gjennomgang av et helt år tar over en time, så analysen
@@ -156,7 +138,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MAKS: ${{ inputs.analyse_maks || '25' }}
-        run: python -m analyser.analyser_saker "${AAR_INN:-$(date -u +%Y)}" --maks "$MAKS" --minutter 150
+        # Antallet og tiden deles mellom kommunene (kjor/alle.py).
+        run: python -m kjor.alle analyser "${AAR_INN:-$(date -u +%Y)}" --maks "$MAKS" --minutter 150
 
   # Publiserer selv om analysen feilet; sakene vises da uten nye sammendrag.
   bygg:
@@ -179,20 +162,21 @@ jobs:
 
       - run: pip install -r krav.txt
 
-      # Stopper publisering hvis noe ser galt ut. Se docs/01-arkitektur.md.
-      - name: Kontroller
-        run: python -m tester.kontroller "${AAR_INN:-$(date -u +%Y)}"
-
       # Før bygget: 404-siden trenger roten til nettstedet (base_path er
       # «/website» på github.io og tom med eget domene).
       - id: pages
         uses: actions/configure-pages@v5
 
-      - name: Bygg nettsted
+      # Kontrollene og bygget for hver kommune, så det felles (kjor/alle.py).
+      # En kommune som stopper i kontrollene, eller der innhentingen feilet,
+      # beholder versjonen som er publisert nå. Se docs/01-arkitektur.md.
+      - name: Kontroller og bygg nettstedet
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
-        run: python -m bygg.bygg_nettsted "${AAR_INN:-$(date -u +%Y)}"
+        run: |
+          python -m kjor.alle bygg "${AAR_INN:-$(date -u +%Y)}" \
+            --hopp-over "${{ needs.hent.outputs.feilet }}"
 
       - uses: actions/upload-pages-artifact@v3
         with:

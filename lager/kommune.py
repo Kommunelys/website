@@ -94,3 +94,17 @@ def fra_argv(argv: list[str]) -> list[str]:
         raise SystemExit("--kommune trenger en kommune, for eksempel --kommune steinkjer")
     os.environ["KOMMUNELYS_KOMMUNE"] = argv[i + 1]
     return argv[:i] + argv[i + 2:]
+
+
+def aktive() -> list[tuple[str, str]]:
+    """Kommunene som hentes og bygges, med status: (slug, «intern» eller «publisert»).
+
+    Status står i kjerne.kommune og endres med en migrering. «intern» bygges og
+    kontrolleres, men publiseres ikke; «kartlegging» hentes ikke. Uten databasen
+    er det bare Steinkjer, publisert.
+    """
+    if not fra_databasen():
+        return [(STANDARD, "publisert")]
+    from . import pg  # noqa: PLC0415
+    return [(s, st) for s, st in pg._rader(
+        "select slug, status from kjerne.kommune where status in ('intern', 'publisert') order by slug")]

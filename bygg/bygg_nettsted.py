@@ -161,14 +161,15 @@ GRUNN = {
 IKKE_VISNING = ("kilde", "tolk", "nivaa")
 
 
-def _kommune() -> dict:
-    """Visningsoppsettet for kommunen bygget gjelder (KOMMUNELYS_KOMMUNE)."""
-    k = lager_kommune.oppsett()
+def _kommune(slug: str | None = None) -> dict:
+    """Visningsoppsettet for kommunen (standard: den bygget gjelder, KOMMUNELYS_KOMMUNE)."""
+    slug = slug or lager_kommune.slug()
+    k = lager_kommune.oppsett(slug)
     for nokkel in IKKE_VISNING:
         k.pop(nokkel, None)
     # Malen bruker «KS» når kommunen ikke har en annen kode for kommunestyret.
-    if profil().kommunestyre_kode != "KS":
-        k["kommunestyre_kode"] = profil().kommunestyre_kode
+    if profil(slug).kommunestyre_kode != "KS":
+        k["kommunestyre_kode"] = profil(slug).kommunestyre_kode
     return k
 
 
@@ -637,15 +638,16 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     (UT / "404.html").write_text(side, encoding="utf-8")
 
 
-def kjor(aar: int, drift_fil: str | None = None) -> None:
+def kjor_kommune(aar: int) -> tuple[dict, dict]:
+    """nettsted/<slug>/ for kommunen bygget gjelder. Rører ikke de andre kommunene."""
     kommune = _kommune()
     saker = lager_saker.les(aar)
     moter = lager_saker.les_moter(aar)
     analyser = lager_analyse.alle()
 
-    # Alt bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
-    shutil.rmtree(UT, ignore_errors=True)
+    # Kommunen bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
     ut = UT / kommune["slug"]
+    shutil.rmtree(ut, ignore_errors=True)
     (ut / "data").mkdir(parents=True, exist_ok=True)
 
     sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
@@ -662,12 +664,6 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
         "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
         encoding="utf-8")
     _kommuneside(kommune, ut)
-    for navn in FELLES:
-        shutil.copy(MAL / navn, UT / navn)
-    shutil.copytree(MAL / "fonter", UT / "fonter")
-    # Portalen sender hit etter innlogging og utlogging (konto.js).
-    (UT / "konto").mkdir()
-    shutil.copy(MAL / "konto.html", UT / "konto" / "index.html")
 
     # Data ved siden av sidene, for andre som vil bruke dem.
     for navn, innhold in (("saker", saker), ("moter", moter), ("analyser", analyser)):
@@ -709,30 +705,82 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
     }
     (ut / "status.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
-    _forside([(kommune, status)])
-    _om([(kommune, status)])
-    _ikke_funnet([(kommune, status)])
+    print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
+          f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
+          f"{holdt} voteringer holdt tilbake")
+    return kommune, status
+
+
+def _bygde() -> list[tuple[dict, dict]]:
+    """Kommunene som ligger i nettsted/, med status.json, sortert etter navn."""
+    ut = []
+    for fil in sorted(UT.glob("*/status.json")):
+        ut.append((_kommune(fil.parent.name), json.loads(fil.read_text("utf-8"))))
+    return sorted(ut, key=lambda ks: ks[0]["navn"])
+
+
+def kjor_felles(drift_fil: str | None = None, utfall: dict[str, str] | None = None) -> None:
+    """Det som er felles for kommunene: forsiden, /om/, /konto/, 404-siden,
+    stil, skript og skrift, og driftssiden. Bygges fra kommunene i nettsted/."""
+    kommuner = _bygde()
+    if not kommuner:
+        raise SystemExit("fant ingen kommuner i nettsted/; bygg kommunene først")
+    for navn in FELLES:
+        shutil.copy(MAL / navn, UT / navn)
+    shutil.rmtree(UT / "fonter", ignore_errors=True)
+    shutil.copytree(MAL / "fonter", UT / "fonter")
+    # Portalen sender hit etter innlogging og utlogging (konto.js).
+    (UT / "konto").mkdir(exist_ok=True)
+    shutil.copy(MAL / "konto.html", UT / "konto" / "index.html")
+    _forside(kommuner)
+    _om(kommuner)
+    _ikke_funnet(kommuner)
 
     # Driftssiden publiseres ikke. Den lagres i databasen og vises i portalen
     # for prosjektadmin (ADR-020); --drift-fil STI lagrer den også lokalt.
+    # Detaljene gjelder kommunen prosessen gjelder; tabellen «Kommunene» alle.
+    kommune = _kommune()
+    status = next((s for k, s in kommuner if k["slug"] == kommune["slug"]), None)
+    if status is None:
+        print(f"advarsel: {kommune['slug']} er ikke bygget; driftssiden lages ikke")
+        return
+    utfall = utfall or {}
     side = drift.side(
         (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
-        collections.Counter(a["status"] for a in finn_avvik(aar)), analyser,
-        MERKE, REPO, GOATCOUNTER, f"{NETTSTED}{BASE}")
+        collections.Counter(a["status"] for a in finn_avvik(status["ar"])), lager_analyse.alle(),
+        MERKE, REPO, GOATCOUNTER, f"{NETTSTED}{BASE}",
+        drift.kommuner([(k, s, utfall.get(k["slug"], "ny")) for k, s in kommuner]))
     lager_drift.lagre_side(side)
     if drift_fil:
         Path(drift_fil).write_text(side, encoding="utf-8")
 
-    print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
-          f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
-          f"{holdt} voteringer holdt tilbake")
+
+def kjor(aar: int, drift_fil: str | None = None) -> None:
+    """Kommunen bygget gjelder, og det felles. Som før kommunene ble flere."""
+    kjor_kommune(aar)
+    kjor_felles(drift_fil)
 
 
 def main() -> None:
+    """python -m bygg.bygg_nettsted [år] [--kommune SLUG] [--uten-felles | --felles]
+    [--drift-fil STI] [--utfall STI]
+
+    Uten valg bygges kommunen og det felles. --uten-felles bygger bare
+    nettsted/<slug>/; --felles bare det felles, fra kommunene i nettsted/.
+    --utfall er en JSON-fil {slug: utfall} fra kjor.alle til driftssiden.
+    """
     argv = lager_kommune.fra_argv(sys.argv[1:])
-    drift_fil = argv[argv.index("--drift-fil") + 1] if "--drift-fil" in argv else None
-    args = [a for a in argv if not a.startswith("--") and a != drift_fil]
-    kjor(int(args[0]) if args else dt.date.today().year, drift_fil)
+    verdier = {n: argv[argv.index(n) + 1] for n in ("--drift-fil", "--utfall") if n in argv}
+    args = [a for a in argv if not a.startswith("--") and a not in verdier.values()]
+    aar = int(args[0]) if args else dt.date.today().year
+    drift_fil = verdier.get("--drift-fil")
+    if "--felles" in argv:
+        utfall = json.loads(Path(verdier["--utfall"]).read_text("utf-8")) if "--utfall" in verdier else None
+        kjor_felles(drift_fil, utfall)
+    elif "--uten-felles" in argv:
+        kjor_kommune(aar)
+    else:
+        kjor(aar, drift_fil)
 
 
 if __name__ == "__main__":
