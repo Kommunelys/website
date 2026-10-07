@@ -10,8 +10,10 @@ en annen. Feiler en kommune, fortsetter kjøringen med neste.
     python -m kjor.alle bygg [år] [--hopp-over slug,slug]
 
 Kommunene er de med status «intern» eller «publisert» i kjerne.kommune
-(lager.kommune.aktive). Året er i år når det ikke er oppgitt. I januar hentes
-også forrige år, så protokollene fra desember kommer med.
+(lager.kommune.aktive). Året er i år når det ikke er oppgitt. Hver kommune
+hentes og tolkes for alle årene fra «fra_aar» i kommuner/<slug>.json, fordi en
+sak kan gå over flere år (ADR-022). Et eldre år koster ett kall mot portalen
+(møtelisten) pluss det som er endret.
 
 bygg: kontrollerer og bygger hver kommune. En publisert kommune som stopper i
 kontrollene, beholder versjonen som er publisert nå (hentet fra nettstedet).
@@ -53,24 +55,30 @@ def _aar(args: list[str]) -> int:
 
 
 def hent(aar: int, alt: bool) -> dict[str, bool]:
-    aarene = [aar - 1, aar] if dt.date.today().month == 1 and aar == dt.date.today().year else [aar]
     utfall = {}
     for slug, _ in lager_kommune.aktive():
+        aarene = [str(a) for a in lager_kommune.aarene(aar, slug)]
         ok = _kjor(slug, "lager.synk", "--konfig")
         for a in aarene:
-            a = str(a)
             ok = ok and _kjor(slug, "hent.hent_moter", a, *(["--alt"] if alt else []))
-            if a == str(aar):
-                ok = ok and _kjor(slug, "hent.hent_medlemmer", a)
-            for trinn in ("tolk.bygg_saker", "hent.hent_dokumenter", "tolk.bygg_voteringer",
-                          "tolk.bygg_oppmote", "tolk.bygg_verv", "tolk.bygg_avvik"):
+        ok = ok and _kjor(slug, "hent.hent_medlemmer", str(aar))
+        # Sakene bygges én gang, for alle årene: en sak kan gå over flere år.
+        ok = ok and _kjor(slug, "tolk.bygg_saker", str(aar))
+        for a in aarene:
+            ok = ok and _kjor(slug, "hent.hent_dokumenter", a) and _kjor(slug, "tolk.bygg_voteringer", a)
+        # Oppmøtet og avvikene kontrollerer stemmene fra alle årene til og med året.
+        for a in aarene:
+            for trinn in ("tolk.bygg_oppmote", "tolk.bygg_verv", "tolk.bygg_avvik"):
                 ok = ok and _kjor(slug, trinn, a)
         utfall[slug] = ok
     return utfall
 
 
 def analyser(aar: int, maks: int, minutter: float) -> dict[str, bool]:
-    """Deler antallet saker og tiden likt; det en kommune ikke bruker, går videre."""
+    """Deler antallet saker og tiden likt; det en kommune ikke bruker, går videre.
+
+    Analysen går gjennom alle årene til og med `aar` med én kvote per kommune.
+    """
     kommuner = lager_kommune.aktive()
     slutt = time.monotonic() + minutter * 60
     utfall = {}
@@ -111,7 +119,7 @@ def bygg(aar: int, hopp_over: set[str]) -> int:
     mangler = []
     for slug, status in lager_kommune.aktive():
         ok = (slug not in hopp_over
-              and _kjor(slug, "tester.kontroller", str(aar))
+              and all(_kjor(slug, "tester.kontroller", str(a)) for a in lager_kommune.aarene(aar, slug))
               and _kjor(slug, "bygg.bygg_nettsted", str(aar), "--uten-felles"))
         if status == "intern":
             if ok:

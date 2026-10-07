@@ -40,6 +40,9 @@ def kjor(aar: int) -> dict:
     moter = raadata.moteliste(aar)
     if moter is None:
         raise SystemExit(f"fant ingen møteliste for {aar}. Kjør hent.hent_moter først.")
+    # Tidlig på året har ikke alle utvalgene møter ennå. Utvalgene fra i fjor
+    # tas med, så medlemslisten ikke mister dem i januar (ADR-022).
+    moter = moter + (raadata.moteliste(aar - 1) or [])
     utvalg = sorted({(m["UT_ID"], m["UT_NAVN"]) for m in moter})
     print(f"Henter medlemslister for {len(utvalg)} utvalg ...")
 
