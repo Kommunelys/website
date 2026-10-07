@@ -46,6 +46,7 @@ from lager import voteringer as lager_voteringer
 from tester.kontroller import sammendrag_avvik_alle, unntatte_navn
 from tolk.bygg_avvik import finn_avvik, holdt_tilbake
 from tolk.navn import normaliser, partikode
+from tolk import dekning
 from tolk.profil import profil
 
 ROT = Path(__file__).resolve().parent.parent
@@ -165,7 +166,15 @@ def _kommune() -> dict:
     k = lager_kommune.oppsett()
     for nokkel in IKKE_VISNING:
         k.pop(nokkel, None)
+    # Malen bruker «KS» når kommunen ikke har en annen kode for kommunestyret.
+    if profil().kommunestyre_kode != "KS":
+        k["kommunestyre_kode"] = profil().kommunestyre_kode
     return k
+
+
+def _nivaa() -> dict:
+    """Hva kommunen publiseres med (ADR-021). Uten «nivaa» er alt med."""
+    return {"voteringer": True, "oppmote": True} | lager_kommune.oppsett().get("nivaa", {})
 
 
 def _fyll(mal: str, verdier: dict[str, str]) -> str:
@@ -314,7 +323,7 @@ def _oppmote(o: dict, partier: set) -> dict:
 
 
 def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
-       vedtak: dict) -> dict:
+       vedtak: dict, med_oppmote: bool = True) -> dict:
     """Saker, møter, utvalg og kommunestyret, i formen malen bruker.
 
     vedtak er vedtaksteksten per behandling, uendret fra protokollen. Den står
@@ -323,7 +332,8 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
     politiske = collections.Counter(
         st["mote_id"] for s in saker if s["sakstype"] == "PS" and not s["formalia"]
         for st in s["saksgang"])
-    oppmote = lager_oppmote.les(aar, [])
+    # Uten oppmøte i nivåene vises det ikke, og malen sier hvorfor (S.ikke_oppmote).
+    oppmote = lager_oppmote.les(aar, []) if med_oppmote else []
     opp_mote = {o["mote_id"]: o for o in oppmote}
     partier = set(profil().partikoder.values())
     cases = [{
@@ -385,6 +395,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
         "repo": REPO,
         # «Meld fra om feil» går til kontaktskjemaet når det er satt opp.
         "skjema": bool(SKJEMA["url"]),
+        **({} if med_oppmote else {"ikke_oppmote": True}),
     }
 
 
@@ -639,8 +650,13 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
 
     sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
     vedtak = {b["behandling_id"]: b.get("vedtak") for b in lager_voteringer.les(aar, [])}
-    S = _s(aar, saker, moter, sammendrag, kommune, vedtak)
-    VOT, holdt = _vot(aar, saker, moter)
+    nivaa = _nivaa()
+    S = _s(aar, saker, moter, sammendrag, kommune, vedtak, nivaa["oppmote"])
+    if nivaa["voteringer"]:
+        VOT, holdt = _vot(aar, saker, moter)
+    else:
+        # Stemmene kan ikke leses sikkert ennå; malen sier det (VOT.ikke_dekket).
+        VOT, holdt = {"moter": [], "parti": {}, "ikke_dekket": True}, 0
     (ut / "data" / "data.js").write_text(
         "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
         "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
@@ -684,6 +700,9 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
         "voteringer_holdt_tilbake": holdt,
         "sammendrag_publisert": len(sammendrag),
         "sammendrag_holdt_tilbake": holdt_sammendrag,
+        # Hvor mye av protokollene regelsettet leser (tolk/dekning.py).
+        "dekning": {k: v for k, v in dekning.kjor(aar).items() if k != "mistenkte"},
+        "nivaa": nivaa,
         # Fase 2: faktisk forbruk, for å måle kostnaden.
         "tokens": {k: sum((a.get("tokens") or {}).get(k, 0) for a in analyser.values())
                    for k in ("inn", "ut")},

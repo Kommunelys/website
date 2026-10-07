@@ -23,6 +23,7 @@ from lager import konfig
 from lager import saker as lager_saker
 from lager import tekst as lager_tekst
 from lager import verv as lager_verv
+from tolk import dekning
 from tolk.bygg_avvik import ugyldige_vurderinger
 
 ROT = Path(__file__).resolve().parent.parent
@@ -340,6 +341,20 @@ def kilden_er_lik() -> list[str]:
     return [] if fil == db else [f"kilden for {s} i kommuner/{s}.json er ikke lik kilde_konfig i databasen"]
 
 
+def dekning_holder_nivaaet(aar: int) -> list[str]:
+    """Det som publiseres, må regelsettet kunne lese (ADR-021).
+
+    En kommune med voteringer eller oppmøte slått på i nivåene må ha dekning
+    over grensen i tolk/dekning.py. Ellers ville stemmer manglet i stillhet.
+    """
+    nivaa = kommune.oppsett().get("nivaa", {})
+    d = dekning.kjor(aar)
+    if d["mistenkt"]:
+        print(f"{d['mistenkt']} saksprotokoller nevner stemmer uten at noen votering ble funnet: "
+              + ", ".join(map(str, d["mistenkte"][:20])))
+    return dekning.under_grensen(d, nivaa)
+
+
 def kjor(aar: int) -> int:
     saker = lager_saker.les(aar, None)
     if saker is None:
@@ -365,6 +380,7 @@ def kjor(aar: int) -> int:
     feil += antall_har_ikke_stupt(saker, aar)
     feil += malen_nevner_ingen_kommune()
     feil += kilden_er_lik()
+    feil += dekning_holder_nivaaet(aar)
 
     print(f"{len(moter)} møter, {len(saker)} saker, "
           f"{len(lager_analyse.alle())} analyser")

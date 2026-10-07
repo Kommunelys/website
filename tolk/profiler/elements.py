@@ -122,3 +122,11 @@ NAVNEVARIANTER: dict[str, str] = {}
 # Partikodene i voteringene med navnene AI-analysen bruker (analyser/). Settes i
 # kommunens profil, med partiene som faktisk sitter der.
 PARTINAVN: dict[str, str] = {}
+
+# Dekningen (tolk/dekning.py) ------------------------------------------------------
+
+# Ord som betyr at det ble stemt over noe. En saksprotokoll med et av dem, men
+# uten en votering mønstrene fant, er mistenkt: der går stemmer tapt i stillhet.
+# I Steinkjer 2026 fant den «Forslaget ble vedtatt mot 1 stemme (…)» og
+# «7 stemte for … 0 stemte imot», som mønstrene ikke leser.
+VOTERINGSORD = re.compile(r"\b(?:vedtatt|stemte|stemme|stemmer|votering|enstemmig|dobbeltstemme)\b", re.I)
