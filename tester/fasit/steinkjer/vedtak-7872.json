@@ -1,0 +1,43 @@
+{
+ "voteringer": [
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Elin Rodum Agdestein",
+   "parti": "H",
+   "type": "forslag",
+   "tekst": "På vegne av H, Rødt, Kjell Haugan Ap, Saken sendes tilbake til administrasjonen for innhenting av supplerende saksopplysninger vedr tidligere historikk i saken, blant annet korrespondanse mellom kommunen og grunneier der premissene for flytting av boligen til nåværende tomt fremgår i tillegg til vilkår for anleggelse av midlertidig adkomstveg over fulldyrka mark.",
+   "enstemmig": false,
+   "antall_for": 4,
+   "antall_mot": 4,
+   "for": [
+    "Daniel Folladal",
+    "Kjell Magnar Haugan",
+    "Elin Rodum Agdestein",
+    "Anita Brønstad Skavdal"
+   ],
+   "mot": [
+    "Monika Skoglund Luktvasslimo",
+    "Espen Hatlinghus",
+    "Johan Kristian Daling",
+    "Sigrun Modell"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {
+    "Daniel Folladal": "AP",
+    "Kjell Magnar Haugan": "AP",
+    "Elin Rodum Agdestein": "H",
+    "Anita Brønstad Skavdal": "R",
+    "Monika Skoglund Luktvasslimo": "AP",
+    "Espen Hatlinghus": "INP",
+    "Johan Kristian Daling": "SP",
+    "Sigrun Modell": "SP"
+   },
+   "resultat": "vedtatt",
+   "resultat_tekst": "forslaget vedtatt",
+   "dobbeltstemme": "leder",
+   "tall_stemmer": true
+  }
+ ],
+ "vedtak": "Saken sendes tilbake til administrasjonen for innhenting av supplerende saksopplysninger vedr tidligere historikk i saken, blant annet korrespondanse mellom kommunen og grunneier der premissene for flytting av boligen til nåværende tomt fremgår i tillegg til vilkår for anleggelse av midlertidig adkomstveg over fulldyrka mark."
+}

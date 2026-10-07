@@ -5,3 +5,5 @@ nettsted/
 # ADR-005: PDF-er lagres aldri i repoet.
 *.pdf
 *.PDF
+nettsted-intern/
+utfall.json

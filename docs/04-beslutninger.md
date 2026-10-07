@@ -522,3 +522,79 @@ skal forbli statisk og åpent.
 - Personvern: en brukerkonto lagrer e-postadresse og innloggingstider hos
   Supabase i EU. Ingen egen profiltabell. Kontoen kan slettes av brukeren
   selv. Står på Om-siden.
+
+## ADR-021 — Flere kommuner: profiler, nivåer og dekning
+
+**Besluttet.** Prosjekteier, 7.10.2026. Utdyper ADR-007 og ADR-016.
+
+Databasen var laget for flere kommuner (ADR-019), men koden var låst til
+Steinkjer: adressen til portalen, mønstrene som leser protokollene, «KS»,
+AI-instruksjonen, bygget og arbeidsflyten. Kommunene bruker samme API
+(Elements), men skriver protokollene ulikt. En kommune som skriver annerledes
+enn mønstrene venter, gir ikke feil, bare tomt: stemmene mangler uten at noe
+sier fra.
+
+**Konsekvens:**
+
+- Hver kommune har et regelsett, en profil: standarden for Elements
+  (`tolk/profiler/elements.py`, fra Steinkjers dokumenter i 2026) med
+  kommunens endringer i `kommuner/<slug>.json` under `tolk`, og valgfritt
+  `tolk/profiler/<slug>.py` for det som ikke kan skrives som data
+  (`tolk/profil.py`). Kontrollen av stemmetall (ADR-002) er lik for alle og er
+  ikke en del av profilen.
+- Kilden (adressen, tenant og databasen) står i `kjerne.kommune.kilde_konfig`
+  og i `kommuner/<slug>.json`. `tester.kontroller` stopper om de er ulike.
+  En ny kommune og en ny status legges inn med en migrering.
+- Hver kommune har en fasit i `tester/fasit/<slug>/`: dokumenter kontrollert
+  for hånd mot teksten, med forventet resultat. Den kjøres ved hver PR.
+  Endres standarden, skal fasiten for alle kommunene bestå.
+- Dekningen (`tolk/dekning.py`) måler hvor mye av protokollene regelsettet
+  leser. En saksprotokoll som nevner at noen stemte, uten at en votering er
+  funnet, er mistenkt. Grensen er 95 %. Steinkjer 2026: 98 % for voteringene
+  (241 av 245) og 100 % for oppmøtet. Tre av de fire mistenkte er ekte
+  voteringer i rådene som mønstrene ikke leser ennå.
+- Nivåer: en kommune kan publiseres med saker, saksgang, status og
+  sammendrag før stemmene og oppmøtet kan leses sikkert (`nivaa` i
+  `kommuner/<slug>.json`). Sidene sier da at stemmene ikke vises ennå, og
+  hvorfor. Med stemmer eller oppmøte på må dekningen være over grensen, ellers
+  stopper `tester.kontroller` kommunen.
+- Takten mot portalen (ADR-007) gjelder samlet for verten, ikke per kommune.
+  Kommunene hentes etter tur, aldri samtidig (`kjor/alle.py`). Nye kommuner
+  trenger ingen egen avklaring med kommunen; de hentes med samme lave takt
+  (prosjekteier, 7.10.2026).
+- En feil i én kommune stopper bare den. En publisert kommune som stopper i
+  kontrollene, eller der innhentingen feilet, beholder versjonen som er
+  publisert. Kan den verken bygges eller hentes, publiseres ingenting.
+  Status `intern` i `kjerne.kommune` bygges og kontrolleres, men publiseres
+  ikke: det er prøvesteget før en kommune går ut.
+
+## ADR-022 — Alle år: en sak er én tråd, og detaljene lastes når saken åpnes
+
+**Besluttet.** Prosjekteier, 7.10.2026.
+
+Nettstedet viste ett kalenderår. I januar ville det vist et nesten tomt nytt
+år. En sak som ble behandlet i desember og avgjort i februar, fikk dessuten én
+ID per år, fordi kjedene ble bygget av ett års møter. Prosjekteier vil vise
+alle saker fra 2026 og framover. Valgperioden 2023–2027 og 2027–2031 kommer i
+et eget steg før august 2027.
+
+**Konsekvens:**
+
+- Hver kommune har et første år, `fra_aar` i `kommuner/<slug>.json`.
+  Innhenting, tolkning, analyse, kontroller og bygg går gjennom alle årene
+  fra det (`kjor/alle.py`). Et eldre år koster ett kall mot portalen pluss det
+  som er endret.
+- `tolk.bygg_saker` bygger kjedene av alle årene samtidig. En sak er én tråd
+  på tvers av år, og den hører til året den begynte (`kjerne.sak.aar`). Et
+  møte, oppmøtet og et avvik hører til møtets år. Det som kobler stemmer og
+  oppmøte, leser alle årene (`lager.kommune.alle_aar`).
+- Nettstedet viser alle årene. Tekstene sier «i 2026» med ett år og «siden
+  2026» med flere. Saksflyten og antall møter per utvalg gjelder inneværende
+  år. Vervene slås sammen på tvers av år, så kommunestyret og setene vises
+  også før utvalgene har møtt i det nye året.
+- Det bare sakssiden bruker (hele sammendraget, vedtakstekstene og
+  forslagstekstene) står i `data/detaljer-<år>.json` og hentes når en sak
+  fra året åpnes. `data.js` for Steinkjer 2026 gikk fra 260 til 155 KB
+  komprimert. Feiler hentingen, vises saken uten sammendraget, siden
+  kildelenkene mangler (regel 5).
+- Ingen ny migrering: `kjerne.sak.aar` betyr det samme som før.

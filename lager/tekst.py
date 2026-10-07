@@ -44,6 +44,7 @@ def les(id_rom: str, ident: int | None) -> str | None:
     if not ident:
         return None
     sti = _sti(id_rom, ident)
+    _fil._vakt(sti)
     return sti.read_text(encoding="utf-8") if sti.exists() else None
 
 
@@ -51,6 +52,7 @@ def lagre(id_rom: str, ident: int, tekst: str) -> None:
     if fra_databasen():
         return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.tekst_en(c, k, id_rom, ident, tekst))
     sti = _sti(id_rom, ident)
+    _fil._vakt(sti)
     sti.parent.mkdir(parents=True, exist_ok=True)
     sti.write_text(tekst, encoding="utf-8")
 

@@ -161,15 +161,55 @@ def _innhold(status: dict, avvik: dict[str, int], poster: list[dict], na: dt.dat
         return sum(1 for p in poster for c in p["commits"] if c["tid"] >= fra
                    for s in c["nye_saker"] if not s.get("formalia"))
     holdt = len(status.get("sammendrag_holdt_tilbake") or [])
+    aarene = status.get("aarene") or [status["ar"]]
+    periode = f"siden {aarene[0]}" if len(aarene) > 1 else str(status["ar"])
     return _kv([
-        (f"Saker {status['ar']}", tall(status["saker"])),
-        (f"Møter {status['ar']}", tall(status["moter"])),
+        (f"Saker {periode}", tall(status["saker"])),
+        (f"Møter {periode}", tall(status["moter"])),
         ("Nye saker, 7 / 30 dager", f"{nye(7)} / {nye(30)}"),
         ("Sammendrag vist", f"{tall(status['sammendrag_publisert'])} av {tall(status['analyser'])}"
          + (f" ({holdt} holdt tilbake)" if holdt else "")),
         ("Voteringer der stemmene ikke vises", tall(status.get("voteringer_holdt_tilbake", 0))),
         ("Avvik ikke vurdert", tall(avvik.get("ikke_vurdert", 0))),
+        *_dekning(status),
     ])
+
+
+def _prosent(andel: float | None) -> str:
+    return "–" if andel is None else f"{tall(andel * 100)} %"
+
+
+def _dekning(status: dict) -> list[tuple[str, str]]:
+    """Hvor mye av protokollene regelsettet leser (tolk/dekning.py)."""
+    d = status.get("dekning")
+    if not d:
+        return []
+    mistenkt = d["mistenkt"]
+    return [
+        ("Voteringer lest", _prosent(d["voteringer"])
+         + (f" ({mistenkt} {'protokoll' if mistenkt == 1 else 'protokoller'} uten treff)" if mistenkt else "")),
+        ("Oppmøte lest", _prosent(d["oppmote"])),
+    ]
+
+
+def kommuner(rader: list[tuple[dict, dict, str]]) -> str:
+    """Én rad per kommune: (oppsett, status.json, utfallet av bygget)."""
+    if not rader:
+        return '<p class="liten muted">Ingen kommuner ble bygget.</p>'
+    av = {True: "med", False: "uten"}
+    linjer = []
+    for k, s, utfall in rader:
+        n = s.get("nivaa") or {}
+        d = s.get("dekning") or {}
+        linjer.append(
+            f'<tr><td>{_e(k["navn"])}</td><td>{_e(utfall)}</td>'
+            f'<td>{_e(str(s.get("bygget", "–")).replace("T", " ")[:16])}</td>'
+            f'<td>{av[n.get("voteringer", True)]} stemmer, {av[n.get("oppmote", True)]} oppmøte</td>'
+            f'<td class="num">{_prosent(d.get("voteringer"))}</td>'
+            f'<td class="num">{_prosent(d.get("oppmote"))}</td></tr>')
+    return ('<div class="tw"><table class="drift-tabell"><thead><tr><th>Kommune</th><th>Bygget</th>'
+            '<th>Data fra</th><th>Nivå</th><th class="num">Voteringer lest</th>'
+            f'<th class="num">Oppmøte lest</th></tr></thead><tbody>{"".join(linjer)}</tbody></table></div>')
 
 
 def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
@@ -358,7 +398,8 @@ def _nye_saker(poster: list[dict], na: dt.datetime) -> str:
 
 
 def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
-         analyser: dict, merke: str, repo: str, goatcounter: str, nettsted: str) -> str:
+         analyser: dict, merke: str, repo: str, goatcounter: str, nettsted: str,
+         alle_kommuner: str = "") -> str:
     na = dt.datetime.now(dt.timezone.utc)
     kj = historikk.kjoringer()
     poster = historikk.tidslinje(kj, historikk.endringer())
@@ -378,6 +419,7 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
         "database": _database(na),
         "kjoringer": kjoringer,
         "nye_saker": _nye_saker(poster, na),
+        "kommuner": alle_kommuner,
         "goatcounter": _e(goatcounter),
         "repo": repo,
         "nettsted": nettsted,

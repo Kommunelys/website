@@ -24,41 +24,10 @@ import sys
 from pathlib import Path
 
 from .navn import del_navn_og_parti, normaliser, partikode
+from .profil import profil
 
-# Et vedtak eller forslag, fram til «Dermed ble ... vedtatt».
-# Observert i 2026: «Ikke til stede (1): navn.» etter navnelistene, noen ganger
-# uten kolon og navn, og «vedtatt, med ordførers dobbeltstemme» (eller leders).
-# Ved alternativ votering står «For forslag 1 stemte 4: …» for hvert forslag.
-# Én gang står det bare «Dermed vedtatt», uten «ble» og uten punktum.
-VOTERING = re.compile(
-    r"((?:(?P<stiller>[A-ZÆØÅ][\wÆØÅæøå .\-]+?) \((?P<parti>[^)]+)\) "
-    r"fremmet følgende (?P<type>[\w ]*?forslag):?)|Innstilling:|(?P<forslag>Forslag):)"
-    r"(?P<tekst>.*?)"
-    r"(?:For forslaget stemte (?P<n_for>\d+): (?P<for>.*?)\.)? ?"
-    r"(?:Imot forslaget stemte (?P<n_mot>\d+): (?P<mot>.*?)\.)? ?"
-    r"(?P<alternativer>(?:For forslag \S+ stemte \d+: .*?\. ?)+)?"
-    r"(?:Ikke til stede \((?P<n_borte>\d+)\):? ?(?P<borte>[^.]*?)\.? ?)?"
-    r"Dermed (?:ble )?(?P<resultat>[\w ]*?vedtatt)"
-    r"(?:,? med (?P<dobbelt>ordførers|leders) dobbeltstemme)?\.?",
-    re.S,
-)
-
-ALTERNATIV = re.compile(r"For forslag (?P<forslag>\S+) stemte (?P<n>\d+): (?P<navn>.*?)\.(?= For forslag |\s*$)")
-
-# Uten navneliste: «Forslag til vedtak enstemmig vedtatt.», «Innstillingen ble
-# enstemmig vedtatt.», «Forslaget fra X (R) ble enstemmig vedtatt.»
-ENSTEMMIG = re.compile(r"(?P<tekst>[^.:]{0,100}?)\s*\b(?:ble )?enstemmig vedtatt\b")
-
-SAK = re.compile(r"(?=(?:PS|RS|OS|FO) \d+/\d+ [^\n]{0,300}? behandling av sak)")
-
-OPPMOTE = re.compile(
-    r"^(?P<navn>.+?)\s{2,}(?P<funksjon>Leder|Nestleder|Medlem|Varamedlem)\s*"
-    r"(?P<resten>.*?)\s*$",
-    re.M,
-)
-
-# Kolonnen «Repr.» er partiet, eller kommunen i interkommunale utvalg.
-FUNKSJON_PARTI = re.compile(r"^(\S+)\s*(.*)$")
+# Mønstrene (VOTERING, ENSTEMMIG, SAK, OPPMOTE og de andre) står i kommunens
+# profil, med standarden i tolk/profiler/elements.py. Se tolk/profil.py.
 
 
 def _navneliste(tekst: str | None) -> list[tuple[str, str]]:
@@ -78,24 +47,25 @@ def les_oppmoteblokk(tekst: str) -> tuple[list[dict], list[str]]:
     Blokken går fra «Følgende medlemmer møtte» til «Følgende fra
     administrasjonen»; alle 67 møteprotokoller i 2026 har begge.
     """
-    start = max(tekst.find("Følgende medlemmer møtte"), 0)
-    slutt = tekst.find("Følgende fra administrasjonen", start)
+    p = profil()
+    start = max(tekst.find(p.oppmote_start), 0)
+    slutt = tekst.find(p.oppmote_slutt, start)
     blokk = tekst[start:slutt] if slutt > 0 else tekst[start:start + 4000]
 
     ut: list[dict] = []
     ikke_tolket: list[str] = []
     funksjon_kol = None
     for linje in blokk.splitlines():
-        if not linje.strip() or linje.startswith("Følgende medlemmer"):
+        if not linje.strip() or linje.startswith(p.oppmote_start):
             continue
-        if linje.lstrip().startswith("Navn"):
-            funksjon_kol = linje.find("Funksjon")
+        if linje.lstrip().startswith(p.oppmote_navn):
+            funksjon_kol = linje.find(p.oppmote_funksjon)
             continue  # tabelloverskriften
 
-        m = OPPMOTE.match(linje)
+        m = p.oppmote.match(linje)
         if m:
             rest = re.sub(r"\s+", " ", m.group("resten")).strip()
-            fp = FUNKSJON_PARTI.match(rest)
+            fp = p.funksjon_parti.match(rest)
             ut.append({
                 "navn": normaliser(m.group("navn")),
                 "funksjon": m.group("funksjon"),
@@ -135,16 +105,17 @@ def _subjekt(tekst: str) -> str:
     forslag, så den kuttes ved det første ordet som innleder setningen.
     """
     t = tekst.strip()
-    m = re.search(r"\b(?:Forslag\w*|Innstilling\w*|Tilleggsforslag\w*|Dette|Følgende)\b.*$", t)
+    m = profil().subjekt.search(t)
     return m.group(0) if m else t
 
 
 def _voteringer(del_: str, saksnr: str) -> list[dict]:
     """Voteringene i teksten for én sak, i rekkefølge."""
+    p = profil()
     funnet: list[tuple[int, dict]] = []
     dekket: list[tuple[int, int]] = []
 
-    for v in VOTERING.finditer(del_):
+    for v in p.votering.finditer(del_):
         g = v.groupdict()
         stemte_for = _navneliste(g["for"])
         stemte_mot = _navneliste(g["mot"])
@@ -155,7 +126,7 @@ def _voteringer(del_: str, saksnr: str) -> list[dict]:
         dekket.append(v.span())
 
         alternativer = []
-        for a in ALTERNATIV.finditer((g["alternativer"] or "").strip()):
+        for a in p.alternativ.finditer((g["alternativer"] or "").strip()):
             navn = _navneliste(a.group("navn"))
             alternativer.append({
                 "forslag": a.group("forslag"),
@@ -209,7 +180,7 @@ def _voteringer(del_: str, saksnr: str) -> list[dict]:
             ),
         }))
 
-    for e in ENSTEMMIG.finditer(del_):
+    for e in p.enstemmig.finditer(del_):
         if any(a <= e.start() < b for a, b in dekket):
             continue  # del av en votering med navneliste
         funnet.append((e.start(), {
@@ -238,9 +209,10 @@ def _voteringer(del_: str, saksnr: str) -> list[dict]:
 
 def les_voteringer(tekst: str) -> list[dict]:
     """Alle voteringer i en møteprotokoll, i rekkefølge."""
+    p = profil()
     ut = []
-    for del_ in SAK.split(_flat(tekst)):
-        m = re.match(r"((?:PS|RS|OS|FO) \d+/\d+)", del_)
+    for del_ in p.sak.split(_flat(tekst)):
+        m = p.saksnr.match(del_)
         if m:
             ut += _voteringer(del_, m.group(1))
     return ut
@@ -259,7 +231,7 @@ def les_vedtakstekst(tekst: str) -> str | None:
     voteringer i 2026. Uten linjen finnes ikke noe vedtak å vise.
     """
     linjer = tekst.splitlines()
-    treff = [i for i, l in enumerate(linjer) if l.strip() == "Vedtak"]
+    treff = [i for i, l in enumerate(linjer) if l.strip() == profil().vedtak_linje]
     if not treff:
         return None
     vedtak = _flat("\n".join(linjer[treff[-1] + 1:])).strip()

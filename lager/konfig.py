@@ -13,15 +13,15 @@ skrives alltid til fil.
 
 from __future__ import annotations
 
-from . import _fil, fra_databasen, pg, pg_skriv
+from . import _fil, fra_databasen, kommune, pg, pg_skriv
 
 
 def partisider() -> dict:
-    return _fil.les(_fil.DATA / "partisider.json", {})
+    return _fil.les(kommune.konfigmappe() / "partisider.json", {})
 
 
 def tillatte_navn() -> list[dict]:
-    return _fil.les(_fil.DATA / "tillatte-navn.json", [])
+    return _fil.les(kommune.konfigmappe() / "tillatte-navn.json", [])
 
 
 def forrige_telling() -> dict[str, int]:

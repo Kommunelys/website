@@ -30,9 +30,8 @@ import sys
 
 from lager import analyse, avvik, db, fra_databasen, konfig, oppmote, pg_skriv, raa, saker, tekst, verv, voteringer
 from lager import drift as lager_drift
-from tolk.navn import VARIANTER
-
-KOMMUNE = os.environ.get("KOMMUNELYS_KOMMUNE", "steinkjer")
+from lager import kommune
+from tolk.profil import profil
 
 
 def _kjoring_id() -> tuple[str, str]:
@@ -62,9 +61,10 @@ def kjor(aar: int) -> dict:
     raa_moter = raa.moter(aar) or []
 
     with db.transaksjon(kjoring_id) as c:
-        rad = c.execute("select kommune_id from kjerne.kommune where slug = %s", (KOMMUNE,)).fetchone()
+        slug = kommune.slug()
+        rad = c.execute("select kommune_id from kjerne.kommune where slug = %s", (slug,)).fetchone()
         if not rad:
-            raise SystemExit(f"fant ikke kommunen {KOMMUNE} i databasen")
+            raise SystemExit(f"fant ikke kommunen {slug} i databasen")
         k = rad[0]
         c.execute("insert into drift.kjoring (kjoring_id, kilde, git_sha) values (%s, %s, %s)",
                   (kjoring_id, kilde, os.environ.get("GITHUB_SHA")))
@@ -74,7 +74,7 @@ def kjor(aar: int) -> dict:
         personer = pg_skriv.Personer(c, k)
         ut.update(pg_skriv.utvalg(c, k, aar, verv.les_utvalg(aar), konfig.partisider()))
         ut.update(pg_skriv.verv(c, k, aar, personer, verv.les(aar, [])))
-        ut["navnevariant"] = pg_skriv.navnevarianter(c, k, personer, VARIANTER)
+        ut["navnevariant"] = pg_skriv.navnevarianter(c, k, personer, profil().navnevarianter)
         ut.update(pg_skriv.moter(c, k, aar, saker.les_moter(aar), raa_moter, moteliste))
         ut.update(pg_skriv.saker(c, k, aar, saker.les(aar)))
         ut["dokument_tekst"] = pg_skriv.tekster(c, k, tekst.les)

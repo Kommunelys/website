@@ -37,10 +37,12 @@ from pathlib import Path
 import lager
 from drift.logg import legg_til
 from lager import analyse as lager_analyse
+from lager import kommune
 from lager import saker as lager_saker
 from lager import tekst as lager_tekst
 from lager import voteringer as lager_voteringer
 from tolk.bygg_avvik import holdt_tilbake
+from tolk.profil import profil
 from tolk.saksframlegg import del_opp
 
 MODELL = "claude-opus-5"
@@ -66,13 +68,8 @@ TAGGER = [
 ]
 UTFALL = ["vedtatt", "falt", "utsatt", "venter på protokoll", "ikke avgjort ennå"]
 
-# Partikodene i voteringene, med navnene fra portalens medlemslister.
-PARTINAVN = {
-    "AP": "Arbeiderpartiet", "FRP": "Fremskrittspartiet", "H": "Høyre",
-    "INP": "Industri- og næringspartiet", "PP": "Pensjonistpartiet", "R": "Rødt",
-    "SP": "Senterpartiet", "SV": "Sosialistisk Venstreparti", "V": "Venstre",
-    "UAVH": "uavhengig representant",
-}
+# Partikodene i voteringene, med navnene fra portalens medlemslister, står i
+# kommunens profil (partinavn i kommuner/<slug>.json, tolk/profil.py).
 
 SKJEMA = {
     "type": "object",
@@ -90,7 +87,7 @@ SKJEMA = {
     "additionalProperties": False,
 }
 
-INSTRUKSJON = """Du forklarer en politisk sak i Steinkjer kommune for innbyggere uten forkunnskaper. Grunnlaget er dokumentene fra kommunens innsynsportal i meldingen: saksframlegget, vedtakene og voteringene.
+_INSTRUKSJON = """Du forklarer en politisk sak i {kommune} kommune for innbyggere uten forkunnskaper. Grunnlaget er dokumentene fra kommunens innsynsportal i meldingen: saksframlegget, vedtakene og voteringene.
 
 - Bruk bare det som står i dokumentene. Fyll aldri ut med generell kunnskap.
 - Gjengi tall slik de står i dokumentene, uten å runde av. Tallene kontrolleres mot kilden.
@@ -104,7 +101,7 @@ INSTRUKSJON = """Du forklarer en politisk sak i Steinkjer kommune for innbyggere
 - Er grunnlaget for tynt til en dekkende forklaring, sett «usikker» til true og la «sammendrag» stå tomt.
 - Skriv klarspråk på norsk bokmål, med korte setninger.
 
-Partikodene i voteringene: """ + ", ".join(f"{k} = {v}" for k, v in PARTINAVN.items()) + """. Bruk koden eller dette navnet.
+Partikodene i voteringene: {partier}. Bruk koden eller dette navnet.
 
 Feltene:
 - tittel_klarsprak: spørsmålet saken svarer på, på én linje
@@ -115,6 +112,17 @@ Feltene:
 - uenighet: én setning, eller tom streng hvis vedtakene var enstemmige eller saken ikke er avgjort"""
 
 
+def instruksjon() -> str:
+    """Instruksjonen for kommunen kjøringen gjelder, med navnet og partiene.
+
+    For Steinkjer er teksten den samme som før kommunen ble en parameter, så
+    versjonen og sjekksummene står.
+    """
+    partier = ", ".join(f"{k} = {v}" for k, v in profil().partinavn.items())
+    return (_INSTRUKSJON.replace("{kommune}", kommune.oppsett()["navn"])
+            .replace("{partier}", partier))
+
+
 class Avvist(Exception):
     """Svaret kan ikke brukes: avslag, kuttet svar eller ugyldig JSON."""
 
@@ -122,6 +130,10 @@ class Avvist(Exception):
 def sjekksum(*deler: str) -> str:
     h = hashlib.sha256()
     h.update(f"{MODELL}|{INNSATS}|{INSTRUKSJON_VERSJON}".encode())
+    # Instruksjonen nevner kommunen. Steinkjer var alene før kommunen ble en
+    # parameter, og sjekksummene for den skal stå.
+    if kommune.slug() != kommune.STANDARD:
+        h.update(f"|{kommune.slug()}".encode())
     for d in deler:
         h.update((d or "").encode())
     return h.hexdigest()[:16]
@@ -230,7 +242,7 @@ def analyser(klient, kilde: str) -> tuple[dict, str, dict]:
     svar = klient.beta.messages.create(
         model=MODELL,
         max_tokens=MAKS_TOKENS,
-        system=INSTRUKSJON,
+        system=instruksjon(),
         messages=[{"role": "user", "content": kilde}],
         output_config={"effort": INNSATS,
                        "format": {"type": "json_schema", "schema": SKJEMA}},
@@ -285,8 +297,10 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
     """minutter: slutt å sende nye saker etter så lang tid, så jobben rekker å
     lagre det som er gjort før arbeidsflytens tidsgrense."""
     frist = time.monotonic() + minutter * 60 if minutter else None
-    saker = lager_saker.les(aar)
-    voteringer = {b["behandling_id"]: b for b in lager_voteringer.les(aar, [])}
+    # Alle årene til og med `aar`, med én kvote: en sak fra i fjor som blir
+    # avgjort i år, skal analyseres på nytt (ADR-022).
+    saker = kommune.alle_aar(lager_saker.les, aar)
+    voteringer = {b["behandling_id"]: b for b in kommune.alle_aar(lager_voteringer.les, aar)}
     stopp, _ = holdt_tilbake(aar)
 
     if vis is not None:

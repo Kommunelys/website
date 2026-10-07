@@ -15,25 +15,18 @@ Teksten må være hentet ut med `pdftotext` uten -layout.
 
 from __future__ import annotations
 
-import re
 import sys
 from pathlib import Path
 
-# I malens rekkefølge. Bare første treff etter forrige overskrift teller.
-# Variantene er funnet i 2026: «… forslag til vedtak i eldrerådet:»,
-# «Saksvurdering» og «Sakvurderinger:». Bare «Vurdering» tas ikke med; det
-# brukes også som underoverskrift inne i saksopplysningene.
-OVERSKRIFTER = (
-    ("forslag", re.compile(
-        r"^.{0,40}\bforslag til (?:vedtak|innstilling)(?:\s+.{1,40}:|\s*:?)$", re.I)),
-    ("saksopplysninger", re.compile(r"^saksopplysninger\s*:?$", re.I)),
-    ("saksvurderinger", re.compile(r"^saks?vurdering(?:er)?\s*:?$", re.I)),
-)
+from .profil import profil
+
+# Overskriftene og ordet dokumentet starter med står i kommunens profil, med
+# standarden i tolk/profiler/elements.py.
 
 
 def er_saksframlegg(tekst: str) -> bool:
     """Følger dokumentet kommunens mal?"""
-    return tekst.lstrip().upper().startswith("SAKSFRAMLEGG")
+    return tekst.lstrip().upper().startswith(profil().saksframlegg_start)
 
 
 def del_opp(tekst: str) -> dict[str, str] | None:
@@ -49,7 +42,7 @@ def del_opp(tekst: str) -> dict[str, str] | None:
     linjer = tekst.splitlines()
     starter: list[tuple[int, str]] = []
     fra = 0
-    for nokkel, monster in OVERSKRIFTER:
+    for nokkel, monster in profil().overskrifter:
         for i in range(fra, len(linjer)):
             if monster.match(linjer[i].strip()):
                 starter.append((i, nokkel))
