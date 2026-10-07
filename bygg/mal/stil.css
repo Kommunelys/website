@@ -219,7 +219,7 @@ h2.mt{border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:10px}
 .sti{color:var(--muted)}
 .sti b{color:var(--ink);font-weight:600}
 /* Utvalget i sakslisten, merket etter nivå */
-.utv{display:inline-block;font-size:13px;font-weight:600;line-height:1.35;border-radius:999px;padding:1px 9px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.utv{display:inline-block;font-size:13px;font-weight:600;line-height:1.35;border-radius:12px;padding:1px 9px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
 .utv.ks{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .utv.fs{border-color:var(--ink)}
 .utv.hu{background:var(--lys-flate);border-color:var(--lys)}
@@ -402,12 +402,18 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .kal-nr{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
 .kal-dag.idag .kal-nr{color:var(--bg);background:var(--lenke);border-radius:999px;align-self:flex-start;padding:0 7px;font-weight:700}
 .kal-m{display:block;font-size:13px;line-height:1.3;padding:3px 6px;border-radius:4px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
-.kal-m.fram{border-color:var(--lys);background:var(--lys-flate)}
-.kal-m:hover{border-color:var(--lenke);color:var(--lenke)}
-.kal-m .mono{color:var(--muted)}
+/* Samme nivåfarger som utvalgene i sakslisten (.utv). */
+.kal-m.ks{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.kal-m.fs{border-color:var(--ink)}
+.kal-m.hu{background:var(--lys-flate);border-color:var(--lys)}
+.kal-m.andre{background:var(--soft);color:var(--muted)}
+.kal-m:hover{text-decoration:underline;text-underline-offset:2px}
+.kal-m .mono{opacity:.75}
+.kal-forklaring{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0}
 .mliste{display:none}
 .mote{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
-.mote:hover b{color:var(--lenke);text-decoration:underline}
+.mote:hover .utv{text-decoration:underline;text-underline-offset:2px}
+.mote .utv{justify-self:start;margin-bottom:2px}
 .mote>span:last-child{display:grid}
 .mote-dato{font-variant-numeric:tabular-nums;color:var(--muted)}
 .mote-dato b{color:var(--ink);font-size:17px}

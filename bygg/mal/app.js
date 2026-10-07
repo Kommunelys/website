@@ -289,13 +289,13 @@ function renderMeet(){
   for(let i=0;i<forste;i++)h+='<div class="kal-dag tom"></div>';
   for(let d=1;d<=dager;d++){
     const dato=`${kalMnd}-${String(d).padStart(2,'0')}`,dm=ms.filter(m=>m.date.startsWith(dato));
-    h+=`<div class="kal-dag${dato===TODAY.slice(0,10)?' idag':''}"><span class="kal-nr">${d}</span>${dm.map(m=>`<a class="kal-m${isFut(m.date)?' fram':''}" href="#mote/${m.id}" title="${esc(utName(m.sc))} ${kl(m)}"><span class="mono">${m.date.slice(11,16)}</span> ${esc(K.utvalg_liste[m.sc]||utName(m.sc))}</a>`).join('')}</div>`;
+    h+=`<div class="kal-dag${dato===TODAY.slice(0,10)?' idag':''}"><span class="kal-nr">${d}</span>${dm.map(m=>`<a class="kal-m ${nivaa(m.sc)}" href="#mote/${m.id}" title="${esc(utName(m.sc))} ${kl(m)}"><span class="mono">${m.date.slice(11,16)}</span> ${esc(K.utvalg_liste[m.sc]||utName(m.sc))}</a>`).join('')}</div>`;
     if((forste+d)%7===0&&d<dager)h+='</div><div class="kal-uke">';
   }
   for(let i=(forste+dager)%7;i&&i<7;i++)h+='<div class="kal-dag tom"></div>';
   $('kal').innerHTML=h+'</div>';
   // Listen: samme møter, for smale skjermer.
-  $('mlist').innerHTML=ms.map(m=>`<a class="mote" href="#mote/${m.id}"><span class="mote-dato"><b>${+m.date.slice(8,10)}.</b> ${UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()].slice(0,3)}</span><span><b>${esc(utName(m.sc))}</b><span class="liten muted">${kl(m)}${m.sted?` · ${esc(renSted(m.sted))}`:''} · ${m.nps?antall(m.nps,'politisk sak','politiske saker'):m.n?antall(m.n,'sak','saker'):'sakslisten er ikke publisert'}</span></span></a>`).join('')
+  $('mlist').innerHTML=ms.map(m=>`<a class="mote" href="#mote/${m.id}"><span class="mote-dato"><b>${+m.date.slice(8,10)}.</b> ${UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()].slice(0,3)}</span><span>${utvMerke(m.sc)}<span class="liten muted">${kl(m)}${m.sted?` · ${esc(renSted(m.sted))}`:''} · ${m.nps?antall(m.nps,'politisk sak','politiske saker'):m.n?antall(m.n,'sak','saker'):'sakslisten er ikke publisert'}</span></span></a>`).join('')
     ||`<p class="muted">Ingen møter i ${MONL[mm-1].toLowerCase()}${u?` i ${esc(smaa(utName(u)))}`:''}.</p>`;
 }
 const tilMnd=mnd=>{location.hash='#moter/'+mnd};
