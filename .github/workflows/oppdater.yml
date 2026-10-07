@@ -106,7 +106,8 @@ jobs:
       # Alle kommunene med status «intern» eller «publisert», etter tur, så
       # takten mot portalen gjelder samlet (ADR-007, ADR-021). For hver kommune:
       # speil filene som vedlikeholdes for hånd, hent møter, saker, medlemslister
-      # og dokumenter, og tolk saksgang, voteringer, oppmøte, verv og avvik.
+      # og dokumenter, og tolk saksgang, voteringer, oppmøte, verv og avvik, for
+      # alle årene fra kommunens «fra_aar» (en sak kan gå over flere år, ADR-022).
       # Se kjor/alle.py. Feiler en kommune, fortsetter de andre; den beholder
       # forrige versjon på nettstedet.
       - name: Hent og tolk alle kommunene

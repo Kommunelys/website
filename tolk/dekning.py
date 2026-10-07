@@ -58,6 +58,25 @@ def kjor(aar: int) -> dict:
     }
 
 
+def samlet(aar: int) -> dict:
+    """Dekningen for alle årene til og med `aar`, slått sammen.
+
+    Tidlig på året er det få protokoller, og én mistenkt kan gi lav andel.
+    Kontrollen og nettstedet bruker derfor alle årene samlet (ADR-022).
+    """
+    from lager import kommune  # noqa: PLC0415
+
+    deler = [kjor(a) for a in kommune.aarene(aar)]
+    tall = {k: sum(d[k] for d in deler) for k in
+            ("saksprotokoller", "med_votering", "uten_votering", "mistenkt", "moteprotokoller", "oppmote_lest")}
+    med, mistenkt = tall["med_votering"], tall["mistenkt"]
+    return tall | {
+        "voteringer": round(med / (med + mistenkt), 4) if med + mistenkt else None,
+        "oppmote": round(tall["oppmote_lest"] / tall["moteprotokoller"], 4) if tall["moteprotokoller"] else None,
+        "mistenkte": [i for d in deler for i in d["mistenkte"]],
+    }
+
+
 def under_grensen(dekning: dict, nivaa: dict) -> list[str]:
     """Det som er slått på i nivåene, men har for lav dekning."""
     feil = []

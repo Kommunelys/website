@@ -348,7 +348,7 @@ def dekning_holder_nivaaet(aar: int) -> list[str]:
     over grensen i tolk/dekning.py. Ellers ville stemmer manglet i stillhet.
     """
     nivaa = kommune.oppsett().get("nivaa", {})
-    d = dekning.kjor(aar)
+    d = dekning.samlet(aar)
     if d["mistenkt"]:
         print(f"{d['mistenkt']} saksprotokoller nevner stemmer uten at noen votering ble funnet: "
               + ", ".join(map(str, d["mistenkte"][:20])))

@@ -297,8 +297,10 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
     """minutter: slutt å sende nye saker etter så lang tid, så jobben rekker å
     lagre det som er gjort før arbeidsflytens tidsgrense."""
     frist = time.monotonic() + minutter * 60 if minutter else None
-    saker = lager_saker.les(aar)
-    voteringer = {b["behandling_id"]: b for b in lager_voteringer.les(aar, [])}
+    # Alle årene til og med `aar`, med én kvote: en sak fra i fjor som blir
+    # avgjort i år, skal analyseres på nytt (ADR-022).
+    saker = kommune.alle_aar(lager_saker.les, aar)
+    voteringer = {b["behandling_id"]: b for b in kommune.alle_aar(lager_voteringer.les, aar)}
     stopp, _ = holdt_tilbake(aar)
 
     if vis is not None:

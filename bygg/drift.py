@@ -161,9 +161,11 @@ def _innhold(status: dict, avvik: dict[str, int], poster: list[dict], na: dt.dat
         return sum(1 for p in poster for c in p["commits"] if c["tid"] >= fra
                    for s in c["nye_saker"] if not s.get("formalia"))
     holdt = len(status.get("sammendrag_holdt_tilbake") or [])
+    aarene = status.get("aarene") or [status["ar"]]
+    periode = f"siden {aarene[0]}" if len(aarene) > 1 else str(status["ar"])
     return _kv([
-        (f"Saker {status['ar']}", tall(status["saker"])),
-        (f"Møter {status['ar']}", tall(status["moter"])),
+        (f"Saker {periode}", tall(status["saker"])),
+        (f"Møter {periode}", tall(status["moter"])),
         ("Nye saker, 7 / 30 dager", f"{nye(7)} / {nye(30)}"),
         ("Sammendrag vist", f"{tall(status['sammendrag_publisert'])} av {tall(status['analyser'])}"
          + (f" ({holdt} holdt tilbake)" if holdt else "")),

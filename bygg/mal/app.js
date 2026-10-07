@@ -4,6 +4,10 @@
    hånd om enkeltsaker eller enkeltpersoner, og ingen kommune nevnes ved navn:
    det som er særegent for kommunen, står i S.kommune (kommuner/<kommune>.json). */
 const TODAY=S.today, AAR=S.aar, K=S.kommune;
+// Alle årene fra kommunens første år (ADR-022). Med ett år står S.aarene ikke i
+// dataene, og tekstene sier «i 2026»; med flere sier de «siden 2026».
+const FLERE_AAR=(S.aarene||[]).length>1, FRA_AAR=(S.aarene||[AAR])[0];
+const PERIODE=FLERE_AAR?`siden ${FRA_AAR}`:`i ${AAR}`;
 // Utvalgskoden for kommunestyret i portalen. Står bare i S.kommune når den ikke er «KS».
 const KSK=K.kommunestyre_kode||'KS';
 // Nivåene (ADR-021): en kommune kan publiseres før stemmene eller oppmøtet kan
@@ -52,6 +56,8 @@ const ut=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
 function oppsummering(c){
   if(!c.a)return c.typ==='PS'&&!c.formal?'<p class="liten muted">Ingen sammendrag ennå. Les dokumentene i lenkene under.</p>':'';
   const a=c.a;
+  // Kildene står i detaljene. Uten kildelenke vises ikke sammendraget (CLAUDE.md regel 5).
+  if(!a.kilder)return '';
   return `<div class="ai"><span class="ki">KI-sammendrag</span><p>${esc(a.sum)}</p>${a.bet?`<p><b>Hva betyr det?</b> ${esc(a.bet)}</p>`:''}${a.uen?`<p><b>Uenigheten:</b> ${esc(a.uen)}</p>`:''}
    <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}. Dokumentene gjelder. ${ut(meldUrl(c),'Meld fra om feil')}</p></div>`;
 }
@@ -208,13 +214,15 @@ $('ks').addEventListener('click',e=>{const t=e.target.closest('[data-p]');if(t&&
 /* Saksflyt */
 (function(){
   const HU=K.hovedutvalg;
-  const full=PS.filter(c=>{const s=c.st.map(x=>x.sc);return s.includes(KSK)&&s.includes('FS')&&s.some(x=>HU.includes(x))}).length;
-  const fsks=PS.filter(c=>{const s=[...new Set(c.st.map(x=>x.sc))];return s.join()==='FS,KS'}).length;
-  const ksAll=PS.filter(c=>c.ks).length;
+  // Tallene gjelder saker som begynte i år, også når dataene har flere år.
+  const ps=FLERE_AAR?PS.filter(c=>((c.st[0]||{}).date||'').startsWith(AAR)):PS;
+  const full=ps.filter(c=>{const s=c.st.map(x=>x.sc);return s.includes(KSK)&&s.includes('FS')&&s.some(x=>HU.includes(x))}).length;
+  const fsks=ps.filter(c=>{const s=[...new Set(c.st.map(x=>x.sc))];return s.join()===['FS',KSK].join()}).length;
+  const ksAll=ps.filter(c=>c.ks).length;
   // Bare saker som er avgjort; de som fortsatt er til behandling, kan gå videre.
   const avgjort=c=>c.status!=='Til behandling';
-  const fsSelv=PS.filter(c=>c.st.some(x=>x.sc==='FS')&&!c.ks&&avgjort(c)).length;
-  const huSelv=PS.filter(c=>c.st.some(x=>HU.includes(x.sc))&&!c.st.some(x=>['FS',KSK].includes(x.sc))&&avgjort(c)).length;
+  const fsSelv=ps.filter(c=>c.st.some(x=>x.sc==='FS')&&!c.ks&&avgjort(c)).length;
+  const huSelv=ps.filter(c=>c.st.some(x=>HU.includes(x.sc))&&!c.st.some(x=>['FS',KSK].includes(x.sc))&&avgjort(c)).length;
   $('flowfact').innerHTML=`I ${AAR} har ${ksAll} saker vært eller skal til kommunestyret. ${fsks} gikk rett fra formannskapet, og ${full} gikk hele veien fra et hovedutvalg via formannskapet. Formannskapet avgjorde ${fsSelv} saker selv, og hovedutvalgene ${huSelv}.`;
 })();
 
@@ -280,6 +288,9 @@ $('more').addEventListener('click',()=>{limit+=40;renderList()});
 const MOTE_ID={};meetings.forEach(m=>{MOTE_ID[m.id]=m});
 const moteUrl=mid=>MOTE_ID[mid]?`#mote/${mid}`:'';
 const mndNaa=TODAY.slice(0,7);
+// Pilene stopper ved første og siste måned med møter (eller i dag).
+const MNDENE=meetings.map(m=>m.date.slice(0,7)).sort();
+const FORSTE_MND=[MNDENE[0]||mndNaa,mndNaa].sort()[0], SISTE_MND=[MNDENE.at(-1)||mndNaa,mndNaa].sort()[1];
 let kalMnd=mndNaa;
 const mut=$('mut');
 [...new Set(meetings.map(m=>m.sc))].sort((a,b)=>utName(a).localeCompare(utName(b),'nb')).forEach(u=>mut.innerHTML+=`<option value="${u}">${esc(utName(u))}</option>`);
@@ -290,6 +301,7 @@ function renderMeet(){
   const [aa,mm]=kalMnd.split('-').map(Number);
   $('mtittel').textContent=`${MONL[mm-1]} ${aa}`;
   $('midag').hidden=kalMnd===mndNaa;
+  $('mforr').disabled=kalMnd<=FORSTE_MND;$('mneste').disabled=kalMnd>=SISTE_MND;
   // Rutenettet: uker fra mandag til søndag.
   const forste=(new Date(aa,mm-1,1).getDay()+6)%7,dager=new Date(aa,mm,0).getDate();
   let h='<div class="kal-uke kal-dager">'+['Man','Tir','Ons','Tor','Fre','Lør','Søn'].map(d=>`<span>${d}</span>`).join('')+'</div><div class="kal-uke">';
@@ -512,18 +524,18 @@ function renderPerson(id){
       <div class="tw"><table><thead><tr><th>Utvalg</th><th>Rolle</th><th class="num">Møtt</th><th class="num">Møter</th></tr></thead><tbody>${vv.map(rad).join('')}</tbody></table></div>
       ${tidl.length?`<p class="liten muted">Sett i protokollene, men ikke i dagens medlemsliste: ${tidl.map(v=>esc(utName(v.u))).join(', ')}.</p>`:''}
       ${varaFor.length?`<p class="liten">Har møtt som varamedlem for ${varaFor.map(plink).join(', ')}.</p>`:''}
-      <p class="liten muted">«Møtt» er antall møter i ${AAR} der navnet står på oppmøtelisten i protokollen. «Møter» er antall møter utvalget har hatt med møteprotokoll. Permisjoner og bytter tidligere i året vises ikke.</p>
+      <p class="liten muted">«Møtt» er antall møter ${PERIODE} der navnet står på oppmøtelisten i protokollen. «Møter» er antall møter utvalget har hatt med møteprotokoll. Permisjoner og bytter tidligere i året vises ikke.</p>
     </section>
     <section><h2>Stemmer</h2>
-      ${IKKE_STEMMER?MANGLER_STEMMER:st.mine.length?`<p class="oppsum">Har vært med på ${antall(st.mine.length,'avstemning','avstemninger')} med navneliste i ${AAR}.${st.omst.length?` I de ${st.omst.length} der noen stemte imot, var stemmen den samme som flertallets i ${pct} % av tilfellene, og annerledes enn resten av partiet ${antall(st.brk.length,'gang','ganger')}.`:''}</p>`
-        :`<p class="oppsum muted">Ingen avstemninger med navneliste i ${AAR}. Når alle stemmer likt, har protokollen ingen navneliste.</p>`}
+      ${IKKE_STEMMER?MANGLER_STEMMER:st.mine.length?`<p class="oppsum">Har vært med på ${antall(st.mine.length,'avstemning','avstemninger')} med navneliste ${PERIODE}.${st.omst.length?` I de ${st.omst.length} der noen stemte imot, var stemmen den samme som flertallets i ${pct} % av tilfellene, og annerledes enn resten av partiet ${antall(st.brk.length,'gang','ganger')}.`:''}</p>`
+        :`<p class="oppsum muted">Ingen avstemninger med navneliste ${PERIODE}. Når alle stemmer likt, har protokollen ingen navneliste.</p>`}
       ${st.brk.length?`<details${st.brk.length<=8?' open':''}><summary>Stemte annerledes enn partiet (${st.brk.length})</summary><div>${st.brk.map(v=>vlinje(v,voteOf(v,p.n))).join('')}</div></details>`:''}
       ${st.omst.length?`<details><summary>Alle avstemninger der noen stemte imot (${st.omst.length})</summary><div>${st.omst.map(v=>vlinje(v,voteOf(v,p.n))).join('')}</div></details>`:''}
     </section>
     <section><h2>Forslag</h2>
-      ${IKKE_STEMMER?MANGLER_STEMMER:st.forslag.length?st.forslag.map(v=>vlinje(v,null)).join(''):`<p class="muted">Ingen forslag med navn i protokollene i ${AAR}.</p>`}
+      ${IKKE_STEMMER?MANGLER_STEMMER:st.forslag.length?st.forslag.map(v=>vlinje(v,null)).join(''):`<p class="muted">Ingen forslag med navn i protokollene ${PERIODE}.</p>`}
     </section>
-    <p class="liten muted mt">Kilder: medlemslisten i innsynsportalen (${dato(S.ks.hentet)}), møteprotokollene og saksprotokollene for ${AAR}.${HOLDT?` ${antall(HOLDT,'avstemning','avstemninger')} der stemmene ikke vises, er ikke med.`:''} Ingen tekst her er skrevet av KI.</p>
+    <p class="liten muted mt">Kilder: medlemslisten i innsynsportalen (${dato(S.ks.hentet)}), møteprotokollene og saksprotokollene ${FLERE_AAR?`siden ${FRA_AAR}`:`for ${AAR}`}.${HOLDT?` ${antall(HOLDT,'avstemning','avstemninger')} der stemmene ikke vises, er ikke med.`:''} Ingen tekst her er skrevet av KI.</p>
   </div>`;
 }
 
@@ -533,6 +545,30 @@ function renderPerson(id){
    hver, med utfallet og stemmene per parti. Forslaget som vant, har grønn
    ramme. Navnene og forslagsteksten kan foldes ut. */
 const VOT_HID={};VOT.moter.forEach(m=>m.saker.forEach(s=>{VOT_HID[s.hid]={...s,m}}));
+/* Detaljene (ADR-022): hele sammendraget, vedtakstekstene og forslagstekstene
+   står i data/detaljer-<år>.json og hentes første gang en sak fra året åpnes.
+   Året er året saken begynte (c.y, eller S.aar med ett år). */
+const VOTE_ID={};ALLEV.forEach(v=>{VOTE_ID[v.id]=v});
+const DETALJER={},DETALJER_KLAR=new Set();
+const sakensAar=c=>String(c.y||AAR);
+function hentDetaljer(aar){
+  const fil=(S.detaljer||{})[aar];
+  if(!fil||DETALJER_KLAR.has(aar))return Promise.resolve();
+  return DETALJER[aar]||(DETALJER[aar]=fetch('data/'+fil).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+    Object.entries(d.a||{}).forEach(([id,a])=>{const c=SAK_ID[id];if(c&&c.a)Object.assign(c.a,a)});
+    Object.entries(d.vt||{}).forEach(([hid,vt])=>{if(STEG[hid])STEG[hid].vt=vt});
+    Object.entries(d.v||{}).forEach(([id,x])=>{const v=VOTE_ID[id];if(!v)return;v.tekst=x.tekst;(x.deler||[]).forEach((tk,i)=>{if(v.deler&&v.deler[i])v.deler[i].tekst=tk})});
+    DETALJER_KLAR.add(aar);
+  }).catch(e=>{delete DETALJER[aar];throw e}));
+}
+// Sakssiden venter på detaljene. Feiler hentingen, vises saken uten dem.
+function visSak(id){
+  const c=SAK_ID[id],aar=c&&sakensAar(c);
+  if(!c||!(S.detaljer||{})[aar]||DETALJER_KLAR.has(aar)){renderSak(id);return}
+  $('sak').innerHTML='<div class="ingress"><p class="muted">Henter saken …</p></div>';
+  const her=location.hash;
+  hentDetaljer(aar).then(()=>{if(location.hash===her)renderSak(id)},()=>{if(location.hash===her)renderSak(id,true)});
+}
 const erRad=sc=>RAD.includes(sc);
 const datoAar=d=>`${ddl(d)} ${d.slice(0,4)}`;
 const perParti=ns=>{const c={};ns.forEach(n=>{const p=party(n);c[p]=(c[p]||0)+1});return pord(ns).map(p=>({p,n:c[p]}))};
@@ -601,10 +637,11 @@ function stegHtml(c,x,avgjort){
   return `<li class="trad-steg${cls}"><div class="trad-hode"><b>${MOTE_ID[x.mid]?`<a href="#mote/${x.mid}">${esc(utName(x.sc)||x.ut)}</a>`:esc(utName(x.sc)||x.ut)}</b> <span class="muted">· ${datoAar(x.date)}</span></div>
     ${tekst?`<p class="trad-tekst">${tekst}</p>`:''}${merk}${bokser}${lenker?`<p class="liten trad-lenker">${lenker}</p>`:''}</li>`;
 }
-function renderSak(id){
+function renderSak(id,uten_detaljer){
   const c=SAK_ID[id],el=$('sak');
-  if(!c){el.innerHTML='<div class="ingress"><h1>Fant ikke saken</h1><p>Saken finnes ikke i dataene for dette året. <a href="#saker">Se alle sakene</a>.</p></div>';return}
+  if(!c){el.innerHTML='<div class="ingress"><h1>Fant ikke saken</h1><p>Saken finnes ikke i dataene'+(FLERE_AAR?'':' for dette året')+'. <a href="#saker">Se alle sakene</a>.</p></div>';return}
   document.title=`${tittel(c)} – ${K.navn} | ${S.merke}`;
+  const feil=uten_detaljer?'<p class="merk">Vedtakene og forslagstekstene kunne ikke hentes nå. Last siden på nytt, eller les protokollene i innsynsportalen.</p>':'';
   const f=fase(c),nv=c.st.reduce((n,x)=>n+(VOT_HID[x.hid]?VOT_HID[x.hid].v.length:0),0);
   // Vedtaket: siste behandling med vedtakstekst i et utvalg som avgjør, når saken ikke skal videre.
   const avgjort=c.next?null:[...c.st].reverse().find(x=>!erRad(x.sc)&&x.vt&&x.pub)||null;
@@ -616,7 +653,7 @@ function renderSak(id){
     ${c.a?`<p class="muted">Sakstittel: ${esc(c.t)}</p>`:''}
     <p class="sak-status"><span class="st ${f.cls}">${esc(f.t)}</span><span class="muted"><span class="mono">${esc(nr)}</span> · ${antall(c.st.length,'behandling','behandlinger')}${nv?` · ${antall(nv,'avstemning','avstemninger')}`:''}</span></p>
     ${c.tags.length?`<p>${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(' ')}</p>`:''}</div>
-    ${oppsummering(c)}
+    ${feil}${oppsummering(c)}
     ${avgjort?`<section class="blokk"><h2>Vedtaket i ${esc(smaa(utName(avgjort.sc)))}</h2>
       ${sv?`<p>${sakSvar(sv)}</p>`:''}<div class="forslag">${formater(avgjort.vt)}</div>
       <p class="liten muted">${avgjort.prot?`${ut(avgjort.prot,'Protokollen')} gjelder.`:'Protokollen gjelder.'}</p></section>`:''}
@@ -655,7 +692,7 @@ function moteSak({c,x},m){
 }
 function renderMote(id){
   const m=MOTE_ID[id],el=$('mote');
-  if(!m){el.innerHTML='<div class="ingress"><h1>Fant ikke møtet</h1><p>Møtet finnes ikke i dataene for dette året. <a href="#moter">Se kalenderen</a>.</p></div>';return}
+  if(!m){el.innerHTML='<div class="ingress"><h1>Fant ikke møtet</h1><p>Møtet finnes ikke i dataene'+(FLERE_AAR?'':' for dette året')+'. <a href="#moter">Se kalenderen</a>.</p></div>';return}
   document.title=`${utName(m.sc)} ${ddl(m.date)} – ${K.navn} | ${S.merke}`;
   $('motetilbake').href='#moter/'+m.date.slice(0,7);
   const st=moteStatus(m),dok=t=>m.docs.find(d=>d.ty===t);
@@ -729,7 +766,7 @@ function medlemHtml(sc){
 const rang2=p=>{const i=PORDER_ALLE.indexOf(p);return i<0?99:i};
 function utvalgHtml(sc){
   const ms=meetings.filter(m=>m.sc===sc),neste=ms.find(m=>isFut(m.date)),sist=[...ms].reverse().find(m=>!isFut(m.date)),o=oppgave(sc);
-  const mote=[neste?`Neste møte: <a href="#mote/${neste.id}">${naar(neste.date)}</a>`:'',sist?`Siste møte: <a href="#mote/${sist.id}">${ddl(sist.date)}</a>`:'',antall(ms.length,'møte','møter')+` i ${AAR}`].filter(Boolean).join(' · ');
+  const mote=[neste?`Neste møte: <a href="#mote/${neste.id}">${naar(neste.date)}</a>`:'',sist?`Siste møte: <a href="#mote/${sist.id}">${ddl(sist.date)}</a>`:'',antall(ms.filter(m=>!FLERE_AAR||m.date.startsWith(AAR)).length,'møte','møter')+` i ${AAR}`].filter(Boolean).join(' · ');
   return `<details class="utvalg" id="utvalg-${sc}"><summary><b>${esc((ORGAN[sc]||{}).navn||utName(sc))}</b>${o?` <span class="muted">· ${esc(o)}</span>`:''}</summary>
     <div class="utvalg-innhold"><p class="liten">${mote}</p>${medlemHtml(sc)}</div></details>`;
 }
@@ -773,7 +810,7 @@ function vis(){
   if(v==='politikere'){const f=arg==='partiene'?'partiene':'politikerne';visPolFane(f);
     if(f==='politikerne'){fparti=PARTI_I_FOLK.includes(arg)?arg:null;renderFChips();renderFolk()}}
   if(v==='person')renderPerson(arg);
-  if(v==='sak')renderSak(+arg);
+  if(v==='sak')visSak(+arg);
   const valgtUtvalg=v==='hvem-bestemmer'&&arg&&document.getElementById('utvalg-'+arg);
   if(valgtUtvalg){valgtUtvalg.open=true;requestAnimationFrame(()=>valgtUtvalg.scrollIntoView({block:'start'}));forrigeV=v;return}
   // Bytte av fane i samme visning flytter ikke siden.
