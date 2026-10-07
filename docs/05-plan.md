@@ -60,14 +60,23 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 ## Fase 3 — mer enn én kommune
 
 Datamodellen er allerede uavhengig av kommune, siden Elements brukes av mange.
+Koden og arbeidsflyten er gjort klare for flere kommuner (ADR-021).
 
-| Oppgave |
-|---|
-| Flere kommuner i samme løsning |
-| Varsling på tema eller geografisk område |
-| Debatt fra møteopptak, se under |
-| Politisk analyse, se under |
-| Eierskap som ikke er én person på fritiden |
+| Oppgave | Status |
+|---|---|
+| Kommunen som parameter: kilden fra `kjerne.kommune`, `--kommune`, året fra datoen | Ferdig |
+| Profiler med regelsett per kommune, og fasit som kjøres ved hver PR | Ferdig |
+| Nivåer og dekningskontroll, så stemmer ikke mangler i stillhet | Ferdig |
+| Bygg og arbeidsflyt per kommune; en feil i én kommune stopper bare den | Ferdig |
+| Driftssiden med én seksjon per kommune (i dag: tabellen «Kommunene», detaljene for Steinkjer) | Delvis |
+| Prøvekjøring av en ny kommune mot en kopi, med dekningsrapport (`kommune.prov`) | |
+| Lese voteringene i rådene som dekningen fant: «vedtatt mot 1 stemme», «7 stemte for» | |
+| Velge og legge inn den første nye kommunen | |
+| Flere år på nettstedet: i januar viser det bare det nye året | |
+| Varsling på tema eller geografisk område | |
+| Debatt fra møteopptak, se under | |
+| Politisk analyse, se under | |
+| Eierskap som ikke er én person på fritiden | |
 
 ## To ideer som er utsatt
 

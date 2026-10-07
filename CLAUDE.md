@@ -28,13 +28,16 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
 | Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging og Min konto for alle; brukere, roller, abonnement, vurdering av avvik og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
+| Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Bare Steinkjer er lagt inn. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
 
-1. **Lav takt mot portalen.** Maks ett kall i sekundet, én tråd. Portalens
-   `robots.txt` ber automatiske verktøy holde seg unna; dette er ikke avklart
-   med kommunen ennå. Se `docs/04-beslutninger.md`, ADR-007.
+1. **Lav takt mot portalen.** Maks ett kall i sekundet, én tråd, samlet for
+   verten: kommunene hentes etter tur, aldri samtidig (`kjor/alle.py`).
+   Portalens `robots.txt` ber automatiske verktøy holde seg unna; dette er ikke
+   avklart med kommunen ennå. Nye kommuner trenger ingen egen avklaring
+   (prosjekteier, 7.10.2026). Se `docs/04-beslutninger.md`, ADR-007 og ADR-021.
 2. **Stemmetall tolkes aldri av en språkmodell.** Det gjøres med
    mønstergjenkjenning i `tolk/`, og antall navn kontrolleres alltid mot
    oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av. Om en
@@ -62,11 +65,15 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 ```
 hent/      innhenting fra portalen (JSON og dokumenter)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
+tolk/profiler/  regelsettene: standarden for Elements og kommunenes egne (tolk/profil.py)
+kjor/      alle kommunene etter tur: hent, analyser og bygg (kjor/alle.py)
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
 drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til driftssiden
 lager/     all lesing og skriving av data/; resten av koden bruker bare denne
-kommuner/  det som er særegent for hver kommune i visningen: navn, utvalg, organer
+kommuner/  det som er særegent for hver kommune: kilden, regelsettet (tolk),
+           nivåene (nivaa) og visningen (navn, utvalg, organer)
+kommuner/<slug>/  partisider og tillatte navn for andre kommuner enn Steinkjer
 kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
 data/          dataene slik de var ved byttet til databasen 6.10.2026 (ADR-019);
                oppdateres ikke lenger, bortsett fra de to filene for hånd
@@ -87,6 +94,7 @@ data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
 data/drift/kjoringer.json  tall fra hver kjøring: kall mot portalen, AI-analysen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
+tester/fasit/  dokumenter kontrollert for hånd, per kommune, med forventet resultat
 supabase/  databaseskjemaet (migreringer og tester); databasen er kilden
 ```
 
@@ -108,6 +116,12 @@ python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
+python -m tester.fasit                  # fasiten for tolkningen, alle kommunene (uten database)
+python -m tolk.dekning 2026             # hvor mye av protokollene regelsettet leser
+python -m kjor.alle hent|analyser|bygg 2026  # alle kommunene etter tur, som arbeidsflyten
+KOMMUNELYS_KOMMUNE=steinkjer python -m ...   # én kommune (standard: steinkjer)
+python -m bygg.bygg_nettsted 2026 --kommune steinkjer --uten-felles  # bare nettsted/steinkjer/
+python -m bygg.bygg_nettsted --felles   # forsiden, /om/, 404 og driftssiden fra nettsted/*/
 KOMMUNELYS_I_DAG=2026-10-04 python -m tolk.bygg_saker 2026  # tolk og bygg som om det var en annen dag
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
 python -m lager.synk --konfig          # speil tillatte navn og partilenker inn
@@ -239,7 +253,17 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Navnevarianter.** Samme person skrives ulikt i samme dokument, for
   eksempel «Tor André Eide» og «Tor Andre Eide». Oppmøtelisten bruker ofte
   fullt navn der navnelistene i voteringene ikke gjør det, for eksempel
-  «Enok Askil Moe» og «Enok Moe». Normaliseres i `tolk/navn.py`.
+  «Enok Askil Moe» og «Enok Moe». Normaliseres i `tolk/navn.py`, med
+  variantene i kommunens profil (`navnevarianter` i `kommuner/<slug>.json`).
+- **Ingen treff er ikke det samme som ingen voteringer.** Skriver en kommune
+  protokollene annerledes enn mønstrene venter, blir det ikke feil, bare tomt.
+  `tolk/dekning.py` finner protokoller som nevner at noen stemte uten at en
+  votering ble funnet. I Steinkjer fant den «Forslaget ble vedtatt mot 1
+  stemme (…)» og «7 stemte for … 0 stemte imot» i rådene.
+- **Mønstre hører hjemme i profilen.** Et nytt mønster eller en ny kode for et
+  utvalg i koden ville gjeldt alle kommunene. Legg det i
+  `tolk/profiler/elements.py` (alle) eller i kommunens profil, og kjør
+  fasiten for alle kommunene.
 - **Oppmøtelisten og stemmene stemmer ikke alltid overens.** I 6 møter i
   2026 stemmer noen som ikke står på oppmøtelisten, eller det er flere
   stemmer enn frammøtte. Det står slik i protokollene. `tolk.bygg_oppmote`
@@ -349,6 +373,24 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Hver spørring mot databasen tar rundt 50 ms, og tekst går med 0,6 MB/s.**
   `lager/pg.py` husker derfor svarene i prosessen og henter tekst bare når den
   trengs. Spør ikke i en løkke.
+
+## Flere kommuner (ADR-021)
+
+- **En ny kommune** legges inn med en migrering (`kjerne.kommune` med
+  `kilde_konfig` og status), og med `kommuner/<slug>.json` der kilden er lik.
+  Status `kartlegging` hentes ikke, `intern` hentes og bygges uten å
+  publiseres, `publisert` går ut.
+- **Regelsettet:** felt i `kommuner/<slug>.json` under `tolk` erstatter
+  standarden; `<felt>_tillegg` legger til. Mønstre skrives som tekst. Det som
+  ikke kan skrives som data, går i `tolk/profiler/<slug>.py` (`OVERSTYR`).
+- **Fasit først:** legg 3–5 dokumenter fra kommunen i `tester/fasit/<slug>/`,
+  kjør `python -m tester.fasit <slug> --skriv`, og kontroller hver `.json`
+  mot dokumentet for hånd før den committes.
+- **Nivåer:** uten `nivaa` er alt med. Sett `"nivaa": {"voteringer": false}`
+  til dekningen er over 95 %.
+- **Prøv mot en kopi:** `KOMMUNELYS_LAGER=json KOMMUNELYS_DATA=<mappe>`.
+  `data/` hører til Steinkjer; `lager/_fil.py` stopper en annen kommune som
+  vil lese eller skrive der.
 
 ## Språk
 
