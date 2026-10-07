@@ -296,7 +296,19 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 /* Saksflyt og utvalg */
 .flyt{margin:0 0 12px;padding-left:22px;display:grid;gap:8px}
 .flyt li::marker{font-weight:700;color:var(--lenke)}
-.org td{font-size:14.5px}
+.blokk.smal{max-width:760px}
+.utvalg-gr{font-size:15px;color:var(--muted);margin:22px 0 6px;font-weight:600}
+.utvalg{border-bottom:1px solid var(--line)}
+.utvalg:first-of-type{border-top:1px solid var(--line)}
+.utvalg>summary{padding:11px 0;cursor:pointer;font-weight:400;font-size:16px;color:var(--ink)}
+.utvalg>summary b{font-weight:650}
+.utvalg>summary:hover b{color:var(--lenke)}
+.utvalg-innhold{padding:0 0 14px 18px}
+.utvalg-innhold>p{margin:0 0 8px}
+.medl{list-style:none;margin:6px 0 8px;padding:0;columns:2 220px;column-gap:24px}
+.medl li{padding:2px 0;font-size:15px;break-inside:avoid}
+.medl .dot{margin-right:6px}
+#utvalg-KS,.utvalg{scroll-margin-top:130px}
 
 /* Siste fra kommunestyret */
 #ins p{max-width:60ch}
@@ -304,6 +316,8 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 /* Saker */
 .filter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px}
 .filter select{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;max-width:100%}
+/* Lange utvalgsnavn skal ikke gjøre valgene bredere enn resten av raden. */
+#v-saker .filter select{max-width:min(100%,230px)}
 .avkr{font-size:14px;display:flex;gap:6px;align-items:center}
 .valg{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
 .valg button{font-size:14px;border:1px solid var(--line);background:none;border-radius:4px;padding:3px 9px;cursor:pointer;display:inline-flex;align-items:center}
@@ -313,106 +327,122 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .antall{font-size:14px;color:var(--muted);margin:4px 0 6px}
 .saker{border-top:1px solid var(--ink)}
 .sak{border-bottom:1px solid var(--line)}
-.sak>button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;width:100%;padding:14px 0;background:none;border:0;text-align:left;cursor:pointer}
+.sak>a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:14px 0;color:var(--ink);text-decoration:none}
 .sak .t{font-weight:650;font-size:16.5px;line-height:1.35}
-.sak>button:hover .t{color:var(--lenke)}
+.sak>a:hover .t{color:var(--lenke);text-decoration:underline}
 .sak .o{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:2px}
 .sak .r{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:13.5px}
 .sak .m{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-size:13.5px;color:var(--muted)}
-@media (max-width:600px){.sak>button{grid-template-columns:minmax(0,1fr)}.sak .r{flex-direction:row;align-items:center;gap:10px}}
-.sak .det{padding:2px 0 20px;display:grid;gap:14px}
+@media (max-width:600px){.sak>a{grid-template-columns:minmax(0,1fr)}.sak .r{flex-direction:row;align-items:center;gap:10px}}
 .ai{border-left:3px solid var(--line);padding-left:14px;max-width:70ch;display:grid;gap:8px}
 .ai p{margin:0}
 .ki{justify-self:start;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 5px}
 .aikilde{font-size:13.5px;color:var(--muted)}
-.steg{display:grid;font-size:14.5px;border-top:1px solid var(--line)}
-.steg>div{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
-.steg .lk{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
-@media (max-width:560px){.steg>div{grid-template-columns:70px minmax(0,1fr)}.steg .lk{grid-column:2;justify-content:flex-start}}
 .knapp{margin-top:14px;background:none;border:1px solid var(--ink);border-radius:4px;padding:7px 14px;cursor:pointer;font-weight:600}
 .knapp:hover{background:var(--ink);color:var(--bg)}
 
+/* Saksiden: saksgangen som en loddrett tråd, og forslagene som bokser.
+   Forslaget som ble vedtatt eller vant, har grønn ramme. */
+.saksside .ingress h1{max-width:30ch}
+.saksside .ingress>.muted{margin-top:6px}
+.sak-status{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;font-size:14px}
+.saksside>.ai{margin-top:4px}
+.saksside .blokk>p{max-width:70ch}
+.trad{list-style:none;margin:8px 0 0 6px;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.trad-steg{position:relative;padding:0 0 24px}
+.trad-steg:last-child{padding-bottom:0}
+.trad-steg::before{content:"";position:absolute;left:-30px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--muted);box-sizing:border-box}
+.trad-steg.rad::before{width:10px;height:10px;left:-28px;top:6px;border:0;background:var(--line)}
+.trad-steg.fram::before{border-style:dashed;border-width:2px;border-color:var(--lenke)}
+.trad-steg.slutt::before{background:var(--good);border-color:var(--good)}
+.trad-hode{font-size:16px}
+.trad-steg.rad .trad-hode b{font-weight:500}
+.trad-tekst{margin:2px 0 0;font-size:15px;max-width:70ch}
+.trad-steg.rad .trad-tekst{color:var(--muted)}
+.trad-lenker{margin:8px 0 0;color:var(--muted)}
+.fboks{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:10px 14px;margin-top:10px;max-width:640px;display:grid;gap:6px}
+.fboks.vant{border:2px solid var(--good);padding:9px 13px}
+.fboks-topp{display:flex;justify-content:space-between;align-items:baseline;gap:4px 14px;flex-wrap:wrap;font-size:15px}
+.fboks-topp b{font-weight:650}
+.utf{font-size:13px;font-weight:700;white-space:nowrap;border-radius:999px;padding:1px 9px;background:var(--soft);color:var(--muted);font-variant-numeric:tabular-nums}
+.utf.ok{background:color-mix(in srgb,var(--good) 14%,transparent);color:var(--good)}
+.fboks .bar{max-width:100%}
+.lg{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13px;color:var(--muted)}
+.lg b{color:var(--ink);font-weight:600}
+.lg .sq{margin-right:4px}
+.fboks details summary{font-size:14px}
+.fboks details>*+*{margin-top:8px}
+.fboks .names{padding:4px 0 0}
+.trad-steg>.merk{margin:8px 0 0;max-width:640px}
+.falt{margin-top:10px;max-width:640px}
+.falt>summary{font-size:14.5px}
+.fboks .why{margin:0;font-size:13.5px;color:var(--warn)}
+
 /* Møter */
 .mnd{font-size:17px;margin:26px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
-.mote{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
-.mote .docs{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;font-size:14px}
-@media (max-width:640px){.mote{grid-template-columns:minmax(0,1fr);gap:2px}.mote .docs{justify-content:flex-start}}
+/* Kalenderen: rutenett på brede skjermer, liste på smale. */
+.kal-hode{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:4px 0 12px}
+.kal-hode h2{min-width:9.5ch;text-align:center;font-size:20px}
+.kal-pil{background:var(--surface);border:1px solid var(--line);border-radius:6px;width:36px;height:36px;font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
+.kal-pil:hover{border-color:var(--lenke);color:var(--lenke)}
+.kal-idag{background:none;border:0;padding:4px;color:var(--lenke);font-weight:600;font-size:14.5px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.kal-hode select{margin-left:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;max-width:min(100%,260px)}
+.kal{border-top:1px solid var(--ink)}
+.kal-uke{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.kal-dager span{font-size:13px;font-weight:600;color:var(--muted);padding:6px 6px 4px}
+.kal-dag{min-height:96px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:4px 5px 6px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.kal-dag:nth-child(7n+1){border-left:1px solid var(--line)}
+.kal-dag.tom{background:var(--soft)}
+.kal-nr{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.kal-dag.idag .kal-nr{color:var(--bg);background:var(--lenke);border-radius:999px;align-self:flex-start;padding:0 7px;font-weight:700}
+.kal-m{display:block;font-size:13px;line-height:1.3;padding:3px 6px;border-radius:4px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.kal-m.fram{border-color:var(--lys);background:var(--lys-flate)}
+.kal-m:hover{border-color:var(--lenke);color:var(--lenke)}
+.kal-m .mono{color:var(--muted)}
+.mliste{display:none}
+.mote{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
+.mote:hover b{color:var(--lenke);text-decoration:underline}
+.mote>span:last-child{display:grid}
+.mote-dato{font-variant-numeric:tabular-nums;color:var(--muted)}
+.mote-dato b{color:var(--ink);font-size:17px}
+@media (max-width:700px){.kal{display:none}.mliste{display:block;border-top:1px solid var(--ink)}.kal-hode select{margin-left:0;flex-basis:100%}}
+/* Møtesiden */
+.mote-fakta{font-size:17px}
+.mote-saker{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.mote-sak{padding:12px 0;border-bottom:1px solid var(--line);display:grid;gap:3px;max-width:75ch}
+.mote-sak-topp{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-size:13.5px}
+.mote-sak a.t{font-weight:650;font-size:16.5px;line-height:1.35;color:var(--ink);text-decoration:none}
+.mote-sak a.t:hover{color:var(--lenke);text-decoration:underline}
+.mote-sak .o{font-size:14px;color:var(--muted)}
+.mote-sak p{margin:4px 0 0}
+.mote-sak .ki{margin-right:4px}
+.mnd a{color:inherit;text-decoration:none}
+.mnd a:hover{color:var(--lenke);text-decoration:underline}
+.mote-gr h3 a{color:inherit;text-decoration:none}
+.mote-gr h3 a:hover{color:var(--lenke);text-decoration:underline}
+.trad-hode a{color:inherit}
 
 /* Stemmer */
 .bar{display:flex;height:10px;border-radius:2px;overflow:hidden;background:var(--soft);gap:1px}
 .bar span{display:block;height:100%}
 .bar .gap{background:var(--bg);width:3px;flex:none}
-/* Stemmer: tre faner, og sakene som linjer som kan åpnes */
+/* Faner under Saker og Politikere */
 .faner{display:flex;gap:4px;margin:20px 0 18px;box-shadow:inset 0 -1px var(--line);overflow-x:auto;scrollbar-width:none}
 .faner a{padding:9px 14px;border-bottom:3px solid transparent;color:var(--muted);font-weight:600;text-decoration:none;white-space:nowrap}
 .faner a:hover{color:var(--ink)}
 .faner a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--lenke)}
+.faner .ant{font-weight:400;color:var(--muted);margin-left:2px}
+@media (max-width:480px){.faner{gap:0}.faner a{padding:9px 6px;font-size:14.5px}}
 .grunnlag{margin:0 0 14px;padding:10px 14px;border-left:3px solid var(--lenke);background:var(--surface);max-width:75ch;font-size:15px}
-#vnokkel{margin:12px 0 8px}
-.advarsel{margin:0 0 14px;padding:10px 14px;border-left:3px solid var(--warn);background:var(--surface);max-width:75ch;font-size:15px;display:grid;gap:6px}
-.advarsel p{margin:0}
-.vc{border-bottom:1px solid var(--line)}
-.vc:first-of-type,.motehode+.vc{border-top:1px solid var(--ink)}
-.vc>summary{list-style:none;display:grid;gap:4px;padding:14px 30px 14px 0;position:relative;color:var(--ink);font-weight:400;font-size:16px}
-.vc>summary::-webkit-details-marker{display:none}
-.vc>summary::after{content:"";position:absolute;right:8px;top:20px;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .15s}
-.vc[open]>summary::after{transform:rotate(-135deg);top:24px}
-.vc>summary:hover h3{color:var(--lenke)}
-.vc-topp{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between;align-items:baseline}
-.vc-merker{display:inline-flex;gap:10px}
-.vc>summary .svar{margin:2px 0 0;font-size:15px;color:var(--muted)}
-/* Åpen sak: setningen står i «Vedtaket», så den skjules her. */
-.vc[open]>summary .svar{display:none}
-.vc-innhold{display:grid;gap:10px;padding:0 0 16px}
-.res.ks{color:var(--warn)}
-.vtop{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:20px}
-@media (max-width:720px){.vtop{grid-template-columns:minmax(0,1fr);gap:8px}}
-.vc .sum{max-width:70ch;display:grid;gap:6px}
-.vc .sum p{margin:0}
-.score{font-size:26px;font-weight:750;line-height:1;font-variant-numeric:tabular-nums}
-.score small{font-size:13px;color:var(--muted);font-weight:500;margin-left:6px}
 details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenke)}
-/* Én votering: hva, hvem, utfall, og et utdrag som kan foldes ut til hele forslaget */
-.vots{display:grid;margin:4px 0 0;padding:0;list-style:none}
-.vnr{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft);font-size:13px;font-weight:700;color:var(--muted)}
-.vot-hva{flex:1 1 280px;min-width:0}
-.vot-topp{align-items:flex-start}
-/* Vedtaket først i saken, så avstemningene */
-.vedtaket{padding:12px 14px;border-left:3px solid var(--good);background:var(--surface);display:grid;gap:6px;max-width:75ch}
-.vedtaket h4,.stemt h4{margin:0;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.vedtaket p{margin:0}
-.vedtaket .forslag{margin-top:6px}
-.stemt{display:grid;gap:4px}
-.stemt>p{margin:0}
-.vot{padding:12px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
-.vot:last-child{border-bottom:0}
-.vot-topp{display:flex;justify-content:space-between;align-items:baseline;gap:4px 16px;flex-wrap:wrap;font-size:15px}
-.vot-res{white-space:nowrap;font-size:14px}
-.vot-res .num{font-weight:700;margin-right:6px}
-.vot .bar{max-width:340px}
 .res{font-size:13.5px;font-weight:700}
 .res.ok{color:var(--good)} .res.no{color:var(--bad)}
-.vot .why{margin:0;font-size:13.5px;color:var(--warn)}
-.mer{justify-self:start;background:none;border:0;padding:2px 0;color:var(--lenke);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
-.full{display:grid;gap:10px}
 .forslag{max-width:75ch;font-size:15px;border-left:3px solid var(--line);padding-left:14px}
 .forslag p{margin:0 0 8px}
 .forslag ol,.forslag ul{margin:0;padding-left:22px;display:grid;gap:6px}
-.utfall{margin:6px 0 0;font-size:14.5px;font-weight:600}
 .klipp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.ordliste{margin:12px 0 0;max-width:75ch}
-.slik{margin:0 0 18px;padding-left:22px;display:grid;gap:6px;max-width:75ch}
-.slik li::marker{font-weight:700;color:var(--lenke)}
-.velg{display:grid;gap:4px;font-size:14px;font-weight:600;max-width:min(100%,440px)}
 /* Lange møtenavn skal ikke gjøre siden bredere enn skjermen. */
-.velg select{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-weight:400;font-size:16px}
-.motehode{font-size:18px;margin:28px 0 0;padding-bottom:6px;border-bottom:2px solid var(--ink)}
-.motelinje{margin:0 0 4px}
-.svar{margin:8px 0 4px;font-size:16px;max-width:70ch}
 .forslag h4{margin:10px 0 4px;font-size:14.5px}
-.ordliste dl{margin:8px 0 0;font-size:15px}
-.ordliste dt{font-weight:700;margin-top:8px}
-.ordliste dd{margin:0}
 .names{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:8px 6px 14px;font-size:14px}
 @media (max-width:560px){.names{grid-template-columns:1fr}}
 .names h4{margin:0 0 6px;font-size:14px}
@@ -428,10 +458,6 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .vrow{display:grid;grid-template-columns:110px minmax(0,1fr) 48px 60px;gap:10px;font-size:14px;padding:6px 0;border-bottom:1px solid var(--line)}
 @media (max-width:560px){.vrow{grid-template-columns:minmax(0,1fr) 48px 56px}.vrow>:first-child{grid-column:1/-1}}
 .v.for{color:var(--good);font-weight:700}.v.mot{color:var(--bad);font-weight:700}
-.meter{display:inline-block;width:56px;height:5px;background:var(--soft);vertical-align:middle;margin-left:8px;overflow:hidden}
-.meter i{display:block;height:100%;background:var(--lys)}
-.utvalgt{margin-top:18px}
-.utvalgt h3{margin:2px 0 6px}
 .jevn{display:grid;gap:5px;padding:10px 0;border-bottom:1px solid var(--line)}
 .jevn>div:first-child{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 

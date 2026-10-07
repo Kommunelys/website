@@ -339,8 +339,9 @@ innholdet, ikke merkevaren.
   `/#person/…`) sendes dit.
 - Malen i `bygg/mal/` nevner ingen kommune. Det som er særegent for kommunen,
   står i `kommuner/<kommune>.json`. `tester.kontroller` stopper hvis malen
-  nevner en kommune, og bygget stopper hvis en kommuneside mangler
-  «Ikke laget av <kommune> kommune».
+  nevner en kommune, og bygget stopper hvis bunnteksten mangler
+  «er en uoffisiell tjeneste» (før 7.10.2026: «Ikke laget av <kommune>
+  kommune»).
 - Merket er et åpent vindu: en blekkramme og en lys blå rute, i SVG. Ingen
   kommunevåpen, skjold eller foto av steder.
 - Fargene er blekk og papir med lys blå (`#60A5FA`) som pynt. Lys blå har bare
@@ -406,8 +407,10 @@ at den behandlingsansvarlige oppgis.
 
 - Om-siden har avsnittet «Hvem står bak», skrevet i jeg-form med navnet én
   gang. Det har bilde, hvorfor tjenesten finnes, bindinger og hvem som er
-  ansvarlig. Bunnteksten på forsiden, Om-siden og `/drift/` sier «laget av
-  Karl Kristian Aurstad».
+  ansvarlig. Bunnteksten sa først «laget av Karl Kristian Aurstad». Fra
+  7.10.2026 sier den på alle sidene «Kommunelys er en uoffisiell tjeneste,
+  laget av en innbygger for innbyggerne», og navnet står bare på Om-siden
+  (prosjekteier).
 - Navnet er et bevisst unntak fra regelen om at tekst tjenesten skriver selv,
   ikke har navn på privatpersoner. Det gjelder bare prosjekteier, og bare her.
 - Arbeidsforholdene står under bindingene: tidligere ansatt i Steinkjer
