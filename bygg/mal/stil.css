@@ -218,6 +218,12 @@ h2.mt{border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:10px}
 .st.ks{color:var(--warn)} .st.tb{color:var(--lenke)} .st.ok{color:var(--good)} .st.bh{color:var(--muted)} .st.vp{color:var(--info)}
 .sti{color:var(--muted)}
 .sti b{color:var(--ink);font-weight:600}
+/* Utvalget i sakslisten, merket etter nivå */
+.utv{display:inline-block;font-size:13px;font-weight:600;line-height:1.35;border-radius:999px;padding:1px 9px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.utv.ks{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.utv.fs{border-color:var(--ink)}
+.utv.hu{background:var(--lys-flate);border-color:var(--lys)}
+.utv.andre{background:var(--soft);color:var(--muted)}
 .tag{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 5px;white-space:nowrap}
 
 /* Tabeller */
