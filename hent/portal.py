@@ -19,7 +19,7 @@ from dataclasses import dataclass
 
 # ADR-007: lav takt, én tråd, identifiserbar klient.
 PAUSE_SEKUND = 1.0
-KONTAKT = "kommunelys (uoffisiell innsynstjeneste; kontakt: karlkristian@gmail.com)"
+KONTAKT = "kommunelys (uoffisiell innsynstjeneste; kontakt: post@kommunelys.no)"
 
 
 @dataclass(frozen=True)

@@ -50,8 +50,8 @@ const stPill=s=>`<span class="st ${stCls[s]||'bh'}">${s}</span>`;
 /* Sammendrag fra KI (c.a) vises bare når det har bestått kontrollene i bygget. */
 const tittel=c=>c.a?c.a.tk:c.t;
 const sokTekst=c=>(c.t+' '+(c.a?`${c.a.tk} ${c.a.sum}`:'')).toLowerCase();
-// Til kontaktskjemaet på Om-siden når det er satt opp, ellers til GitHub.
-const meldUrl=c=>S.skjema?`../om/?sak=${encodeURIComponent(`${(c.first||c.st[0]).nr} ${c.t}`)}&lenke=${encodeURIComponent(location.origin+location.pathname+'#sak/'+c.id)}#kontakt`:`${S.meld}?title=${encodeURIComponent('Feil i sammendraget: '+(c.first||c.st[0]).nr)}&body=${encodeURIComponent(`Sak: ${c.t}\nSaksnummer: ${(c.first||c.st[0]).nr}\n\nHva er feil?\n`)}`;
+// En e-post til kontaktadressen med saken fylt inn, eller GitHub uten adresse.
+const meldUrl=c=>{const nr=(c.first||c.st[0]).nr;return S.epost?`mailto:${S.epost}?subject=${encodeURIComponent('Feil i sammendraget: '+nr)}&body=${encodeURIComponent(`Sak: ${c.t}\nSaksnummer: ${nr}\n${location.origin+location.pathname}#sak/${c.id}\n\nHva er feil?\n`)}`:`${S.meld}?title=${encodeURIComponent('Feil i sammendraget: '+nr)}&body=${encodeURIComponent(`Sak: ${c.t}\nSaksnummer: ${nr}\n\nHva er feil?\n`)}`};
 const ut=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
 function oppsummering(c){
   if(!c.a)return c.typ==='PS'&&!c.formal?'<p class="liten muted">Ingen sammendrag ennå. Les dokumentene i lenkene under.</p>':'';
@@ -59,7 +59,7 @@ function oppsummering(c){
   // Kildene står i detaljene. Uten kildelenke vises ikke sammendraget (CLAUDE.md regel 5).
   if(!a.kilder)return '';
   return `<div class="ai"><span class="ki">KI-sammendrag</span><p>${esc(a.sum)}</p>${a.bet?`<p><b>Hva betyr det?</b> ${esc(a.bet)}</p>`:''}${a.uen?`<p><b>Uenigheten:</b> ${esc(a.uen)}</p>`:''}
-   <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}. Dokumentene gjelder. ${ut(meldUrl(c),'Meld fra om feil')}</p></div>`;
+   <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}. Dokumentene gjelder. ${S.epost?`<a href="${meldUrl(c)}">Meld fra om feil</a>`:ut(meldUrl(c),'Meld fra om feil')}</p></div>`;
 }
 // Saksgangen på én linje med korte navn: «Helse og omsorg › Formannskapet › Kommunestyret».
 const utvKort=sc=>(K.utvalg_liste||{})[sc]||utName(sc);

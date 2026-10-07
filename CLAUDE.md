@@ -214,6 +214,10 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   - `post@kommunelys.no` tar imot e-post hos Domeneshop (MX
     `mx.domeneshop.no`, SPF `include:_spf.domeneshop.no`) og videresender til
     prosjekteier. Prosjekteier svarer fra Gmail som post@ via `smtp.resend.com`.
+  - `post@kommunelys.no` er kontaktadressen overalt: på Om-siden
+    (`KONTAKT_EPOST` i `bygg/bygg_nettsted.py`), i «Meld fra om feil», som
+    åpner en e-post med saken fylt inn, og i `User-Agent` mot innsynsportalen
+    (`hent/portal.py`). Ingen personlig adresse og ikke noe kontaktskjema.
   - Leveres e-post («250»), men kommer ikke fram, er det filteret hos
     mottakeren: søppelpost eller karantene i Microsoft 365.
 - **Captcha (hCaptcha):** Supabase krever den ved registrering, innlogging og

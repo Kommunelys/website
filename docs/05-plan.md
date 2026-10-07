@@ -126,9 +126,10 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
 - [x] Velge domene: kommunelys.no
 - [x] Sette opp kommunelys.no: DNS hos registraren og eget domene i
       Pages-innstillingene, med HTTPS
-- [ ] Opprette en e-postadresse på kommunelys.no for feil og innspill, og
-      sette den i `KONTAKT_EPOST` i `bygg/bygg_nettsted.py`. Til da vises
-      bare GitHub på Om-siden
+- [x] Opprette en e-postadresse på kommunelys.no for feil og innspill, og
+      sette den i `KONTAKT_EPOST` i `bygg/bygg_nettsted.py`: `post@kommunelys.no`
+      (7.10.2026). Den står på Om-siden, i «Meld fra om feil» og i
+      `User-Agent` mot innsynsportalen
 
 ## Kjente mangler i nettstedet
 

@@ -419,7 +419,9 @@ at den behandlingsansvarlige oppgis.
   kommune, nå i et IKS i en annen kommune på Innherred. Dagens arbeidsgiver
   nevnes ikke ved navn. Setningen med kommunenavnet er unntatt fra kontrollen
   av malen (`TILLATT_I_MALEN` i `tester/kontroller.py`).
-- Kontakt går gjennom skjemaet, ikke en personlig e-postadresse.
+- Kontakt går til `post@kommunelys.no`, ikke en personlig e-postadresse.
+  Adressen står under navnet, under «Ansvar» og «Kontakt oss». Skjemaet
+  (Formspree) ble fjernet 7.10.2026, da adressen var satt opp (prosjekteier).
 - Bildet ligger i `bygg/mal/karl-kristian-aurstad.jpg`, 320×320 uten metadata, og
   kopieres til `/om/` i bygget.
 - Bindingene skal være sanne til enhver tid. Endres noe, for eksempel
