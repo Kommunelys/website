@@ -522,3 +522,48 @@ skal forbli statisk og åpent.
 - Personvern: en brukerkonto lagrer e-postadresse og innloggingstider hos
   Supabase i EU. Ingen egen profiltabell. Kontoen kan slettes av brukeren
   selv. Står på Om-siden.
+
+## ADR-021 — Flere kommuner: profiler, nivåer og dekning
+
+**Besluttet.** Prosjekteier, 7.10.2026. Utdyper ADR-007 og ADR-016.
+
+Databasen var laget for flere kommuner (ADR-019), men koden var låst til
+Steinkjer: adressen til portalen, mønstrene som leser protokollene, «KS»,
+AI-instruksjonen, bygget og arbeidsflyten. Kommunene bruker samme API
+(Elements), men skriver protokollene ulikt. En kommune som skriver annerledes
+enn mønstrene venter, gir ikke feil, bare tomt: stemmene mangler uten at noe
+sier fra.
+
+**Konsekvens:**
+
+- Hver kommune har et regelsett, en profil: standarden for Elements
+  (`tolk/profiler/elements.py`, fra Steinkjers dokumenter i 2026) med
+  kommunens endringer i `kommuner/<slug>.json` under `tolk`, og valgfritt
+  `tolk/profiler/<slug>.py` for det som ikke kan skrives som data
+  (`tolk/profil.py`). Kontrollen av stemmetall (ADR-002) er lik for alle og er
+  ikke en del av profilen.
+- Kilden (adressen, tenant og databasen) står i `kjerne.kommune.kilde_konfig`
+  og i `kommuner/<slug>.json`. `tester.kontroller` stopper om de er ulike.
+  En ny kommune og en ny status legges inn med en migrering.
+- Hver kommune har en fasit i `tester/fasit/<slug>/`: dokumenter kontrollert
+  for hånd mot teksten, med forventet resultat. Den kjøres ved hver PR.
+  Endres standarden, skal fasiten for alle kommunene bestå.
+- Dekningen (`tolk/dekning.py`) måler hvor mye av protokollene regelsettet
+  leser. En saksprotokoll som nevner at noen stemte, uten at en votering er
+  funnet, er mistenkt. Grensen er 95 %. Steinkjer 2026: 98 % for voteringene
+  (241 av 245) og 100 % for oppmøtet. Tre av de fire mistenkte er ekte
+  voteringer i rådene som mønstrene ikke leser ennå.
+- Nivåer: en kommune kan publiseres med saker, saksgang, status og
+  sammendrag før stemmene og oppmøtet kan leses sikkert (`nivaa` i
+  `kommuner/<slug>.json`). Sidene sier da at stemmene ikke vises ennå, og
+  hvorfor. Med stemmer eller oppmøte på må dekningen være over grensen, ellers
+  stopper `tester.kontroller` kommunen.
+- Takten mot portalen (ADR-007) gjelder samlet for verten, ikke per kommune.
+  Kommunene hentes etter tur, aldri samtidig (`kjor/alle.py`). Nye kommuner
+  trenger ingen egen avklaring med kommunen; de hentes med samme lave takt
+  (prosjekteier, 7.10.2026).
+- En feil i én kommune stopper bare den. En publisert kommune som stopper i
+  kontrollene, eller der innhentingen feilet, beholder versjonen som er
+  publisert. Kan den verken bygges eller hentes, publiseres ingenting.
+  Status `intern` i `kjerne.kommune` bygges og kontrolleres, men publiseres
+  ikke: det er prøvesteget før en kommune går ut.

@@ -1,9 +1,39 @@
 {
-  "merknad": "Det som er særegent for kommunen i visningen. Malen i bygg/mal/ skal ikke nevne noen kommune ved navn; det kontrolleres av tester.kontroller.",
+  "merknad": "Det som er særegent for kommunen: kilden i portalen, regelsettet for tolkningen og visningen. Malen i bygg/mal/ skal ikke nevne noen kommune ved navn; det kontrolleres av tester.kontroller. Kilden må være lik kilde_konfig i kjerne.kommune.",
   "slug": "steinkjer",
   "navn": "Steinkjer",
   "kommunenr": "5006",
+  "kilde": {
+    "basis": "https://prod01.elementscloud.no/publikum/",
+    "tenant": "840029212_PROD-840029212",
+    "database": "b069d4f5-192a-4fee-be37-dc006441e271"
+  },
   "kontrollert_for_hand": "Kommunestyret 16.09.2026: 42 av 42 avstemninger riktig",
+  "tolk": {
+    "merknad": "Det som skiller Steinkjer fra standarden for Elements (tolk/profiler/elements.py). Se tolk/profil.py.",
+    "partikoder_tillegg": {
+      "Industri- og næringspartiet": "INP"
+    },
+    "navnevarianter": {
+      "Tor Andre Eide": "Tor André Eide",
+      "Line M Nordkvelle": "Line Mari Nordkvelle",
+      "Monika Luktvasslimo": "Monika Skoglund Luktvasslimo",
+      "Enok Moe": "Enok Askil Moe",
+      "Terje Langli": "Terje Bjarte Langli"
+    },
+    "partinavn": {
+      "AP": "Arbeiderpartiet",
+      "FRP": "Fremskrittspartiet",
+      "H": "Høyre",
+      "INP": "Industri- og næringspartiet",
+      "PP": "Pensjonistpartiet",
+      "R": "Rødt",
+      "SP": "Senterpartiet",
+      "SV": "Sosialistisk Venstreparti",
+      "V": "Venstre",
+      "UAVH": "uavhengig representant"
+    }
+  },
   "utvalg_kort": {
     "KS": "Kommunestyret",
     "FS": "Formannskapet",

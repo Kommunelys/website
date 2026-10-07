@@ -37,14 +37,17 @@ import lager
 from bygg import drift
 from lager import analyse as lager_analyse
 from lager import drift as lager_drift
+from lager import kommune as lager_kommune
 from lager import konfig
 from lager import oppmote as lager_oppmote
 from lager import saker as lager_saker
 from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
 from tester.kontroller import sammendrag_avvik_alle, unntatte_navn
+from tolk import dekning
 from tolk.bygg_avvik import AVGJORELSER, finn_avvik, holdt_tilbake
-from tolk.navn import PARTIKODER, normaliser, partikode
+from tolk.navn import normaliser, partikode
+from tolk.profil import profil
 
 ROT = Path(__file__).resolve().parent.parent
 MAL = Path(__file__).resolve().parent / "mal"
@@ -156,18 +159,26 @@ GRUNN = {
 UKJENT = "ikke_vurdert"
 
 
-def _kommune() -> dict:
-    """Oppsettet for kommunen nettstedet bygges for.
+# Det i kommuner/<slug>.json som ikke hører til visningen, og ikke sendes til
+# nettleseren: kilden i portalen, regelsettet og nivåene.
+IKKE_VISNING = ("kilde", "tolk", "nivaa")
 
-    Til dataene ligger per kommune (fase 3), hører data/ til én kommune, og det
-    må være nøyaktig én fil i kommuner/.
-    """
-    filer = sorted(KOMMUNER.glob("*.json"))
-    if len(filer) != 1:
-        raise SystemExit(f"fant {len(filer)} kommuner i kommuner/, men data/ har bare én")
-    k = json.loads(filer[0].read_text("utf-8"))
-    k.pop("merknad", None)
+
+def _kommune(slug: str | None = None) -> dict:
+    """Visningsoppsettet for kommunen (standard: den bygget gjelder, KOMMUNELYS_KOMMUNE)."""
+    slug = slug or lager_kommune.slug()
+    k = lager_kommune.oppsett(slug)
+    for nokkel in IKKE_VISNING:
+        k.pop(nokkel, None)
+    # Malen bruker «KS» når kommunen ikke har en annen kode for kommunestyret.
+    if profil(slug).kommunestyre_kode != "KS":
+        k["kommunestyre_kode"] = profil(slug).kommunestyre_kode
     return k
+
+
+def _nivaa() -> dict:
+    """Hva kommunen publiseres med (ADR-021). Uten «nivaa» er alt med."""
+    return {"voteringer": True, "oppmote": True} | lager_kommune.oppsett().get("nivaa", {})
 
 
 def _fyll(mal: str, verdier: dict[str, str]) -> str:
@@ -277,7 +288,7 @@ def _folk(verv: list) -> list[dict]:
     profil. Alt kommer fra medlemslistene og møteprotokollene; ingenting er
     skrevet av en modell, og ingenting er hentet fra andre kilder.
     """
-    partier = set(PARTIKODER.values())
+    partier = set(profil().partikoder.values())
     # Samlet på navn, ikke person-ID: portalen har noen ganger to ID-er for
     # samme person (Monika Luktvasslimo i HPNM). Navnene er normalisert i
     # tolk/navn.py, slik stemmene også er.
@@ -289,7 +300,7 @@ def _folk(verv: list) -> list[dict]:
         if not any(v["repr"] in partier for v in vs):
             continue
         # Partiet i kommunestyret gjelder; ellers det som står i flest verv.
-        ks = [v["repr"] for v in vs if v["utvalg"] == "KS" and v["repr"] in partier]
+        ks = [v["repr"] for v in vs if v["utvalg"] == profil().kommunestyre_kode and v["repr"] in partier]
         parti = ks[0] if ks else collections.Counter(
             v["repr"] for v in vs if v["repr"] in partier).most_common(1)[0][0]
         ut.append({
@@ -316,7 +327,7 @@ def _oppmote(o: dict, partier: set) -> dict:
 
 
 def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
-       vedtak: dict) -> dict:
+       vedtak: dict, med_oppmote: bool = True) -> dict:
     """Saker, møter, utvalg og kommunestyret, i formen malen bruker.
 
     vedtak er vedtaksteksten per behandling, uendret fra protokollen. Den står
@@ -325,9 +336,10 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
     politiske = collections.Counter(
         st["mote_id"] for s in saker if s["sakstype"] == "PS" and not s["formalia"]
         for st in s["saksgang"])
-    oppmote = lager_oppmote.les(aar, [])
+    # Uten oppmøte i nivåene vises det ikke, og malen sier hvorfor (S.ikke_oppmote).
+    oppmote = lager_oppmote.les(aar, []) if med_oppmote else []
     opp_mote = {o["mote_id"]: o for o in oppmote}
-    partier = set(PARTIKODER.values())
+    partier = set(profil().partikoder.values())
     cases = [{
         "id": s["sak_id"],
         "formal": s["formalia"],
@@ -359,7 +371,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
     utvalg = lager_verv.les_utvalg(aar, {"partier": {}, "medlemsliste_hentet": ""})
     verv = lager_verv.les(aar, [])
     seter = collections.Counter(v["repr"] for v in verv
-                                if v["utvalg"] == "KS" and v["rolle"] in FASTE and v["i_dagens_liste"])
+                                if v["utvalg"] == profil().kommunestyre_kode and v["rolle"] in FASTE and v["i_dagens_liste"])
     # Møter med møteprotokoll per utvalg, som grunnlag for oppmøtet.
     protokoller = collections.Counter(o["utvalg"] for o in oppmote)
     return {
@@ -387,6 +399,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
         "repo": REPO,
         # «Meld fra om feil» går til kontaktskjemaet når det er satt opp.
         "skjema": bool(SKJEMA["url"]),
+        **({} if med_oppmote else {"ikke_oppmote": True}),
     }
 
 
@@ -637,32 +650,32 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     (UT / "404.html").write_text(side, encoding="utf-8")
 
 
-def kjor(aar: int, drift_fil: str | None = None) -> None:
+def kjor_kommune(aar: int) -> tuple[dict, dict]:
+    """nettsted/<slug>/ for kommunen bygget gjelder. Rører ikke de andre kommunene."""
     kommune = _kommune()
     saker = lager_saker.les(aar)
     moter = lager_saker.les_moter(aar)
     analyser = lager_analyse.alle()
 
-    # Alt bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
-    shutil.rmtree(UT, ignore_errors=True)
+    # Kommunen bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
     ut = UT / kommune["slug"]
+    shutil.rmtree(ut, ignore_errors=True)
     (ut / "data").mkdir(parents=True, exist_ok=True)
 
     sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
     vedtak = {b["behandling_id"]: b.get("vedtak") for b in lager_voteringer.les(aar, [])}
-    S = _s(aar, saker, moter, sammendrag, kommune, vedtak)
-    VOT, holdt = _vot(aar, saker, moter)
+    nivaa = _nivaa()
+    S = _s(aar, saker, moter, sammendrag, kommune, vedtak, nivaa["oppmote"])
+    if nivaa["voteringer"]:
+        VOT, holdt = _vot(aar, saker, moter)
+    else:
+        # Stemmene kan ikke leses sikkert ennå; malen sier det (VOT.ikke_dekket).
+        VOT, holdt = {"moter": [], "parti": {}, "ikke_dekket": True}, 0
     (ut / "data" / "data.js").write_text(
         "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
         "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
         encoding="utf-8")
     _kommuneside(kommune, ut)
-    for navn in FELLES:
-        shutil.copy(MAL / navn, UT / navn)
-    shutil.copytree(MAL / "fonter", UT / "fonter")
-    # Portalen sender hit etter innlogging og utlogging (konto.js).
-    (UT / "konto").mkdir()
-    shutil.copy(MAL / "konto.html", UT / "konto" / "index.html")
 
     # Data ved siden av sidene, for andre som vil bruke dem.
     for navn, innhold in (("saker", saker), ("moter", moter), ("analyser", analyser)):
@@ -695,36 +708,91 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
         "voteringer_holdt_tilbake": holdt,
         "sammendrag_publisert": len(sammendrag),
         "sammendrag_holdt_tilbake": holdt_sammendrag,
+        # Hvor mye av protokollene regelsettet leser (tolk/dekning.py).
+        "dekning": {k: v for k, v in dekning.kjor(aar).items() if k != "mistenkte"},
+        "nivaa": nivaa,
         # Fase 2: faktisk forbruk, for å måle kostnaden.
         "tokens": {k: sum((a.get("tokens") or {}).get(k, 0) for a in analyser.values())
                    for k in ("inn", "ut")},
     }
     (ut / "status.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
-    _forside([(kommune, status)])
-    _om([(kommune, status)])
-    _ikke_funnet([(kommune, status)])
+    print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
+          f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
+          f"{holdt} voteringer holdt tilbake")
+    return kommune, status
+
+
+def _bygde() -> list[tuple[dict, dict]]:
+    """Kommunene som ligger i nettsted/, med status.json, sortert etter navn."""
+    ut = []
+    for fil in sorted(UT.glob("*/status.json")):
+        ut.append((_kommune(fil.parent.name), json.loads(fil.read_text("utf-8"))))
+    return sorted(ut, key=lambda ks: ks[0]["navn"])
+
+
+def kjor_felles(drift_fil: str | None = None, utfall: dict[str, str] | None = None) -> None:
+    """Det som er felles for kommunene: forsiden, /om/, /konto/, 404-siden,
+    stil, skript og skrift, og driftssiden. Bygges fra kommunene i nettsted/."""
+    kommuner = _bygde()
+    if not kommuner:
+        raise SystemExit("fant ingen kommuner i nettsted/; bygg kommunene først")
+    for navn in FELLES:
+        shutil.copy(MAL / navn, UT / navn)
+    shutil.rmtree(UT / "fonter", ignore_errors=True)
+    shutil.copytree(MAL / "fonter", UT / "fonter")
+    # Portalen sender hit etter innlogging og utlogging (konto.js).
+    (UT / "konto").mkdir(exist_ok=True)
+    shutil.copy(MAL / "konto.html", UT / "konto" / "index.html")
+    _forside(kommuner)
+    _om(kommuner)
+    _ikke_funnet(kommuner)
 
     # Driftssiden publiseres ikke. Den lagres i databasen og vises i portalen
     # for prosjektadmin (ADR-020); --drift-fil STI lagrer den også lokalt.
+    # Detaljene gjelder kommunen prosessen gjelder; tabellen «Kommunene» alle.
+    kommune = _kommune()
+    status = next((s for k, s in kommuner if k["slug"] == kommune["slug"]), None)
+    if status is None:
+        print(f"advarsel: {kommune['slug']} er ikke bygget; driftssiden lages ikke")
+        return
+    utfall = utfall or {}
     side = drift.side(
         (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
-        collections.Counter(a["status"] for a in finn_avvik(aar)), analyser,
-        MERKE, REPO, GOATCOUNTER, f"{NETTSTED}{BASE}")
+        collections.Counter(a["status"] for a in finn_avvik(status["ar"])), lager_analyse.alle(),
+        MERKE, REPO, GOATCOUNTER, f"{NETTSTED}{BASE}",
+        drift.kommuner([(k, s, utfall.get(k["slug"], "ny")) for k, s in kommuner]))
     lager_drift.lagre_side(side)
     if drift_fil:
         Path(drift_fil).write_text(side, encoding="utf-8")
 
-    print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
-          f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
-          f"{holdt} voteringer holdt tilbake")
+
+def kjor(aar: int, drift_fil: str | None = None) -> None:
+    """Kommunen bygget gjelder, og det felles. Som før kommunene ble flere."""
+    kjor_kommune(aar)
+    kjor_felles(drift_fil)
 
 
 def main() -> None:
-    argv = sys.argv[1:]
-    drift_fil = argv[argv.index("--drift-fil") + 1] if "--drift-fil" in argv else None
-    args = [a for a in argv if not a.startswith("--") and a != drift_fil]
-    kjor(int(args[0]) if args else dt.date.today().year, drift_fil)
+    """python -m bygg.bygg_nettsted [år] [--kommune SLUG] [--uten-felles | --felles]
+    [--drift-fil STI] [--utfall STI]
+
+    Uten valg bygges kommunen og det felles. --uten-felles bygger bare
+    nettsted/<slug>/; --felles bare det felles, fra kommunene i nettsted/.
+    --utfall er en JSON-fil {slug: utfall} fra kjor.alle til driftssiden.
+    """
+    argv = lager_kommune.fra_argv(sys.argv[1:])
+    verdier = {n: argv[argv.index(n) + 1] for n in ("--drift-fil", "--utfall") if n in argv}
+    args = [a for a in argv if not a.startswith("--") and a not in verdier.values()]
+    aar = int(args[0]) if args else dt.date.today().year
+    drift_fil = verdier.get("--drift-fil")
+    if "--felles" in argv:
+        utfall = json.loads(Path(verdier["--utfall"]).read_text("utf-8")) if "--utfall" in verdier else None
+        kjor_felles(drift_fil, utfall)
+    elif "--uten-felles" in argv:
+        kjor_kommune(aar)
+    else:
+        kjor(aar, drift_fil)
 
 
 if __name__ == "__main__":

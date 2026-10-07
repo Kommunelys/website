@@ -48,7 +48,7 @@ dokumentene den ikke har fra før.
 | Valg | Hva som gjelder |
 |---|---|
 | Frekvens | Én gang i døgnet. Protokoller dukker opp dager etter møtet, så oftere gir ikke ferskere data |
-| Takt | Maks ett kall i sekundet, én tråd |
+| Takt | Maks ett kall i sekundet, én tråd, samlet for verten: kommunene hentes etter tur, aldri samtidig (ADR-021) |
 | Identifikasjon | Egen `User-Agent` med navn på tjenesten og kontaktadresse |
 | Feilhåndtering | Tre forsøk med økende ventetid, så logges feilen og jobben fortsetter |
 | Idempotens | Hele kjøringen kan gjentas uten sideeffekter |
@@ -73,6 +73,30 @@ API-et er udokumentert. To tiltak demper risikoen. Hvert svar valideres mot et
 forventet skjema, og jobben stopper med en tydelig feil i stedet for å skrive
 halve data. Og rå JSON lagres urørt ved siden av de bearbeidede dataene, slik at
 en endret tolkning kan kjøres om igjen på historikken uten å hente alt på nytt.
+
+### Flere kommuner
+
+Alt som er særegent for en kommune, står i `kommuner/<slug>.json`: kilden i
+portalen, regelsettet for tolkningen (`tolk`), nivåene (`nivaa`) og visningen.
+Resten av koden er lik for alle (ADR-021).
+
+- **Kjøringen:** `kjor/alle.py` går gjennom kommunene med status `intern`
+  eller `publisert` i `kjerne.kommune`, én om gangen. Hvert trinn er en egen
+  prosess med `KOMMUNELYS_KOMMUNE` satt. Feiler en kommune, fortsetter de
+  andre.
+- **Regelsettet:** `tolk/profil.py` setter sammen standarden for Elements
+  (`tolk/profiler/elements.py`) og kommunens endringer. Mønstrene for
+  voteringer, oppmøteliste, saksframlegg og formalia, koden for kommunestyret,
+  navnevarianter og partier står der, ikke i koden som bruker dem.
+- **Fasit og dekning:** `tester/fasit/<slug>/` er dokumenter kontrollert for
+  hånd, og kjøres ved hver PR. `tolk/dekning.py` måler hvor mye av
+  protokollene regelsettet leser, og finner protokoller som nevner at noen
+  stemte uten at en votering er funnet.
+- **Nivåer:** en kommune kan publiseres uten stemmer eller oppmøte. Sidene
+  sier da at de ikke vises ennå, og hvorfor.
+- **Isolasjon:** en publisert kommune som stopper i kontrollene, beholder
+  versjonen som er publisert. En intern kommune bygges og kontrolleres, men
+  publiseres ikke.
 
 ## Forberedelse av dokumenter
 
@@ -237,6 +261,12 @@ maskinskrevet, med dato og modellnavn.
 - En som stemmer står ikke på oppmøtelisten
 - En sak mangler lenke til kilde
 - Antall saker faller mer enn 20 prosent fra forrige kjøring
+- Dekningen for voteringer eller oppmøte er under 95 prosent, når de er slått
+  på i nivåene (ADR-021)
+- Kilden i `kommuner/<slug>.json` er ikke lik den i databasen
+
+Kontrollene gjelder én kommune om gangen. Stopper de, beholder kommunen
+versjonen som er publisert, og de andre kommunene publiseres som vanlig.
 
 ### Kontroll av sammendrag
 
