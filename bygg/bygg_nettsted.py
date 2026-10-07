@@ -57,9 +57,9 @@ MERKE = "Kommunelys"
 GAMLE_LENKER = "steinkjer"
 # Felles for alle kommunene, lagt på roten.
 FELLES = ("stil.css", "app.js", "konto.js", "favicon.svg", "apple-touch-icon.png")
-# Står i bunnteksten på hver kommuneside (app.js). Bygget stopper uten
-# (CLAUDE.md: utvetydig uoffisiell).
-UOFFISIELL = "Ikke laget av ${esc(K.navn)} kommune"
+# Står i bunnteksten på hver side. Bygget stopper uten (CLAUDE.md:
+# utvetydig uoffisiell). Ordlyden er prosjekteiers, 7.10.2026.
+UOFFISIELL = "er en uoffisiell tjeneste"
 
 FASTE = ("Leder", "Nestleder", "Medlem")
 
@@ -186,8 +186,11 @@ _PARTI = (r"(?:Ap|AP|Arbeiderpartiet|H|Høyre|Sp|SP|Senterpartiet|SV|Sv|R|Rødt|
           r"FrP|Frp|FRP|Fremskrittspartiet|INP|Inp|PP|Pp|Pensjonistpartiet|V|Venstre|KrF|Krf|"
           r"Uavh\.?|[Uu]avhengig(?: representant(?: [A-ZÆØÅ][\wæøå-]+)?)?|alle partier)")
 _LEDD = rf"(?:(?:[A-ZÆØÅ][\wæøå-]+ ){{1,3}}{_PARTI}|{_PARTI})"
+# Foran står ofte hva slags forslag det er: «Alternativt på vegne AP, …»,
+# «Alternativt helhetlig forslag fra Rødt, …», «Fellesforslag Rødt og AP».
+_SLAG = r"(?:Alternativt|alternativt|Helhetlig|helhetlig|Tilleggsforslag|Forslag|forslag|forlag)"
 _AVSENDER = re.compile(
-    rf"^(?:På vegne av|Fellesforslag fra|Forslag fra|Fra):?\s+"
+    rf"^(?:(?:{_SLAG}\s+)*(?:[Pp]å vegne(?: av)?|[Ff]ra)|Fellesforslag(?: fra)?):?\s+"
     rf"(?P<bak>{_LEDD}(?:(?:\s*[,;]+\s*og\s+|\s*[,;]+\s*|\s+og\s+){_LEDD})*)(?![\wæøå])"
     r"[\s.,:]*")
 
@@ -299,12 +302,31 @@ def _folk(verv: list) -> list[dict]:
     return sorted(ut, key=lambda p: p["n"])
 
 
-def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> dict:
-    """Saker, møter, utvalg og kommunestyret, i formen malen bruker."""
+def _oppmote(o: dict, partier: set) -> dict:
+    """Hvem som møtte, fra møteprotokollen. Som på profilene står bare de som er
+    valgt for et parti, med navn; de andre telles. «avvik» betyr at stemmene i
+    protokollen ikke stemmer med oppmøtelisten (tolk.bygg_oppmote)."""
+    med = [p for p in o["oppmote"] if p["repr"] in partier]
+    return {"navn": [{"n": p["navn"], "p": p["repr"], "f": p["funksjon"], "vf": p["vara_for"]}
+                     for p in med],
+            "andre": len(o["oppmote"]) - len(med), "avvik": bool(o["avvik"])}
+
+
+def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict,
+       vedtak: dict) -> dict:
+    """Saker, møter, utvalg og kommunestyret, i formen malen bruker.
+
+    vedtak er vedtaksteksten per behandling, uendret fra protokollen. Den står
+    på hvert steg i saksgangen, også der ingen stemte, som uttalelsene fra rådene.
+    """
     politiske = collections.Counter(
         st["mote_id"] for s in saker if s["sakstype"] == "PS" and not s["formalia"]
         for st in s["saksgang"])
+    oppmote = lager_oppmote.les(aar, [])
+    opp_mote = {o["mote_id"]: o for o in oppmote}
+    partier = set(PARTIKODER.values())
     cases = [{
+        "id": s["sak_id"],
         "formal": s["formalia"],
         "t": s["tittel"],
         "typ": s["sakstype"],
@@ -315,6 +337,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
             "sc": st["utvalg"], "nr": st["saksnr"], "pub": st["protokoll_publisert"],
             "restr": st["protokoll_skjermet"], "mid": st["mote_id"],
             "prot": st["url_vedtak"], "murl": st["url_mote"],
+            **({"vt": vedtak[st["behandling_id"]]} if vedtak.get(st["behandling_id"]) else {}),
         } for st in s["saksgang"]],
         "status": s["status"],
         "doc": (s.get("saksframlegg") or {}).get("url"),
@@ -327,6 +350,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
         "nps": politiske.get(m["mote_id"], 0),
         "docs": [{"t": d["tittel"], "ty": d["type"], "u": d["url"]} for d in m["dokumenter"]],
         "url": m["url"],
+        **({"opp": _oppmote(opp_mote[m["mote_id"]], partier)} if m["mote_id"] in opp_mote else {}),
     } for m in moter]
 
     utvalg = lager_verv.les_utvalg(aar, {"partier": {}, "medlemsliste_hentet": ""})
@@ -334,8 +358,7 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
     seter = collections.Counter(v["repr"] for v in verv
                                 if v["utvalg"] == "KS" and v["rolle"] in FASTE and v["i_dagens_liste"])
     # Møter med møteprotokoll per utvalg, som grunnlag for oppmøtet.
-    protokoller = collections.Counter(
-        o["utvalg"] for o in lager_oppmote.les(aar, []))
+    protokoller = collections.Counter(o["utvalg"] for o in oppmote)
     return {
         "merke": MERKE,
         "kommune": kommune,
@@ -348,6 +371,13 @@ def _s(aar: int, saker: list, moter: list, sammendrag: dict, kommune: dict) -> d
         "partier": utvalg["partier"],
         "partisider": konfig.partisider().get("partier", {}),
         "ks": {"seter": dict(seter), "hentet": utvalg["medlemsliste_hentet"]},
+        # Antall medlemmer per utvalg i dagens medlemsliste. Bare de som er valgt
+        # for et parti, har profil og vises med navn; resten telles.
+        "medl": {u: {"faste": sum(1 for v in verv if v["utvalg"] == u and v["i_dagens_liste"]
+                                  and v["rolle"] in FASTE),
+                     "vara": sum(1 for v in verv if v["utvalg"] == u and v["i_dagens_liste"]
+                                 and v["rolle"] not in FASTE)}
+                 for u in sorted({v["utvalg"] for v in verv})},
         "folk": _folk(verv),
         "mprot": dict(protokoller),
         "meld": MELD_FEIL,
@@ -402,10 +432,9 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
             else:
                 ut["merk"] = merknader.get(nokkel, [])
             vs.append(ut)
+        # Vedtaksteksten står på saksgangen i S (st.vt), ikke her.
         per_mote[mid].append({"hid": b["behandling_id"], "nr": b["saksnr"],
-                              "t": tittel.get(b["behandling_id"], ""), "v": vs,
-                              # Det endelige vedtaket, uendret fra protokollen.
-                              "vt": b.get("vedtak")})
+                              "t": tittel.get(b["behandling_id"], ""), "v": vs})
 
     moter_ut = [{"id": mid, "date": mote[mid]["dato"], "sc": mote[mid]["utvalg"],
                  "ut": mote[mid]["utvalg_navn"],
@@ -608,7 +637,8 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
     (ut / "data").mkdir(parents=True, exist_ok=True)
 
     sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
-    S = _s(aar, saker, moter, sammendrag, kommune)
+    vedtak = {b["behandling_id"]: b.get("vedtak") for b in lager_voteringer.les(aar, [])}
+    S = _s(aar, saker, moter, sammendrag, kommune, vedtak)
     VOT, holdt = _vot(aar, saker, moter)
     (ut / "data" / "data.js").write_text(
         "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"

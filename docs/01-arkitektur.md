@@ -188,6 +188,24 @@ råd som ikke er valgt for et parti, for eksempel ungdomsrådet, får ikke
 profil. Partiene lenkes til sine egne sider, fra `data/partisider.json`, der
 hver adresse er kontrollert for hånd.
 
+**Sakene i sentrum.** Saken er det alt annet lenker til (7.10.2026):
+
+- `#sak/<sak-id>`: saksiden. Tittel, sammendrag, vedtaket, og saksgangen som
+  en loddrett tråd fra utvalg til utvalg. I hvert møte står forslagene som
+  bokser med utfall og stemmer per parti; det som vant eller ble vedtatt, har
+  grønn ramme. To eller flere forslag som falt, samles under én linje.
+- `#saker`, `#saker/pa-vei`, `#saker/venter`: tre faner etter hvor saken står,
+  med filter for år og måned. Årene er de som finnes i dataene.
+- `#moter/<åååå-mm>`: kalender per måned, liste på smale skjermer.
+  `#mote/<møte-id>`: møtesiden med tid, sted, dokumenter, sakene med én
+  setning hver og utfallet, hvem som møtte og hvem som sitter i utvalget.
+- `#hvem-bestemmer/<utvalg>`: saksgangen og utvalgene med medlemmer.
+- `#politikere/partiene`: hvem som stemmer sammen, og de jevneste
+  avstemningene. Fanen Stemmer er fjernet; gamle `#stemmer/…` sendes videre.
+
+Medlemmer og oppmøte vises med navn bare for dem som er valgt for et parti,
+som på profilene. De andre telles, og for rådene vises ingen navn.
+
 **Driftssiden** viser hva tjenesten har gjort, i tabeller:
 besøkstall fra GoatCounter øverst, status, innhold og AI-kostnad i hver sin
 boks, og én rad per kjøring med resultatet av hver jobb, kall mot portalen,

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{kommune}} | {{merke}}</title>
-<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune. Ikke laget av {{kommune}} kommune.">
+<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune, laget av en innbygger for innbyggerne.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="stylesheet" href="../stil.css?v={{v_stil}}">
@@ -21,7 +21,6 @@
     <a href="#oversikt" data-v="oversikt">Oversikt</a>
     <a href="#saker" data-v="saker">Saker</a>
     <a href="#moter" data-v="moter">Møter</a>
-    <a href="#stemmer" data-v="stemmer">Stemmer</a>
     <a href="#politikere" data-v="politikere">Politikere</a>
     <a href="#hvem-bestemmer" data-v="hvem-bestemmer">Hvem bestemmer</a>
     <a href="../om/">Om</a>
@@ -54,7 +53,7 @@
       <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span>Hva kommer opp?</h2>
       <p class="liten muted">Sakene på sakslisten til de neste møtene.</p>
       <div id="paavei"></div>
-      <a class="kort-lenke" href="#saker" data-go="saker" data-status="Til">Alle saker på vei</a>
+      <a class="kort-lenke" href="#saker/pa-vei" data-go="saker" data-fane="pa-vei">Alle saker på vei</a>
     </section>
     <section class="kort">
       <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span>Hva er vedtatt?</h2>
@@ -66,7 +65,7 @@
       <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>Se stemmene</h2>
       <p class="liten muted">Hvordan hver folkevalgt stemte, slik protokollen viser det.</p>
       <div id="stemkort"></div>
-      <a class="kort-lenke" id="stemlenke" href="#stemmer">Hvem stemte hva</a>
+      <a class="kort-lenke" href="#politikere/partiene">Hvem stemmer sammen</a>
     </section>
   </div>
 
@@ -83,71 +82,77 @@
   <p class="ny-her">Ny i kommunepolitikken? Les <a href="#hvem-bestemmer">hvordan en sak går gjennom systemet</a>.</p>
 </section>
 
-<!-- SAKER -->
+<!-- SAKER: tre faner etter hvor saken står, hver med egen adresse:
+     #saker, #saker/pa-vei og #saker/venter. -->
 <section id="v-saker" hidden>
-  <div class="ingress"><h1>Saker <span class="aar"></span></h1>
-  <p>Én linje per sak, også når den behandles i flere utvalg. Trykk på en sak for sammendrag, saksgang og dokumenter.</p></div>
+  <div class="ingress"><h1>Saker</h1>
+  <p>Finn en sak og se hva som ble bestemt, hvem som stemte hva, og hvor saken står nå. Søk, eller velg en sak i listen.</p></div>
+  <nav class="faner" id="saksfaner" aria-label="Hvor sakene står">
+    <a href="#saker" data-fane="avgjort">Avgjort <span class="ant" id="n-avgjort"></span></a>
+    <a href="#saker/pa-vei" data-fane="pa-vei">På vei <span class="ant" id="n-pa-vei"></span></a>
+    <a href="#saker/venter" data-fane="venter">Venter på protokoll <span class="ant" id="n-venter"></span></a>
+  </nav>
+  <div id="fanehjelp"></div>
   <div class="filter">
     <label class="sok"><span class="vh">Søk i sakene</span><input id="q" type="search" placeholder="Søk i sakene"></label>
-    <select id="fstatus" aria-label="Status"><option value="">Alle statuser</option></select>
+    <select id="faar" aria-label="År"><option value="">Alle år</option></select>
+    <select id="fmnd" aria-label="Måned"><option value="">Alle måneder</option></select>
     <select id="fut" aria-label="Utvalg"><option value="">Alle utvalg</option></select>
-    <label class="avkr"><input type="checkbox" id="fall"> Også referat- og orienteringssaker</label>
+    <select id="ftema" aria-label="Tema"><option value="">Alle tema</option></select>
   </div>
-  <div class="valg" id="tchips"></div>
+  <label class="avkr"><input type="checkbox" id="fall"> Også referat- og orienteringssaker</label>
   <p class="antall" id="count"></p>
   <div class="saker" id="clist"></div>
   <button class="knapp" id="more" hidden>Vis flere</button>
 </section>
 
-<!-- MØTER -->
-<section id="v-moter" hidden>
-  <div class="ingress"><h1>Møter <span class="aar"></span></h1>
-  <p>Alle politiske møter i året, med lenker til dokumentene i innsynsportalen.</p></div>
-  <div class="filter"><select id="mut" aria-label="Utvalg"><option value="">Alle utvalg</option></select><select id="mwhen" aria-label="Tid"><option value="up">Kommende</option><option value="past">Avholdte</option><option value="all">Hele året</option></select></div>
-  <div id="mlist"></div>
+<!-- SAKEN -->
+<section id="v-sak" hidden>
+  <p class="tilbake"><a href="#saker">Alle saker</a></p>
+  <div id="sak"></div>
 </section>
 
-<!-- STEMMER -->
-<section id="v-stemmer" hidden>
-  <div class="ingress"><h1>Hvem stemte hva</h1>
-  <p>Når politikerne bestemmer noe i et møte, stemmer de over forslag. Protokollen fra møtet viser hvordan hver enkelt stemte.</p></div>
-  <details class="ordliste">
-    <summary>Slik leser du avstemningene</summary>
-    <ol class="slik">
-      <li><b>En sak kommer til møtet med et forslag.</b> Det er skrevet av kommunedirektøren eller av utvalget som behandlet saken før, og kalles innstillingen.</li>
-      <li><b>Partiene kan foreslå noe annet.</b> De kan foreslå å endre forslaget, legge noe til, eller vedta noe helt annet.</li>
-      <li><b>Hvert forslag stemmes over for seg.</b> Får det flertall, er det vedtatt. Ellers faller det. Én sak kan derfor ha mange avstemninger.</li>
-    </ol>
-    <dl>
-      <dt>Avstemning</dt><dd>Når politikerne stemmer over ett forslag. Protokollen kaller det votering.</dd>
-      <dt>Forslaget saken kom med (innstillingen)</dt><dd>Forslaget til vedtak som lå i saken før møtet, fra kommunedirektøren eller fra utvalget som behandlet saken før. Store saker stemmes ofte over del for del.</dd>
-      <dt>Forslag og alternativt forslag</dt><dd>Et annet forslag til vedtak, fremmet i møtet av ett eller flere partier.</dd>
-      <dt>Valg mellom forslag</dt><dd>Når to forslag settes opp mot hverandre, stemmer alle for ett av dem. Det som får flest stemmer, vinner. Protokollen kaller det alternativ votering.</dd>
-      <dt>Endringsforslag og tilleggsforslag</dt><dd>Vil endre en del av forslaget, eller legge noe til.</dd>
-      <dt>Fargestripen</dt><dd>Viser partiene. Til venstre de som stemte for, til høyre, blekere, de som stemte mot.</dd>
-    </dl>
-  </details>
-  <!-- Tre deler med hver sin adresse: #stemmer/<møte eller utvalg>,
-       #stemmer/politikerne og #stemmer/partiene. -->
-  <nav class="faner" aria-label="Deler av Stemmer">
-    <a href="#stemmer" data-fane="saker" id="fane-saker">Sakene</a>
-    <a href="#stemmer/politikerne" data-fane="politikerne">Politikerne</a>
-    <a href="#stemmer/partiene" data-fane="partiene">Partiene</a>
+<!-- MØTER: kalender per måned (#moter/2026-10) -->
+<section id="v-moter" hidden>
+  <div class="ingress"><h1>Møter</h1>
+  <p>De politiske møtene måned for måned. Trykk på et møte for tid og sted, sakene og dokumentene.</p></div>
+  <div class="kal-hode">
+    <button class="kal-pil" id="mforr" aria-label="Forrige måned">‹</button>
+    <h2 id="mtittel" aria-live="polite"></h2>
+    <button class="kal-pil" id="mneste" aria-label="Neste måned">›</button>
+    <button class="kal-idag" id="midag">Denne måneden</button>
+    <select id="mut" aria-label="Utvalg"><option value="">Alle utvalg</option></select>
+  </div>
+  <div class="kal" id="kal"></div>
+  <div class="mliste" id="mlist"></div>
+</section>
+
+<!-- MØTET -->
+<section id="v-mote" hidden>
+  <p class="tilbake"><a href="#moter" id="motetilbake">Alle møter</a></p>
+  <div id="mote"></div>
+</section>
+
+<!-- POLITIKERE -->
+<section id="v-politikere" hidden>
+  <div class="ingress"><h1>Politikerne</h1>
+  <p>Folkevalgte med verv i kommunens utvalg, fra medlemslistene og protokollene i innsynsportalen. Profilene viser bare det som står i dokumentene.</p></div>
+  <!-- To faner: #politikere og #politikere/partiene. -->
+  <nav class="faner" id="polfaner" aria-label="Deler av Politikerne">
+    <a href="#politikere" data-fane="politikerne">Politikerne</a>
+    <a href="#politikere/partiene" data-fane="partiene">Partiene</a>
   </nav>
-  <div id="f-saker" class="fane">
-    <label class="velg"><span>Velg møte</span><select id="vsel"></select></label>
-    <p class="liten muted" id="vnokkel"></p>
-    <div id="vavvik"></div>
-    <div id="vcards"></div>
+  <div id="f-politikerne">
+  <div class="filter">
+    <label class="sok"><span class="vh">Søk etter navn</span><input id="fq" type="search" placeholder="Søk etter navn"></label>
+    <select id="futv" aria-label="Utvalg"><option value="">Alle utvalg</option></select>
   </div>
-  <div id="f-politikerne" class="fane" hidden>
-    <p class="grunnlag" id="pgrunnlag"></p>
-    <p class="liten muted">Trykk på et navn for å se hver stemme.</p>
-    <div class="valg" id="pchips"></div>
-    <div class="tw"><table id="ptable" class="sorter"><thead><tr><th data-k="name">Navn</th><th data-k="party">Parti</th><th class="num" data-k="maj">Stemte som flertallet</th><th class="num" data-k="brk">Annerledes enn partiet</th><th class="num" data-k="prop">Fremmet forslag</th></tr></thead><tbody></tbody></table></div>
-    <div id="ppanel" class="utvalgt"></div>
+  <div class="valg" id="fchips"></div>
+  <div id="partiboks"></div>
+  <p class="antall" id="fcount"></p>
+  <div class="tw"><table id="ftab" class="sorter"><thead><tr><th data-k="n">Navn</th><th data-k="p">Parti</th><th>Fast medlem i</th><th>Varamedlem i</th><th class="num" data-k="m">Møtt</th><th class="num" data-k="f">Forslag</th></tr></thead><tbody></tbody></table></div>
   </div>
-  <div id="f-partiene" class="fane" hidden>
+  <div id="f-partiene" hidden>
     <p class="grunnlag" id="partgrunnlag"></p>
     <section class="blokk"><h2>Hvem stemmer sammen?</h2>
       <p class="liten muted">Hvor ofte to partier stemte likt, i prosent. Mørkere betyr oftere enige.</p>
@@ -160,48 +165,34 @@
   </div>
 </section>
 
-<!-- POLITIKERE -->
-<section id="v-politikere" hidden>
-  <div class="ingress"><h1>Politikerne</h1>
-  <p>Folkevalgte med verv i kommunens utvalg, fra medlemslistene og protokollene i innsynsportalen. Profilene viser bare det som står i dokumentene.</p></div>
-  <div class="filter">
-    <label class="sok"><span class="vh">Søk etter navn</span><input id="fq" type="search" placeholder="Søk etter navn"></label>
-    <select id="futv" aria-label="Utvalg"><option value="">Alle utvalg</option></select>
-  </div>
-  <div class="valg" id="fchips"></div>
-  <div id="partiboks"></div>
-  <p class="antall" id="fcount"></p>
-  <div class="tw"><table id="ftab" class="sorter"><thead><tr><th data-k="n">Navn</th><th data-k="p">Parti</th><th>Fast medlem i</th><th>Varamedlem i</th><th class="num" data-k="m">Møtt</th><th class="num" data-k="f">Forslag</th></tr></thead><tbody></tbody></table></div>
-</section>
-
 <!-- PROFIL -->
 <section id="v-person" hidden>
   <p class="tilbake"><a href="#politikere">Alle politikerne</a></p>
   <div id="person"></div>
 </section>
 
-<!-- HVEM BESTEMMER -->
+<!-- HVEM BESTEMMER: saksgangen, og utvalgene med medlemmer.
+     #hvem-bestemmer/KTU åpner ett utvalg. -->
 <section id="v-hvem-bestemmer" hidden>
   <div class="ingress"><h1>Hvem bestemmer i {{kommune}}</h1>
-  <p>Hvordan en sak går gjennom kommunen, og hvilke utvalg som gjør hva. Hvordan {{merke}} er laget, står på <a href="../om/">Om {{merke}}</a>.</p></div>
-  <div class="to">
-    <section class="blokk">
-      <h2>Slik går en sak gjennom systemet</h2>
-      <ol class="flyt">
-        <li><b>Administrasjonen.</b> Kommunedirektøren skriver et saksframlegg med forslag til vedtak.</li>
-        <li><b>Hovedutvalg og råd.</b> Hovedutvalgene avgjør saker på sitt område eller sender dem videre. Rådene gir uttalelser.</li>
-        <li><b>Formannskapet.</b> Avgjør mange saker selv, og gir innstilling til kommunestyret i de største.</li>
-        <li><b>Kommunestyret.</b> Øverste organ. Gjør endelig vedtak i de største sakene.</li>
-        <li><b>Protokoll.</b> Vedtaket og avstemningene står i protokollen, som publiseres etter møtet.</li>
-        <li><b>Gjennomføring.</b> Administrasjonen følger opp og rapporterer tilbake.</li>
-      </ol>
-      <p class="liten muted" id="flowfact"></p>
-    </section>
-    <section class="blokk">
-      <h2>Utvalg og roller</h2>
-      <div class="tw"><table class="org"><thead><tr><th>Organ</th><th>Oppgave</th><th class="num">Møter i <span class="aar"></span></th></tr></thead><tbody id="org"></tbody></table></div>
-    </section>
-  </div>
+  <p>En sak går fra administrasjonen gjennom utvalgene til kommunestyret. Her ser du hvilke utvalg som finnes, hva de gjør, og hvem som sitter i dem.</p></div>
+  <section class="blokk smal">
+    <h2>Slik går en sak gjennom systemet</h2>
+    <ol class="flyt">
+      <li><b>Administrasjonen.</b> Kommunedirektøren skriver et saksframlegg med forslag til vedtak.</li>
+      <li><b>Hovedutvalg og råd.</b> Hovedutvalgene avgjør saker på sitt område eller sender dem videre. Rådene gir uttalelser.</li>
+      <li><b>Formannskapet.</b> Avgjør mange saker selv, og gir innstilling til kommunestyret i de største.</li>
+      <li><b>Kommunestyret.</b> Øverste organ. Gjør endelig vedtak i de største sakene.</li>
+      <li><b>Protokoll.</b> Vedtaket og avstemningene står i protokollen, som publiseres etter møtet.</li>
+      <li><b>Gjennomføring.</b> Administrasjonen følger opp og rapporterer tilbake.</li>
+    </ol>
+    <p class="liten muted" id="flowfact"></p>
+  </section>
+  <section class="blokk smal">
+    <h2>Utvalgene</h2>
+    <p class="liten muted">Trykk på et utvalg for å se hvem som sitter der og når det møtes.</p>
+    <div id="utvalgene"></div>
+  </section>
 </section>
 </main>
 <footer class="ramme fot" id="foot"></footer>

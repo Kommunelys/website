@@ -39,6 +39,10 @@
     {"kode": "HPNM", "navn": "Hovedutvalg plan, næring og miljø", "oppgave": "arealplaner, landbruk, miljø", "lenke": true},
     {"kode": "HOK", "navn": "Hovedutvalg oppvekst og kultur", "oppgave": "skole, barnehage, kultur", "lenke": true},
     {"kode": "HHO", "navn": "Hovedutvalg helse og omsorg", "oppgave": "helse, omsorg, velferd", "lenke": true},
+    {"kode": "KTU", "navn": "Trafikksikkerhetsutvalget", "oppgave": "trafikksikkerhet", "lenke": true},
+    {"kode": "AD", "navn": "Administrasjonsutvalget", "oppgave": "saker om de ansatte", "lenke": true},
+    {"kode": "AMU", "navn": "Arbeidsmiljøutvalget", "oppgave": "arbeidsmiljøet for de ansatte", "lenke": true},
+    {"kode": "VN", "navn": "Valgstyret", "oppgave": "gjennomfører valg", "lenke": true},
     {"kode": "ELRÅ", "navn": "Eldrerådet", "oppgave": "gir uttalelser", "lenke": false},
     {"kode": "UNGRÅ", "navn": "Ungdomsrådet", "oppgave": "gir uttalelser", "lenke": false},
     {"kode": "RÅFIM", "navn": "Rådet for personer med funksjonsnedsettelse, inkludering og mangfold", "oppgave": "gir uttalelser", "lenke": false}
