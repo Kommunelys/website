@@ -161,7 +161,7 @@ UKJENT = "ikke_vurdert"
 
 # Det i kommuner/<slug>.json som ikke hører til visningen, og ikke sendes til
 # nettleseren: kilden i portalen, regelsettet og nivåene.
-IKKE_VISNING = ("kilde", "tolk", "nivaa")
+IKKE_VISNING = ("kilde", "tolk", "nivaa", "fra_aar")
 
 
 def _kommune(slug: str | None = None) -> dict:

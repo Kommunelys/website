@@ -45,8 +45,10 @@ import re
 import sys
 import unicodedata
 
+import lager
 from hent import portal
 from lager import avvik as lager_avvik
+from lager import kommune as lager_kommune
 from lager import oppmote as lager_oppmote
 from lager import voteringer as lager_voteringer
 
@@ -64,8 +66,13 @@ def vurderinger() -> dict[str, dict]:
 
 
 def finn_avvik(aar: int) -> list[dict]:
-    """Alle avvik for året, med vurderingen hvis den finnes."""
-    voteringer = lager_voteringer.les(aar, [])
+    """Alle avvik for året, med vurderingen hvis den finnes.
+
+    Et avvik hører til året for møtet, som oppmøtet. Voteringene lagres i året
+    saken begynte (ADR-022), så de leses for alle årene og filtreres på datoen.
+    """
+    voteringer = [b for b in lager_kommune.alle_aar(lager_voteringer.les, aar)
+                  if b["dato"][:4] == str(aar)]
     oppmote = lager_oppmote.les(aar, [])
     funnet: dict[str, dict] = {}
 
@@ -105,15 +112,23 @@ def finn_avvik(aar: int) -> list[dict]:
     return ut
 
 
+def alle_avvik(aar: int) -> list[dict]:
+    """Avvikene for alle årene til og med `aar` eller i år, det som er senest."""
+    til = max(aar, int(lager.i_dag()[:4]))
+    return lager_kommune.alle_aar(lambda y, _: finn_avvik(y), til)
+
+
 def holdt_tilbake(aar: int) -> tuple[dict[tuple[int, int], list[str]], dict[tuple[int, int], list[str]]]:
     """(voteringer som holdes tilbake, merknader til voteringer som publiseres).
 
     Begge er nøklet på (behandlings-ID, voteringens nr). En votering holdes
-    tilbake hvis ett eneste avvik som berører den, ikke er godkjent.
+    tilbake hvis ett eneste avvik som berører den, ikke er godkjent. Gjelder
+    alle årene til og med i år: en votering i en sak fra i fjor kan ha et
+    avvik i et møte i år (ADR-022).
     """
     stopp: dict[tuple[int, int], list[str]] = collections.defaultdict(list)
     merknader: dict[tuple[int, int], list[str]] = collections.defaultdict(list)
-    for a in finn_avvik(aar):
+    for a in alle_avvik(aar):
         for b, nr in a["voteringer"]:
             if a["status"] == "publiser":
                 if a["vurdering"].get("merknad"):
@@ -124,8 +139,12 @@ def holdt_tilbake(aar: int) -> tuple[dict[tuple[int, int], list[str]], dict[tupl
 
 
 def ugyldige_vurderinger(aar: int) -> list[str]:
-    """Vurderinger som mangler noe, eller som viser til avvik som ikke finnes."""
-    kjente = {a["avvik"] for a in finn_avvik(aar)}
+    """Vurderinger som mangler noe, eller som viser til avvik som ikke finnes.
+
+    Vurderingene gjelder alle årene, så avvikene leses for alle årene til og
+    med i år.
+    """
+    kjente = {a["avvik"] for a in alle_avvik(aar)}
     feil = []
     for v in lager_avvik.vurderinger():
         n = v.get("avvik", "?")

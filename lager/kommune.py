@@ -108,3 +108,21 @@ def aktive() -> list[tuple[str, str]]:
     from . import pg  # noqa: PLC0415
     return [(s, st) for s, st in pg._rader(
         "select slug, status from kjerne.kommune where status in ('intern', 'publisert') order by slug")]
+
+
+def aarene(til: int) -> list[int]:
+    """Årene kommunen er hentet for, fra «fra_aar» i kommuner/<slug>.json til og med `til`.
+
+    En sak hører til året den begynte, men kan behandles også senere år
+    (ADR-022). Det som kobler saker, voteringer og oppmøte, må derfor lese
+    alle årene, ikke bare ett.
+    """
+    fra = oppsett().get("fra_aar")
+    if fra is None:
+        raise SystemExit(f"kommuner/{slug()}.json mangler «fra_aar», det første året som hentes")
+    return list(range(fra, max(fra, til) + 1))
+
+
+def alle_aar(les, til: int) -> list:
+    """`les(år, [])` for alle årene til og med `til`, slått sammen i rekkefølge."""
+    return [x for a in aarene(til) for x in les(a, [])]

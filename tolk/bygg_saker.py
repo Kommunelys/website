@@ -3,6 +3,11 @@
 ADR-003: samme sak får nytt saksnummer i hvert utvalg. `AdditionalDmbHandlings`
 oppgir koblingene, og kjeden bygges med disjunkte mengder.
 
+En sak kan gå over flere år: behandlet i desember, avgjort i februar. Kjedene
+bygges derfor av rådataene for alle årene fra kommunens «fra_aar» til og med
+året som oppgis, og hver sak lagres i året den begynte (ADR-022). Møtene
+lagres i sitt eget år.
+
 Leser rådataene og skriver møtene og sakene (lager.raa, lager.saker).
 
     python -m tolk.bygg_saker 2026
@@ -19,6 +24,7 @@ from pathlib import Path
 
 import lager
 from hent import portal
+from lager import kommune as lager_kommune
 from lager import raa as raadata
 from lager import saker as lager_saker
 from tolk.profil import profil
@@ -129,34 +135,41 @@ def _status(steg: list[dict], i_dag: str) -> str:
 
 def kjor(aar: int, fra_fil: str | None = None) -> dict:
     i_dag = lager.i_dag()
-    raa = les_raa(aar, fra_fil)
+    # En eldre samlefil gjelder bare ett år.
+    aarene = [aar] if fra_fil else lager_kommune.aarene(aar)
+    raa = {a: les_raa(a, fra_fil) for a in aarene}
 
     kjent: dict[int, tuple[dict, dict]] = {}
-    for m in raa:
-        for b in m["behandlinger"]:
-            kjent[b["Id"]] = (m["mote"], b)
+    aar_for: dict[int, int] = {}
+    for a in aarene:
+        for m in raa[a]:
+            for b in m["behandlinger"]:
+                kjent[b["Id"]] = (m["mote"], b)
+                aar_for[b["Id"]] = a
 
-    # Bind behandlinger sammen til saker.
+    # Bind behandlinger sammen til saker, på tvers av årene.
     g = Grupper()
     ukjent: dict[int, dict] = {}
     for bid, (_, b) in kjent.items():
         g.finn(bid)
-        for a in b.get("AdditionalDmbHandlings") or []:
-            g.slaa_sammen(bid, a["Id"])
-            if a["Id"] not in kjent:
-                ukjent[a["Id"]] = a
+        for x in b.get("AdditionalDmbHandlings") or []:
+            g.slaa_sammen(bid, x["Id"])
+            if x["Id"] not in kjent:
+                ukjent[x["Id"]] = x
 
     grupper = collections.defaultdict(list)
     for bid in list(kjent) + list(ukjent):
         grupper[g.finn(bid)].append(bid)
 
     saker = []
+    sakens_aar: dict[int, int] = {}
     for ider in grupper.values():
         hentede = [i for i in ider if i in kjent]
         if not hentede:
             continue
         forste = min(hentede, key=lambda i: kjent[i][0]["MO_START"])
         _, b = kjent[forste]
+        sakens_aar[min(hentede)] = aar_for[forste]
 
         steg = sorted((_steg(i, kjent, ukjent) for i in ider),
                       key=lambda s: s["dato"])
@@ -199,8 +212,27 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
         })
 
     saker.sort(key=lambda s: s["saksgang"][0]["dato"])
-    lager_saker.lagre(aar, saker)
+    for a in aarene:
+        lager_saker.lagre(a, [s for s in saker if sakens_aar[s["sak_id"]] == a])
 
+    for a in aarene:
+        _lagre_moter(a, raa[a])
+
+    politiske = [s for s in saker if s["sakstype"] == "PS" and not s["formalia"]]
+    oppsummering = {
+        "aar": aarene,
+        "moter": sum(len(raa[a]) for a in aarene),
+        "behandlinger": len(kjent),
+        "saker": len(saker),
+        "politiske_saker": len(politiske),
+        "uhentede_koblinger": len(ukjent),
+        "status": dict(collections.Counter(s["status"] for s in politiske)),
+    }
+    print(json.dumps(oppsummering, ensure_ascii=False, indent=1))
+    return oppsummering
+
+
+def _lagre_moter(aar: int, raa: list[dict]) -> None:
     moter = [{
         "mote_id": m["mote"]["MO_ID"],
         "dato": m["mote"]["MO_START"][:16],
@@ -221,18 +253,6 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
     } for m in raa]
     moter.sort(key=lambda m: m["dato"])
     lager_saker.lagre_moter(aar, moter)
-
-    politiske = [s for s in saker if s["sakstype"] == "PS" and not s["formalia"]]
-    oppsummering = {
-        "moter": len(moter),
-        "behandlinger": len(kjent),
-        "saker": len(saker),
-        "politiske_saker": len(politiske),
-        "uhentede_koblinger": len(ukjent),
-        "status": dict(collections.Counter(s["status"] for s in politiske)),
-    }
-    print(json.dumps(oppsummering, ensure_ascii=False, indent=1))
-    return oppsummering
 
 
 def main() -> None:

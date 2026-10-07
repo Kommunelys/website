@@ -3,6 +3,7 @@
   "slug": "steinkjer",
   "navn": "Steinkjer",
   "kommunenr": "5006",
+  "fra_aar": 2026,
   "kilde": {
     "basis": "https://prod01.elementscloud.no/publikum/",
     "tenant": "840029212_PROD-840029212",

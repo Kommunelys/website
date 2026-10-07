@@ -23,6 +23,7 @@ import datetime as dt
 import json
 import sys
 
+from lager import kommune as lager_kommune
 from lager import oppmote as lager_oppmote
 from lager import saker as lager_saker
 from lager import tekst as lager_tekst
@@ -50,8 +51,9 @@ def _avvik(oppmote: list[dict], behandlinger: list[dict]) -> list[dict]:
 
 def kjor(aar: int) -> dict:
     moter = lager_saker.les_moter(aar)
-    saker = lager_saker.les(aar, [])
-    voteringer = lager_voteringer.les(aar, [])
+    # Et møte kan behandle saker som begynte et tidligere år (ADR-022).
+    saker = lager_kommune.alle_aar(lager_saker.les, aar)
+    voteringer = lager_kommune.alle_aar(lager_voteringer.les, aar)
 
     mote_for = {s["behandling_id"]: s["mote_id"]
                 for sak in saker for s in sak["saksgang"]}
