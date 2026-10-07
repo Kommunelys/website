@@ -56,6 +56,8 @@ const ut=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
 function oppsummering(c){
   if(!c.a)return c.typ==='PS'&&!c.formal?'<p class="liten muted">Ingen sammendrag ennå. Les dokumentene i lenkene under.</p>':'';
   const a=c.a;
+  // Kildene står i detaljene. Uten kildelenke vises ikke sammendraget (CLAUDE.md regel 5).
+  if(!a.kilder)return '';
   return `<div class="ai"><span class="ki">KI-sammendrag</span><p>${esc(a.sum)}</p>${a.bet?`<p><b>Hva betyr det?</b> ${esc(a.bet)}</p>`:''}${a.uen?`<p><b>Uenigheten:</b> ${esc(a.uen)}</p>`:''}
    <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}. Dokumentene gjelder. ${ut(meldUrl(c),'Meld fra om feil')}</p></div>`;
 }
@@ -543,6 +545,30 @@ function renderPerson(id){
    hver, med utfallet og stemmene per parti. Forslaget som vant, har grønn
    ramme. Navnene og forslagsteksten kan foldes ut. */
 const VOT_HID={};VOT.moter.forEach(m=>m.saker.forEach(s=>{VOT_HID[s.hid]={...s,m}}));
+/* Detaljene (ADR-022): hele sammendraget, vedtakstekstene og forslagstekstene
+   står i data/detaljer-<år>.json og hentes første gang en sak fra året åpnes.
+   Året er året saken begynte (c.y, eller S.aar med ett år). */
+const VOTE_ID={};ALLEV.forEach(v=>{VOTE_ID[v.id]=v});
+const DETALJER={},DETALJER_KLAR=new Set();
+const sakensAar=c=>String(c.y||AAR);
+function hentDetaljer(aar){
+  const fil=(S.detaljer||{})[aar];
+  if(!fil||DETALJER_KLAR.has(aar))return Promise.resolve();
+  return DETALJER[aar]||(DETALJER[aar]=fetch('data/'+fil).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+    Object.entries(d.a||{}).forEach(([id,a])=>{const c=SAK_ID[id];if(c&&c.a)Object.assign(c.a,a)});
+    Object.entries(d.vt||{}).forEach(([hid,vt])=>{if(STEG[hid])STEG[hid].vt=vt});
+    Object.entries(d.v||{}).forEach(([id,x])=>{const v=VOTE_ID[id];if(!v)return;v.tekst=x.tekst;(x.deler||[]).forEach((tk,i)=>{if(v.deler&&v.deler[i])v.deler[i].tekst=tk})});
+    DETALJER_KLAR.add(aar);
+  }).catch(e=>{delete DETALJER[aar];throw e}));
+}
+// Sakssiden venter på detaljene. Feiler hentingen, vises saken uten dem.
+function visSak(id){
+  const c=SAK_ID[id],aar=c&&sakensAar(c);
+  if(!c||!(S.detaljer||{})[aar]||DETALJER_KLAR.has(aar)){renderSak(id);return}
+  $('sak').innerHTML='<div class="ingress"><p class="muted">Henter saken …</p></div>';
+  const her=location.hash;
+  hentDetaljer(aar).then(()=>{if(location.hash===her)renderSak(id)},()=>{if(location.hash===her)renderSak(id,true)});
+}
 const erRad=sc=>RAD.includes(sc);
 const datoAar=d=>`${ddl(d)} ${d.slice(0,4)}`;
 const perParti=ns=>{const c={};ns.forEach(n=>{const p=party(n);c[p]=(c[p]||0)+1});return pord(ns).map(p=>({p,n:c[p]}))};
@@ -611,10 +637,11 @@ function stegHtml(c,x,avgjort){
   return `<li class="trad-steg${cls}"><div class="trad-hode"><b>${MOTE_ID[x.mid]?`<a href="#mote/${x.mid}">${esc(utName(x.sc)||x.ut)}</a>`:esc(utName(x.sc)||x.ut)}</b> <span class="muted">· ${datoAar(x.date)}</span></div>
     ${tekst?`<p class="trad-tekst">${tekst}</p>`:''}${merk}${bokser}${lenker?`<p class="liten trad-lenker">${lenker}</p>`:''}</li>`;
 }
-function renderSak(id){
+function renderSak(id,uten_detaljer){
   const c=SAK_ID[id],el=$('sak');
   if(!c){el.innerHTML='<div class="ingress"><h1>Fant ikke saken</h1><p>Saken finnes ikke i dataene'+(FLERE_AAR?'':' for dette året')+'. <a href="#saker">Se alle sakene</a>.</p></div>';return}
   document.title=`${tittel(c)} – ${K.navn} | ${S.merke}`;
+  const feil=uten_detaljer?'<p class="merk">Vedtakene og forslagstekstene kunne ikke hentes nå. Last siden på nytt, eller les protokollene i innsynsportalen.</p>':'';
   const f=fase(c),nv=c.st.reduce((n,x)=>n+(VOT_HID[x.hid]?VOT_HID[x.hid].v.length:0),0);
   // Vedtaket: siste behandling med vedtakstekst i et utvalg som avgjør, når saken ikke skal videre.
   const avgjort=c.next?null:[...c.st].reverse().find(x=>!erRad(x.sc)&&x.vt&&x.pub)||null;
@@ -626,7 +653,7 @@ function renderSak(id){
     ${c.a?`<p class="muted">Sakstittel: ${esc(c.t)}</p>`:''}
     <p class="sak-status"><span class="st ${f.cls}">${esc(f.t)}</span><span class="muted"><span class="mono">${esc(nr)}</span> · ${antall(c.st.length,'behandling','behandlinger')}${nv?` · ${antall(nv,'avstemning','avstemninger')}`:''}</span></p>
     ${c.tags.length?`<p>${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(' ')}</p>`:''}</div>
-    ${oppsummering(c)}
+    ${feil}${oppsummering(c)}
     ${avgjort?`<section class="blokk"><h2>Vedtaket i ${esc(smaa(utName(avgjort.sc)))}</h2>
       ${sv?`<p>${sakSvar(sv)}</p>`:''}<div class="forslag">${formater(avgjort.vt)}</div>
       <p class="liten muted">${avgjort.prot?`${ut(avgjort.prot,'Protokollen')} gjelder.`:'Protokollen gjelder.'}</p></section>`:''}
@@ -783,7 +810,7 @@ function vis(){
   if(v==='politikere'){const f=arg==='partiene'?'partiene':'politikerne';visPolFane(f);
     if(f==='politikerne'){fparti=PARTI_I_FOLK.includes(arg)?arg:null;renderFChips();renderFolk()}}
   if(v==='person')renderPerson(arg);
-  if(v==='sak')renderSak(+arg);
+  if(v==='sak')visSak(+arg);
   const valgtUtvalg=v==='hvem-bestemmer'&&arg&&document.getElementById('utvalg-'+arg);
   if(valgtUtvalg){valgtUtvalg.open=true;requestAnimationFrame(()=>valgtUtvalg.scrollIntoView({block:'start'}));forrigeV=v;return}
   // Bytte av fane i samme visning flytter ikke siden.

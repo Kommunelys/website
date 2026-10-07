@@ -557,6 +557,40 @@ def _hentet(status: dict) -> dt.date:
     return dt.datetime.fromisoformat(status["bygget"]).date()
 
 
+# Det i sammendraget som bare sakssiden bruker. Tittel, sammendrag (søket) og
+# betydning blir i data.js.
+DETALJER_A = ("uen", "tags", "modell", "kilder")
+
+
+def _del_detaljer(S: dict, VOT: dict, sakens_aar: dict[int, int]) -> dict[int, dict]:
+    """Tar ut det bare sakssiden bruker, og gir det tilbake per år (ADR-022).
+
+    Hele sammendraget, vedtakstekstene (st.vt) og forslagstekstene i
+    voteringene (v.tekst, deler[].tekst) står i data/detaljer-<år>.json og
+    hentes når en sak åpnes. Året er året saken begynte. S og VOT endres.
+    """
+    ut: dict[int, dict] = {a: {"a": {}, "vt": {}, "v": {}} for a in set(sakens_aar.values())}
+    sak_for = {}
+    for c in S["cases"]:
+        d = ut[sakens_aar[c["id"]]]
+        if "a" in c:
+            d["a"][c["id"]] = {k: c["a"].pop(k) for k in DETALJER_A if k in c["a"]}
+        for x in c["st"]:
+            sak_for[x["hid"]] = c["id"]
+            if "vt" in x:
+                d["vt"][x["hid"]] = x.pop("vt")
+    for m in VOT["moter"]:
+        for s in m["saker"]:
+            d = ut[sakens_aar[sak_for[s["hid"]]]] if s["hid"] in sak_for else None
+            for v in s["v"]:
+                tekst = {"tekst": v.pop("tekst", None)}
+                if v.get("deler"):
+                    tekst["deler"] = [x.pop("tekst", None) for x in v["deler"]]
+                if d is not None:
+                    d["v"][f"{s['hid']}-{v['nr']}"] = tekst
+    return ut
+
+
 def _kommuneside(kommune: dict, ut: Path) -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
@@ -722,11 +756,6 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
     else:
         # Stemmene kan ikke leses sikkert ennå; malen sier det (VOT.ikke_dekket).
         VOT, holdt = {"moter": [], "parti": {}, "ikke_dekket": True}, 0
-    (ut / "data" / "data.js").write_text(
-        "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
-        "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
-        encoding="utf-8")
-    _kommuneside(kommune, ut)
 
     # Data ved siden av sidene, for andre som vil bruke dem, ett sett per år.
     # En sak står i året den begynte; et møte og voteringene i møtets år.
@@ -756,6 +785,26 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
             (ut / fil).write_text(
                 json.dumps(innhold[navn], ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
             filer.append(fil)
+
+    # Detaljene skilles ut etter at filene over har fått hele teksten.
+    sakens_aar = {s["sak_id"]: a for a in aarene for s in lager_saker.les(a, [])}
+    if len(aarene) > 1:
+        for c in S["cases"]:
+            c["y"] = sakens_aar[c["id"]]
+    detaljer = _del_detaljer(S, VOT, sakens_aar)
+    S["detaljer"] = {}
+    for a, d in sorted(detaljer.items()):
+        tekst = json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+        fil = f"data/detaljer-{a}.json"
+        (ut / fil).write_text(tekst, encoding="utf-8")
+        filer.append(fil)
+        # ?v= gjør at nettleseren henter filen på nytt når den er endret.
+        S["detaljer"][str(a)] = f"detaljer-{a}.json?v={hashlib.sha256(tekst.encode()).hexdigest()[:10]}"
+    (ut / "data" / "data.js").write_text(
+        "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
+        "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
+        encoding="utf-8")
+    _kommuneside(kommune, ut)
 
     status = {
         "bygget": dt.datetime.now().isoformat(timespec="seconds"),
