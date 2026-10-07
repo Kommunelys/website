@@ -15,7 +15,8 @@ const ANON = Deno.env.get("SUPABASE_ANON_KEY")!;
 const SERVICE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 const PORTAL = "https://portal.kommunelys.no";
-const TILLATTE_OPPHAV = [PORTAL, "http://localhost:5173"];
+// lokal.kommunelys.no peker til 127.0.0.1; hCaptcha virker ikke på localhost.
+const TILLATTE_OPPHAV = [PORTAL, "http://localhost:5173", "http://lokal.kommunelys.no:5173"];
 
 // Sperret til langt fram i tid; "none" opphever sperren.
 const SPERRET = "876000h";
@@ -160,7 +161,9 @@ Deno.serve(async (req) => {
       case "nytt_passord": {
         const b = await hent(String(inn.id));
         if (!b.email) throw new Feil(400, "Brukeren har ingen e-postadresse");
-        const { error } = await createClient(URL, ANON, { auth: { persistSession: false } })
+        // Med service-nøkkelen, som slipper captcha. Uten den ville Supabase
+        // krevd svar fra en captcha her også.
+        const { error } = await createClient(URL, SERVICE, { auth: { persistSession: false } })
           .auth.resetPasswordForEmail(b.email, { redirectTo: `${opphav}/set-password` });
         if (error) throw new Feil(500, error.message);
         return svar({ data: b }, 200, opphav);
