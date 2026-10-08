@@ -50,7 +50,9 @@ from hent import portal
 from lager import avvik as lager_avvik
 from lager import kommune as lager_kommune
 from lager import oppmote as lager_oppmote
+from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
+from tolk.merknad import merknad_avvik
 
 AVGJORELSER = ("publiser", "ikke_publiser")
 
@@ -104,12 +106,24 @@ def finn_avvik(aar: int) -> list[dict]:
                 a["voteringer"].append(ref)
 
     vurdert = vurderinger()
+    navn = folkevalgte()
     ut = sorted(funnet.values(), key=lambda a: (a["dato"], a["avvik"]))
     for a in ut:
         v = vurdert.get(a["avvik"])
         a["vurdering"] = v
         a["status"] = v["avgjorelse"] if v else "ikke_vurdert"
+        # En merknad som ikke kan vises, gjør at voteringen holdes tilbake som
+        # om avviket ikke var vurdert (ADR-023).
+        feil = merknad_avvik(v.get("merknad"), navn) if v else []
+        if a["status"] == "publiser" and feil:
+            a["status"] = "ikke_vurdert"
+            a["merknad_feil"] = feil
     return ut
+
+
+def folkevalgte() -> set[str]:
+    """Navnene i vervlistene, som ikke skal stå i en merknad (CLAUDE.md regel 6)."""
+    return {v["navn"] for v in lager_verv.alle_aar()}
 
 
 def alle_avvik(aar: int) -> list[dict]:

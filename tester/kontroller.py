@@ -24,7 +24,7 @@ from lager import saker as lager_saker
 from lager import tekst as lager_tekst
 from lager import verv as lager_verv
 from tolk import dekning
-from tolk.bygg_avvik import ugyldige_vurderinger
+from tolk.bygg_avvik import alle_avvik, ugyldige_vurderinger
 
 ROT = Path(__file__).resolve().parent.parent
 MAL = ROT / "bygg" / "mal"
@@ -239,6 +239,18 @@ def sammendrag_avvik(sak: dict, a: dict, unntatt: set[str] = frozenset()) -> lis
     return ut
 
 
+# Grunnene en vurderer kan overstyre i portalen (ADR-023): et tall eller en
+# dato som ikke ble funnet i kilden. Kontrollen tar ofte feil der, fordi
+# pdftotext klistrer sammen tabeller. Navn (regel 6), manglende kilde (regel 5)
+# og et usikkert svar fra modellen kan aldri overstyres. Samme regel står i
+# databasen, kjerne.kan_overstyres.
+OVERSTYRBAR = re.compile(r"^(datoen|tallet) .+ finnes ikke i kilden$")
+
+
+def kan_overstyres(grunner: list[str]) -> bool:
+    return bool(grunner) and all(OVERSTYRBAR.match(g) for g in grunner)
+
+
 # Endres koden i denne filen, kan kontrollen svare annerledes, og tidligere
 # resultater gjelder ikke lenger.
 _KODE = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -374,6 +386,11 @@ def kjor(aar: int) -> int:
         print(f"{len(holdt)} sammendrag holdes tilbake:")
         for h in holdt[:20]:
             print(f"  - {h}")
+    # En merknad som ikke kan vises, holder voteringen tilbake (ADR-023).
+    for a in alle_avvik(aar):
+        if a.get("merknad_feil"):
+            print(f"merknaden til {a['avvik']} vises ikke, og voteringene holdes tilbake: "
+                  f"{'; '.join(a['merknad_feil'])}")
     # En vurdering uten begrunnelse, eller av et avvik som ikke lenger finnes,
     # skal ikke kunne slippe voteringer gjennom (ADR-002).
     feil += ugyldige_vurderinger(aar)

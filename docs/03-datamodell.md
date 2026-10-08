@@ -217,6 +217,24 @@ publiseringen hvis en vurdering mangler begrunnelse, har en ukjent
 avgjørelse, eller gjelder et avvik som ikke lenger finnes, for eksempel fordi
 kommunen har rettet protokollen.
 
+### Vurdering per kommune og meldinger om feil
+
+Den som har rollen `vurderer` eller `admin` for en kommune, vurderer det som
+venter der i portalen: avvikene over, sammendrag som ikke besto kontrollen,
+og meldinger om feil fra innloggede brukere (ADR-023). Alle tabellene er bare
+innsetting, og den nyeste vurderingen gjelder.
+
+| Tabell | Innhold |
+|---|---|
+| `kjerne.feilmelding` | Sak, hva det gjelder, hva som er feil, og hvem som meldte (null når kontoen er slettet). Den som vurderer i kommunen, ser e-postadressen gjennom `tilgang.melder_epost` |
+| `kjerne.feilmelding_vurdering` | `ikke_feil`, `rettet` eller `holdes_tilbake`, svar til den som meldte, merknad og begrunnelse. Holdes et sammendrag tilbake, står analysen i `analyse_id` |
+| `kjerne.sammendrag_vurdering` | `publiser` eller `ikke_publiser` for én analyse, med grunnene fra kontrollen da den ble vurdert |
+
+Et sammendrag kan bare publiseres mot kontrollen når grunnene er tall eller
+datoer som ikke ble funnet i kilden, og bare så lenge dagens grunner er blant
+dem som ble vurdert. Merknader vises bare om de er høyst 300 tegn, uten
+lenker og uten navn (`tolk/merknad.py`).
+
 ## Navnevarianter
 
 Samme person skrives ulikt, også i samme dokument. Oppmøtelisten bruker ofte

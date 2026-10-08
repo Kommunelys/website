@@ -66,7 +66,7 @@
     <ul>
       <li><b>Med kode:</b> stemmetall, navnelister, oppmøte, verv og saksgang. Antall navn må stemme med stemmetallet i protokollen.</li>
       <li><b>Med KI:</b> tittel og sammendrag i klarspråk, skrevet av Claude fra Anthropic og merket «KI-sammendrag». Modellen får saksdokumentene, men ikke stemmetall eller navnelister. Hvert sammendrag kontrolleres mot dokumentene før det vises.</li>
-      <li><b>Når protokollen motsier seg selv,</b> vises avstemningen slik den står, med en merknad. KI kan vurdere slike avvik, men endrer aldri navn eller tall.</li>
+      <li><b>Når protokollen motsier seg selv,</b> vises avstemningen slik den står, med en merknad. KI eller en som vurderer saker for kommunen, kan vurdere slike avvik, men endrer aldri navn eller tall.</li>
       <li><b>For hånd:</b> tolkningen av avstemningene er sjekket linje for linje mot ett kommunestyremøte, og lenkene til partiene er åpnet og sjekket.</li>
     </ul>
     <p>Politikerprofilene bygger bare på medlemslistene og protokollene, uten KI. Koden er åpen på <a href="{{repo}}">GitHub</a>. Kommunegrensene i kartet er fra Kartverket (CC BY 4.0).</p>
@@ -89,6 +89,7 @@
       <li>Dataene lagres hos Supabase i EU (Irland).</li>
       <li>Nettstedet krever ingen innlogging. Portalen (portal.kommunelys.no) lagrer e-postadresse og innloggingstider hos Supabase i EU og sender e-post via Resend. Registrering, innlogging og glemt passord er beskyttet med hCaptcha (Intuition Machines, USA), som får IP-adressen din og opplysninger om nettleseren. Kontoen kan slettes under «Min konto». Er du logget inn, husker nettleseren din e-postadressen for å vise kontoen øverst, uten informasjonskapsler og uten at den sendes til nettstedet.</li>
       <li>E-post til {{epost}} publiseres ikke, og adressen din brukes bare til å svare deg.</li>
+      <li>En melding om feil lagres med kontoen din og publiseres ikke. Den som vurderer saker for kommunen, ser meldingen og e-postadressen din, for å hindre misbruk. Sletter du kontoen, blir meldingen stående uten kobling til deg.</li>
     </ul>
 
     <h2 id="sporsmal">Spørsmål og svar</h2>
@@ -103,7 +104,7 @@
 
     <h2 id="kontakt">Kontakt oss</h2>
     <span id="feil"></span>
-    <p>Feil, spørsmål eller innspill? Skriv til <a href="mailto:{{epost}}">{{epost}}</a>. Gjelder det en sak, ta med lenken eller saksnummeret. «Meld fra om feil» under et sammendrag lager en e-post med saken fylt inn.</p>
+    <p>Feil, spørsmål eller innspill? Skriv til <a href="mailto:{{epost}}">{{epost}}</a>. Gjelder det en sak, ta med lenken eller saksnummeret. Med en konto kan du bruke «Meld fra om feil» nederst på saken. Da går meldingen til den som vurderer saker for kommunen, og svaret ser du under «Min konto».</p>
     <p>Du kan også <a href="{{repo}}/issues">melde fra på GitHub</a>. Det du skriver der, er offentlig.</p>
   </div>
 </main>

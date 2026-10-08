@@ -387,6 +387,43 @@ def vurderinger() -> list[dict]:
                 "from kjerne.vurdering_gjeldende where kommune_id = %s order by id", kommune_id())]
 
 
+@_husket
+def sammendrag_vurderinger() -> dict[int, dict]:
+    """Gjeldende vurdering av sammendraget per sak, bare der den gjelder
+    sakens gjeldende analyse (ADR-023). En ny analyse må vurderes på nytt."""
+    return {sak_id: {"avgjorelse": avg, "grunner": list(grunner), "merknad": merknad,
+                     "dato": _dato(registrert.date())}
+            for sak_id, avg, grunner, merknad, registrert in _rader(
+                "select a.sak_id, v.avgjorelse, v.grunner, v.merknad, v.registrert "
+                "from kjerne.sammendrag_vurdering_gjeldende v "
+                "join kjerne.analyse_gjeldende a on a.kommune_id = v.kommune_id and a.id = v.analyse_id "
+                "where v.kommune_id = %s order by a.sak_id", kommune_id())}
+
+
+@_husket
+def feilmelding_vurderinger() -> list[dict]:
+    """Gjeldende vurdering av hver melding om feil, med saken og hva den gjaldt
+    (ADR-023). gjelder_naa er usann når et sammendrag som ble holdt tilbake,
+    er erstattet av en ny analyse."""
+    return [{"sak_id": sak_id, "gjelder": gjelder, "avgjorelse": avg, "merknad": merknad,
+             "dato": _dato(registrert.date()), "gjelder_naa": naa}
+            for sak_id, gjelder, avg, merknad, registrert, naa in _rader(
+                "select f.sak_id, f.gjelder, v.avgjorelse, v.merknad, v.registrert, "
+                "v.analyse_id is null or v.analyse_id = a.id "
+                "from kjerne.feilmelding_vurdering_gjeldende v "
+                "join kjerne.feilmelding f on f.kommune_id = v.kommune_id and f.id = v.feilmelding_id "
+                "left join kjerne.analyse_gjeldende a on a.kommune_id = f.kommune_id and a.sak_id = f.sak_id "
+                "where v.kommune_id = %s order by v.registrert, v.id", kommune_id())]
+
+
+@_husket
+def apne_meldinger() -> int:
+    """Meldinger om feil som ikke er vurdert ennå, til driftssiden."""
+    return _rader("select count(*) from kjerne.feilmelding f where f.kommune_id = %s and not exists "
+                  "(select 1 from kjerne.feilmelding_vurdering v "
+                  "where v.kommune_id = f.kommune_id and v.feilmelding_id = f.id)", kommune_id())[0][0]
+
+
 # Analyse --------------------------------------------------------------------------
 
 _ANALYSE = ("select sak_id, tittel_klarsprak, sammendrag, betydning, tagger, utfall, uenighet, usikker, "
