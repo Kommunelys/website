@@ -142,6 +142,17 @@ button,input,select{font:inherit;color:inherit}
 .forslag,.lastefeil{margin:0 0 22px;padding:12px 16px;border-left:3px solid var(--lenke);background:var(--surface);max-width:68ch;font-size:16px}
 .lastefeil{margin-top:24px;border-left-color:var(--warn)}
 .lastefeil h2{margin:0 0 6px;font-size:18px}
+/* Begrenset innsyn (ADR-024): forklaringen i stedet for innholdet. */
+.innsyn{margin:32px 0;padding:20px 22px;border:1px solid var(--line);border-left:3px solid var(--lenke);border-radius:10px;background:var(--surface);max-width:60ch;font-size:16px}
+.innsyn h1{margin:0 0 10px;font-size:24px}
+.innsyn p{margin:0 0 12px}
+.innsyn .knapper{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.innsyn .knapp{display:inline-block;padding:9px 16px;border-radius:8px;border:1px solid var(--lenke);color:var(--lenke);font-weight:600;text-decoration:none}
+.innsyn .knapp.hoved{background:var(--lenke);color:var(--surface)}
+.innsyn .knapp:hover{text-decoration:underline}
+body.laast main>section,body.laast #nav{display:none}
+.laas{display:inline-flex;align-items:center;gap:5px;color:var(--lenke)}
+.laas svg{flex:none}
 .ingress code{font-size:.92em;overflow-wrap:anywhere}
 .pastander{list-style:none;margin:0 0 14px;padding:0}
 .pastander li{padding:9px 0;border-bottom:1px solid var(--line)}

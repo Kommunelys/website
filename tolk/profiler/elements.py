@@ -60,8 +60,9 @@ OPPMOTE_SLUTT = "Følgende fra administrasjonen"
 OPPMOTE_NAVN = "Navn"
 OPPMOTE_FUNKSJON = "Funksjon"
 
-# Saksprotokollen slutter med en linje som bare er dette, og vedtaket under.
-VEDTAK_LINJE = "Vedtak"
+# Saksprotokollen slutter med en linje som bare er en av disse, og vedtaket
+# under. Levanger skriver også «VEDTAK» og «Vedtak:».
+VEDTAK_LINJER: tuple[str, ...] = ("Vedtak",)
 
 # Hva som ble enstemmig vedtatt: setningen kuttes ved det første av disse ordene.
 SUBJEKT = re.compile(r"\b(?:Forslag\w*|Innstilling\w*|Tilleggsforslag\w*|Dette|Følgende)\b.*$")
@@ -69,6 +70,8 @@ SUBJEKT = re.compile(r"\b(?:Forslag\w*|Innstilling\w*|Tilleggsforslag\w*|Dette|F
 # Saksframleggene (tolk/saksframlegg.py) ------------------------------------------
 
 SAKSFRAMLEGG_START = "SAKSFRAMLEGG"
+# Linjer som kan stå over ordet, med store bokstaver: «LEVANGER KOMMUNE».
+SAKSFRAMLEGG_FORAN: tuple[str, ...] = ()
 
 # I malens rekkefølge. Bare første treff etter forrige overskrift teller.
 # Variantene er funnet i 2026: «… forslag til vedtak i eldrerådet:»,
@@ -82,6 +85,12 @@ OVERSKRIFTER = (
 )
 
 # Saksgangen (tolk/bygg_saker.py) ---------------------------------------------------
+
+# Funksjonen i oppmøtelisten og medlemslistene slik kommunen skriver den, til
+# formen databasen og nettstedet bruker: Leder, Nestleder, Medlem, Varamedlem
+# (kjerne.oppmote). Steinkjer skriver dem slik; Levanger skriver «medlem» og
+# «ordfører». Settes i kommunens profil.
+FUNKSJONER: dict[str, str] = {}
 
 # Saker som ikke er politikk, men møteteknikk. Holdes utenfor tellingene.
 FORMALIA = (

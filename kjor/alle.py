@@ -9,7 +9,7 @@ en annen. Feiler en kommune, fortsetter kjøringen med neste.
     python -m kjor.alle analyser [år] [--maks 25] [--minutter 150]
     python -m kjor.alle bygg [år] [--hopp-over slug,slug]
 
-Kommunene er de med status «intern» eller «publisert» i kjerne.kommune
+Kommunene er de med status «intern», «begrenset» eller «publisert» i kjerne.kommune
 (lager.kommune.aktive). Året er i år når det ikke er oppgitt. Hver kommune
 hentes og tolkes for alle årene fra «fra_aar» i kommuner/<slug>.json, fordi en
 sak kan gå over flere år (ADR-022). Et eldre år koster ett kall mot portalen
@@ -17,7 +17,9 @@ sak kan gå over flere år (ADR-022). Et eldre år koster ett kall mot portalen
 
 bygg: kontrollerer og bygger hver kommune. En publisert kommune som stopper i
 kontrollene, beholder versjonen som er publisert nå (hentet fra nettstedet).
-En intern kommune legges i nettsted-intern/, ikke i nettsted/. Til slutt
+En intern kommune legges i nettsted-intern/, ikke i nettsted/. En kommune med
+begrenset innsyn får siden og status.json i nettsted/, men dataene lagres i
+databasen og hentes med innloggingen (bygg.skjerm, ADR-024). Til slutt
 bygges det felles. Mangler en publisert kommune helt, stopper bygget, så
 nettstedet aldri publiseres uten den.
 """
@@ -117,17 +119,24 @@ def bygg(aar: int, hopp_over: set[str]) -> int:
     shutil.rmtree(INTERN, ignore_errors=True)
     utfall: dict[str, str] = {}
     mangler = []
-    for slug, status in lager_kommune.aktive():
+    aktive = lager_kommune.aktive()
+    for slug, status in aktive:
+        begrenset = ["--begrenset"] if status == "begrenset" else []
         ok = (slug not in hopp_over
               and all(_kjor(slug, "tester.kontroller", str(a)) for a in lager_kommune.aarene(aar, slug))
-              and _kjor(slug, "bygg.bygg_nettsted", str(aar), "--uten-felles"))
+              and _kjor(slug, "bygg.bygg_nettsted", str(aar), "--uten-felles", *begrenset))
+        if begrenset and ok:
+            # Dataene til databasen, ikke til nettstedet (ADR-024). Siden og
+            # status.json publiseres som for de andre. Feiler det, beholdes
+            # forrige versjon, både her og i databasen.
+            ok = _kjor(slug, "bygg.skjerm")
         if status == "intern":
             if ok:
                 INTERN.mkdir(exist_ok=True)
                 shutil.move(UT / slug, INTERN / slug)
             utfall[slug] = "intern" if ok else "intern, feilet"
         elif ok:
-            utfall[slug] = "ny"
+            utfall[slug] = "ny, begrenset innsyn" if begrenset else "ny"
         elif _forrige(slug):
             utfall[slug] = "forrige versjon"
         else:
@@ -135,6 +144,10 @@ def bygg(aar: int, hopp_over: set[str]) -> int:
     if mangler:
         print(f"\nstopper: {', '.join(mangler)} kunne verken bygges eller hentes fra nettstedet; publiserer ikke")
         return 1
+    # En kommune som er publisert eller tatt ut, skal ikke ha data liggende i
+    # databasen for begrenset innsyn.
+    _kjor(lager_kommune.STANDARD, "bygg.skjerm", "--rydd",
+          ",".join(s for s, st in aktive if st == "begrenset"))
     fil = ROT / "utfall.json"
     fil.write_text(json.dumps(utfall, ensure_ascii=False), encoding="utf-8")
     if not _kjor(lager_kommune.STANDARD, "bygg.bygg_nettsted", "--felles", "--utfall", str(fil)):

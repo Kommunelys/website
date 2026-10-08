@@ -550,14 +550,16 @@ function renderPerson(id){
 const VOT_HID={};VOT.moter.forEach(m=>m.saker.forEach(s=>{VOT_HID[s.hid]={...s,m}}));
 /* Detaljene (ADR-022): hele sammendraget, vedtakstekstene og forslagstekstene
    står i data/detaljer-<år>.json og hentes første gang en sak fra året åpnes.
-   Året er året saken begynte (c.y, eller S.aar med ett år). */
+   Året er året saken begynte (c.y, eller S.aar med ett år). Med begrenset
+   innsyn (ADR-024) hentes filen fra databasen av innsyn.js (HENT_FIL). */
 const VOTE_ID={};ALLEV.forEach(v=>{VOTE_ID[v.id]=v});
 const DETALJER={},DETALJER_KLAR=new Set();
 const sakensAar=c=>String(c.y||AAR);
+const hentFil=window.HENT_FIL||(fil=>fetch('data/'+fil).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}));
 function hentDetaljer(aar){
   const fil=(S.detaljer||{})[aar];
   if(!fil||DETALJER_KLAR.has(aar))return Promise.resolve();
-  return DETALJER[aar]||(DETALJER[aar]=fetch('data/'+fil).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+  return DETALJER[aar]||(DETALJER[aar]=hentFil(fil).then(d=>{if(!d)throw new Error('mangler '+fil);return d}).then(d=>{
     Object.entries(d.a||{}).forEach(([id,a])=>{const c=SAK_ID[id];if(c&&c.a)Object.assign(c.a,a)});
     Object.entries(d.vt||{}).forEach(([hid,vt])=>{if(STEG[hid])STEG[hid].vt=vt});
     Object.entries(d.v||{}).forEach(([id,x])=>{const v=VOTE_ID[id];if(!v)return;v.tekst=x.tekst;(x.deler||[]).forEach((tk,i)=>{if(v.deler&&v.deler[i])v.deler[i].tekst=tk})});

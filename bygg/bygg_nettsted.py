@@ -54,6 +54,9 @@ from tolk.profil import profil
 ROT = Path(__file__).resolve().parent.parent
 MAL = Path(__file__).resolve().parent / "mal"
 UT = ROT / "nettsted"
+# Dataene til kommunene med begrenset innsyn (ADR-024). Publiseres ikke;
+# kjor.alle lagrer dem i databasen (drift.nettsted_fil).
+SKJERMET = ROT / "nettsted-skjermet"
 KOMMUNER = ROT / "kommuner"
 
 MERKE = "Kommunelys"
@@ -61,7 +64,7 @@ MERKE = "Kommunelys"
 # gjaldt alle denne kommunen. Forsiden sender dem videre dit.
 GAMLE_LENKER = "steinkjer"
 # Felles for alle kommunene, lagt på roten.
-FELLES = ("stil.css", "app.js", "konto.js", "favicon.svg", "apple-touch-icon.png")
+FELLES = ("stil.css", "app.js", "konto.js", "innsyn.js", "favicon.svg", "apple-touch-icon.png")
 # Står i bunnteksten på hver side. Bygget stopper uten (CLAUDE.md:
 # utvetydig uoffisiell). Ordlyden er prosjekteiers, 7.10.2026.
 UOFFISIELL = "er en uoffisiell tjeneste"
@@ -84,6 +87,10 @@ NETTSTED = "https://kommunelys.no"
 # Portalen, der man logger inn (ADR-020). KOMMUNELYS_PORTAL overstyrer lokalt,
 # for eksempel http://localhost:5173.
 PORTAL = os.environ.get("KOMMUNELYS_PORTAL", "https://portal.kommunelys.no")
+# Databasen, for kommunene med begrenset innsyn (innsyn.js, ADR-024). Begge er
+# offentlige, som i portalen: nøkkelen gir bare det RLS tillater.
+SUPABASE_URL = "https://lsxqodiqkjroihzoikje.supabase.co"
+SUPABASE_NOKKEL = "sb_publishable_IXC-qhq0BGYyqLjpk68BsQ_dqQxfsr1"
 
 # Besøkstelling (ADR-017). Koden er kontonavnet i GoatCounter:
 # https://<kode>.goatcounter.com. Tom streng slår tellingen av.
@@ -572,6 +579,12 @@ PERSON = ('<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fo
           'stroke-width="2" stroke-linecap="round"/></svg>')
 
 
+# Hengelåsen for kommunene med begrenset innsyn (ADR-024).
+LAAS = ('<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">'
+        '<rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>'
+        '<path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="currentColor" stroke-width="2"/></svg>')
+
+
 def _v(navn: str) -> str:
     """Versjonen av en fil i malen, til ?v=: nettleseren henter filen på nytt
     når innholdet endres, og bruker den den har ellers."""
@@ -637,23 +650,39 @@ def _del_detaljer(S: dict, VOT: dict, sakens_aar: dict[int, int]) -> dict[int, d
     return ut
 
 
-def _kommuneside(kommune: dict, ut: Path) -> None:
+def _skript(kommune: dict, begrenset: bool) -> str:
+    """Skriptene som tegner siden. Med begrenset innsyn henter innsyn.js
+    dataene fra databasen med innloggingen, og laster app.js etterpå (ADR-024)."""
+    app = f"../app.js?v={_v('app.js')}"
+    if not begrenset:
+        return (f'<script src="data/data.js"></script>\n<script src="{app}"></script>\n'
+                "<script>if(!window.KL_KLAR)document.getElementById('lastefeil').hidden=false</script>")
+    a = html.escape
+    return (f'<script src="../innsyn.js?v={_v("innsyn.js")}" data-kommune="{a(kommune["slug"])}" '
+            f'data-navn="{a(kommune["navn"])}" data-app="{a(app)}" data-portal="{a(PORTAL)}" '
+            f'data-api="{a(SUPABASE_URL)}" data-nokkel="{a(SUPABASE_NOKKEL)}" '
+            f'data-epost="{a(KONTAKT_EPOST)}"></script>')
+
+
+def _kommuneside(kommune: dict, ut: Path, begrenset: bool = False) -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
                  {"merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
-                  "v_app": _v("app.js"), "kommune": navn,
+                  "kommune": navn, "skript": _skript(kommune, begrenset),
+                  # Søkemotorene ser bare innloggingen; den skal ikke vises i søk.
+                  "robots": '<meta name="robots" content="noindex">\n' if begrenset else "",
                   "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
     if UOFFISIELL not in (MAL / "app.js").read_text("utf-8"):
         raise SystemExit(f"bunnteksten i app.js mangler «{UOFFISIELL}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
 
 
-def _kart(kommuner: list[dict]) -> str:
+def _kart(kommuner: list[dict], begrensede: frozenset[str] = frozenset()) -> str:
     """Kartet over Trøndelag på forsiden, som SVG.
 
     Kommunene med data er lenker og farget; de andre er uten til vi har data
-    for dem. Grensene lages av bygg.lag_kart og ligger i kommuner/kart/.
+    for dem. Med begrenset innsyn sier navnet at innholdet krever innlogging. Grensene lages av bygg.lag_kart og ligger i kommuner/kart/.
     """
     kart = json.loads((KOMMUNER / "kart" / "trondelag.json").read_text("utf-8"))
     med_data = {k["kommunenr"]: k for k in kommuner}
@@ -665,8 +694,9 @@ def _kart(kommuner: list[dict]) -> str:
             # Navnet midt i kommunen: snittet av hjørnene er godt nok her.
             pkt = [tuple(map(float, xy.split(","))) for xy in re.findall(r"[\d.]+,[\d.]+", k["d"])]
             x, y = (sum(v) / len(pkt) for v in zip(*pkt))
-            farget.append(f'<a href="{slug}/" aria-label="{navn}"><path d="{k["d"]}">'
-                          f'<title>{navn}</title></path>'
+            tittel = f"{navn}: begrenset innsyn, krever innlogging" if slug in begrensede else navn
+            farget.append(f'<a href="{slug}/" aria-label="{tittel}"><path d="{k["d"]}">'
+                          f'<title>{tittel}</title></path>'
                           f'<text x="{x:.0f}" y="{y:.0f}" text-anchor="middle" '
                           f'dominant-baseline="middle">{navn}</text></a>')
         else:
@@ -686,11 +716,15 @@ def periode(st: dict) -> str:
 
 def _kommunekort(kommuner: list[tuple[dict, dict]], foran: str = "") -> str:
     """Listen over kommunene som HTML, så den virker uten skript."""
+    def linje(st: dict) -> str:
+        if st.get("begrenset"):
+            return f'<span class="liten laas">{LAAS}Begrenset innsyn: logg inn for å se</span>'
+        return f'<span class="liten muted">Data hentet {_dato(_hentet(st))}</span>'
     return "\n".join(
         f'<li><a class="kommunekort" href="{foran}{k["slug"]}/">'
         f'<b>{html.escape(k["navn"])}</b>'
         f'<span>{st["saker"]} saker og {st["moter"]} møter {periode(st)}</span>'
-        f'<span class="liten muted">Data hentet {_dato(_hentet(st))}</span>'
+        f'{linje(st)}'
         f'</a></li>'
         for k, st in kommuner)
 
@@ -699,7 +733,8 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     """Kommunelys-forsiden på roten, med en lenke til hver kommune."""
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(""), "v_stil": _v("stil.css"), "kommuner": _kommunekort(kommuner),
-        "kart": _kart([k for k, _ in kommuner]),
+        "kart": _kart([k for k, _ in kommuner],
+                      frozenset(k["slug"] for k, st in kommuner if st.get("begrenset"))),
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
 
@@ -736,19 +771,33 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     (UT / "404.html").write_text(side, encoding="utf-8")
 
 
-def kjor_kommune(aar: int) -> tuple[dict, dict]:
-    """nettsted/<slug>/ for kommunen bygget gjelder. Rører ikke de andre kommunene."""
+def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
+    """nettsted/<slug>/ for kommunen bygget gjelder. Rører ikke de andre kommunene.
+
+    Med begrenset innsyn (ADR-024) får nettsted/<slug>/ bare siden og
+    status.json. Dataene (data.json og detaljer-<år>.json) skrives til
+    nettsted-skjermet/<slug>/, som kjor.alle lagrer i databasen.
+    """
     kommune = _kommune()
     # Alle årene fra kommunens «fra_aar»: en sak kan gå over flere år (ADR-022).
     aarene = lager_kommune.aarene(aar)
     saker = lager_kommune.alle_aar(lager_saker.les, aar)
-    moter = lager_kommune.alle_aar(lager_saker.les_moter, aar)
+    # Utvalg som ikke er politiske, for eksempel et testutvalg i portalen
+    # («skjul_utvalg» i kommuner/<slug>.json), vises ikke.
+    skjul = set(kommune.get("skjul_utvalg", []))
+    moter = [m for m in lager_kommune.alle_aar(lager_saker.les_moter, aar) if m["utvalg"] not in skjul]
     analyser = lager_analyse.alle()
 
     # Kommunen bygges på nytt, så ingenting fra et tidligere bygg blir liggende.
     ut = UT / kommune["slug"]
     shutil.rmtree(ut, ignore_errors=True)
-    (ut / "data").mkdir(parents=True, exist_ok=True)
+    skjermet = SKJERMET / kommune["slug"]
+    shutil.rmtree(skjermet, ignore_errors=True)
+    if begrenset:
+        ut.mkdir(parents=True, exist_ok=True)
+        skjermet.mkdir(parents=True, exist_ok=True)
+    else:
+        (ut / "data").mkdir(parents=True, exist_ok=True)
 
     meldinger = _meldinger()
     sammendrag, holdt_sammendrag = _sammendrag(saker, analyser, meldinger)
@@ -767,14 +816,16 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
 
     # Data ved siden av sidene, for andre som vil bruke dem, ett sett per år.
     # En sak står i året den begynte; et møte og voteringene i møtets år.
-    filer = ["status.json", "index.html", "data/data.js"]
-    for a in aarene:
+    # Med begrenset innsyn publiseres ingen av dem.
+    filer = ["status.json", "index.html"] + ([] if begrenset else ["data/data.js"])
+    for a in [] if begrenset else aarene:
         arets = lager_saker.les(a, [])
         arets_id = {s["sak_id"] for s in arets}
-        arets_moter = {m["mote_id"] for m in lager_saker.les_moter(a, [])}
+        arets_mote_liste = [m for m in lager_saker.les_moter(a, []) if m["utvalg"] not in skjul]
+        arets_moter = {m["mote_id"] for m in arets_mote_liste}
         innhold = {
             "saker": arets,
-            "moter": lager_saker.les_moter(a, []),
+            "moter": arets_mote_liste,
             # Bare sammendragene som vises; de som holdes tilbake, publiseres
             # ikke her heller.
             "analyser": {k: v for k, v in analyser.items() if k in arets_id and k in sammendrag},
@@ -805,16 +856,23 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
     S["detaljer"] = {}
     for a, d in sorted(detaljer.items()):
         tekst = json.dumps(d, ensure_ascii=False, separators=(",", ":"))
-        fil = f"data/detaljer-{a}.json"
-        (ut / fil).write_text(tekst, encoding="utf-8")
-        filer.append(fil)
+        fil = f"detaljer-{a}.json"
+        if begrenset:
+            (skjermet / fil).write_text(tekst, encoding="utf-8")
+        else:
+            (ut / "data" / fil).write_text(tekst, encoding="utf-8")
+            filer.append(f"data/{fil}")
         # ?v= gjør at nettleseren henter filen på nytt når den er endret.
-        S["detaljer"][str(a)] = f"detaljer-{a}.json?v={hashlib.sha256(tekst.encode()).hexdigest()[:10]}"
-    (ut / "data" / "data.js").write_text(
-        "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
-        "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
-        encoding="utf-8")
-    _kommuneside(kommune, ut)
+        S["detaljer"][str(a)] = f"{fil}?v={hashlib.sha256(tekst.encode()).hexdigest()[:10]}"
+    if begrenset:
+        (skjermet / "data.json").write_text(
+            json.dumps({"S": S, "VOT": VOT}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    else:
+        (ut / "data" / "data.js").write_text(
+            "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
+            "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
+            encoding="utf-8")
+    _kommuneside(kommune, ut, begrenset)
 
     status = {
         "bygget": dt.datetime.now().isoformat(timespec="seconds"),
@@ -832,6 +890,8 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
         "dekning": {k: v for k, v in dekning.samlet(aar).items() if k != "mistenkte"},
         # Filene kjor.alle henter når kommunen beholder forrige versjon.
         "filer": filer,
+        # Står på forsiden, men innholdet krever innlogging (ADR-024).
+        "begrenset": begrenset,
         "nivaa": nivaa,
         # Fase 2: faktisk forbruk, for å måle kostnaden.
         "tokens": {k: sum((a.get("tokens") or {}).get(k, 0) for a in analyser.values())
@@ -896,12 +956,14 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
 
 
 def main() -> None:
-    """python -m bygg.bygg_nettsted [år] [--kommune SLUG] [--uten-felles | --felles]
+    """python -m bygg.bygg_nettsted [år] [--kommune SLUG] [--uten-felles [--begrenset] | --felles]
     [--drift-fil STI] [--utfall STI]
 
     Uten valg bygges kommunen og det felles. --uten-felles bygger bare
     nettsted/<slug>/; --felles bare det felles, fra kommunene i nettsted/.
     --utfall er en JSON-fil {slug: utfall} fra kjor.alle til driftssiden.
+    --begrenset bygger kommunen med begrenset innsyn (ADR-024): dataene til
+    nettsted-skjermet/<slug>/, ikke til nettstedet.
     """
     argv = lager_kommune.fra_argv(sys.argv[1:])
     verdier = {n: argv[argv.index(n) + 1] for n in ("--drift-fil", "--utfall") if n in argv}
@@ -912,7 +974,7 @@ def main() -> None:
         utfall = json.loads(Path(verdier["--utfall"]).read_text("utf-8")) if "--utfall" in verdier else None
         kjor_felles(drift_fil, utfall)
     elif "--uten-felles" in argv:
-        kjor_kommune(aar)
+        kjor_kommune(aar, begrenset="--begrenset" in argv)
     else:
         kjor(aar, drift_fil)
 

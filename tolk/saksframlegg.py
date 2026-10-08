@@ -25,8 +25,13 @@ from .profil import profil
 
 
 def er_saksframlegg(tekst: str) -> bool:
-    """Følger dokumentet kommunens mal?"""
-    return tekst.lstrip().upper().startswith(profil().saksframlegg_start)
+    """Følger dokumentet kommunens mal? Linjene i «saksframlegg_foran» kan stå
+    først, for eksempel «Levanger kommune» over «Saksframlegg»."""
+    p = profil()
+    linjer = [linje.strip().upper() for linje in tekst.splitlines() if linje.strip()]
+    while linjer and linjer[0] in p.saksframlegg_foran:
+        linjer.pop(0)
+    return bool(linjer) and linjer[0].startswith(p.saksframlegg_start)
 
 
 def del_opp(tekst: str) -> dict[str, str] | None:

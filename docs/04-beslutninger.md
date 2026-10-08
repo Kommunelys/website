@@ -651,3 +651,51 @@ melding om feil må komme inn i samme gang som avvikene.
   `kjerne.sammendrag_vurdering`, alle bare innsetting. Portalen ser dem
   gjennom `portal.feilmelding`, `portal.feilmelding_vurdering`,
   `portal.sammendrag_holdt` og `portal.sammendrag_vurdering`.
+
+## ADR-024 — Begrenset innsyn: kommunen vises, innholdet krever en rolle
+
+**Besluttet.** Prosjekteier, 8.10.2026. Endrer ADR-020 (nettstedet åpent for
+alle) og utvider ADR-021 (status per kommune).
+
+Levanger og kommunene etter skal ikke være åpne for alle med en gang. Alle
+skal se at kommunen finnes, på forsiden og på kartet, men innholdet skal bare
+vises for innloggede med en rolle for kommunen. Nettstedet er statisk på
+GitHub Pages, og det som ligger der, kan alle lese. Dataene for en slik
+kommune kan derfor ikke ligge på nettstedet.
+
+**Konsekvens:**
+
+- Ny status `begrenset` i `kjerne.kommune`, mellom `intern` og `publisert`.
+  Kommunen hentes, tolkes, analyseres og kontrolleres som de andre.
+- Ny rolle `leser` i `tilgang.medlemskap`, ved siden av `admin` og
+  `vurderer`, gitt per kommune med «Gi rolle» i portalen. Alle tre rollene og
+  prosjektadmin gir innsyn (`tilgang.innsyn_kommuner`). Leser vurderer ikke:
+  `tilgang.vurderer_kommuner` tar nå bare med `admin` og `vurderer`.
+- Bygget (`bygg.bygg_nettsted --begrenset`) lager de samme sidene. På
+  nettstedet ligger bare `index.html` og `status.json`. `data.json` (S og VOT)
+  og `detaljer-<år>.json` skrives til `nettsted-skjermet/<slug>/`, og
+  `bygg.skjerm` lagrer dem i `drift.nettsted_fil`. JSON-filene per år for
+  andre som vil bruke dataene, lages ikke. Siden har `noindex`.
+- Siden laster `innsyn.js` i stedet for `data.js`. Den henter dataene med
+  `portal.nettsted_fil(kommune, fil)` og innloggingen, og laster så `app.js`
+  som for de andre kommunene. Detaljene til en sak hentes på samme måte
+  (`HENT_FIL`). Uten innlogging, uten rolle eller før dataene er bygget,
+  forklarer siden hvorfor innholdet ikke vises, med «Logg inn» og «Ny
+  bruker».
+- Innloggingen er portalens: når portalen sender brukeren tilbake via
+  `/konto/`, følger tilgangsnøkkelen (access token) med etter `#`, og siden
+  lagrer den i localStorage. Den gjelder i en time. Er den gått ut, og
+  brukeren var logget inn, går siden via portalens `/login`, som sender en ny
+  tilbake uten å spørre så lenge brukeren er logget inn der. Nettstedet
+  fornyer aldri selv (refresh token), så det ikke kommer i konflikt med
+  portalens innlogging.
+- Nøkkelen gir det samme som innloggingen i portalen, i en time. Den kan
+  leses av skript på nettstedet, som er våre egne og GoatCounter. Står på
+  Om-siden.
+- Forsiden og kartet viser kommunen med en hengelås og «Begrenset innsyn».
+  Antall saker og møter vises; de står også i kommunens egen innsynsportal.
+- Når kommunen publiseres (`status = 'publisert'`), bygges den som de andre,
+  og `kjor.alle` fjerner dataene i `drift.nettsted_fil`.
+- Prinsippet i `tilgang.sql` står: tilgang gir ikke mer innhold enn det som
+  bygges. En kommune med begrenset innsyn viser det samme som en publisert,
+  bare til færre.
