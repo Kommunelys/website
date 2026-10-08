@@ -58,18 +58,18 @@
 
   var andre = knapp('Se de andre kommunene', '../');
 
+  // Teksten er prosjekteiers (8.10.2026).
+  var TITTEL = 'Denne kommunen har begrenset innsyn';
+  var BEGRENSET = 'Tilgang til denne kommunen er begrenset til inviterte brukere foreløpig.';
+  function spor() { return ['Mener du at du bør ha tilgang? Skriv til ', epost()]; }
+
   function utenInnlogging() {
-    vis(navn + ' har begrenset innsyn foreløpig', [
-      ['Vi prøver ut Kommunelys for ' + navn + ' før sidene åpnes for alle. Til da ser du sakene, møtene og de folkevalgte når du er logget inn og har fått tilgang til ' + navn + '.'],
-      ['Har du konto, men ikke tilgang? Skriv til ', epost(), '.']
-    ], [knapp('Logg inn', viaPortalen('/login'), true), knapp('Ny bruker', viaPortalen('/registrer')), andre]);
+    vis(TITTEL, [[BEGRENSET], spor()],
+      [knapp('Logg inn', viaPortalen('/login'), true), andre]);
   }
 
   function utenTilgang() {
-    vis('Du har ikke tilgang til ' + navn + ' ennå', [
-      ['Du er logget inn' + (innlogget ? ' som ' + konto.epost : '') + ', men kontoen din har ikke tilgang til ' + navn + '. Innsynet er begrenset mens vi prøver ut tjenesten for kommunen.'],
-      ['Vil du ha tilgang, skriv til ', epost(), ' fra e-postadressen du er logget inn med.']
-    ], [andre]);
+    vis(TITTEL, [[(innlogget ? 'Du er logget inn som ' + konto.epost + '. ' : '') + BEGRENSET], spor()], [andre]);
   }
 
   function ikkeKlar() {
