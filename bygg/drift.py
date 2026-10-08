@@ -171,6 +171,7 @@ def _innhold(status: dict, avvik: dict[str, int], poster: list[dict], na: dt.dat
          + (f" ({holdt} holdt tilbake)" if holdt else "")),
         ("Voteringer der stemmene ikke vises", tall(status.get("voteringer_holdt_tilbake", 0))),
         ("Avvik ikke vurdert", tall(avvik.get("ikke_vurdert", 0))),
+        ("Meldinger om feil som venter", tall(status.get("meldinger_apne", 0))),
         *_dekning(status),
     ])
 

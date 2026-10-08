@@ -600,3 +600,54 @@ et eget steg før august 2027.
   komprimert. Feiler hentingen, vises saken uten sammendraget, siden
   kildelenkene mangler (regel 5).
 - Ingen ny migrering: `kjerne.sak.aar` betyr det samme som før.
+
+## ADR-023 — Vurdering per kommune og meldinger om feil
+
+**Besluttet.** Prosjekteier, 8.10.2026. Utvider ADR-015 og ADR-020.
+
+Bare prosjektadmin kunne vurdere avvik, og «Meld fra om feil» åpnet en e-post
+uten noe spor i tjenesten. Med flere kommuner må andre kunne vurdere, og en
+melding om feil må komme inn i samme gang som avvikene.
+
+**Konsekvens:**
+
+- Rollen `vurderer` (eller `admin`) for en kommune i `tilgang.medlemskap` gir
+  menyen «Til vurdering» i portalen for den kommunen: avvik i stemmene,
+  sammendrag som ikke besto kontrollen, og meldinger om feil. Bare
+  prosjektadmin gir rollene, som før.
+- Innholdet endres aldri av en vurdering: ikke sammendraget, ikke navn og
+  tall, ikke saksgangen (regel 2, 5 og 6). En vurdering avgjør om noe vises.
+  Feil rettes der de oppstår: i regelsettet, i en ny analyse eller i
+  `tillatte-navn.json`.
+- En vurdering kan ha en offentlig merknad. Den vises ved neste kjøring uten
+  godkjenning for hånd, men bare om den er høyst 300 tegn, uten lenker og
+  uten navn på folkevalgte eller privatpersoner (`kjerne.merknad_ok` og
+  `tolk/merknad.py`). Består den ikke, holdes det den gjelder, tilbake.
+  Begrunnelsen er intern, og svaret til den som meldte, vises bare under
+  Min konto.
+- «Meld fra om feil» nederst på saken går til `/meld` i portalen og krever
+  innlogging. Brukeren velger hva det gjelder (sammendrag, stemmer,
+  saksgang, annet) og skriver hva som er feil, minst 20 tegn. Høyst ti
+  meldinger per bruker per døgn.
+- En melding skjuler ingenting før den er vurdert: én konto skal ikke kunne
+  ta ned en sak. Vurderingen kan være «ikke feil», «rettet» eller «holdes
+  tilbake». Det siste gjelder bare sammendrag (den analysen som gjaldt, så en
+  ny analyse vises igjen) og stemmer (alle voteringene i saken).
+- Den som vurderer i kommunen, og prosjektadmin, ser hvem som meldte
+  (e-postadressen) og hvor mange meldinger brukeren har sendt der, for å
+  hindre misbruk (prosjekteier, 8.10.2026). Prosjektadmin kan sperre
+  brukeren under Brukere. Ingen kan vurdere sin egen melding.
+- E-postadressen hentes fra kontoen når den vises (`tilgang.melder_epost`),
+  og lagres ikke på meldingen. Sletter brukeren kontoen, blir meldingen
+  stående uten kobling til den. Meldingene logges ikke i endringsloggen, som
+  ikke kan slettes.
+- Et sammendrag som ikke besto kontrollen, kan slippes gjennom bare når
+  grunnene er tall eller datoer som ikke ble funnet i kilden
+  (`kan_overstyres`). Grunnene lagres med vurderingen, og kommer det nye
+  grunner, holdes sammendraget tilbake igjen.
+- `data/analyser-<år>.json` på nettstedet har bare sammendragene som vises.
+  Før lå også de som ble holdt tilbake, der.
+- Tabellene: `kjerne.feilmelding`, `kjerne.feilmelding_vurdering` og
+  `kjerne.sammendrag_vurdering`, alle bare innsetting. Portalen ser dem
+  gjennom `portal.feilmelding`, `portal.feilmelding_vurdering`,
+  `portal.sammendrag_holdt` og `portal.sammendrag_vurdering`.

@@ -43,9 +43,11 @@ from lager import oppmote as lager_oppmote
 from lager import saker as lager_saker
 from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
-from tester.kontroller import sammendrag_avvik_alle, unntatte_navn
+from lager import avvik as lager_avvik
+from tester.kontroller import kan_overstyres, sammendrag_avvik_alle, unntatte_navn
 from tolk import dekning
-from tolk.bygg_avvik import AVGJORELSER, alle_avvik, holdt_tilbake
+from tolk.bygg_avvik import AVGJORELSER, alle_avvik, folkevalgte, holdt_tilbake
+from tolk.merknad import merknad_avvik
 from tolk.navn import normaliser, partikode
 from tolk.profil import profil
 
@@ -114,27 +116,70 @@ def _kildenavn(k: dict) -> str:
     return "saksframlegget" if k["tittel"] == "Saksframlegg" else k["tittel"]
 
 
-def _sammendrag(saker: list, analyser: dict) -> tuple[dict, list[str]]:
+def _meldinger() -> dict:
+    """Det vurderingene av meldinger om feil gjør på nettstedet (ADR-023).
+
+    sammendrag og stemmer: sakene der det som ble meldt, holdes tilbake.
+    merk: offentlige merknader per sak, med dato. Merknader som ikke består
+    kontrollen (tolk/merknad.py), vises ikke.
+    """
+    navn = folkevalgte()
+    ut: dict = {"sammendrag": set(), "stemmer": set(), "merk": collections.defaultdict(list)}
+    for v in lager_avvik.feilmelding_vurderinger():
+        if v["avgjorelse"] == "holdes_tilbake" and v["gjelder"] in ("sammendrag", "stemmer"):
+            # Et sammendrag som er erstattet av en ny analyse, vises igjen.
+            if v["gjelder"] == "stemmer" or v["gjelder_naa"]:
+                ut[v["gjelder"]].add(v["sak_id"])
+        if v["merknad"] and v["gjelder_naa"]:
+            feil = merknad_avvik(v["merknad"], navn)
+            if feil:
+                print(f"ADVARSEL: merknaden til en melding i sak {v['sak_id']} vises ikke: "
+                      f"{'; '.join(feil)}", file=sys.stderr)
+            else:
+                ut["merk"][v["sak_id"]].append({"t": v["merknad"], "d": v["dato"]})
+    return ut
+
+
+def _sammendrag(saker: list, analyser: dict, meldinger: dict) -> tuple[dict, list[str]]:
     """Sammendragene som kan publiseres, per sak-ID, og hvorfor resten holdes tilbake.
 
     Samme prinsipp som for voteringer: et sammendrag med avvik vises ikke,
-    men stopper ikke resten av nettstedet.
+    men stopper ikke resten av nettstedet. En vurderer kan slippe gjennom et
+    sammendrag der kontrollen bare savner tall eller datoer i kilden
+    (kan_overstyres), så lenge grunnene er de samme som da det ble vurdert.
+    Et sammendrag holdes også tilbake når en melding om feil er vurdert slik
+    (ADR-023).
     """
     alle_avvik = sammendrag_avvik_alle(saker, analyser, unntatte_navn())
+    vurdert = lager_avvik.sammendrag_vurderinger()
+    navn = folkevalgte()
     ut, holdt = {}, []
     for s in saker:
         a = analyser.get(s["sak_id"])
         if not a:
             continue
-        avvik = alle_avvik[s["sak_id"]]
-        if avvik:
-            holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik)}")
+        if s["sak_id"] in meldinger["sammendrag"]:
+            holdt.append(f"sak {s['sak_id']}: holdt tilbake etter en melding om feil")
             continue
+        avvik = alle_avvik[s["sak_id"]]
+        v = vurdert.get(s["sak_id"])
+        merk_feil = merknad_avvik(v["merknad"], navn) if v else []
+        if v and v["avgjorelse"] == "ikke_publiser":
+            holdt.append(f"sak {s['sak_id']}: vurdert til ikke å publiseres")
+            continue
+        if avvik:
+            godkjent = (v and v["avgjorelse"] == "publiser" and kan_overstyres(avvik)
+                        and set(avvik) <= set(v["grunner"]) and not merk_feil)
+            if not godkjent:
+                holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik + merk_feil)}")
+                continue
         ut[s["sak_id"]] = {
             "tk": a["tittel_klarsprak"], "sum": a["sammendrag"], "bet": a["betydning"],
             "uen": a["uenighet"], "tags": a["tagger"], "modell": a["modell"],
             "kilder": [{"tittel": _kildenavn(k), "url": k["url"]} for k in a["kilder"]],
         }
+        if v and v["merknad"] and not merk_feil:
+            ut[s["sak_id"]]["merk"] = {"t": v["merknad"], "d": v["dato"]}
     return ut, holdt
 
 # Hvorfor stemmene i en votering ikke vises. Står på voteringen, med lenke til
@@ -143,6 +188,8 @@ GRUNN = {
     "ikke_publiser": "Stemmene vises ikke: protokollen er selvmotsigende, og det går ikke an å si fra dokumentet hvordan partiene stemte.",
     "ikke_vurdert": "Stemmene vises ikke ennå: protokollen er selvmotsigende, og avviket er ikke gått gjennom.",
 }
+# Når en melding om feil i stemmene er vurdert slik (ADR-023).
+GRUNN_MELDING = "Stemmene vises ikke: det er meldt om en feil i dem, og de holdes tilbake til den er rettet."
 # En avgjørelse bygget ikke kjenner, regnes som ingen vurdering: voteringen
 # holdes tilbake, og bygget sier fra (tester.kontroller stopper den også).
 UKJENT = "ikke_vurdert"
@@ -428,18 +475,25 @@ def _s(aarene: list[int], saker: list, moter: list, sammendrag: dict, kommune: d
         "mprot": dict(protokoller),
         "meld": MELD_FEIL,
         "repo": REPO,
-        # «Meld fra om feil» åpner en e-post hit når adressen er satt.
         "epost": KONTAKT_EPOST,
+        # «Meld fra om feil» går til skjemaet i portalen, som krever
+        # innlogging (ADR-023).
+        "portal": PORTAL,
         **({} if med_oppmote else {"ikke_oppmote": True}),
     }
 
 
-def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
-    """Voteringene per møte, med avvik som ikke er godkjent, holdt tilbake."""
+def _vot(aar: int, saker: list, moter: list, meldinger: dict) -> tuple[dict, int]:
+    """Voteringene per møte, med avvik som ikke er godkjent, holdt tilbake.
+
+    Stemmene i en sak holdes også tilbake når en melding om feil i dem er
+    vurdert slik (ADR-023).
+    """
     voteringer = lager_kommune.alle_aar(lager_voteringer.les, aar)
     stopp, merknader = holdt_tilbake(aar)
     status = {a["avvik"]: a["status"] for a in alle_avvik(aar)}
     tittel = {st["behandling_id"]: s["tittel"] for s in saker for st in s["saksgang"]}
+    meldt = {st["behandling_id"] for s in saker for st in s["saksgang"] if s["sak_id"] in meldinger["stemmer"]}
     mote_for = {st["behandling_id"]: st["mote_id"] for s in saker for st in s["saksgang"]}
     mote = {m["mote_id"]: m for m in moter}
 
@@ -460,7 +514,10 @@ def _vot(aar: int, saker: list, moter: list) -> tuple[dict, int]:
                   "parti": v["parti"], "lbl": _etikett(v, tekst), "tekst": tekst,
                   "bak": bak, "res": v["resultat"],
                   "en": v["enstemmig"], "dob": v["dobbeltstemme"]}
-            if nokkel in stopp:
+            if b["behandling_id"] in meldt:
+                ut["holdt"] = GRUNN_MELDING
+                holdt += 1
+            elif nokkel in stopp:
                 grunner = []
                 for a in stopp[nokkel]:
                     s = status.get(a, "ikke_vurdert")
@@ -693,13 +750,17 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
     shutil.rmtree(ut, ignore_errors=True)
     (ut / "data").mkdir(parents=True, exist_ok=True)
 
-    sammendrag, holdt_sammendrag = _sammendrag(saker, analyser)
+    meldinger = _meldinger()
+    sammendrag, holdt_sammendrag = _sammendrag(saker, analyser, meldinger)
     vedtak = {b["behandling_id"]: b.get("vedtak")
               for b in lager_kommune.alle_aar(lager_voteringer.les, aar)}
     nivaa = _nivaa()
     S = _s(aarene, saker, moter, sammendrag, kommune, vedtak, nivaa["oppmote"])
+    for c in S["cases"]:
+        if c["id"] in meldinger["merk"]:
+            c["merk"] = meldinger["merk"][c["id"]]
     if nivaa["voteringer"]:
-        VOT, holdt = _vot(aar, saker, moter)
+        VOT, holdt = _vot(aar, saker, moter, meldinger)
     else:
         # Stemmene kan ikke leses sikkert ennå; malen sier det (VOT.ikke_dekket).
         VOT, holdt = {"moter": [], "parti": {}, "ikke_dekket": True}, 0
@@ -714,7 +775,9 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
         innhold = {
             "saker": arets,
             "moter": lager_saker.les_moter(a, []),
-            "analyser": {k: v for k, v in analyser.items() if k in arets_id},
+            # Bare sammendragene som vises; de som holdes tilbake, publiseres
+            # ikke her heller.
+            "analyser": {k: v for k, v in analyser.items() if k in arets_id and k in sammendrag},
             "voteringer": VOT if len(aarene) == 1 else
             {**VOT, "moter": [m for m in VOT["moter"] if m["id"] in arets_moter]},
             # Søkeindeks bygget på forhånd, kjører i nettleseren.
@@ -764,6 +827,7 @@ def kjor_kommune(aar: int) -> tuple[dict, dict]:
         "voteringer_holdt_tilbake": holdt,
         "sammendrag_publisert": len(sammendrag),
         "sammendrag_holdt_tilbake": holdt_sammendrag,
+        "meldinger_apne": lager_avvik.apne_meldinger(),
         # Hvor mye av protokollene regelsettet leser (tolk/dekning.py).
         "dekning": {k: v for k, v in dekning.samlet(aar).items() if k != "mistenkte"},
         # Filene kjor.alle henter når kommunen beholder forrige versjon.

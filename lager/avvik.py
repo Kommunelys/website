@@ -30,3 +30,21 @@ def vurderinger() -> list[dict]:
     if fra_databasen():
         return pg.vurderinger()
     return _fil.les(VURDERINGER, [])
+
+
+# Sammendrag og meldinger om feil vurderes bare i portalen, som skriver til
+# databasen (ADR-023). Filene i data/ har ingen.
+
+def sammendrag_vurderinger() -> dict[int, dict]:
+    """Gjeldende vurdering av sammendraget per sak, for sakens gjeldende analyse."""
+    return pg.sammendrag_vurderinger() if fra_databasen() else {}
+
+
+def feilmelding_vurderinger() -> list[dict]:
+    """Gjeldende vurdering av hver melding om feil som er vurdert."""
+    return pg.feilmelding_vurderinger() if fra_databasen() else []
+
+
+def apne_meldinger() -> int:
+    """Meldinger om feil som venter på vurdering."""
+    return pg.apne_meldinger() if fra_databasen() else 0

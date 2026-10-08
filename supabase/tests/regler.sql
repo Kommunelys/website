@@ -400,6 +400,186 @@ begin
     insert into resultat values ('portal: kunne ikke kjøres', false, sqlerrm);
   end;
 
+  -- Meldinger om feil og vurdering per kommune (ADR-023) -------------------------
+  -- vanlig melder, bruker er vurderer for testkommunen.
+  begin
+    update kjerne.kommune set status = 'publisert' where kommune_id = k;
+    insert into tilgang.medlemskap (user_id, kommune_id, rolle) values (bruker, k, 'vurderer');
+    insert into kjerne.feilmelding (kommune_id, sak_id, gjelder, beskrivelse, meldt_av)
+      values (k, 5000, 'annet', 'En annen bruker mener noe er feil her.', admin);
+
+    perform set_config('request.jwt.claims', json_build_object('sub', vanlig, 'role', 'authenticated')::text, true);
+    perform pg_temp.skal_virke('melding: innlogget bruker melder om feil',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding (kommune_id, sak_id, gjelder, beskrivelse)
+          values (%1$s, 5000, 'sammendrag', 'Beløpet i sammendraget stemmer ikke med saken.');
+        insert into portal.feilmelding (kommune_id, sak_id, gjelder, beskrivelse)
+          values (%1$s, 5000, 'saksgang', 'Saken mangler et møte i formannskapet.');
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('melding: lagret med brukeren',
+      (select count(*) = 2 from kjerne.feilmelding where kommune_id = k and meldt_av = vanlig));
+    set local role authenticated;
+    svar := (select count(*) = 2 from portal.feilmelding where kommune_id = k);
+    svar2 := (select bool_and(egen and sak_tittel = 'Testsak' and avgjorelse = 'ikke_vurdert')
+              from portal.feilmelding where kommune_id = k);
+    svar3 := (select count(*) = 0 from portal.sammendrag_holdt)
+             and (select tilgang.melder_epost(admin) is null);
+    reset role;
+    perform pg_temp.skal_vaere('melding: brukeren ser bare sine egne', svar);
+    perform pg_temp.skal_vaere('melding: brukeren ser saken og at den ikke er vurdert', svar2);
+    perform pg_temp.skal_vaere('melding: vanlig bruker ser ikke sammendrag eller andres e-post', svar3);
+    perform pg_temp.skal_feile('melding: uten beskrivelse stoppes',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding (kommune_id, sak_id, gjelder, beskrivelse)
+          values (%s, 5000, 'annet', 'Feil.')$s$, k));
+    perform pg_temp.skal_feile('melding: i en kommune som ikke er publisert, stoppes',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding (kommune_id, sak_id, gjelder, beskrivelse)
+          values (%s, 6000, 'annet', 'Dette er en melding om en feil i saken.')$s$, k2));
+    perform pg_temp.skal_feile('melding: på vegne av en annen stoppes',
+      format($s$set local role authenticated;
+        insert into kjerne.feilmelding (kommune_id, sak_id, gjelder, beskrivelse, meldt_av)
+          values (%s, 5000, 'annet', 'Dette er en melding om en feil i saken.', '%s')$s$, k, admin));
+    perform pg_temp.skal_feile('melding: brukeren kan ikke vurdere',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding_vurdering (kommune_id, feilmelding_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'ikke_feil', 'b', 'meg' from kjerne.feilmelding where kommune_id = %s limit 1$s$, k));
+    perform pg_temp.skal_feile('anon: kan ikke melde',
+      format($s$set local role anon;
+        insert into portal.feilmelding (kommune_id, sak_id, gjelder, beskrivelse)
+          values (%s, 5000, 'annet', 'Dette er en melding om en feil i saken.')$s$, k));
+    perform pg_temp.skal_feile('melding: kan ikke endres',
+      format('update kjerne.feilmelding set beskrivelse = ''Noe helt annet enn før.'' where kommune_id = %s', k));
+    perform pg_temp.skal_feile('melding: kan ikke slettes',
+      format('delete from kjerne.feilmelding where kommune_id = %s', k));
+    perform pg_temp.skal_feile('melding: høyst ti per døgn',
+      format($s$insert into kjerne.feilmelding (kommune_id, sak_id, gjelder, beskrivelse, meldt_av)
+        select %s, 5000, 'annet', 'Dette er en melding om en feil i saken.', '%s' from generate_series(1, 9)$s$,
+        k, vanlig));
+
+    -- Vurdereren for kommunen.
+    perform set_config('request.jwt.claims', json_build_object('sub', bruker, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select count(*) = 3 from portal.feilmelding where kommune_id = k);
+    svar2 := (select not bool_or(egen)
+                     and count(*) filter (where meldt_av_epost = 'vanlig@example.invalid'
+                                          and meldinger_fra_bruker = 2) = 2
+              from portal.feilmelding where kommune_id = k);
+    svar3 := (select count(*) > 0 from portal.avvik where kommune_id = k);
+    reset role;
+    perform pg_temp.skal_vaere('vurderer: ser alle meldingene i kommunen', svar);
+    perform pg_temp.skal_vaere('vurderer: ser hvem som meldte, og hvor mange de har sendt', svar2);
+    perform set_config('request.jwt.claims', json_build_object('sub', admin, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select count(*) = 2 from portal.feilmelding
+             where kommune_id = k and meldt_av_epost = 'vanlig@example.invalid');
+    reset role;
+    perform pg_temp.skal_vaere('prosjektadmin: ser hvem som meldte', svar);
+    perform set_config('request.jwt.claims', json_build_object('sub', bruker, 'role', 'authenticated')::text, true);
+    perform pg_temp.skal_vaere('vurderer: ser avvikene i kommunen', svar3);
+    perform pg_temp.skal_virke('vurderer: holder tilbake sammendraget etter en melding',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding_vurdering (kommune_id, feilmelding_id, avgjorelse, svar, begrunnelse, vurdert_av)
+          select kommune_id, id, 'holdes_tilbake', 'Takk, det stemmer.', 'Beløpet står ikke i saksframlegget.', 'Vurderer'
+          from kjerne.feilmelding where kommune_id = %s and gjelder = 'sammendrag';
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('vurderer: vurderingen gjelder den gjeldende analysen',
+      (select v.analyse_id = a.id and v.registrert_av = bruker
+         from kjerne.feilmelding_vurdering_gjeldende v
+         join kjerne.feilmelding f on f.kommune_id = v.kommune_id and f.id = v.feilmelding_id
+         join kjerne.analyse_gjeldende a on a.kommune_id = f.kommune_id and a.sak_id = f.sak_id
+        where v.kommune_id = k));
+    perform pg_temp.skal_feile('vurderer: saksgangen kan ikke holdes tilbake',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding_vurdering (kommune_id, feilmelding_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'holdes_tilbake', 'b', 'Vurderer'
+          from kjerne.feilmelding where kommune_id = %s and gjelder = 'saksgang'$s$, k));
+    perform pg_temp.skal_feile('vurderer: merknad med lenke stoppes',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding_vurdering (kommune_id, feilmelding_id, avgjorelse, merknad, begrunnelse, vurdert_av)
+          select kommune_id, id, 'ikke_feil', 'Se https://example.invalid', 'b', 'Vurderer'
+          from kjerne.feilmelding where kommune_id = %s and gjelder = 'saksgang'$s$, k));
+    perform pg_temp.skal_feile('vurderer: merknad over 300 tegn stoppes',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding_vurdering (kommune_id, feilmelding_id, avgjorelse, merknad, begrunnelse, vurdert_av)
+          select kommune_id, id, 'ikke_feil', repeat('x', 301), 'b', 'Vurderer'
+          from kjerne.feilmelding where kommune_id = %s and gjelder = 'saksgang'$s$, k));
+    perform pg_temp.skal_feile('vurderer: vurderingen kan ikke endres',
+      format($s$set local role authenticated; update portal.feilmelding_vurdering set avgjorelse = 'rettet'
+        where kommune_id = %s$s$, k));
+    perform pg_temp.skal_virke('vurderer: melder selv',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding (kommune_id, sak_id, gjelder, beskrivelse)
+          values (%s, 5000, 'stemmer', 'Jeg mener stemmene er lest feil her.');
+        reset role$s$, k));
+    perform pg_temp.skal_feile('vurderer: kan ikke vurdere sin egen melding',
+      format($s$set local role authenticated;
+        insert into portal.feilmelding_vurdering (kommune_id, feilmelding_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'holdes_tilbake', 'b', 'Vurderer'
+          from kjerne.feilmelding where kommune_id = %s and meldt_av = '%s'$s$, k, bruker));
+    perform pg_temp.skal_feile('vurderer: kan ikke vurdere i en annen kommune',
+      format($s$set local role authenticated;
+        insert into portal.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av)
+          values (%s, 'oppmote:1000:kari-test', 'publiser', 'b', 'Vurderer')$s$, k2));
+    perform pg_temp.skal_virke('vurderer: vurderer avvik i sin kommune',
+      format($s$set local role authenticated;
+        insert into portal.vurdering (kommune_id, avvik, avgjorelse, merknad, begrunnelse, vurdert_av)
+          values (%s, 'oppmote:1000:kari-test', 'publiser', 'Protokollen er selvmotsigende.', 'b', 'Vurderer');
+        reset role$s$, k));
+    perform pg_temp.skal_feile('vurderer: merknad med lenke stoppes også for avvik',
+      format($s$set local role authenticated;
+        insert into portal.vurdering (kommune_id, avvik, avgjorelse, merknad, begrunnelse, vurdert_av)
+          values (%s, 'oppmote:1000:kari-test', 'publiser', 'Se www.example.invalid', 'b', 'Vurderer')$s$, k));
+
+    -- Sammendrag som ikke besto: et tall kan overstyres, et navn ikke.
+    insert into kjerne.analyse_kontroll (kommune_id, analyse_id, kontrollert, bestatt, grunner)
+      select k, id, now() + interval '1 second', false, array['tallet ''123'' finnes ikke i kilden']
+      from kjerne.analyse where kommune_id = k;
+    set local role authenticated;
+    svar := (select count(*) = 1 and bool_and(kan_godkjennes and avgjorelse = 'ikke_vurdert')
+             from portal.sammendrag_holdt where kommune_id = k);
+    reset role;
+    perform pg_temp.skal_vaere('sammendrag: vurdereren ser det som holdes tilbake', svar);
+    perform pg_temp.skal_virke('sammendrag: et tall som ikke ble funnet, kan overstyres',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_vurdering (kommune_id, analyse_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'Tallet står i tabellen på side 3.', 'Vurderer'
+          from kjerne.analyse where kommune_id = %s;
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('sammendrag: grunnene huskes med vurderingen',
+      (select grunner = array['tallet ''123'' finnes ikke i kilden'] and registrert_av = bruker
+         from kjerne.sammendrag_vurdering_gjeldende where kommune_id = k));
+    insert into kjerne.analyse_kontroll (kommune_id, analyse_id, kontrollert, bestatt, grunner)
+      select k, id, now() + interval '2 seconds', false, array['navnet ''Kari Nordmann'' fra tittelen står i teksten']
+      from kjerne.analyse where kommune_id = k;
+    perform pg_temp.skal_feile('sammendrag: et navn kan ikke overstyres',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_vurdering (kommune_id, analyse_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'b', 'Vurderer' from kjerne.analyse where kommune_id = %s$s$, k));
+    perform pg_temp.skal_feile('sammendrag: vurdering kan ikke endres',
+      format($s$set local role authenticated; update portal.sammendrag_vurdering set avgjorelse = 'ikke_publiser'
+        where kommune_id = %s$s$, k));
+
+    -- Den som meldte, ser svaret, men ikke begrunnelsen.
+    perform set_config('request.jwt.claims', json_build_object('sub', vanlig, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select f.avgjorelse = 'holdes_tilbake' and f.svar = 'Takk, det stemmer.'
+             from portal.feilmelding f where f.kommune_id = k and f.gjelder = 'sammendrag');
+    svar2 := (select count(*) = 0 from portal.feilmelding_vurdering);
+    reset role;
+    perform pg_temp.skal_vaere('melding: brukeren ser avgjørelsen og svaret', svar);
+    perform pg_temp.skal_vaere('melding: brukeren ser ikke begrunnelsen', svar2);
+
+    -- Kontoen slettes: meldingene blir stående uten kobling til den.
+    perform pg_temp.skal_virke('melding: kontoen kan slettes',
+      format('delete from auth.users where id = ''%s''', vanlig));
+    perform pg_temp.skal_vaere('melding: står igjen uten bruker',
+      (select count(*) = 2 from kjerne.feilmelding where kommune_id = k and meldt_av is null));
+  exception when others then
+    reset role;
+    insert into resultat values ('melding: kunne ikke kjøres', false, sqlerrm);
+  end;
+
   perform pg_temp.skal_feile('portal: anon ser ingenting',
     'set local role anon; select count(*) from portal.kommune');
   perform pg_temp.skal_feile('portal: anon kan ikke spørre hvem den er',

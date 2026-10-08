@@ -27,7 +27,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Nettsted | Kommunelys. Viser alle år fra kommunens `fra_aar`; en sak er én tråd på tvers av år, og detaljene til en sak lastes når den åpnes (ADR-022). Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Saken står i sentrum: egen side per sak (`#sak/<id>`) med saksgangen som en tråd og forslag og stemmer i hvert møte, Saker i tre faner (avgjort, på vei, venter på protokoll), møtekalender og egen side per møte (`#mote/<id>`) med oppmøte. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» med utvalgene og medlemmene. Se `docs/01-arkitektur.md` |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
-| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging og Min konto for alle; brukere, roller, abonnement, vurdering av avvik og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
+| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, meldinger) for vurderere per kommune (ADR-023); brukere, roller, abonnement og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
 | Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Bare Steinkjer er lagt inn. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
@@ -183,13 +183,16 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Prosjektadmin gis bare med SQL** (som `postgres`, i SQL-editoren), aldri
   fra portalen, og kan ikke sperres eller slettes der. Prosjekteier er
   prosjektadmin.
-- **Sidene:** alle har registrering, innlogging, glemt passord og Min konto
-  (bytte passord og e-post, slette kontoen). Prosjektadmin har i tillegg
-  Brukere (med «Gi rolle» og «Gi abonnement»), Roller, Abonnement, Avvik med
-  vurderinger, og Drift.
+- **Sidene:** alle har registrering, innlogging, glemt passord, Min konto
+  (bytte passord og e-post, slette kontoen, mine meldinger om feil) og
+  `/meld`, som «Meld fra om feil» på saken lenker til. Vurderere for en
+  kommune har «Til vurdering»: meldinger om feil, sammendrag holdt tilbake og
+  avvik i stemmene (ADR-023). Prosjektadmin har i tillegg Brukere (med «Gi
+  rolle» og «Gi abonnement»), Roller, Abonnement og Drift.
 - **Vurderinger av avvik** registreres i portalen, eller med
   `python -m lager.vurder` når en modell vurderer. De slår inn ved neste
-  kjøring av Oppdater.
+  kjøring av Oppdater. Det samme gjelder vurderinger av sammendrag og
+  meldinger om feil, som bare gjøres i portalen.
 - **Kontomenyen** viser «Logg inn» og «Ny bruker», eller kontoen når man er
   logget inn. Portalen sender brukeren tilbake via `/konto/` på nettstedet
   (`bygg/mal/konto.html`), med kontoen etter `#`, og siden lagrer den i
@@ -392,6 +395,14 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
 - **Vite kan servere en gammel modul** etter mange endringer mens
   utviklingsserveren går («X is not defined» selv om koden er riktig). Start
   den på nytt.
+- **En vurdering endrer aldri innholdet.** Den avgjør om noe vises, og kan ha
+  en kort merknad som vises uten godkjenning for hånd. Derfor kontrolleres
+  merknaden (`kjerne.merknad_ok`, `tolk/merknad.py`), og en merknad med navn
+  holder saken tilbake. En melding om feil skjuler ingenting før den er
+  vurdert (ADR-023).
+- **En rad som kobles til en konto, må tåle at kontoen slettes.**
+  `kjerne.feilmelding.meldt_av` settes til null, og `forby_endring` slipper
+  akkurat den endringen gjennom. Uten det stopper «Slett kontoen».
 - **Hver spørring mot databasen tar rundt 50 ms, og tekst går med 0,6 MB/s.**
   `lager/pg.py` husker derfor svarene i prosessen og henter tekst bare når den
   trengs. Spør ikke i en løkke.
