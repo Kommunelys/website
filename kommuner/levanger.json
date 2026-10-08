@@ -75,7 +75,9 @@
       "VEDTAK",
       "VEDTAK:",
       "Vedtak:"
-    ]
+    ],
+    "sak": "(?=(?:PS|RS|OS|FO|AS) \\d+/\\d+ [^\\n]{0,300}? behandling av sak)",
+    "saksnr": "((?:PS|RS|OS|FO|AS) \\d+/\\d+)"
   },
   "kontrollert_for_hand": "Oppgavene til utvalgene: levanger.kommune.no/politikk/reglement/, 8.10.2026",
   "skjul_utvalg": [

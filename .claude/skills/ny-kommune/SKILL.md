@@ -94,6 +94,10 @@ python -m tolk.dekning $A
 `lager/_fil.py` stopper hvis `KOMMUNELYS_DATA` mangler, så Steinkjers `data/`
 aldri røres.
 
+Filene har ikke databasens regler. Se etter nye verdier i felt som har en
+regel i `supabase/migrations/`: `sakstype` (Levanger har «AS»), funksjonen i
+oppmøtet og statusene. De trenger en migrering før første henting.
+
 ## 4. Les resultatet og juster regelsettet
 
 1. **Dekningen** (`tolk.dekning`): andelen saksprotokoller med votering, og

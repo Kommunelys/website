@@ -186,6 +186,12 @@ def moter(c, k: int, aar: int, alle_moter: list, raa_moter: list, moteliste: lis
             slag = {"MI": "moteinnkalling", "MP": "moteprotokoll"}[d["type"]]
             dokrader.append((k, "motedokument", r["Id"], slag, d["tittel"], None, d["url"],
                              None, None, m["mote_id"], i))
+    # Et nytt utvalg finnes ikke før vervene bygges (utvalg under), men møtet
+    # peker til det. Navnene derfra erstatter disse.
+    for m in alle_moter:
+        c.execute("insert into kjerne.utvalg (kommune_id, utvalg_id, kortnavn, navn) values (%s, %s, %s, %s) "
+                  "on conflict do nothing",
+                  (k, ut_id[m["mote_id"]], m["utvalg"] or m["utvalg_navn"], m["utvalg_navn"]))
     omfang = "t.kommune_id = %s and extract(year from t.dato) = %s"
     ut = {"mote": synk_tabell(
         c, "kjerne.mote",

@@ -238,6 +238,12 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
 
 ## Fallgruver vi allerede har gått i
 
+- **En prøve mot filene kjenner ikke databasens regler.** Levanger gikk
+  gjennom med `KOMMUNELYS_LAGER=json`, men stoppet i databasen på sakstypen
+  «AS» (Arbeidsmiljøutvalget) og på at sakene ble lagret før møtene. Nye
+  verdier i felt med en regel (sakstype, funksjon, status) trenger en
+  migrering. Sakene og møtene lagres nå i én transaksjon
+  (`lager.saker.lagre_med_moter`).
 - **Det som ligger på nettstedet, kan alle lese.** For en kommune med
   begrenset innsyn går dataene til `nettsted-skjermet/` og databasen
   (`drift.nettsted_fil`), aldri til `nettsted/` (ADR-024). En ny fil med data
