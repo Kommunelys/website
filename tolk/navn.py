@@ -17,13 +17,22 @@ from .profil import profil
 # partikodene i standarden for Elements, variantene og lokale partier i
 # kommuner/<slug>.json under «tolk».
 
-NAVN_MED_PARTI = re.compile(r"^(.+?)\s*\(([A-ZÆØÅ]+)\)$")
+# Partikoden kan ha små bokstaver inni: «FrP» og «KrF» i Levanger. Den gjøres
+# om til store, som i resten av dataene (FRP, KRF). Bare korte koder, så et
+# fullt partinavn i parentes ikke blir en kode.
+PARTIKODE = r"[A-ZÆØÅ][A-ZÆØÅa-zæøå]{0,5}"
+NAVN_MED_PARTI = re.compile(rf"^(.+?)\s*\(({PARTIKODE})\)$")
 
 
 def normaliser(navn: str) -> str:
     """Rydd mellomrom og slå sammen kjente varianter."""
     n = re.sub(r"\s+", " ", navn).strip().strip(",.")
     return profil().navnevarianter.get(n, n)
+
+
+def funksjon(f: str | None) -> str | None:
+    """«medlem» -> «Medlem», «ordfører» -> «Leder», etter kommunens profil."""
+    return profil().funksjoner.get(f, f) if f else f
 
 
 def partikode(parti: str | None) -> str | None:
@@ -42,4 +51,4 @@ def del_navn_og_parti(tekst: str) -> tuple[str, str] | None:
     m = NAVN_MED_PARTI.match(re.sub(r"\s+", " ", tekst).strip())
     if not m:
         return None
-    return normaliser(m.group(1)), m.group(2)
+    return normaliser(m.group(1)), m.group(2).upper()

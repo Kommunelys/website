@@ -28,7 +28,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
 | Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, meldinger) for vurderere per kommune (ADR-023); brukere, roller, abonnement og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
-| Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Bare Steinkjer er lagt inn. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå |
+| Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet, innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
@@ -168,8 +168,9 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
 ## Portalen
 
 Innlogget del av Kommunelys på https://portal.kommunelys.no/ (ADR-020). Ble
-satt i drift 6.10.2026. Nettstedet krever fortsatt ingen innlogging; roller og
-abonnement gis for hånd, men brukes ikke til noe der ennå.
+satt i drift 6.10.2026. Nettstedet krever ingen innlogging, bortsett fra
+kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
+`vurderer` eller `admin`) innsyn (ADR-024). Abonnement brukes ikke ennå.
 
 | Del | Hvor |
 |---|---|
@@ -197,7 +198,9 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   logget inn. Portalen sender brukeren tilbake via `/konto/` på nettstedet
   (`bygg/mal/konto.html`), med kontoen etter `#`, og siden lagrer den i
   localStorage. Ingen informasjonskapsler; e-postadressen går ikke til
-  nettstedets server. `?tilbake=` sier hvor brukeren skal etterpå.
+  nettstedets server. `?tilbake=` sier hvor brukeren skal etterpå. Med
+  kontoen følger tilgangsnøkkelen (`nokkel`, `utloper`), som `innsyn.js`
+  bruker for kommunene med begrenset innsyn (ADR-024).
 - **Utseendet** følger nettstedet: fargene fra `stil.css`, skriften Inter og
   merket (`src/tema.ts` i portalen). Endres fargene i `stil.css`, må temaet
   følge med.
@@ -231,11 +234,20 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   localhost: lokalt brukes `http://lokal.kommunelys.no:5173`, en A-post til
   127.0.0.1 hos Domeneshop. `brukeradmin` sender lenke for nytt passord med
   service-nøkkelen, som slipper captcha.
-- **Senere:** tofaktor for prosjektadmin,
-  tilgangsstyring på nettstedet, betaling og Pro-plan i Supabase.
+- **Senere:** tofaktor for prosjektadmin, betaling og Pro-plan i Supabase.
 
 ## Fallgruver vi allerede har gått i
 
+- **En prøve mot filene kjenner ikke databasens regler.** Levanger gikk
+  gjennom med `KOMMUNELYS_LAGER=json`, men stoppet i databasen på sakstypen
+  «AS» (Arbeidsmiljøutvalget) og på at sakene ble lagret før møtene. Nye
+  verdier i felt med en regel (sakstype, funksjon, status) trenger en
+  migrering. Sakene og møtene lagres nå i én transaksjon
+  (`lager.saker.lagre_med_moter`).
+- **Det som ligger på nettstedet, kan alle lese.** For en kommune med
+  begrenset innsyn går dataene til `nettsted-skjermet/` og databasen
+  (`drift.nettsted_fil`), aldri til `nettsted/` (ADR-024). En ny fil med data
+  per kommune må følge med dit, ikke legges ved siden av sidene.
 - **En sak er ikke en behandling.** Samme sak får nytt saksnummer i hvert
   utvalg. `AdditionalDmbHandlings` binder dem sammen. Kjeden bygges med
   disjunkte mengder i `tolk/bygg_saker.py`.
@@ -414,7 +426,8 @@ abonnement gis for hånd, men brukes ikke til noe der ennå.
   og `fra_aar` er det første året som hentes. Sjekklisten står i skillen
   `.claude/skills/ny-kommune/SKILL.md` (`/ny-kommune`).
   Status `kartlegging` hentes ikke, `intern` hentes og bygges uten å
-  publiseres, `publisert` går ut.
+  publiseres, `begrenset` står på forsiden, men innholdet krever en rolle for
+  kommunen (ADR-024), og `publisert` er åpen for alle.
 - **Regelsettet:** felt i `kommuner/<slug>.json` under `tolk` erstatter
   standarden; `<felt>_tillegg` legger til. Mønstre skrives som tekst. Det som
   ikke kan skrives som data, går i `tolk/profiler/<slug>.py` (`OVERSTYR`).

@@ -1,0 +1,201 @@
+{
+  "merknad": "Det som er særegent for kommunen: kilden i portalen, regelsettet for tolkningen og visningen. Malen i bygg/mal/ skal ikke nevne noen kommune ved navn; det kontrolleres av tester.kontroller. Kilden må være lik kilde_konfig i kjerne.kommune.",
+  "slug": "levanger",
+  "navn": "Levanger",
+  "kommunenr": "5037",
+  "fra_aar": 2026,
+  "kilde": {
+    "basis": "https://prod01.elementscloud.no/publikum/",
+    "tenant": "938587051_PROD-938587051",
+    "database": "a9fd78f2-e95a-4e1c-a907-2a79aac185b0"
+  },
+  "tolk": {
+    "merknad": "Det som skiller Levanger fra standarden for Elements (tolk/profiler/elements.py). Se tolk/profil.py.",
+    "kommunestyre_kode": "KOM",
+    "partikoder_tillegg": {
+      "Kristelig Folkeparti": "KRF",
+      "Miljøpartiet De Grønne": "MDG",
+      "Sosialistisk venstreparti": "SV",
+      "Industri- og næringspartiet": "INP",
+      "PENSJ": "PP"
+    },
+    "partinavn": {
+      "AP": "Arbeiderpartiet",
+      "FRP": "Fremskrittspartiet",
+      "H": "Høyre",
+      "INP": "Industri- og næringspartiet",
+      "KRF": "Kristelig Folkeparti",
+      "MDG": "Miljøpartiet De Grønne",
+      "PP": "Pensjonistpartiet",
+      "R": "Rødt",
+      "SP": "Senterpartiet",
+      "SV": "Sosialistisk Venstreparti",
+      "V": "Venstre",
+      "UAVH": "uavhengig representant"
+    },
+    "oppmote_start": "Til stede:",
+    "oppmote_slutt": "Fra administrasjonen møtte:",
+    "oppmote": "^(?P<navn>.+?)\\s{2,}(?P<funksjon>varaordfører|ordfører|nestleder|leder|varamedlem|medlem)\\b\\s*(?P<resten>.*?)\\s*$",
+    "funksjoner": {
+      "ordfører": "Leder",
+      "varaordfører": "Nestleder",
+      "leder": "Leder",
+      "nestleder": "Nestleder",
+      "medlem": "Medlem",
+      "varamedlem": "Varamedlem"
+    },
+    "navnevarianter": {
+      "Janne K. J. Larsen": "Janne Kathrine Jørstad Larsen",
+      "Gunnar Løvås": "Gunnar Morten Løvås",
+      "Per Aunan": "Per Espen Aunan",
+      "Nina Groven": "Nina Egenæs Groven",
+      "Laila Munkeby": "Laila Lilleenget Munkeby",
+      "Elise Spets": "Elise Taylor Spets"
+    },
+    "votering": "((?:(?P<stiller>[A-ZÆØÅ][\\wÆØÅæøå .\\-]+?) \\((?P<parti>[^)]+)\\),? fremmet følgende (?P<type>[\\w ]*?forslag):?)|Innstilling:|INNSTILLING:?|(?<=\\d{4} )Innstilling|sin innstilling:|Avstemning av [^:]{0,80}:|Merknad i møtet?:|Kommunedirektørens forslag til (?:innstilling|vedtak)\\b(?: (?:til|i|fra) [^:.,]{1,30})?:?|[Ff]orslag til (?:innstilling|vedtak)(?: (?:til|i|fra) [^:.,]{1,30})?:|(?P<forslag>Forslag(?: fremmet)? i møtet?:|Forslag:|(?:Følgende )?forslag fremmet i møtet?:|fremmet følgende forslag:))(?P<tekst>.*?)(?:For forslaget(?: \\([^)]{0,40}\\)|, [^,:]{1,40},)? stemte (?P<n_for>\\d+): (?P<for>.*?)\\.)? ?(?:Imot forslaget(?: \\([^)]{0,40}\\)|, [^,:]{1,40},)? stemte (?P<n_mot>\\d+): (?P<mot>.*?)\\.)? ?(?P<alternativer>(?:For forslag \\S+ stemte \\d+: .*?\\. ?)+)?(?:Ikke til stede \\((?P<n_borte>\\d+)\\):? ?(?P<borte>[^.]*?)\\.? ?)?Dermed (?:ble )?(?P<resultat>[\\w /,]*?vedtatt)(?:,? med (?P<dobbelt>ordførers|leders) dobbeltstemme)?\\.?",
+    "enstemmig": "(?P<tekst>[^.:]{0,100}?)\\s*(?:\\b(?:ble )?enstemmig vedtatt\\b|Avstem[nm]ing: (?:Forslag i møte )?[Ee]nstemmig\\b(?: vedtatt\\b)?)",
+    "saksframlegg_foran": [
+      "LEVANGER KOMMUNE"
+    ],
+    "overskrifter": [
+      [
+        "forslag",
+        "^.{0,40}\\bforslag til (?:vedtak|innstilling)(?:\\s+.{1,40}:|\\s*:?)$"
+      ],
+      [
+        "saksopplysninger",
+        "^saksopplysninger\\s*:?$"
+      ],
+      [
+        "saksvurderinger",
+        "^(?:saks?vurdering(?:er)?\\s*:?|vurdering\\s*:)$"
+      ]
+    ],
+    "vedtak_linjer_tillegg": [
+      "VEDTAK",
+      "VEDTAK:",
+      "Vedtak:"
+    ],
+    "sak": "(?=(?:PS|RS|OS|FO|AS) \\d+/\\d+ [^\\n]{0,300}? behandling av sak)",
+    "saksnr": "((?:PS|RS|OS|FO|AS) \\d+/\\d+)"
+  },
+  "kontrollert_for_hand": "Oppgavene til utvalgene: levanger.kommune.no/politikk/reglement/, 8.10.2026",
+  "skjul_utvalg": [
+    "TEST1"
+  ],
+  "utvalg_kort": {
+    "KOM": "Kommunestyret",
+    "FOR": "Formannskapet",
+    "PU": "Plan- og utviklingsutvalget",
+    "DU": "Driftsutvalget"
+  },
+  "utvalg_liste": {
+    "KOM": "Kommunestyret",
+    "FOR": "Formannskapet",
+    "PU": "Plan og utvikling",
+    "DU": "Drift",
+    "KLAG": "Klagenemnda",
+    "ADM": "Administrasjonsutvalget",
+    "AMU": "Arbeidsmiljøutvalget",
+    "VILT": "Viltnemnda",
+    "SAKNEMND": "Sakkyndig nemnd eiendomsskatt",
+    "SKNEMND": "Klagenemnd for eiendomsskatt",
+    "ERÅ": "Eldrerådet",
+    "UNG": "Ungdomsrådet",
+    "FUNK": "Råd for personer med funksjonsvariasjoner"
+  },
+  "rekkefolge": [
+    "KOM",
+    "FOR",
+    "PU",
+    "DU",
+    "KLAG",
+    "ADM",
+    "AMU",
+    "VILT",
+    "SAKNEMND",
+    "SKNEMND"
+  ],
+  "rad": [
+    "ERÅ",
+    "UNG",
+    "FUNK"
+  ],
+  "foretak": [],
+  "hovedutvalg": [
+    "PU",
+    "DU"
+  ],
+  "organer": [
+    {
+      "kode": "KOM",
+      "navn": "Kommunestyret",
+      "oppgave": "øverste organ",
+      "lenke": true
+    },
+    {
+      "kode": "FOR",
+      "navn": "Formannskapet",
+      "oppgave": "økonomi, avgjør selv eller innstiller",
+      "lenke": true
+    },
+    {
+      "kode": "PU",
+      "navn": "Plan- og utviklingsutvalget",
+      "oppgave": "planer og utvikling",
+      "lenke": true
+    },
+    {
+      "kode": "DU",
+      "navn": "Driftsutvalget",
+      "oppgave": "levekår og tjenestene til innbyggerne",
+      "lenke": true
+    },
+    {
+      "kode": "KLAG",
+      "navn": "Klagenemnda",
+      "oppgave": "behandler klager",
+      "lenke": true
+    },
+    {
+      "kode": "ADM",
+      "navn": "Administrasjonsutvalget",
+      "oppgave": "saker om de ansatte",
+      "lenke": true
+    },
+    {
+      "kode": "AMU",
+      "navn": "Arbeidsmiljøutvalget",
+      "oppgave": "arbeidsmiljøet for de ansatte",
+      "lenke": true
+    },
+    {
+      "kode": "VILT",
+      "navn": "Viltnemnda",
+      "oppgave": "viltforvaltning",
+      "lenke": true
+    },
+    {
+      "kode": "ERÅ",
+      "navn": "Eldrerådet",
+      "oppgave": "gir uttalelser",
+      "lenke": false
+    },
+    {
+      "kode": "UNG",
+      "navn": "Ungdomsrådet",
+      "oppgave": "gir uttalelser",
+      "lenke": false
+    },
+    {
+      "kode": "FUNK",
+      "navn": "Råd for personer med funksjonsvariasjoner",
+      "oppgave": "gir uttalelser",
+      "lenke": false
+    }
+  ],
+  "nivaa": {
+    "voteringer": true,
+    "oppmote": true
+  }
+}

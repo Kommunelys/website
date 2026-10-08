@@ -28,7 +28,7 @@ from lager import oppmote as lager_oppmote
 from lager import raa as raadata
 from lager import verv as lager_verv
 
-from .navn import normaliser
+from .navn import funksjon, normaliser
 
 FASTE = ("Leder", "Nestleder", "Medlem")
 
@@ -78,7 +78,7 @@ def kjor(aar: int) -> dict:
                 v = _verv(int(uid_s), normaliser(m["navn"]))
                 v["i_medlemslister"].append(liste["hentet"])
                 if liste is siste:
-                    v.update(person_id=m["person_id"], rolle=m["funksjon"],
+                    v.update(person_id=m["person_id"], rolle=funksjon(m["funksjon"]),
                              repr=m["repr"], i_dagens_liste=True)
 
     # Oppmøtet: hvem som faktisk møtte, i hvilken rolle og når.
@@ -108,8 +108,8 @@ def kjor(aar: int) -> dict:
             "utvalg_id": uid,
             "kortnavn": u["kortnavn"],
             "navn": u["navn"],
-            "faste_medlemmer": sum(1 for m in medlemmer if m["funksjon"] in FASTE),
-            "varamedlemmer": sum(1 for m in medlemmer if m["funksjon"] == "Varamedlem"),
+            "faste_medlemmer": sum(1 for m in medlemmer if funksjon(m["funksjon"]) in FASTE),
+            "varamedlemmer": sum(1 for m in medlemmer if funksjon(m["funksjon"]) == "Varamedlem"),
             "moter": len(u["moter"]),
         })
     lager_verv.lagre_utvalg(aar, {

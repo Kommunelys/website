@@ -19,6 +19,21 @@ def lagre_side(html: str) -> None:
         pg_skriv.i_transaksjon(lambda c, k: pg_skriv.driftsside(c, html))
 
 
+def lagre_skjermet(filer: dict[str, str]) -> None:
+    """Dataene til nettstedet for kommunen, når den har begrenset innsyn
+    (ADR-024): {sti: innhold}. Med filene lagres de ikke."""
+    if fra_databasen():
+        pg_skriv.i_transaksjon(lambda c, k: pg_skriv.nettsted_filer(c, k, filer))
+
+
+def rydd_skjermet(begrensede: list[str]) -> None:
+    """Fjerner dataene for kommunene som ikke lenger har begrenset innsyn."""
+    if fra_databasen():
+        n = pg_skriv.i_transaksjon(lambda c, k: pg_skriv.nettsted_filer_rydd(c, begrensede))
+        if n:
+            print(f"fjernet {n} filer for kommuner uten begrenset innsyn")
+
+
 def lagre_kjoringer(logg: dict) -> None:
     if fra_databasen():
         return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.kjoringer(c, k, logg))

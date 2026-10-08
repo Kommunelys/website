@@ -1,0 +1,24 @@
+{
+ "voteringer": [
+  {
+   "saksnr": "-",
+   "forslagsstiller": null,
+   "parti": null,
+   "type": "enstemmig",
+   "tekst": "",
+   "enstemmig": true,
+   "antall_for": null,
+   "antall_mot": 0,
+   "for": [],
+   "mot": [],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {},
+   "resultat": "vedtatt",
+   "resultat_tekst": "enstemmig vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  }
+ ],
+ "vedtak": "Magnus Matberg og Linnea Margrete Granum Trana skriver en uttalelse til kommunen. Ungdomsrådet anbefaler opprettelse av en privat skole."
+}

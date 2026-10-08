@@ -184,8 +184,8 @@ ubrukelige etter et halvt år.
 
 ## Publisering
 
-Statiske filer på GitHub Pages. Innholdet endrer seg én gang i døgnet, alle ser
-det samme, og det finnes ingen innlogging.
+Statiske filer på GitHub Pages. Innholdet endrer seg én gang i døgnet, og alle
+ser det samme, bortsett fra kommunene med begrenset innsyn (under).
 
 | Egenskap | Valg |
 |---|---|
@@ -197,6 +197,12 @@ det samme, og det finnes ingen innlogging.
 **Alle år.** Nettstedet viser alle årene fra kommunens `fra_aar`. En sak er
 én tråd på tvers av år og hører til året den begynte; et møte hører til sitt
 år (ADR-022).
+
+**Begrenset innsyn.** En kommune med status `begrenset` står på forsiden og
+kartet, men på nettstedet ligger bare `index.html` og `status.json`. Dataene
+(`data.json` og `detaljer-<år>.json`) ligger i databasen (`drift.nettsted_fil`)
+og hentes av `innsyn.js` med innloggingen fra portalen. Bare de med en rolle
+for kommunen og prosjektadmin får dem (ADR-024).
 
 Siden bygges i sin helhet hver gang, ikke stykkevis. Det tar sekunder ved denne
 datamålestokken og fjerner en klasse feil der en gammel side blir liggende igjen

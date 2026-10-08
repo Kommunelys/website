@@ -212,11 +212,10 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
         })
 
     saker.sort(key=lambda s: s["saksgang"][0]["dato"])
-    for a in aarene:
-        lager_saker.lagre(a, [s for s in saker if sakens_aar[s["sak_id"]] == a])
-
-    for a in aarene:
-        _lagre_moter(a, raa[a])
+    # Sammen: et nytt møte og sakene som peker til det (lager.saker).
+    lager_saker.lagre_med_moter(
+        {a: [s for s in saker if sakens_aar[s["sak_id"]] == a] for a in aarene},
+        {a: _moter(raa[a]) for a in aarene})
 
     politiske = [s for s in saker if s["sakstype"] == "PS" and not s["formalia"]]
     oppsummering = {
@@ -232,7 +231,7 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
     return oppsummering
 
 
-def _lagre_moter(aar: int, raa: list[dict]) -> None:
+def _moter(raa: list[dict]) -> list[dict]:
     moter = [{
         "mote_id": m["mote"]["MO_ID"],
         "dato": m["mote"]["MO_START"][:16],
@@ -252,7 +251,7 @@ def _lagre_moter(aar: int, raa: list[dict]) -> None:
         "url": portal.url_mote_i_portalen(m["mote"]["MO_ID"]),
     } for m in raa]
     moter.sort(key=lambda m: m["dato"])
-    lager_saker.lagre_moter(aar, moter)
+    return moter
 
 
 def main() -> None:

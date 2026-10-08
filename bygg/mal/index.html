@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{kommune}} | {{merke}}</title>
+{{robots}}<title>{{kommune}} | {{merke}}</title>
 <meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune, laget av en innbygger for innbyggerne.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -36,6 +36,10 @@
   <p>Sakene, møtene og stemmene tegnes med JavaScript, som er slått av i nettleseren din. Slå det på og last siden på nytt. <a href="../om/">Om {{merke}}</a> virker uten.</p></div></noscript>
 <div class="lastefeil" id="lastefeil" role="alert" hidden><h2>Siden kunne ikke vises</h2>
   <p>Noe gikk galt da dataene for {{kommune}} skulle lastes. Prøv å laste siden på nytt om litt. Virker det fortsatt ikke, <a href="{{meld}}">meld fra på GitHub</a>.</p></div>
+
+<!-- Begrenset innsyn (ADR-024): innsyn.js forklarer her hvorfor innholdet
+     ikke vises, og hvordan man logger inn. -->
+<div class="innsyn" id="innsyn" role="status" hidden></div>
 
 <!-- OVERSIKT -->
 <section id="v-oversikt" class="forside">
@@ -197,9 +201,7 @@
 </section>
 </main>
 <footer class="ramme fot" id="foot"></footer>
-<script src="data/data.js"></script>
-<script src="../app.js?v={{v_app}}"></script>
-<script>if(!window.KL_KLAR)document.getElementById('lastefeil').hidden=false</script>
+{{skript}}
 {{telling}}
 </body>
 </html>

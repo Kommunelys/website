@@ -8,13 +8,24 @@
 /* Portalen sender brukeren hit etter innlogging og utlogging (ADR-020), med
    kontoen etter # (#epost=…&admin=1&til=… eller #ut&til=…). Det etter # sendes
    aldri til serveren. Kontoen lagres i nettleseren for kontomenyen (konto.js),
-   og brukeren sendes videre til siden de kom fra. */
+   og brukeren sendes videre til siden de kom fra.
+
+   Med kontoen følger en kortvarig tilgangsnøkkel (&nokkel=…&utloper=…). Den
+   brukes bare av innsyn.js, for kommunene med begrenset innsyn (ADR-024).
+   location.replace gjør at adressen med nøkkelen ikke blir stående i
+   historikken. */
 (function () {
   var q = new URLSearchParams(location.hash.slice(1));
   try {
-    if (q.has('ut')) localStorage.removeItem('kommunelys-konto');
-    else if (q.get('epost')) localStorage.setItem('kommunelys-konto', JSON.stringify(
-      { epost: q.get('epost'), admin: q.get('admin') === '1', tid: Date.now() }));
+    if (q.has('ut')) {
+      localStorage.removeItem('kommunelys-konto');
+      localStorage.removeItem('kommunelys-innsyn');
+    } else if (q.get('epost')) {
+      localStorage.setItem('kommunelys-konto', JSON.stringify(
+        { epost: q.get('epost'), admin: q.get('admin') === '1', tid: Date.now() }));
+      if (q.get('nokkel')) localStorage.setItem('kommunelys-innsyn', JSON.stringify(
+        { nokkel: q.get('nokkel'), utloper: +q.get('utloper') || 0 }));
+    }
   } catch (e) {}
   var til = q.get('til') || '';
   var trygg = /^https:\/\/(www\.)?kommunelys\.no\//.test(til) ||

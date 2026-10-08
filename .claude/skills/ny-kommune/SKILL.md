@@ -94,6 +94,10 @@ python -m tolk.dekning $A
 `lager/_fil.py` stopper hvis `KOMMUNELYS_DATA` mangler, så Steinkjers `data/`
 aldri røres.
 
+Filene har ikke databasens regler. Se etter nye verdier i felt som har en
+regel i `supabase/migrations/`: `sakstype` (Levanger har «AS»), funksjonen i
+oppmøtet og statusene. De trenger en migrering før første henting.
+
 ## 4. Les resultatet og juster regelsettet
 
 1. **Dekningen** (`tolk.dekning`): andelen saksprotokoller med votering, og
@@ -183,7 +187,19 @@ AI-analysen får, uten å sende noe.
 
 **STOPP:** vis driftssiden og tallene fra kjøringen.
 
-## 8. Publiser
+## 8. Begrenset innsyn (valgfritt, før publisering)
+
+Kommunen står på forsiden og kartet, men innholdet vises bare for dem med en
+rolle for kommunen (`leser`, `vurderer`, `admin`) og prosjektadmin (ADR-024).
+
+1. Ny migrering som setter `status = 'begrenset'` for kommunen.
+2. Etter neste kjøring av Oppdater: driftssiden viser «ny, begrenset innsyn».
+   `https://kommunelys.no/<slug>/` ber om innlogging; med rollen vises alt.
+3. Gi rollen `leser` i portalen › Brukere › «Gi rolle» til dem som skal se.
+
+**STOPP:** prosjekteier sier ja før migreringen med `begrenset` kjøres.
+
+## 9. Publiser
 
 1. Ny migrering som setter `status = 'publisert'` for kommunen.
 2. Slå på `nivaa.voteringer` og `nivaa.oppmote` i `kommuner/<slug>.json` hvis
@@ -197,7 +213,7 @@ AI-analysen får, uten å sende noe.
 
 **STOPP:** prosjekteier sier ja før migreringen med `publisert` kjøres.
 
-## 9. Etterpå
+## 10. Etterpå
 
 - **`CLAUDE.md`:** statusraden «Flere kommuner» (hvilke kommuner, dekning).
 - **`docs/05-plan.md`:** fase 3.

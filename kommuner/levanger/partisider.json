@@ -1,0 +1,17 @@
+{
+  "kontrollert": "2026-10-08",
+  "merknad": "Lenker til partienes egne sider. Lokallaget i Levanger der det har en egen side, ellers fylkeslaget eller partiet. Hver adresse er åpnet og sjekket; inp.no er ikke partiet.",
+  "partier": {
+    "AP": {"url": "https://levanger.arbeiderpartiet.no/", "tekst": "Levanger Arbeiderparti"},
+    "FRP": {"url": "https://www.frp.no/ditt-fylke/trondelag/levanger", "tekst": "Levanger FrP"},
+    "H": {"url": "https://hoyre.no/levanger/", "tekst": "Levanger Høyre"},
+    "INP": {"url": "https://inpartiet.no/Lokalstyre/Tr%C3%B8ndelag/Levanger/1655/Levanger%20INP", "tekst": "Levanger INP"},
+    "KRF": {"url": "https://krf.no/lokallag/levanger-krf/", "tekst": "Levanger KrF"},
+    "MDG": {"url": "https://levanger.mdg.no/", "tekst": "Levanger MDG"},
+    "PP": {"url": "https://www.pensjonistpartiet.no/levanger/", "tekst": "Pensjonistpartiet Levanger"},
+    "R": {"url": "https://roedt.no/levanger", "tekst": "Rødt Levanger"},
+    "SP": {"url": "https://www.senterpartiet.no/lokallag-og-fylkeslag/trondelag/levanger-felleslag", "tekst": "Levanger Senterparti"},
+    "SV": {"url": "https://www.sv.no/partiet/fylkes-og-lokallag/tr-ndelag-sv/", "tekst": "SV i Trøndelag"},
+    "V": {"url": "https://www.venstre.no/lokal/trondelag/levanger/", "tekst": "Levanger Venstre"}
+  }
+}

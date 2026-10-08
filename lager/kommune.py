@@ -97,17 +97,19 @@ def fra_argv(argv: list[str]) -> list[str]:
 
 
 def aktive() -> list[tuple[str, str]]:
-    """Kommunene som hentes og bygges, med status: (slug, «intern» eller «publisert»).
+    """Kommunene som hentes og bygges, med status: (slug, «intern», «begrenset» eller «publisert»).
 
     Status står i kjerne.kommune og endres med en migrering. «intern» bygges og
-    kontrolleres, men publiseres ikke; «kartlegging» hentes ikke. Uten databasen
-    er det bare Steinkjer, publisert.
+    kontrolleres, men publiseres ikke; «kartlegging» hentes ikke. «begrenset»
+    står på forsiden, men dataene lagres i databasen og vises bare for dem
+    med en rolle for kommunen (ADR-024). Uten databasen er det bare Steinkjer,
+    publisert.
     """
     if not fra_databasen():
         return [(STANDARD, "publisert")]
     from . import pg  # noqa: PLC0415
     return [(s, st) for s, st in pg._rader(
-        "select slug, status from kjerne.kommune where status in ('intern', 'publisert') order by slug")]
+        "select slug, status from kjerne.kommune where status in ('intern', 'begrenset', 'publisert') order by slug")]
 
 
 def aarene(til: int, s: str | None = None) -> list[int]:

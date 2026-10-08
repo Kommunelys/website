@@ -186,6 +186,12 @@ def moter(c, k: int, aar: int, alle_moter: list, raa_moter: list, moteliste: lis
             slag = {"MI": "moteinnkalling", "MP": "moteprotokoll"}[d["type"]]
             dokrader.append((k, "motedokument", r["Id"], slag, d["tittel"], None, d["url"],
                              None, None, m["mote_id"], i))
+    # Et nytt utvalg finnes ikke før vervene bygges (utvalg under), men møtet
+    # peker til det. Navnene derfra erstatter disse.
+    for m in alle_moter:
+        c.execute("insert into kjerne.utvalg (kommune_id, utvalg_id, kortnavn, navn) values (%s, %s, %s, %s) "
+                  "on conflict do nothing",
+                  (k, ut_id[m["mote_id"]], m["utvalg"] or m["utvalg_navn"], m["utvalg_navn"]))
     omfang = "t.kommune_id = %s and extract(year from t.dato) = %s"
     ut = {"mote": synk_tabell(
         c, "kjerne.mote",
@@ -499,6 +505,22 @@ def driftsside(c, html: str) -> None:
 
     c.execute("insert into drift.side (kjoring_id, html) values (%s, %s)", (kjoring_id(), html))
     c.execute("delete from drift.side where bygget < now() - interval '30 days'")
+
+
+def nettsted_filer(c, k: int, filer: dict[str, str]) -> None:
+    """Dataene til nettstedet for en kommune med begrenset innsyn (ADR-024).
+    Byttes ut helt, så ingenting fra et tidligere bygg blir liggende."""
+    c.execute("delete from drift.nettsted_fil where kommune_id = %s", (k,))
+    for sti, innhold in sorted(filer.items()):
+        c.execute("insert into drift.nettsted_fil (kommune_id, sti, innhold) values (%s, %s, %s)",
+                  (k, sti, innhold))
+
+
+def nettsted_filer_rydd(c, begrensede: list[str]) -> int:
+    """Fjerner dataene for kommuner som ikke lenger har begrenset innsyn."""
+    return c.execute(
+        "delete from drift.nettsted_fil f using kjerne.kommune k "
+        "where k.kommune_id = f.kommune_id and not (k.slug = any(%s))", (begrensede,)).rowcount
 
 
 def vurdering(c, k: int, v: dict) -> int:

@@ -65,6 +65,7 @@ declare
   bruker uuid := gen_random_uuid();
   admin uuid := gen_random_uuid();
   vanlig uuid := gen_random_uuid();
+  leser uuid := gen_random_uuid();
   svar boolean;
   svar2 boolean;
   svar3 boolean;
@@ -596,6 +597,52 @@ begin
   perform pg_temp.skal_vaere('driftsside: bare det gamle ble ryddet',
     not exists (select 1 from drift.side where kjoring_id = 'gammel')
     and exists (select 1 from drift.side where kjoring_id = 'ny'));
+
+  -- Begrenset innsyn (ADR-024): bygget lagrer dataene, og bare de med en rolle
+  -- for kommunen (og prosjektadmin) kan hente dem.
+  insert into auth.users (id, aud, role, email) values (leser, 'authenticated', 'authenticated', 'leser@example.invalid');
+  perform pg_temp.skal_virke('innsyn: bygget lagrer dataene',
+    format($s$set local role kommunelys_bygg;
+      insert into drift.nettsted_fil (kommune_id, sti, innhold) values (%s, 'data.json', '{"S":{}}'); reset role$s$, k));
+  perform pg_temp.skal_feile('innsyn: bare json-filer',
+    format($s$set local role kommunelys_bygg;
+      insert into drift.nettsted_fil (kommune_id, sti, innhold) values (%s, '../app.js', 'x')$s$, k));
+  perform pg_temp.skal_feile('innsyn: anon får ikke dataene',
+    'set local role anon; select portal.nettsted_fil(''testkommune-a'', ''data.json'')');
+  perform pg_temp.skal_feile('innsyn: innlogget uten rolle får ikke dataene',
+    format($s$select set_config('request.jwt.claims', '{"sub": "%s", "role": "authenticated"}', true);
+      set local role authenticated; select portal.nettsted_fil('testkommune-a', 'data.json')$s$, leser));
+  begin
+    insert into tilgang.medlemskap (user_id, kommune_id, rolle) values (leser, k, 'leser');
+    perform set_config('request.jwt.claims', json_build_object('sub', leser, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select portal.nettsted_fil('testkommune-a', 'data.json') = '{"S":{}}');
+    svar2 := (select portal.nettsted_fil('testkommune-a', 'finnes-ikke.json') is null);
+    svar3 := (select not (k = any (tilgang.vurderer_kommuner())));
+    svar4 := (select count(*) = 0 from drift.nettsted_fil where kommune_id <> k);
+    reset role;
+    perform pg_temp.skal_vaere('innsyn: leser får dataene', svar);
+    perform pg_temp.skal_vaere('innsyn: en fil som ikke finnes, er null', svar2);
+    perform pg_temp.skal_vaere('innsyn: leser er ikke vurderer', svar3);
+    perform pg_temp.skal_vaere('innsyn: leser ser bare sin kommune', svar4);
+    perform pg_temp.skal_feile('innsyn: leser kan ikke legge inn vurderinger',
+      format($s$set local role authenticated;
+        insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av, dato, registrert_av)
+        values (%s, 'oppmote:1000:kari-test', 'publiser', 'b', 'meg', '2026-10-04', '%s')$s$, k, leser));
+    perform pg_temp.skal_feile('innsyn: leser kan ikke endre dataene',
+      format($s$set local role authenticated; delete from drift.nettsted_fil where kommune_id = %s$s$, k));
+    perform set_config('request.jwt.claims', json_build_object('sub', admin, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select portal.nettsted_fil('testkommune-a', 'data.json') is not null);
+    reset role;
+    perform pg_temp.skal_vaere('innsyn: prosjektadmin får dataene', svar);
+    delete from tilgang.medlemskap where user_id = leser and kommune_id = k;
+  exception when others then
+    reset role;
+    insert into resultat values ('innsyn: kunne ikke kjøres', false, sqlerrm);
+  end;
+  perform pg_temp.skal_feile('innsyn: ukjent rolle',
+    format($s$insert into tilgang.medlemskap (user_id, kommune_id, rolle) values ('%s', %s, 'gjest')$s$, leser, k));
 
   -- Resultat --------------------------------------------------------------------
   select string_agg(case when ok then 'ok   ' else 'FEIL ' end || test

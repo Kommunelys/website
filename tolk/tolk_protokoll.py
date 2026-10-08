@@ -23,7 +23,7 @@ import re
 import sys
 from pathlib import Path
 
-from .navn import del_navn_og_parti, normaliser, partikode
+from .navn import PARTIKODE, del_navn_og_parti, funksjon, normaliser, partikode
 from .profil import profil
 
 # Mønstrene (VOTERING, ENSTEMMIG, SAK, OPPMOTE og de andre) står i kommunens
@@ -33,10 +33,11 @@ from .profil import profil
 def _navneliste(tekst: str | None) -> list[tuple[str, str]]:
     """«Kari Nordmann (AP), Ola Hansen (SP)» -> [(navn, parti), ...]"""
     ut = []
-    for bit in re.findall(r"([^,]+?\([A-ZÆØÅ]+\))", tekst or ""):
+    for bit in re.findall(rf"([^,]+?\({PARTIKODE}\))", tekst or ""):
         delt = del_navn_og_parti(bit)
         if delt:
-            ut.append(delt)
+            # Noen kommuner har egne koder i navnelistene: «PENSJ» for PP.
+            ut.append((delt[0], partikode(delt[1])))
     return ut
 
 
@@ -68,7 +69,7 @@ def les_oppmoteblokk(tekst: str) -> tuple[list[dict], list[str]]:
             fp = p.funksjon_parti.match(rest)
             ut.append({
                 "navn": normaliser(m.group("navn")),
-                "funksjon": m.group("funksjon"),
+                "funksjon": funksjon(m.group("funksjon")),
                 "repr": fp.group(1) if fp else None,
                 "vara_for": (normaliser(fp.group(2)) if fp and fp.group(2)
                              else None),
@@ -231,7 +232,7 @@ def les_vedtakstekst(tekst: str) -> str | None:
     voteringer i 2026. Uten linjen finnes ikke noe vedtak å vise.
     """
     linjer = tekst.splitlines()
-    treff = [i for i, l in enumerate(linjer) if l.strip() == profil().vedtak_linje]
+    treff = [i for i, l in enumerate(linjer) if l.strip() in profil().vedtak_linjer]
     if not treff:
         return None
     vedtak = _flat("\n".join(linjer[treff[-1] + 1:])).strip()

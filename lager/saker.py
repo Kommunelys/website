@@ -21,14 +21,29 @@ def lagre(aar: int, saker: list[dict]) -> None:
     _fil.skriv(SAKER / f"{aar}.json", saker)
 
 
+def lagre_med_moter(saker: dict[int, list[dict]], moter: dict[int, list[dict]]) -> None:
+    """Sakene og møtene for årene, i én transaksjon ({år: [...]}).
+
+    Et steg i saksgangen peker til møtet, og et nytt møte kommer gjerne
+    samtidig med sakene som behandles der. Hver for seg stopper den ene på
+    at den andre mangler; i én transaksjon kontrolleres det til slutt.
+    """
+    if fra_databasen():
+        raa = {a: (pg.moter_raa(a) or [], pg.moteliste(a) or []) for a in moter}
+
+        def skriv(c, k):
+            for a, m in moter.items():
+                pg_skriv.moter(c, k, a, m, *raa[a])
+            for a, s in saker.items():
+                pg_skriv.saker(c, k, a, s)
+        return pg_skriv.i_transaksjon(skriv)
+    for a, m in moter.items():
+        _fil.skriv(MOTER / f"{a}.json", m)
+    for a, s in saker.items():
+        _fil.skriv(SAKER / f"{a}.json", s)
+
+
 def les_moter(aar: int, *standard):
     if fra_databasen():
         return pg.moter(aar, *standard)
     return _fil.les(MOTER / f"{aar}.json", *standard)
-
-
-def lagre_moter(aar: int, moter: list[dict]) -> None:
-    if fra_databasen():
-        raa_moter, moteliste = pg.moter_raa(aar) or [], pg.moteliste(aar) or []
-        return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.moter(c, k, aar, moter, raa_moter, moteliste))
-    _fil.skriv(MOTER / f"{aar}.json", moter)
