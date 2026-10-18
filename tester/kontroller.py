@@ -107,7 +107,12 @@ IKKE_PERSON = {
     "stadion", "kulturhus", "hus", "bygg", "skole", "barnehage", "kirke", "senter",
     "sentrum", "hall", "park", "veg", "vei", "gate", "plass", "kommune", "fylkeskommune",
     "bru", "havn", "torg", "gård", "camping", "hotell", "museum",
+    "il", "klubb", "korps", "kor", "sameie", "menighet", "ungdomsråd",
 }
+# Endelser som viser det samme: «Levanger Fotballklubb», «Steinkjer
+# Skiklubb», «Ogndal Idrettslag», «Byafossen Velforening», «Skytterlag».
+IKKE_PERSON_ENDELSE = ("klubb", "idrettslag", "skytterlag", "borettslag", "forening",
+                       "korps", "senter", "skole", "barnehage", "hall")
 
 
 def _navn_i_tittel(tittel: str, unntatt: set[str] = frozenset()) -> list[str]:
@@ -123,7 +128,8 @@ def _navn_i_tittel(tittel: str, unntatt: set[str] = frozenset()) -> list[str]:
         ord_ = ledd.replace(",", " ").split()
         if not 2 <= len(ord_) <= 12 or not all(o[0].isupper() or o == "og" for o in ord_):
             continue
-        if any(o.lower().strip(".") in IKKE_PERSON or len(o) == 1 for o in ord_):
+        if any(o.lower().strip(".") in IKKE_PERSON or o.lower().endswith(IKKE_PERSON_ENDELSE)
+               or len(o) == 1 for o in ord_):
             continue
         del_ = []
         for o in ord_ + ["og"]:

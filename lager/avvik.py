@@ -40,6 +40,11 @@ def sammendrag_vurderinger() -> dict[int, dict]:
     return pg.sammendrag_vurderinger() if fra_databasen() else {}
 
 
+def sammendrag_redigeringer() -> dict[int, dict]:
+    """Teksten prosjektadmin har redigert, per sak (ADR-025)."""
+    return pg.sammendrag_redigeringer() if fra_databasen() else {}
+
+
 def feilmelding_vurderinger() -> list[dict]:
     """Gjeldende vurdering av hver melding om feil som er vurdert."""
     return pg.feilmelding_vurderinger() if fra_databasen() else []

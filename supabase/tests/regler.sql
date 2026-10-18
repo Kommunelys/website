@@ -560,6 +560,57 @@ begin
     perform pg_temp.skal_feile('sammendrag: vurdering kan ikke endres',
       format($s$set local role authenticated; update portal.sammendrag_vurdering set avgjorelse = 'ikke_publiser'
         where kommune_id = %s$s$, k));
+    perform pg_temp.skal_feile('sammendrag: vurdereren kan ikke redigere',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_redigering (kommune_id, analyse_id, tittel_klarsprak, sammendrag, tagger, begrunnelse)
+          select kommune_id, id, 'Ny tittel', 'Ny tekst.', tagger, 'b' from kjerne.analyse where kommune_id = %s$s$, k));
+
+    -- Prosjektadmin har siste ord (ADR-025): publiserer et navn og redigerer.
+    perform set_config('request.jwt.claims', json_build_object('sub', admin, 'role', 'authenticated')::text, true);
+    insert into kjerne.sammendrag_vurdering (kommune_id, analyse_id, avgjorelse, begrunnelse, vurdert_av, overstyrt)
+      select kommune_id, id, 'ikke_publiser', 'b', 'Prosjekteier', true from kjerne.analyse where kommune_id = k;
+    perform pg_temp.skal_vaere('sammendrag: overstyrt settes av databasen, ikke av den som vurderer',
+      (select not overstyrt from kjerne.sammendrag_vurdering_gjeldende where kommune_id = k));
+    perform pg_temp.skal_virke('sammendrag: prosjektadmin kan publisere med et navn',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_vurdering (kommune_id, analyse_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'Navnet er en fotballklubb.', 'Prosjekteier'
+          from kjerne.analyse where kommune_id = %s;
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('sammendrag: vurderingen er merket overstyrt',
+      (select overstyrt and registrert_av = admin
+         from kjerne.sammendrag_vurdering_gjeldende where kommune_id = k));
+    perform pg_temp.skal_virke('sammendrag: prosjektadmin redigerer teksten',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_redigering (kommune_id, analyse_id, tittel_klarsprak, sammendrag, betydning, tagger, begrunnelse)
+          select kommune_id, id, 'Ny tittel', 'Ny tekst.', 'Det betyr noe.', tagger, 'Rettet et beløp.'
+          from kjerne.analyse where kommune_id = %s;
+        reset role$s$, k));
+    set local role authenticated;
+    svar := (select status = 'redigert' and r_sammendrag = 'Ny tekst.' and sammendrag <> 'Ny tekst.'
+             from portal.sammendrag where kommune_id = k);
+    svar2 := (select count(*) = 0 from portal.sammendrag_holdt where kommune_id = k);
+    reset role;
+    perform pg_temp.skal_vaere('sammendrag: redigert tekst står ved siden av analysen', svar);
+    perform pg_temp.skal_vaere('sammendrag: et redigert sammendrag venter ikke på vurdering', svar2);
+    perform pg_temp.skal_feile('sammendrag: en redigering kan ikke endres',
+      format($s$set local role authenticated; update portal.sammendrag_redigering set sammendrag = 'x'
+        where kommune_id = %s$s$, k));
+    perform pg_temp.skal_feile('sammendrag: en redigering må ha tekst',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_redigering (kommune_id, analyse_id, tittel_klarsprak, sammendrag, tagger, begrunnelse)
+          select kommune_id, id, 'Tittel', ' ', tagger, 'b' from kjerne.analyse where kommune_id = %s$s$, k));
+    perform pg_temp.skal_feile('sammendrag: en redigering må ha kjente tema',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_redigering (kommune_id, analyse_id, tittel_klarsprak, sammendrag, tagger, begrunnelse)
+          select kommune_id, id, 'Tittel', 'Tekst.', array['finnes ikke'], 'b' from kjerne.analyse where kommune_id = %s$s$, k));
+    perform pg_temp.skal_virke('sammendrag: prosjektadmin tar KI-teksten tilbake',
+      format($s$set local role authenticated;
+        insert into portal.sammendrag_redigering (kommune_id, analyse_id, aktiv, begrunnelse)
+          select kommune_id, id, false, 'Den nye analysen er god.' from kjerne.analyse where kommune_id = %s;
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('sammendrag: KI-teksten gjelder igjen',
+      (select status = 'vist' and redigering_id is null from portal.sammendrag where kommune_id = k));
 
     -- Den som meldte, ser svaret, men ikke begrunnelsen.
     perform set_config('request.jwt.claims', json_build_object('sub', vanlig, 'role', 'authenticated')::text, true);
