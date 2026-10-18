@@ -392,12 +392,29 @@ def sammendrag_vurderinger() -> dict[int, dict]:
     """Gjeldende vurdering av sammendraget per sak, bare der den gjelder
     sakens gjeldende analyse (ADR-023). En ny analyse må vurderes på nytt."""
     return {sak_id: {"avgjorelse": avg, "grunner": list(grunner), "merknad": merknad,
-                     "dato": _dato(registrert.date())}
-            for sak_id, avg, grunner, merknad, registrert in _rader(
-                "select a.sak_id, v.avgjorelse, v.grunner, v.merknad, v.registrert "
+                     "overstyrt": overstyrt, "dato": _dato(registrert.date())}
+            for sak_id, avg, grunner, merknad, overstyrt, registrert in _rader(
+                "select a.sak_id, v.avgjorelse, v.grunner, v.merknad, v.overstyrt, v.registrert "
                 "from kjerne.sammendrag_vurdering_gjeldende v "
                 "join kjerne.analyse_gjeldende a on a.kommune_id = v.kommune_id and a.id = v.analyse_id "
                 "where v.kommune_id = %s order by a.sak_id", kommune_id())}
+
+
+@_husket
+def sammendrag_redigeringer() -> dict[int, dict]:
+    """Teksten prosjektadmin har redigert, per sak (ADR-025). Bare der den
+    gjeldende redigeringen er aktiv. Kildene og modellen er fra analysen
+    teksten bygger på."""
+    return {sak_id: {"tittel_klarsprak": tk, "sammendrag": sm, "betydning": bet,
+                     "uenighet": uen, "tagger": list(tagger), "modell": modell,
+                     "kilder": [{"tittel": k["tittel"], "url": k["url"]} for k in kilder],
+                     "dato": _dato(registrert.date())}
+            for sak_id, tk, sm, bet, uen, tagger, kilder, modell, registrert in _rader(
+                "select r.sak_id, r.tittel_klarsprak, r.sammendrag, coalesce(r.betydning, ''), "
+                "coalesce(r.uenighet, ''), r.tagger, a.kilder, a.modell, r.registrert "
+                "from kjerne.sammendrag_redigering_gjeldende r "
+                "join kjerne.analyse a on a.kommune_id = r.kommune_id and a.id = r.analyse_id "
+                "where r.kommune_id = %s and r.aktiv order by r.sak_id", kommune_id())}
 
 
 @_husket

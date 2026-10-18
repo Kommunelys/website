@@ -75,6 +75,8 @@ button,input,select{font:inherit;color:inherit}
 .meny a[aria-current]{border-bottom-color:var(--lys);font-weight:700}
 .meny .sokeknapp{margin-left:auto;display:inline-flex;align-items:center;color:var(--ink)}
 .meny .sokeknapp:hover{color:var(--lenke);border-bottom-color:transparent}
+/* Lenker bare prosjektadmin har bruk for, som «Rediger sammendraget» (konto.js). */
+.bare-prosjektadmin{display:none}.prosjektadmin .bare-prosjektadmin{display:inline}
 /* Kontomenyen (konto.js): lenker til portalen, eller kontoen når man er logget inn. */
 .konto{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:15px}
 .konto>a{color:var(--ink);text-decoration:none;font-weight:500}

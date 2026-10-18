@@ -147,15 +147,18 @@ def _meldinger() -> dict:
     return ut
 
 
-def _sammendrag(saker: list, analyser: dict, meldinger: dict) -> tuple[dict, list[str]]:
+def _sammendrag(saker: list, analyser: dict, meldinger: dict,
+                redigert: dict) -> tuple[dict, list[str]]:
     """Sammendragene som kan publiseres, per sak-ID, og hvorfor resten holdes tilbake.
 
     Samme prinsipp som for voteringer: et sammendrag med avvik vises ikke,
     men stopper ikke resten av nettstedet. En vurderer kan slippe gjennom et
     sammendrag der kontrollen bare savner tall eller datoer i kilden
     (kan_overstyres), så lenge grunnene er de samme som da det ble vurdert.
-    Et sammendrag holdes også tilbake når en melding om feil er vurdert slik
-    (ADR-023).
+    Prosjektadmin kan slippe gjennom alle grunner (overstyrt), og redigere
+    teksten (redigert); den redigerte teksten vises uten ny kontroll og merkes
+    (ADR-025). Et sammendrag holdes også tilbake når en melding om feil er
+    vurdert slik (ADR-023).
     """
     alle_avvik = sammendrag_avvik_alle(saker, analyser, unntatte_navn())
     vurdert = lager_avvik.sammendrag_vurderinger()
@@ -168,14 +171,18 @@ def _sammendrag(saker: list, analyser: dict, meldinger: dict) -> tuple[dict, lis
         if s["sak_id"] in meldinger["sammendrag"]:
             holdt.append(f"sak {s['sak_id']}: holdt tilbake etter en melding om feil")
             continue
+        r = redigert.get(s["sak_id"])
         avvik = alle_avvik[s["sak_id"]]
         v = vurdert.get(s["sak_id"])
         merk_feil = merknad_avvik(v["merknad"], navn) if v else []
-        if v and v["avgjorelse"] == "ikke_publiser":
+        if r:
+            a = r
+        elif v and v["avgjorelse"] == "ikke_publiser":
             holdt.append(f"sak {s['sak_id']}: vurdert til ikke å publiseres")
             continue
-        if avvik:
-            godkjent = (v and v["avgjorelse"] == "publiser" and kan_overstyres(avvik)
+        elif avvik:
+            godkjent = (v and v["avgjorelse"] == "publiser"
+                        and (kan_overstyres(avvik) or v["overstyrt"])
                         and set(avvik) <= set(v["grunner"]) and not merk_feil)
             if not godkjent:
                 holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik + merk_feil)}")
@@ -185,6 +192,8 @@ def _sammendrag(saker: list, analyser: dict, meldinger: dict) -> tuple[dict, lis
             "uen": a["uenighet"], "tags": a["tagger"], "modell": a["modell"],
             "kilder": [{"tittel": _kildenavn(k), "url": k["url"]} for k in a["kilder"]],
         }
+        if r:
+            ut[s["sak_id"]]["red"] = r["dato"]
         if v and v["merknad"] and not merk_feil:
             ut[s["sak_id"]]["merk"] = {"t": v["merknad"], "d": v["dato"]}
     return ut, holdt
@@ -618,7 +627,7 @@ def _hentet(status: dict) -> dt.date:
 
 # Det i sammendraget som bare sakssiden bruker. Tittel, sammendrag (søket) og
 # betydning blir i data.js.
-DETALJER_A = ("uen", "tags", "modell", "kilder")
+DETALJER_A = ("uen", "tags", "modell", "kilder", "red")
 
 
 def _del_detaljer(S: dict, VOT: dict, sakens_aar: dict[int, int]) -> dict[int, dict]:
@@ -800,7 +809,11 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
         (ut / "data").mkdir(parents=True, exist_ok=True)
 
     meldinger = _meldinger()
-    sammendrag, holdt_sammendrag = _sammendrag(saker, analyser, meldinger)
+    redigert = lager_avvik.sammendrag_redigeringer()
+    sammendrag, holdt_sammendrag = _sammendrag(saker, analyser, meldinger, redigert)
+    # Det som publiseres i data/, med teksten prosjektadmin har redigert (ADR-025).
+    vist_analyse = {sid: {**a, **redigert[sid], "redigert": redigert[sid]["dato"]}
+                    if sid in redigert else a for sid, a in analyser.items()}
     vedtak = {b["behandling_id"]: b.get("vedtak")
               for b in lager_kommune.alle_aar(lager_voteringer.les, aar)}
     nivaa = _nivaa()
@@ -828,13 +841,13 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
             "moter": arets_mote_liste,
             # Bare sammendragene som vises; de som holdes tilbake, publiseres
             # ikke her heller.
-            "analyser": {k: v for k, v in analyser.items() if k in arets_id and k in sammendrag},
+            "analyser": {k: v for k, v in vist_analyse.items() if k in arets_id and k in sammendrag},
             "voteringer": VOT if len(aarene) == 1 else
             {**VOT, "moter": [m for m in VOT["moter"] if m["id"] in arets_moter]},
             # Søkeindeks bygget på forhånd, kjører i nettleseren.
             "indeks": [{
                 "id": s["sak_id"],
-                "t": (analyser.get(s["sak_id"], {}).get("tittel_klarsprak")
+                "t": (vist_analyse.get(s["sak_id"], {}).get("tittel_klarsprak")
                       or s["tittel"]),
                 "o": s["tittel"],
                 "s": s["status"],

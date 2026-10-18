@@ -699,3 +699,40 @@ kommune kan derfor ikke ligge på nettstedet.
 - Prinsippet i `tilgang.sql` står: tilgang gir ikke mer innhold enn det som
   bygges. En kommune med begrenset innsyn viser det samme som en publisert,
   bare til færre.
+
+## ADR-025 — Prosjektadmin har siste ord over sammendragene
+
+**Besluttet.** Prosjekteier, 19.10.2026. Endrer ADR-023 for prosjektadmin.
+
+Kontrollen holdt tilbake et sammendrag om Levanger Fotballklubb fordi den
+leste klubbnavnet som et personnavn, og ingen kunne godkjenne det: et navn
+kunne bare unntas i `tillatte-navn.json`, gjennom en PR. Prosjekteier må ha
+full kontroll over det som vises, og kunne rette teksten selv.
+
+**Konsekvens:**
+
+- Prosjektadmin kan publisere et sammendrag uansett hva kontrollen fant, også
+  et navn fra sakstittelen. Databasen merker vurderingen `overstyrt`, og
+  bygget godtar den så lenge grunnene er de samme. Vurderere har reglene fra
+  ADR-023.
+- Prosjektadmin kan redigere teksten i sammendraget: tittel i klarspråk,
+  sammendraget, «Hva betyr det?», uenigheten og temaene. Det lagres i
+  `kjerne.sammendrag_redigering`, bare innsetting; analysen fra modellen
+  endres aldri. Den nyeste raden for saken gjelder, og en rad med
+  `aktiv = false` tar KI-teksten tilbake.
+- Den redigerte teksten vises uten ny kontroll: prosjektadmin har lest den.
+  Kildelenkene og modellen er fra analysen teksten bygger på (regel 5). På
+  nettstedet står «Skrevet av … ut fra …, redigert av Kommunelys <dato>».
+  Regel 6 gjelder fortsatt teksten; portalen minner om det.
+- En redigering gjelder saken, også etter en ny analyse. Da vises teksten til
+  prosjektadmin har sett på den nye (status «Ny analyse etter redigering» på
+  oversikten i portalen) og redigert på nytt eller tatt KI-teksten tilbake.
+- En melding om feil som er vurdert «holdes tilbake», holder også en
+  redigert tekst tilbake.
+- Portalen: «Alle sammendrag» (`portal.sammendrag`) for prosjektadmin, med
+  status, KI-teksten, den redigerte teksten og redigering. «Rediger
+  sammendraget» nederst på saken på nettstedet vises bare for prosjektadmin
+  (`pa` i kontoen fra portalen) og går til `/rediger` i portalen. Databasen
+  avgjør hvem som kan skrive.
+- Kontrollen kjenner nå igjen klubber og lag («Fotballklubb», «Idrettslag»,
+  «Skiklubb» og lignende) som ikke-personer.

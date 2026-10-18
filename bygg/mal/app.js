@@ -53,6 +53,9 @@ const sokTekst=c=>(c.t+' '+(c.a?`${c.a.tk} ${c.a.sum}`:'')).toLowerCase();
 // Skjemaet i portalen, som krever innlogging (ADR-023). Tittelen vises bare der;
 // meldingen lagres med kommunen og saken.
 const meldUrl=c=>`${S.portal}/meld?${new URLSearchParams({kommune:K.slug,sak:c.id,tittel:c.t})}`;
+// Redigering av sammendraget i portalen, bare for prosjektadmin (ADR-025).
+// Lenken vises når kontomenyen vet at kontoen er prosjektadmin (konto.js).
+const redigerUrl=c=>`${S.portal}/rediger?${new URLSearchParams({kommune:K.slug,sak:c.id})}`;
 // Merknad fra den som har vurdert saken i portalen, med datoen.
 const merknad=m=>`<p class="merk"><b>Merknad fra Kommunelys, ${dato(m.d)}:</b> ${esc(m.t)}</p>`;
 const ut=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
@@ -62,7 +65,7 @@ function oppsummering(c){
   // Kildene står i detaljene. Uten kildelenke vises ikke sammendraget (CLAUDE.md regel 5).
   if(!a.kilder)return '';
   return `<div class="ai"><span class="ki">KI-sammendrag</span><p>${esc(a.sum)}</p>${a.bet?`<p><b>Hva betyr det?</b> ${esc(a.bet)}</p>`:''}${a.uen?`<p><b>Uenigheten:</b> ${esc(a.uen)}</p>`:''}
-   <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}. Dokumentene gjelder.</p>${a.merk?merknad(a.merk):''}</div>`;
+   <p class="aikilde">Skrevet av ${esc(a.modell)} ut fra ${a.kilder.map(k=>ut(k.url,esc(k.tittel))).join(', ')}${a.red?`, redigert av Kommunelys ${dato(a.red)}`:''}. Dokumentene gjelder.</p>${a.merk?merknad(a.merk):''}</div>`;
 }
 // Saksgangen på én linje med korte navn: «Helse og omsorg › Formannskapet › Kommunestyret».
 const utvKort=sc=>(K.utvalg_liste||{})[sc]||utName(sc);
@@ -664,7 +667,7 @@ function renderSak(id,uten_detaljer){
       <p class="liten muted">${avgjort.prot?`${ut(avgjort.prot,'Protokollen')} gjelder.`:'Protokollen gjelder.'}</p></section>`:''}
     <section class="blokk"><h2>Saksgangen</h2>${IKKE_STEMMER&&c.st.some(x=>!isFut(x.date))?MANGLER_STEMMER:''}<ol class="trad">${c.st.map(x=>stegHtml(c,x,avgjort)).join('')}</ol></section>
     <p class="liten muted mt">${[c.doc?ut(c.doc,'Saksframlegget (PDF)'):'',c.att?antall(c.att,'vedlegg','vedlegg')+' i innsynsportalen':''].filter(Boolean).join(' · ')}${c.doc||c.att?'. ':''}Stemmene er lest fra protokollene uten KI, og antall navn er kontrollert mot stemmetallene.</p>
-    <p class="liten mt"><a href="${meldUrl(c)}">Meld fra om feil i saken</a> <span class="muted">(krever innlogging)</span></p>
+    <p class="liten mt"><a href="${meldUrl(c)}">Meld fra om feil i saken</a> <span class="muted">(krever innlogging)</span><span class="bare-prosjektadmin"> · <a href="${redigerUrl(c)}">Rediger sammendraget</a></span></p>
   </div>`;
 }
 
