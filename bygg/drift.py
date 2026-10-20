@@ -213,16 +213,36 @@ def kommuner(rader: list[tuple[dict, dict, str]]) -> str:
             f'<th class="num">Oppmøte lest</th></tr></thead><tbody>{"".join(linjer)}</tbody></table></div>')
 
 
-def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
-             kurs: tuple[float, str, bool]) -> str:
-    nok_per_usd, kursdato, _ = kurs
-    ute: dict[str, list[int]] = {}
-    for a in analyser.values():
+def _tokens(rader) -> dict[str, list[int]]:
+    """{modell: [inn, ut]} for analyser eller debatter. Uten tokens (debatter
+    avgjort uten modellen, «regel») tas ikke med."""
+    ut: dict[str, list[int]] = {}
+    for a in rader:
         t = a.get("tokens") or {}
-        m = ute.setdefault(a.get("modell") or "ukjent", [0, 0])
+        if not (t.get("inn") or t.get("ut")):
+            continue
+        m = ut.setdefault(a.get("modell") or "ukjent", [0, 0])
         m[0] += t.get("inn", 0)
         m[1] += t.get("ut", 0)
-    usd_ute, ukjent = kostnad.dollar(ute)
+    return ut
+
+
+def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
+             kurs: tuple[float, str, bool], debatter: dict | None = None) -> str:
+    nok_per_usd, kursdato, _ = kurs
+    debatter = debatter or {}
+    usd_sammendrag, ukjent = kostnad.dollar(_tokens(analyser.values()))
+    # Debatten fra opptakene (ADR-026), med modellen. «regel» koster ingenting.
+    med_modell = [d for d in debatter.values() if (d.get("tokens") or {}).get("inn")]
+    tok_debatt = _tokens(med_modell)
+    usd_debatt, ukjent_debatt = kostnad.dollar(tok_debatt)
+    ukjent = sorted(set(ukjent) | set(ukjent_debatt))
+    ute = _tokens(analyser.values())
+    for modell, (i, u) in tok_debatt.items():
+        m = ute.setdefault(modell, [0, 0])
+        m[0] += i
+        m[1] += u
+    usd_ute = usd_sammendrag + usd_debatt
 
     def brukt(dager: int) -> float:
         fra = na - dt.timedelta(days=dager)
@@ -238,19 +258,25 @@ def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
     rader = [
         ("Brukt siste 7 dager", f"≈ {kroner(brukt(7))}"),
         ("Brukt siste 30 dager", f"≈ {kroner(brukt(30))}"),
+        ("Sammendrag av sakene", f"≈ {kroner(usd_sammendrag * nok_per_usd)}"),
         ("Snitt per sammendrag",
-         f"≈ {kroner(usd_ute * nok_per_usd / len(analyser))}" if analyser else "–"),
+         f"≈ {kroner(usd_sammendrag * nok_per_usd / len(analyser))}" if analyser else "–"),
+        *([("Debatten fra opptakene", f"≈ {kroner(usd_debatt * nok_per_usd)}"),
+           ("Snitt per debatt", f"≈ {kroner(usd_debatt * nok_per_usd / len(med_modell))}")]
+          if med_modell else []),
         ("Tokens inn / ut", f"{tall(inn / 1e6, 2)} M / {tall(ut / 1e6, 2)} M"),
         ("Kurs USD", f"{tall(nok_per_usd, 2)} kr ({kursdato[8:10]}.{kursdato[5:7]})"),
     ]
     merknad = (f"Listepris per million tokens inn / ut: {_e(modeller)}. "
                "Uten rabatt for caching og uten mva. Kurs fra Norges Bank. "
-               "«Brukt» tar med sammendrag som er skrevet på nytt.")
+               "«Brukt» tar med sammendrag og debatter som er skrevet på nytt.")
     if ukjent:
         merknad += f" Ukjent pris for {_e(', '.join(ukjent))}, ikke regnet med."
+    hva = f"de {tall(len(analyser))} sammendragene"
+    if med_modell:
+        hva += f" og {tall(len(med_modell))} debattene"
     return (f'<p class="drift-stort">≈ {kroner(usd_ute * nok_per_usd)}</p>'
-            f'<p class="liten muted drift-under">for de {tall(len(analyser))} '
-            "sammendragene som ligger ute</p>"
+            f'<p class="liten muted drift-under">for {hva} som ligger ute</p>'
             + _kv(rader) + f'<p class="liten muted">{merknad}</p>')
 
 
@@ -400,7 +426,7 @@ def _nye_saker(poster: list[dict], na: dt.datetime) -> str:
 
 def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
          analyser: dict, merke: str, repo: str, goatcounter: str, nettsted: str,
-         alle_kommuner: str = "") -> str:
+         alle_kommuner: str = "", debatter: dict | None = None) -> str:
     na = dt.datetime.now(dt.timezone.utc)
     kj = historikk.kjoringer()
     poster = historikk.tidslinje(kj, historikk.endringer())
@@ -416,7 +442,7 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
         "versjon": f"{na:%Y%m%d%H%M}",
         "status": _status(poster, na),
         "innhold": _innhold(status, avvik, poster, na),
-        "kostnad": _kostnad(analyser, poster, na, kurs),
+        "kostnad": _kostnad(analyser, poster, na, kurs, debatter),
         "database": _database(na),
         "kjoringer": kjoringer,
         "nye_saker": _nye_saker(poster, na),
