@@ -1025,7 +1025,8 @@ def kjor_felles(drift_fil: str | None = None, utfall: dict[str, str] | None = No
         (MAL / "drift.html").read_text("utf-8"), _fyll, status, kommune,
         collections.Counter(a["status"] for a in alle_avvik(status["ar"])), lager_analyse.alle(),
         MERKE, REPO, GOATCOUNTER, f"{NETTSTED}{BASE}",
-        drift.kommuner([(k, s, utfall.get(k["slug"], "ny")) for k, s in kommuner]))
+        drift.kommuner([(k, s, utfall.get(k["slug"], "ny")) for k, s in kommuner]),
+        lager_opptak.debatter())
     lager_drift.lagre_side(side)
     if drift_fil:
         Path(drift_fil).write_text(side, encoding="utf-8")
