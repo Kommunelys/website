@@ -776,10 +776,22 @@ ligger ute.
   opptaket lagres som «ingen debatt» uten å sendes til modellen.
 - Bokmerkene settes for hånd under møtet og er unøyaktige: slutten av ett
   bokmerke kan handle om en annen sak. Modellen skal se bort fra det.
-- Bygget kontrollerer hvert sammendrag (`analyser_debatt.avvik`) og holder
-  det tilbake ved navn som ligner en representant (tekstingen hører navn
-  feil), mulige egennavn som ikke står i saken, stemmetall eller utfall,
-  tider utenfor saken, og partier som verken er nevnt eller ropt opp i
-  tekstingen nær tidspunktet. En melding om feil i saken holder også
-  debatten tilbake. Prøven 19.10.2026 fanget ni av ni plantede feil.
+- Bygget kontrollerer hvert sammendrag (`analyser_debatt.avvik`). Kontrollen
+  er mild med vilje (prosjekteier, 20.10.2026). Den holder sammendraget
+  tilbake bare ved:
+  - fullt navn på en representant;
+  - et etternavn på minst fire bokstaver, også feilhørt (likhet 0,8);
+  - to navneord etter hverandre midt i en setning, som ser ut som et
+    personnavn;
+  - stemmetall;
+  - en tid utenfor saken;
+  - et parti som ikke var i møtet, eller som verken er nevnt eller ropt
+    opp i den samme delen av saken.
+
+  Steder, organisasjoner, forkortelser og ord som «vedtatt» slipper
+  gjennom. Den første utgaven holdt tilbake 8 av 11 debatter i første
+  kjøring. Det var fornavn som lignet korte ord («To» og «Tor»), stedsnavn
+  og partier nevnt mer enn tre minutter fra punktet. Ingen av de åtte hadde
+  navn eller stemmetall. Den milde kontrollen fanger fortsatt ni av ni
+  plantede feil. En melding om feil i saken holder også debatten tilbake.
 - Vurdering av debatter som holdes tilbake, i portalen, kommer senere.
