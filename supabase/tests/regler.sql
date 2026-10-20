@@ -308,14 +308,27 @@ begin
   reset role;
   perform pg_temp.skal_vaere('pipeline: leser kjerne', svar);
 
+  -- Opptak (ADR-026): pipeline og bygg når de nye tabellene.
+  set local role kommunelys_pipeline;
+  svar := (select count(*) = 1 from kjerne.opptak where kommune_id = k)
+          and (select count(*) = 1 from kjerne.teksting_gjeldende where kommune_id = k);
+  reset role;
+  set local role kommunelys_bygg;
+  svar2 := (select count(*) = 1 from kjerne.debatt_gjeldende where kommune_id = k);
+  reset role;
+  perform pg_temp.skal_vaere('opptak: pipeline leser opptak og teksting', svar);
+  perform pg_temp.skal_vaere('opptak: bygget leser debatten', svar2);
+
   -- En innlogget bruker uten tilgang ser ingenting.
   perform set_config('request.jwt.claims', json_build_object('sub', bruker, 'role', 'authenticated')::text, true);
   set local role authenticated;
   svar := (select count(*) = 0 from kjerne.sak);
   svar2 := (select count(*) = 0 from publisert.stemme);
+  svar3 := (select count(*) = 0 from kjerne.opptak) and (select count(*) = 0 from kjerne.teksting);
   reset role;
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen saker', svar);
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen stemmer', svar2);
+  perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen opptak eller teksting', svar3);
 
   -- Med abonnement på testkommunen: ser den, ikke den andre testkommunen.
   begin
