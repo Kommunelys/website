@@ -25,10 +25,10 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
 | Nettsted | Kommunelys. Viser alle år fra kommunens `fra_aar`; en sak er én tråd på tvers av år, og detaljene til en sak lastes når den åpnes (ADR-022). Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Saken står i sentrum: egen side per sak (`#sak/<id>`) med saksgangen som en tråd og forslag og stemmer i hvert møte, Saker i tre faner (avgjort, på vei, venter på protokoll), møtekalender og egen side per møte (`#mote/<id>`) med oppmøte. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» med utvalgene og medlemmene. Se `docs/01-arkitektur.md` |
-| Opptak av kommunestyret | Virker for Steinkjer (ADR-025). Opptakene på steinkjer.kommunetv.no kobles til møtet og hver sak med bokmerkene; møtet, saken, sakslisten og kalenderen lenker dit. 5 av 5 kommunestyremøter i 2026 har opptak, 3 har teksting. Debatten oppsummeres med Claude fra tekstingen (`analyser.analyser_debatt`), med partiene, uten navn og stemmetall, og kontrolleres i bygget |
+| Opptak av kommunestyret | Virker for Steinkjer (ADR-026). Opptakene på steinkjer.kommunetv.no kobles til møtet og hver sak med bokmerkene; møtet, saken, sakslisten og kalenderen lenker dit. 5 av 5 kommunestyremøter i 2026 har opptak, 3 har teksting. Debatten oppsummeres med Claude fra tekstingen (`analyser.analyser_debatt`), med partiene, uten navn og stemmetall, og kontrolleres i bygget |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
-| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, meldinger) for vurderere per kommune (ADR-023); brukere, roller, abonnement og driftssiden for prosjektadmin. Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
+| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, meldinger) for vurderere per kommune (ADR-023); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
 | Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet, innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
@@ -114,7 +114,7 @@ python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voter
 python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
 python -m tolk.bygg_verv 2026           # utvalg, partier og verv -> data/utvalg/, data/verv/
 python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data/avvik/
-python -m hent.hent_opptak 2026         # opptakene, bokmerkene og tekstingen fra kommunetv (ADR-025)
+python -m hent.hent_opptak 2026         # opptakene, bokmerkene og tekstingen fra kommunetv (ADR-026)
 python -m analyser.analyser_debatt 2026 --tort-lop  # hvilke debatter som ville blitt oppsummert
 python -m analyser.analyser_debatt 2026 --vis 8457  # grunnlaget for debatten om én behandling
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
@@ -424,7 +424,10 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   utviklingsserveren går («X is not defined» selv om koden er riktig). Start
   den på nytt.
 - **En vurdering endrer aldri innholdet.** Den avgjør om noe vises, og kan ha
-  en kort merknad som vises uten godkjenning for hånd. Derfor kontrolleres
+  en kort merknad som vises uten godkjenning for hånd. Unntaket er
+  prosjektadmin, som kan publisere et sammendrag uansett grunn og redigere
+  teksten (`kjerne.sammendrag_redigering`, merket «redigert av Kommunelys»;
+  ADR-025). Analysen fra modellen endres aldri. Derfor kontrolleres
   merknaden (`kjerne.merknad_ok`, `tolk/merknad.py`), og en merknad med navn
   holder saken tilbake. En melding om feil skjuler ingenting før den er
   vurdert (ADR-023).

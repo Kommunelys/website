@@ -1,4 +1,4 @@
-"""Henter opptakene av kommunestyret og kobler dem til møtene og sakene (ADR-025).
+"""Henter opptakene av kommunestyret og kobler dem til møtene og sakene (ADR-026).
 
 For hvert opptak i kommunens arkiv som hører til et møte vi har:
 1. bokmerkene, med start og varighet i opptaket, koblet til behandlingen med

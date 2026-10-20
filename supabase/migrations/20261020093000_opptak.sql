@@ -1,5 +1,5 @@
 -- Opptak av møtene, kommunens teksting av dem og sammendrag av debatten
--- (ADR-025).
+-- (ADR-026).
 --
 -- Opptaket ligger hos kommunen (Steinkjer: steinkjer.kommunetv.no). Vi lagrer
 -- lenken, bokmerkene for sakene med start og varighet, og tekstingen når

@@ -6,7 +6,7 @@
 <title>Kommunelys</title>
 <script>
 /* Portalen sender brukeren hit etter innlogging og utlogging (ADR-020), med
-   kontoen etter # (#epost=…&admin=1&til=… eller #ut&til=…). Det etter # sendes
+   kontoen etter # (#epost=…&admin=1&pa=1&til=… eller #ut&til=…). Det etter # sendes
    aldri til serveren. Kontoen lagres i nettleseren for kontomenyen (konto.js),
    og brukeren sendes videre til siden de kom fra.
 
@@ -22,7 +22,7 @@
       localStorage.removeItem('kommunelys-innsyn');
     } else if (q.get('epost')) {
       localStorage.setItem('kommunelys-konto', JSON.stringify(
-        { epost: q.get('epost'), admin: q.get('admin') === '1', tid: Date.now() }));
+        { epost: q.get('epost'), admin: q.get('admin') === '1', pa: q.get('pa') === '1', tid: Date.now() }));
       if (q.get('nokkel')) localStorage.setItem('kommunelys-innsyn', JSON.stringify(
         { nokkel: q.get('nokkel'), utloper: +q.get('utloper') || 0 }));
     }

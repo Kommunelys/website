@@ -77,14 +77,14 @@ Koden og arbeidsflyten er gjort klare for flere kommuner (ADR-021).
 | Valgperioden: frys medlemslisten for 2023–2027, merk nye, gjenvalgte og tidligere folkevalgte, Partiene per valgperiode, skille i saksgangen og en boks om overgangen. Før august 2027 | |
 | Valgresultatet fra Valgdirektoratet ved siden av partifordelingen. Eget steg etter valgperioden | |
 | Varsling på tema eller geografisk område | |
-| Lenker til opptakene og debatten fra kommunens teksting (ADR-025) | Ferdig for Steinkjer |
+| Lenker til opptakene og debatten fra kommunens teksting (ADR-026) | Ferdig for Steinkjer |
 | Vurdering av debatter som holdes tilbake, i portalen | |
 | Politisk analyse, se under | |
 | Eierskap som ikke er én person på fritiden | |
 
 ## Ideer som er utsatt
 
-**Debatt fra møteopptak.** Gjort for Steinkjer 20.10.2026, se ADR-025.
+**Debatt fra møteopptak.** Gjort for Steinkjer 20.10.2026, se ADR-026.
 Opptakene ligger hos kommunen på steinkjer.kommunetv.no, med bokmerker per sak
 og automatisk teksting på noen av dem. Vi lenker til saken i opptaket og
 oppsummerer debatten fra tekstingen, med partiene og uten navn. Møter uten

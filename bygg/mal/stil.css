@@ -75,6 +75,8 @@ button,input,select{font:inherit;color:inherit}
 .meny a[aria-current]{border-bottom-color:var(--lys);font-weight:700}
 .meny .sokeknapp{margin-left:auto;display:inline-flex;align-items:center;color:var(--ink)}
 .meny .sokeknapp:hover{color:var(--lenke);border-bottom-color:transparent}
+/* Lenker bare prosjektadmin har bruk for, som «Rediger sammendraget» (konto.js). */
+.bare-prosjektadmin{display:none}.prosjektadmin .bare-prosjektadmin{display:inline}
 /* Kontomenyen (konto.js): lenker til portalen, eller kontoen når man er logget inn. */
 .konto{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:15px}
 .konto>a{color:var(--ink);text-decoration:none;font-weight:500}
@@ -542,7 +544,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .drift-merke.delvis,.drift-merke.avbrutt{color:var(--warn)}
 .drift-merke.pagar,.drift-merke.lagret{color:var(--muted)}
 
-/* Opptakene av møtene (ADR-025). Lenkene går til kommunens opptak, på
+/* Opptakene av møtene (ADR-026). Lenkene går til kommunens opptak, på
    starten av saken; knappen øverst på møtet og saken skal synes. */
 .spill{width:1.05em;height:1.05em;flex:none}
 a.opptak{display:inline-flex;align-items:center;gap:5px}

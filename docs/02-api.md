@@ -213,7 +213,7 @@ Formatet for vedtak står ikke i API-et. Ved nedlasting var 22 av 375 Word-filer
 
 Ikke en del av innsynsportalen. Steinkjer sender kommunestyret på
 `https://steinkjer.kommunetv.no/` (Aventia Online Video Platform). Kartlagt
-19.10.2026 fra nettleseren; ingen innlogging (ADR-025). Klienten er
+19.10.2026 fra nettleseren; ingen innlogging (ADR-026). Klienten er
 `hent/kommunetv.py`.
 
 | Kall | Gir |

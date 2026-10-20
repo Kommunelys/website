@@ -74,7 +74,7 @@ def hent(aar: int, alt: bool) -> dict[str, bool]:
         for a in aarene:
             for trinn in ("tolk.bygg_oppmote", "tolk.bygg_verv", "tolk.bygg_avvik"):
                 ok = ok and _kjor(slug, trinn, a)
-        # Opptakene av møtene (ADR-025), når kommunen har dem. En annen vert enn
+        # Opptakene av møtene (ADR-026), når kommunen har dem. En annen vert enn
         # portalen. Feiler det, beholder kommunen lenkene fra forrige kjøring.
         if ok and lager_kommune.oppsett(slug).get("opptak") and not _kjor(slug, "hent.hent_opptak", str(aar)):
             print(f"advarsel: opptakene for {slug} ble ikke hentet; lenkene er som ved forrige kjøring")
@@ -95,7 +95,7 @@ def analyser(aar: int, maks: int, minutter: float) -> dict[str, bool]:
         min_her = max(1.0, (slutt - time.monotonic()) / 60 / igjen)
         utfall[slug] = _kjor(slug, "analyser.analyser_saker", str(aar),
                              "--maks", str(math.ceil(maks / len(kommuner))), "--minutter", f"{min_her:.0f}")
-        # Debatten fra opptakene (ADR-025). Sakene går først; debatten får
+        # Debatten fra opptakene (ADR-026). Sakene går først; debatten får
         # sin egen kvote og stopper ikke kommunen om den feiler.
         if lager_kommune.oppsett(slug).get("opptak") and not _kjor(
                 slug, "analyser.analyser_debatt", str(aar), "--maks", str(MAKS_DEBATT)):

@@ -432,7 +432,7 @@ def analyser(c, k: int, analyser_: dict, kjoring_id: str) -> int:
     return len(nye)
 
 
-# Opptak, teksting og debatt (ADR-025) ------------------------------------------------------
+# Opptak, teksting og debatt (ADR-026) ------------------------------------------------------
 
 def opptak(c, k: int, opptak_: list[dict]) -> dict:
     """Opptakene og bokmerkene. Et opptak som er borte hos kommunen, slettes

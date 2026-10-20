@@ -1,4 +1,4 @@
-"""Opptak av møtene, tekstingen av dem og sammendragene av debatten (ADR-025).
+"""Opptak av møtene, tekstingen av dem og sammendragene av debatten (ADR-026).
 
 Skrives av hent.hent_opptak og analyser.analyser_debatt. Opptaket ligger hos
 kommunen; her står lenken, bokmerkene for sakene og tekstingen. Videoen

@@ -51,6 +51,9 @@
     liste.append(a);
     return a;
   }
+  // Prosjektadmin ser lenkene til redigering i portalen (.bare-prosjektadmin,
+  // ADR-025). Bare visning: portalen og databasen avgjør hvem som får redigere.
+  if (k.pa) document.documentElement.classList.add('prosjektadmin');
   lenke('Min konto', '/min-konto');
   if (k.admin) lenke('Portalen', '/');
   tilbake(lenke('Logg ut', '/logg-ut'), '/logg-ut');
