@@ -452,6 +452,47 @@ def analyser() -> dict[int, dict]:
     return {r[0]: _analyse(r) for r in _rader(_ANALYSE + " order by sak_id", kommune_id())}
 
 
+# Opptak, teksting og debatt (ADR-025) ---------------------------------------------
+
+@_husket
+def opptak() -> list[dict]:
+    return [{"opptak_id": opptak_id, "mote_id": mote_id, "url": url, "varighet_s": varighet,
+             "teksting": teksting_, "deler": deler, "fjernet": _dato(fjernet)}
+            for opptak_id, mote_id, url, varighet, teksting_, deler, fjernet in _rader(
+                "select opptak_id, mote_id, url, varighet_s, teksting, deler, fjernet from kjerne.opptak "
+                "where kommune_id = %s order by opptak_id", kommune_id())]
+
+
+def teksting(opptak_id: int) -> dict | None:
+    rader = _rader("select kilde, linjer from kjerne.teksting_gjeldende "
+                   "where kommune_id = %s and opptak_id = %s", kommune_id(), opptak_id)
+    return {"opptak_id": opptak_id, "kilde": rader[0][0], "linjer": rader[0][1]} if rader else None
+
+
+_DEBATT = ("select behandling_id, opptak_id, ingen_debatt, oppsummering, antall_innlegg, punkter, "
+           "sjekksum, modell, innsats, instruksjon_versjon, dato, tokens_inn, tokens_ut, kilder "
+           "from kjerne.debatt_gjeldende where kommune_id = %s")
+
+
+def _debatt(rad: tuple) -> dict:
+    (hid, opptak_id, ingen, oppsummering, antall_, punkter, sjekksum, modell, innsats, versjon,
+     dato, inn, ut, kilder) = rad
+    return {"ingen_debatt": ingen, "oppsummering": oppsummering, "antall_innlegg": antall_,
+            "punkter": punkter, "behandling_id": hid, "opptak_id": opptak_id, "sjekksum": sjekksum,
+            "modell": modell, "innsats": innsats, "instruksjon_versjon": versjon, "dato": _dato(dato),
+            "tokens": {"inn": inn, "ut": ut}, "kilder": kilder}
+
+
+def debatt(behandling_id: int) -> dict | None:
+    rader = _rader(_DEBATT + " and behandling_id = %s", kommune_id(), behandling_id)
+    return _debatt(rader[0]) if rader else None
+
+
+@_husket
+def debatter() -> dict[int, dict]:
+    return {r[0]: _debatt(r) for r in _rader(_DEBATT + " order by behandling_id", kommune_id())}
+
+
 # Det som vedlikeholdes for hånd ----------------------------------------------------
 
 @_husket

@@ -699,3 +699,50 @@ kommune kan derfor ikke ligge på nettstedet.
 - Prinsippet i `tilgang.sql` står: tilgang gir ikke mer innhold enn det som
   bygges. En kommune med begrenset innsyn viser det samme som en publisert,
   bare til færre.
+
+## ADR-025 — Opptakene av kommunestyret: lenker og debatten
+
+**Besluttet.** Prosjekteier, 19.–20.10.2026.
+
+Protokollen sier hva som ble vedtatt og hvem som stemte hva, men ikke hvorfor.
+Steinkjer sender kommunestyret direkte og legger opptakene i et arkiv på
+`steinkjer.kommunetv.no` (Aventia). Opptaket har et bokmerke per sak, med
+saksnummeret, og noen opptak har automatisk norsk teksting med tidskoder.
+Arkivet går tilbake til september 2025; eldre opptak er slettet. Arkivverket
+regner slike opptak som kassable, så kommunen bestemmer selv hvor lenge de
+ligger ute.
+
+**Konsekvens:**
+
+- Kilden står under `opptak` i `kommuner/<slug>.json`. Uten feltet har
+  kommunen ingen opptak. `hent.hent_opptak` henter arkivet etter
+  portalhentingen, med samme takt og samme `User-Agent` (ADR-007).
+  Opptakstjenestens `robots.txt` stenger `/api/` for vanlige roboter, men
+  åpner for KI-roboter. Det er samme stilling som for innsynsportalen.
+- Opptaket kobles til møtet i kommunestyret med samme dato, og hvert bokmerke
+  til behandlingen med samme saksnummer («PS 47/26» er «PS 47/2026»).
+  Lenkene vises på møtet, på saken, i sakslisten og i kalenderen, også når
+  opptaket ikke er tekstet.
+- Vi viser ikke videoen og laster den ikke ned. Spilleren hos kommunen kan
+  åpnes på starten av en sak (`?caseId=<bokmerke>`), men ikke på et vilkårlig
+  tidspunkt. Hvert punkt i debatten har derfor lenke til starten av saken og
+  tiden i teksten («ca. 4:00 inn i saken»).
+- Tekstingen hentes én gang og lagres i `kjerne.teksting`, bare innsetting.
+  Den vises ikke; den inneholder hørefeil og navn på privatpersoner. Opptak
+  uten teksting får bare lenkene. Vi transkriberer ikke selv.
+- Et opptak som er borte fra arkivet, får `fjernet`, og lenken vises ikke.
+  Tekstingen og sammendraget står.
+- `analyser.analyser_debatt` oppsummerer debatten per behandling med Claude,
+  fra tekstingen, vedtaket, forslagene og listen over representantene.
+  Sammendraget sier hvilket parti som mente hva, aldri hvem (regel 6), og
+  har aldri stemmetall eller utfall (ADR-002). Saker under ett minutt i
+  opptaket lagres som «ingen debatt» uten å sendes til modellen.
+- Bokmerkene settes for hånd under møtet og er unøyaktige: slutten av ett
+  bokmerke kan handle om en annen sak. Modellen skal se bort fra det.
+- Bygget kontrollerer hvert sammendrag (`analyser_debatt.avvik`) og holder
+  det tilbake ved navn som ligner en representant (tekstingen hører navn
+  feil), mulige egennavn som ikke står i saken, stemmetall eller utfall,
+  tider utenfor saken, og partier som verken er nevnt eller ropt opp i
+  tekstingen nær tidspunktet. En melding om feil i saken holder også
+  debatten tilbake. Prøven 19.10.2026 fanget ni av ni plantede feil.
+- Vurdering av debatter som holdes tilbake, i portalen, kommer senere.

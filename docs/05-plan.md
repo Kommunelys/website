@@ -77,21 +77,18 @@ Koden og arbeidsflyten er gjort klare for flere kommuner (ADR-021).
 | Valgperioden: frys medlemslisten for 2023–2027, merk nye, gjenvalgte og tidligere folkevalgte, Partiene per valgperiode, skille i saksgangen og en boks om overgangen. Før august 2027 | |
 | Valgresultatet fra Valgdirektoratet ved siden av partifordelingen. Eget steg etter valgperioden | |
 | Varsling på tema eller geografisk område | |
-| Debatt fra møteopptak, se under | |
+| Lenker til opptakene og debatten fra kommunens teksting (ADR-025) | Ferdig for Steinkjer |
+| Vurdering av debatter som holdes tilbake, i portalen | |
 | Politisk analyse, se under | |
 | Eierskap som ikke er én person på fritiden | |
 
-## To ideer som er utsatt
+## Ideer som er utsatt
 
-**Debatt fra møteopptak.** Protokollen forteller hva som ble vedtatt og hvem som
-stemte hva, men ikke hvorfor. Feltet «Behandling» er tomt. En transkripsjon av
-møteopptaket ville gitt argumentene.
-
-Steinkjer24 ser ut til å ha sendt kommunestyremøter og lagt dem ut i opptak.
-Eierskap til opptakene må avklares. Teknisk: lyd til tekst med en norsk modell,
-stemmeskille for å knytte innlegg til person, og kobling mot riktig sak.
-Største risiko er at et sitat tillegges feil person, så løsningen bør gjengi med
-egne ord og alltid lenke til tidspunktet i opptaket.
+**Debatt fra møteopptak.** Gjort for Steinkjer 20.10.2026, se ADR-025.
+Opptakene ligger hos kommunen på steinkjer.kommunetv.no, med bokmerker per sak
+og automatisk teksting på noen av dem. Vi lenker til saken i opptaket og
+oppsummerer debatten fra tekstingen, med partiene og uten navn. Møter uten
+teksting får bare lenkene; egen tale-til-tekst er ikke gjort.
 
 **Politisk analyse.** En ukentlig tekst som forklarer hvem som samarbeider, hvor
 flertallet ligger og hva som står på spill. Den skal analysere, ikke mene.

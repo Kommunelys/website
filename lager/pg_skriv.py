@@ -432,6 +432,60 @@ def analyser(c, k: int, analyser_: dict, kjoring_id: str) -> int:
     return len(nye)
 
 
+# Opptak, teksting og debatt (ADR-025) ------------------------------------------------------
+
+def opptak(c, k: int, opptak_: list[dict]) -> dict:
+    """Opptakene og bokmerkene. Et opptak som er borte hos kommunen, slettes
+    ikke her, men får «fjernet» (hent.hent_opptak)."""
+    return synk_tabell(
+        c, "kjerne.opptak",
+        ["kommune_id", "mote_id", "opptak_id", "url", "varighet_s", "teksting", "deler", "fjernet"],
+        ["kommune_id", "mote_id"],
+        [(k, o["mote_id"], o["opptak_id"], o["url"], o.get("varighet_s"), o["teksting"],
+          _jsonb(o["deler"]), o.get("fjernet")) for o in opptak_],
+        slett=False)
+
+
+def raa_opptak(c, k: int, opptak_id: int, svar: dict, biter: list[str] | None, kjoring_id: str) -> int:
+    """Svaret fra opptakstjenesten og tekstingen urørt. Det som alt finnes, hoppes over."""
+    rader = [(k, "opptak", str(opptak_id), sjekksum(svar), _jsonb(svar), kjoring_id)]
+    if biter:
+        innhold = {"biter": biter}
+        rader.append((k, "teksting", str(opptak_id), sjekksum(innhold), _jsonb(innhold), kjoring_id))
+    cur = c.cursor()
+    cur.executemany(
+        "insert into kjerne.raa_svar (kommune_id, kilde, nokkel, sjekksum, innhold, kjoring_id) "
+        "values (%s, %s, %s, %s, %s, %s) on conflict (kommune_id, kilde, nokkel, sjekksum) do nothing",
+        rader)
+    return len(rader)
+
+
+def teksting(c, k: int, t: dict, kjoring_id: str) -> bool:
+    """En ny versjon av tekstingen når den er endret. Sant når den var ny."""
+    return c.execute(
+        "insert into kjerne.teksting (kommune_id, opptak_id, kilde, sjekksum, linjer, kjoring_id) "
+        "values (%s, %s, %s, %s, %s, %s) on conflict (kommune_id, opptak_id, sjekksum) do nothing",
+        (k, t["opptak_id"], t["kilde"], sjekksum(t["linjer"]), _jsonb(t["linjer"]), kjoring_id),
+    ).rowcount == 1
+
+
+def debatter(c, k: int, debatter_: list[dict], kjoring_id: str) -> int:
+    """En ny versjon når sammendraget av en debatt er et annet enn det som gjelder."""
+    gjeldende = {h: (sj, str(d)) for h, sj, d in c.execute(
+        "select behandling_id, sjekksum, dato from kjerne.debatt_gjeldende where kommune_id = %s", (k,))}
+    nye = [d for d in debatter_ if gjeldende.get(d["behandling_id"]) != (d["sjekksum"], d["dato"])]
+    c.cursor().executemany(
+        "insert into kjerne.debatt (kommune_id, behandling_id, opptak_id, ingen_debatt, oppsummering, "
+        "antall_innlegg, punkter, sjekksum, modell, innsats, instruksjon_versjon, dato, tokens_inn, "
+        "tokens_ut, kilder, kjoring_id) "
+        "values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+        [(k, d["behandling_id"], d["opptak_id"], d["ingen_debatt"], d["oppsummering"],
+          d["antall_innlegg"], _jsonb(d["punkter"]), d["sjekksum"], d["modell"], d["innsats"],
+          d["instruksjon_versjon"], d["dato"], (d.get("tokens") or {}).get("inn", 0),
+          (d.get("tokens") or {}).get("ut", 0), _jsonb(d["kilder"]), kjoring_id) for d in nye])
+    return len(nye)
+
+
 # Kjøreloggen -------------------------------------------------------------------------------
 
 def kjoringer(c, k: int, logg: dict) -> int:
