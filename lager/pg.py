@@ -725,6 +725,22 @@ def endringer(dager: int, maks: int) -> list[dict]:
         m[0] += inn
         m[1] += ut_
 
+    # Debatten fra opptakene (ADR-026) koster også. Saker som er avgjort uten
+    # modellen («regel»), har ingen tokens og tas ikke med.
+    for kid, modell, inn, ut_ in _rader(
+            "select e.kjoring_id, d.modell, d.tokens_inn, d.tokens_ut "
+            "from drift.endringslogg e join kjerne.debatt d "
+            "  on d.kommune_id = e.kommune_id and d.id = (e.nokkel ->> 'id')::bigint "
+            f"where {vilkar} and e.tabell = 'debatt' and e.operasjon = 'I' "
+            "and d.tokens_inn + d.tokens_ut > 0", *args):
+        post = ut[kid]
+        post["nye_debatter"] = post.get("nye_debatter", 0) + 1
+        post["tokens_inn"] += inn
+        post["tokens_ut"] += ut_
+        m = post["tokens_per_modell"].setdefault(modell or "ukjent", [0, 0])
+        m[0] += inn
+        m[1] += ut_
+
     for kid, nokkel, verdi in _rader(
             "select kjoring_id, nokkel, verdi from drift.kjoring_tall "
             "where kjoring_id = any(%s) and del = 'hent_moter'", list(ut)):

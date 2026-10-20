@@ -672,7 +672,7 @@ begin
     perform pg_temp.skal_virke('debatt: bygget lagrer kontrollen',
       format($s$set local role kommunelys_bygg;
         insert into kjerne.debatt_kontroll (kommune_id, debatt_id, bestatt, grunner)
-          select kommune_id, id, false, array['AP er verken nevnt eller ropt opp nær 1:05 i del 1']
+          select kommune_id, id, false, array['AP er verken nevnt eller ropt opp i del 1']
           from kjerne.debatt_gjeldende where kommune_id = %s;
         reset role$s$, k));
     perform pg_temp.skal_feile('debatt: bygget kan ikke endre kontrollen',
@@ -710,7 +710,7 @@ begin
           from kjerne.debatt_gjeldende where kommune_id = %s;
         reset role$s$, k));
     perform pg_temp.skal_vaere('debatt: grunnene huskes, og overstyrt settes av databasen',
-      (select grunner = array['AP er verken nevnt eller ropt opp nær 1:05 i del 1'] and not overstyrt
+      (select grunner = array['AP er verken nevnt eller ropt opp i del 1'] and not overstyrt
               and registrert_av = bruker
          from kjerne.debatt_vurdering_gjeldende where kommune_id = k));
     perform pg_temp.skal_feile('debatt: vurderingen kan ikke endres',

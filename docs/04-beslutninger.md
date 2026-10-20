@@ -776,19 +776,31 @@ ligger ute.
   opptaket lagres som «ingen debatt» uten å sendes til modellen.
 - Bokmerkene settes for hånd under møtet og er unøyaktige: slutten av ett
   bokmerke kan handle om en annen sak. Modellen skal se bort fra det.
-- Bygget kontrollerer hvert sammendrag (`analyser_debatt.avvik`) og holder
-  det tilbake ved navn som ligner en representant (tekstingen hører navn
-  feil), mulige egennavn som ikke står i saken, stemmetall eller utfall,
-  tider utenfor saken, og partier som verken er nevnt eller ropt opp i
-  tekstingen nær tidspunktet. En melding om feil i saken holder også
-  debatten tilbake. Prøven 19.10.2026 fanget ni av ni plantede feil.
+- Bygget kontrollerer hvert sammendrag (`analyser_debatt.avvik`). Kontrollen
+  er mild med vilje (prosjekteier, 20.10.2026). Den holder sammendraget
+  tilbake bare ved:
+  - fullt navn på en representant;
+  - et etternavn på minst fire bokstaver, også feilhørt (likhet 0,8);
+  - to navneord etter hverandre midt i en setning, som ser ut som et
+    personnavn;
+  - stemmetall;
+  - en tid utenfor saken;
+  - et parti som ikke var i møtet, eller som verken er nevnt eller ropt
+    opp i den samme delen av saken.
+
+  Steder, organisasjoner, forkortelser og ord som «vedtatt» slipper
+  gjennom. Den første utgaven holdt tilbake 8 av 11 debatter i første
+  kjøring. Det var fornavn som lignet korte ord («To» og «Tor»), stedsnavn
+  og partier nevnt mer enn tre minutter fra punktet. Ingen av de åtte hadde
+  navn eller stemmetall. Den milde kontrollen fanger fortsatt ni av ni
+  plantede feil. En melding om feil i saken holder også debatten tilbake.
 - Kontrollen lagres i `kjerne.debatt_kontroll` når grunnene endres, og
   debattene som holdes tilbake, står under «Til vurdering» i portalen
   (`portal.debatt_holdt`), med punktene og lenke til opptaket. Som for
   sammendragene (ADR-023, ADR-025) avgjør vurderingen
   (`kjerne.debatt_vurdering`, bare innsetting) bare om debatten vises, og kan
   ha en kort merknad. En vurderer kan slippe gjennom en debatt der kontrollen
-  bare ikke fant partiet i tekstingen eller blant dem som stemte. Navn og
+  bare ikke fant partiet i den delen av tekstingen eller blant dem som stemte. Navn og
   stemmetall kan bare prosjektadmin overstyre (merket overstyrt). En del
   eller et tidspunkt som ikke finnes i opptaket, eller manglende teksting,
   kan ingen overstyre: debatten må analyseres på nytt. Debatten vises bare så
