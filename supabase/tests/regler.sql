@@ -663,6 +663,101 @@ begin
     perform pg_temp.skal_vaere('sammendrag: KI-teksten gjelder igjen',
       (select status = 'vist' and redigering_id is null from portal.sammendrag where kommune_id = k));
 
+    -- Debatter som ikke besto (ADR-026): partiet i tekstingen kan overstyres,
+    -- et navn bare av prosjektadmin, en feil del av ingen.
+    update kjerne.opptak set fjernet = null,
+        deler = '[{"bokmerke_id": 7, "nummer": 1, "saksnr": "PS 1/2026", "behandling_id": 5000,
+                   "sak_id": 5000, "tittel": "Testsak", "start_ms": 60000, "varighet_ms": 120000}]'
+      where kommune_id = k;
+    perform pg_temp.skal_virke('debatt: bygget lagrer kontrollen',
+      format($s$set local role kommunelys_bygg;
+        insert into kjerne.debatt_kontroll (kommune_id, debatt_id, bestatt, grunner)
+          select kommune_id, id, false, array['AP er verken nevnt eller ropt opp i del 1']
+          from kjerne.debatt_gjeldende where kommune_id = %s;
+        reset role$s$, k));
+    perform pg_temp.skal_feile('debatt: bygget kan ikke endre kontrollen',
+      format($s$set local role kommunelys_bygg; update kjerne.debatt_kontroll set grunner = '{}', bestatt = true
+        where kommune_id = %s$s$, k));
+    perform pg_temp.skal_feile('debatt: kontrollen kan ikke slettes',
+      format('delete from kjerne.debatt_kontroll where kommune_id = %s', k));
+    perform pg_temp.skal_feile('debatt: bestått må stemme med grunnene',
+      format($s$insert into kjerne.debatt_kontroll (kommune_id, debatt_id, bestatt, grunner)
+        select kommune_id, id, true, array['x'] from kjerne.debatt_gjeldende where kommune_id = %s$s$, k));
+    perform set_config('request.jwt.claims', json_build_object('sub', vanlig, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select count(*) = 0 from portal.debatt_holdt) and (select count(*) = 0 from kjerne.debatt_kontroll);
+    reset role;
+    perform pg_temp.skal_vaere('debatt: andre enn vurderere ser ikke det som holdes tilbake', svar);
+    perform set_config('request.jwt.claims', json_build_object('sub', bruker, 'role', 'authenticated')::text, true);
+    set local role authenticated;
+    svar := (select count(*) = 1
+                    and bool_and(kan_godkjennes and not kan_aldri_publiseres and avgjorelse = 'ikke_vurdert'
+                                 and sak_id = 5000 and opptak_url = 'https://tv/archive/1'
+                                 and deler -> 0 ->> 'url' = 'https://tv/archive/1?caseId=7'
+                                 and (deler -> 0 ->> 'start_s')::int = 60)
+             from portal.debatt_holdt where kommune_id = k);
+    reset role;
+    perform pg_temp.skal_vaere('debatt: vurdereren ser det som holdes tilbake, med lenken', svar);
+    perform pg_temp.skal_feile('debatt: merknad med lenke stoppes',
+      format($s$set local role authenticated;
+        insert into portal.debatt_vurdering (kommune_id, debatt_id, avgjorelse, merknad, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'Se https://example.invalid', 'b', 'Vurderer'
+          from kjerne.debatt_gjeldende where kommune_id = %s$s$, k));
+    perform pg_temp.skal_virke('debatt: partiet i tekstingen kan overstyres',
+      format($s$set local role authenticated;
+        insert into portal.debatt_vurdering (kommune_id, debatt_id, avgjorelse, merknad, begrunnelse, vurdert_av, overstyrt)
+          select kommune_id, id, 'publiser', 'Tekstingen skriver partiet feil.', 'Hørt i opptaket.', 'Vurderer', true
+          from kjerne.debatt_gjeldende where kommune_id = %s;
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('debatt: grunnene huskes, og overstyrt settes av databasen',
+      (select grunner = array['AP er verken nevnt eller ropt opp i del 1'] and not overstyrt
+              and registrert_av = bruker
+         from kjerne.debatt_vurdering_gjeldende where kommune_id = k));
+    perform pg_temp.skal_feile('debatt: vurderingen kan ikke endres',
+      format($s$set local role authenticated; update portal.debatt_vurdering set avgjorelse = 'ikke_publiser'
+        where kommune_id = %s$s$, k));
+    perform pg_temp.skal_feile('debatt: vurderer kan ikke vurdere i en annen kommune',
+      format($s$set local role authenticated;
+        insert into kjerne.debatt_vurdering (kommune_id, debatt_id, avgjorelse, begrunnelse, vurdert_av, registrert_av)
+          select %s, id, 'ikke_publiser', 'b', 'Vurderer', '%s' from kjerne.debatt_gjeldende where kommune_id = %s$s$,
+        k2, bruker, k));
+    insert into kjerne.debatt_kontroll (kommune_id, debatt_id, kontrollert, bestatt, grunner)
+      select k, id, now() + interval '1 second', false, array['ligner navnet ''Kari'': ''Karin''']
+      from kjerne.debatt_gjeldende where kommune_id = k;
+    perform pg_temp.skal_feile('debatt: et navn kan ikke overstyres av en vurderer',
+      format($s$set local role authenticated;
+        insert into portal.debatt_vurdering (kommune_id, debatt_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'b', 'Vurderer' from kjerne.debatt_gjeldende where kommune_id = %s$s$, k));
+    perform pg_temp.skal_virke('debatt: vurdereren kan holde den tilbake',
+      format($s$set local role authenticated;
+        insert into portal.debatt_vurdering (kommune_id, debatt_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'ikke_publiser', 'Et navn i teksten.', 'Vurderer'
+          from kjerne.debatt_gjeldende where kommune_id = %s;
+        reset role$s$, k));
+    perform set_config('request.jwt.claims', json_build_object('sub', admin, 'role', 'authenticated')::text, true);
+    perform pg_temp.skal_virke('debatt: prosjektadmin kan publisere med et navn',
+      format($s$set local role authenticated;
+        insert into portal.debatt_vurdering (kommune_id, debatt_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'Karin er et stedsnavn her.', 'Prosjekteier'
+          from kjerne.debatt_gjeldende where kommune_id = %s;
+        reset role$s$, k));
+    perform pg_temp.skal_vaere('debatt: vurderingen er merket overstyrt',
+      (select overstyrt and registrert_av = admin from kjerne.debatt_vurdering_gjeldende where kommune_id = k));
+    insert into kjerne.debatt_kontroll (kommune_id, debatt_id, kontrollert, bestatt, grunner)
+      select k, id, now() + interval '2 seconds', false, array['del 2 finnes ikke']
+      from kjerne.debatt_gjeldende where kommune_id = k;
+    perform pg_temp.skal_feile('debatt: en del som ikke finnes, kan ingen publisere',
+      format($s$set local role authenticated;
+        insert into portal.debatt_vurdering (kommune_id, debatt_id, avgjorelse, begrunnelse, vurdert_av)
+          select kommune_id, id, 'publiser', 'b', 'Prosjekteier' from kjerne.debatt_gjeldende where kommune_id = %s$s$, k));
+    set local role authenticated;
+    svar := (select kan_aldri_publiseres and not kan_godkjennes and avgjorelse = 'publiser'
+             from portal.debatt_holdt where kommune_id = k);
+    reset role;
+    perform pg_temp.skal_vaere('debatt: portalen viser at den ikke kan publiseres', svar);
+    perform pg_temp.skal_vaere('debatt: vurderingen logges',
+      exists (select 1 from drift.endringslogg where tabell = 'debatt_vurdering' and operasjon = 'I'));
+
     -- Den som meldte, ser svaret, men ikke begrunnelsen.
     perform set_config('request.jwt.claims', json_build_object('sub', vanlig, 'role', 'authenticated')::text, true);
     set local role authenticated;

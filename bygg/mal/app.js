@@ -666,7 +666,7 @@ function debattHtml(x){
     <p class="liten muted">${datoAar(x.date)} · ca. ${varighet(op.reduce((n,o)=>n+o.d,0))} i opptaket${d.n?` · ${antall(d.n,'innlegg','innlegg')}`:''}</p>
     <p>${esc(d.o)}</p>
     <ul class="debatt-punkter">${d.p.map(p=>`<li>${esc(p.t)} ${tid(p)}</li>`).join('')}</ul>
-    <p class="liten muted debatt-kilde"><span class="ki">KI</span> Sammendraget er laget av en språkmodell fra kommunens automatiske teksting av opptaket, og kan ha feil. ${op[0]?ut(op[0].u,'Opptaket'):'Opptaket'} viser hva som faktisk ble sagt. Stemmene står under Vedtaket og er lest fra protokollen.</p>
+    <p class="liten muted debatt-kilde"><span class="ki">KI</span> Sammendraget er laget av en språkmodell fra kommunens automatiske teksting av opptaket, og kan ha feil. ${op[0]?ut(op[0].u,'Opptaket'):'Opptaket'} viser hva som faktisk ble sagt. Stemmene står under Vedtaket og er lest fra protokollen.</p>${d.merk?merknad(d.merk):''}
   </section>`;
 }
 function renderSak(id,uten_detaljer){

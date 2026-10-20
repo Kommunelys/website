@@ -28,7 +28,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Opptak av kommunestyret | Virker for Steinkjer (ADR-026). Opptakene på steinkjer.kommunetv.no kobles til møtet og hver sak med bokmerkene; møtet, saken, sakslisten og kalenderen lenker dit. 5 av 5 kommunestyremøter i 2026 har opptak, 3 har teksting. Debatten oppsummeres med Claude fra tekstingen (`analyser.analyser_debatt`), med partiene, uten navn og stemmetall, og kontrolleres i bygget |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
-| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, meldinger) for vurderere per kommune (ADR-023); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
+| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, debatter, meldinger) for vurderere per kommune (ADR-023, ADR-026); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
 | Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet, innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
@@ -191,8 +191,8 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
 - **Sidene:** alle har registrering, innlogging, glemt passord, Min konto
   (bytte passord og e-post, slette kontoen, mine meldinger om feil) og
   `/meld`, som «Meld fra om feil» på saken lenker til. Vurderere for en
-  kommune har «Til vurdering»: meldinger om feil, sammendrag holdt tilbake og
-  avvik i stemmene (ADR-023). Prosjektadmin har i tillegg Brukere (med «Gi
+  kommune har «Til vurdering»: meldinger om feil, sammendrag og debatter holdt
+  tilbake og avvik i stemmene (ADR-023, ADR-026). Prosjektadmin har i tillegg Brukere (med «Gi
   rolle» og «Gi abonnement»), Roller, Abonnement og Drift.
 - **Vurderinger av avvik** registreres i portalen, eller med
   `python -m lager.vurder` når en modell vurderer. De slår inn ved neste
