@@ -25,6 +25,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
 | AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
 | Nettsted | Kommunelys. Viser alle år fra kommunens `fra_aar`; en sak er én tråd på tvers av år, og detaljene til en sak lastes når den åpnes (ADR-022). Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Saken står i sentrum: egen side per sak (`#sak/<id>`) med saksgangen som en tråd og forslag og stemmer i hvert møte, Saker i tre faner (avgjort, på vei, venter på protokoll), møtekalender og egen side per møte (`#mote/<id>`) med oppmøte. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» med utvalgene og medlemmene. Se `docs/01-arkitektur.md` |
+| Opptak av kommunestyret | Virker for Steinkjer (ADR-026). Opptakene på steinkjer.kommunetv.no kobles til møtet og hver sak med bokmerkene; møtet, saken, sakslisten og kalenderen lenker dit. 5 av 5 kommunestyremøter i 2026 har opptak, 3 har teksting. Debatten oppsummeres med Claude fra tekstingen (`analyser.analyser_debatt`), med partiene, uten navn og stemmetall, og kontrolleres i bygget |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
 | Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, meldinger) for vurderere per kommune (ADR-023); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
@@ -63,7 +64,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 ## Mappene
 
 ```
-hent/      innhenting fra portalen (JSON og dokumenter)
+hent/      innhenting fra portalen (JSON og dokumenter), og opptakene fra kommunetv (hent/kommunetv.py)
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 tolk/profiler/  regelsettene: standarden for Elements og kommunenes egne (tolk/profil.py)
 kjor/      alle kommunene etter tur: hent, analyser og bygg (kjor/alle.py)
@@ -113,6 +114,9 @@ python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voter
 python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
 python -m tolk.bygg_verv 2026           # utvalg, partier og verv -> data/utvalg/, data/verv/
 python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data/avvik/
+python -m hent.hent_opptak 2026         # opptakene, bokmerkene og tekstingen fra kommunetv (ADR-026)
+python -m analyser.analyser_debatt 2026 --tort-lop  # hvilke debatter som ville blitt oppsummert
+python -m analyser.analyser_debatt 2026 --vis 8457  # grunnlaget for debatten om én behandling
 python -m tolk.tolk_protokoll <fil.txt> # voteringer fra én møteprotokoll
 python -m tolk.saksframlegg <fil.txt>   # avsnittene i ett saksframlegg
 python -m tester.kontroller             # alle kontroller
@@ -333,6 +337,18 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   `actions: read`. Lokalt brukes
   API-et uten nøkkel, med grense på 60 kall i timen. Svarer det ikke, viser
   siden bare endringene i dataene.
+- **Opptaket ligger hos kommunen, ikke hos oss.** Vi lenker til saken i
+  kommunens spiller (`archive/<id>?caseId=<bokmerke>`); den kan ikke åpnes på
+  et vilkårlig tidspunkt, så debatten skriver tiden i teksten. Videoen lastes
+  aldri ned. Opptakene slettes etter en tid (arkivet går tilbake til
+  1.9.2025); `hent.hent_opptak` setter da `fjernet`, og lenken forsvinner.
+- **Bokmerkene i opptaket er satt for hånd.** De har saksnummeret («PS 47/26»),
+  men grensene er unøyaktige: bokmerket for PS 49 16.09.2026 slutter med en ny
+  votering i PS 48. En sak kan ha flere bokmerker (før og etter pausen).
+- **Ikke alle opptak er tekstet.** Bare tekstede opptak får debatt; de andre
+  får lenkene. Tekstingen hører navn feil («Kåran» for Kvaran), så
+  kontrollen av debatten ser etter navn som ligner, ikke bare like navn.
+  Tekstingen inneholder navn på privatpersoner og vises aldri.
 - **Saken er det alt lenker til.** Lenk til `#sak/<id>` (`sakUrl(hid)` i
   `app.js`) og `#mote/<id>`, ikke til `#saker` med et søk. Stemmer har ikke
   lenger egen fane; nye visninger av stemmer hører hjemme på saken, møtet,

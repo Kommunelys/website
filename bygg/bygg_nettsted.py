@@ -40,6 +40,7 @@ from lager import drift as lager_drift
 from lager import kommune as lager_kommune
 from lager import konfig
 from lager import oppmote as lager_oppmote
+from lager import opptak as lager_opptak
 from lager import saker as lager_saker
 from lager import verv as lager_verv
 from lager import voteringer as lager_voteringer
@@ -198,6 +199,58 @@ def _sammendrag(saker: list, analyser: dict, meldinger: dict,
             ut[s["sak_id"]]["merk"] = {"t": v["merknad"], "d": v["dato"]}
     return ut, holdt
 
+def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, list[str]]:
+    """Lenkene til opptakene og sammendragene av debatten (ADR-026).
+
+    Gir opptaket per møte, bokmerkene per behandling, debatten som kan vises
+    per behandling, og hvorfor resten av debattene holdes tilbake. Lenkene
+    står også når opptaket ikke er tekstet; bare debatten trenger tekstingen.
+    Et opptak kommunen har slettet («fjernet»), får ingen lenke.
+    """
+    from analyser.analyser_debatt import avvik as debatt_avvik  # noqa: PLC0415
+    from analyser.analyser_debatt import deler_for  # noqa: PLC0415
+
+    opptak = [o for o in lager_opptak.alle() if not o.get("fjernet")]
+    per_mote, per_steg = {}, {}
+    for o in opptak:
+        per_mote[o["mote_id"]] = {"u": o["url"], "d": o["varighet_s"], "tx": o["teksting"]}
+        for hid in dict.fromkeys(d["behandling_id"] for d in o["deler"] if d["behandling_id"]):
+            ds = deler_for(o, hid)
+            per_steg[hid] = [{
+                "u": f"{o['url']}?caseId={d['bokmerke_id']}",
+                "s": d["start_ms"] // 1000, "d": d["varighet_ms"] // 1000,
+                # «Før pausen» og «Etter pausen» når saken er delt i opptaket.
+                **({"t": d["tittel"].rsplit(" - ", 1)[-1]} if len(ds) > 1 and " - " in d["tittel"] else {}),
+            } for d in ds]
+
+    debatter = lager_opptak.debatter()
+    sak_for = {st["behandling_id"]: s for s in saker for st in s["saksgang"]}
+    voteringer = {b["behandling_id"]: b for b in lager_kommune.alle_aar(lager_voteringer.les, aar)}
+    o_id = {o["opptak_id"]: o for o in opptak}
+    tekster: dict[int, dict | None] = {}
+    vis, holdt = {}, []
+    for hid, d in debatter.items():
+        sak, o, b = sak_for.get(hid), o_id.get(d["opptak_id"]), voteringer.get(hid)
+        if not (sak and o and b) or hid not in per_steg:
+            continue
+        if sak["sak_id"] in meldinger["sammendrag"]:
+            holdt.append(f"debatt {hid}: holdt tilbake etter en melding om feil i saken")
+            continue
+        if d["opptak_id"] not in tekster:
+            tekster[d["opptak_id"]] = lager_opptak.teksting(d["opptak_id"])
+        t = tekster[d["opptak_id"]]
+        feil = debatt_avvik(d, sak, b, o, t) if t else ["tekstingen mangler"]
+        if feil:
+            holdt.append(f"debatt {hid}: {'; '.join(feil)}")
+            continue
+        vis[hid] = {"ing": 1} if d["ingen_debatt"] else {
+            "o": d["oppsummering"], "n": d["antall_innlegg"],
+            "p": [{"t": p["tekst"], "pa": p["partier"], "del": p["del"], "s": p["tid_s"]}
+                  for p in d["punkter"]],
+        }
+    return per_mote, per_steg, vis, holdt
+
+
 # Hvorfor stemmene i en votering ikke vises. Står på voteringen, med lenke til
 # protokollen, som alltid gjelder.
 GRUNN = {
@@ -212,8 +265,8 @@ UKJENT = "ikke_vurdert"
 
 
 # Det i kommuner/<slug>.json som ikke hører til visningen, og ikke sendes til
-# nettleseren: kilden i portalen, regelsettet og nivåene.
-IKKE_VISNING = ("kilde", "tolk", "nivaa", "fra_aar")
+# nettleseren: kilden i portalen, opptakstjenesten, regelsettet og nivåene.
+IKKE_VISNING = ("kilde", "opptak", "tolk", "nivaa", "fra_aar")
 
 
 def _kommune(slug: str | None = None) -> dict:
@@ -418,12 +471,15 @@ def _oppmote(o: dict, partier: set) -> dict:
 
 
 def _s(aarene: list[int], saker: list, moter: list, sammendrag: dict, kommune: dict,
-       vedtak: dict, med_oppmote: bool = True) -> dict:
+       vedtak: dict, med_oppmote: bool = True, opptak: tuple = ({}, {}, {})) -> dict:
     """Saker, møter, utvalg og kommunestyret, i formen malen bruker.
 
     vedtak er vedtaksteksten per behandling, uendret fra protokollen. Den står
     på hvert steg i saksgangen, også der ingen stemte, som uttalelsene fra rådene.
+    opptak er lenkene til opptaket per møte og per behandling, og debatten som
+    kan vises per behandling (_opptak).
     """
+    op_mote, op_steg, debatt = opptak
     politiske = collections.Counter(
         st["mote_id"] for s in saker if s["sakstype"] == "PS" and not s["formalia"]
         for st in s["saksgang"])
@@ -445,6 +501,8 @@ def _s(aarene: list[int], saker: list, moter: list, sammendrag: dict, kommune: d
             "restr": st["protokoll_skjermet"], "mid": st["mote_id"],
             "prot": st["url_vedtak"], "murl": st["url_mote"],
             **({"vt": vedtak[st["behandling_id"]]} if vedtak.get(st["behandling_id"]) else {}),
+            **({"op": op_steg[st["behandling_id"]]} if st["behandling_id"] in op_steg else {}),
+            **({"deb": debatt[st["behandling_id"]]} if st["behandling_id"] in debatt else {}),
         } for st in s["saksgang"]],
         "status": s["status"],
         "doc": (s.get("saksframlegg") or {}).get("url"),
@@ -457,6 +515,7 @@ def _s(aarene: list[int], saker: list, moter: list, sammendrag: dict, kommune: d
         "nps": politiske.get(m["mote_id"], 0),
         "docs": [{"t": d["tittel"], "ty": d["type"], "u": d["url"]} for d in m["dokumenter"]],
         "url": m["url"],
+        **({"op": op_mote[m["mote_id"]]} if m["mote_id"] in op_mote else {}),
         **({"opp": _oppmote(opp_mote[m["mote_id"]], partier)} if m["mote_id"] in opp_mote else {}),
     } for m in moter]
 
@@ -633,11 +692,11 @@ DETALJER_A = ("uen", "tags", "modell", "kilder", "red")
 def _del_detaljer(S: dict, VOT: dict, sakens_aar: dict[int, int]) -> dict[int, dict]:
     """Tar ut det bare sakssiden bruker, og gir det tilbake per år (ADR-022).
 
-    Hele sammendraget, vedtakstekstene (st.vt) og forslagstekstene i
-    voteringene (v.tekst, deler[].tekst) står i data/detaljer-<år>.json og
+    Hele sammendraget, vedtakstekstene (st.vt), debatten (st.deb) og
+    forslagstekstene i voteringene (v.tekst, deler[].tekst) står i data/detaljer-<år>.json og
     hentes når en sak åpnes. Året er året saken begynte. S og VOT endres.
     """
-    ut: dict[int, dict] = {a: {"a": {}, "vt": {}, "v": {}} for a in set(sakens_aar.values())}
+    ut: dict[int, dict] = {a: {"a": {}, "vt": {}, "v": {}, "d": {}} for a in set(sakens_aar.values())}
     sak_for = {}
     for c in S["cases"]:
         d = ut[sakens_aar[c["id"]]]
@@ -647,6 +706,10 @@ def _del_detaljer(S: dict, VOT: dict, sakens_aar: dict[int, int]) -> dict[int, d
             sak_for[x["hid"]] = c["id"]
             if "vt" in x:
                 d["vt"][x["hid"]] = x.pop("vt")
+            # Debatten (ADR-026). Steget beholder et merke, så sidene vet at den finnes.
+            if "deb" in x:
+                d["d"][x["hid"]] = x.pop("deb")
+                x["db"] = 1
     for m in VOT["moter"]:
         for s in m["saker"]:
             d = ut[sakens_aar[sak_for[s["hid"]]]] if s["hid"] in sak_for else None
@@ -817,7 +880,8 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
     vedtak = {b["behandling_id"]: b.get("vedtak")
               for b in lager_kommune.alle_aar(lager_voteringer.les, aar)}
     nivaa = _nivaa()
-    S = _s(aarene, saker, moter, sammendrag, kommune, vedtak, nivaa["oppmote"])
+    op_mote, op_steg, debatt, holdt_debatt = _opptak(aar, saker, meldinger)
+    S = _s(aarene, saker, moter, sammendrag, kommune, vedtak, nivaa["oppmote"], (op_mote, op_steg, debatt))
     for c in S["cases"]:
         if c["id"] in meldinger["merk"]:
             c["merk"] = meldinger["merk"][c["id"]]
@@ -898,6 +962,10 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
         "voteringer_holdt_tilbake": holdt,
         "sammendrag_publisert": len(sammendrag),
         "sammendrag_holdt_tilbake": holdt_sammendrag,
+        # Opptakene og debatten fra dem (ADR-026).
+        "opptak": len(op_mote),
+        "debatt_publisert": len(debatt),
+        "debatt_holdt_tilbake": holdt_debatt,
         "meldinger_apne": lager_avvik.apne_meldinger(),
         # Hvor mye av protokollene regelsettet leser (tolk/dekning.py).
         "dekning": {k: v for k, v in dekning.samlet(aar).items() if k != "mistenkte"},
@@ -914,6 +982,7 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"nettsted/{kommune['slug']}/ bygget: {len(saker)} saker, {len(moter)} møter, "
           f"{len(sammendrag)} av {len(analyser)} sammendrag publisert, "
+          f"{len(op_mote)} møter med opptak, {len(debatt)} debatter, "
           f"{holdt} voteringer holdt tilbake")
     return kommune, status
 

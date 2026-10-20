@@ -209,6 +209,44 @@ begin
     exists (select 1 from kjerne.analyse where kommune_id = k and sak_id = 4999));
   update kjerne.sak set sak_id = 5000 where kommune_id = k and sak_id = 4999;
 
+  -- Opptak, teksting og debatt (ADR-026) -------------------------------------------
+  perform pg_temp.skal_feile('opptak: må høre til et møte',
+    format($s$insert into kjerne.opptak (kommune_id, mote_id, opptak_id, url, deler)
+      values (%s, 9999, 1, 'https://tv/archive/1', '[]')$s$, k));
+  perform pg_temp.skal_feile('opptak: lenken må være https',
+    format($s$insert into kjerne.opptak (kommune_id, mote_id, opptak_id, url, deler)
+      values (%s, 1000, 1, 'http://tv/archive/1', '[]')$s$, k));
+  insert into kjerne.opptak (kommune_id, mote_id, opptak_id, url, deler)
+    values (k, 1000, 1, 'https://tv/archive/1', '[]');
+  perform pg_temp.skal_virke('opptak: kan merkes som fjernet',
+    format('update kjerne.opptak set fjernet = ''2026-10-20'' where kommune_id = %s', k));
+  insert into kjerne.teksting (kommune_id, opptak_id, kilde, sjekksum, linjer)
+    values (k, 1, 'kommunetv-teksting', 'a', '[{"start_ms": 0, "slutt_ms": 1000, "tekst": "Takk, ordfører."}]');
+  perform pg_temp.skal_feile('teksting: tom stoppes',
+    format($s$insert into kjerne.teksting (kommune_id, opptak_id, kilde, sjekksum, linjer)
+      values (%s, 1, 'kommunetv-teksting', 'b', '[]')$s$, k));
+  perform pg_temp.skal_feile('teksting: kan ikke endres',
+    format('update kjerne.teksting set linjer = ''[{}]'' where kommune_id = %s', k));
+  perform pg_temp.skal_feile('teksting: kan ikke slettes',
+    format('delete from kjerne.teksting where kommune_id = %s', k));
+  perform pg_temp.skal_feile('debatt: uten kildelenke stoppes',
+    format($s$insert into kjerne.debatt (kommune_id, behandling_id, opptak_id, ingen_debatt, oppsummering,
+      antall_innlegg, punkter, sjekksum, modell, innsats, instruksjon_versjon, dato, kilder)
+      values (%s, 5000, 1, false, 'S', 2, '[]', 'x', 'm', 'high', 1, '2026-10-20', '[]')$s$, k));
+  perform pg_temp.skal_feile('debatt: tomt sammendrag stoppes',
+    format($s$insert into kjerne.debatt (kommune_id, behandling_id, opptak_id, ingen_debatt, oppsummering,
+      antall_innlegg, punkter, sjekksum, modell, innsats, instruksjon_versjon, dato, kilder)
+      values (%s, 5000, 1, false, ' ', 2, '[]', 'x', 'm', 'high', 1, '2026-10-20',
+              '[{"tittel": "Opptaket", "url": "https://tv/archive/1"}]')$s$, k));
+  insert into kjerne.debatt (kommune_id, behandling_id, opptak_id, ingen_debatt, oppsummering,
+      antall_innlegg, punkter, sjekksum, modell, innsats, instruksjon_versjon, dato, kilder)
+    values (k, 5000, 1, false, 'S', 2, '[]', 'x', 'm', 'high', 1, '2026-10-20',
+            '[{"tittel": "Opptaket", "url": "https://tv/archive/1"}]');
+  perform pg_temp.skal_feile('debatt: kan ikke endres',
+    format('update kjerne.debatt set oppsummering = ''annet'' where kommune_id = %s', k));
+  perform pg_temp.skal_vaere('debatt: gjeldende versjon finnes',
+    exists (select 1 from kjerne.debatt_gjeldende where kommune_id = k and behandling_id = 5000));
+
   -- Avvik og publisering (ADR-015) ------------------------------------------------
   insert into kjerne.avvik (kommune_id, avvik, type, utvalg, dato, beskrivelse)
     values (k, 'oppmote:1000:kari-test', 'oppmote', 'KS', '2026-01-01', 'Kari Test stemmer uten å stå på oppmøtelisten');
@@ -270,14 +308,27 @@ begin
   reset role;
   perform pg_temp.skal_vaere('pipeline: leser kjerne', svar);
 
+  -- Opptak (ADR-026): pipeline og bygg når de nye tabellene.
+  set local role kommunelys_pipeline;
+  svar := (select count(*) = 1 from kjerne.opptak where kommune_id = k)
+          and (select count(*) = 1 from kjerne.teksting_gjeldende where kommune_id = k);
+  reset role;
+  set local role kommunelys_bygg;
+  svar2 := (select count(*) = 1 from kjerne.debatt_gjeldende where kommune_id = k);
+  reset role;
+  perform pg_temp.skal_vaere('opptak: pipeline leser opptak og teksting', svar);
+  perform pg_temp.skal_vaere('opptak: bygget leser debatten', svar2);
+
   -- En innlogget bruker uten tilgang ser ingenting.
   perform set_config('request.jwt.claims', json_build_object('sub', bruker, 'role', 'authenticated')::text, true);
   set local role authenticated;
   svar := (select count(*) = 0 from kjerne.sak);
   svar2 := (select count(*) = 0 from publisert.stemme);
+  svar3 := (select count(*) = 0 from kjerne.opptak) and (select count(*) = 0 from kjerne.teksting);
   reset role;
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen saker', svar);
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen stemmer', svar2);
+  perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen opptak eller teksting', svar3);
 
   -- Med abonnement på testkommunen: ser den, ikke den andre testkommunen.
   begin

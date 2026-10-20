@@ -9,7 +9,12 @@
     "tenant": "840029212_PROD-840029212",
     "database": "b069d4f5-192a-4fee-be37-dc006441e271"
   },
-  "kontrollert_for_hand": "Kommunestyret 16.09.2026: 42 av 42 avstemninger riktig",
+  "opptak": {
+    "type": "aventia",
+    "basis": "https://steinkjer.kommunetv.no",
+    "kategori": 1
+  },
+  "kontrollert_for_hand":"Kommunestyret 16.09.2026: 42 av 42 avstemninger riktig",
   "tolk": {
     "merknad": "Det som skiller Steinkjer fra standarden for Elements (tolk/profiler/elements.py). Se tolk/profil.py.",
     "partikoder_tillegg": {

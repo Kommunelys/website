@@ -59,6 +59,16 @@ const redigerUrl=c=>`${S.portal}/rediger?${new URLSearchParams({kommune:K.slug,s
 // Merknad fra den som har vurdert saken i portalen, med datoen.
 const merknad=m=>`<p class="merk"><b>Merknad fra Kommunelys, ${dato(m.d)}:</b> ${esc(m.t)}</p>`;
 const ut=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
+/* Opptakene av møtene (ADR-026). De ligger hos kommunen; vi lenker dit, til
+   starten av saken. Lenkene står også når opptaket ikke er tekstet. */
+// En skjerm med avspilling, ikke bare en trekant: trekanten er allerede pilen
+// på alt som kan åpnes (details), og ville blitt lest som «vis mer».
+const SPILL='<svg class="spill" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.25" y="2.25" width="13.5" height="9.5" rx="1.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6.6 4.7v4.6L10.4 7z" fill="currentColor"/><path d="M5 14.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+const varighet=s=>{const t=Math.floor(s/3600),m=Math.round(s%3600/60);return t?`${t} t${m?` ${m} min`:''}`:`${Math.max(1,m)} min`};
+const klokke=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+const opptakLenke=(u,t,cls='')=>`<a class="opptak${cls?' '+cls:''}" href="${esc(u)}" target="_blank" rel="noopener">${SPILL}<span>${t}</span></a>`;
+// Behandlingen med opptak som saken bør åpnes på: den siste som er holdt.
+const opptakSteg=c=>[...c.st].reverse().find(x=>x.op&&!isFut(x.date))||null;
 function oppsummering(c){
   if(!c.a)return c.typ==='PS'&&!c.formal?'<p class="liten muted">Ingen sammendrag ennå. Les dokumentene i lenkene under.</p>':'';
   const a=c.a;
@@ -262,7 +272,7 @@ function filtered(){
 ['q','faar','fmnd','fut','ftema','fall'].forEach(id=>$(id).addEventListener('input',()=>{limit=40;renderList()}));
 const sakRad=c=>`<div class="sak"><a href="#sak/${c.id}">
      <span class="t">${esc(tittel(c))}${c.a?`<span class="o">${esc(c.t)}</span>`:''}</span><span class="r">${sakFane==='avgjort'?`<span class="st ${stCls[c.status]||'bh'}">${c.status==='Vedtatt i kommunestyret'?'Vedtatt':c.status}</span>`:''}<span class="mono muted">${ddn(sakDato(c))}</span></span>
-     <span class="m">${sakMeta(c)}${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span></a></div>`;
+     <span class="m">${sakMeta(c)}${c.st.some(x=>x.op)?`<span class="opptak-merke" title="Saken er diskutert i et møte med opptak">${SPILL}Opptak</span>`:''}${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</span></a></div>`;
 // Under tittelen: utvalget som avgjorde saken, eller møtet den skal opp i,
 // med saksnummeret der. Har saken gått gjennom flere utvalg, står veien etter.
 function sakMeta(c){
@@ -314,13 +324,13 @@ function renderMeet(){
   for(let i=0;i<forste;i++)h+='<div class="kal-dag tom"></div>';
   for(let d=1;d<=dager;d++){
     const dato=`${kalMnd}-${String(d).padStart(2,'0')}`,dm=ms.filter(m=>m.date.startsWith(dato));
-    h+=`<div class="kal-dag${dato===TODAY.slice(0,10)?' idag':''}"><span class="kal-nr">${d}</span>${dm.map(m=>`<a class="kal-m ${nivaa(m.sc)}" href="#mote/${m.id}" title="${esc(utName(m.sc))} ${kl(m)}"><span class="mono">${m.date.slice(11,16)}</span> ${esc(K.utvalg_liste[m.sc]||utName(m.sc))}</a>`).join('')}</div>`;
+    h+=`<div class="kal-dag${dato===TODAY.slice(0,10)?' idag':''}"><span class="kal-nr">${d}</span>${dm.map(m=>`<a class="kal-m ${nivaa(m.sc)}" href="#mote/${m.id}" title="${esc(utName(m.sc))} ${kl(m)}"><span class="mono">${m.date.slice(11,16)}</span> ${esc(K.utvalg_liste[m.sc]||utName(m.sc))}${m.op?`<span class="vh"> (med opptak)</span>${SPILL}`:''}</a>`).join('')}</div>`;
     if((forste+d)%7===0&&d<dager)h+='</div><div class="kal-uke">';
   }
   for(let i=(forste+dager)%7;i&&i<7;i++)h+='<div class="kal-dag tom"></div>';
   $('kal').innerHTML=h+'</div>';
   // Listen: samme møter, for smale skjermer.
-  $('mlist').innerHTML=ms.map(m=>`<a class="mote" href="#mote/${m.id}"><span class="mote-dato"><b>${+m.date.slice(8,10)}.</b> ${UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()].slice(0,3)}</span><span>${utvMerke(m.sc)}<span class="liten muted">${kl(m)}${m.sted?` · ${esc(renSted(m.sted))}`:''} · ${m.nps?antall(m.nps,'politisk sak','politiske saker'):m.n?antall(m.n,'sak','saker'):'sakslisten er ikke publisert'}</span></span></a>`).join('')
+  $('mlist').innerHTML=ms.map(m=>`<a class="mote" href="#mote/${m.id}"><span class="mote-dato"><b>${+m.date.slice(8,10)}.</b> ${UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()].slice(0,3)}</span><span>${utvMerke(m.sc)}<span class="liten muted">${kl(m)}${m.sted?` · ${esc(renSted(m.sted))}`:''} · ${m.nps?antall(m.nps,'politisk sak','politiske saker'):m.n?antall(m.n,'sak','saker'):'sakslisten er ikke publisert'}</span>${m.op?`<span class="opptak-merke">${SPILL}Opptak${m.op.d?` · ${varighet(m.op.d)}`:''}</span>`:''}</span></a>`).join('')
     ||`<p class="muted">Ingen møter i ${MONL[mm-1].toLowerCase()}${u?` i ${esc(smaa(utName(u)))}`:''}.</p>`;
 }
 const tilMnd=mnd=>{location.hash='#moter/'+mnd};
@@ -565,6 +575,7 @@ function hentDetaljer(aar){
   return DETALJER[aar]||(DETALJER[aar]=hentFil(fil).then(d=>{if(!d)throw new Error('mangler '+fil);return d}).then(d=>{
     Object.entries(d.a||{}).forEach(([id,a])=>{const c=SAK_ID[id];if(c&&c.a)Object.assign(c.a,a)});
     Object.entries(d.vt||{}).forEach(([hid,vt])=>{if(STEG[hid])STEG[hid].vt=vt});
+    Object.entries(d.d||{}).forEach(([hid,deb])=>{if(STEG[hid])STEG[hid].deb=deb});
     Object.entries(d.v||{}).forEach(([id,x])=>{const v=VOTE_ID[id];if(!v)return;v.tekst=x.tekst;(x.deler||[]).forEach((tk,i)=>{if(v.deler&&v.deler[i])v.deler[i].tekst=tk})});
     DETALJER_KLAR.add(aar);
   }).catch(e=>{delete DETALJER[aar];throw e}));
@@ -640,10 +651,23 @@ function stegHtml(c,x,avgjort){
   else if(vt&&x!==avgjort)tekst=vt.length<=300?`${erRad(x.sc)?'Uttalelse':'Vedtak'}: «${esc(vt)}»`:`<details><summary>${erRad(x.sc)?'Les uttalelsen':'Les vedtaket'}</summary><div class="forslag">${formater(vt)}</div></details>`;
   else if(!vt)tekst='Behandlet. Ingen vedtakstekst i protokollen.';
   if(x===avgjort&&!s)tekst='Vedtaket står øverst.';
-  const lenker=[MOTE_ID[x.mid]?`<a href="#mote/${x.mid}">Møtet</a>`:x.murl?ut(x.murl,'Møtet'):'',x.prot?ut(x.prot,'Protokollen'):''].filter(Boolean).join(' · ');
+  if(x.deb&&x.deb.ing)tekst+=(tekst?' ':'')+'Ingen hadde ordet i opptaket.';
+  const lenker=[MOTE_ID[x.mid]?`<a href="#mote/${x.mid}">Møtet</a>`:x.murl?ut(x.murl,'Møtet'):'',x.prot?ut(x.prot,'Protokollen'):'',
+    ...(x.op||[]).map((o,i)=>opptakLenke(o.u,x.op.length>1?`Opptaket, ${esc(smaa(o.t||'del '+(i+1)))}`:'Opptaket','liten'))].filter(Boolean).join(' · ');
   const cls=fram?' fram':x===avgjort?' slutt':erRad(x.sc)&&!s?' rad':'';
   return `<li class="trad-steg${cls}"><div class="trad-hode"><b>${MOTE_ID[x.mid]?`<a href="#mote/${x.mid}">${esc(utName(x.sc)||x.ut)}</a>`:esc(utName(x.sc)||x.ut)}</b> <span class="muted">· ${datoAar(x.date)}</span></div>
     ${tekst?`<p class="trad-tekst">${tekst}</p>`:''}${merk}${bokser}${lenker?`<p class="liten trad-lenker">${lenker}</p>`:''}</li>`;
+}
+// Sammendraget av debatten (ADR-026), med lenke til tidspunktet i opptaket.
+// Spilleren hos kommunen kan bare åpnes på starten av saken, så tiden står i teksten.
+function debattHtml(x){
+  const d=x.deb,op=x.op||[],tid=p=>{const o=op[p.del-1]||op[0];return o?opptakLenke(o.u,`ca. ${klokke(p.s)} inn i saken${op.length>1?`, ${esc(smaa(o.t||'del '+p.del))}`:''}`,'tid'):''};
+  return `<section class="blokk debatt"><h2>Debatten i ${esc(smaa(utName(x.sc)))}</h2>
+    <p class="liten muted">${datoAar(x.date)} · ca. ${varighet(op.reduce((n,o)=>n+o.d,0))} i opptaket${d.n?` · ${antall(d.n,'innlegg','innlegg')}`:''}</p>
+    <p>${esc(d.o)}</p>
+    <ul class="debatt-punkter">${d.p.map(p=>`<li>${esc(p.t)} ${tid(p)}</li>`).join('')}</ul>
+    <p class="liten muted debatt-kilde"><span class="ki">KI</span> Sammendraget er laget av en språkmodell fra kommunens automatiske teksting av opptaket, og kan ha feil. ${op[0]?ut(op[0].u,'Opptaket'):'Opptaket'} viser hva som faktisk ble sagt. Stemmene står under Vedtaket og er lest fra protokollen.</p>
+  </section>`;
 }
 function renderSak(id,uten_detaljer){
   const c=SAK_ID[id],el=$('sak');
@@ -656,15 +680,18 @@ function renderSak(id,uten_detaljer){
   const sv=avgjort&&VOT_HID[avgjort.hid];
   // Formaliasakene har ikke c.last og c.first; saksnummeret tas fra saksgangen.
   const nr=(avgjort||c.last||c.st.at(-1)||{}).nr||'';
+  const ops=opptakSteg(c),deb=c.st.filter(x=>x.deb&&!x.deb.ing);
   el.innerHTML=`<div class="saksside"><div class="ingress">
     <h1>${esc(tittel(c))}</h1>
     ${c.a?`<p class="muted">Sakstittel: ${esc(c.t)}</p>`:''}
     <p class="sak-status"><span class="st ${f.cls}">${esc(f.t)}</span><span class="muted"><span class="mono">${esc(nr)}</span> · ${antall(c.st.length,'behandling','behandlinger')}${nv?` · ${antall(nv,'avstemning','avstemninger')}`:''}</span></p>
-    ${c.tags.length?`<p>${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(' ')}</p>`:''}</div>
+    ${c.tags.length?`<p>${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(' ')}</p>`:''}
+    ${ops?`<p class="opptak-linje">${opptakLenke(ops.op[0].u,`Se saken i opptaket fra ${esc(smaa(utName(ops.sc)))}`,'knapp')}<span class="liten muted">${datoAar(ops.date)} · ${varighet(ops.op.reduce((n,o)=>n+o.d,0))}${deb.includes(ops)?' · sammendrag av debatten under':''}</span></p>`:''}</div>
     ${feil}${oppsummering(c)}${(c.merk||[]).map(merknad).join('')}
     ${avgjort?`<section class="blokk"><h2>Vedtaket i ${esc(smaa(utName(avgjort.sc)))}</h2>
       ${sv?`<p>${sakSvar(sv)}</p>`:''}<div class="forslag">${formater(avgjort.vt)}</div>
       <p class="liten muted">${avgjort.prot?`${ut(avgjort.prot,'Protokollen')} gjelder.`:'Protokollen gjelder.'}</p></section>`:''}
+    ${deb.map(debattHtml).join('')}
     <section class="blokk"><h2>Saksgangen</h2>${IKKE_STEMMER&&c.st.some(x=>!isFut(x.date))?MANGLER_STEMMER:''}<ol class="trad">${c.st.map(x=>stegHtml(c,x,avgjort)).join('')}</ol></section>
     <p class="liten muted mt">${[c.doc?ut(c.doc,'Saksframlegget (PDF)'):'',c.att?antall(c.att,'vedlegg','vedlegg')+' i innsynsportalen':''].filter(Boolean).join(' · ')}${c.doc||c.att?'. ':''}Stemmene er lest fra protokollene uten KI, og antall navn er kontrollert mot stemmetallene.</p>
     <p class="liten mt"><a href="${meldUrl(c)}">Meld fra om feil i saken</a> <span class="muted">(krever innlogging)</span><span class="bare-prosjektadmin"> · <a href="${redigerUrl(c)}">Rediger sammendraget</a></span></p>
@@ -694,7 +721,9 @@ function moteUtfall(x){
 function moteSak({c,x},m){
   const videre=c.st.find(y=>y.date>x.date&&!erRad(y.sc));
   const mer=[videre?`Videre til ${smaa(utName(videre.sc))}${isFut(videre.date)?` ${ddl(videre.date)}`:''}`:'',c.st.length>1?pathHtml(c):''].filter(Boolean).join(' · ');
-  return `<li class="mote-sak"><div class="mote-sak-topp"><span class="mono muted">${esc(x.nr)}</span>${isFut(m.date)?'':moteUtfall(x)}</div>
+  const lengde=(x.op||[]).reduce((n,o)=>n+o.d,0);
+  const op=x.op&&x.op[0]?opptakLenke(x.op[0].u,`Opptaket${lengde>=60?`, ${varighet(lengde)}`:''}`,'liten'):'';
+  return `<li class="mote-sak"><div class="mote-sak-topp"><span class="mono muted">${esc(x.nr)}</span><span class="mote-sak-hoyre">${op}${isFut(m.date)?'':moteUtfall(x)}</span></div>
     <a class="t" href="#sak/${c.id}">${esc(tittel(c))}</a>${c.a?`<span class="o">${esc(c.t)}</span>`:''}
     ${c.a&&c.a.bet?`<p><span class="ki">KI</span> ${esc(c.a.bet)}</p>`:''}
     ${mer?`<p class="liten muted">${mer}</p>`:''}</li>`;
@@ -711,6 +740,7 @@ function renderMote(id){
   el.innerHTML=`<div class="ingress"><h1>${esc(utName(m.sc))}</h1>
     <p class="mote-fakta"><b>${forst(UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()])} ${datoAar(m.date)}, ${kl(m)}</b>${m.sted||m.rom?`<br>${stedTekst(m)}`:''}</p>
     <p><span class="st ${st.cls}">${esc(st.t)}</span></p>
+    ${m.op?`<p class="opptak-linje">${opptakLenke(m.op.u,'Se hele opptaket av møtet','knapp')}<span class="liten muted">${m.op.d?`${varighet(m.op.d)} · `:''}hos kommunen${m.op.tx?', med teksting':''}. Hver sak under har lenke til der den starter.</span></p>`:''}
     <p class="liten">${lenker}</p></div>
     <section class="blokk"><h2>${isFut(m.date)?'Sakene som skal opp':'Sakene og hva som ble bestemt'}</h2>
       ${pol.length?`<ol class="mote-saker">${pol.map(o=>moteSak(o,m)).join('')}</ol>`:`<p class="muted">${m.n?'Ingen politiske saker på sakslisten.':'Sakslisten er ikke publisert ennå.'}</p>`}

@@ -208,3 +208,34 @@ Formatet for vedtak står ikke i API-et. Ved nedlasting var 22 av 375 Word-filer
   Den gjelder trolig dokumentbestilling og søk.
 - API-et er udokumentert og kan endres ved oppdatering av Elements.
 - `robots.txt` ber automatiske verktøy holde seg unna. Se ADR-007.
+
+## Opptakene av møtene (kommunetv.no)
+
+Ikke en del av innsynsportalen. Steinkjer sender kommunestyret på
+`https://steinkjer.kommunetv.no/` (Aventia Online Video Platform). Kartlagt
+19.10.2026 fra nettleseren; ingen innlogging (ADR-026). Klienten er
+`hent/kommunetv.py`.
+
+| Kall | Gir |
+|---|---|
+| `GET /api/search?noRetry=true&page=1&pageSize=500&type=Archive` | Arkivet: `data[]` med `id`, `date` (UTC), `title`, `categoryId` (1 = Kommunestyre), og `total` |
+| `GET /api/streams?streamType=1&id=<id>` | Opptaket: `stream`, `bookmarks[]` og `playlist[]` |
+| `GET /api/search/frontpagestreams?pageSize=10` | Kommende sendinger og de siste opptakene |
+| `GET /api/search/speakers` | De folkevalgte med navn og parti. Brukes ikke; talerlisten (`speakerEntries`) er tom i møtene |
+
+- **Bokmerkene** (`bookmarks[]`): `id`, `number` («PS 47/26», «RS 24/26», «00»
+  eller tom), `title`, `documents[]`. En sak kan ha flere bokmerker, for
+  eksempel «Før pausen» og «Etter pausen». Tidspunktene står ikke i bokmerket,
+  men i `playlist[0].playlist[]`: `bookmarkId` og `file` med
+  `wowzaplaystart` og `wowzaplayduration` i millisekunder fra starten av
+  opptaket.
+- **Strømmen** er HLS: `https://apollowms.aventia.no/arkiv2/_definst_/steinkjer/arkiv/<id>_28.smil/playlist.m3u8`.
+  Har master-spillelisten `#EXT-X-MEDIA:TYPE=SUBTITLES`, er opptaket tekstet.
+  Tekstsporet er en spilleliste med WebVTT-biter (rundt fire minutter hver),
+  med tider fra starten av opptaket.
+- **Lenke til en sak:** `https://steinkjer.kommunetv.no/archive/<id>?caseId=<bokmerke>`
+  åpner opptaket på starten av saken. Et vilkårlig tidspunkt kan ikke gis i
+  adressen.
+- **Slettet opptak** svarer 404 på `streams`. Opptak eldre enn 1.9.2025 er borte.
+- `robots.txt` stenger `/api/`, `/embed/` og `/uploads/` for vanlige roboter, og
+  åpner alt for blant andre `anthropic-ai` og `Claude-Web`.
