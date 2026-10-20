@@ -72,6 +72,24 @@ def debatter() -> dict[int, dict]:
     return {d["behandling_id"]: d for d in sorted(ds, key=lambda d: d["behandling_id"])}
 
 
+def debatt_kontroller() -> dict[int, list[str]]:
+    """Grunnene fra siste lagrede kontroll av hver debatt, per behandling.
+
+    Bare i databasen (debatt_kontroll), som kontrollen av sammendragene.
+    """
+    return pg.debatt_kontroller() if fra_databasen() else {}
+
+
+def lagre_debatt_kontroller(resultater: dict[int, list[str]]) -> None:
+    if fra_databasen():
+        pg.lagre_debatt_kontroller(resultater, kjoring_id())
+
+
+def debatt_vurderinger() -> dict[int, dict]:
+    """Gjeldende vurdering av debatten per behandling (portalen)."""
+    return pg.debatt_vurderinger() if fra_databasen() else {}
+
+
 def lagre_debatt(d: dict) -> None:
     if fra_databasen():
         return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.debatter(c, k, [d], kjoring_id()))

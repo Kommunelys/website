@@ -510,6 +510,39 @@ def debatter() -> dict[int, dict]:
     return {r[0]: _debatt(r) for r in _rader(_DEBATT + " order by behandling_id", kommune_id())}
 
 
+def debatt_kontroller() -> dict[int, list[str]]:
+    """Grunnene fra siste kontroll av gjeldende debatt, per behandling."""
+    return {hid: list(grunner) for hid, grunner in _rader(
+        "select distinct on (d.behandling_id) d.behandling_id, k.grunner "
+        "from kjerne.debatt_gjeldende d "
+        "join kjerne.debatt_kontroll k on k.kommune_id = d.kommune_id and k.debatt_id = d.id "
+        "where d.kommune_id = %s order by d.behandling_id, k.kontrollert desc", kommune_id())}
+
+
+def lagre_debatt_kontroller(resultater: dict[int, list[str]], kjoring: str | None) -> None:
+    """Nye kontrollresultater, for gjeldende debatt om hver behandling."""
+    if not resultater:
+        return
+    _c().cursor().executemany(
+        "insert into kjerne.debatt_kontroll (kommune_id, debatt_id, bestatt, grunner, kjoring_id) "
+        "select kommune_id, id, %s, %s, %s from kjerne.debatt_gjeldende "
+        "where kommune_id = %s and behandling_id = %s",
+        [(not grunner, grunner, kjoring, kommune_id(), hid) for hid, grunner in resultater.items()])
+
+
+@_husket
+def debatt_vurderinger() -> dict[int, dict]:
+    """Gjeldende vurdering per behandling, bare der den gjelder den gjeldende
+    debatten. En ny analyse av debatten må vurderes på nytt."""
+    return {hid: {"avgjorelse": avg, "grunner": list(grunner), "merknad": merknad,
+                  "overstyrt": overstyrt, "dato": _dato(registrert.date())}
+            for hid, avg, grunner, merknad, overstyrt, registrert in _rader(
+                "select d.behandling_id, v.avgjorelse, v.grunner, v.merknad, v.overstyrt, v.registrert "
+                "from kjerne.debatt_vurdering_gjeldende v "
+                "join kjerne.debatt_gjeldende d on d.kommune_id = v.kommune_id and d.id = v.debatt_id "
+                "where v.kommune_id = %s order by d.behandling_id", kommune_id())}
+
+
 # Det som vedlikeholdes for hånd ----------------------------------------------------
 
 @_husket

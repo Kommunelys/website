@@ -206,9 +206,16 @@ def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, l
     per behandling, og hvorfor resten av debattene holdes tilbake. Lenkene
     står også når opptaket ikke er tekstet; bare debatten trenger tekstingen.
     Et opptak kommunen har slettet («fjernet»), får ingen lenke.
+
+    Kontrollen lagres når grunnene er endret siden sist, så portalen kan vise
+    det som holdes tilbake. Som for sammendragene kan en vurderer slippe
+    gjennom en debatt der kontrollen bare ikke fant partiet i tekstingen
+    (kan_overstyres), og prosjektadmin alt annet enn feil del eller tid
+    (overstyrt), så lenge grunnene er de samme som da den ble vurdert.
     """
     from analyser.analyser_debatt import avvik as debatt_avvik  # noqa: PLC0415
-    from analyser.analyser_debatt import deler_for  # noqa: PLC0415
+    from analyser.analyser_debatt import deler_for, kan_aldri_publiseres  # noqa: PLC0415
+    from analyser.analyser_debatt import kan_overstyres as debatt_kan_overstyres  # noqa: PLC0415
 
     opptak = [o for o in lager_opptak.alle() if not o.get("fjernet")]
     per_mote, per_steg = {}, {}
@@ -228,26 +235,43 @@ def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, l
     voteringer = {b["behandling_id"]: b for b in lager_kommune.alle_aar(lager_voteringer.les, aar)}
     o_id = {o["opptak_id"]: o for o in opptak}
     tekster: dict[int, dict | None] = {}
+    lagret, nye = lager_opptak.debatt_kontroller(), {}
+    vurdert = lager_opptak.debatt_vurderinger()
+    navn = folkevalgte()
     vis, holdt = {}, []
     for hid, d in debatter.items():
         sak, o, b = sak_for.get(hid), o_id.get(d["opptak_id"]), voteringer.get(hid)
         if not (sak and o and b) or hid not in per_steg:
             continue
-        if sak["sak_id"] in meldinger["sammendrag"]:
-            holdt.append(f"debatt {hid}: holdt tilbake etter en melding om feil i saken")
-            continue
         if d["opptak_id"] not in tekster:
             tekster[d["opptak_id"]] = lager_opptak.teksting(d["opptak_id"])
         t = tekster[d["opptak_id"]]
         feil = debatt_avvik(d, sak, b, o, t) if t else ["tekstingen mangler"]
-        if feil:
-            holdt.append(f"debatt {hid}: {'; '.join(feil)}")
+        if lagret.get(hid) != feil:
+            nye[hid] = feil
+        if sak["sak_id"] in meldinger["sammendrag"]:
+            holdt.append(f"debatt {hid}: holdt tilbake etter en melding om feil i saken")
             continue
+        v = vurdert.get(hid)
+        merk_feil = merknad_avvik(v["merknad"], navn) if v else []
+        if v and v["avgjorelse"] == "ikke_publiser":
+            holdt.append(f"debatt {hid}: vurdert til ikke å publiseres")
+            continue
+        if feil:
+            godkjent = (v and v["avgjorelse"] == "publiser" and not kan_aldri_publiseres(feil)
+                        and (debatt_kan_overstyres(feil) or v["overstyrt"])
+                        and set(feil) <= set(v["grunner"]) and not merk_feil)
+            if not godkjent:
+                holdt.append(f"debatt {hid}: {'; '.join(feil + merk_feil)}")
+                continue
         vis[hid] = {"ing": 1} if d["ingen_debatt"] else {
             "o": d["oppsummering"], "n": d["antall_innlegg"],
             "p": [{"t": p["tekst"], "pa": p["partier"], "del": p["del"], "s": p["tid_s"]}
                   for p in d["punkter"]],
         }
+        if v and v["merknad"] and not merk_feil and not d["ingen_debatt"]:
+            vis[hid]["merk"] = {"t": v["merknad"], "d": v["dato"]}
+    lager_opptak.lagre_debatt_kontroller(nye)
     return per_mote, per_steg, vis, holdt
 
 

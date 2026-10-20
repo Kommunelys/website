@@ -247,6 +247,24 @@ def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict)
     return sorted(set(ut))
 
 
+# Grunnene en vurderer kan overstyre i portalen: partiet står ikke i
+# tekstingen nær tidspunktet, eller ikke blant dem som stemte (enstemmige
+# vedtak har ingen navneliste). Tekstingen skriver ofte partier og navn feil.
+# Navn og stemmetall kan bare prosjektadmin overstyre (ADR-025); en del eller
+# en tid som ikke finnes, eller manglende teksting, ingen. Samme regler står i
+# databasen: kjerne.debatt_kan_overstyres og kjerne.debatt_kan_aldri_publiseres.
+OVERSTYRBAR = re.compile(r"partiet \S+ var ikke i møtet|\S+ er verken nevnt eller ropt opp nær \S+ i del \d+")
+ALDRI = re.compile(r"del \S+ finnes ikke|tiden \S+ s er utenfor del \S+|tekstingen mangler")
+
+
+def kan_overstyres(grunner: list[str]) -> bool:
+    return bool(grunner) and all(OVERSTYRBAR.fullmatch(g) for g in grunner)
+
+
+def kan_aldri_publiseres(grunner: list[str]) -> bool:
+    return any(ALDRI.fullmatch(g) for g in grunner)
+
+
 # --- Kjøring ---------------------------------------------------------------
 
 def sjekksum(grunnlag_: str) -> str:

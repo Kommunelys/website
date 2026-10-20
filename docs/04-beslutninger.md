@@ -782,4 +782,15 @@ ligger ute.
   tider utenfor saken, og partier som verken er nevnt eller ropt opp i
   tekstingen nær tidspunktet. En melding om feil i saken holder også
   debatten tilbake. Prøven 19.10.2026 fanget ni av ni plantede feil.
-- Vurdering av debatter som holdes tilbake, i portalen, kommer senere.
+- Kontrollen lagres i `kjerne.debatt_kontroll` når grunnene endres, og
+  debattene som holdes tilbake, står under «Til vurdering» i portalen
+  (`portal.debatt_holdt`), med punktene og lenke til opptaket. Som for
+  sammendragene (ADR-023, ADR-025) avgjør vurderingen
+  (`kjerne.debatt_vurdering`, bare innsetting) bare om debatten vises, og kan
+  ha en kort merknad. En vurderer kan slippe gjennom en debatt der kontrollen
+  bare ikke fant partiet i tekstingen eller blant dem som stemte. Navn og
+  stemmetall kan bare prosjektadmin overstyre (merket overstyrt). En del
+  eller et tidspunkt som ikke finnes i opptaket, eller manglende teksting,
+  kan ingen overstyre: debatten må analyseres på nytt. Debatten vises bare så
+  lenge grunnene er de samme som da den ble vurdert. Reglene står både i
+  databasen og i `analyser_debatt` (`kan_overstyres`, `kan_aldri_publiseres`).
