@@ -52,8 +52,6 @@ MAKS_PER_KJORING = 15
 INSTRUKSJON_VERSJON = 1
 # Kortere enn dette er bare opplesning og avstemning; da sendes ingenting inn.
 KORT_S = 60
-# Hvor langt fra et punkt partiet må være nevnt i tekstingen (sekunder).
-VINDU_S = 180
 
 SKJEMA = {
     "type": "object",
@@ -177,9 +175,12 @@ PARTI_ORD = {
     "MDG": ["Miljøpartiet", "MDG"],
 }
 
+# Stemmetall: «19 stemmer», «29 mot 10», «20–19». Ikke årstall som «2026–2029».
 _STEMMETALL = re.compile(
-    r"\b\d+\s*(?:stemmer|stemte|mot\b|for\b)|\b\d+\s*[–-]\s*\d+\b|\benstemmig|\bvedtatt\b|\bfalt\b",
+    r"\b\d+\s*(?:stemmer|stemte)\b|\b\d{1,2}\s+mot\s+\d{1,2}\b|\b\d{1,2}\s*[–-]\s*\d{1,2}\b",
     re.IGNORECASE)
+# Et ord med stor forbokstav og resten små: «Kari», ikke «CRPD» eller «FN-konvensjonen».
+_NAVNEORD = re.compile(r"^[A-ZÆØÅÉ][a-zæøåé]+$")
 
 
 def _ord(t: str) -> list[str]:
@@ -187,17 +188,28 @@ def _ord(t: str) -> list[str]:
 
 
 def _ligner(a: str, b: str) -> bool:
-    """Tekstingen hører navn feil: «Kåran» for Kvaran, «Krostad» for Krogstad."""
-    return difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio() >= 0.7
+    """Tekstingen hører navn feil: «Agnestein» for Agdestein (0,89), «Krostad»
+    for Krogstad (0,93). Ved 0,7 lignet «Bare» på Bartnes (0,73)."""
+    return difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio() >= 0.8
 
 
 def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict) -> list[str]:
-    """Grunner til å holde sammendraget tilbake. Tom liste betyr at det kan vises."""
+    """Grunner til å holde sammendraget tilbake. Tom liste betyr at det kan vises.
+
+    Kontrollen er mild med vilje (prosjekteier, 20.10.2026). Den stopper det
+    som bryter grunnreglene: navn på personer (regel 6) og stemmetall (regel
+    2), og det som viser at sammendraget ikke hører til saken: et parti som
+    ikke var i møtet eller ikke sa noe i saken, og en tid utenfor saken.
+    Steder, organisasjoner og forkortelser slipper gjennom.
+    """
     ut = []
     if svar.get("ingen_debatt"):
         return ut
     rep = representanter(behandling)
-    navnedeler = {d for n in rep for d in re.split(r"[\s-]+", n) if len(d) >= 3}
+    # Etternavnene, og delene av doble etternavn. Tekstingen hører dem ofte
+    # feil («Agnestein» for Agdestein), så de sammenlignes på likhet. Korte
+    # ord og fornavn er utelatt; de ligner vanlige ord («To» og «Tor»).
+    etternavn = {d for n in rep for d in n.split()[-1].split("-") if len(d) >= 4}
     tillatt = set(_ord(sak["tittel"])) | set(_ord(behandling.get("vedtak") or ""))
     for v in behandling.get("voteringer") or []:
         tillatt |= set(_ord(v.get("tekst") or ""))
@@ -205,20 +217,23 @@ def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict)
     tillatt |= set(profil().partinavn) | set(_ord(" ".join(profil().partinavn.values())))
     tillatt |= {kommune.oppsett()["navn"]}
 
+    def ok(o: str) -> bool:
+        return o in tillatt or o.removesuffix("s") in tillatt  # «Steinkjers» er Steinkjer
+
     tekster = [svar.get("oppsummering") or ""] + [p["tekst"] for p in svar.get("punkter") or []]
     for t in tekster:
         if m := _STEMMETALL.search(t):
-            ut.append(f"stemmetall eller utfall i teksten: {m[0]!r}")
+            ut.append(f"stemmetall i teksten: {m[0]!r}")
+        ut += [f"navnet {n!r} står i teksten" for n in rep if n in t]
         for setning in re.split(r"(?<=[.!?:])\s+", t):
             for o in _ord(setning):
-                # «Steinkjers» er Steinkjer i genitiv.
-                if o in tillatt or o.removesuffix("s") in tillatt:
-                    continue
-                treff = next((n for n in navnedeler if _ligner(o, n)), None)
-                if treff:
-                    ut.append(f"ligner navnet {treff!r}: {o!r}")
-                elif not setning.startswith(o):
-                    ut.append(f"mulig navn: {o!r}")
+                if len(o) >= 4 and not ok(o) and (e := next((e for e in etternavn if _ligner(o, e)), None)):
+                    ut.append(f"ligner etternavnet {e!r}: {o!r}")
+            # To navneord etter hverandre midt i en setning ser ut som et personnavn.
+            ord_ = [o.strip(".,;:()«»") for o in setning.split()]
+            for x, y in zip(ord_[1:], ord_[2:]):
+                if _NAVNEORD.match(x) and _NAVNEORD.match(y) and not (ok(x) or ok(y)):
+                    ut.append(f"mulig personnavn: {x} {y}")
 
     ds = {d["del"]: d for d in deler_for(opptak, behandling["behandling_id"])}
     partier_i_mote = set(rep.values())
@@ -230,20 +245,21 @@ def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict)
         if not 0 <= p["tid_s"] <= d["varighet_ms"] / 1000:
             ut.append(f"tiden {p['tid_s']} s er utenfor del {p['del']}")
             continue
-        vindu = " ".join(l["tekst"] for l in linjer_i(teksting, d)
-                         if abs(l["rel_s"] - p["tid_s"]) <= VINDU_S)
-        vindu_ord = _ord(vindu)
+        # Partiet må ha sagt noe i saken, et sted i delen. Møtelederen nevner
+        # ikke alltid partiet ved hvert innlegg.
+        tekst = " ".join(l["tekst"] for l in linjer_i(teksting, d))
+        tekst_ord = set(_ord(tekst))
         for parti in p["partier"]:
             if parti not in partier_i_mote:
                 ut.append(f"partiet {parti} var ikke i møtet")
                 continue
-            nevnt = any(re.search(rf"\b{re.escape(x)}\b", vindu) for x in PARTI_ORD.get(parti, [parti]))
+            nevnt = any(re.search(rf"\b{re.escape(x)}\b", tekst) for x in PARTI_ORD.get(parti, [parti]))
             # «Krogstad-Wiborg» ropes opp som «Krostad Viborg».
-            etternavn = {d for n, pa in rep.items() if pa == parti
-                         for d in n.split()[-1].split("-") if len(d) >= 4}
-            ropt_opp = any(_ligner(o, e) for o in vindu_ord for e in etternavn)
+            partiets = {d for n, pa in rep.items() if pa == parti
+                        for d in n.split()[-1].split("-") if len(d) >= 4}
+            ropt_opp = any(_ligner(o, e) for o in tekst_ord for e in partiets)
             if not (nevnt or ropt_opp):
-                ut.append(f"{parti} er verken nevnt eller ropt opp nær {_klokke(p['tid_s'])} i del {p['del']}")
+                ut.append(f"{parti} er verken nevnt eller ropt opp i del {p['del']}")
     return sorted(set(ut))
 
 
