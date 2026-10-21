@@ -320,15 +320,33 @@ def kall(klient, grunnlag_: str) -> tuple[dict, str, dict]:
     return resultat, svar.model, {"inn": svar.usage.input_tokens, "ut": svar.usage.output_tokens}
 
 
-def gyldig(svar: dict, ds: list[dict]) -> bool:
-    """Formen på svaret. Innholdet kontrolleres i bygget (avvik)."""
+# Instruksjonen ber om tre til seks punkter, men lange debatter gir flere.
+# Svaret brukes likevel; de første tas med.
+MAKS_PUNKTER = 8
+
+
+def rydd(svar: dict, ds: list[dict]) -> str | None:
+    """Gjør svaret brukbart, eller gir grunnen til at det ikke kan brukes.
+
+    Formen sjekkes mildt: et punkt med en del eller en tid som ikke finnes i
+    opptaket, tas ut, og høyst MAKS_PUNKTER beholdes. Den første utgaven
+    forkastet hele svaret ved mer enn seks punkter, og de lengste debattene
+    (NTE og skolesaken 16.09.2026) fikk aldri noe sammendrag. Innholdet
+    kontrolleres i bygget (avvik). Endrer svar.
+    """
     if svar.get("ingen_debatt"):
-        return True
+        return None
+    if not (svar.get("oppsummering") or "").strip():
+        return "tom oppsummering"
+    deler = {d["del"]: d for d in ds}
     punkter = svar.get("punkter") or []
-    if not (svar.get("oppsummering") or "").strip() or not 1 <= len(punkter) <= 6:
-        return False
-    deler = {d["del"] for d in ds}
-    return all(p["del"] in deler and p["tid_s"] >= 0 and p["tekst"].strip() for p in punkter)
+    gode = [p for p in punkter
+            if p.get("del") in deler and (p.get("tekst") or "").strip()
+            and 0 <= (p.get("tid_s") or 0) <= deler[p["del"]]["varighet_ms"] / 1000]
+    if not gode:
+        return f"ingen brukbare punkter av {len(punkter)}"
+    svar["punkter"] = gode[:MAKS_PUNKTER]
+    return None
 
 
 def kandidater(aar: int) -> list[tuple[dict, dict, dict, dict]]:
@@ -416,10 +434,13 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             print(f"  {b['saksnr']}: {type(e).__name__}, hoppet over")
             teller["feil"] += 1
             continue
-        if not gyldig(svar, ds):
-            print(f"  {b['saksnr']}: svaret har feil form, hoppet over")
+        antall = len(svar.get("punkter") or [])
+        if grunn := rydd(svar, ds):
+            print(f"  {b['saksnr']}: svaret kan ikke brukes ({grunn}), hoppet over")
             teller["feil"] += 1
             continue
+        if len(svar["punkter"]) < antall:
+            print(f"  {b['saksnr']}: {len(svar['punkter'])} av {antall} punkter beholdt")
         d = _resultat(svar, b, o, ds, sum_, modell, forbruk)
         feil = avvik(d, sak, b, o, t)
         print(f"  {b['saksnr']}: lagret" + (f", men holdes tilbake: {'; '.join(feil)}" if feil else ""))
@@ -458,11 +479,12 @@ def main() -> None:
         for s in svar if isinstance(svar, list) else [svar]:
             sak, b, o, t = _finn(aar, s["behandling_id"])
             tekst, ds = grunnlag(sak, b, o, t)
-            feil = avvik(s, sak, b, o, t) if gyldig(s, ds) else ["feil form"]
+            grunn = rydd(s, ds)
+            feil = [f"kan ikke brukes: {grunn}"] if grunn else avvik(s, sak, b, o, t)
             print(f"{b['saksnr']}: " + ("består" if not feil else "holdes tilbake"))
             for f in feil:
                 print(f"  - {f}")
-            if verdi("--lagre") and gyldig(s, ds):
+            if verdi("--lagre") and not grunn:
                 lager_opptak.lagre_debatt(_resultat(
                     s, b, o, ds, sjekksum(tekst), s.get("modell") or "utenfor", {"inn": 0, "ut": 0}))
     else:
