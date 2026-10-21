@@ -431,8 +431,16 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             teller["feil"] += 1
             continue
         except Exception as e:  # noqa: BLE001 - én feil i API-et skal ikke stoppe de andre
-            print(f"  {b['saksnr']}: {type(e).__name__}, hoppet over")
+            # Meldingen fra API-et sier hva som er galt (21.10.2026 kom bare
+            # «BadRequestError» i loggen). Den har aldri nøkkelen.
+            melding = " ".join(str(getattr(e, "message", "") or e).split())[:300]
+            print(f"  {b['saksnr']}: {type(e).__name__} {getattr(e, 'status_code', '')}: {melding}, hoppet over")
             teller["feil"] += 1
+            # Avvises forespørselen før modellen har lest noe (for eksempel
+            # tom kredittsaldo), vil de neste også bli det.
+            if "credit balance" in melding:
+                print("  kredittsaldoen er brukt opp, stopper kjøringen")
+                break
             continue
         antall = len(svar.get("punkter") or [])
         if grunn := rydd(svar, ds):
