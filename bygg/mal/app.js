@@ -467,15 +467,17 @@ const contested=V.filter(v=>v.nfor>0&&v.nmot>0);
   $('partgrunnlag').innerHTML=IKKE_STEMMER?MANGLER_STEMMER:tekst;
 })();
 function sortPil(tabell,k,d){document.querySelectorAll(`#${tabell} th[data-k]`).forEach(th=>{if(th.dataset.k===k)th.setAttribute('aria-sort',d>0?'ascending':'descending');else th.removeAttribute('aria-sort')})}
-const vlinje=(v,vo,ekstra)=>`<div class="vrow"><span class="muted">${ddn(v.dato)} ${esc(v.usc)}</span><span><a href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a><br><span class="liten muted klipp">${esc(typeNavn(v))}: ${esc(v.lbl)}</span>${ekstra||''}</span><span class="v ${vo||''}">${vo==='for'?'For':vo==='mot'?'Mot':''}</span><span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div>`;
+const vlinje=(v,vo,ekstra,skjult)=>`<div class="vrow"${skjult?' hidden':''}><span class="muted">${ddn(v.dato)} ${esc(v.usc)}</span><span><a href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a><br><span class="liten muted klipp">${esc(typeNavn(v))}: ${esc(v.lbl)}</span>${ekstra||''}</span><span class="v ${vo||''}">${vo==='for'?'For':vo==='mot'?'Mot':''}</span><span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div>`;
 function renderHeat(){
   const ps=ordne(PORDER_ALLE,[...new Set(contested.flatMap(v=>Object.keys(SIDES.get(v.id))))]);
   const agree=(a,b)=>{let n=0,k=0;contested.forEach(v=>{const s=SIDES.get(v.id);if(s[a]&&s[b]){n++;if(s[a]===s[b])k++}});return n?k/n:null};
+  // --i lar radene komme fram etter hverandre (stil.css).
   let h=`<tr><th></th>${ps.map(p=>`<th><span class="sq" style="background:${pc(p)}"></span>${p}</th>`).join('')}</tr>`;
-  ps.forEach(a=>{h+=`<tr><th class="rh">${esc(PNAME[a]||a)}</th>`+ps.map(b=>{if(a===b)return `<td style="background:var(--soft);color:var(--muted)">–</td>`;const r=agree(a,b);if(r===null)return '<td class="muted">·</td>';const pct=Math.round(r*100);return `<td title="${a} og ${b} stemte likt i ${pct} %" style="background:color-mix(in srgb,var(--ink) ${Math.max(6,pct)}%,var(--bg));color:${pct>55?'var(--bg)':'var(--ink)'}">${pct}</td>`}).join('')+'</tr>'});
+  ps.forEach((a,i)=>{h+=`<tr style="--i:${i+1}"><th class="rh">${esc(PNAME[a]||a)}</th>`+ps.map(b=>{if(a===b)return `<td style="background:var(--soft);color:var(--muted)">–</td>`;const r=agree(a,b);if(r===null)return '<td class="muted">·</td>';const pct=Math.round(r*100);return `<td title="${a} og ${b} stemte likt i ${pct} %" style="background:color-mix(in srgb,var(--ink) ${Math.max(6,pct)}%,var(--bg));color:${pct>55?'var(--bg)':'var(--ink)'}">${pct}</td>`}).join('')+'</tr>'});
   $('heat').innerHTML=contested.length?h:'<tr><td class="muted">Ingen avstemninger der noen stemte imot.</td></tr>';
   $('close').innerHTML=contested.filter(v=>Math.abs(v.nfor-v.nmot)<=3).map(v=>{const s=SIDES.get(v.id);const cross=[...v.f.filter(n=>s[party(n)]!=='for'),...v.m.filter(n=>s[party(n)]!=='mot')];
-    return `<div class="jevn"><div><span><a href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a><br><span class="liten muted">${esc(typeNavn(v))}: ${esc(v.lbl)}</span></span><span><b class="num">${v.nfor} for, ${v.nmot} mot</b> <span class="res ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></span></div>${segBar(v)}<div class="liten muted">${cross.length?'Stemte annerledes enn partiet: '+cross.map(n=>`<span class="cross">${plink(n)} (${party(n)})</span>`).join(', '):'Alle stemte som partiet sitt.'}</div>${(v.merk||[]).map(t=>`<div class="merk">Merknad: ${esc(t)}</div>`).join('')}</div>`}).join('')||'<p class="muted">Ingen avstemninger ble avgjort med tre stemmer eller mindre.</p>';
+    // Som en rad på saken: tittel og utfall, stolpen, og partimerket ved dem som brøt med partiet.
+    return `<div class="jevn"><div class="vlinje"><span class="vt"><a href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a><br><span class="liten muted">${esc(typeNavn(v))}: ${esc(v.lbl)}</span></span><span class="vutf ${v.res==='vedtatt'?'ok':'no'}">${resTxt(v)} ${v.nfor}–${v.nmot}</span></div>${segBar(v)}<div class="liten muted">${cross.length?'Stemte annerledes enn partiet: '+cross.map(n=>`<span class="cross">${plink(n)}</span> ${pm(party(n))}`).join(' '):'Alle stemte som partiet sitt.'}</div>${(v.merk||[]).map(t=>`<div class="merk">Merknad: ${esc(t)}</div>`).join('')}</div>`}).join('')||'<p class="muted">Ingen avstemninger ble avgjort med tre stemmer eller mindre.</p>';
 }
 
 /* ---------- POLITIKERE ---------- */
@@ -521,28 +523,32 @@ function renderPerson(id){
   const st=stemmeStat(p.n);
   const varaFor=[...new Set(p.verv.flatMap(v=>v.for))].sort((a,b)=>a.localeCompare(b,'nb'));
   const lenke=partiLenke(p.p);
-  const rad=v=>`<tr><td>${esc(utName(v.u))}${v.p&&v.p!==p.p?` <span class="liten muted">(for ${esc(PNAME[v.p]||v.p)})</span>`:''}</td><td>${rolle(v.u,v.r)}</td><td class="num">${v.m||'–'}</td><td class="num">${S.mprot[v.u]||'–'}</td></tr>`;
+  // «Møtt» med en stolpe som viser hvor stor del av møtene det er.
+  const rad=v=>{const n=S.mprot[v.u];return `<tr><td>${esc(utName(v.u))}${v.p&&v.p!==p.p?` <span class="liten muted">(for ${esc(PNAME[v.p]||v.p)})</span>`:''}</td><td>${rolle(v.u,v.r)}</td><td class="num">${n&&v.m?`<span class="maaler mmaaler" aria-hidden="true"><i style="width:${Math.min(100,Math.round(100*v.m/n))}%"></i></span>`:''}${v.m||'–'}</td><td class="num">${n||'–'}</td></tr>`};
   const pct=st.omst.length?Math.round(st.maj/st.omst.length*100):0;
   const sakLenke=v=>`<a href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a>`;
+  // Mange forslag foldes, som punktene i debatten på saken.
+  const visF=st.forslag.length>8?6:st.forslag.length;
+  // Tallene om stemmene som tre små ruter. Stolpen i den midterste fylles.
+  const tall=`<div class="tall3"><div><b>${st.mine.length}</b><span>${st.mine.length===1?'avstemning':'avstemninger'} med navneliste ${PERIODE}</span></div>
+    ${st.omst.length?`<div><b>${pct} %</b><span>stemte som flertallet, i de ${st.omst.length} der noen stemte imot</span><span class="maaler" aria-hidden="true"><i style="width:${pct}%"></i></span></div>
+    <div><b>${st.brk.length}</b><span>${st.brk.length===1?'gang':'ganger'} annerledes enn resten av partiet</span></div>`:''}</div>`;
   el.innerHTML=`<div class="profil"><div class="ingress">
     <p class="parti"><span class="dot" style="background:${pc(p.p)}"></span>${esc(PNAME[p.p]||p.p)}</p>
     <h1>${esc(p.n)}</h1>
     <p class="fakta">${hoved}. ${antall(vv.length,'verv','verv')} ifølge medlemslisten ${dato(S.ks.hentet)}.${lenke?` Partiet: ${lenke}.`:''}</p></div>
-    <section><h2>Verv</h2>
+    ${sakKort({id:'pkort-verv',type:'sti',ikon:'verv',tittel:'Verv',under:`${antall(vv.length,'verv','verv')} i dag${tidl.length?`, ${tidl.length} tidligere`:''}`,innhold:`
       <div class="tw"><table><thead><tr><th>Utvalg</th><th>Rolle</th><th class="num">Møtt</th><th class="num">Møter</th></tr></thead><tbody>${vv.map(rad).join('')}</tbody></table></div>
       ${tidl.length?`<p class="liten muted">Sett i protokollene, men ikke i dagens medlemsliste: ${tidl.map(v=>esc(utName(v.u))).join(', ')}.</p>`:''}
       ${varaFor.length?`<p class="liten">Har møtt som varamedlem for ${varaFor.map(plink).join(', ')}.</p>`:''}
-      <p class="liten muted">«Møtt» er antall møter ${PERIODE} der navnet står på oppmøtelisten i protokollen. «Møter» er antall møter utvalget har hatt med møteprotokoll. Permisjoner og bytter tidligere i året vises ikke.</p>
-    </section>
-    <section><h2>Stemmer</h2>
-      ${IKKE_STEMMER?MANGLER_STEMMER:st.mine.length?`<p class="oppsum">Har vært med på ${antall(st.mine.length,'avstemning','avstemninger')} med navneliste ${PERIODE}.${st.omst.length?` I de ${st.omst.length} der noen stemte imot, var stemmen den samme som flertallets i ${pct} % av tilfellene, og annerledes enn resten av partiet ${antall(st.brk.length,'gang','ganger')}.`:''}</p>`
+      <p class="liten muted">«Møtt» er antall møter ${PERIODE} der navnet står på oppmøtelisten i protokollen. «Møter» er antall møter utvalget har hatt med møteprotokoll. Permisjoner og bytter tidligere i året vises ikke.</p>`})}
+    ${sakKort({id:'pkort-stemmer',type:'sti',ikon:'stemmer',tittel:'Stemmer',under:`Lest fra protokollene ${PERIODE}, uten KI`,innhold:`
+      ${IKKE_STEMMER?MANGLER_STEMMER:st.mine.length?tall
         :`<p class="oppsum muted">Ingen avstemninger med navneliste ${PERIODE}. Når alle stemmer likt, har protokollen ingen navneliste.</p>`}
       ${st.brk.length?`<details${st.brk.length<=8?' open':''}><summary>Stemte annerledes enn partiet (${st.brk.length})</summary><div>${st.brk.map(v=>vlinje(v,voteOf(v,p.n))).join('')}</div></details>`:''}
-      ${st.omst.length?`<details><summary>Alle avstemninger der noen stemte imot (${st.omst.length})</summary><div>${st.omst.map(v=>vlinje(v,voteOf(v,p.n))).join('')}</div></details>`:''}
-    </section>
-    <section><h2>Forslag</h2>
-      ${IKKE_STEMMER?MANGLER_STEMMER:st.forslag.length?st.forslag.map(v=>vlinje(v,null)).join(''):`<p class="muted">Ingen forslag med navn i protokollene ${PERIODE}.</p>`}
-    </section>
+      ${st.omst.length?`<details><summary>Alle avstemninger der noen stemte imot (${st.omst.length})</summary><div>${st.omst.map(v=>vlinje(v,voteOf(v,p.n))).join('')}</div></details>`:''}`})}
+    ${sakKort({id:'pkort-forslag',type:'fremmet',ikon:'forslag',tittel:'Forslag',under:!IKKE_STEMMER&&st.forslag.length?`${antall(st.forslag.length,'forslag','forslag')} med navn i protokollene`:'',innhold:`
+      ${IKKE_STEMMER?MANGLER_STEMMER:st.forslag.length?`<div id="pforslag">${st.forslag.map((v,i)=>vlinje(v,null,'',i>=visF)).join('')}</div>${st.forslag.length>visF?`<button type="button" class="mer" data-flere="pforslag">Vis alle ${st.forslag.length} forslagene</button>`:''}`:`<p class="muted">Ingen forslag med navn i protokollene ${PERIODE}.</p>`}`})}
     <p class="liten muted mt">Kilder: medlemslisten i innsynsportalen (${dato(S.ks.hentet)}), møteprotokollene og saksprotokollene ${FLERE_AAR?`siden ${FRA_AAR}`:`for ${AAR}`}.${HOLDT?` ${antall(HOLDT,'avstemning','avstemninger')} der stemmene ikke vises, er ikke med.`:''} Ingen tekst her er skrevet av KI.</p>
   </div>`;
 }
@@ -621,6 +627,13 @@ const IKON={
   sti:'<circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 7v10M8 5h4a4 4 0 0 1 4 4v1"/>',
   dok:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
   pil:'<path d="m6 9 6 6 6-6"/>',
+  // De under brukes på møtesiden, profilen og under Partiene.
+  kalender:'<path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
+  folk:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+  verv:'<rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  stemmer:'<path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/>',
+  forslag:'<path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z"/>',
+  vekt:'<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>',
 };
 const ikon=(n,s=20,cls='')=>`<svg${cls?` class="${cls}"`:''} viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${IKON[n]}</svg>`;
 /* Et kort på saksiden. I en stor sak kan det lukkes: en <details> som
@@ -662,9 +675,13 @@ function dokumenter(c){
   const m=c.att&&c.st.find(x=>x.murl);
   if(m)d.push([String(c.att),'Vedlegg',`${antall(c.att,'vedlegg','vedlegg')} i innsynsportalen`,m.murl]);
   c.st.filter(x=>x.prot&&x.pub).forEach(x=>d.push(['PDF','Protokollen',`${utName(x.sc)} ${datoAar(x.date)}`,x.prot]));
+  return dokKnapp(`dok-${c.id}`,d);
+}
+// Knappen og listen. Hvert dokument er [type, navn, forklaring, adresse].
+function dokKnapp(id,d){
   if(!d.length)return '';
-  return `<button type="button" class="dokknapp" aria-expanded="false" aria-controls="dok-${c.id}">${ikon('dok',18)}Dokumenter <span class="ant">${d.length}</span>${ikon('pil',14,'dokpil')}</button>
-    <div class="dokboks" id="dok-${c.id}" hidden><ul class="dokliste">${d.map(([t,b,s,u])=>`<li><a href="${esc(u)}" target="_blank" rel="noopener"><span class="dt${t==='PDF'?'':' n'}">${esc(t)}</span><span><b>${b}</b><small>${esc(s)}</small></span></a></li>`).join('')}</ul></div>`;
+  return `<button type="button" class="dokknapp" aria-expanded="false" aria-controls="${id}">${ikon('dok',18)}Dokumenter <span class="ant">${d.length}</span>${ikon('pil',14,'dokpil')}</button>
+    <div class="dokboks" id="${id}" hidden><ul class="dokliste">${d.map(([t,b,s,u])=>`<li><a href="${esc(u)}" target="_blank" rel="noopener"><span class="dt${t==='PDF'?'':' n'}">${esc(t)}</span><span><b>${b}</b><small>${esc(s)}</small></span></a></li>`).join('')}</ul></div>`;
 }
 
 // Kort fortalt: hele sammendraget fra KI med kildene. «Hva betyr det?» står øverst på siden.
@@ -901,36 +918,45 @@ function moteSak({c,x},m){
   const mer=[videre?`Videre til ${smaa(utName(videre.sc))}${isFut(videre.date)?` ${ddl(videre.date)}`:''}`:'',c.st.length>1?pathHtml(c):''].filter(Boolean).join(' · ');
   const lengde=(x.op||[]).reduce((n,o)=>n+o.d,0);
   const op=x.op&&x.op[0]?opptakLenke(x.op[0].u,`Opptaket${lengde>=60?`, ${varighet(lengde)}`:''}`,'liten'):'';
+  // Én avstemning der noen stemte imot, får stolpen med partiene, som på saken.
+  const vs=(VOT_HID[x.hid]||{v:[]}).v.filter(v=>!v.holdt),en=vs.length===1&&omstridt(vs[0])&&!erAlt(vs[0])?vs[0]:null;
   return `<li class="mote-sak"><div class="mote-sak-topp"><span class="mono muted">${esc(x.nr)}</span><span class="mote-sak-hoyre">${op}${isFut(m.date)?'':moteUtfall(x)}</span></div>
     <a class="t" href="#sak/${c.id}">${esc(tittel(c))}</a>${c.a?`<span class="o">${esc(c.t)}</span>`:''}
-    ${c.a&&c.a.bet?`<p><span class="ki">KI</span> ${esc(c.a.bet)}</p>`:''}
+    ${en?segBar(en):''}
+    ${c.a&&c.a.bet?`<p class="mbetyr"><span class="ki">KI</span> ${esc(c.a.bet)}</p>`:''}
     ${mer?`<p class="liten muted">${mer}</p>`:''}</li>`;
 }
+/* Møtesiden følger saksiden: et toppkort med tid, sted, opptaket og knappen
+   Dokumenter, og under det kortene med sakene og om utvalget. */
 function renderMote(id){
   const m=MOTE_ID[id],el=$('mote');
   if(!m){el.innerHTML='<div class="ingress"><h1>Fant ikke møtet</h1><p>Møtet finnes ikke i dataene'+(FLERE_AAR?'':' for dette året')+'. <a href="#moter">Se kalenderen</a>.</p></div>';return}
   document.title=`${utName(m.sc)} ${ddl(m.date)} – ${K.navn} | ${S.merke}`;
   $('motetilbake').href='#moter/'+m.date.slice(0,7);
-  const st=moteStatus(m),dok=t=>m.docs.find(d=>d.ty===t);
+  const st=moteStatus(m),dok=t=>m.docs.find(d=>d.ty===t),fram=isFut(m.date);
   const alle=(SAKER_MOTE[m.id]||[]).sort((a,b)=>{const ka=_saksnr(a.x.nr),kb=_saksnr(b.x.nr);return ka[0]-kb[0]||ka[1]-kb[1]});
   const pol=alle.filter(o=>o.c.typ==='PS'&&!o.c.formal),andre=alle.filter(o=>!pol.includes(o));
-  const lenker=[dok('MI')?ut(dok('MI').u,'Møteinnkallingen (PDF)'):'',dok('MP')?ut(dok('MP').u,'Møteprotokollen (PDF)'):'',ut(m.url,'Møtet i innsynsportalen')].filter(Boolean).join(' · ');
-  el.innerHTML=`<div class="ingress"><h1>${esc(utName(m.sc))}</h1>
-    <p class="mote-fakta"><b>${forst(UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()])} ${datoAar(m.date)}, ${kl(m)}</b>${m.sted||m.rom?`<br>${stedTekst(m)}`:''}</p>
-    <p><span class="st ${st.cls}">${esc(st.t)}</span></p>
-    ${m.op?`<p class="opptak-linje">${opptakLenke(m.op.u,'Se hele opptaket av møtet','knapp')}<span class="liten muted">${m.op.d?`${varighet(m.op.d)} · `:''}hos kommunen${m.op.tx?', med teksting':''}. Hver sak under har lenke til der den starter.</span></p>`:''}
-    <p class="liten">${lenker}</p></div>
-    <section class="blokk"><h2>${isFut(m.date)?'Sakene som skal opp':'Sakene og hva som ble bestemt'}</h2>
-      ${pol.length?`<ol class="mote-saker">${pol.map(o=>moteSak(o,m)).join('')}</ol>`:`<p class="muted">${m.n?'Ingen politiske saker på sakslisten.':'Sakslisten er ikke publisert ennå.'}</p>`}
-      ${IKKE_STEMMER&&!isFut(m.date)&&pol.length?MANGLER_STEMMER:''}
-      ${andre.length?`<details class="falt"><summary>${antall(andre.length,'annen sak','andre saker')}: referater, orienteringer og formalia</summary><ol class="mote-saker">${andre.map(o=>moteSak(o,m)).join('')}</ol></details>`:''}
-    </section>
-    <section class="blokk"><h2>Om ${esc(smaa(utName(m.sc)))}</h2>
-      ${oppgave(m.sc)?`<p>${esc(forst(oppgave(m.sc)))}.</p>`:''}
-      ${!isFut(m.date)&&m.opp?oppmoteHtml(m):!isFut(m.date)&&IKKE_OPPMOTE?MANGLER_OPPMOTE:''}
+  const dokumentene=[dok('MI')&&['PDF','Møteinnkallingen','Sakslisten med alle saksframleggene',dok('MI').u],
+    dok('MP')&&['PDF','Møteprotokollen','Vedtakene og hvem som møtte',dok('MP').u],
+    m.url&&['↗','Innsynsportalen','Møtet hos kommunen, med alle dokumentene',m.url]].filter(Boolean);
+  const nv=pol.reduce((n,o)=>n+((VOT_HID[o.x.hid]||{v:[]}).v.length),0);
+  const saker=sakKort({id:'mkort-saker',type:fram?'fram':'vedtak',ikon:fram?'kalender':'vedtak',
+    tittel:fram?'Sakene som skal opp':'Sakene og hva som ble bestemt',
+    under:[pol.length?antall(pol.length,'politisk sak','politiske saker'):'',nv?antall(nv,'avstemning','avstemninger'):'',andre.length?antall(andre.length,'annen sak','andre saker'):''].filter(Boolean).join(' · '),
+    innhold:`${pol.length?`<ol class="mote-saker">${pol.map(o=>moteSak(o,m)).join('')}</ol>`:`<p class="muted">${m.n?'Ingen politiske saker på sakslisten.':'Sakslisten er ikke publisert ennå.'}</p>`}
+      ${IKKE_STEMMER&&!fram&&pol.length?MANGLER_STEMMER:''}
+      ${andre.length?`<details class="falt"><summary>${antall(andre.length,'annen sak','andre saker')}: referater, orienteringer og formalia</summary><ol class="mote-saker">${andre.map(o=>moteSak(o,m)).join('')}</ol></details>`:''}`});
+  const om=sakKort({id:'mkort-om',type:'sti',ikon:'folk',tittel:`Om ${esc(smaa(utName(m.sc)))}`,
+    under:!fram&&m.opp?`${m.opp.navn.length+m.opp.andre} møtte`:'',
+    innhold:`${oppgave(m.sc)?`<p>${esc(forst(oppgave(m.sc)))}.</p>`:''}
+      ${!fram&&m.opp?oppmoteHtml(m):!fram&&IKKE_OPPMOTE?MANGLER_OPPMOTE:''}
       <details class="falt"><summary>Hvem sitter i ${esc(smaa(utName(m.sc)))} i dag</summary>${medlemHtml(m.sc)}</details>
-      <p class="liten"><a href="#hvem-bestemmer/${encodeURIComponent(m.sc)}">Alle utvalgene</a></p>
-    </section>`;
+      <p class="liten"><a href="#hvem-bestemmer/${encodeURIComponent(m.sc)}">Alle utvalgene</a></p>`});
+  el.innerHTML=`<div class="moteside"><div class="ingress"><h1>${esc(utName(m.sc))}</h1>
+    <p class="mote-fakta"><b>${forst(UKEDAG[new Date(m.date.slice(0,10)+'T12:00').getDay()])} ${datoAar(m.date)}, ${kl(m)}</b>${m.sted||m.rom?`<br>${stedTekst(m)}`:''}</p>
+    ${m.op?`<p class="opptak-linje">${opptakLenke(m.op.u,'Se hele opptaket av møtet','knapp')}<span class="liten muted">${m.op.d?`${varighet(m.op.d)} · `:''}hos kommunen${m.op.tx?', med teksting':''}. Hver sak under har lenke til der den starter.</span></p>`:''}
+    <div class="tagrad"><span class="st ${st.cls}">${esc(st.t)}</span>${dokKnapp(`dok-mote-${m.id}`,dokumentene)}</div></div>
+    ${saker}${om}</div>`;
 }
 /* Sted og rom er fritekst i portalen. Ved befaringer står ruten i begge
    («Skolen/Barnehagen/Rådhuset» og «Skolen/Barnehagen/Møterommet»), og noen
@@ -955,10 +981,14 @@ function oppmoteHtml(m){
   if(RAD.includes(m.sc))return `<p>${forst(antall(tot,'person','personer'))} møtte, ifølge møteprotokollen.</p>${avvik}`;
   const liste=[...o.navn].sort((a,b)=>rolleRang(a.f)-rolleRang(b.f)||rang2(a.p)-rang2(b.p)||a.n.localeCompare(b.n,'nb'));
   const linje=p=>`<li><span class="dot" style="background:${pc(p.p)}"></span>${plink(p.n)} <span class="muted">${esc(p.p)}${p.f==='Leder'||p.f==='Nestleder'?`, ${rolle(m.sc,p.f)}`:''}${p.f==='Varamedlem'?`, vara${p.vf?` for ${esc(p.vf)}`:''}`:''}</span></li>`;
-  return `<details class="falt"${o.avvik?' open':''}><summary>Hvem møtte: ${tot}${vara?`, av dem ${antall(vara,'varamedlem','varamedlemmer')}`:''}</summary>
-    ${liste.length?`<ul class="medl">${liste.map(linje).join('')}</ul>`:''}
+  // Partiene som møtte, som en stolpe og et merke per parti, slik stemmene vises på saken.
+  const per=ordne(PORDER_ALLE,[...new Set(o.navn.map(p=>p.p))]).map(p=>({p,n:o.navn.filter(x=>x.p===p).length}));
+  return `<div class="oppmote"><p><b>${forst(antall(tot,'person','personer'))} møtte</b>${vara?`, av dem ${antall(vara,'varamedlem','varamedlemmer')}`:''}.</p>
+    ${per.length?`<div class="bar">${per.map(({p,n})=>`<span style="flex:${n};background:${pc(p)}" title="${esc(PNAME[p]||p)}: ${n}"></span>`).join('')}${o.andre?`<span style="flex:${o.andre};background:var(--line)" title="Ikke valgt for et parti: ${o.andre}"></span>`:''}</div>
+      <p class="pmrad">${per.map(({p,n})=>pm(p,n)).join('')}</p>`:''}
     ${o.andre?`<p class="liten muted">${forst(antall(o.andre,'person','personer'))}${o.navn.length?' til':''} er ikke valgt for et parti og vises ikke.</p>`:''}
-    <p class="liten muted">Ifølge møteprotokollen.</p>${avvik}</details>`;
+    ${liste.length?`<details class="falt"${o.avvik?' open':''}><summary>Se hvem som møtte</summary><ul class="medl">${liste.map(linje).join('')}</ul></details>`:''}
+    <p class="liten muted">Ifølge møteprotokollen.</p>${avvik}</div>`;
 }
 // «PS 13/2026» -> [13, 2026] for sortering.
 const _saksnr=nr=>{const t=(nr||'').match(/(\d+)\/(\d+)/);return t?[+t[2],+t[1]]:[0,0]};
@@ -1081,12 +1111,15 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.dokknapp[aria-expanded="true"]').forEach(k=>{k.setAttribute('aria-expanded','false');veksle($(k.getAttribute('aria-controls')),false);k.focus()})});
 /* Etter at en side er tegnet: kortene glir opp når de kommer inn på skjermen,
-   stemplet slås ned på vedtaket, og snarveiene viser hvor man leser. */
+   stemplet slås ned på vedtaket, og snarveiene viser hvor man leser. Kalles
+   for hver visning som vises (vis under NAVIGASJON) og når saken er tegnet. */
 let synlig=null,leser=null;
 function bevegelse(rot){
   if(MINDRE||!('IntersectionObserver' in window))return;
   document.documentElement.classList.add('bev');
   synlig?.disconnect();leser?.disconnect();
+  // Det som ikke kom fram i en visning man forlot, skal stå synlig når man kommer tilbake.
+  document.querySelectorAll('.sakkort:not(.synlig),.stempel:not(.slag)').forEach(e=>{if(!rot.contains(e))e.classList.add(e.classList.contains('stempel')?'slag':'synlig')});
   synlig=new IntersectionObserver(ok=>ok.forEach(o=>{if(o.isIntersecting){o.target.classList.add(o.target.classList.contains('stempel')?'slag':'synlig');synlig.unobserve(o.target)}}),{rootMargin:'0px 0px -6% 0px'});
   rot.querySelectorAll('.sakkort,.stempel').forEach(e=>synlig.observe(e));
   const knapper=[...rot.querySelectorAll('.snarvei button')];
@@ -1140,6 +1173,8 @@ function vis(){
     if(f==='politikerne'){fparti=PARTI_I_FOLK.includes(arg)?arg:null;renderFChips();renderFolk()}}
   if(v==='person')renderPerson(arg);
   if(v==='sak')visSak(+arg);
+  // Saken kaller bevegelse selv, når detaljene er hentet.
+  else bevegelse($('v-'+v));
   const valgtUtvalg=v==='hvem-bestemmer'&&arg&&document.getElementById('utvalg-'+arg);
   if(valgtUtvalg){valgtUtvalg.open=true;requestAnimationFrame(()=>valgtUtvalg.scrollIntoView({block:'start'}));forrigeV=v;return}
   // Bytte av fane i samme visning flytter ikke siden.
