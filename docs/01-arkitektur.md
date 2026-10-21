@@ -238,11 +238,17 @@ hver adresse er kontrollert for hånd.
 - `#saker`, `#saker/pa-vei`, `#saker/venter`: tre faner etter hvor saken står,
   med filter for år og måned. Årene er de som finnes i dataene.
 - `#moter/<åååå-mm>`: kalender per måned, liste på smale skjermer.
-  `#mote/<møte-id>`: møtesiden med tid, sted, dokumenter, sakene med én
-  setning hver og utfallet, hvem som møtte og hvem som sitter i utvalget.
+  `#mote/<møte-id>`: møtesiden med tid, sted, opptaket og knappen Dokumenter
+  (møteinnkallingen, protokollen og innsynsportalen), og kortene med sakene
+  (én setning hver, utfallet og stolpen når én avstemning var delt) og om
+  utvalget (hvem som møtte per parti, og hvem som sitter der).
 - `#hvem-bestemmer/<utvalg>`: saksgangen og utvalgene med medlemmer.
 - `#politikere/partiene`: hvem som stemmer sammen, og de jevneste
   avstemningene. Fanen Stemmer er fjernet; gamle `#stemmer/…` sendes videre.
+
+Møtesiden, profilen, kortene på oversikten og Partiene bruker de samme kortene
+som saksiden (21.10.2026): overskrift med blek farge etter innholdet, partimerker
+og stolper som fylles, og den samme bevegelsen.
 
 Medlemmer og oppmøte vises med navn bare for dem som er valgt for et parti,
 som på profilene. De andre telles, og for rådene vises ingen navn.
