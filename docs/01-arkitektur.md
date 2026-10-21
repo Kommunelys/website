@@ -224,10 +224,17 @@ hver adresse er kontrollert for hånd.
 
 **Sakene i sentrum.** Saken er det alt annet lenker til (7.10.2026):
 
-- `#sak/<sak-id>`: saksiden. Tittel, sammendrag, vedtaket, og saksgangen som
-  en loddrett tråd fra utvalg til utvalg. I hvert møte står forslagene som
-  bokser med utfall og stemmer per parti; det som vant eller ble vedtatt, har
-  grønn ramme. To eller flere forslag som falt, samles under én linje.
+- `#sak/<sak-id>`: saksiden (21.10.2026). Øverst tittel, status, saksgangen
+  som en linje (råd og hovedutvalg etter hverandre blir ett punkt), «Hva betyr
+  det?», opptaket, temaene og knappen Dokumenter. Under står kortene Kort
+  fortalt, Debatten, Vedtaket og Saksgangen og stemmene. Vedtaket er delt i
+  avsnitt, med stemmetallet ved avsnittet bare når en vedtatt forslagstekst
+  inneholder det; avsnitt fra forslag i møtet er merket. Stemmene står som en
+  rad per avstemning i hvert møte; to eller flere forslag som falt, samles
+  under én linje. En stor sak (mer enn tre avstemninger, debatt eller mer enn
+  to utvalg) får kort som kan lukkes og snarveier; i en liten sak står alt
+  åpent og stemmene i vedtaket. Det som åpnes og lukkes, glir (Web
+  Animations), og står stille for dem som har bedt om mindre bevegelse.
 - `#saker`, `#saker/pa-vei`, `#saker/venter`: tre faner etter hvor saken står,
   med filter for år og måned. Årene er de som finnes i dataene.
 - `#moter/<åååå-mm>`: kalender per måned, liste på smale skjermer.
