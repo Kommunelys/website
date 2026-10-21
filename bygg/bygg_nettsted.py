@@ -777,12 +777,16 @@ def _kommuneside(kommune: dict, ut: Path, begrenset: bool = False) -> None:
 def _kart(kommuner: list[dict], begrensede: frozenset[str] = frozenset()) -> str:
     """Kartet over Trøndelag på forsiden, som SVG.
 
-    Kommunene med data er lenker og farget; de andre er uten til vi har data
-    for dem. Med begrenset innsyn sier navnet at innholdet krever innlogging. Grensene lages av bygg.lag_kart og ligger i kommuner/kart/.
+    Kommunene med data er lenker og farget. Kommunene som bruker samme
+    innsynsportal (kommuner/kart/kandidater.json) er grå, fordi de kommer snart;
+    de andre er lysere. Med begrenset innsyn sier navnet at innholdet krever
+    innlogging. Grensene lages av bygg.lag_kart og ligger i kommuner/kart/.
     """
     kart = json.loads((KOMMUNER / "kart" / "trondelag.json").read_text("utf-8"))
+    kandidater = {k["kommunenr"] for k in json.loads(
+        (KOMMUNER / "kart" / "kandidater.json").read_text("utf-8"))["kommuner"]}
     med_data = {k["kommunenr"]: k for k in kommuner}
-    uten, farget = [], []
+    uten, senere, farget = [], [], []
     for k in kart["kommuner"]:
         navn = html.escape(k["navn"])
         if k["kommunenr"] in med_data:
@@ -795,13 +799,20 @@ def _kart(kommuner: list[dict], begrensede: frozenset[str] = frozenset()) -> str
                           f'<title>{tittel}</title></path>'
                           f'<text x="{x:.0f}" y="{y:.0f}" text-anchor="middle" '
                           f'dominant-baseline="middle">{navn}</text></a>')
+        elif k["kommunenr"] in kandidater:
+            senere.append(f'<path d="{k["d"]}"><title>{navn}: kommer snart</title></path>')
         else:
-            uten.append(f'<path d="{k["d"]}"><title>{navn}: kommer senere</title></path>')
+            uten.append(f'<path d="{k["d"]}"><title>{navn}</title></path>')
+    forklaring = ('<figcaption class="kart-forklaring liten muted">'
+                  '<span><i class="kart-merke med"></i>Kan velges</span>'
+                  '<span><i class="kart-merke senere"></i>Kommer snart</span>'
+                  '</figcaption>') if senere else ""
     return (f'<svg class="kart" viewBox="0 0 {kart["bredde"]} {kart["hoyde"]}" role="group" '
             'aria-label="Kart over kommunene i Trøndelag. Kommunene med data er farget og '
-            'kan velges.">'
+            'kan velges. Kommunene i grått kommer snart.">'
             f'<g class="kart-uten">{"".join(uten)}</g>'
-            f'<g class="kart-med">{"".join(farget)}</g></svg>')
+            f'<g class="kart-senere">{"".join(senere)}</g>'
+            f'<g class="kart-med">{"".join(farget)}</g></svg>{forklaring}')
 
 
 def periode(st: dict) -> str:

@@ -10,7 +10,7 @@
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
   --bg:#FAF9F6; --surface:#FFFFFF; --ink:#1F2937; --muted:#646B76; --line:#E5E7EB; --soft:#F1F4F8;
-  --lys:#60A5FA; --lys-flate:#EAF2FE; --lenke:#1F5FAD;
+  --lys:#60A5FA; --lys-flate:#EAF2FE; --lenke:#1F5FAD; --kart-senere:#AEB7C2; --kart-uten:#E5E7EB;
   --good:#22704A; --bad:#A33A2C; --warn:#8A5F0E; --info:#5A4A9E;
   --skygge:0 1px 2px rgba(31,41,55,.05),0 6px 18px rgba(31,41,55,.05);
   --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -20,14 +20,14 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#111827; --surface:#1F2937; --ink:#E5E7EB; --muted:#9CA3AF; --line:#374151; --soft:#1A2230;
-  --lys:#60A5FA; --lys-flate:#1B2A40; --lenke:#60A5FA;
+  --lys:#60A5FA; --lys-flate:#1B2A40; --lenke:#60A5FA; --kart-senere:#374151; --kart-uten:#5B6675;
   --good:#6CC496; --bad:#EE8F80; --warn:#E2B660; --info:#B9AAF0;
   --skygge:none;
   --p-FRP:#5C86C9; --p-R:#C2483C; --p-PP:#A483D0; --p-AP:#EC4B5E; --p-H:#5B92EA;
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111827; --surface:#1F2937; --ink:#E5E7EB; --muted:#9CA3AF; --line:#374151; --soft:#1A2230;
-  --lys:#60A5FA; --lys-flate:#1B2A40; --lenke:#60A5FA;
+  --lys:#60A5FA; --lys-flate:#1B2A40; --lenke:#60A5FA; --kart-senere:#374151; --kart-uten:#5B6675;
   --good:#6CC496; --bad:#EE8F80; --warn:#E2B660; --info:#B9AAF0;
   --skygge:none;
   --p-FRP:#5C86C9; --p-R:#C2483C; --p-PP:#A483D0; --p-AP:#EC4B5E; --p-H:#5B92EA;
@@ -120,7 +120,13 @@ button,input,select{font:inherit;color:inherit}
 .kart-ramme{margin:0;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
 .kart{display:block;width:100%;height:auto;max-height:70vh}
 .kart path{stroke:var(--surface);stroke-width:1;stroke-linejoin:round}
-.kart-uten path{fill:var(--line)}
+.kart-uten path{fill:var(--kart-uten)}
+.kart-senere path{fill:var(--kart-senere)}
+.kart-forklaring{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px}
+.kart-forklaring span{display:inline-flex;align-items:center;gap:6px}
+.kart-merke{display:inline-block;width:12px;height:12px;border-radius:3px}
+.kart-merke.med{background:var(--lenke)}
+.kart-merke.senere{background:var(--kart-senere)}
 .kart text{font:600 15px var(--font);fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:3px;pointer-events:none}
 .kart-med path{fill:var(--lenke);transition:fill .15s}
 .kart-med a:hover path,.kart-med a:focus path{fill:var(--lys)}
