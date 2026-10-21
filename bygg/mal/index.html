@@ -51,25 +51,30 @@
   </div>
 
   <!-- Tre spørsmål: hva skal skje, hva ble bestemt, hvordan ble det stemt.
+       Kortene har farget overskrift som på saken (.sakkort i stil.css).
        Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
   <div class="kort3">
-    <section class="kort">
-      <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span>Hva kommer opp?</h2>
-      <p class="liten muted">Sakene på sakslisten til de neste møtene.</p>
-      <div id="paavei"></div>
-      <a class="kort-lenke" href="#saker/pa-vei" data-go="saker" data-fane="pa-vei">Alle saker på vei</a>
+    <section class="kort sakkort okort fram">
+      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span><span class="khode"><h2>Hva kommer opp?</h2><span>Sakene på sakslisten til de neste møtene.</span></span></div>
+      <div class="kinnhold">
+        <div id="paavei"></div>
+        <a class="kort-lenke" href="#saker/pa-vei" data-go="saker" data-fane="pa-vei">Alle saker på vei</a>
+      </div>
     </section>
-    <section class="kort">
-      <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span>Hva er vedtatt?</h2>
-      <p class="liten muted">Det siste som er bestemt, der protokollen er publisert. Setningen under hver sak er skrevet av KI ut fra saksdokumentene.</p>
-      <ol class="liste nylig" id="nylig"></ol>
-      <a class="kort-lenke" href="#saker">Alle saker</a>
+    <section class="kort sakkort okort vedtak">
+      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span><span class="khode"><h2>Hva er vedtatt?</h2><span>Det siste som er bestemt, der protokollen er publisert.</span></span></div>
+      <div class="kinnhold">
+        <p class="liten muted">Setningen under hver sak er skrevet av KI ut fra saksdokumentene.</p>
+        <ol class="liste nylig" id="nylig"></ol>
+        <a class="kort-lenke" href="#saker">Alle saker</a>
+      </div>
     </section>
-    <section class="kort">
-      <h2 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>Se stemmene</h2>
-      <p class="liten muted">Hvordan hver folkevalgt stemte, slik protokollen viser det.</p>
-      <div id="stemkort"></div>
-      <a class="kort-lenke" href="#politikere/partiene">Hvem stemmer sammen</a>
+    <section class="kort sakkort okort sti">
+      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span><span class="khode"><h2>Se stemmene</h2><span>Hvordan hver folkevalgt stemte, slik protokollen viser det.</span></span></div>
+      <div class="kinnhold">
+        <div id="stemkort"></div>
+        <a class="kort-lenke" href="#politikere/partiene">Hvem stemmer sammen</a>
+      </div>
     </section>
   </div>
 
@@ -159,13 +164,18 @@
   </div>
   <div id="f-partiene" hidden>
     <p class="grunnlag" id="partgrunnlag"></p>
-    <section class="blokk"><h2>Hvem stemmer sammen?</h2>
-      <p class="liten muted">Hvor ofte to partier stemte likt, i prosent. Mørkere betyr oftere enige.</p>
-      <div class="tw"><table class="heat" id="heat"></table></div>
+    <!-- Kortene har farget overskrift som på saken: grått for stemmene, gult for de jevne. -->
+    <section class="sakkort sti">
+      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="khode"><h2>Hvem stemmer sammen?</h2><span>Hvor ofte to partier stemte likt, i prosent. Mørkere betyr oftere enige.</span></span></div>
+      <div class="kinnhold">
+        <div class="tw"><table class="heat" id="heat"></table></div>
+      </div>
     </section>
-    <section class="blokk"><h2>De jevneste avstemningene</h2>
-      <p class="liten muted">Avgjort med tre stemmer eller mindre. De som stemte annerledes enn resten av partiet, er markert.</p>
-      <div id="close"></div>
+    <section class="sakkort jevnt">
+      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span><span class="khode"><h2>De jevneste avstemningene</h2><span>Avgjort med tre stemmer eller mindre. De som stemte annerledes enn resten av partiet, er markert.</span></span></div>
+      <div class="kinnhold">
+        <div id="close"></div>
+      </div>
     </section>
   </div>
 </section>

@@ -280,6 +280,14 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .kort>.liten.muted{margin:0 0 4px}
 .kort-lenke{align-self:flex-start;margin-top:auto;padding-top:10px;font-weight:600;font-size:14.5px}
 .kort-lenke::after{content:" →"}
+/* Kortene på kommunens oversikt bruker .sakkort (farget overskrift, se Saksiden
+   under). .okort gjør dem like høye, med lenken nederst. */
+.kort.okort{padding:0}
+.kort3 .okort{margin:0;display:flex;flex-direction:column}
+.okort>.kinnhold{flex:1;display:flex;flex-direction:column;max-width:none;padding-top:6px}
+.okort>.kinnhold>.liten.muted{margin:6px 0 2px}
+.okort .khode h2{font-size:17px}
+.okort .nylig .bet{background:var(--lys-flate);border-radius:8px;padding:6px 10px;margin:6px 0 4px;font-size:14.5px;line-height:1.5}
 /* Møtene i kortene som en tidslinje: prikk og linje i lys blå. */
 .kort .mote-gr{margin:10px 0 0;padding-left:16px;border-left:2px solid var(--line)}
 .kort .mote-gr h3{font-size:15px;position:relative}
@@ -343,32 +351,17 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .sak .r{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:13.5px}
 .sak .m{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-size:13.5px;color:var(--muted)}
 @media (max-width:600px){.sak>a{grid-template-columns:minmax(0,1fr)}.sak .r{flex-direction:row;align-items:center;gap:10px}}
-.ai{border-left:3px solid var(--line);padding-left:14px;max-width:70ch;display:grid;gap:8px}
-.ai p{margin:0}
 .ki{justify-self:start;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 5px}
-.aikilde{font-size:13.5px;color:var(--muted)}
 .knapp{margin-top:14px;background:none;border:1px solid var(--ink);border-radius:4px;padding:7px 14px;cursor:pointer;font-weight:600}
 .knapp:hover{background:var(--ink);color:var(--bg)}
 
-/* Saksiden: saksgangen som en loddrett tråd, og forslagene som bokser.
-   Forslaget som ble vedtatt eller vant, har grønn ramme. */
+/* Saksiden: et toppkort med saksgangen som en linje, og kort under for
+   sammendraget, debatten, vedtaket og stemmene. Forslag som vant en
+   alternativ votering, står i bokser med grønn ramme. */
 .saksside .ingress h1{max-width:30ch}
 .saksside .ingress>.muted{margin-top:6px}
 .sak-status{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;font-size:14px}
-.saksside>.ai{margin-top:4px}
 .saksside .blokk>p{max-width:70ch}
-.trad{list-style:none;margin:8px 0 0 6px;padding:0 0 0 22px;border-left:2px solid var(--line)}
-.trad-steg{position:relative;padding:0 0 24px}
-.trad-steg:last-child{padding-bottom:0}
-.trad-steg::before{content:"";position:absolute;left:-30px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--muted);box-sizing:border-box}
-.trad-steg.rad::before{width:10px;height:10px;left:-28px;top:6px;border:0;background:var(--line)}
-.trad-steg.fram::before{border-style:dashed;border-width:2px;border-color:var(--lenke)}
-.trad-steg.slutt::before{background:var(--good);border-color:var(--good)}
-.trad-hode{font-size:16px}
-.trad-steg.rad .trad-hode b{font-weight:500}
-.trad-tekst{margin:2px 0 0;font-size:15px;max-width:70ch}
-.trad-steg.rad .trad-tekst{color:var(--muted)}
-.trad-lenker{margin:8px 0 0;color:var(--muted)}
 .fboks{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:10px 14px;margin-top:10px;max-width:640px;display:grid;gap:6px}
 .fboks.vant{border:2px solid var(--good);padding:9px 13px}
 .fboks-topp{display:flex;justify-content:space-between;align-items:baseline;gap:4px 14px;flex-wrap:wrap;font-size:15px}
@@ -382,10 +375,170 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .fboks details summary{font-size:14px}
 .fboks details>*+*{margin-top:8px}
 .fboks .names{padding:4px 0 0}
-.trad-steg>.merk{margin:8px 0 0;max-width:640px}
 .falt{margin-top:10px;max-width:640px}
 .falt>summary{font-size:14.5px}
 .fboks .why{margin:0;font-size:13.5px;color:var(--warn)}
+
+/* Toppkortet: saksgangen som en linje med ett punkt per utvalg. Rådene har
+   en liten prikk, og det siste punktet er grønt når saken er avgjort. */
+.tidslinje{display:flex;list-style:none;margin:16px 0 4px;padding:0}
+.tidslinje li{flex:1 1 0;position:relative;padding:20px 6px 0 0;min-width:0}
+.tidslinje li::before{content:"";position:absolute;top:6px;left:0;right:0;height:2px;background:var(--muted)}
+.tidslinje li.fram::before{background:none;border-top:2px dashed var(--muted)}
+.tidslinje li:last-child::before{display:none}
+.tidslinje li::after{content:"";position:absolute;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--muted);border:2px solid var(--muted)}
+.tidslinje li.rad::after{width:6px;height:6px;top:2px;left:2px}
+.tidslinje li.fram::after{background:var(--surface);border-color:var(--lenke)}
+.tidslinje li.slutt::after{background:var(--good);border-color:var(--good);width:12px;height:12px;top:-1px}
+.tidslinje button{all:unset;cursor:pointer;display:block;border-radius:6px}
+.tidslinje button:focus-visible{outline:2px solid var(--lenke);outline-offset:2px}
+.tidslinje b{display:block;font-size:13.5px;line-height:1.25;hyphens:manual}
+.tidslinje li.rad b{font-weight:500;color:var(--muted)}
+.tidslinje span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.tidslinje-navn{font-size:13px;color:var(--muted);background:var(--soft);border-radius:8px;padding:6px 10px;margin:8px 0 0}
+.betyr{background:var(--lys-flate);border-radius:10px;padding:12px 14px;margin:14px 0 0;font-size:16px;line-height:1.5;max-width:62ch}
+.betyr>b{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--lenke);margin-bottom:2px}
+.betyr .ki{text-transform:none;letter-spacing:0;font-size:10.5px;padding:0 4px}
+.tagrad{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;margin:12px 0 0}
+.saksside .tagrad .tags{flex:1;min-width:0;margin:0;display:flex;flex-wrap:wrap;gap:4px}
+/* Dokumenter: knappen fylles når listen er åpen, og listen står under. */
+.dokknapp{display:flex;align-items:center;gap:6px;font:inherit;font-size:13.5px;font-weight:600;padding:6px 10px;border:1px solid var(--lenke);color:var(--lenke);border-radius:8px;cursor:pointer;background:var(--surface);white-space:nowrap;transition:background .28s var(--glid),color .28s,box-shadow .28s,transform .18s}
+.dokknapp:active{transform:scale(.96)}
+.dokknapp[aria-expanded="true"]{background:var(--lenke);color:var(--surface);box-shadow:0 4px 14px color-mix(in srgb,var(--lenke) 35%,transparent)}
+.dokknapp .ant{font-size:11.5px;background:var(--lenke);color:var(--surface);border-radius:999px;padding:0 6px;transition:background .28s,color .28s}
+.dokknapp[aria-expanded="true"] .ant{background:var(--surface);color:var(--lenke)}
+.dokpil{transition:transform .28s var(--glid)}
+.dokknapp[aria-expanded="true"] .dokpil{transform:rotate(180deg)}
+.dokboks{flex-basis:100%}
+.dokliste{list-style:none;margin:8px 0 0;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(31,41,55,.10);max-width:520px}
+.dokliste a{display:flex;gap:10px;align-items:center;padding:8px;border-radius:8px;text-decoration:none;color:var(--ink);transition:background .18s,transform .18s}
+.dokliste a:hover{background:var(--soft);transform:translateX(2px)}
+.dokliste b{display:block;font-size:14.5px;color:var(--lenke)}
+.dokliste small{display:block;font-size:12.5px;color:var(--muted)}
+.dt{flex:none;width:34px;height:34px;border-radius:8px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:var(--bad)}
+.dt.n{color:var(--muted)}
+/* Snarveiene i en stor sak står fast øverst, med en strek for hvor langt man har lest. */
+.snarvei{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin:0 0 6px;scrollbar-width:none}
+.snarvei::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:var(--fremdrift,0%);background:var(--lenke);border-radius:2px}
+.snarvei button{flex:none;font:inherit;font-size:13.5px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap;transition:background .28s var(--glid),color .28s,border-color .28s}
+.snarvei button.her{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* Kortene, her og på de andre sidene. Overskriften har en blek farge etter
+   innholdet: blått for KI og det som kommer, lilla for debatten og forslagene,
+   grønt for vedtakene, gult for de jevne avstemningene og grått for stemmene og
+   resten. Flatene er blandet av --lys, --info, --good og --warn, ikke
+   partifargene (ADR-016). */
+.sakkort{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin:0 0 14px;overflow:hidden;scroll-margin-top:calc(var(--fast-topp,0px) + 64px);box-shadow:0 1px 2px rgba(31,41,55,.06),0 8px 24px rgba(31,41,55,.07)}
+.sakkort>summary,.sakkort>.ktopp{list-style:none;display:flex;align-items:center;gap:12px;padding:14px 16px;color:var(--ink);font-weight:400;font-size:inherit}
+.sakkort>summary::-webkit-details-marker{display:none}
+details.sakkort>summary:hover{filter:brightness(.985)}
+.sakkort.sum>summary,.sakkort.sum>.ktopp,.sakkort.fram>.ktopp{background:var(--lys-flate)}
+.sakkort.debatt>summary,.sakkort.debatt>.ktopp,.sakkort.fremmet>summary,.sakkort.fremmet>.ktopp{background:color-mix(in srgb,var(--info) 9%,var(--surface))}
+.sakkort.vedtak>summary,.sakkort.vedtak>.ktopp{background:color-mix(in srgb,var(--good) 9%,var(--surface))}
+.sakkort.jevnt>summary,.sakkort.jevnt>.ktopp{background:color-mix(in srgb,var(--warn) 10%,var(--surface))}
+.sakkort.sti>summary,.sakkort.sti>.ktopp{background:var(--soft)}
+.kikon{flex:none;width:36px;height:36px;border-radius:10px;background:var(--surface);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(31,41,55,.08)}
+.sum .kikon,.fram .kikon{color:var(--lenke)}.debatt .kikon,.fremmet .kikon{color:var(--info)}.vedtak .kikon{color:var(--good)}.jevnt .kikon{color:var(--warn)}
+.khode{flex:1;min-width:0}
+.khode h2{font-size:17.5px;margin:0;line-height:1.3}
+.khode span{font-size:13px;color:var(--muted)}
+.kpil{flex:none;color:var(--muted);transition:transform .28s var(--glid)}
+details[open]:not([data-s="closed"])>summary .kpil{transform:rotate(180deg)}
+.kinnhold{padding:2px 16px 16px;max-width:76ch}
+.kinnhold>p{margin:12px 0 0}
+.kinnhold .kilde{font-size:13px;color:var(--muted);margin-top:12px}
+.mer{background:none;border:0;padding:6px 0 0;color:var(--lenke);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+/* Debatten: hovedlinjene som ingress, og hvert punkt som en boble med partiets farge i kanten. */
+.hovedlinje{font-size:16px;line-height:1.6;border-left:3px solid var(--info);padding:2px 0 2px 12px}
+.innlegg{list-style:none;padding:0;margin:12px 0 0}
+.innlegg li{border-left:4px solid var(--parti,var(--muted));background:var(--soft);border-radius:4px 12px 12px 4px;padding:10px 12px;margin:10px 0;font-size:15px;line-height:1.5}
+.innlegg li[hidden]{display:none}
+.innlegg p{margin:0}
+.itopp{display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.innlegg .pm{background:var(--surface);margin:0}
+.innlegg .tid{margin-left:auto;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);text-decoration:none;white-space:nowrap}
+.innlegg .tid:hover{border-color:var(--lenke)}
+.pm{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:1px 7px 1px 5px;border-radius:5px;background:var(--soft);margin:0 3px 3px 0;white-space:nowrap}
+.pm i{width:9px;height:9px;border-radius:2px;display:inline-block}
+/* Vedtaket: nummer i grønne sirkler på en linje, lilla for punkter fra
+   forslag i møtet, og stemmetallet ved avsnittet: grønt, eller gult når det var jevnt. */
+ol.vedtak{list-style:none;padding:0;margin:14px 0 0;position:relative;counter-reset:p}
+ol.vedtak::before{content:"";position:absolute;left:13px;top:16px;bottom:16px;width:2px;background:color-mix(in srgb,var(--good) 28%,transparent)}
+ol.vedtak li{position:relative;padding:8px 0 10px 42px;counter-increment:p}
+ol.vedtak li[hidden]{display:none}
+ol.vedtak li::before{content:counter(p);position:absolute;left:0;top:8px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--good);background:color-mix(in srgb,var(--good) 14%,var(--surface));box-shadow:0 0 0 3px var(--surface)}
+ol.vedtak li.ny::before{color:var(--info);background:color-mix(in srgb,var(--info) 14%,var(--surface))}
+.vtopp{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:28px;margin-bottom:4px}
+.nytt{font-size:11.5px;font-weight:600;color:var(--info);background:color-mix(in srgb,var(--info) 12%,transparent);padding:1px 7px;border-radius:5px}
+.vchip{margin-left:auto;display:inline-flex;align-items:center;gap:5px;flex:none;font:inherit;font-size:12.5px;font-weight:700;padding:2px 9px;border-radius:999px;border:1px solid transparent;cursor:pointer;color:var(--good);background:color-mix(in srgb,var(--good) 10%,var(--surface));font-variant-numeric:tabular-nums;transition:border-color .18s}
+.vchip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.vchip.knapt{color:var(--warn);background:color-mix(in srgb,var(--warn) 12%,var(--surface))}
+.vchip[aria-expanded="true"]{border-color:currentColor}
+.vtekst{font-size:15.5px;line-height:1.55}
+.vtekst.lang{max-height:calc(1.55em * 3);overflow:hidden;cursor:pointer;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent)}
+.vtekst.enkel{margin-top:12px}
+.vdetalj{background:var(--soft);border-radius:8px;padding:8px 10px;margin:6px 0 0;font-size:13.5px;display:grid;gap:6px}
+.vdetalj[hidden]{display:none}
+.vdetalj .bar,.vrad .bar{max-width:100%}
+.lenkeknapp{justify-self:start;background:none;border:0;padding:0;font:inherit;font-size:13.5px;color:var(--lenke);text-decoration:underline;cursor:pointer}
+.stempel{float:right;margin:12px 0 6px 12px;padding:3px 10px;border:2px solid var(--good);border-radius:6px;color:var(--good);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-6deg)}
+.stempel small{display:block;font-size:9.5px;letter-spacing:.04em;font-weight:600;text-align:center}
+.utfall{display:flex;align-items:baseline;gap:10px;margin:14px 0 6px}
+.utfall b{font-size:16px}.utfall b.ok{color:var(--good)}.utfall b.no{color:var(--bad)}
+.utfall span{font-size:13.5px;color:var(--muted)}
+.navnefold{margin-top:8px}
+/* Saksgangen og stemmene: møtene som en loddrett linje, med de samme prikkene som øverst. */
+.moter{margin:10px 0 0}
+.mdel{position:relative;padding-left:26px;scroll-margin-top:calc(var(--fast-topp,0px) + 64px)}
+.mdel::before{content:"";position:absolute;left:6px;top:24px;bottom:-14px;width:2px;background:var(--line)}
+.mdel:last-child::before{display:none}
+.mdel>summary,.msum{list-style:none;display:flex;align-items:flex-start;gap:8px;padding:12px 0;position:relative;color:var(--ink);font-weight:400;font-size:inherit}
+.mdel>summary::-webkit-details-marker{display:none}
+.mdel>summary::before,.msum::before{content:"";position:absolute;left:-26px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--muted);border:2px solid var(--muted)}
+.mdel.rad>summary::before,.mdel.rad>.msum::before{width:6px;height:6px;left:-24px;top:17px}
+.mdel.fram>summary::before,.mdel.fram>.msum::before{background:var(--surface);border-color:var(--lenke)}
+.mdel.slutt>summary::before,.mdel.slutt>.msum::before{background:var(--good);border-color:var(--good)}
+.mtittel{flex:1;min-width:0}.mtittel b{display:block;font-size:15.5px}.mtittel span{font-size:13px;color:var(--muted)}
+.mdel.rad .mtittel b{font-weight:500}
+.minnhold{padding:0 0 12px}
+.mtekst{margin:0 0 8px;font-size:15px}
+.mlenker{margin:10px 0 0;color:var(--muted)}
+.minnhold .merk{margin:0 0 10px}
+.skille{background:var(--soft);border-radius:10px;padding:10px 12px;margin:0 0 10px;font-size:14px}
+.skille .side{margin:6px 0 0}
+.skille p{margin:6px 0 0}
+.vrader{list-style:none;padding:0;margin:0}
+.vrad{border-top:1px solid var(--line);scroll-margin-top:calc(var(--fast-topp,0px) + 64px);border-radius:4px}
+.vrad>button{all:unset;display:block;width:100%;box-sizing:border-box;padding:9px 0;cursor:pointer}
+.vrad>button:focus-visible{outline:2px solid var(--lenke);outline-offset:2px}
+.vlinje{display:flex;gap:10px;align-items:baseline;font-size:14.5px;line-height:1.4;margin-bottom:6px}
+.vt{flex:1;min-width:0}
+.vutf{font-size:12.5px;font-weight:700;white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
+.vutf.ok{color:var(--good)}.vutf.no{color:var(--bad)}
+.vrad .vdetalj{margin:0 0 10px}
+.vrad .why{margin:0;color:var(--warn)}
+.vdetalj .fboks{margin-top:0}
+
+/* Bevegelse (se BEVEGELSE i app.js). Kortene glir opp når de kommer inn på
+   skjermen, stemplet slås ned, tidslinjen tegnes og stolpene fylles. Klassen
+   bev settes av skriptet, så uten skript eller med mindre bevegelse vises alt
+   med en gang. */
+:root{--glid:cubic-bezier(.2,.8,.2,1)}
+.bev .sakkort{transition:opacity .55s var(--glid),transform .55s var(--glid)}
+.bev .sakkort:not(.synlig){opacity:0;transform:translateY(16px)}
+.bev .stempel:not(.slag){opacity:0}
+.stempel.slag{animation:stempel .6s cubic-bezier(.3,1.5,.5,1) both}
+.saksside .tidslinje li::before{transform-origin:left;animation:linje .45s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 80ms)}
+.saksside .tidslinje li::after{animation:prikk .3s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms)}
+.saksside .tidslinje li>*{animation:inn .35s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 40ms)}
+.saksside .bar,.moteside .bar,.profil .bar,.maaler>i,#close .bar,#stemkort .bar{transform-origin:left;animation:linje .6s var(--glid) both}
+@keyframes linje{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes prikk{from{transform:scale(0)}60%{transform:scale(1.25)}to{transform:scale(1)}}
+@keyframes tone{from{opacity:0}to{opacity:1}}
+@keyframes inn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes stempel{from{opacity:0;transform:rotate(-6deg) scale(2.4)}55%{opacity:1;transform:rotate(-6deg) scale(.9)}to{opacity:1;transform:rotate(-6deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
 
 /* Møter */
 .mnd{font-size:17px;margin:26px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
@@ -432,11 +585,23 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .mote-sak .o{font-size:14px;color:var(--muted)}
 .mote-sak p{margin:4px 0 0}
 .mote-sak .ki{margin-right:4px}
+.mote-sak .bar{margin:6px 0 2px;max-width:420px}
+.mote-sak-topp .mono{white-space:nowrap}
+/* «Hva betyr det?» i kortform, med den samme blå flaten som på saken. */
+.mote-sak .mbetyr{background:var(--lys-flate);border-radius:8px;padding:7px 10px;margin:6px 0 2px;font-size:15px;line-height:1.5}
+/* Møtesiden: toppkortet slutter med status og Dokumenter, som på saken, og sakene står i et kort. */
+.tagrad>.st{flex:1;min-width:0;align-self:center;white-space:normal}
+.sakkort .mote-saker{border-top:0}
+.sakkort .mote-saker>li:last-child{border-bottom:0}
+.moteside .sakkort{margin-top:22px}
+.oppmote{margin:12px 0 0}
+.oppmote>p{margin:0 0 6px}
+.oppmote .bar{height:12px;border-radius:4px;max-width:520px}
+.pmrad{display:flex;flex-wrap:wrap;margin:8px 0 2px}
 .mnd a{color:inherit;text-decoration:none}
 .mnd a:hover{color:var(--lenke);text-decoration:underline}
 .mote-gr h3 a{color:inherit;text-decoration:none}
 .mote-gr h3 a:hover{color:var(--lenke);text-decoration:underline}
-.trad-hode a{color:inherit}
 
 /* Stemmer */
 .bar{display:flex;height:10px;border-radius:2px;overflow:hidden;background:var(--soft);gap:1px}
@@ -475,7 +640,13 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 @media (max-width:560px){.vrow{grid-template-columns:minmax(0,1fr) 48px 56px}.vrow>:first-child{grid-column:1/-1}}
 .v.for{color:var(--good);font-weight:700}.v.mot{color:var(--bad);font-weight:700}
 .jevn{display:grid;gap:5px;padding:10px 0;border-bottom:1px solid var(--line)}
-.jevn>div:first-child{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.jevn .vlinje{margin:0;flex-wrap:wrap;gap:2px 10px}
+.jevn .vt{flex:1 1 240px}
+.jevn:last-child{border-bottom:0}
+.jevn .pm{margin:0 2px 0 0;vertical-align:1px}
+/* Partiene: varmekartet kommer fram rad for rad. */
+#f-partiene .sakkort{margin-top:22px}
+#heat tr{animation:tone .35s var(--glid) both;animation-delay:calc(var(--i,0) * 45ms)}
 
 /* Politikere og profil */
 #partiboks{margin:4px 0 8px}
@@ -495,6 +666,24 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .profil details{margin-top:12px}
 .profil details>div{margin-top:8px}
 .oppsum{max-width:64ch}
+/* Profilen i kort, som saken. Tallene om stemmene står i tre ruter, og
+   stolpene fylles (.maaler). «For» og «Mot» står som merker. */
+.profil .sakkort{margin-top:22px}
+.profil .sakkort .tw{margin-top:8px}
+.tall3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 4px}
+@media (max-width:600px){.tall3{grid-template-columns:minmax(0,1fr)}}
+.tall3>div{background:var(--soft);border-radius:10px;padding:10px 12px;display:grid;gap:2px;align-content:start}
+.tall3 b{font-size:24px;line-height:1.2;font-variant-numeric:tabular-nums}
+.tall3 span{font-size:13.5px;color:var(--muted)}
+.maaler{display:block;height:6px;border-radius:999px;background:var(--line);overflow:hidden;margin-top:6px}
+.maaler>i{display:block;height:100%;border-radius:inherit;background:var(--good)}
+.mmaaler{display:inline-block;width:44px;margin:0 8px 0 0;vertical-align:middle}
+.mmaaler>i{background:var(--muted)}
+@media (max-width:600px){.mmaaler{display:none}.profil .sakkort .kinnhold{padding:2px 12px 14px}.profil .sakkort table{font-size:14px}.profil .sakkort th,.profil .sakkort td{padding-right:8px}}
+.vrow[hidden]{display:none}
+.vrow .v.for,.vrow .v.mot{justify-self:start;align-self:start;font-size:12.5px;border-radius:999px;padding:1px 8px}
+.vrow .v.for{background:color-mix(in srgb,var(--good) 12%,transparent)}
+.vrow .v.mot{background:color-mix(in srgb,var(--bad) 12%,transparent)}
 
 /* Bunn */
 .fot{border-top:1px solid var(--line);padding-top:16px;padding-bottom:40px;font-size:14px;color:var(--muted);display:grid;gap:4px}
@@ -557,6 +746,3 @@ a.opptak.tid{font-size:14px;white-space:nowrap}
 .mote .opptak-merke{display:flex;width:max-content;margin-top:4px}
 .kal-m .spill{margin-left:4px;vertical-align:-2px}
 .mote-sak-hoyre{display:inline-flex;flex-wrap:wrap;justify-content:flex-end;gap:4px 12px;align-items:baseline}
-.debatt-punkter{margin:0 0 12px;padding-left:20px;max-width:68ch}
-.debatt-punkter li{margin:8px 0}
-.debatt-kilde{border-top:1px solid var(--line);padding-top:8px;max-width:68ch}
