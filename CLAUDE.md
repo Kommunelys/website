@@ -75,7 +75,8 @@ lager/     all lesing og skriving av data/; resten av koden bruker bare denne
 kommuner/  det som er særegent for hver kommune: kilden, regelsettet (tolk),
            nivåene (nivaa) og visningen (navn, utvalg, organer)
 kommuner/<slug>/  partisider og tillatte navn for andre kommuner enn Steinkjer
-kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart)
+kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart),
+               og kandidatene med samme innsynsportal (kandidater.json, grå på kartet)
 data/          dataene slik de var ved byttet til databasen 6.10.2026 (ADR-019);
                oppdateres ikke lenger, bortsett fra de to filene for hånd
 data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene

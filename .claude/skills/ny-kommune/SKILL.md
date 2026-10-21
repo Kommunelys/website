@@ -32,24 +32,28 @@ Merket **STOPP** under. Vis da hva du har funnet, med tall, og vent på svar.
 
 1. Skaff navn, kommunenummer (fire sifre) og slug, for eksempel `snasa` (bare
    `a–z0–9-`).
-2. **Finn innsynsportalen.** Bruker kommunen Elements, er adressen
+2. **Se i `kommuner/kart/kandidater.json` først.** Der står kommunene i
+   Midt-Norge som svarte i Elements med tenant `<orgnr>_PROD-<orgnr>`
+   (21.10.2026). De vises i grått på kartet; når kommunen får data, blir den
+   blå av seg selv.
+3. **Finn innsynsportalen.** Bruker kommunen Elements, er adressen
    `https://prod01.elementscloud.no/publikum/<tenant>/…`.
    - `tenant` står i adressen.
    - `database` (en GUID) står i adressene til dokumentene.
-3. **Bekreft kilden med ett kall:**
+4. **Bekreft kilden med ett kall:**
    ```bash
    curl -s -H "tenant: <tenant>" -H "Accept: application/json" \
      "https://prod01.elementscloud.no/publikum/api/PredefinedQuery/DmbMeetings?year=<år>" | head -c 300
    ```
    - JSON med `MO_ID` og `MO_START` betyr riktig.
    - HTML betyr feil adresse (fallgruven «Feil API-adresse gir 200»).
-4. Bruker kommunen ikke Elements, trengs en ny kildeadapter. Det er et eget
+5. Bruker kommunen ikke Elements, trengs en ny kildeadapter. Det er et eget
    prosjekt. **STOPP.**
-5. **Velg `fra_aar`**, det første året som hentes. Som regel inneværende år.
+6. **Velg `fra_aar`**, det første året som hentes. Som regel inneværende år.
    - Hvert år koster rundt 25–40 minutter ved første henting (dokumentene,
      rundt 2 sekunder per dokument).
    - AI-analysen av et år koster rundt 10 dollar.
-6. **Kartet** på forsiden har bare Trøndelag (`kommuner/kart/trondelag.json`,
+7. **Kartet** på forsiden har bare Trøndelag (`kommuner/kart/trondelag.json`,
    38 kommuner). Ligger kommunen utenfor, må `bygg.lag_kart` utvides. **STOPP**
    hvis det gjelder.
 

@@ -1,0 +1,150 @@
+{
+ "merknad": "Kommuner som bruker samme innsynsportal (Elements, prod01.elementscloud.no) og kan legges inn senere. Vises i grått på kartet på forsiden. Funnet med ett kall per kommune mot DmbMeetings med tenant <orgnr>_PROD-<orgnr>; orgnr fra Enhetsregisteret. Kommuner som har data, vises som vanlig selv om de står her. Databasen (database-GUID) er ikke funnet ennå; se /ny-kommune.",
+ "kontrollert": "2026-10-21",
+ "kommuner": [
+  {
+   "kommunenr": "1579",
+   "navn": "Hustadvika",
+   "tenant": "921133642_PROD-921133642",
+   "moter_2026": 61
+  },
+  {
+   "kommunenr": "5007",
+   "navn": "Namsos - Nåavmesjenjaelmie",
+   "tenant": "942875967_PROD-942875967",
+   "moter_2026": 80
+  },
+  {
+   "kommunenr": "5021",
+   "navn": "Oppdal",
+   "tenant": "964983003_PROD-964983003",
+   "moter_2026": 74
+  },
+  {
+   "kommunenr": "5022",
+   "navn": "Rennebu",
+   "tenant": "940083672_PROD-940083672",
+   "moter_2026": 39
+  },
+  {
+   "kommunenr": "5026",
+   "navn": "Holtålen",
+   "tenant": "937697767_PROD-937697767",
+   "moter_2026": 34
+  },
+  {
+   "kommunenr": "5027",
+   "navn": "Midtre Gauldal",
+   "tenant": "970187715_PROD-970187715",
+   "moter_2026": 73
+  },
+  {
+   "kommunenr": "5031",
+   "navn": "Malvik",
+   "tenant": "971035560_PROD-971035560",
+   "moter_2026": 80
+  },
+  {
+   "kommunenr": "5032",
+   "navn": "Selbu",
+   "tenant": "971197609_PROD-971197609",
+   "moter_2026": 51
+  },
+  {
+   "kommunenr": "5033",
+   "navn": "Tydal",
+   "tenant": "864983472_PROD-864983472",
+   "moter_2026": 45
+  },
+  {
+   "kommunenr": "5034",
+   "navn": "Meråker",
+   "tenant": "835231712_PROD-835231712",
+   "moter_2026": 57
+  },
+  {
+   "kommunenr": "5035",
+   "navn": "Stjørdal",
+   "tenant": "939958851_PROD-939958851",
+   "moter_2026": 100
+  },
+  {
+   "kommunenr": "5036",
+   "navn": "Frosta",
+   "tenant": "944482253_PROD-944482253",
+   "moter_2026": 53
+  },
+  {
+   "kommunenr": "5038",
+   "navn": "Verdal",
+   "tenant": "938587418_PROD-938587418",
+   "moter_2026": 82
+  },
+  {
+   "kommunenr": "5041",
+   "navn": "Snåase - Snåsa",
+   "tenant": "964982031_PROD-964982031",
+   "moter_2026": 53
+  },
+  {
+   "kommunenr": "5042",
+   "navn": "Lierne",
+   "tenant": "972417963_PROD-972417963",
+   "moter_2026": 35
+  },
+  {
+   "kommunenr": "5044",
+   "navn": "Namsskogan",
+   "tenant": "864982212_PROD-864982212",
+   "moter_2026": 34
+  },
+  {
+   "kommunenr": "5045",
+   "navn": "Grong",
+   "tenant": "940010853_PROD-940010853",
+   "moter_2026": 22
+  },
+  {
+   "kommunenr": "5046",
+   "navn": "Høylandet",
+   "tenant": "959220476_PROD-959220476",
+   "moter_2026": 34
+  },
+  {
+   "kommunenr": "5047",
+   "navn": "Overhalla",
+   "tenant": "939896600_PROD-939896600",
+   "moter_2026": 32
+  },
+  {
+   "kommunenr": "5049",
+   "navn": "Flatanger",
+   "tenant": "845153272_PROD-845153272",
+   "moter_2026": 32
+  },
+  {
+   "kommunenr": "5052",
+   "navn": "Leka",
+   "tenant": "944484574_PROD-944484574",
+   "moter_2026": 47
+  },
+  {
+   "kommunenr": "5053",
+   "navn": "Inderøy",
+   "tenant": "997391853_PROD-997391853",
+   "moter_2026": 66
+  },
+  {
+   "kommunenr": "5056",
+   "navn": "Hitra",
+   "tenant": "938772924_PROD-938772924",
+   "moter_2026": 91
+  },
+  {
+   "kommunenr": "5060",
+   "navn": "Nærøysund",
+   "tenant": "921785410_PROD-921785410",
+   "moter_2026": 89
+  }
+ ]
+}
