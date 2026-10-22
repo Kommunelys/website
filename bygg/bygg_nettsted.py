@@ -730,10 +730,11 @@ def _del_detaljer(S: dict, VOT: dict, sakens_aar: dict[int, int]) -> dict[int, d
             sak_for[x["hid"]] = c["id"]
             if "vt" in x:
                 d["vt"][x["hid"]] = x.pop("vt")
-            # Debatten (ADR-026). Steget beholder et merke, så sidene vet at den finnes.
+            # Debatten (ADR-026). Steget beholder et merke, så sidene vet at den finnes:
+            # 1 med innlegg, 0 når ingen hadde ordet. Forsiden velger saker etter det.
             if "deb" in x:
-                d["d"][x["hid"]] = x.pop("deb")
-                x["db"] = 1
+                d["d"][x["hid"]] = deb = x.pop("deb")
+                x["db"] = 0 if deb.get("ing") else 1
     for m in VOT["moter"]:
         for s in m["saker"]:
             d = ut[sakens_aar[sak_for[s["hid"]]]] if s["hid"] in sak_for else None
