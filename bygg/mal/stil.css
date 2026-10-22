@@ -274,10 +274,7 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 /* Saker per måned */
 #mnd svg{width:100%;height:auto;max-height:240px;display:block}
 
-/* Forsiden: søk i toppfeltet, tre kort, og resten i én kolonne */
-.topp .sok{position:relative;max-width:460px;margin-top:18px}
-.topp .sok svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
-.topp .sok input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;font-size:16px}
+/* Kortene på Kommunelys-forsiden (forside.html) */
 .kort3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
 @media (max-width:900px){.kort3{grid-template-columns:minmax(0,1fr)}}
 .kort{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--skygge);padding:18px 18px 16px;display:flex;flex-direction:column;min-width:0}
@@ -286,35 +283,54 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .kort>.liten.muted{margin:0 0 4px}
 .kort-lenke{align-self:flex-start;margin-top:auto;padding-top:10px;font-weight:600;font-size:14.5px}
 .kort-lenke::after{content:" →"}
-/* Kortene på kommunens oversikt bruker .sakkort (farget overskrift, se Saksiden
-   under). .okort gjør dem like høye, med lenken nederst. */
-.kort.okort{padding:0}
-.kort3 .okort{margin:0;display:flex;flex-direction:column}
-.okort>.kinnhold{flex:1;display:flex;flex-direction:column;max-width:none;padding-top:6px}
-.okort>.kinnhold>.liten.muted{margin:6px 0 2px}
-.okort .khode h2{font-size:17px}
-.okort .nylig .bet{background:var(--lys-flate);border-radius:8px;padding:6px 10px;margin:6px 0 4px;font-size:14.5px;line-height:1.5}
-/* Møtene i kortene som en tidslinje: prikk og linje i lys blå. */
-.kort .mote-gr{margin:10px 0 0;padding-left:16px;border-left:2px solid var(--line)}
-.kort .mote-gr h3{font-size:15px;position:relative}
-.kort .mote-gr h3::before{content:"";position:absolute;left:-22px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--lys);box-shadow:0 0 0 3px var(--surface)}
-.kort .mote-gr>.liten{margin:2px 0 0}
-.kort .saksliste li{padding:7px 0;font-size:15px}
-.kort .saksliste li:last-child,.kort .nylig li:last-child{border-bottom:0}
-.kort .nylig li{padding:10px 0;font-size:15px}
-.kort .bar{margin:6px 0 3px}
-.forside>.blokk:not(#ks),.forside>.ny-her{max-width:760px}
-.forside .blokk>.liten{margin:6px 0 4px}
-.mote-gr{margin-top:16px}
-.mote-gr h3{font-size:16.5px;margin:0 0 2px}
-.mote-gr h3 .muted{font-weight:400}
-.saksliste{list-style:none;margin:0;padding:0}
-.saksliste li{padding:7px 0;border-bottom:1px solid var(--line)}
-.saksliste a.t,.nylig a.t{color:var(--ink);text-decoration:none;font-weight:600}
-.saksliste a.t:hover,.nylig a.t:hover{color:var(--lenke);text-decoration:underline}
-.nylig li{display:block;padding:12px 0}
-.nylig .bet{margin:4px 0 2px;color:var(--ink);max-width:68ch}
-.ny-her{margin-top:40px;padding-top:14px;border-top:1px solid var(--line)}
+
+/* Kommunens oversikt handler om kommunestyret: siste og neste møte i
+   toppfeltet, de viktigste sakene som kort (.vkort, bygget på .sakkort med
+   saksidens tidslinje), og veier videre (.utforsk). */
+.ksnaa{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ksmote{display:grid;gap:1px;min-width:210px;padding:9px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);text-decoration:none;box-shadow:0 1px 2px rgba(31,41,55,.06)}
+.ksmote small{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lenke)}
+.ksmote b{font-size:15.5px}
+.ksmote span{font-size:13.5px;color:var(--muted)}
+.ksmote:hover{border-color:var(--lenke)}
+.forside>.blokk{margin-top:36px}
+.forside .blokk>.liten{margin:8px 0 0;max-width:80ch}
+.viktig{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+@media (max-width:820px){.viktig{grid-template-columns:minmax(0,1fr)}}
+.vkort{margin:0;padding:16px 18px;display:flex;flex-direction:column}
+.vtopp{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13.5px}
+.vtopp a{color:var(--muted)}
+.vkort h3{font-size:18.5px;line-height:1.3;margin:6px 0 0}
+.vkort h3 a{color:var(--ink);text-decoration:none}
+.vkort h3 a:hover{color:var(--lenke);text-decoration:underline}
+.vkort .bet{background:var(--lys-flate);border-radius:8px;padding:8px 12px;margin:10px 0 0;font-size:15px;line-height:1.5}
+.vkort .tidslinje{margin:18px 0 0}
+.vfakta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0 4px}
+.vcelle{min-width:0;border-radius:10px;padding:10px 12px;font-size:14.5px}
+.vcelle.debatt{background:color-mix(in srgb,var(--info) 8%,var(--surface))}
+.vcelle.vedtak{background:color-mix(in srgb,var(--good) 8%,var(--surface))}
+.vcelle p{margin:4px 0 0}
+.vcelle .liten{font-size:13px}
+.vcelle .bar{margin:6px 0 2px}
+.vcelle>div{margin-top:6px}
+.vcelle .pm{background:var(--surface)}
+.vcelle .opptak{margin-top:6px}
+.vl{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.vcelle.debatt .vl svg{color:var(--info)} .vcelle.vedtak .vl svg{color:var(--good)}
+.utforsk .sok{position:relative;display:block;max-width:560px}
+.utforsk .sok svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.utforsk .sok input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;font-size:16px}
+.temaer{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.temaer a{padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;text-decoration:none}
+.temaer a:hover{border-color:var(--lenke);color:var(--lenke)}
+.temaer .ant{color:var(--muted);font-size:12.5px}
+.veier{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.veier a{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--skygge);color:var(--ink);text-decoration:none}
+.veier a:hover{border-color:var(--lenke)}
+.veier .kikon{color:var(--lenke);background:var(--lys-flate);box-shadow:none}
+.veier b{display:block;font-size:16px}
+.veier a:hover b{color:var(--lenke)}
+.veier small{display:block;margin-top:2px;font-size:13.5px;line-height:1.45;color:var(--muted)}
 
 /* Saksflyt og utvalg */
 .flyt{margin:0 0 12px;padding-left:22px;display:grid;gap:8px}
@@ -533,10 +549,10 @@ ol.vedtak li.ny::before{color:var(--info);background:color-mix(in srgb,var(--inf
 .bev .sakkort:not(.synlig){opacity:0;transform:translateY(16px)}
 .bev .stempel:not(.slag){opacity:0}
 .stempel.slag{animation:stempel .6s cubic-bezier(.3,1.5,.5,1) both}
-.saksside .tidslinje li::before{transform-origin:left;animation:linje .45s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 80ms)}
-.saksside .tidslinje li::after{animation:prikk .3s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms)}
-.saksside .tidslinje li>*{animation:inn .35s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 40ms)}
-.saksside .bar,.moteside .bar,.profil .bar,.maaler>i,#close .bar,#stemkort .bar{transform-origin:left;animation:linje .6s var(--glid) both}
+.saksside .tidslinje li::before,.vkort .tidslinje li::before{transform-origin:left;animation:linje .45s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 80ms)}
+.saksside .tidslinje li::after,.vkort .tidslinje li::after{animation:prikk .3s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms)}
+.saksside .tidslinje li>*,.vkort .tidslinje li>*{animation:inn .35s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 40ms)}
+.saksside .bar,.moteside .bar,.profil .bar,.maaler>i,#close .bar,.vcelle .bar{transform-origin:left;animation:linje .6s var(--glid) both}
 @keyframes linje{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes prikk{from{transform:scale(0)}60%{transform:scale(1.25)}to{transform:scale(1)}}
 @keyframes tone{from{opacity:0}to{opacity:1}}

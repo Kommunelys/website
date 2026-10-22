@@ -44,51 +44,33 @@
 <!-- OVERSIKT -->
 <section id="v-oversikt" class="forside">
   <div class="topp">
-    <h1>Kommunepolitikken i {{kommune}}</h1>
-    <p class="ingress-tekst">Vi forklarer sakene i enkelt språk, viser hvordan de folkevalgte stemte, og lenker til originaldokumentene.</p>
-    <p id="akkurat"></p>
-    <label class="sok"><span class="vh">Søk i sakene</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="q0" type="search" placeholder="Søk i sakene"></label>
+    <h1>Hva bestemmer kommunestyret i {{kommune}}?</h1>
+    <p class="ingress-tekst">Kommunestyret avgjør de største sakene i kommunen. Her ser du hvor sakene har vært, hva partiene sa i debatten, og hvordan de folkevalgte stemte.</p>
+    <div class="ksnaa" id="ksnaa"></div>
   </div>
 
-  <!-- Tre spørsmål: hva skal skje, hva ble bestemt, hvordan ble det stemt.
-       Kortene har farget overskrift som på saken (.sakkort i stil.css).
-       Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
-  <div class="kort3">
-    <section class="kort sakkort okort fram">
-      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span><span class="khode"><h2>Hva kommer opp?</h2><span>Sakene på sakslisten til de neste møtene.</span></span></div>
-      <div class="kinnhold">
-        <div id="paavei"></div>
-        <a class="kort-lenke" href="#saker/pa-vei" data-go="saker" data-fane="pa-vei">Alle saker på vei</a>
-      </div>
-    </section>
-    <section class="kort sakkort okort vedtak">
-      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span><span class="khode"><h2>Hva er vedtatt?</h2><span>Det siste som er bestemt, der protokollen er publisert.</span></span></div>
-      <div class="kinnhold">
-        <p class="liten muted">Setningen under hver sak er skrevet av KI ut fra saksdokumentene.</p>
-        <ol class="liste nylig" id="nylig"></ol>
-        <a class="kort-lenke" href="#saker">Alle saker</a>
-      </div>
-    </section>
-    <section class="kort sakkort okort sti">
-      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span><span class="khode"><h2>Se stemmene</h2><span>Hvordan hver folkevalgt stemte, slik protokollen viser det.</span></span></div>
-      <div class="kinnhold">
-        <div id="stemkort"></div>
-        <a class="kort-lenke" href="#politikere/partiene">Hvem stemmer sammen</a>
-      </div>
-    </section>
-  </div>
-
-  <section class="blokk" id="ks">
-    <div class="hode2"><h2>Kommunestyret</h2><a href="#politikere">Alle politikerne</a></div>
-    <p class="liten muted" id="kssub"></p>
-    <div class="ks-grid">
-      <div id="hemi"></div>
-      <table class="seter"><thead><tr><th>Parti</th><th class="num">Plasser</th></tr></thead><tbody id="seats"></tbody></table>
-    </div>
-    <div id="ksparti" aria-live="polite"></div>
+  <!-- De viktigste sakene fra de siste kommunestyremøtene, valgt i app.js
+       (viktigeSaker). Hvert kort viser saksgangen, debatten og vedtaket, så
+       man ser hva saksiden gir før man åpner den. -->
+  <section class="blokk bred" id="viktige">
+    <div class="hode2"><h2>Viktige saker fra de siste møtene</h2><a href="#saker" data-go="saker" id="alle-ks">Alle sakene i kommunestyret</a></div>
+    <p class="liten muted" id="viktighjelp"></p>
+    <div class="viktig" id="viktig"></div>
   </section>
 
-  <p class="ny-her">Ny i kommunepolitikken? Les <a href="#hvem-bestemmer">hvordan en sak går gjennom systemet</a>.</p>
+  <!-- Videre: søk, temaene og resten av nettstedet.
+       Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
+  <section class="blokk bred utforsk">
+    <h2>Utforsk mer</h2>
+    <label class="sok"><span class="vh">Søk i sakene</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="q0" type="search" placeholder="Søk i alle sakene, for eksempel skole eller vei"></label>
+    <div class="temaer" id="temaer"></div>
+    <div class="veier">
+      <a href="#saker"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span><b>Alle sakene</b><small id="vei-saker">Fra kommunestyret, formannskapet og de andre utvalgene.</small></span></a>
+      <a href="#hvem-bestemmer"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span><span><b>Utvalgene</b><small>Formannskapet, hovedutvalgene og rådene, og hvordan en sak går mellom dem.</small></span></a>
+      <a href="#moter"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span><span><b>Møtene</b><small>Kalenderen med sakslister, protokoller og opptak.</small></span></a>
+      <a href="#politikere/partiene"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span><b>Partiene</b><small>Hvem som sitter i kommunestyret, og hvem som stemmer sammen.</small></span></a>
+    </div>
+  </section>
 </section>
 
 <!-- SAKER: tre faner etter hvor saken står, hver med egen adresse:
@@ -163,6 +145,17 @@
   <div class="tw"><table id="ftab" class="sorter"><thead><tr><th data-k="n">Navn</th><th data-k="p">Parti</th><th>Fast medlem i</th><th>Varamedlem i</th><th class="num" data-k="m">Møtt</th><th class="num" data-k="f">Forslag</th></tr></thead><tbody></tbody></table></div>
   </div>
   <div id="f-partiene" hidden>
+    <!-- Kommunestyret: halvsirkel og partiliste. Et parti viser hvem som sitter der. -->
+    <section class="sakkort sti" id="ks">
+      <div class="ktopp"><span class="kikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></svg></span><span class="khode"><h2>Kommunestyret</h2><span id="kssub"></span></span></div>
+      <div class="kinnhold">
+        <div class="ks-grid">
+          <div id="hemi"></div>
+          <table class="seter"><thead><tr><th>Parti</th><th class="num">Plasser</th></tr></thead><tbody id="seats"></tbody></table>
+        </div>
+        <div id="ksparti" aria-live="polite"></div>
+      </div>
+    </section>
     <p class="grunnlag" id="partgrunnlag"></p>
     <!-- Kortene har farget overskrift som på saken: grått for stemmene, gult for de jevne. -->
     <section class="sakkort sti">

@@ -117,77 +117,16 @@ function stemmeStat(n){
 }
 
 /* ---------- OVERSIKT ---------- */
-/* Forsiden svarer på tre spørsmål i hvert sitt kort: hva skal skje, hva ble
-   bestemt, og hvordan ble det stemt. Under kortene: kommunestyret. Ingen
-   nøkkeltall; de hjelper ikke innbyggeren med å forstå hva kommunen gjør.
-   Kortene viser lite og lenker videre til hele listen. */
+/* Forsiden handler om kommunestyret: de siste og neste møtene øverst, så de
+   viktigste sakene fra de siste møtene, og til slutt veier videre. Kortene
+   tegnes nederst i filen (visViktige), fordi de bruker saksidens tidslinje
+   og stemmestolpe. */
 const meetings=S.meetings;
-const upcoming=meetings.filter(m=>isFut(m.date));
-const nextM=upcoming[0];
-const tilB=PS.filter(c=>c.next);
 const RAD=K.rad;
 const UKEDAG=['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
 const naar=d=>`${UKEDAG[new Date(d.slice(0,10)+'T12:00').getDay()]} ${ddl(d)}`;
 const sakLenke=(c,hid)=>`<a class="t" href="${sakUrl(hid)}">${esc(tittel(c))}</a>`;
 const smaa=s=>s.charAt(0).toLowerCase()+s.slice(1);
-/* Saker gruppert per møte: «Formannskapet onsdag 8. oktober», med de første sakene. */
-function moteGrupper(saker,steg,maks,sorter){
-  const per=new Map();
-  saker.forEach(c=>{const x=steg(c);if(!x)return;if(!per.has(x.mid))per.set(x.mid,{x,saker:[]});per.get(x.mid).saker.push(c)});
-  return [...per.values()].sort(sorter).slice(0,maks);
-}
-function moteHtml(g,vis,ekstra,mer){
-  return `<div class="mote-gr"><h3><a href="#mote/${g.x.mid}">${esc(utName(g.x.sc))}</a> <span class="muted">${naar(g.x.date)}</span></h3>
-    <ul class="saksliste">${g.saker.slice(0,vis).map(c=>`<li>${sakLenke(c,g.x.hid)}${ekstra?ekstra(c,g):''}</li>`).join('')}</ul>
-    ${g.saker.length>vis?`<p class="liten">${mer(g)}</p>`:''}</div>`;
-}
-
-/* Hva skal skje: de neste politiske møtene og sakene på sakslisten. Råd som
-   bare gir uttalelse, hoppes over; saken vises under neste politiske møte. */
-(function(){
-  const steg=c=>c.st.find(x=>isFut(x.date)&&!RAD.includes(x.sc));
-  const gr=moteGrupper(tilB,steg,2,(a,b)=>a.x.date.localeCompare(b.x.date)||(b.x.sc===KSK)-(a.x.sc===KSK));
-  let h=gr.map(g=>moteHtml(g,3,
-    (c,g)=>c.ks&&g.x.sc!==KSK?' <span class="liten muted">· skal videre til kommunestyret</span>':'',
-    g=>`<a href="#saker/pa-vei" data-go="saker" data-fane="pa-vei" data-ut="${g.x.sc}">${antall(g.saker.length-3,'sak','saker')} til i dette møtet</a>`)).join('');
-  const ksM=upcoming.find(m=>m.sc===KSK);
-  if(ksM&&!gr.some(g=>g.x.mid===ksM.id))
-    h+=`<p class="liten muted">Kommunestyret møtes ${naar(ksM.date)}.${ksM.nps?` ${antall(ksM.nps,'politisk sak','politiske saker')} står på sakslisten.`:' Sakslisten er ikke publisert ennå.'}</p>`;
-  $('paavei').innerHTML=h||'<p class="muted">Ingen saker står på sakslisten til et kommende møte.</p>';
-})();
-
-/* Hva ble bestemt: de tre siste avgjørelsene med protokoll, høyst to per møte.
-   De siste 45 dagene kommer kommunestyret først, så formannskapet, så resten. */
-const venter=PS.filter(c=>c.status==='Venter på protokoll'&&c.last&&!RAD.includes(c.last.sc));
-(function(){
-  const nylig=c=>(Date.parse(TODAY)-Date.parse(c.last.date.slice(0,10)))/864e5<=45;
-  const vekt=c=>nylig(c)?({KS:0,FS:1}[c.last.sc]??2):3;
-  const avgjort=PS.filter(c=>['Vedtatt i kommunestyret','Behandlet'].includes(c.status)&&c.last&&c.last.pub&&!RAD.includes(c.last.sc))
-    .sort((a,b)=>vekt(a)-vekt(b)||b.last.date.localeCompare(a.last.date));
-  const perMote={},vis=[];
-  for(const c of avgjort){const k=c.last.mid;perMote[k]=(perMote[k]||0)+1;if(perMote[k]<=2)vis.push(c);if(vis.length>=3)break}
-  const stemmer=c=>{
-    const vs=ALLEV.filter(v=>v.hid===c.last.hid);
-    if(!vs.length)return '';
-    if(vs.every(v=>v.holdt))return 'stemmene vises ikke';
-    if(vs.every(v=>v.en))return 'enstemmig';
-    const pub=vs.filter(v=>!v.holdt&&!v.en);
-    if(vs.length===1&&!(pub[0].alt&&pub[0].alt.length))return pub[0].nmot?`${pub[0].nfor} mot ${pub[0].nmot} stemmer`:'alle stemte for';
-    return antall(vs.length,'avstemning','avstemninger');
-  };
-  $('nylig').innerHTML=vis.map(c=>{
-    const hvor=c.last.sc===KSK?`Vedtatt i kommunestyret ${ddl(c.last.date)}`:`Avgjort i ${smaa(utName(c.last.sc))} ${ddl(c.last.date)}`;
-    const st=stemmer(c);
-    return `<li>${sakLenke(c,c.last.hid)}${c.a&&c.a.bet?`<p class="bet">${esc(c.a.bet)}</p>`:''}
-      <div class="m">${hvor}${st?` · ${st}`:''}${MED_STEMMER.has(c.last.hid)?` · <a href="${sakUrl(c.last.hid)}">hvem stemte hva</a>`:''}</div></li>`}).join('')
-    ||'<li class="muted">Ingen avgjørelser med protokoll ennå.</li>';
-})();
-
-
-/* Én setning øverst om hvor ting står akkurat nå. */
-$('akkurat').textContent=[
-  `Akkurat nå er ${antall(tilB.length,'sak','saker')} på vei til behandling${venter.length?`, og ${venter.length} venter på protokoll`:''}.`,
-  nextM?`Neste møte er ${smaa(utName(nextM.sc))} ${naar(nextM.date)}.`:''].filter(Boolean).join(' ');
 
 /* Kommunestyret: halvsirkel og partiliste. Velg et parti for å se hvem som sitter der. */
 $('kssub').textContent=`${KSN} representanter ifølge medlemslisten ${dato(S.ks.hentet)}. Velg et parti for å se hvem som sitter der.`;
@@ -653,7 +592,8 @@ const nivaaSti=sc=>erRad(sc)?'rad':(K.hovedutvalg||[]).includes(sc)?'hu':sc;
 // Lange ord kan deles der linjen er smal: «Kommune-styret».
 const myk=t=>t.replace(/^(Kommune|Formann)(styret|skapet)$/,'$1­$2');
 const spenn=(a,b)=>a.slice(0,10)===b.slice(0,10)?dd(a):a.slice(5,7)===b.slice(5,7)?`${+a.slice(8,10)}.–${dd(b)}`:`${dd(a)}–${dd(b)}`;
-function tidslinje(c){
+// På forsiden (bareVis) er punktene ikke knapper: hele kortet går til saken.
+function tidslinje(c,bareVis=false){
   const stopp=[];
   stiSteg(c).forEach(x=>{const n=nivaaSti(x.sc),s=stopp.at(-1);
     if(s&&(n==='rad'||n==='hu')&&s.n===n)s.steg.push(x);else stopp.push({n,steg:[x]})});
@@ -664,7 +604,8 @@ function tidslinje(c){
     const navn=s.n==='rad'?antall(s.steg.length,'råd','råd'):fler?`${s.steg.length} hoved­utvalg`:esc(myk(utvKort(f.sc)));
     const cls=[s.n==='rad'?'rad':'',isFut(f.date)?'fram':'',i===stopp.length-1&&ferdig?'slutt':''].filter(Boolean).join(' ');
     const attr=fler||s.n==='rad'?`data-navn="${esc(s.steg.map(x=>utName(x.sc)).join(', '))} · ${esc(spenn(f.date,l.date))}"`:`data-til="mote-${f.hid}"`;
-    return `<li${cls?` class="${cls}"`:''} style="--i:${i}"><button type="button" ${attr}><b>${navn}</b><span>${spenn(f.date,l.date)}</span></button></li>`}).join('')}</ol>`;
+    const innhold=`<b>${navn}</b><span>${spenn(f.date,l.date)}</span>`;
+    return `<li${cls?` class="${cls}"`:''} style="--i:${i}">${bareVis?`<div>${innhold}</div>`:`<button type="button" ${attr}>${innhold}</button>`}</li>`}).join('')}</ol>`;
 }
 
 /* Dokumentene i saken bak én knapp ved temaene: saksframlegget, vedleggene og
@@ -1191,22 +1132,98 @@ document.addEventListener('click',e=>{
   const g=e.target.closest('a[data-go]');
   if(g){e.preventDefault();const o={};['fane','tag','ut'].forEach(k=>{if(g.dataset[k]!==undefined)o[k]=g.dataset[k]});go(g.dataset.go,o)}
 });
-/* Forsiden, «Se stemmene»: siste kommunestyremøte med publiserte avstemninger
-   der noen stemte imot, ellers siste møte i et annet utvalg. De jevneste først,
-   med lenke til saken. Står her fordi den bruker segBar. */
+/* Forsiden: kommunestyret. Står her fordi kortene bruker tidslinjen, fase()
+   og stemmestolpen fra saksiden. */
+const KS_MOTER=meetings.filter(m=>m.sc===KSK);
+const KS_HOLDT=KS_MOTER.filter(m=>!isFut(m.date)),KS_NESTE=KS_MOTER.find(m=>isFut(m.date));
+$('alle-ks').dataset.ut=KSK;
+// Toppfeltet: siste og neste møte, med lenke til møtet.
 (function(){
-  const omstridte=m=>m.saker.flatMap(s=>s.v.filter(omstridt));
-  const ms=[...VOT.moter].reverse();
-  const m=ms.find(m=>m.sc===KSK&&omstridte(m).length)||ms.find(m=>omstridte(m).length);
-  if(!m){$('stemkort').innerHTML='<p class="muted">Ingen avstemninger der noen stemte imot ennå.</p>';return}
-  // Én avstemning per sak, den jevneste, så kortet viser tre ulike saker.
-  const vs=omstridte(m),diff=v=>Math.abs(v.nfor-v.nmot),perSak=new Map();
-  vs.forEach(v=>{const x=perSak.get(v.hid);if(!x||diff(v)<diff(x))perSak.set(v.hid,v)});
-  const jevne=[...perSak.values()].sort((a,b)=>diff(a)-diff(b)).slice(0,3);
-  $('stemkort').innerHTML=`<div class="mote-gr"><h3>${esc(utName(m.sc))} <span class="muted">${naar(m.date)}</span></h3>
-    <p class="liten muted">${antall(vs.length,'avstemning','avstemninger')} der noen stemte imot. De jevneste:</p>
-    ${vs.some(v=>(v.merk||[]).length)?`<p class="liten merk">Protokollen fra møtet er selvmotsigende om hvem som møtte. Avstemningene er merket.</p>`:''}
-    <ul class="saksliste">${jevne.map(v=>`<li><a class="t" href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a>${segBar(v)}<div class="liten"><b class="num">${v.nfor} for, ${v.nmot} mot</b> · <span class="res ${v.vinner||v.res==='vedtatt'?'ok':'no'}">${resTxt(v)}</span></div></li>`).join('')}</ul></div>`;
+  const sist=KS_HOLDT.at(-1);
+  const venter=sist&&PS.some(c=>c.status==='Venter på protokoll'&&c.st.some(x=>x.mid===sist.id));
+  const mote=(m,etikett,tekst)=>`<a class="ksmote" href="#mote/${m.id}"><small>${etikett}</small><b>${naar(m.date)}</b><span>${tekst}</span></a>`;
+  $('ksnaa').innerHTML=[
+    sist?mote(sist,'Siste møte',[sist.nps?antall(sist.nps,'sak','saker'):'',venter?'protokollen kommer':'',sist.op?'opptak':''].filter(Boolean).join(' · ')):'',
+    KS_NESTE?mote(KS_NESTE,'Neste møte',KS_NESTE.nps?`${antall(KS_NESTE.nps,'sak','saker')} på sakslisten`:'Sakslisten er ikke publisert ennå'):''].join('');
+})();
+
+/* De viktigste sakene fra de tre siste møtene: to fra det siste og én fra
+   hvert av de to før, så det nyeste alltid er med. Har et møte for få, fylles
+   det opp fra de andre. Innen møtet får sakene poeng for det saksiden kan vise
+   fram: utvalgene saken har vært gjennom, debatt fra opptaket og jevne
+   avstemninger. Bare saker med sammendrag er med, og ikke saker om
+   enkeltpersoners verv (temaet «Folkevalgte»). */
+const VIKTIGE_PLASSER=[2,1,1];
+function viktigeSaker(){
+  const moter=KS_HOLDT.slice(-VIKTIGE_PLASSER.length).reverse();
+  const jevn=vs=>Math.min(...vs.map(v=>Math.abs(v.nfor-v.nmot)));
+  const perMote=moter.map(m=>PS.filter(c=>c.a&&c.a.bet&&!(c.tags||[]).includes('Folkevalgte')&&c.st.some(x=>x.mid===m.id)).map(c=>{
+    const x=c.st.find(x=>x.mid===m.id);
+    const forbi=stiSteg(c).filter(y=>y.date<x.date&&y.sc!==KSK).length;
+    const her=ALLEV.filter(v=>v.hid===x.hid&&omstridt(v));
+    const tidligere=ALLEV.filter(v=>v.hid!==x.hid&&SAK_FOR[v.hid]===c&&omstridt(v));
+    const p=Math.min(forbi,5)+(her.length?3+(jevn(her)<=5?2:0):tidligere.length?2:0)+(x.db?2:0);
+    return {c,x,m,p};
+  }).sort((a,b)=>b.p-a.p));
+  const valgt=perMote.flatMap((s,i)=>s.slice(0,VIKTIGE_PLASSER[i]));
+  const rest=perMote.flatMap((s,i)=>s.slice(VIKTIGE_PLASSER[i])).sort((a,b)=>b.p-a.p);
+  const n=VIKTIGE_PLASSER.reduce((a,b)=>a+b,0);
+  return [...valgt,...rest.slice(0,n-valgt.length)].sort((a,b)=>b.m.date.localeCompare(a.m.date)||b.p-a.p);
+}
+// Debatten: partiene som hadde ordet, når detaljene er hentet. Uten debatt
+// lenker kortet til opptaket, om det finnes.
+function vDebatt(x){
+  const d=STEG[x.hid].deb;
+  if(d&&!d.ing){const pa=ordne(PORDER_ALLE,[...new Set(d.p.flatMap(p=>p.pa||[]))]);
+    return `<p>${antall(d.n,'innlegg','innlegg')} fra ${pa.length===1?'ett parti':`${pa.length} partier`}</p><div>${pa.map(p=>pm(p)).join('')}</div>`}
+  if(x.db)return '<p class="muted">Henter debatten …</p>';
+  return x.op&&x.op.length?opptakLenke(x.op[0].u,'Se debatten i opptaket'):'';
+}
+// Vedtaket: den delte avstemningen som avgjorde saken, altså et forslag som ble
+// vedtatt (ikke et tillegg), ellers forslaget saken kom med. Venter møtet på
+// protokoll, vises avstemningen i møtet før, om den var delt.
+const vedtatt=v=>!!v.vinner||v.res==='vedtatt';
+function vVedtak(c,x){
+  if(c.status==='Venter på protokoll'||!x.pub){
+    const v=[...ALLEV].reverse().find(v=>SAK_FOR[v.hid]===c&&v.hid!==x.hid&&omstridt(v)&&!erRad(v.usc));
+    return `<p>Vedtaket og stemmene kommer med protokollen.</p>${v&&!IKKE_STEMMER?`<p class="liten">I ${esc(smaa(utName(v.usc)))}: <b class="num">${v.nfor} for, ${v.nmot} mot</b></p>${segBar(v)}`:''}`}
+  if(IKKE_STEMMER)return '<p>Stemmene vises ikke for denne kommunen ennå.</p>';
+  const vs=ALLEV.filter(v=>v.hid===x.hid);
+  if(!vs.length)return '<p>Vedtatt uten avstemning med navneliste.</p>';
+  const delt=vs.filter(omstridt);
+  const v=delt.find(v=>vedtatt(v)&&!/tillegg/.test(v.type||''))||delt.find(vedtatt)||delt.find(v=>v.type==='innstilling')||delt[0]||vs.find(v=>!v.holdt)||vs[0];
+  const flere=vs.filter(omstridt).length>1?`<p class="liten muted">${antall(vs.filter(omstridt).length,'delt avstemning','delte avstemninger')} i saken</p>`:'';
+  if(v.holdt)return '<p>Stemmene vises ikke ennå.</p>';
+  if(v.en)return '<p>Enstemmig</p>';
+  if(!omstridt(v))return '<p>Alle stemte for</p>';
+  const hvem=v.parti&&v.type!=='innstilling'&&!v.vinner?`Forslaget fra ${esc(v.parti)} ${vedtatt(v)?'vedtatt':'falt'}`:resTxt(v);
+  return `<p><span class="res ${vedtatt(v)?'ok':'no'}">${hvem}</span>, <b class="num">${v.nfor} mot ${v.nmot}</b></p>${segBar(v)}${flere}`;
+}
+function viktigKort({c,x,m}){
+  const f=fase(c);
+  const deb=x.db||(x.op&&x.op.length)?`<div class="vcelle debatt" id="vdeb-${x.hid}"><span class="vl">${ikon('debatt',16)}Debatten</span>${vDebatt(x)}</div>`:'';
+  return `<article class="sakkort vkort">
+    <div class="vtopp"><a href="#mote/${m.id}">Kommunestyret ${ddl(m.date)}</a><span class="st ${f.cls}">${c.status==='Vedtatt i kommunestyret'?'Vedtatt':esc(c.status)}</span></div>
+    <h3><a href="${sakUrl(x.hid)}">${esc(tittel(c))}</a></h3>
+    <p class="bet">${esc(c.a.bet)}</p>
+    ${tidslinje(c,true)}
+    <div class="vfakta">${deb}<div class="vcelle vedtak"><span class="vl">${ikon('vedtak',16)}Vedtaket</span>${vVedtak(c,x)}</div></div>
+    <a class="kort-lenke" href="${sakUrl(x.hid)}">Se hele saken</a>
+  </article>`;
+}
+(function(){
+  const vis=viktigeSaker();
+  const datoer=[...new Set(vis.map(o=>o.m.date))].sort().map(ddl);
+  $('viktighjelp').textContent=vis.length?`Fra møtene ${datoer.join(', ').replace(/, ([^,]*)$/,' og $1')}: sakene som har vært gjennom flest utvalg, hadde debatt eller ble avgjort med få stemmers overvekt. Setningen under tittelen er skrevet av KI ut fra saksdokumentene.`:'';
+  $('viktig').innerHTML=vis.map(viktigKort).join('')||'<p class="muted">Ingen saker med sammendrag fra kommunestyrets siste møter ennå.</p>';
+  // Debatten står i detaljene, som hentes nå. Da åpnes saken også raskere.
+  vis.filter(o=>o.x.db).forEach(o=>hentDetaljer(sakensAar(o.c)).then(()=>{const e=$('vdeb-'+o.x.hid);if(e)e.innerHTML=`<span class="vl">${ikon('debatt',16)}Debatten</span>${vDebatt(o.x)}`},()=>{const e=$('vdeb-'+o.x.hid);if(e)e.remove()}));
+})();
+// Temaene med flest saker, som snarveier til sakene.
+(function(){
+  const n={};PS.forEach(c=>(c.tags||[]).forEach(t=>{n[t]=(n[t]||0)+1}));
+  const top=Object.entries(n).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  $('temaer').innerHTML=top.length?`<span class="liten muted">Tema:</span>${top.map(([t,k])=>`<a href="#saker" data-go="saker" data-tag="${esc(t)}">${esc(t)} <span class="ant">${k}</span></a>`).join('')}`:'';
 })();
 renderList();renderMeet();renderHeat();
 $('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste, laget av en innbygger for innbyggerne. <a href="../">Andre kommuner</a> · <a href="../om/">Om ${esc(S.merke)}</a></div>`;
