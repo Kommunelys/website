@@ -414,6 +414,13 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   `?v=<sjekksum>`, ellers ser nye endringer feil ut hos dem som har vært
   innom før. Nye filer i `FELLES` trenger det samme, og det har
   `detaljer-<år>.json` (i `S.detaljer`).
+- **Søkemotorer og språkmodeller leser HTML-en, ikke appen.** Det som står
+  etter `#`, er ikke egne sider for dem, og de fleste KI-robotene kjører ikke
+  skript. Kommunesiden har derfor de siste sakene fra kommunestyret i HTML-en
+  (`_viktige`), og alle sidene har kanonisk adresse og Open Graph (`_deling`,
+  med `delingsbilde.png` fra `bygg/delingsbilde.html`). Bygget lager
+  `robots.txt` og `sitemap.xml`. En kommune med begrenset innsyn får ingen
+  saker i HTML-en og står ikke i sitemap.
 - **Detaljene er ikke i `data.js`.** Hele sammendraget, vedtakstekstene og
   forslagstekstene hentes når en sak åpnes (`hentDetaljer` i `app.js`). En ny
   visning som trenger dem, må vente på `hentDetaljer`, som sakssiden gjør.

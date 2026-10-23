@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{robots}}<title>{{kommune}} | {{merke}}</title>
-<meta name="description" content="Uoffisiell oversikt over politiske saker, møter og stemmegivning i {{kommune}} kommune, laget av en innbygger for innbyggerne.">
+{{robots}}<title>Politikken i {{kommune}}: saker, vedtak og stemmer | {{merke}}</title>
+{{deling}}
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="stylesheet" href="../stil.css?v={{v_stil}}">
@@ -32,11 +32,14 @@
 <main id="innhold" class="ramme">
 
 <!-- Feilmeldinger når siden ikke kan tegnes: uten JavaScript, eller når
-     data.js eller app.js ikke lastes eller stopper med en feil. -->
-<noscript><div class="lastefeil"><h2>Siden trenger JavaScript</h2>
-  <p>Sakene, møtene og stemmene tegnes med JavaScript, som er slått av i nettleseren din. Slå det på og last siden på nytt. <a href="../om/?kommune={{slug}}">Om {{merke}}</a> virker uten.</p></div></noscript>
-<div class="lastefeil" id="lastefeil" role="alert" hidden><h2>Siden kunne ikke vises</h2>
-  <p>Noe gikk galt da dataene for {{kommune}} skulle lastes. Prøv å laste siden på nytt om litt. Virker det fortsatt ikke, <a href="{{meld}}">meld fra på GitHub</a>.</p></div>
+     data.js eller app.js ikke lastes eller stopper med en feil. Søkemotorer
+     og språkmodeller leser ofte siden uten skript, og tar med tekst som er
+     skjult. Derfor er meldingen uten JavaScript kort og uten overskrift, og
+     feilmeldingen settes inn med skript, så den ikke står i HTML-en. -->
+<noscript><div class="lastefeil">
+  <p>Sakene, møtene og stemmene vises med JavaScript, som er slått av i nettleseren din. Slå det på og last siden på nytt. <a href="../om/?kommune={{slug}}">Om {{merke}}</a> virker uten.</p></div></noscript>
+<div class="lastefeil" id="lastefeil" role="alert" hidden></div>
+<script>document.getElementById('lastefeil').innerHTML='<h2>Siden kunne ikke vises</h2><p>Noe gikk galt da dataene for {{kommune}} skulle lastes. Prøv å laste siden på nytt om litt. Virker det fortsatt ikke, <a href="{{meld}}">meld fra på GitHub</a>.</p>'</script>
 
 <!-- Begrenset innsyn (ADR-024): innsyn.js forklarer her hvorfor innholdet
      ikke vises, og hvordan man logger inn. -->
@@ -52,10 +55,12 @@
 
   <!-- De viktigste sakene fra de siste kommunestyremøtene, valgt i app.js
        (viktigeSaker). Hvert kort viser saksgangen, debatten og vedtaket, så
-       man ser hva saksiden gir før man åpner den. -->
+       man ser hva saksiden gir før man åpner den. Bygget legger inn en
+       enkel utgave av kortene, for den som leser siden uten skript
+       (_viktige i bygg_nettsted.py). -->
   <section class="blokk bred" id="viktige">
     <div class="hode2"><h2>Viktige saker fra de siste møtene</h2><a href="#saker" data-go="saker" id="alle-ks">Alle sakene i kommunestyret</a></div>
-    <div class="viktig" id="viktig"></div>
+    <div class="viktig" id="viktig">{{viktige}}</div>
   </section>
 
   <!-- Videre: søk, temaene og resten av nettstedet.
@@ -203,7 +208,9 @@
   </section>
 </section>
 </main>
-<footer class="ramme fot" id="foot"></footer>
+<!-- app.js fyller bunnteksten med kilden og datoen. Uoffisiell står her også,
+     for den som leser siden uten skript. -->
+<footer class="ramme fot" id="foot"><div>{{merke}} er en uoffisiell tjeneste, laget av en innbygger for innbyggerne. <a href="../">Andre kommuner</a> · <a href="../om/?kommune={{slug}}">Om {{merke}}</a></div></footer>
 {{skript}}
 {{telling}}
 </body>

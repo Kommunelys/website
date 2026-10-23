@@ -65,7 +65,10 @@ MERKE = "Kommunelys"
 # gjaldt alle denne kommunen. Forsiden sender dem videre dit.
 GAMLE_LENKER = "steinkjer"
 # Felles for alle kommunene, lagt på roten.
-FELLES = ("stil.css", "app.js", "konto.js", "innsyn.js", "favicon.svg", "apple-touch-icon.png")
+FELLES = ("stil.css", "app.js", "konto.js", "innsyn.js", "favicon.svg", "apple-touch-icon.png", "delingsbilde.png")
+# Bildet en lenke får når den deles (Open Graph). Felles, uten kommunenavn.
+# Lages fra bygg/delingsbilde.html; se kommentaren der.
+DELINGSBILDE = "delingsbilde.png"
 # Står i bunnteksten på hver side. Bygget stopper uten (CLAUDE.md:
 # utvetydig uoffisiell). Ordlyden er prosjekteiers, 7.10.2026.
 UOFFISIELL = "er en uoffisiell tjeneste"
@@ -696,6 +699,38 @@ def _konto(rot: str) -> str:
             f'</div><script src="{rot}konto.js?v={_v("konto.js")}" defer></script>')
 
 
+def _url(sti: str = "") -> str:
+    """Den kanoniske adressen til en side, for eksempel «steinkjer/» eller «om/»."""
+    return f"{NETTSTED}{BASE}{sti}"
+
+
+def _deling(sti: str, tittel: str, beskrivelse: str) -> str:
+    """Beskrivelsen, den kanoniske adressen og Open Graph i <head>.
+
+    Den kanoniske adressen gjør at søkemotorene ser én side, også når den nås
+    som /om/?kommune=…. Open Graph gir tittel, tekst og bilde når lenken deles
+    på Facebook, Messenger og lignende.
+    """
+    a = html.escape
+    url = a(_url(sti))
+    bilde = a(f"{_url(DELINGSBILDE)}?v={_v(DELINGSBILDE)}")
+    return "\n".join([
+        f'<meta name="description" content="{a(beskrivelse)}">',
+        f'<link rel="canonical" href="{url}">',
+        '<meta property="og:type" content="website">',
+        f'<meta property="og:site_name" content="{MERKE}">',
+        '<meta property="og:locale" content="nb_NO">',
+        f'<meta property="og:title" content="{a(tittel)}">',
+        f'<meta property="og:description" content="{a(beskrivelse)}">',
+        f'<meta property="og:url" content="{url}">',
+        f'<meta property="og:image" content="{bilde}">',
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        f'<meta property="og:image:alt" content="{MERKE}: et klarere blikk på vedtakene">',
+        '<meta name="twitter:card" content="summary_large_image">',
+    ])
+
+
 def _merke_ikon() -> str:
     """Merket i SVG, felles for toppen på alle sidene."""
     return (MAL / "merke.svg").read_text("utf-8").strip()
@@ -763,12 +798,56 @@ def _skript(kommune: dict, begrenset: bool) -> str:
             f'data-epost="{a(KONTAKT_EPOST)}"></script>')
 
 
-def _kommuneside(kommune: dict, ut: Path, begrenset: bool = False) -> None:
+# Sakene på kommunesiden uten skript: fra så mange av de siste møtene i
+# kommunestyret, og høyst så mange.
+VIKTIGE_MOTER = 3
+VIKTIGE_ANTALL = 6
+
+
+def _viktige(S: dict) -> str:
+    """De siste sakene fra kommunestyret som HTML i #viktig.
+
+    Søkemotorer og språkmodeller som leser siden uten skript, ser da hva siden
+    handler om, ikke bare menyen. app.js tegner kortene på nytt (viktigeSaker).
+    Bare saker med et publisert sammendrag er med, og ikke saker om
+    enkeltpersoners verv (temaet «Folkevalgte»), som i app.js. Teksten er
+    merket KI og har lenke til kilden. Må kalles før _del_detaljer, som tar
+    ut kildene. Aldri for en kommune med begrenset innsyn: siden er åpen.
+    """
+    ks = profil().kommunestyre_kode
+    moter = sorted((m for m in S["meetings"] if m["sc"] == ks and m["date"][:10] < S["today"]),
+                   key=lambda m: m["date"])[-VIKTIGE_MOTER:]
+    kort = []
+    for m in reversed(moter):
+        for c in S["cases"]:
+            a = c.get("a")
+            if (c["typ"] != "PS" or c["formal"] or not a or not a.get("bet")
+                    or "Folkevalgte" in c["tags"] or not any(x["mid"] == m["id"] for x in c["st"])):
+                continue
+            kilde = (a.get("kilder") or [{"tittel": "saksframlegget", "url": c["doc"]}])[0]
+            if kilde["url"]:
+                kort.append((m, c, kilde))
+    e = html.escape
+    return "\n".join(
+        '<article class="sakkort vkort">'
+        f'<div class="vtopp"><a href="#mote/{m["id"]}">{e(m["ut"])} {_dato(dt.date.fromisoformat(m["date"][:10]))}</a>'
+        f'<span class="st {"ok" if c["status"].startswith("Vedtatt") else "bh"}">{e(c["status"])}</span></div>'
+        f'<h3><a href="#sak/{c["id"]}">{e(c["a"]["tk"])}</a></h3>'
+        f'<p class="bet"><span class="ki" title="Skrevet av KI ut fra saksdokumentene">KI</span> {e(c["a"]["bet"])}</p>'
+        f'<a class="kort-lenke" href="{e(kilde["url"])}">Kilde: {e(kilde["tittel"])}</a>'
+        '</article>'
+        for m, c, kilde in kort[:VIKTIGE_ANTALL])
+
+
+def _kommuneside(kommune: dict, ut: Path, begrenset: bool = False, viktige: str = "") -> None:
     """index.html for én kommune, med navnet fylt inn i malen."""
     navn = html.escape(kommune["navn"])
     side = _fyll((MAL / "index.html").read_text("utf-8"),
                  {"merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
-                  "kommune": navn, "skript": _skript(kommune, begrenset),
+                  "kommune": navn, "skript": _skript(kommune, begrenset), "viktige": viktige,
+                  "deling": _deling(f'{kommune["slug"]}/', f"Politikken i {kommune['navn']}: saker, vedtak og stemmer",
+                                    f"Uoffisiell oversikt over politiske saker, møter og stemmegivning i "
+                                    f"{kommune['navn']} kommune, laget av en innbygger for innbyggerne."),
                   # Søkemotorene ser bare innloggingen; den skal ikke vises i søk.
                   "robots": '<meta name="robots" content="noindex">\n' if begrenset else "",
                   "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
@@ -853,6 +932,9 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
     """Kommunelys-forsiden på roten, med en lenke til hver kommune."""
     side = _fyll((MAL / "forside.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(""), "v_stil": _v("stil.css"), "kommuner": _kommunekort(kommuner),
+        "deling": _deling("", f"{MERKE}: et klarere blikk på vedtakene",
+                          "Uoffisiell oversikt over politiske saker, møter og stemmegivning i kommunene, "
+                          "laget av en innbygger for innbyggerne."),
         "kart": _kart([k for k, _ in kommuner],
                       frozenset(k["slug"] for k, st in kommuner if st.get("begrenset"))),
         "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
@@ -864,6 +946,9 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
         "repo": REPO, "epost": html.escape(KONTAKT_EPOST), "telling": _telling(),
+        "deling": _deling("om/", f"Om {MERKE}",
+                          f"Hva {MERKE} er, og hvordan det er laget: kilder, hva som gjøres med kode og hva KI "
+                          "gjør, kvalitet, personvern og dekning. Uoffisiell og uavhengig."),
         # Navnene til kommunevalget i toppen (?kommune=). Ikke de med begrenset innsyn.
         "kommuner_json": json.dumps({k["slug"]: k["navn"] for k, st in kommuner if not st.get("begrenset")},
                                     ensure_ascii=False).replace("</", "<\\/")})
@@ -893,6 +978,29 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     if relative:
         raise SystemExit(f"404.html har relative lenker, som peker feil der siden vises: {relative}")
     (UT / "404.html").write_text(side, encoding="utf-8")
+
+
+def _robots_og_sitemap(kommuner: list[tuple[dict, dict]]) -> None:
+    """robots.txt og sitemap.xml på roten.
+
+    Alle robotene er velkomne, også de som henter sider til språkmodeller:
+    målet er at sakene blir funnet. Kartet over sidene har bare det som er
+    åpent for alle. Kommunene med begrenset innsyn er ikke med (ADR-024); de
+    har noindex, og robotene må kunne lese siden for å se det.
+    """
+    aapne = [(k, st) for k, st in kommuner if not st.get("begrenset")]
+    sist = max(_hentet(st) for _, st in kommuner).isoformat()
+    sider = [("", sist), ("om/", sist)] + [(f'{k["slug"]}/', _hentet(st).isoformat()) for k, st in aapne]
+    (UT / "robots.txt").write_text(
+        f"# {MERKE} er åpent for søkemotorer og språkmodeller.\n"
+        "User-agent: *\nAllow: /\n\n"
+        f"Sitemap: {_url('sitemap.xml')}\n", encoding="utf-8")
+    (UT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{html.escape(_url(sti))}</loc><lastmod>{dato}</lastmod></url>\n"
+                  for sti, dato in sider)
+        + "</urlset>\n", encoding="utf-8")
 
 
 def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
@@ -981,6 +1089,7 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
     if len(aarene) > 1:
         for c in S["cases"]:
             c["y"] = sakens_aar[c["id"]]
+    viktige = "" if begrenset else _viktige(S)
     detaljer = _del_detaljer(S, VOT, sakens_aar)
     S["detaljer"] = {}
     for a, d in sorted(detaljer.items()):
@@ -1001,7 +1110,7 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
             "const S=" + json.dumps(S, ensure_ascii=False, separators=(",", ":")) + ";\n"
             "const VOT=" + json.dumps(VOT, ensure_ascii=False, separators=(",", ":")) + ";\n",
             encoding="utf-8")
-    _kommuneside(kommune, ut, begrenset)
+    _kommuneside(kommune, ut, begrenset, viktige)
 
     status = {
         "bygget": dt.datetime.now().isoformat(timespec="seconds"),
@@ -1063,6 +1172,7 @@ def kjor_felles(drift_fil: str | None = None, utfall: dict[str, str] | None = No
     _forside(kommuner)
     _om(kommuner)
     _ikke_funnet(kommuner)
+    _robots_og_sitemap(kommuner)
 
     # Driftssiden publiseres ikke. Den lagres i databasen og vises i portalen
     # for prosjektadmin (ADR-020); --drift-fil STI lagrer den også lokalt.

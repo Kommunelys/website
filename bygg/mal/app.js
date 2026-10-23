@@ -1106,7 +1106,8 @@ function vis(){
   const v=VIEWS.includes(v0)?v0:'oversikt';
   VIEWS.forEach(x=>$('v-'+x).hidden=x!==v);
   document.querySelectorAll('#nav a').forEach(a=>{if(a.dataset.v===(MENY[v]||v))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-  document.title=(TITLER[v]?TITLER[v]+' – ':'')+`${K.navn} | ${S.merke}`;
+  // Oversikten har samme tittel som i index.html, som søkemotorene viser.
+  document.title=v==='oversikt'?`Politikken i ${K.navn}: saker, vedtak og stemmer | ${S.merke}`:(TITLER[v]?TITLER[v]+' – ':'')+`${K.navn} | ${S.merke}`;
   if(v==='saker'){const f=FANER[arg]?arg:'avgjort';if(f!==sakFane){sakFane=f;limit=40}renderList()}
   if(v==='moter'){kalMnd=/^\d{4}-\d{2}$/.test(arg||'')?arg:mndNaa;renderMeet()}
   if(v==='mote')renderMote(+arg);
