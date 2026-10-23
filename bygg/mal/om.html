@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Om {{merke}}</title>
-<meta name="description" content="Hvordan {{merke}} er laget: kilder, hva som gjøres med kode og hva KI gjør, kvalitet, personvern og dekning. Uoffisiell og uavhengig.">
+<meta name="description" content="Hva {{merke}} er, og hvordan det er laget: kilder, hva som gjøres med kode og hva KI gjør, kvalitet, personvern og dekning. Uoffisiell og uavhengig.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="stylesheet" href="../stil.css?v={{v_stil}}">
@@ -13,23 +13,48 @@
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="merke" href="../">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
+    <a class="merke" href="../" title="Forsiden, med alle kommunene">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
+    <a class="kommune" id="valgt" hidden></a>
     {{konto}}
   </div>
-  <nav class="ramme meny" aria-label="Hovedmeny">
+  <nav class="ramme meny" id="meny" aria-label="Hovedmeny">
     <a href="../">Kommuner</a>
     <a href="./" aria-current="page">Om {{merke}}</a>
   </nav>
 </header>
+<script>
+/* Kom brukeren fra en kommune (?kommune=steinkjer), står kommunen i toppen
+   med menyen derfra, så den ikke blir borte. Kommunene med begrenset innsyn
+   står ikke i listen; dem kjenner siden bare fra kontoen (konto.js). */
+(function () {
+  var slug = new URLSearchParams(location.search).get('kommune'), K = {{kommuner_json}}, navn = K[slug];
+  if (!navn) try {
+    JSON.parse(localStorage.getItem('kommunelys-begrenset') || '[]').forEach(function (x) { if (x.slug === slug) navn = x.navn; });
+  } catch (e) {}
+  if (!navn) return;
+  var rot = '../' + slug + '/', valgt = document.getElementById('valgt'), meny = document.getElementById('meny');
+  valgt.textContent = navn; valgt.href = rot + '#oversikt'; valgt.title = 'Oversikten for ' + navn; valgt.hidden = false;
+  meny.textContent = '';
+  [['oversikt', 'Oversikt'], ['saker', 'Saker'], ['moter', 'Møter'], ['politikere', 'Politikere'],
+   ['hvem-bestemmer', 'Hvem bestemmer'], ['', 'Om']].forEach(function (x) {
+    var a = document.createElement('a');
+    a.textContent = x[1];
+    if (x[0]) a.href = rot + '#' + x[0];
+    else { a.href = location.pathname + location.search; a.setAttribute('aria-current', 'page'); }
+    meny.append(a);
+  });
+})();
+</script>
 
 <!-- Felles for alle kommunene. Ingen kommune nevnes ved navn her; det som
      gjelder én kommune, står i dekningstabellen, som bygget lager. -->
 <main id="innhold" class="ramme rot om">
   <div class="ingress"><h1>Om {{merke}}</h1>
-  <p>Hvem som står bak, og hvordan tjenesten er laget.</p></div>
+  <p>Hva {{merke}} er, hvem som står bak, og hvordan tjenesten er laget.</p></div>
 
   <nav class="innhold" aria-label="Innhold på siden">
     <ol>
+      <li><a href="#hva">Hva er {{merke}}</a></li>
       <li><a href="#hvem">Hvem står bak</a></li>
       <li><a href="#laget">Slik er det laget</a></li>
       <li><a href="#status">Status på en sak</a></li>
@@ -40,6 +65,16 @@
   </nav>
 
   <div class="tekst">
+    <h2 id="hva">Hva er {{merke}}?</h2>
+    <p>Ett sted å følge politikken i kommunen: hva som kommer opp i møtene, hva som er vedtatt, og hvordan hver folkevalgt stemte. Alt bygges fra kommunens offentlige innsynsportal. {{merke}} er uoffisiell og uavhengig av både kommunene og partiene.</p>
+    <ul class="pastander">
+      <li><b>Kilden er kommunen.</b> Alt kommer fra kommunens innsynsportal, og hver sak lenker til originaldokumentet.</li>
+      <li><b>Tallene er talt, ikke tolket.</b> Stemmene leses ut av protokollen med kode og vises slik de står der.</li>
+      <li><b>Sammendragene er skrevet av KI og kan ha feil.</b> Originaldokumentet gjelder alltid.</li>
+      <li><b>Ikke alt er med.</b> Noe er skjermet, noen protokoller er ikke publisert, og noe holdes tilbake til det er vurdert.</li>
+      <li><b>Ingen meninger.</b> Alle partier måles med samme mål.</li>
+    </ul>
+
     <!-- Navnet her er et bevisst unntak fra regelen om navn på privatpersoner
          (ADR-018). Bindingene skal være sanne til enhver tid. -->
     <h2 id="hvem">Hvem står bak</h2>
@@ -62,14 +97,44 @@
     <p>Jeg er ansvarlig for innholdet og behandlingsansvarlig for personopplysningene på nettstedet. Har du funnet en feil, eller vil du si noe, skriv til <a href="mailto:{{epost}}">{{epost}}</a>.</p>
 
     <h2 id="laget">Slik er det laget</h2>
-    <p>Møter, saker, protokoller og medlemslister hentes fra kommunens offentlige innsynsportal. Hver sak lenker til originaldokumentet, og det er dokumentet som gjelder.</p>
-    <ul>
-      <li><b>Med kode:</b> stemmetall, navnelister, oppmøte, verv og saksgang. Antall navn må stemme med stemmetallet i protokollen.</li>
-      <li><b>Med KI:</b> tittel og sammendrag i klarspråk, skrevet av Claude fra Anthropic og merket «KI-sammendrag». Modellen får saksdokumentene, men ikke stemmetall eller navnelister. Hvert sammendrag kontrolleres mot dokumentene før det vises. Noen er rettet for hånd og merket «redigert av Kommunelys».</li>
-      <li><b>Fra opptakene:</b> der kommunen har opptak av møtet, lenker møtet og saken til opptaket, på starten av saken. Er opptaket tekstet av kommunen, oppsummerer KI debatten fra tekstingen, med partiene, men uten navn og uten stemmetall. Videoen ligger hos kommunen.</li>
-      <li><b>Når protokollen motsier seg selv,</b> vises avstemningen slik den står, med en merknad. KI eller en som vurderer saker for kommunen, kan vurdere slike avvik, men endrer aldri navn eller tall.</li>
-      <li><b>For hånd:</b> tolkningen av avstemningene er sjekket linje for linje mot ett kommunestyremøte, og lenkene til partiene er åpnet og sjekket.</li>
-    </ul>
+    <p>Møter, saker, protokoller og medlemslister hentes fra kommunens offentlige innsynsportal. Hver sak lenker til originaldokumentet, og det er dokumentet som gjelder. Det meste gjøres med vanlig kode som gir samme svar hver gang. KI brukes bare til tekst som forklarer, og den er alltid merket.</p>
+  </div>
+
+  <!-- Ikoner: Lucide (ISC-lisens), lagt inn som SVG. -->
+  <div class="kort3">
+    <section class="kort">
+      <h3 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></span>Med kode, uten KI</h3>
+      <ul class="punkt">
+        <li>Henting av møter, saker og dokumenter fra innsynsportalen.</li>
+        <li>Saksgangen, når samme sak går gjennom flere utvalg.</li>
+        <li>Stemmetall og navn fra protokollene. Antall navn sjekkes mot stemmetallet protokollen oppgir.</li>
+        <li>Oppmøte, verv og partier.</li>
+        <li>Hvor saken står nå.</li>
+        <li>Kontroll av hvert sammendrag mot dokumentene det bygger på.</li>
+      </ul>
+    </section>
+    <section class="kort">
+      <h3 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></svg></span>Med KI</h3>
+      <p class="liten muted">Claude, en språkmodell fra Anthropic.</p>
+      <ul class="punkt">
+        <li>Tittel i klarspråk, sammendrag, hva saken betyr, hva uenigheten gjaldt, og tema. Alltid merket «KI-sammendrag», med lenke til dokumentene.</li>
+        <li>Modellen får saksdokumentene, men ikke stemmetall eller navnelister. Noen sammendrag er rettet for hånd og merket «redigert av Kommunelys».</li>
+        <li>Debatten, fra kommunens teksting av opptaket: med partiene, men uten navn og uten stemmetall.</li>
+        <li>Vurdering av avstemninger der protokollen motsier seg selv, av KI eller en som vurderer saker for kommunen. Vurderingen avgjør bare om avstemningen vises, og med hvilken merknad. Navn og tall endres aldri.</li>
+      </ul>
+    </section>
+    <section class="kort">
+      <h3 class="kort-hode"><span class="ikon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>For hånd</h3>
+      <ul class="punkt">
+        <li>Tolkningen av avstemningene er sjekket linje for linje mot ett helt kommunestyremøte.</li>
+        <li>Lenkene til partienes egne sider er åpnet og sjekket.</li>
+      </ul>
+    </section>
+  </div>
+  <p class="aldri"><b>Aldri med KI:</b> stemmetall, navnelister, oppmøte og profilene til de folkevalgte.</p>
+
+  <div class="tekst">
+    <p><b>Opptakene</b> ligger hos kommunen. Der kommunen har opptak av møtet, lenker møtet og saken til opptaket, på starten av saken.</p>
     <p>Politikerprofilene bygger bare på medlemslistene og protokollene, uten KI. Koden er åpen på <a href="{{repo}}">GitHub</a>. Kommunegrensene i kartet er fra Kartverket (CC BY 4.0).</p>
 
     <h2 id="status">Status på en sak</h2>

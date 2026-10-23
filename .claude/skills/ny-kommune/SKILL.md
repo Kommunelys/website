@@ -193,8 +193,9 @@ AI-analysen får, uten å sende noe.
 
 ## 8. Begrenset innsyn (valgfritt, før publisering)
 
-Kommunen står på forsiden og kartet, men innholdet vises bare for dem med en
+Kommunen står på forsiden og kartet, og innholdet vises, bare for dem med en
 rolle for kommunen (`leser`, `vurderer`, `admin`) og prosjektadmin (ADR-024).
+For andre er den skjult.
 
 1. Ny migrering som setter `status = 'begrenset'` for kommunen.
 2. Etter neste kjøring av Oppdater: driftssiden viser «ny, begrenset innsyn».

@@ -1084,6 +1084,8 @@ addEventListener('scroll',()=>{if(tegnes)return;tegnes=true;requestAnimationFram
 /* ---------- NAVIGASJON ---------- */
 const VIEWS=['oversikt','saker','sak','moter','mote','politikere','person','hvem-bestemmer'];
 const MENY={person:'politikere',sak:'saker',mote:'moter'};
+// Om-siden er felles; ?kommune= holder kommunen i toppen der.
+const OM=`../om/?kommune=${encodeURIComponent(K.slug)}`;
 const TITLER={oversikt:'',saker:'Saker',moter:'Møter',politikere:'Politikerne','hvem-bestemmer':'Hvem bestemmer'};
 function go(v,o={}){
   // Fra forsiden: én fane og ett utvalg, eller et søk, uten andre filtre.
@@ -1098,7 +1100,7 @@ let forrigeV=null;
 function vis(){
   const [v0,arg]=decodeURIComponent(location.hash.slice(1)).split('/');
   // Om-fanen er flyttet til Om-siden, som er felles for alle kommunene.
-  if(v0==='om'){location.replace('../om/');return}
+  if(v0==='om'){location.replace(OM);return}
   // Stemmer er flyttet: stemmene står på sakene, partiene under Politikere.
   if(v0==='stemmer'){location.replace(arg==='partiene'?'#politikere/partiene':arg==='politikerne'?'#politikere':'#saker');return}
   const v=VIEWS.includes(v0)?v0:'oversikt';
@@ -1205,7 +1207,7 @@ function viktigKort({c,x,m}){
   return `<article class="sakkort vkort">
     <div class="vtopp"><a href="#mote/${m.id}">Kommunestyret ${ddl(m.date)}</a><span class="st ${f.cls}">${c.status==='Vedtatt i kommunestyret'?'Vedtatt':esc(c.status)}</span></div>
     <h3><a href="${sakUrl(x.hid)}">${esc(tittel(c))}</a></h3>
-    <p class="bet">${esc(c.a.bet)}</p>
+    <p class="bet"><span class="ki" title="Skrevet av KI ut fra saksdokumentene">KI</span> ${esc(c.a.bet)}</p>
     ${tidslinje(c,true)}
     <div class="vfakta">${deb}<div class="vcelle vedtak"><span class="vl">${ikon('vedtak',16)}Vedtaket</span>${vVedtak(c,x)}</div></div>
     <a class="kort-lenke" href="${sakUrl(x.hid)}">Se hele saken</a>
@@ -1213,8 +1215,6 @@ function viktigKort({c,x,m}){
 }
 (function(){
   const vis=viktigeSaker();
-  const datoer=[...new Set(vis.map(o=>o.m.date))].sort().map(ddl);
-  $('viktighjelp').textContent=vis.length?`Fra møtene ${datoer.join(', ').replace(/, ([^,]*)$/,' og $1')}: sakene som har vært gjennom flest utvalg, hadde debatt eller ble avgjort med få stemmers overvekt. Setningen under tittelen er skrevet av KI ut fra saksdokumentene.`:'';
   $('viktig').innerHTML=vis.map(viktigKort).join('')||'<p class="muted">Ingen saker med sammendrag fra kommunestyrets siste møter ennå.</p>';
   // Debatten står i detaljene, som hentes nå. Da åpnes saken også raskere.
   vis.filter(o=>o.x.db).forEach(o=>hentDetaljer(sakensAar(o.c)).then(()=>{const e=$('vdeb-'+o.x.hid);if(e)e.innerHTML=`<span class="vl">${ikon('debatt',16)}Debatten</span>${vDebatt(o.x)}`},()=>{const e=$('vdeb-'+o.x.hid);if(e)e.remove()}));
@@ -1226,7 +1226,7 @@ function viktigKort({c,x,m}){
   $('temaer').innerHTML=top.length?`<span class="liten muted">Tema:</span>${top.map(([t,k])=>`<a href="#saker" data-go="saker" data-tag="${esc(t)}">${esc(t)} <span class="ant">${k}</span></a>`).join('')}`:'';
 })();
 renderList();renderMeet();renderHeat();
-$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste, laget av en innbygger for innbyggerne. <a href="../">Andre kommuner</a> · <a href="../om/">Om ${esc(S.merke)}</a></div>`;
+$('foot').innerHTML=`<div>Kilde: ${esc(K.navn)} kommunes innsynsportal (Elements Publikum): møtekalender, saksprotokoller, møteprotokoller og medlemslister. Data hentet ${dato(TODAY)}.</div><div>${esc(S.merke)} er en uoffisiell tjeneste, laget av en innbygger for innbyggerne. <a href="../">Andre kommuner</a> · <a href="${OM}">Om ${esc(S.merke)}</a></div>`;
 window.addEventListener('hashchange',vis);vis();
 // Nådde vi hit, er siden tegnet. Ellers viser index.html en feilmelding.
 window.KL_KLAR=true;

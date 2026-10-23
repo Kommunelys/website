@@ -694,6 +694,13 @@ kommune kan derfor ikke ligge på nettstedet.
   Om-siden.
 - Forsiden og kartet viser kommunen med en hengelås og «Begrenset innsyn».
   Antall saker og møter vises; de står også i kommunens egen innsynsportal.
+  **Endret 23.10.2026 (prosjekteier):** kommunen vises ikke på forsiden,
+  kartet, Om-siden eller 404-siden for andre enn dem med tilgang. Den står i
+  HTML-en med `hidden` og `data-begrenset`, og `konto.js` viser den for
+  prosjektadmin og for kontoer med en rolle for kommunen. Rollene hentes med
+  tilgangsnøkkelen (`portal.medlemskap` og `portal.kommune`) og huskes i
+  nettleseren til utlogging. Uten tilgang tegnes kommunen på kartet som en
+  kommune uten data. Bare visning: databasen avgjør hvem som får innholdet.
 - Når kommunen publiseres (`status = 'publisert'`), bygges den som de andre,
   og `kjor.alle` fjerner dataene i `drift.nettsted_fil`.
 - Prinsippet i `tilgang.sql` står: tilgang gir ikke mer innhold enn det som
