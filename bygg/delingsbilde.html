@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- Kilden til bygg/mal/delingsbilde.png, bildet en lenke til Kommunelys får
+     når den deles (Open Graph, 1200 × 630). Felles for alle kommunene, så
+     ingen kommunenavn. Lag bildet på nytt etter en endring, fra roten av repoet:
+
+     "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --screenshot="%CD%\bygg\mal\delingsbilde.png" "%CD%\bygg\delingsbilde.html"
+
+     Fargene og merket er de samme som i stil.css og merke.svg. -->
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"Inter";font-weight:100 900;src:url(mal/fonter/inter-latin-wght-normal.woff2) format("woff2")}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:#FAF9F6;color:#1F2937;font-family:"Inter",system-ui,sans-serif;position:relative}
+.ramme{position:absolute;inset:0;padding:84px 96px;display:flex;flex-direction:column}
+.merke{display:flex;align-items:center;gap:20px}
+.merke span{font-size:46px;font-weight:700;letter-spacing:-.03em}
+h1{margin:auto 0 0;font-size:72px;line-height:1.05;font-weight:700;letter-spacing:-.03em}
+p{margin:24px 0 0;font-size:30px;color:#646B76;line-height:1.35}
+.fot{margin-top:auto;display:flex;justify-content:space-between;font-size:24px;color:#646B76;font-weight:500}
+.fot b{color:#1F5FAD;font-weight:600}
+.stripe{position:absolute;right:0;top:0;bottom:0;width:18px;background:#60A5FA}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<div class="ramme">
+  <div class="merke"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path d="M10.5 9 L31 14.5 V49.5 L10.5 55 Z" fill="none" stroke="#1F2937" stroke-width="3.5" stroke-linejoin="round"/><path d="M35.5 12 L54.5 4 V60 L35.5 52 Z" fill="#60A5FA" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Kommunelys</span></div>
+  <h1>Et klarere blikk på vedtakene.</h1>
+  <p>Sakene i kommunen i enkelt språk, med stemmene og lenke til kilden.</p>
+  <div class="fot"><span>Uoffisiell og uavhengig</span><b>kommunelys.no</b></div>
+</div>
+</body>
+</html>
