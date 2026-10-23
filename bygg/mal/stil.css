@@ -131,6 +131,8 @@ button,input,select{font:inherit;color:inherit}
 .kart-med path{fill:var(--lenke);transition:fill .15s}
 .kart-med a:hover path,.kart-med a:focus path{fill:var(--lys)}
 .kart-med a:focus{outline:none}
+/* Kommunene med begrenset innsyn er skjult til konto.js viser dem. hidden virker ikke av seg selv i SVG. */
+.kart-med a[hidden]{display:none}
 .kart-med a:focus-visible path{stroke:var(--ink);stroke-width:2}
 .kommunekort{display:grid;gap:3px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);box-shadow:var(--skygge);color:var(--ink);text-decoration:none}
 .kommunekort b{font-size:19px;color:var(--lenke)}
@@ -304,6 +306,7 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .vkort h3 a{color:var(--ink);text-decoration:none}
 .vkort h3 a:hover{color:var(--lenke);text-decoration:underline}
 .vkort .bet{background:var(--lys-flate);border-radius:8px;padding:8px 12px;margin:10px 0 0;font-size:15px;line-height:1.5}
+.vkort .bet .ki{font-size:10.5px;padding:0 4px;vertical-align:1px;background:var(--surface)}
 .vkort .tidslinje{margin:18px 0 0}
 .vfakta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0 4px}
 .vcelle{min-width:0;border-radius:10px;padding:10px 12px;font-size:14.5px}

@@ -17,6 +17,9 @@
 (function () {
   var q = new URLSearchParams(location.hash.slice(1));
   try {
+    // Kommunene med begrenset innsyn som kontoen har tilgang til (konto.js),
+    // hentes på nytt etter hver innlogging.
+    localStorage.removeItem('kommunelys-begrenset');
     if (q.has('ut')) {
       localStorage.removeItem('kommunelys-konto');
       localStorage.removeItem('kommunelys-innsyn');

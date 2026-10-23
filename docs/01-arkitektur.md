@@ -198,8 +198,9 @@ ser det samme, bortsett fra kommunene med begrenset innsyn (under).
 én tråd på tvers av år og hører til året den begynte; et møte hører til sitt
 år (ADR-022).
 
-**Begrenset innsyn.** En kommune med status `begrenset` står på forsiden og
-kartet, men på nettstedet ligger bare `index.html` og `status.json`. Dataene
+**Begrenset innsyn.** En kommune med status `begrenset` står skjult på
+forsiden og kartet (`data-begrenset`), og `konto.js` viser den for kontoer med
+en rolle for kommunen. På nettstedet ligger bare `index.html` og `status.json`. Dataene
 (`data.json` og `detaljer-<år>.json`) ligger i databasen (`drift.nettsted_fil`)
 og hentes av `innsyn.js` med innloggingen fra portalen. Bare de med en rolle
 for kommunen og prosjektadmin får dem (ADR-024).

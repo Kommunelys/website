@@ -13,8 +13,9 @@
 <a class="hopp" href="#innhold">Hopp til innholdet</a>
 <header class="hode">
   <div class="ramme hode-topp">
-    <a class="merke" href="#oversikt">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
-    <a class="kommune" href="../" title="Velg en annen kommune" aria-label="{{kommune}}. Velg en annen kommune">{{kommune}}</a>
+    <!-- Merket går til forsiden med alle kommunene, kommunenavnet til kommunens oversikt. -->
+    <a class="merke" href="../" title="Forsiden, med alle kommunene">{{merke_ikon}}<span class="merke-navn">{{merke}}</span></a>
+    <a class="kommune" href="#oversikt" title="Oversikten for {{kommune}}">{{kommune}}</a>
     {{konto}}
   </div>
   <nav class="ramme meny" id="nav" aria-label="Hovedmeny">
@@ -23,7 +24,7 @@
     <a href="#moter" data-v="moter">Møter</a>
     <a href="#politikere" data-v="politikere">Politikere</a>
     <a href="#hvem-bestemmer" data-v="hvem-bestemmer">Hvem bestemmer</a>
-    <a href="../om/">Om</a>
+    <a href="../om/?kommune={{slug}}">Om</a>
     <a href="#saker" class="sokeknapp" data-sok><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="vh">Søk i sakene</span></a>
   </nav>
 </header>
@@ -33,7 +34,7 @@
 <!-- Feilmeldinger når siden ikke kan tegnes: uten JavaScript, eller når
      data.js eller app.js ikke lastes eller stopper med en feil. -->
 <noscript><div class="lastefeil"><h2>Siden trenger JavaScript</h2>
-  <p>Sakene, møtene og stemmene tegnes med JavaScript, som er slått av i nettleseren din. Slå det på og last siden på nytt. <a href="../om/">Om {{merke}}</a> virker uten.</p></div></noscript>
+  <p>Sakene, møtene og stemmene tegnes med JavaScript, som er slått av i nettleseren din. Slå det på og last siden på nytt. <a href="../om/?kommune={{slug}}">Om {{merke}}</a> virker uten.</p></div></noscript>
 <div class="lastefeil" id="lastefeil" role="alert" hidden><h2>Siden kunne ikke vises</h2>
   <p>Noe gikk galt da dataene for {{kommune}} skulle lastes. Prøv å laste siden på nytt om litt. Virker det fortsatt ikke, <a href="{{meld}}">meld fra på GitHub</a>.</p></div>
 
@@ -44,7 +45,7 @@
 <!-- OVERSIKT -->
 <section id="v-oversikt" class="forside">
   <div class="topp">
-    <h1>Hva bestemmer kommunestyret i {{kommune}}?</h1>
+    <h1>Følg kommunestyret i {{kommune}}</h1>
     <p class="ingress-tekst">Kommunestyret avgjør de største sakene i kommunen. Her ser du hvor sakene har vært, hva partiene sa i debatten, og hvordan de folkevalgte stemte.</p>
     <div class="ksnaa" id="ksnaa"></div>
   </div>
@@ -54,7 +55,6 @@
        man ser hva saksiden gir før man åpner den. -->
   <section class="blokk bred" id="viktige">
     <div class="hode2"><h2>Viktige saker fra de siste møtene</h2><a href="#saker" data-go="saker" id="alle-ks">Alle sakene i kommunestyret</a></div>
-    <p class="liten muted" id="viktighjelp"></p>
     <div class="viktig" id="viktig"></div>
   </section>
 

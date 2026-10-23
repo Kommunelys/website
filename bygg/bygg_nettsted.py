@@ -687,7 +687,9 @@ def _konto(rot: str) -> str:
     """Kontomenyen øverst til høyre: lenker til portalen, og kontoen når man
     er logget inn (konto.js). rot er veien til roten av nettstedet."""
     p = html.escape(PORTAL)
-    return (f'<div class="konto" data-portal="{p}">'
+    # Med API-et og den offentlige nøkkelen finner konto.js kommunene med
+    # begrenset innsyn som kontoen har tilgang til (ADR-024).
+    return (f'<div class="konto" data-portal="{p}" data-api="{SUPABASE_URL}" data-nokkel="{SUPABASE_NOKKEL}">'
             f'<a href="{p}/login" data-sti="/login" aria-label="Logg inn">{PERSON}'
             f'<span class="konto-tekst">Logg inn</span></a>'
             f'<a class="konto-ny" href="{p}/registrer" data-sti="/registrer">Ny bruker</a>'
@@ -780,8 +782,10 @@ def _kart(kommuner: list[dict], begrensede: frozenset[str] = frozenset()) -> str
 
     Kommunene med data er lenker og farget. Kommunene som bruker samme
     innsynsportal (kommuner/kart/kandidater.json) er grå, fordi de kommer snart;
-    de andre er lysere. Med begrenset innsyn sier navnet at innholdet krever
-    innlogging. Grensene lages av bygg.lag_kart og ligger i kommuner/kart/.
+    de andre er lysere. En kommune med begrenset innsyn tegnes som om den ikke
+    hadde data, og lenken over den er skjult (data-begrenset). konto.js viser
+    den for kontoer med tilgang. Grensene lages av bygg.lag_kart og ligger i
+    kommuner/kart/.
     """
     kart = json.loads((KOMMUNER / "kart" / "trondelag.json").read_text("utf-8"))
     kandidater = {k["kommunenr"] for k in json.loads(
@@ -790,13 +794,17 @@ def _kart(kommuner: list[dict], begrensede: frozenset[str] = frozenset()) -> str
     uten, senere, farget = [], [], []
     for k in kart["kommuner"]:
         navn = html.escape(k["navn"])
-        if k["kommunenr"] in med_data:
-            slug = med_data[k["kommunenr"]]["slug"]
+        slug = med_data[k["kommunenr"]]["slug"] if k["kommunenr"] in med_data else None
+        if slug in begrensede:
+            (senere if k["kommunenr"] in kandidater else uten).append(
+                f'<path d="{k["d"]}"><title>{navn}{": kommer snart" if k["kommunenr"] in kandidater else ""}</title></path>')
+        if slug:
             # Navnet midt i kommunen: snittet av hjørnene er godt nok her.
             pkt = [tuple(map(float, xy.split(","))) for xy in re.findall(r"[\d.]+,[\d.]+", k["d"])]
             x, y = (sum(v) / len(pkt) for v in zip(*pkt))
-            tittel = f"{navn}: begrenset innsyn, krever innlogging" if slug in begrensede else navn
-            farget.append(f'<a href="{slug}/" aria-label="{tittel}"><path d="{k["d"]}">'
+            skjult = f' data-begrenset="{slug}" hidden' if slug in begrensede else ""
+            tittel = f"{navn}: begrenset innsyn" if slug in begrensede else navn
+            farget.append(f'<a href="{slug}/" aria-label="{tittel}"{skjult}><path d="{k["d"]}">'
                           f'<title>{tittel}</title></path>'
                           f'<text x="{x:.0f}" y="{y:.0f}" text-anchor="middle" '
                           f'dominant-baseline="middle">{navn}</text></a>')
@@ -823,13 +831,17 @@ def periode(st: dict) -> str:
 
 
 def _kommunekort(kommuner: list[tuple[dict, dict]], foran: str = "") -> str:
-    """Listen over kommunene som HTML, så den virker uten skript."""
+    """Listen over kommunene som HTML, så den virker uten skript. En kommune
+    med begrenset innsyn er skjult til konto.js finner at kontoen har tilgang."""
     def linje(st: dict) -> str:
         if st.get("begrenset"):
-            return f'<span class="liten laas">{LAAS}Begrenset innsyn: logg inn for å se</span>'
+            return f'<span class="liten laas">{LAAS}Begrenset innsyn</span>'
         return f'<span class="liten muted">Data hentet {_dato(_hentet(st))}</span>'
+    def skjult(k: dict, st: dict) -> str:
+        return f' data-begrenset="{k["slug"]}" hidden' if st.get("begrenset") else ""
     return "\n".join(
-        f'<li><a class="kommunekort" href="{foran}{k["slug"]}/">'
+        f'<li{skjult(k, st)}>'
+        f'<a class="kommunekort" href="{foran}{k["slug"]}/">'
         f'<b>{html.escape(k["navn"])}</b>'
         f'<span>{st["saker"]} saker og {st["moter"]} møter {periode(st)}</span>'
         f'{linje(st)}'
@@ -851,7 +863,10 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
     """Om-siden på roten, felles for alle kommunene."""
     side = _fyll((MAL / "om.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto("../"), "v_stil": _v("stil.css"),
-        "repo": REPO, "epost": html.escape(KONTAKT_EPOST), "telling": _telling()})
+        "repo": REPO, "epost": html.escape(KONTAKT_EPOST), "telling": _telling(),
+        # Navnene til kommunevalget i toppen (?kommune=). Ikke de med begrenset innsyn.
+        "kommuner_json": json.dumps({k["slug"]: k["navn"] for k, st in kommuner if not st.get("begrenset")},
+                                    ensure_ascii=False).replace("</", "<\\/")})
     (UT / "om").mkdir(exist_ok=True)
     (UT / "om" / "index.html").write_text(side, encoding="utf-8")
     # Bildet under «Hvem står bak» (ADR-018).
@@ -865,7 +880,8 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     Siden kan vises på hvilken som helst adresse, så alle lenker må være
     absolutte. Bygget stopper hvis en relativ lenke har sneket seg inn.
     """
-    liste = json.dumps([{"slug": k["slug"], "navn": k["navn"]} for k, _ in kommuner],
+    # Kommunene med begrenset innsyn er ikke med i forslagene.
+    liste = json.dumps([{"slug": k["slug"], "navn": k["navn"]} for k, st in kommuner if not st.get("begrenset")],
                        ensure_ascii=False).replace("</", "<\\/")
     side = _fyll((MAL / "404.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(BASE), "v_stil": _v("stil.css"), "base": BASE,

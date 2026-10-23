@@ -29,7 +29,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
 | Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, debatter, meldinger) for vurderere per kommune (ADR-023, ADR-026); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
-| Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet, innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
+| Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet bare for dem med tilgang, og innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
@@ -452,8 +452,9 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   og `fra_aar` er det første året som hentes. Sjekklisten står i skillen
   `.claude/skills/ny-kommune/SKILL.md` (`/ny-kommune`).
   Status `kartlegging` hentes ikke, `intern` hentes og bygges uten å
-  publiseres, `begrenset` står på forsiden, men innholdet krever en rolle for
-  kommunen (ADR-024), og `publisert` er åpen for alle.
+  publiseres, `begrenset` står på forsiden og kartet bare for kontoer med en
+  rolle for kommunen, og innholdet krever rollen (ADR-024), og `publisert` er
+  åpen for alle.
 - **Regelsettet:** felt i `kommuner/<slug>.json` under `tolk` erstatter
   standarden; `<felt>_tillegg` legger til. Mønstre skrives som tekst. Det som
   ikke kan skrives som data, går i `tolk/profiler/<slug>.py` (`OVERSTYR`).
