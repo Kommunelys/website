@@ -348,13 +348,16 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   votering i PS 48. En sak kan ha flere bokmerker (før og etter pausen).
 - **Ikke alle opptak er tekstet.** Bare tekstede opptak får debatt; de andre
   får lenkene. Tekstingen hører navn feil («Agnestein» for Agdestein), så
-  kontrollen av debatten ser etter etternavn som ligner, ikke bare like
+  kontrollen av partiene ser etter etternavn som ligner, ikke bare like
   navn. Tekstingen inneholder navn på privatpersoner og vises aldri.
 - **Kontrollen av debatten skal være mild** (prosjekteier, 20.10.2026). Den
-  stopper navn, stemmetall, tider utenfor saken og partier som ikke sa noe i
-  saken, ikke stedsnavn eller forkortelser. Den første utgaven sammenlignet
-  også fornavn og korte ord («To» lignet «Tor»), og holdt tilbake 8 av 11
-  gode sammendrag. Gjør du den strengere, så prøv den på de ekte debattene
+  stopper stemmetall, tider utenfor saken og partier som ikke sa noe i
+  saken, ikke stedsnavn eller forkortelser. Navn ser den ikke etter
+  (prosjekteier, 23.10.2026): de tre navnesjekkene ga bare feilalarmer
+  («Modellen», «Nye Veier»), og den første utgaven holdt tilbake 8 av 11
+  gode sammendrag fordi fornavn lignet korte ord («To» og «Tor»). At
+  sammendraget ikke har navn (regel 6), sikres av instruksjonen til
+  modellen. Gjør du kontrollen strengere, så prøv den på de ekte debattene
   i databasen, ikke bare på plantede feil.
 - **Saken er det alt lenker til.** Lenk til `#sak/<id>` (`sakUrl(hid)` i
   `app.js`) og `#mote/<id>`, ikke til `#saker` med et søk. Stemmer har ikke

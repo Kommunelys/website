@@ -786,11 +786,7 @@ ligger ute.
 - Bygget kontrollerer hvert sammendrag (`analyser_debatt.avvik`). Kontrollen
   er mild med vilje (prosjekteier, 20.10.2026). Den holder sammendraget
   tilbake bare ved:
-  - fullt navn på en representant;
-  - et etternavn på minst fire bokstaver, også feilhørt (likhet 0,8);
-  - to navneord etter hverandre midt i en setning, som ser ut som et
-    personnavn;
-  - stemmetall;
+  - stemmetall (ikke intervaller med enhet, som «50-70 millioner»);
   - en tid utenfor saken;
   - et parti som ikke var i møtet, eller som verken er nevnt eller ropt
     opp i den samme delen av saken.
@@ -801,14 +797,20 @@ ligger ute.
   og partier nevnt mer enn tre minutter fra punktet. Ingen av de åtte hadde
   navn eller stemmetall. Den milde kontrollen fanger fortsatt ni av ni
   plantede feil. En melding om feil i saken holder også debatten tilbake.
+- Kontrollen ser ikke etter navn (prosjekteier, 23.10.2026). Den så etter
+  fullt navn på en representant, etternavn som lignet (likhet 0,8) og to
+  navneord etter hverandre. I de 44 første debattene slo de til tre ganger,
+  alle feilalarmer («Modellen» for Modell, «Nye Veier»), og ingen
+  sammendrag hadde navn. At sammendraget ikke har navn (regel 6), sikres av
+  instruksjonen til modellen.
 - Kontrollen lagres i `kjerne.debatt_kontroll` når grunnene endres, og
   debattene som holdes tilbake, står under «Til vurdering» i portalen
   (`portal.debatt_holdt`), med punktene og lenke til opptaket. Som for
   sammendragene (ADR-023, ADR-025) avgjør vurderingen
   (`kjerne.debatt_vurdering`, bare innsetting) bare om debatten vises, og kan
   ha en kort merknad. En vurderer kan slippe gjennom en debatt der kontrollen
-  bare ikke fant partiet i den delen av tekstingen eller blant dem som stemte. Navn og
-  stemmetall kan bare prosjektadmin overstyre (merket overstyrt). En del
+  bare ikke fant partiet i den delen av tekstingen eller blant dem som stemte.
+  Stemmetall kan bare prosjektadmin overstyre (merket overstyrt). En del
   eller et tidspunkt som ikke finnes i opptaket, eller manglende teksting,
   kan ingen overstyre: debatten må analyseres på nytt. Debatten vises bare så
   lenge grunnene er de samme som da den ble vurdert. Reglene står både i
