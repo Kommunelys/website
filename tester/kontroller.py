@@ -373,6 +373,44 @@ def dekning_holder_nivaaet(aar: int) -> list[str]:
     return dekning.under_grensen(d, nivaa)
 
 
+# Setninger kontrollen av debatten skal slippe gjennom, og setninger med
+# grunnen den skal stoppe dem for. De godkjente er feilalarmer fra ekte
+# debatter (21.10.2026); de stoppede er feil kontrollen skal fange.
+DEBATT_GODKJENT = (
+    "Det ble vist til anslag om 50-70 millioner kroner i investeringer og 10-15 millioner "
+    "i økte årlige driftskostnader.",
+    "Kostnaden kan øke med 10–15 % over 5-10 år.",
+    "Modellen går ut på at kommunen beholder eiendomsretten.",
+    "Modellene ble lagt fram av Arbeiderpartiet.",
+)
+DEBATT_STOPPES = (
+    ("Forslaget falt 20-19.", "stemmetall"),
+    ("Saken ble vedtatt 20–19 etter lang debatt.", "stemmetall"),
+    ("Saken ble vedtatt 29 mot 10.", "stemmetall"),
+    ("Agnestein mente saken var dårlig utredet.", "ligner etternavnet"),
+    ("Krostad mente saken var dårlig utredet.", "ligner etternavnet"),
+    ("Det ble vist til Krogstads forslag.", "ligner etternavnet"),
+)
+
+
+def debattkontrollen_fanger_det_den_skal() -> list[str]:
+    """Kontrollen av debatten (analyser_debatt.avvik) er mild med vilje, men
+    skal fortsatt stoppe navn og stemmetall (regel 2 og 6). Prøves på faste
+    setninger, uten databasen."""
+    from analyser.analyser_debatt import avvik  # noqa: PLC0415
+    behandling = {"behandling_id": 1, "vedtak": "", "voteringer": [{"partier": {
+        "Kari Agdestein": "AP", "Ola Krogstad": "SP", "Per Modell": "H"}}]}
+    sak = {"tittel": "Renovasjon"}
+
+    def grunner(tekst: str) -> list[str]:
+        return avvik({"oppsummering": tekst, "punkter": []}, sak, behandling, {"deler": []}, {"linjer": []})
+
+    feil = [f"debattkontrollen stopper {t!r}: {'; '.join(g)}" for t in DEBATT_GODKJENT if (g := grunner(t))]
+    feil += [f"debattkontrollen stopper ikke {t!r} ({forventet})" for t, forventet in DEBATT_STOPPES
+             if not any(g.startswith(forventet) for g in grunner(t))]
+    return feil
+
+
 def kjor(aar: int) -> int:
     saker = lager_saker.les(aar, None)
     if saker is None:
@@ -402,6 +440,7 @@ def kjor(aar: int) -> int:
     feil += ugyldige_vurderinger(aar)
     feil += antall_har_ikke_stupt(saker, aar)
     feil += malen_nevner_ingen_kommune()
+    feil += debattkontrollen_fanger_det_den_skal()
     feil += kilden_er_lik()
     feil += dekning_holder_nivaaet(aar)
 
