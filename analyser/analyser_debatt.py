@@ -175,9 +175,14 @@ PARTI_ORD = {
     "MDG": ["Miljøpartiet", "MDG"],
 }
 
+# Enheter etter et intervall: «50-70 millioner» og «10–15 %» er anslag, ikke stemmetall.
+_ENHET = (r"%|(?:millioner|million|mill|milliarder|milliard|mrd|kroner|kr|prosent|prosentpoeng"
+          r"|år|måneder|måned|uker|uke|dager|døgn|timer|minutter|plasser|boliger|meter|km"
+          r"|kilometer|kvadratmeter|kvm|m²|dekar|mål|tonn)\b")
 # Stemmetall: «19 stemmer», «29 mot 10», «20–19». Ikke årstall som «2026–2029».
 _STEMMETALL = re.compile(
-    r"\b\d+\s*(?:stemmer|stemte)\b|\b\d{1,2}\s+mot\s+\d{1,2}\b|\b\d{1,2}\s*[–-]\s*\d{1,2}\b",
+    r"\b\d+\s*(?:stemmer|stemte)\b|\b\d{1,2}\s+mot\s+\d{1,2}\b"
+    rf"|\b\d{{1,2}}\s*[–-]\s*\d{{1,2}}\b(?!\s*(?:{_ENHET}))",
     re.IGNORECASE)
 # Et ord med stor forbokstav og resten små: «Kari», ikke «CRPD» eller «FN-konvensjonen».
 _NAVNEORD = re.compile(r"^[A-ZÆØÅÉ][a-zæøåé]+$")
@@ -191,6 +196,15 @@ def _ligner(a: str, b: str) -> bool:
     """Tekstingen hører navn feil: «Agnestein» for Agdestein (0,89), «Krostad»
     for Krogstad (0,93). Ved 0,7 lignet «Bare» på Bartnes (0,73)."""
     return difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio() >= 0.8
+
+
+# Bøyningsendelser: «Modellen» er modellen, ikke en som heter Modell. Ikke
+# «s»: «Krogstads» er fortsatt navnet.
+_BOYNING = ("en", "et", "ene", "er", "ere")
+
+
+def _boyd(o: str, etternavn: str) -> bool:
+    return any(o.lower() == etternavn.lower() + s for s in _BOYNING)
 
 
 def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict) -> list[str]:
@@ -227,7 +241,8 @@ def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict)
         ut += [f"navnet {n!r} står i teksten" for n in rep if n in t]
         for setning in re.split(r"(?<=[.!?:])\s+", t):
             for o in _ord(setning):
-                if len(o) >= 4 and not ok(o) and (e := next((e for e in etternavn if _ligner(o, e)), None)):
+                if len(o) >= 4 and not ok(o) and (
+                        e := next((e for e in etternavn if _ligner(o, e) and not _boyd(o, e)), None)):
                     ut.append(f"ligner etternavnet {e!r}: {o!r}")
             # To navneord etter hverandre midt i en setning ser ut som et personnavn.
             ord_ = [o.strip(".,;:()«»") for o in setning.split()]
