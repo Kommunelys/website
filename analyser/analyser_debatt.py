@@ -9,8 +9,8 @@ fra teksten modellen skriver. Modellen får vedtaket og forslagene fra
 voteringene, så den vet hva som ble stemt over, men skal ikke gjengi utfallet.
 
 Regel 6: folkevalgte omtales bare i sin rolle. Sammendraget sier hvilket parti
-som mente hva, aldri hvem. Tekstingen hører ofte navn feil («Rune Kåran» for
-Rune Kvaran), så kontrollen leter etter navn som ligner, ikke bare like navn.
+som mente hva, aldri hvem. Det står i instruksjonen; kontrollen ser ikke etter
+navn (prosjekteier, 23.10.2026).
 
 Bokmerkene i opptaket settes for hånd og er unøyaktige: slutten av ett
 bokmerke kan handle om en annen sak. Modellen skal se bort fra det.
@@ -184,8 +184,6 @@ _STEMMETALL = re.compile(
     r"\b\d+\s*(?:stemmer|stemte)\b|\b\d{1,2}\s+mot\s+\d{1,2}\b"
     rf"|\b\d{{1,2}}\s*[–-]\s*\d{{1,2}}\b(?!\s*(?:{_ENHET}))",
     re.IGNORECASE)
-# Et ord med stor forbokstav og resten små: «Kari», ikke «CRPD» eller «FN-konvensjonen».
-_NAVNEORD = re.compile(r"^[A-ZÆØÅÉ][a-zæøåé]+$")
 
 
 def _ord(t: str) -> list[str]:
@@ -198,57 +196,24 @@ def _ligner(a: str, b: str) -> bool:
     return difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio() >= 0.8
 
 
-# Bøyningsendelser: «Modellen» er modellen, ikke en som heter Modell. Ikke
-# «s»: «Krogstads» er fortsatt navnet.
-_BOYNING = ("en", "et", "ene", "er", "ere")
-
-
-def _boyd(o: str, etternavn: str) -> bool:
-    return any(o.lower() == etternavn.lower() + s for s in _BOYNING)
-
-
 def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict) -> list[str]:
     """Grunner til å holde sammendraget tilbake. Tom liste betyr at det kan vises.
 
-    Kontrollen er mild med vilje (prosjekteier, 20.10.2026). Den stopper det
-    som bryter grunnreglene: navn på personer (regel 6) og stemmetall (regel
-    2), og det som viser at sammendraget ikke hører til saken: et parti som
-    ikke var i møtet eller ikke sa noe i saken, og en tid utenfor saken.
-    Steder, organisasjoner og forkortelser slipper gjennom.
+    Kontrollen er mild med vilje (prosjekteier, 20.10.2026). Den stopper
+    stemmetall (regel 2), og det som viser at sammendraget ikke hører til
+    saken: et parti som ikke var i møtet eller ikke sa noe i saken, og en tid
+    utenfor saken. Navn ser den ikke etter (prosjekteier, 23.10.2026): alle
+    navnesjekkene ga bare feilalarmer («Modellen», «Nye Veier»), og
+    instruksjonen sier at modellen aldri skal skrive navn (regel 6).
     """
     ut = []
     if svar.get("ingen_debatt"):
         return ut
     rep = representanter(behandling)
-    # Etternavnene, og delene av doble etternavn. Tekstingen hører dem ofte
-    # feil («Agnestein» for Agdestein), så de sammenlignes på likhet. Korte
-    # ord og fornavn er utelatt; de ligner vanlige ord («To» og «Tor»).
-    etternavn = {d for n in rep for d in n.split()[-1].split("-") if len(d) >= 4}
-    tillatt = set(_ord(sak["tittel"])) | set(_ord(behandling.get("vedtak") or ""))
-    for v in behandling.get("voteringer") or []:
-        tillatt |= set(_ord(v.get("tekst") or ""))
-    tillatt |= {o for ord_ in PARTI_ORD.values() for x in ord_ for o in _ord(x)}
-    tillatt |= set(profil().partinavn) | set(_ord(" ".join(profil().partinavn.values())))
-    tillatt |= {kommune.oppsett()["navn"]}
-
-    def ok(o: str) -> bool:
-        return o in tillatt or o.removesuffix("s") in tillatt  # «Steinkjers» er Steinkjer
-
     tekster = [svar.get("oppsummering") or ""] + [p["tekst"] for p in svar.get("punkter") or []]
     for t in tekster:
         if m := _STEMMETALL.search(t):
             ut.append(f"stemmetall i teksten: {m[0]!r}")
-        ut += [f"navnet {n!r} står i teksten" for n in rep if n in t]
-        for setning in re.split(r"(?<=[.!?:])\s+", t):
-            for o in _ord(setning):
-                if len(o) >= 4 and not ok(o) and (
-                        e := next((e for e in etternavn if _ligner(o, e) and not _boyd(o, e)), None)):
-                    ut.append(f"ligner etternavnet {e!r}: {o!r}")
-            # To navneord etter hverandre midt i en setning ser ut som et personnavn.
-            ord_ = [o.strip(".,;:()«»") for o in setning.split()]
-            for x, y in zip(ord_[1:], ord_[2:]):
-                if _NAVNEORD.match(x) and _NAVNEORD.match(y) and not (ok(x) or ok(y)):
-                    ut.append(f"mulig personnavn: {x} {y}")
 
     ds = {d["del"]: d for d in deler_for(opptak, behandling["behandling_id"])}
     partier_i_mote = set(rep.values())
@@ -281,7 +246,7 @@ def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict)
 # Grunnene en vurderer kan overstyre i portalen: partiet står ikke i
 # tekstingen i den delen av saken, eller ikke blant dem som stemte (enstemmige
 # vedtak har ingen navneliste). Tekstingen skriver ofte partier og navn feil.
-# Navn og stemmetall kan bare prosjektadmin overstyre (ADR-025); en del eller
+# Stemmetall kan bare prosjektadmin overstyre (ADR-025); en del eller
 # en tid som ikke finnes, eller manglende teksting, ingen. Samme regler står i
 # databasen: kjerne.debatt_kan_overstyres og kjerne.debatt_kan_aldri_publiseres.
 # «nær <tid>» er fra den første, strenge kontrollen (før 20.10.2026).
