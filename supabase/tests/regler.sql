@@ -66,7 +66,7 @@ declare
   admin uuid := gen_random_uuid();
   vanlig uuid := gen_random_uuid();
   leser uuid := gen_random_uuid();
-  folger uuid := gen_random_uuid();
+  folgeren uuid := gen_random_uuid();
   annen uuid := gen_random_uuid();
   til jsonb;
   svar boolean;
@@ -862,7 +862,7 @@ begin
       values (k2, 6000, 6000, 0, false, null, '2026-12-01 10:00', 'KS', 'Kommunestyret', 'PS 1/2026',
               false, false, null, null);
     insert into auth.users (id, aud, role, email) values
-      (folger, 'authenticated', 'authenticated', 'folger@example.invalid'),
+      (folgeren, 'authenticated', 'authenticated', 'folger@example.invalid'),
       (annen, 'authenticated', 'authenticated', 'annen@example.invalid');
 
     perform pg_temp.skal_virke('følg: bygget lagrer det som er publisert i saken',
@@ -870,7 +870,7 @@ begin
         insert into varsel.sak_tilstand (kommune_id, sak_id, tilstand) values (%s, 5100, '{"status": "Til behandling"}');
         reset role$s$, k));
 
-    perform set_config('request.jwt.claims', json_build_object('sub', folger, 'role', 'authenticated')::text, true);
+    perform set_config('request.jwt.claims', json_build_object('sub', folgeren, 'role', 'authenticated')::text, true);
     perform pg_temp.skal_virke('følg: innlogget bruker følger en sak i en publisert kommune',
       $s$set local role authenticated;
         insert into portal.folger (kommune, behandling_id) values ('testkommune-a', 5101); reset role$s$);
@@ -878,7 +878,7 @@ begin
       $s$set local role authenticated;
         insert into portal.folger (kommune, behandling_id) values ('testkommune-a', 5101); reset role$s$);
     perform pg_temp.skal_vaere('følg: lagret én gang, med brukeren og tilstanden da hen trykket',
-      (select count(*) = 1 and bool_and(user_id = folger and tilstand = '{"status": "Til behandling"}')
+      (select count(*) = 1 and bool_and(user_id = folgeren and tilstand = '{"status": "Til behandling"}')
        from varsel.folger where kommune_id = k));
     set local role authenticated;
     svar := (select count(*) = 1 and bool_and(sak_id = 5100 and tittel = 'Sak med to steg'
@@ -919,12 +919,12 @@ begin
     perform pg_temp.skal_vaere('følg: brukeren ser bare sine egne', svar);
     perform pg_temp.skal_vaere('følg: tittelen bare for saker brukeren selv følger', svar2);
     perform pg_temp.skal_vaere('følg: kan ikke slette andres',
-      (select count(*) = 2 from varsel.folger));
+      (select count(*) = 2 from varsel.folger where kommune_id in (k, k2)));
 
     -- ID-en til saken endres når kjeden bygges på nytt: følgingen og
     -- tilstanden går med.
     update kjerne.sak set sak_id = 5050 where kommune_id = k and sak_id = 5100;
-    perform set_config('request.jwt.claims', json_build_object('sub', folger, 'role', 'authenticated')::text, true);
+    perform set_config('request.jwt.claims', json_build_object('sub', folgeren, 'role', 'authenticated')::text, true);
     set local role authenticated;
     svar := (select sak_id = 5050 from portal.folger where behandling_id = 5101);
     reset role;
@@ -958,13 +958,15 @@ begin
       $s$set local role authenticated; select * from portal.varsel_til_sending()$s$);
 
     -- Utsendingen (edge-funksjonen, med service-nøkkelen). Den som mistet
-    -- rollen, får ikke e-post om kommunen.
+    -- rollen, får ikke e-post om kommunen. Ingen e-post sendes her: testen
+    -- kaller bare databasefunksjonene, og ser bare på testbrukerne.
     delete from tilgang.medlemskap where user_id = annen and kommune_id = k2;
     set local role service_role;
-    til := (select jsonb_agg(to_jsonb(t)) from portal.varsel_til_sending() t);
+    til := (select jsonb_agg(to_jsonb(t)) from portal.varsel_til_sending() t
+            where t.user_id in (folgeren, annen));
     reset role;
     perform pg_temp.skal_vaere('send: én e-post til brukeren, med saken',
-      jsonb_array_length(til) = 1 and (til -> 0 ->> 'user_id')::uuid = folger
+      jsonb_array_length(til) = 1 and (til -> 0 ->> 'user_id')::uuid = folgeren
       and til -> 0 ->> 'epost' = 'folger@example.invalid' and jsonb_array_length(til -> 0 -> 'saker') = 1);
     perform pg_temp.skal_vaere('send: ikke for en kommune brukeren har mistet innsynet i',
       not exists (select 1 from varsel.utsending where kommune_id = k2));
@@ -972,28 +974,30 @@ begin
     perform portal.varsel_sendt((select array_agg((s ->> 'id')::bigint)
                                  from jsonb_array_elements(til) u, jsonb_array_elements(u -> 'saker') s),
                                 're_test', null, 12);
-    svar := (select count(*) = 0 from portal.varsel_til_sending());
+    svar := (select count(*) = 0 from portal.varsel_til_sending() t where t.user_id in (folgeren, annen));
     reset role;
     perform pg_temp.skal_vaere('send: markert som sendt og telt',
-      (select bool_and(sendt is not null) from varsel.utsending)
+      (select bool_and(sendt is not null) from varsel.utsending where user_id = folgeren)
       and exists (select 1 from varsel.epost where resend_id = 're_test' and brukt_hos_resend = 12));
     insert into varsel.utsending (folger_id, user_id, kommune_id, sak_id, tittel, url, hendelser)
       select id, user_id, kommune_id, 5050, 'Sak med to steg', 'https://kommunelys.no/testkommune-a/#sak/5050',
              '["Sammendraget er publisert"]'
       from varsel.folger where kommune_id = k;
     set local role service_role;
-    svar2 := (select count(*) = 0 from portal.varsel_til_sending());
+    svar2 := (select count(*) = 0 from portal.varsel_til_sending() t where t.user_id in (folgeren, annen));
     reset role;
     perform pg_temp.skal_vaere('send: høyst én e-post per bruker i døgnet', svar and svar2);
-    update varsel.utsending set sendt = sendt - interval '1 day' where sendt is not null;
+    update varsel.utsending set sendt = sendt - interval '1 day' where sendt is not null and user_id = folgeren;
     insert into varsel.epost (sendt, saker) select now(), 1 from generate_series(1, varsel.grense_dogn());
     set local role service_role;
-    svar := (select count(*) = 0 from portal.varsel_til_sending());
+    svar := (select count(*) = 0 from portal.varsel_til_sending() t where t.user_id in (folgeren, annen));
     reset role;
     perform pg_temp.skal_vaere('send: stopper ved grensen for døgnet', svar);
-    delete from varsel.epost where resend_id is null;
+    -- Bare de 70 radene over: de har sendt = now(), transaksjonens tid.
+    delete from varsel.epost where resend_id is null and saker = 1 and feil is null and brukt_hos_resend is null
+      and sendt = now();
     set local role service_role;
-    svar := (select count(*) = 1 from portal.varsel_til_sending());
+    svar := (select count(*) = 1 from portal.varsel_til_sending() t where t.user_id in (folgeren, annen));
     reset role;
     perform pg_temp.skal_vaere('send: sender igjen når det er plass', svar);
 
@@ -1004,9 +1008,10 @@ begin
     perform pg_temp.skal_vaere('slutt: alle sakene til brukeren stoppes', svar
       and not exists (select 1 from varsel.folger where user_id = annen));
     perform pg_temp.skal_virke('slutt: kontoen kan slettes',
-      format('delete from auth.users where id = ''%s''', folger));
+      format('delete from auth.users where id = ''%s''', folgeren));
     perform pg_temp.skal_vaere('slutt: følgingene og køen slettes med kontoen',
-      not exists (select 1 from varsel.folger) and not exists (select 1 from varsel.utsending));
+      not exists (select 1 from varsel.folger where user_id in (folgeren, annen))
+      and not exists (select 1 from varsel.utsending where user_id in (folgeren, annen)));
     perform pg_temp.skal_vaere('slutt: tellingen står igjen uten bruker',
       exists (select 1 from varsel.epost where resend_id = 're_test'));
     perform pg_temp.skal_vaere('følg: ingenting i endringsloggen',
