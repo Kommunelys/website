@@ -329,6 +329,65 @@ def _database(na: dt.datetime) -> str:
             "databasen har vært lik over tid.</p>")
 
 
+# Resend Free (resend.com/pricing, sjekket 29.10.2026): 100 e-poster i døgnet
+# (nullstilles kl. 00 UTC) og 3 000 i måneden, for alle e-postene fra kontoen.
+# Varslene stopper før (varsel.grense_dogn og varsel.grense_maned i databasen),
+# så det blir plass til e-post fra innloggingen og fra post@.
+RESEND_DOGN, RESEND_MANED = 100, 3000
+VARSEL_DOGN, VARSEL_MANED = 70, 2400
+
+
+def _epost(tall_: dict | None) -> str:
+    """Telleren for e-post (ADR-027): varslene som er sendt, mot grensene hos
+    Resend, og hvor mange som følger saker. Svarer ikke databasen, står det
+    her; resten av siden bygges likevel."""
+    if tall_ is None:
+        return '<p class="liten muted">Telles bare når nettstedet bygges fra databasen.</p>'
+    t = tall_
+    fullt = t["i_dag"] >= VARSEL_DOGN or t["maned"] >= VARSEL_MANED
+    venter = (f"{tall(t['venter_brukere'])} e-poster ({tall(t['venter_saker'])} saker)"
+              if t["venter_brukere"] else "ingen")
+    if t["venter_brukere"] and fullt:
+        venter += ", sendes neste dag"
+    rader = [
+        ("Sendt siste 7 dager", tall(t["uke"])),
+        ("Sendt denne måneden", f"{tall(t['maned'])} av {tall(VARSEL_MANED)} "
+                                f"(Resend: {tall(RESEND_MANED)})"),
+        ("Mottakere, 7 dager", tall(t["mottakere_uke"])),
+        ("Venter", venter),
+        ("Feil, 7 dager", tall(t["feil_uke"])),
+        ("Alle e-poster hos Resend i dag",
+         f"{tall(t['brukt_hos_resend'])} av {tall(RESEND_DOGN)}" if t["brukt_hos_resend"] is not None
+         else "ikke målt i dag"),
+    ]
+    kommuner = ""
+    if t["kommuner"]:
+        kommuner = ('<table class="drift-kv"><thead><tr><th scope="col">Saker som følges</th>'
+                    '<th class="num" scope="col">Saker</th><th class="num" scope="col">Følgere</th></tr></thead><tbody>'
+                    + "".join(f'<tr><th scope="row">{_e(k["kommune"])}</th><td class="num">{tall(k["saker"])}</td>'
+                              f'<td class="num">{tall(k["folgere"])}</td></tr>' for k in t["kommuner"])
+                    + "</tbody></table>")
+    else:
+        kommuner = '<p class="liten">Ingen følger saker ennå.</p>'
+    return (f'<p class="drift-stort">{tall(t["i_dag"])}</p>'
+            f'<p class="liten muted drift-under">av {tall(VARSEL_DOGN)} varsler sendt i dag '
+            f'(Resend: {tall(RESEND_DOGN)} i døgnet)</p>'
+            + _kv(rader) + kommuner
+            + '<p class="liten muted">E-post fra innloggingen (bekreftelse, nytt passord) og fra post@ '
+              "går av den samme grensen hos Resend, men telles bare i «Alle e-poster hos Resend i dag», "
+              "som er tallet Resend ga ved siste utsending. Døgnet og måneden er i UTC, som hos Resend.</p>")
+
+
+def _epost_trygt() -> str:
+    from lager import varsel as lager_varsel  # noqa: PLC0415
+
+    try:
+        return _epost(lager_varsel.tall())
+    except (Exception, SystemExit) as e:  # noqa: BLE001 (databasen trengs ikke for bygget)
+        print(f"advarsel: fikk ikke lest e-posttelleren fra databasen ({e})")
+        return '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
+
+
 def _database_etter_byttet(o: dict, k: list[dict]) -> str:
     """Databasen er kilden (ADR-019): siste kjøring, og kontrollene før byttet."""
     rader = [("Kilde for nettstedet", "Databasen")]
@@ -444,6 +503,7 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
         "innhold": _innhold(status, avvik, poster, na),
         "kostnad": _kostnad(analyser, poster, na, kurs, debatter),
         "database": _database(na),
+        "epost": _epost_trygt(),
         "kjoringer": kjoringer,
         "nye_saker": _nye_saker(poster, na),
         "kommuner": alle_kommuner,

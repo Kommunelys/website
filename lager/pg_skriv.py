@@ -495,8 +495,11 @@ def kjoringer(c, k: int, logg: dict) -> int:
         "insert into drift.kjoring (kjoring_id, kilde, start) values (%s, %s, %s) "
         "on conflict (kjoring_id) do nothing",
         [(kid, "actions" if kid.isdigit() else "lokal", post.get("start")) for kid, post in logg.items()])
+    from .pg import GLOBALE_DELER  # noqa: PLC0415
+
     rader = [(kid, k, del_, nokkel, verdi) for kid, post in logg.items()
-             for del_, tall in post.items() if isinstance(tall, dict) for nokkel, verdi in tall.items()]
+             for del_, tall in post.items() if isinstance(tall, dict) and del_ not in GLOBALE_DELER
+             for nokkel, verdi in tall.items()]
     c.cursor().executemany(
         "insert into drift.kjoring_tall (kjoring_id, kommune_id, del, nokkel, verdi) values (%s, %s, %s, %s, %s::numeric) "
         "on conflict (kjoring_id, coalesce(kommune_id, 0), del, nokkel) do update set verdi = excluded.verdi "
@@ -542,8 +545,9 @@ def tekst_en(c, k: int, id_rom: str, ident: int, innhold: str) -> None:
               "where kjerne.dokument_tekst.tekst is distinct from excluded.tekst", (k, rad[0], innhold))
 
 
-def kjoring_tall(c, k: int, kjoring_id: str, del_: str, tall: dict) -> None:
-    """Tall for én del av kjøringen (siste-kjoring.json for henting av møter)."""
+def kjoring_tall(c, k: int | None, kjoring_id: str, del_: str, tall: dict) -> None:
+    """Tall for én del av kjøringen (siste-kjoring.json for henting av møter).
+    k er None for det som gjelder alle kommunene (varsel)."""
     c.execute("insert into drift.kjoring (kjoring_id, kilde) values (%s, %s) on conflict do nothing",
               (kjoring_id, "actions" if kjoring_id.isdigit() else "lokal"))
     c.cursor().executemany(
@@ -593,3 +597,30 @@ def forrige_telling(c, k: int, telling: dict[str, int]) -> int:
     nye = [(k, int(a), n) for a, n in telling.items() if siste.get(a) != n]
     c.cursor().executemany("insert into drift.bygg (kommune_id, aar, saker, status) values (%s, %s, %s, '{}')", nye)
     return len(nye)
+
+
+# Følg saken (ADR-027) ----------------------------------------------------------------------
+
+def sak_tilstander(c, k: int, tilstander: dict[int, dict]) -> dict:
+    """Det som er publisert i hver sak i kommunen ({sak_id: tilstand}).
+    Bare det som er endret, skrives."""
+    return synk_tabell(c, "varsel.sak_tilstand", ["kommune_id", "sak_id", "tilstand"], ["kommune_id", "sak_id"],
+                       [(k, sak_id, _jsonb(t)) for sak_id, t in tilstander.items()],
+                       "t.kommune_id = %s", (k,))
+
+
+def legg_i_ko(c, ko: list[dict]) -> int:
+    """Nye rader i køen (varsel.utsending): én per fulgt sak med endringer."""
+    c.cursor().executemany(
+        "insert into varsel.utsending (folger_id, user_id, kommune_id, sak_id, tittel, url, hendelser) "
+        "values (%s, %s, %s, %s, %s, %s, %s)",
+        [(r["folger_id"], r["user_id"], r["kommune_id"], r["sak_id"], r["tittel"], r["url"],
+          _jsonb(r["hendelser"])) for r in ko])
+    return len(ko)
+
+
+def folger_tilstand(c, tilstander: dict[int, dict]) -> None:
+    """Tilstanden ved siste varsel per følging ({folger_id: tilstand})."""
+    c.cursor().executemany(
+        "update varsel.folger set tilstand = %s where id = %s and tilstand is distinct from %s",
+        [(_jsonb(t), fid, _jsonb(t)) for fid, t in tilstander.items()])

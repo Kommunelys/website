@@ -447,6 +447,27 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 .snarvei::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:var(--fremdrift,0%);background:var(--lenke);border-radius:2px}
 .snarvei button{flex:none;font:inherit;font-size:13.5px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap;transition:background .28s var(--glid),color .28s,border-color .28s}
 .snarvei button.her{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* Følg saken (ADR-027): den eneste fylte knappen i toppkortet, øverst til
+   høyre ved tittelen, og sist i snarveiene. Følger man saken, er den hvit. */
+.sak-topp{display:flex;align-items:flex-start;justify-content:space-between;gap:12px 20px}
+.folg{display:inline-flex;align-items:center;gap:8px;flex:none;font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border:1.5px solid var(--lenke);border-radius:8px;background:var(--lenke);color:var(--surface);cursor:pointer;white-space:nowrap;transition:background .28s var(--glid),color .28s,box-shadow .28s,transform .18s}
+.folg:hover{box-shadow:0 4px 14px color-mix(in srgb,var(--lenke) 35%,transparent)}
+.folg:active{transform:scale(.96)}
+.folg:focus-visible{outline:2px solid var(--lenke);outline-offset:3px}
+.folg[aria-pressed="true"]{background:var(--surface);color:var(--lenke)}
+.folg svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transform-origin:50% 10%}
+.folg[aria-pressed="true"] svg{fill:currentColor}
+.folg.ringer svg{animation:ring .7s var(--glid)}
+@keyframes ring{20%{transform:rotate(14deg)}40%{transform:rotate(-12deg)}60%{transform:rotate(8deg)}80%{transform:rotate(-4deg)}}
+.snarvei button.folg{margin-left:auto;font-size:13.5px;padding:6px 12px;border-radius:999px;border:1.5px solid var(--lenke);background:var(--lenke);color:var(--surface)}
+.snarvei button.folg[aria-pressed="true"]{background:var(--surface);color:var(--lenke)}
+.snarvei button.folg svg{width:15px;height:15px}
+.merk.folg-melding{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-left-color:var(--lenke);font-size:14.5px;margin:12px 0 0;max-width:62ch}
+.merk.folg-melding[hidden]{display:none}
+.lenkeknapp{font:inherit;background:none;border:0;padding:0;color:var(--lenke);text-decoration:underline;cursor:pointer}
+@media (max-width:600px){.sak-topp{flex-direction:column}.sak-topp .folg{width:100%;justify-content:center}
+  .snarvei button.folg{padding:6px 9px}.snarvei button.folg span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}}
+@media (prefers-reduced-motion:reduce){.folg,.folg.ringer svg{transition:none;animation:none}}
 /* Kortene, her og på de andre sidene. Overskriften har en blek farge etter
    innholdet: blått for KI og det som kommer, lilla for debatten og forslagene,
    grønt for vedtakene, gult for de jevne avstemningene og grått for stemmene og
