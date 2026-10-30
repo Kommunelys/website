@@ -815,3 +815,132 @@ ligger ute.
   kan ingen overstyre: debatten må analyseres på nytt. Debatten vises bare så
   lenge grunnene er de samme som da den ble vurdert. Reglene står både i
   databasen og i `analyser_debatt` (`kan_overstyres`, `kan_aldri_publiseres`).
+
+## ADR-027 — Følg saken: e-post når saken kommer videre
+
+**Besluttet.** Prosjekteier, 29.10.2026. Bygget 29.10.2026; sendes først når
+`VARSEL_SEND` er slått på. Utvider ADR-020.
+
+I en rask brukertest ønsket en innbygger å «følge» en sak og få e-post når
+den kommer videre, for eksempel fra et utvalg til kommunestyret og kanskje
+tilbake. Saken er allerede én tråd på tvers av utvalg og år (ADR-022). Hver
+kjøring ser derfor hva som er nytt i saken, og portalen har kontoer,
+innlogging og e-post via Resend. Det som mangler, er knappen, hvem som følger
+hva, og selve utsendingen.
+
+**Konsekvens:**
+
+- **Knappen.** Hver sak har «Følg saken» med en bjelle, øverst til høyre i
+  toppkortet ved tittelen. På mobil står den under tittelen, like bred som
+  skjermen. Den er den eneste fylte knappen i toppkortet. I store saker står
+  den også i snarveilinjen, som blir stående øverst når man blar. Nederst
+  på siden står den ikke: vi maser ikke (prosjekteier, 29.10.2026). Følger
+  man saken, står det «Følger»; trykker man igjen, slutter man å følge den.
+  Knappen vises også på saker som er avgjort, siden de kan bli klaget på
+  eller behandlet på nytt.
+- **Uten bruker.** Knappen går til registreringen i portalen
+  (`/registrer?grunn=folg&sak=<tittel>&tilbake=<saken>?folg=<behandling>`).
+  Siden sier at man må ha en bruker for å følge saken, at brukeren er gratis,
+  og at man kommer tilbake til saken når e-posten er bekreftet. Knappen heter
+  da «Opprett bruker og følg saken», og lenken til innlogging har de samme
+  parameterne. `tilbake` følger allerede med gjennom bekreftelsen i
+  e-posten (`emailRedirectTo` og `til=` i malen).
+- **Når brukeren kommer tilbake.** Er brukeren innlogget og adressen har
+  `?folg=`, følger `app.js` saken, viser «Du følger saken» med «Angre» og
+  fjerner parameteren fra adressen. At brukeren vil følge saken, står bare i
+  adressen til det er gjort. Det lagres ikke noe for den som aldri bekrefter
+  e-posten.
+- **Hva som lagres.** `varsel.folger` har bruker, kommune, behandlingen
+  brukeren så på, når følgingen startet, og hvordan saken så ut ved siste
+  varsel. Vi lagrer behandlingen, ikke ID-en til saken: ID-en er den laveste
+  behandlingen i kjeden og kan endre seg når kjedene bygges på nytt.
+  Saken finnes igjen gjennom `kjerne.saksgang_steg`. RLS: brukeren ser og
+  endrer bare sine egne rader. Å følge en sak krever innsyn i kommunen
+  (`tilgang.innsyn_kommuner`), så en kommune med begrenset innsyn krever
+  en rolle (ADR-024). Radene slettes når kontoen slettes og logges ikke i
+  endringsloggen, som ikke kan slettes. Portalen ser dem gjennom
+  `portal.folger`.
+- **Status på nettstedet.** `konto.js` henter hvilke saker brukeren følger
+  fra `portal.folger`, med tilgangsnøkkelen. HTML-en og dataene på
+  nettstedet er de samme for alle, og ingenting om hvem som følger hva
+  ligger der.
+- **Hva som gir varsel.** Etter bygget sammenligner Oppdater hver fulgt sak
+  med forrige varsel. Disse endringene gir varsel:
+  - et nytt steg i saksgangen, også når saken går tilbake til et utvalg den
+    har vært i («Saken skal behandles i … igjen»);
+  - en ny dato for neste behandling;
+  - et vedtak, eller en protokoll som blir publisert;
+  - ny status, for eksempel «Vedtatt i kommunestyret»;
+  - et sammendrag eller en debatt som blir publisert.
+
+  Varselet bygger bare på det som er publisert på nettstedet. Et sammendrag
+  eller en debatt som holdes tilbake, gir ikke varsel. Det blir ingen nye
+  kall mot innsynsportalen (ADR-007).
+- **E-posten.** Høyst én e-post per bruker i døgnet, med endringene i alle
+  sakene brukeren følger. Den har tittelen på saken, hva som skjedde, og
+  lenke til saken på kommunelys.no. Teksten fra sammendraget står ikke i
+  e-posten. Avsender er `Kommunelys <post@kommunelys.no>`, og bunnteksten er
+  den samme som på nettstedet. Hver e-post har «Slutt å følge» per sak, som
+  virker med ett klikk uten innlogging (lenke med signert nøkkel, til
+  portalen), og `List-Unsubscribe` med `List-Unsubscribe-Post` i hodet.
+  `List-Unsubscribe-Post` krever en adresse som tar imot POST. Den går til
+  edge-funksjonen, fordi GitHub Pages ikke tar imot POST. Det er det eneste
+  stedet i e-posten som ikke peker til vårt eget domene.
+- **Utsendingen.** Oppdater legger varslene i en kø (`varsel.utsending`).
+  Edge-funksjonen `varsel` slår opp e-postadressene med service-nøkkelen og
+  sender via Resend, slik at e-postadressene aldri er i Actions. Den sender
+  ikke til sperrede brukere, og ikke for en kommune der brukeren har mistet
+  innsynet. Det sendes høyst så mange e-poster om dagen som Resend-planen
+  tillater, med litt margin. Resten sendes neste dag, og driftssiden viser
+  det.
+- **Telleren på driftssiden.** Hver kjøring lagrer `varsel` i
+  `drift.kjoring_tall`: e-poster sendt, mottakere, feil og hvor mange som
+  venter. Driftssiden viser e-poster sendt i dag, siste 7 dager og denne
+  måneden, mot grensen i Resend-planen, og hvor mange saker som følges, i
+  tillegg til følgere per kommune (prosjekteier, 29.10.2026). E-post fra
+  innloggingen (bekreftelse, nytt passord) går via SMTP utenom køen og telles
+  ikke der, men går av den samme grensen i Resend. Om Resend lar oss hente
+  tallet for alle e-postene, vises det også. Det må sjekkes når dette
+  bygges.
+- **Portalen.** Under «Min konto» kommer «Saker jeg følger», med lenke til
+  saken og «Slutt å følge».
+- **Om-siden.** Personvern får et punkt: hvilke saker du følger, lagres med
+  kontoen og brukes bare til å sende deg e-post om dem. Ingen andre ser det,
+  bortsett fra prosjektadmin i databasen. Det slettes sammen med kontoen.
+  Hvilke saker en person følger, kan si noe om hva vedkommende mener, og det
+  gjelder også regelen om ingen profilering.
+- **Ikke avgjort ennå:** om det skal være gratis for alle, eller en del av en
+  betalt plan senere (`tilgang.abonnement`). Ordet «abonnement» er brukt for
+  den betalte tilgangen, så det brukes ikke her: det heter «følg» og
+  «varsel».
+
+**Slik ble det bygget (29.10.2026):**
+
+- **Grensene i Resend** (resend.com/pricing og dokumentasjonen, sjekket
+  29.10.2026). Kommunelys har Free: 100 e-poster i døgnet (nullstilles kl. 00
+  UTC) og 3 000 i måneden, og 10 kall i sekundet. Både sendte og mottatte
+  e-poster teller, også e-post fra innloggingen og fra post@ via SMTP.
+  Varslene stopper på 70 i døgnet og 2 400 i måneden, så det blir plass til
+  resten.
+- **Å telle alle e-postene.** `GET /usage` hos Resend gir brukt mot grense,
+  men krever en nøkkel med full tilgang. Den bruker vi ikke (prosjekteier,
+  29.10.2026): nøkkelen kan bare sende. I stedet lagres hodet
+  `x-resend-daily-quota` fra hver sending, som er alle e-postene fra kontoen
+  det døgnet. Driftssiden viser det som «Alle e-poster hos Resend i dag».
+- **Når tilstanden lagres.** Bygget skriver det som er publisert i sakene til
+  `varsel-tilstand/<slug>.json`, og `kjor.alle` lagrer det i databasen bare
+  når kommunen faktisk publiseres. Stopper en kommune i kontrollene, beholder
+  den forrige versjon, og det varsles ikke om noe som ikke står på nettstedet.
+- **Etter publiseringen.** Steget «Varsel» kjører etter `deploy-pages`, så
+  lenkene peker til sider som finnes. Driftssiden lages på nytt etterpå
+  (`--bare-drift`), så telleren viser denne kjøringen.
+- **Status som bare følger av datoen** («Venter på protokoll», «Protokoll ikke
+  publisert», «Til behandling») gir ikke varsel alene. De kommer når møtet har
+  vært, uten at noe har skjedd i saken.
+- **Funksjonen** publiseres med `verify_jwt = false`, fordi e-postprogrammene
+  sender `List-Unsubscribe-Post` uten innlogging. Utsendingen krever
+  `VARSEL_NOKKEL`, og «Slutt å følge» en nøkkel signert med
+  `VARSEL_HEMMELIGHET`. Lenken fra e-posten går til portalen
+  (`/slutt-a-folge`), som spør før den gjør noe, fordi Safe Links åpner
+  lenkene.
+- **Prosjektadmin** ser følgingene bare direkte i databasen, ikke i portalen.

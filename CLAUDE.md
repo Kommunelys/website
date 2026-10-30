@@ -30,6 +30,7 @@ kommune. Det må være utvetydig uoffisielt i all presentasjon.
 | Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
 | Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, debatter, meldinger) for vurderere per kommune (ADR-023, ADR-026); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
 | Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet bare for dem med tilgang, og innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
+| Følg saken | Bygget (ADR-027), ikke i drift. Knappen med bjelle øverst på saken, «Saker jeg følger» i portalen, og e-post via edge-funksjonen `varsel` når saken kommer videre. Sendes først når variabelen `VARSEL_SEND` er 1. Driftssiden teller e-postene mot grensen i Resend (Free: 100 i døgnet, varslene stopper på 70) |
 | Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
 
 ## Grunnregler du ikke skal bryte
@@ -68,6 +69,7 @@ hent/      innhenting fra portalen (JSON og dokumenter), og opptakene fra kommun
 tolk/      protokoll til voteringer, og saksgang på tvers av utvalg
 tolk/profiler/  regelsettene: standarden for Elements og kommunenes egne (tolk/profil.py)
 kjor/      alle kommunene etter tur: hent, analyser og bygg (kjor/alle.py)
+varsel/    «Følg saken»: det som er publisert i sakene, hva som er nytt, og køen (ADR-027)
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
 drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til driftssiden
@@ -136,6 +138,9 @@ KOMMUNELYS_PORTAL=http://localhost:5173 python -m bygg.bygg_nettsted 2026  # kon
 KOMMUNELYS_LAGER=json python -m lager.synk 2026  # gjør databasen lik data/ (import fra filer)
 python -m lager.paritet 2026           # filene i data/ og databasen gir det samme
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
+python -m varsel.kjor                   # «Følg saken»: endringene i køen; VARSEL_SEND=1 sender (ADR-027)
+python -m bygg.bygg_nettsted --bare-drift --utfall utfall.json  # bare driftssiden, etter varslene
+node --test supabase/functions/varsel/logikk.test.ts  # e-posten og nøkkelen for «Slutt å følge»
 python -m http.server 8765 --directory nettsted  # se nettstedet lokalt; kommunen under /steinkjer/
 ```
 
@@ -451,6 +456,17 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
 - **En rad som kobles til en konto, må tåle at kontoen slettes.**
   `kjerne.feilmelding.meldt_av` settes til null, og `forby_endring` slipper
   akkurat den endringen gjennom. Uten det stopper «Slett kontoen».
+- **`tilgang.innsyn_kommuner()` tar ikke med de publiserte kommunene.** Den
+  gir kommunene der brukeren har en rolle (og alle for prosjektadmin). En
+  regel for «har innsyn» må også slippe gjennom `status = 'publisert'`, som
+  policyen på `varsel.folger` gjør.
+- **Tall med `kommune_id` null i `drift.kjoring_tall`** leses med hver kommune
+  (`pg.kjoringer`). De skrives ikke tilbake på kommunen: delene står i
+  `pg.GLOBALE_DELER` (i dag `varsel`). En ny del for alle kommunene må stå der.
+- **Varselet bygger på det som er publisert, ikke på databasen.** Det som er
+  holdt tilbake, finnes ikke i tilstanden (`varsel/tilstand.py`), og den
+  lagres bare når kommunen publiseres. Endres det som vises på saken, må
+  tilstanden og `tester.kontroller` (`varselet_fanger_endringene`) følge med.
 - **Hver spørring mot databasen tar rundt 50 ms, og tekst går med 0,6 MB/s.**
   `lager/pg.py` husker derfor svarene i prosessen og henter tekst bare når den
   trengs. Spør ikke i en løkke.

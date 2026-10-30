@@ -51,6 +51,7 @@ from tolk.bygg_avvik import AVGJORELSER, alle_avvik, folkevalgte, holdt_tilbake
 from tolk.merknad import merknad_avvik
 from tolk.navn import normaliser, partikode
 from tolk.profil import profil
+from varsel import tilstand as varsel_tilstand
 
 ROT = Path(__file__).resolve().parent.parent
 MAL = Path(__file__).resolve().parent / "mal"
@@ -1045,6 +1046,9 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
     for c in S["cases"]:
         if c["id"] in meldinger["merk"]:
             c["merk"] = meldinger["merk"][c["id"]]
+    # Det som er publisert i hver sak, til «Følg saken» (ADR-027). Før detaljene
+    # skilles ut; kjor.alle lagrer det når kommunen publiseres.
+    varsel_tilstand.skriv(kommune["slug"], S["cases"])
     if nivaa["voteringer"]:
         VOT, holdt = _vot(aar, saker, moter, meldinger)
     else:
@@ -1174,9 +1178,17 @@ def kjor_felles(drift_fil: str | None = None, utfall: dict[str, str] | None = No
     _ikke_funnet(kommuner)
     _robots_og_sitemap(kommuner)
 
-    # Driftssiden publiseres ikke. Den lagres i databasen og vises i portalen
-    # for prosjektadmin (ADR-020); --drift-fil STI lagrer den også lokalt.
-    # Detaljene gjelder kommunen prosessen gjelder; tabellen «Kommunene» alle.
+    driftsside(kommuner, drift_fil, utfall)
+
+
+def driftsside(kommuner: list[tuple[dict, dict]], drift_fil: str | None = None,
+               utfall: dict[str, str] | None = None) -> None:
+    """Driftssiden publiseres ikke. Den lagres i databasen og vises i portalen
+    for prosjektadmin (ADR-020); --drift-fil STI lagrer den også lokalt.
+    Detaljene gjelder kommunen prosessen gjelder; tabellen «Kommunene» alle.
+
+    --bare-drift lager bare den, fra kommunene i nettsted/, etter at varslene
+    er sendt (ADR-027), så telleren viser denne kjøringen."""
     kommune = _kommune()
     status = next((s for k, s in kommuner if k["slug"] == kommune["slug"]), None)
     if status is None:
@@ -1201,7 +1213,7 @@ def kjor(aar: int, drift_fil: str | None = None) -> None:
 
 
 def main() -> None:
-    """python -m bygg.bygg_nettsted [år] [--kommune SLUG] [--uten-felles [--begrenset] | --felles]
+    """python -m bygg.bygg_nettsted [år] [--kommune SLUG] [--uten-felles [--begrenset] | --felles | --bare-drift]
     [--drift-fil STI] [--utfall STI]
 
     Uten valg bygges kommunen og det felles. --uten-felles bygger bare
@@ -1209,13 +1221,21 @@ def main() -> None:
     --utfall er en JSON-fil {slug: utfall} fra kjor.alle til driftssiden.
     --begrenset bygger kommunen med begrenset innsyn (ADR-024): dataene til
     nettsted-skjermet/<slug>/, ikke til nettstedet.
+    --bare-drift lager bare driftssiden på nytt, etter varslene (ADR-027).
     """
     argv = lager_kommune.fra_argv(sys.argv[1:])
     verdier = {n: argv[argv.index(n) + 1] for n in ("--drift-fil", "--utfall") if n in argv}
     args = [a for a in argv if not a.startswith("--") and a not in verdier.values()]
     aar = int(args[0]) if args else dt.date.today().year
     drift_fil = verdier.get("--drift-fil")
-    if "--felles" in argv:
+    utfall_fil = Path(verdier["--utfall"]) if "--utfall" in verdier else None
+    if "--bare-drift" in argv:
+        kommuner = _bygde()
+        if not kommuner:
+            raise SystemExit("fant ingen kommuner i nettsted/; bygg kommunene først")
+        driftsside(kommuner, drift_fil,
+                   json.loads(utfall_fil.read_text("utf-8")) if utfall_fil and utfall_fil.exists() else None)
+    elif "--felles" in argv:
         utfall = json.loads(Path(verdier["--utfall"]).read_text("utf-8")) if "--utfall" in verdier else None
         kjor_felles(drift_fil, utfall)
     elif "--uten-felles" in argv:
