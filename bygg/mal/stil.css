@@ -468,6 +468,32 @@ tr[aria-selected="true"] td{background:var(--lys-flate)}
 @media (max-width:600px){.sak-topp{flex-direction:column}.sak-topp .folg{width:100%;justify-content:center}
   .snarvei button.folg{padding:6px 9px}.snarvei button.folg span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}}
 @media (prefers-reduced-motion:reduce){.folg,.folg.ringer svg{transition:none;animation:none}}
+/* Bla i møtet (BLA I MØTET i app.js): pilene og «Sak 4 av 14 i …» ved «Alle
+   saker», og neste sak som et kort under kortene. På smal skjerm får pilene
+   hele bredden, og møtet brytes under tallet. */
+.tilbake-rad{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:24px 0 0}
+.tilbake-rad .tilbake{margin:0}
+.bla{display:flex;align-items:center;gap:2px;max-width:100%;padding:3px;border:1px solid var(--line);border-radius:22px;background:var(--surface);font-size:14px;box-shadow:var(--skygge)}
+.bla[hidden]{display:none}
+.bla-pil{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;color:var(--lenke);transition:background .2s var(--glid),transform .18s}
+.bla-pil:hover{background:var(--lys-flate)}
+.bla-pil:active{transform:scale(.92)}
+.bla-pil.av{color:var(--muted);opacity:.35}
+.bla-mote{min-width:0;padding:3px 8px;text-align:center;line-height:1.35;color:var(--ink);text-decoration:none}
+.bla-mote b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.bla-mote:hover{color:var(--lenke)}
+.bla-videre a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 14px;margin:4px 0 14px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);text-decoration:none;box-shadow:0 1px 2px rgba(31,41,55,.06),0 8px 24px rgba(31,41,55,.07);transition:border-color .28s var(--glid)}
+.bla-videre small{grid-column:1;font-size:13.5px;color:var(--muted)}
+.bla-videre b{grid-column:1;font-size:17px;line-height:1.35;color:var(--lenke);overflow-wrap:anywhere}
+.bla-videre svg{grid-column:2;grid-row:1/span 2;color:var(--lenke);transition:transform .28s var(--glid)}
+.bla-videre a:hover{border-color:var(--lenke)}
+.bla-videre a:hover svg{transform:translateX(4px)}
+.bla-slutt{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:4px 0 14px;padding:14px 18px;border:1px dashed var(--line);border-radius:14px}
+.bla-slutt p{margin:0;color:var(--muted)}
+.bla-slutt a{font-weight:600}
+.bla-slutt a::before{content:"← "}
+.saksside h1[tabindex="-1"]:focus{outline:none}
+@media (max-width:600px){.bla{width:100%}.bla-mote{flex:1}}
 /* Kortene, her og på de andre sidene. Overskriften har en blek farge etter
    innholdet: blått for KI og det som kommer, lilla for debatten og forslagene,
    grønt for vedtakene, gult for de jevne avstemningene og grått for stemmene og
@@ -573,9 +599,12 @@ ol.vedtak li.ny::before{color:var(--info);background:color-mix(in srgb,var(--inf
 .bev .sakkort:not(.synlig){opacity:0;transform:translateY(16px)}
 .bev .stempel:not(.slag){opacity:0}
 .stempel.slag{animation:stempel .6s cubic-bezier(.3,1.5,.5,1) both}
-.saksside .tidslinje li::before,.vkort .tidslinje li::before{transform-origin:left;animation:linje .45s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 80ms)}
-.saksside .tidslinje li::after,.vkort .tidslinje li::after{animation:prikk .3s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms)}
-.saksside .tidslinje li>*,.vkort .tidslinje li>*{animation:inn .35s var(--glid) both;animation-delay:calc(var(--i,0) * 110ms + 40ms)}
+/* Tidslinjen tegnes punkt for punkt: prikken, navnet og streken videre.
+   --tl-steg er tiden mellom punktene; hele linjen tar rundt 1,5 sekunder. */
+.tidslinje{--tl-steg:320ms}
+.saksside .tidslinje li::before,.vkort .tidslinje li::before{transform-origin:left;animation:linje .6s var(--glid) both;animation-delay:calc(var(--i,0) * var(--tl-steg) + 120ms)}
+.saksside .tidslinje li::after,.vkort .tidslinje li::after{animation:prikk .45s var(--glid) both;animation-delay:calc(var(--i,0) * var(--tl-steg))}
+.saksside .tidslinje li>*,.vkort .tidslinje li>*{animation:inn .45s var(--glid) both;animation-delay:calc(var(--i,0) * var(--tl-steg) + 60ms)}
 .saksside .bar,.moteside .bar,.profil .bar,.maaler>i,#close .bar,.vcelle .bar{transform-origin:left;animation:linje .6s var(--glid) both}
 @keyframes linje{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes prikk{from{transform:scale(0)}60%{transform:scale(1.25)}to{transform:scale(1)}}
@@ -701,8 +730,12 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 @media (max-width:640px){#ftab th:nth-child(4),#ftab td:nth-child(4){display:none}#ftab td:first-child{min-width:130px}}
 .partilinje{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;font-size:15px}
 .partilinje b{font-size:17px}
+/* Tilbake til listen: samme pille og pil som blaingen på saken (.bla). */
 .tilbake{margin:24px 0 0;font-size:14px}
-.tilbake a::before{content:"← "}
+.tilbake a{display:inline-flex;align-items:center;gap:2px;padding:3px 16px 3px 3px;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:var(--skygge);color:var(--ink);text-decoration:none;line-height:1.35}
+.tilbake a:hover{color:var(--lenke)}
+.tilbake a:hover .bla-pil{background:var(--lys-flate)}
+.tilbake a:active .bla-pil{transform:scale(.92)}
 .profil .ingress{margin-top:12px}
 .profil .parti{font-size:15px;margin:0 0 4px;display:flex;align-items:center}
 .profil h1{margin-bottom:8px}

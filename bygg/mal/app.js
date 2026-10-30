@@ -520,12 +520,14 @@ function hentDetaljer(aar){
   }).catch(e=>{delete DETALJER[aar];throw e}));
 }
 // Sakssiden venter på detaljene. Feiler hentingen, vises saken uten dem.
-function visSak(id){
-  const c=SAK_ID[id],aar=c&&sakensAar(c);
-  if(!c||!(S.detaljer||{})[aar]||DETALJER_KLAR.has(aar)){renderSak(id);return}
+// Pilene for å bla i møtet (mid) vises med en gang, før detaljene er hentet.
+function visSak(id,mid){
+  const c=SAK_ID[id],aar=c&&sakensAar(c),b=c&&blaI(c,mid);
+  visBla(b);
+  if(!c||!(S.detaljer||{})[aar]||DETALJER_KLAR.has(aar)){renderSak(id,false,b);return}
   $('sak').innerHTML='<div class="ingress"><p class="muted">Henter saken …</p></div>';
   const her=location.hash;
-  hentDetaljer(aar).then(()=>{if(location.hash===her)renderSak(id)},()=>{if(location.hash===her)renderSak(id,true)});
+  hentDetaljer(aar).then(()=>{if(location.hash===her)renderSak(id,false,b)},()=>{if(location.hash===her)renderSak(id,true,b)});
 }
 const erRad=sc=>RAD.includes(sc);
 const datoAar=d=>`${ddl(d)} ${d.slice(0,4)}`;
@@ -566,6 +568,10 @@ const IKON={
   sti:'<circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 7v10M8 5h4a4 4 0 0 1 4 4v1"/>',
   dok:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
   pil:'<path d="m6 9 6 6 6-6"/>',
+  // Bla i møtet: forrige og neste sak, og videre nederst.
+  forrige:'<path d="m15 18-6-6 6-6"/>',
+  neste:'<path d="m9 18 6-6-6-6"/>',
+  videre:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
   // De under brukes på møtesiden, profilen og under Partiene.
   kalender:'<path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
   folk:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
@@ -787,7 +793,7 @@ function moteDel(c,x,avgjort,stor,apen){
     :`<div class="${cls}" id="mote-${x.hid}"><div class="msum">${hode}</div><div class="minnhold">${innhold}</div></div>`;
 }
 
-function renderSak(id,uten_detaljer){
+function renderSak(id,uten_detaljer,bla){
   const c=SAK_ID[id],el=$('sak');
   if(!c){el.innerHTML='<div class="ingress"><h1>Fant ikke saken</h1><p>Saken finnes ikke i dataene'+(FLERE_AAR?'':' for dette året')+'. <a href="#saker">Se alle sakene</a>.</p></div>';return}
   document.title=`${tittel(c)} – ${K.navn} | ${S.merke}`;
@@ -829,10 +835,12 @@ function renderSak(id,uten_detaljer){
     <div class="tagrad"><p class="tags">${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join(' ')}</p>${dokumenter(c)}</div></div>
     ${snarvei}${feil}${!harSum&&c.typ==='PS'&&!c.formal?'<p class="liten muted">Ingen sammendrag ennå. Les dokumentene under Dokumenter.</p>':''}${(c.merk||[]).map(merknad).join('')}
     ${kort.map(k=>sakKort({...k,lukkbar:stor&&!k.fast})).join('')}
+    ${bla?blaBunn(bla):''}
     <p class="liten muted mt">Stemmene er lest fra protokollene uten KI, og antall navn er kontrollert mot stemmetallene.</p>
     <p class="liten mt"><a href="${meldUrl(c)}">Meld fra om feil i saken</a> <span class="muted">(krever innlogging)</span><span class="bare-prosjektadmin"> · <a href="${redigerUrl(c)}">Rediger sammendraget</a></span></p>
   </div>`;
   bevegelse(el);
+  if(BLA.retning)blaInn(el);
   if(FOLG.vis===c.id){FOLG.vis=null;folgMelding(c,true)}
 }
 
@@ -864,7 +872,7 @@ function moteSak({c,x},m){
   // Én avstemning der noen stemte imot, får stolpen med partiene, som på saken.
   const vs=(VOT_HID[x.hid]||{v:[]}).v.filter(v=>!v.holdt),en=vs.length===1&&omstridt(vs[0])&&!erAlt(vs[0])?vs[0]:null;
   return `<li class="mote-sak"><div class="mote-sak-topp"><span class="mono muted">${esc(x.nr)}</span><span class="mote-sak-hoyre">${op}${isFut(m.date)?'':moteUtfall(x)}</span></div>
-    <a class="t" href="#sak/${c.id}">${esc(tittel(c))}</a>${c.a?`<span class="o">${esc(c.t)}</span>`:''}
+    <a class="t" href="${sakIMote(c,m)}">${esc(tittel(c))}</a>${c.a?`<span class="o">${esc(c.t)}</span>`:''}
     ${en?segBar(en):''}
     ${c.a&&c.a.bet?`<p class="mbetyr"><span class="ki">KI</span> ${esc(c.a.bet)}</p>`:''}
     ${mer?`<p class="liten muted">${mer}</p>`:''}</li>`;
@@ -877,8 +885,8 @@ function renderMote(id){
   document.title=`${utName(m.sc)} ${ddl(m.date)} – ${K.navn} | ${S.merke}`;
   $('motetilbake').href='#moter/'+m.date.slice(0,7);
   const st=moteStatus(m),dok=t=>m.docs.find(d=>d.ty===t),fram=isFut(m.date);
-  const alle=(SAKER_MOTE[m.id]||[]).sort((a,b)=>{const ka=_saksnr(a.x.nr),kb=_saksnr(b.x.nr);return ka[0]-kb[0]||ka[1]-kb[1]});
-  const pol=alle.filter(o=>o.c.typ==='PS'&&!o.c.formal),andre=alle.filter(o=>!pol.includes(o));
+  const alle=(SAKER_MOTE[m.id]||[]).sort(etterNr);
+  const pol=alle.filter(o=>politisk(o.c)),andre=alle.filter(o=>!pol.includes(o));
   const dokumentene=[dok('MI')&&['PDF','Møteinnkallingen','Sakslisten med alle saksframleggene',dok('MI').u],
     dok('MP')&&['PDF','Møteprotokollen','Vedtakene og hvem som møtte',dok('MP').u],
     m.url&&['↗','Innsynsportalen','Møtet hos kommunen, med alle dokumentene',m.url]].filter(Boolean);
@@ -935,6 +943,58 @@ function oppmoteHtml(m){
 }
 // «PS 13/2026» -> [13, 2026] for sortering.
 const _saksnr=nr=>{const t=(nr||'').match(/(\d+)\/(\d+)/);return t?[+t[2],+t[1]]:[0,0]};
+const etterNr=(a,b)=>{const ka=_saksnr(a.x.nr),kb=_saksnr(b.x.nr);return ka[0]-kb[0]||ka[1]-kb[1]};
+const politisk=c=>c.typ==='PS'&&!c.formal;
+
+/* ---------- BLA I MØTET ---------- */
+/* På saken kan man bla til forrige og neste sak på sakslisten til ett møte, i
+   samme rekkefølge som på møtesiden, og bare de politiske sakene. Møtet står i
+   adressen (#sak/<id>/mote/<id>) når man kommer fra møtet eller har bladd, så
+   tilbakeknappen og en delt lenke blar i samme møte. Uten møte i adressen er
+   det det siste møtet saken er behandlet i, det fase() kaller «Behandlet i»;
+   har saken ikke vært oppe ennå, det neste. */
+const sakIMote=(c,m)=>`#sak/${c.id}/mote/${m.id}`;
+// En sak kan ha to behandlinger med samme saksnummer i ett møte; den tas med én gang.
+const sakslisten=m=>{const sett=new Set();return (SAKER_MOTE[m.id]||[]).filter(o=>politisk(o.c)&&!sett.has(o.c)&&sett.add(o.c)).sort(etterNr)};
+const moteNavn=m=>`${smaa(utName(m.sc))} ${ddl(m.date).replace(' ',' ')}${m.date.slice(0,4)===TODAY.slice(0,4)?'':' '+m.date.slice(0,4)}`;
+function blaMote(c,mid){
+  const holdt=c.st.filter(x=>!isFut(x.date));
+  const x=(mid&&c.st.find(x=>x.mid===mid))||[...holdt].reverse().find(x=>!erRad(x.sc))
+    ||c.st.find(x=>isFut(x.date)&&!erRad(x.sc))||holdt.at(-1);
+  return x&&MOTE_ID[x.mid]||null;
+}
+// Hvor saken står på sakslisten, og sakene før og etter. Null når det ikke er noe å bla i.
+function blaI(c,mid){
+  const m=politisk(c)&&blaMote(c,mid);if(!m)return null;
+  const liste=sakslisten(m),i=liste.findIndex(o=>o.c===c);
+  if(i<0||liste.length<2)return null;
+  return {m,i,n:liste.length,navn:moteNavn(m),forrige:liste[i-1]?.c,neste:liste[i+1]?.c};
+}
+// Øverst, ved «Alle saker»: pilene og hvor man er. Midten går til møtet.
+function visBla(b){
+  const n=$('sakbla');n.hidden=!b;
+  if(!b){n.innerHTML='';return}
+  n.setAttribute('aria-label',`Sakene i ${b.navn}`);
+  const pil=(s,r)=>s?`<a class="bla-pil" href="${sakIMote(s,b.m)}" data-bla="${r}" aria-label="${r<0?'Forrige':'Neste'} sak i ${esc(b.navn)}: ${esc(tittel(s))}">${ikon(r<0?'forrige':'neste')}</a>`
+    :`<span class="bla-pil av" title="${r<0?'Første':'Siste'} sak i møtet" aria-hidden="true">${ikon(r<0?'forrige':'neste')}</span>`;
+  n.innerHTML=`${pil(b.forrige,-1)}<a class="bla-mote" href="#mote/${b.m.id}" aria-label="Sak ${b.i+1} av ${b.n} i ${esc(b.navn)}. Gå til møtet"><b>Sak ${b.i+1} av ${b.n}</b> i ${esc(b.navn)}</a>${pil(b.neste,1)}`;
+  // Neste sak kan være fra et annet år; detaljene hentes alt nå.
+  if(b.neste)hentDetaljer(sakensAar(b.neste)).catch(()=>{});
+}
+// Nederst, etter kortene: neste sak med tittelen, eller tilbake til møtet etter den siste.
+function blaBunn(b){
+  if(!b.neste)return `<nav class="bla-slutt" aria-label="Slutten av sakslisten"><p>Det var siste sak i ${esc(b.navn)}.</p><a href="#mote/${b.m.id}">Tilbake til møtet</a></nav>`;
+  return `<nav class="bla-videre" aria-label="Videre i ${esc(b.navn)}"><a href="${sakIMote(b.neste,b.m)}" data-bla="1">
+    <small>Videre i møtet · sak ${b.i+2} av ${b.n}</small><b>${esc(tittel(b.neste))}</b>${ikon('videre',22)}</a></nav>`;
+}
+/* Saken glir inn fra den siden man blar mot, og overskriften får fokus, så en
+   skjermleser leser den nye saken. Ingen bevegelse med mindre bevegelse. */
+const BLA={retning:0};
+function blaInn(el){
+  const r=BLA.retning;BLA.retning=0;
+  if(!MINDRE)el.animate([{opacity:0,transform:`translateX(${r*24}px)`},{opacity:1,transform:'none'}],{duration:TID,easing:GLI});
+  const h=el.querySelector('h1');if(h){h.tabIndex=-1;h.focus({preventScroll:true})}
+}
 
 /* ---------- UTVALGENE ---------- */
 /* Hva hvert utvalg gjør, når det møtes og hvem som sitter der, fra
@@ -1031,6 +1091,9 @@ function gaTil(id){
   });
 }
 document.addEventListener('click',e=>{
+  // Bla i møtet: lenken bytter sak selv; her huskes bare retningen for bevegelsen.
+  const bl=e.target.closest('[data-bla]');
+  if(bl&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){BLA.retning=+bl.dataset.bla;return}
   const s=e.target.closest('#innhold details>summary');
   if(s&&!e.target.closest('a')){e.preventDefault();const d=s.parentElement;tilstand(d)==='open'?lukk(d):aapne(d);return}
   // Lange vedtaksavsnitt og lister med flere punkter foldes ut.
@@ -1182,7 +1245,7 @@ function go(v,o={}){
 }
 let forrigeV=null;
 function vis(){
-  const [v0,arg]=decodeURIComponent(location.hash.slice(1)).split('/');
+  const [v0,arg,...mer]=decodeURIComponent(location.hash.slice(1)).split('/');
   // Om-fanen er flyttet til Om-siden, som er felles for alle kommunene.
   if(v0==='om'){location.replace(OM);return}
   // Stemmer er flyttet: stemmene står på sakene, partiene under Politikere.
@@ -1200,7 +1263,8 @@ function vis(){
   if(v==='politikere'){const f=arg==='partiene'?'partiene':'politikerne';visPolFane(f);
     if(f==='politikerne'){fparti=PARTI_I_FOLK.includes(arg)?arg:null;renderFChips();renderFolk()}}
   if(v==='person')renderPerson(arg);
-  if(v==='sak')visSak(+arg);
+  // #sak/<id>/mote/<id>: møtet man blar i.
+  if(v==='sak')visSak(+arg,mer[0]==='mote'?+mer[1]:null);
   // Saken kaller bevegelse selv, når detaljene er hentet.
   else bevegelse($('v-'+v));
   const valgtUtvalg=v==='hvem-bestemmer'&&arg&&document.getElementById('utvalg-'+arg);
@@ -1291,11 +1355,11 @@ function viktigKort({c,x,m}){
   const deb=x.db||(x.op&&x.op.length)?`<div class="vcelle debatt" id="vdeb-${x.hid}"><span class="vl">${ikon('debatt',16)}Debatten</span>${vDebatt(x)}</div>`:'';
   return `<article class="sakkort vkort">
     <div class="vtopp"><a href="#mote/${m.id}">Kommunestyret ${ddl(m.date)}</a><span class="st ${f.cls}">${c.status==='Vedtatt i kommunestyret'?'Vedtatt':esc(c.status)}</span></div>
-    <h3><a href="${sakUrl(x.hid)}">${esc(tittel(c))}</a></h3>
+    <h3><a href="${sakIMote(c,m)}">${esc(tittel(c))}</a></h3>
     <p class="bet"><span class="ki" title="Skrevet av KI ut fra saksdokumentene">KI</span> ${esc(c.a.bet)}</p>
     ${tidslinje(c,true)}
     <div class="vfakta">${deb}<div class="vcelle vedtak"><span class="vl">${ikon('vedtak',16)}Vedtaket</span>${vVedtak(c,x)}</div></div>
-    <a class="kort-lenke" href="${sakUrl(x.hid)}">Se hele saken</a>
+    <a class="kort-lenke" href="${sakIMote(c,m)}">Se hele saken</a>
   </article>`;
 }
 (function(){
