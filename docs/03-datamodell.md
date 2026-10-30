@@ -235,6 +235,40 @@ datoer som ikke ble funnet i kilden, og bare så lenge dagens grunner er blant
 dem som ble vurdert. Merknader vises bare om de er høyst 300 tegn, uten
 lenker og uten navn (`tolk/merknad.py`).
 
+## Følg saken (ADR-027)
+
+En innlogget bruker kan følge en sak og få e-post når den kommer videre.
+Skjemaet `varsel` har fire tabeller:
+
+| Tabell | Hva |
+|---|---|
+| `folger` | Bruker, kommune, behandlingen brukeren så på, når følgingen startet, og tilstanden ved siste varsel |
+| `sak_tilstand` | Det som er publisert i hver sak etter siste bygg som ble publisert |
+| `utsending` | Køen: én rad per fulgt sak med endringer, til den er sendt |
+| `epost` | Hver e-post som er sendt eller forsøkt, uten mottaker. Telleren på driftssiden bygger på den |
+
+- **Behandlingen, ikke saken.** ID-en til saken er den laveste behandlingen i
+  kjeden og kan endre seg. Saken finnes igjen gjennom `kjerne.saksgang_steg`.
+- **Tilstanden** lages av bygget fra de samme sakene som nettstedet viser
+  (`varsel/tilstand.py`): status, stegene (dato, utvalg, protokoll og vedtak),
+  om sammendraget er publisert, og hvilke debatter som er publisert. Det som
+  holdes tilbake, er ikke med. `kjor.alle` lagrer den bare når kommunen
+  publiseres, så varselet aldri går foran nettstedet.
+- **Ny følging** får tilstanden fra `sak_tilstand` med en gang (en trigger),
+  så neste kjøring sammenligner med det brukeren så.
+- **Hendelsene** (`varsel/endringer.py`): nytt steg («igjen» når utvalget har
+  vært med før), ny dato, vedtak eller protokoll publisert, ny status når
+  saken er avgjort eller skal til kommunestyret, og sammendrag eller debatt
+  publisert. Status som bare følger av datoen («Venter på protokoll»), gir
+  ikke varsel alene.
+- **Sendingen** (edge-funksjonen `varsel`): én e-post per bruker i døgnet, og
+  ikke flere enn grensene (`varsel.grense_dogn`, `varsel.grense_maned`).
+  Ikke til sperrede brukere, og ikke for en kommune brukeren har mistet
+  innsynet i.
+- **Personvern.** Ingen endringslogg, alt om brukeren slettes med kontoen,
+  og bare brukeren selv ser sine følginger (RLS). Å følge krever innsyn i
+  kommunen: publisert, eller en rolle der.
+
 ## Navnevarianter
 
 Samme person skrives ulikt, også i samme dokument. Oppmøtelisten bruker ofte

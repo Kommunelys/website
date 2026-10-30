@@ -141,6 +141,11 @@ def bygg(aar: int, hopp_over: set[str]) -> int:
             # status.json publiseres som for de andre. Feiler det, beholdes
             # forrige versjon, både her og i databasen.
             ok = _kjor(slug, "bygg.skjerm")
+        if ok and status != "intern":
+            # Det som er publisert i sakene, til «Følg saken» (ADR-027). Bare
+            # når kommunen faktisk publiseres, så varselet aldri går foran
+            # nettstedet. Feiler det, varsles det neste gang.
+            _kjor(slug, "varsel.tilstand")
         if status == "intern":
             if ok:
                 INTERN.mkdir(exist_ok=True)

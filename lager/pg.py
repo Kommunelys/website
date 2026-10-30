@@ -628,7 +628,12 @@ def lagre_kontroller(resultater: dict[int, tuple[str, list[str]]]) -> None:
 
 # Rekkefølgen drift.logg legger tallene inn i.
 _KJORING_NOKLER = {"portal": ["kall", "feil", "megabyte", "sekunder"],
-                   "analyse": ["sendt", "feil", "utsatt", "tokens_inn", "tokens_ut"]}
+                   "analyse": ["sendt", "feil", "utsatt", "tokens_inn", "tokens_ut"],
+                   "varsel": ["ny_i_ko", "sendt", "mottakere", "feil", "venter"]}
+
+# Deler som gjelder alle kommunene (kommune_id er null). De leses med hver
+# kommune, men skrives ikke tilbake på den (pg_skriv.kjoringer).
+GLOBALE_DELER = {"varsel"}
 
 
 def _tall(verdi):
@@ -772,3 +777,53 @@ def overgang(antall: int = 60) -> dict:
     storrelse = _rader("select pg_size_pretty(pg_database_size(current_database()))")[0][0]
     return {"kontroller": kontroller, "speiling": speiling[0] if speiling else None,
             "kjoring": kjoring[0] if kjoring else None, "storrelse": storrelse}
+
+
+# Følg saken (ADR-027) ----------------------------------------------------------------------
+
+def folger_til_varsel() -> list[dict]:
+    """Alle følgingene, med saken slik den er nå. Saken finnes gjennom
+    behandlingen (saksgang_steg), siden ID-en til saken kan endre seg.
+    sak_id er None når behandlingen ikke lenger finnes. naa er det som er
+    publisert i saken etter siste bygg. Huskes ikke: køen skrives mellom to
+    lesinger."""
+    kolonner = ("id", "user_id", "kommune_id", "kommune", "status", "behandling_id", "sak_id", "tittel",
+                "tilstand", "naa")
+    return [dict(zip(kolonner, rad)) for rad in _rader(
+        "select f.id, f.user_id::text, f.kommune_id, ko.slug, ko.status, f.behandling_id, g.sak_id, s.tittel, "
+        "f.tilstand, t.tilstand "
+        "from varsel.folger f join kjerne.kommune ko on ko.kommune_id = f.kommune_id "
+        "left join kjerne.saksgang_steg g on g.kommune_id = f.kommune_id and g.behandling_id = f.behandling_id "
+        "left join kjerne.sak s on s.kommune_id = g.kommune_id and s.sak_id = g.sak_id "
+        "left join varsel.sak_tilstand t on t.kommune_id = g.kommune_id and t.sak_id = g.sak_id "
+        "order by f.id")]
+
+
+def varsel_tall() -> dict:
+    """Telleren på driftssiden: e-poster sendt (døgnet og måneden i UTC, som
+    hos Resend), hvem som venter, og hvor mange som følger saker per kommune."""
+    (i_dag, uke, maned, feil_uke, brukt), = _rader(
+        "select count(*) filter (where feil is null and (sendt at time zone 'utc')::date "
+        "                        = (now() at time zone 'utc')::date), "
+        "       count(*) filter (where feil is null and sendt > now() - interval '7 days'), "
+        "       count(*) filter (where feil is null and date_trunc('month', sendt at time zone 'utc') "
+        "                        = date_trunc('month', now() at time zone 'utc')), "
+        "       count(*) filter (where feil is not null and sendt > now() - interval '7 days'), "
+        "       (select e.brukt_hos_resend from varsel.epost e where e.brukt_hos_resend is not null "
+        "          and (e.sendt at time zone 'utc')::date = (now() at time zone 'utc')::date "
+        "        order by e.sendt desc limit 1) "
+        "from varsel.epost")
+    (mottakere, venter_brukere, venter_saker), = _rader(
+        "select count(distinct user_id) filter (where sendt > now() - interval '7 days'), "
+        "       count(distinct user_id) filter (where sendt is null and forsok < 3), "
+        "       count(*) filter (where sendt is null and forsok < 3) "
+        "from varsel.utsending")
+    kommuner = [{"kommune": navn, "folgere": folgere, "saker": saker} for navn, folgere, saker in _rader(
+        "select ko.navn, count(distinct f.user_id), "
+        "       count(distinct coalesce(g.sak_id, -f.behandling_id)) "
+        "from varsel.folger f join kjerne.kommune ko on ko.kommune_id = f.kommune_id "
+        "left join kjerne.saksgang_steg g on g.kommune_id = f.kommune_id and g.behandling_id = f.behandling_id "
+        "group by ko.navn order by ko.navn")]
+    return {"i_dag": i_dag, "uke": uke, "maned": maned, "feil_uke": feil_uke, "brukt_hos_resend": brukt,
+            "mottakere_uke": mottakere, "venter_brukere": venter_brukere, "venter_saker": venter_saker,
+            "kommuner": kommuner}

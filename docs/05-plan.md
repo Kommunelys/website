@@ -76,8 +76,8 @@ Koden og arbeidsflyten er gjort klare for flere kommuner (ADR-021).
 | Detaljene til sakene lastes når saken åpnes (ADR-022) | Ferdig |
 | Valgperioden: frys medlemslisten for 2023–2027, merk nye, gjenvalgte og tidligere folkevalgte, Partiene per valgperiode, skille i saksgangen og en boks om overgangen. Før august 2027 | |
 | Valgresultatet fra Valgdirektoratet ved siden av partifordelingen. Eget steg etter valgperioden | |
-| Følg saken: e-post når saken kommer videre (ADR-027) | |
-| Teller for e-post sendt på driftssiden i portalen: i dag, siste 7 dager, denne måneden, mot grensen i Resend. Må være med før varslene sendes (ADR-027) | |
+| Følg saken: e-post når saken kommer videre (ADR-027) | Bygget, ikke i drift: sendes når `VARSEL_SEND` er 1 |
+| Teller for e-post sendt på driftssiden i portalen: i dag, siste 7 dager, denne måneden, mot grensen i Resend. Må være med før varslene sendes (ADR-027) | Bygget, med følgere per kommune |
 | Varsling på tema eller geografisk område | |
 | Lenker til opptakene og debatten fra kommunens teksting (ADR-026) | Ferdig for Steinkjer |
 | Vurdering av debatter som holdes tilbake, i portalen | |

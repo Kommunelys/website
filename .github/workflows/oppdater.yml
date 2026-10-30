@@ -185,6 +185,25 @@ jobs:
       - id: publiser
         uses: actions/deploy-pages@v4
 
+      # Følg saken (ADR-027): etter publiseringen, så lenkene i e-posten peker
+      # til sider som finnes. Endringene legges i køen; edge-funksjonen varsel
+      # sender dem bare når variabelen VARSEL_SEND er 1. Feiler det, er
+      # nettstedet likevel publisert, og kjøringen merkes som feilet.
+      - name: Varsel til dem som følger saker
+        env:
+          VARSEL_SEND: ${{ vars.VARSEL_SEND }}
+          VARSEL_NOKKEL: ${{ secrets.VARSEL_NOKKEL }}
+        run: python -m varsel.kjor
+
+      # Driftssiden ble bygget før varslene; den lages på nytt, så telleren
+      # for e-post viser denne kjøringen.
+      - name: Driftssiden med e-posttelleren
+        if: ${{ always() && steps.publiser.outcome == 'success' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
+        run: python -m bygg.bygg_nettsted --bare-drift --utfall utfall.json
+
   # GitHub slår av planlagte kjøringer etter 60 dager uten aktivitet i repoet.
   # Før byttet holdt de daglige datacommitene repoet aktivt; nå slås
   # arbeidsflytene på igjen ved hver planlagte kjøring. GitHub sender også

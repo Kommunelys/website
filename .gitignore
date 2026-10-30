@@ -8,3 +8,5 @@ nettsted/
 nettsted-intern/
 nettsted-skjermet/
 utfall.json
+# Det som er publisert i sakene, fra bygget til varselet (ADR-027).
+varsel-tilstand/

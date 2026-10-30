@@ -408,6 +408,60 @@ def debattkontrollen_fanger_det_den_skal() -> list[str]:
     return feil
 
 
+def varselet_fanger_endringene() -> list[str]:
+    """«Følg saken» (ADR-027): hver endring som skal gi varsel, gjør det, og
+    ingenting annet. Prøves på en sak slik bygget lager den, uten databasen."""
+    from varsel.endringer import endringer  # noqa: PLC0415
+    from varsel.tilstand import tilstand  # noqa: PLC0415
+
+    def sak(**endre) -> dict:
+        st = [{"hid": 10, "date": "2026-09-01T10:00", "ut": "Formannskapet", "sc": "FSK", "pub": True,
+               "vt": "Vedtatt."},
+              {"hid": 11, "date": "2026-11-20T10:00", "ut": "Kommunestyret", "sc": "KS", "pub": False}]
+        c = {"id": 10, "t": "Ny skole", "status": "Til kommunestyret", "st": st}
+        for nokkel, verdi in endre.items():
+            if nokkel == "steg":
+                c["st"] = verdi(st)
+            else:
+                c[nokkel] = verdi
+        return tilstand(c)
+
+    i_dag = "2026-10-29"
+    for_ = sak()
+    planter = {
+        "nytt steg": (sak(steg=lambda st: st + [{"hid": 12, "date": "2026-12-10T10:00", "ut": "Formannskapet",
+                                                  "sc": "FSK", "pub": False}]),
+                      "Saken skal opp i formannskapet igjen 10. desember 2026"),
+        "ny dato": (sak(steg=lambda st: [st[0], {**st[1], "date": "2026-12-03T10:00"}]),
+                    "Ny dato i kommunestyret: 3. desember 2026"),
+        "vedtak": (sak(steg=lambda st: [st[0], {**st[1], "date": "2026-10-20T10:00", "pub": True,
+                                                "vt": "Vedtatt."}], status="Vedtatt i kommunestyret"),
+                   "Vedtaket i kommunestyret 20. oktober 2026 er publisert"),
+        "status": (sak(status="Vedtatt i kommunestyret"), "Ny status: Vedtatt i kommunestyret"),
+        "sammendrag": (sak(a={"tk": "Ny skole i sentrum", "kilder": ["x"]}), "Sammendraget er publisert"),
+        "debatt": (sak(steg=lambda st: [{**st[0], "deb": {"punkter": []}}, st[1]]),
+                   "Debatten i formannskapet er oppsummert"),
+    }
+    feil = []
+    for hva, (etter, forventet) in planter.items():
+        if forventet not in endringer(for_, etter, i_dag):
+            feil.append(f"varselet fanger ikke {hva}: ventet {forventet!r}, fikk {endringer(for_, etter, i_dag)}")
+    if endringer(for_, sak(), i_dag):
+        feil.append("varselet melder endringer i en sak som er lik")
+    if endringer(None, sak(status="Behandlet"), i_dag):
+        feil.append("varselet melder endringer i en sak som nettopp er fulgt")
+    # Status som bare følger av datoen, gir ikke varsel alene.
+    if endringer(for_, sak(status="Venter på protokoll"), i_dag):
+        feil.append("varselet melder «Venter på protokoll», som bare følger av datoen")
+    # Et sammendrag som holdes tilbake, er ikke i saken (bygget tar det ikke med).
+    if tilstand({"id": 10, "t": "Ny skole", "status": "Behandlet", "st": []})["sammendrag"]:
+        feil.append("varselet regner et sammendrag som publisert uten at det står i saken")
+    navn = [_les(f)["navn"] for f in sorted(KOMMUNER.glob("*.json"))]
+    tekst = " ".join(h for etter, _ in planter.values() for h in endringer(for_, etter, i_dag))
+    feil += [f"varselet nevner {n}" for n in navn if n in tekst]
+    return feil
+
+
 def kjor(aar: int) -> int:
     saker = lager_saker.les(aar, None)
     if saker is None:
@@ -438,6 +492,7 @@ def kjor(aar: int) -> int:
     feil += antall_har_ikke_stupt(saker, aar)
     feil += malen_nevner_ingen_kommune()
     feil += debattkontrollen_fanger_det_den_skal()
+    feil += varselet_fanger_endringene()
     feil += kilden_er_lik()
     feil += dekning_holder_nivaaet(aar)
 

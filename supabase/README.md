@@ -33,6 +33,7 @@ GitHub Actions ligger den som hemmeligheten `KOMMUNELYS_DB_URL`.
 | `tilgang` | Hvem som ser hva: prosjektadmin, medlemskap per kommune, abonnement |
 | `publisert` | Publiseringsreglene som views: tilbakeholdte voteringer og sammendrag |
 | `portal` | Det portalen (portal.kommunelys.no) ser: views med `security_invoker` over de andre, så RLS gjelder (ADR-020) |
+| `varsel` | «Følg saken» (ADR-027): hvem som følger hva (`folger`), det som er publisert i sakene (`sak_tilstand`), køen (`utsending`) og e-postene som er sendt (`epost`). Logges ikke i endringsloggen, og slettes med kontoen |
 
 Ingenting ligger i `public`. Bare `portal` er eksponert gjennom Supabase-API-et (Data API, «Exposed schemas»), og bare for innloggede brukere.
 
@@ -41,6 +42,13 @@ Edge-funksjonen `brukeradmin` (`functions/brukeradmin/`) gjør det portalen ikke
 ```sql
 insert into tilgang.prosjektadmin (user_id) select id from auth.users where email = '...';
 ```
+
+Edge-funksjonen `varsel` (`functions/varsel/`) sender e-post til dem som følger saker (ADR-027), og tar imot «Slutt å følge». Den henter køen med e-postadressene gjennom `portal.varsel_til_sending()`, som bare service-nøkkelen kan kalle, og sender via Resend. Grensene står i databasen (`varsel.grense_dogn`, `varsel.grense_maned`) og på driftssiden (`bygg/drift.py`).
+
+- Publiseres med `verify_jwt = false`, fordi e-postprogrammene sender «Slutt å følge» (`List-Unsubscribe-Post`) uten innlogging: `supabase functions deploy varsel --no-verify-jwt`. `send` krever hodet `x-varsel-nokkel`, og «slutt» en signert nøkkel.
+- Hemmelighetene i funksjonen: `RESEND_API_KEY` (en nøkkel som bare kan sende), `VARSEL_NOKKEL` (den samme som hemmeligheten i Actions) og `VARSEL_HEMMELIGHET` (signerer lenkene; byttes den, slutter de gamle lenkene å virke).
+- Oppdater sender bare når variabelen `VARSEL_SEND` er `1` i repoet. Til da legges varslene i køen, og driftssiden viser at de venter.
+- Logikken kan prøves uten Supabase: `node --test supabase/functions/varsel/logikk.test.ts`.
 
 ## Regler databasen håndhever
 
@@ -81,7 +89,8 @@ En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql
 
 Arbeidsflyten `Sikkerhetskopi` tar en kopi av skjemaene `kjerne` og `drift` hver
 natt (`pg_dump`) og lagrer den som en fil på kjøringen i 90 dager. Brukere og
-innlogging (`tilgang`, `auth`) er ikke med. Gratisplanen i Supabase har ingen
+innlogging (`tilgang`, `auth`) er ikke med, og heller ikke hvem som følger
+hvilke saker (`varsel`). Gratisplanen i Supabase har ingen
 sikkerhetskopi å stole på, så dette er den eneste kopien utenfor databasen
 når dataene ikke lenger ligger i git.
 

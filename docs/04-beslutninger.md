@@ -818,7 +818,8 @@ ligger ute.
 
 ## ADR-027 — Følg saken: e-post når saken kommer videre
 
-**Besluttet.** Prosjekteier, 29.10.2026. Ikke bygget ennå. Utvider ADR-020.
+**Besluttet.** Prosjekteier, 29.10.2026. Bygget 29.10.2026; sendes først når
+`VARSEL_SEND` er slått på. Utvider ADR-020.
 
 I en rask brukertest ønsket en innbygger å «følge» en sak og få e-post når
 den kommer videre, for eksempel fra et utvalg til kommunestyret og kanskje
@@ -912,3 +913,34 @@ hva, og selve utsendingen.
   betalt plan senere (`tilgang.abonnement`). Ordet «abonnement» er brukt for
   den betalte tilgangen, så det brukes ikke her: det heter «følg» og
   «varsel».
+
+**Slik ble det bygget (29.10.2026):**
+
+- **Grensene i Resend** (resend.com/pricing og dokumentasjonen, sjekket
+  29.10.2026). Kommunelys har Free: 100 e-poster i døgnet (nullstilles kl. 00
+  UTC) og 3 000 i måneden, og 10 kall i sekundet. Både sendte og mottatte
+  e-poster teller, også e-post fra innloggingen og fra post@ via SMTP.
+  Varslene stopper på 70 i døgnet og 2 400 i måneden, så det blir plass til
+  resten.
+- **Å telle alle e-postene.** `GET /usage` hos Resend gir brukt mot grense,
+  men krever en nøkkel med full tilgang. Den bruker vi ikke (prosjekteier,
+  29.10.2026): nøkkelen kan bare sende. I stedet lagres hodet
+  `x-resend-daily-quota` fra hver sending, som er alle e-postene fra kontoen
+  det døgnet. Driftssiden viser det som «Alle e-poster hos Resend i dag».
+- **Når tilstanden lagres.** Bygget skriver det som er publisert i sakene til
+  `varsel-tilstand/<slug>.json`, og `kjor.alle` lagrer det i databasen bare
+  når kommunen faktisk publiseres. Stopper en kommune i kontrollene, beholder
+  den forrige versjon, og det varsles ikke om noe som ikke står på nettstedet.
+- **Etter publiseringen.** Steget «Varsel» kjører etter `deploy-pages`, så
+  lenkene peker til sider som finnes. Driftssiden lages på nytt etterpå
+  (`--bare-drift`), så telleren viser denne kjøringen.
+- **Status som bare følger av datoen** («Venter på protokoll», «Protokoll ikke
+  publisert», «Til behandling») gir ikke varsel alene. De kommer når møtet har
+  vært, uten at noe har skjedd i saken.
+- **Funksjonen** publiseres med `verify_jwt = false`, fordi e-postprogrammene
+  sender `List-Unsubscribe-Post` uten innlogging. Utsendingen krever
+  `VARSEL_NOKKEL`, og «Slutt å følge» en nøkkel signert med
+  `VARSEL_HEMMELIGHET`. Lenken fra e-posten går til portalen
+  (`/slutt-a-folge`), som spør før den gjør noe, fordi Safe Links åpner
+  lenkene.
+- **Prosjektadmin** ser følgingene bare direkte i databasen, ikke i portalen.

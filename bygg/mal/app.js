@@ -817,9 +817,10 @@ function renderSak(id,uten_detaljer){
       under:[antall(c.st.length,'møte','møter'),nv?antall(nv,'avstemning','avstemninger'):''].filter(Boolean).join(' · '),
       innhold:`${IKKE_STEMMER&&c.st.some(x=>!isFut(x.date))?MANGLER_STEMMER:''}<div class="moter">${c.st.map(x=>moteDel(c,x,avgjort,stor,x===(avgjort||siste))).join('')}</div>`});
   }
-  const snarvei=stor&&kort.length>2?`<nav class="snarvei" aria-label="Snarveier i saken">${kort.map(k=>`<button type="button" data-til="${k.id}">${k.kort}</button>`).join('')}</nav>`:'';
+  const snarvei=stor&&kort.length>2?`<nav class="snarvei" aria-label="Snarveier i saken">${kort.map(k=>`<button type="button" data-til="${k.id}">${k.kort}</button>`).join('')}${folgKnapp(c)}</nav>`:'';
   el.innerHTML=`<div class="saksside${stor?' stor':''}"><div class="ingress">
-    <h1>${esc(tittel(c))}</h1>
+    <div class="sak-topp"><h1>${esc(tittel(c))}</h1>${folgKnapp(c)}</div>
+    <p class="merk folg-melding" role="status" hidden></p>
     ${c.a?`<p class="muted">Sakstittel: ${esc(c.t)}</p>`:''}
     <p class="sak-status"><span class="st ${f.cls}">${esc(f.t)}</span><span class="muted"><span class="mono">${esc(nr)}</span> · ${antall(c.st.length,'behandling','behandlinger')}${nv?` · ${antall(nv,'avstemning','avstemninger')}`:''}</span></p>
     ${tidslinje(c)}
@@ -832,6 +833,7 @@ function renderSak(id,uten_detaljer){
     <p class="liten mt"><a href="${meldUrl(c)}">Meld fra om feil i saken</a> <span class="muted">(krever innlogging)</span><span class="bare-prosjektadmin"> · <a href="${redigerUrl(c)}">Rediger sammendraget</a></span></p>
   </div>`;
   bevegelse(el);
+  if(FOLG.vis===c.id){FOLG.vis=null;folgMelding(c,true)}
 }
 
 /* ---------- MØTET ---------- */
@@ -1045,6 +1047,10 @@ document.addEventListener('click',e=>{
     if(!ny&&p.textContent===n.dataset.navn){gli(p,p.offsetHeight,0,true).then(()=>p.remove());return}
     if(ny){p=document.createElement('p');p.className='tidslinje-navn';ol.after(p)}
     p.textContent=n.dataset.navn;if(ny)gli(p,0,p.offsetHeight,true);return}
+  const fk=e.target.closest('[data-folg]');
+  if(fk){folgKlikk(SAK_ID[+fk.dataset.folg]);return}
+  const an=e.target.closest('[data-angre]');
+  if(an){folgSlutt(SAK_ID[+an.dataset.angre]);return}
   const t=e.target.closest('[data-til]');
   if(t){gaTil(t.dataset.til);const r=$(t.dataset.til);if(r&&r.classList.contains('vrad')){const b=r.querySelector(':scope>button');if(b.getAttribute('aria-expanded')!=='true')b.click()}}
   // Dokumentmenyen lukkes av et trykk utenfor.
@@ -1063,7 +1069,7 @@ function bevegelse(rot){
   document.querySelectorAll('.sakkort:not(.synlig),.stempel:not(.slag)').forEach(e=>{if(!rot.contains(e))e.classList.add(e.classList.contains('stempel')?'slag':'synlig')});
   synlig=new IntersectionObserver(ok=>ok.forEach(o=>{if(o.isIntersecting){o.target.classList.add(o.target.classList.contains('stempel')?'slag':'synlig');synlig.unobserve(o.target)}}),{rootMargin:'0px 0px -6% 0px'});
   rot.querySelectorAll('.sakkort,.stempel').forEach(e=>synlig.observe(e));
-  const knapper=[...rot.querySelectorAll('.snarvei button')];
+  const knapper=[...rot.querySelectorAll('.snarvei button[data-til]')];
   if(!knapper.length)return;
   // Under en fast toppmeny (bred skjerm) står snarveiene rett under den.
   const hode=document.querySelector('.hode'),fast=hode&&getComputedStyle(hode).position==='sticky';
@@ -1080,6 +1086,84 @@ let tegnes=false;
 addEventListener('scroll',()=>{if(tegnes)return;tegnes=true;requestAnimationFrame(()=>{tegnes=false;
   const side=document.querySelector('#v-sak:not([hidden]) .saksside.stor'),sv=side&&side.querySelector('.snarvei');if(!sv)return;
   const r=side.getBoundingClientRect();sv.style.setProperty('--fremdrift',(Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)))*100).toFixed(1)+'%')})},{passive:true});
+
+/* ---------- FØLG SAKEN ---------- */
+/* «Følg saken» (ADR-027): e-post når saken kommer videre. Hvilke saker
+   brukeren følger, hentes fra portalen med tilgangsnøkkelen som konto.js har
+   lagret (slik innsyn.js henter dataene), og ligger aldri i dataene på
+   nettstedet. Uten bruker går knappen til registreringen i portalen, med
+   saken i adressen. Når brukeren kommer tilbake med ?folg=, følges saken, og
+   parameteren fjernes. Vi følger behandlingen med samme ID som saken: ID-en
+   til saken kan endre seg, men databasen finner saken igjen fra behandlingen. */
+const FOLG={saker:null,vis:null};
+const BJELLE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>';
+const folger=c=>!!(FOLG.saker&&FOLG.saker.has(c.id));
+const folgKnapp=c=>`<button type="button" class="folg" data-folg="${c.id}" aria-pressed="${folger(c)}">${BJELLE}<span>${folger(c)?'Følger':'Følg saken'}</span></button>`;
+function folgLes(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}
+// Innlogget som i konto.js, og en nøkkel som gjelder minst ett minutt til.
+function folgKonto(){
+  const k=folgLes('kommunelys-konto'),inn=folgLes('kommunelys-innsyn');
+  return {innlogget:!!(k&&k.epost&&Date.now()-k.tid<30*24*3600*1000),
+          nokkel:inn&&inn.nokkel&&inn.utloper*1000>Date.now()+60000?inn.nokkel:null};
+}
+// Tilbake til saken etter registreringen eller innloggingen, med ?folg= før #.
+const folgTilbake=c=>`${location.origin}${location.pathname}?folg=${c.id}#sak/${c.id}`;
+const folgPortal=(sti,c)=>`${S.portal}${sti}?${new URLSearchParams({grunn:'folg',sak:c.t,tilbake:folgTilbake(c)})}`;
+function folgApi(sti,valg={}){
+  const b=document.querySelector('.konto');
+  return fetch(`${b.dataset.api}/rest/v1/${sti}`,{...valg,cache:'no-store',headers:{apikey:b.dataset.nokkel,
+    Authorization:'Bearer '+folgKonto().nokkel,'Accept-Profile':'portal','Content-Profile':'portal',
+    'Content-Type':'application/json',Prefer:'return=minimal'}})
+    .then(r=>{if(!r.ok){const e=new Error('HTTP '+r.status);e.status=r.status;throw e}return r.status===200?r.json():null});
+}
+// Sakene brukeren følger i kommunen: {sak-ID: [følgingene]}.
+function folgHent(){
+  return folgApi(`folger?select=id,sak_id&kommune=eq.${encodeURIComponent(K.slug)}`).then(r=>{
+    FOLG.saker=new Map();r.forEach(f=>{if(f.sak_id!=null)FOLG.saker.set(f.sak_id,[...(FOLG.saker.get(f.sak_id)||[]),f.id])});
+    folgOppdater();
+  });
+}
+// Knappene på siden viser om saken følges.
+function folgOppdater(){
+  document.querySelectorAll('[data-folg]').forEach(b=>{const c=SAK_ID[+b.dataset.folg],p=folger(c);
+    b.setAttribute('aria-pressed',p);b.querySelector('span').textContent=p?'Følger':'Følg saken'});
+}
+function folgMelding(c,fulgt,feil){
+  const m=document.querySelector('#sak .folg-melding');if(!m)return;
+  m.innerHTML=feil?esc(feil):fulgt?`<span><b>Du følger saken.</b> Du får e-post når den kommer videre.</span><button type="button" class="lenkeknapp" data-angre="${c.id}">Angre</button>`
+    :'<span>Du følger ikke lenger saken.</span>';
+  if(m.hidden)veksle(m,true);
+  if(fulgt&&!MINDRE)document.querySelectorAll(`[data-folg="${c.id}"]`).forEach(b=>{b.classList.remove('ringer');void b.offsetWidth;b.classList.add('ringer')});
+}
+// Nøkkelen godtas ikke: portalen gir en ny og sender brukeren hit igjen.
+function folgFeil(c,e){
+  if(e.status===401){try{localStorage.removeItem('kommunelys-innsyn')}catch(x){}location.href=folgPortal('/login',c);return}
+  folgMelding(c,false,'Det gikk ikke å følge saken nå. Prøv igjen senere.');
+}
+function folgStart(c){
+  return folgApi('folger',{method:'POST',body:JSON.stringify({kommune:K.slug,behandling_id:c.id})})
+    .then(folgHent).then(()=>folgMelding(c,true));
+}
+function folgSlutt(c){
+  const ider=(FOLG.saker&&FOLG.saker.get(c.id))||[];
+  if(!ider.length)return;
+  folgApi(`folger?id=in.(${ider.join(',')})`,{method:'DELETE'}).then(folgHent).then(()=>folgMelding(c,false),e=>folgFeil(c,e));
+}
+function folgKlikk(c){
+  const k=folgKonto();
+  if(!k.innlogget){location.href=folgPortal('/registrer',c);return}
+  if(!k.nokkel){location.href=folgPortal('/login',c);return}
+  if(folger(c))folgSlutt(c);else folgStart(c).catch(e=>folgFeil(c,e));
+}
+// Ved oppstart: hent hvilke saker brukeren følger, og følg saken i ?folg=.
+(function(){
+  const q=new URLSearchParams(location.search),ny=+q.get('folg'),k=folgKonto();
+  if(q.has('folg')){q.delete('folg');history.replaceState(null,'',location.pathname+(q.toString()?'?'+q:'')+location.hash)}
+  if(!k.nokkel){if(ny&&SAK_ID[ny]&&k.innlogget)location.replace(folgPortal('/login',SAK_ID[ny]));return}
+  // Er saken ikke tegnet ennå (detaljene hentes), viser renderSak meldingen.
+  if(ny&&SAK_ID[ny]){const c=SAK_ID[ny];folgStart(c).then(()=>{if(!document.querySelector(`#sak [data-folg="${ny}"]`))FOLG.vis=ny},e=>folgFeil(c,e));return}
+  folgHent().catch(()=>{});
+})();
 
 /* ---------- NAVIGASJON ---------- */
 const VIEWS=['oversikt','saker','sak','moter','mote','politikere','person','hvem-bestemmer'];
