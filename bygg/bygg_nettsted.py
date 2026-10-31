@@ -1072,11 +1072,11 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
             "analyser": {k: v for k, v in vist_analyse.items() if k in arets_id and k in sammendrag},
             "voteringer": VOT if len(aarene) == 1 else
             {**VOT, "moter": [m for m in VOT["moter"] if m["id"] in arets_moter]},
-            # Søkeindeks bygget på forhånd, kjører i nettleseren.
+            # Søkeindeks bygget på forhånd, kjører i nettleseren. Klarspråkstittelen
+            # bare fra sammendragene som vises.
             "indeks": [{
                 "id": s["sak_id"],
-                "t": (vist_analyse.get(s["sak_id"], {}).get("tittel_klarsprak")
-                      or s["tittel"]),
+                "t": sammendrag.get(s["sak_id"], {}).get("tk") or s["tittel"],
                 "o": s["tittel"],
                 "s": s["status"],
                 "g": [steg["utvalg"] for steg in s["saksgang"]],

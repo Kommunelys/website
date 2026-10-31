@@ -160,7 +160,7 @@ def _innhold(status: dict, avvik: dict[str, int], poster: list[dict], na: dt.dat
         fra = na - dt.timedelta(days=dager)
         return sum(1 for p in poster for c in p["commits"] if c["tid"] >= fra
                    for s in c["nye_saker"] if not s.get("formalia"))
-    holdt = status.get("sammendrag_holdt_tilbake") or 0
+    holdt = status.get("sammendrag_holdt_tilbake", 0)
     aarene = status.get("aarene") or [status["ar"]]
     periode = f"siden {aarene[0]}" if len(aarene) > 1 else str(status["ar"])
     return _kv([
