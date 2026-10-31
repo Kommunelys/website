@@ -184,8 +184,9 @@ def kjor(aar: int, fra_fil: str | None = None) -> dict:
         hoved, vedlegg = None, []
         for d in (journalpost or {}).get("Documents") or []:
             bes = d.get("DocumentDescription") or {}
-            if not bes.get("IsPublished"):
-                continue  # skjermet: hverken lenke eller analyse
+            if (not bes.get("IsPublished") or bes.get("AccessCodeId")
+                    or journalpost.get("AccessCodeId")):
+                continue  # skjermet: hverken lenke eller analyse (som hent_dokumenter)
             post = {
                 "dokument_id": bes["Id"],
                 "tittel": bes.get("DocumentTitle"),

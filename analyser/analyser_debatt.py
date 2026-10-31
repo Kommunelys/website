@@ -23,8 +23,6 @@ som ikke består, vises ikke.
     python -m analyser.analyser_debatt 2026 --tort-lop       # vis hva som ville blitt sendt
     python -m analyser.analyser_debatt 2026 --maks 10        # høyst 10 behandlinger
     python -m analyser.analyser_debatt 2026 --vis 8457       # grunnlaget for én behandling
-    python -m analyser.analyser_debatt 2026 --kontroller svar.json  # kontroller svar skrevet utenfor
-    python -m analyser.analyser_debatt 2026 --lagre svar.json       # lagre svar skrevet utenfor (prøve)
 """
 
 from __future__ import annotations
@@ -35,7 +33,6 @@ import hashlib
 import json
 import re
 import sys
-from pathlib import Path
 
 from drift.logg import legg_til
 from hent import kommunetv
@@ -459,22 +456,6 @@ def main() -> None:
         tekst, ds = grunnlag(*_finn(aar, int(verdi("--vis"))))
         print(tekst)
         print(f"\n--- {len(tekst)} tegn, {len(ds)} deler, sjekksum {sjekksum(tekst)}")
-    elif verdi("--kontroller") or verdi("--lagre"):
-        # Svar skrevet utenfor kjøringen, for eksempel i en prøve. Med --lagre
-        # lagres de som om modellen hadde svart, med modellen fra filen.
-        fil = Path(verdi("--kontroller") or verdi("--lagre"))
-        svar = json.loads(fil.read_text("utf-8"))
-        for s in svar if isinstance(svar, list) else [svar]:
-            sak, b, o, t = _finn(aar, s["behandling_id"])
-            tekst, ds = grunnlag(sak, b, o, t)
-            grunn = rydd(s, ds)
-            feil = [f"kan ikke brukes: {grunn}"] if grunn else avvik(s, sak, b, o, t)
-            print(f"{b['saksnr']}: " + ("består" if not feil else "holdes tilbake"))
-            for f in feil:
-                print(f"  - {f}")
-            if verdi("--lagre") and not grunn:
-                lager_opptak.lagre_debatt(_resultat(
-                    s, b, o, ds, sjekksum(tekst), s.get("modell") or "utenfor", {"inn": 0, "ut": 0}))
     else:
         bare = [int(x) for x in verdi("--saker").split(",")] if verdi("--saker") else None
         kjor(aar, "--tort-lop" in argv, int(verdi("--maks") or MAKS_PER_KJORING), bare)

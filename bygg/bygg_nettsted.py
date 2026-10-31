@@ -153,8 +153,8 @@ def _meldinger() -> dict:
 
 
 def _sammendrag(saker: list, analyser: dict, meldinger: dict,
-                redigert: dict) -> tuple[dict, list[str]]:
-    """Sammendragene som kan publiseres, per sak-ID, og hvorfor resten holdes tilbake.
+                redigert: dict) -> tuple[dict, int]:
+    """Sammendragene som kan publiseres, per sak-ID, og hvor mange som holdes tilbake.
 
     Samme prinsipp som for voteringer: et sammendrag med avvik vises ikke,
     men stopper ikke resten av nettstedet. En vurderer kan slippe gjennom et
@@ -168,13 +168,13 @@ def _sammendrag(saker: list, analyser: dict, meldinger: dict,
     alle_avvik = sammendrag_avvik_alle(saker, analyser, unntatte_navn())
     vurdert = lager_avvik.sammendrag_vurderinger()
     navn = folkevalgte()
-    ut, holdt = {}, []
+    ut, holdt = {}, 0
     for s in saker:
         a = analyser.get(s["sak_id"])
         if not a:
             continue
         if s["sak_id"] in meldinger["sammendrag"]:
-            holdt.append(f"sak {s['sak_id']}: holdt tilbake etter en melding om feil")
+            holdt += 1
             continue
         r = redigert.get(s["sak_id"])
         avvik = alle_avvik[s["sak_id"]]
@@ -183,14 +183,14 @@ def _sammendrag(saker: list, analyser: dict, meldinger: dict,
         if r:
             a = r
         elif v and v["avgjorelse"] == "ikke_publiser":
-            holdt.append(f"sak {s['sak_id']}: vurdert til ikke å publiseres")
+            holdt += 1
             continue
         elif avvik:
             godkjent = (v and v["avgjorelse"] == "publiser"
                         and (kan_overstyres(avvik) or v["overstyrt"])
                         and set(avvik) <= set(v["grunner"]) and not merk_feil)
             if not godkjent:
-                holdt.append(f"sak {s['sak_id']}: {'; '.join(avvik + merk_feil)}")
+                holdt += 1
                 continue
         ut[s["sak_id"]] = {
             "tk": a["tittel_klarsprak"], "sum": a["sammendrag"], "bet": a["betydning"],
@@ -203,11 +203,11 @@ def _sammendrag(saker: list, analyser: dict, meldinger: dict,
             ut[s["sak_id"]]["merk"] = {"t": v["merknad"], "d": v["dato"]}
     return ut, holdt
 
-def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, list[str]]:
+def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, int]:
     """Lenkene til opptakene og sammendragene av debatten (ADR-026).
 
     Gir opptaket per møte, bokmerkene per behandling, debatten som kan vises
-    per behandling, og hvorfor resten av debattene holdes tilbake. Lenkene
+    per behandling, og hvor mange debatter som holdes tilbake. Lenkene
     står også når opptaket ikke er tekstet; bare debatten trenger tekstingen.
     Et opptak kommunen har slettet («fjernet»), får ingen lenke.
 
@@ -242,7 +242,7 @@ def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, l
     lagret, nye = lager_opptak.debatt_kontroller(), {}
     vurdert = lager_opptak.debatt_vurderinger()
     navn = folkevalgte()
-    vis, holdt = {}, []
+    vis, holdt = {}, 0
     for hid, d in debatter.items():
         sak, o, b = sak_for.get(hid), o_id.get(d["opptak_id"]), voteringer.get(hid)
         if not (sak and o and b) or hid not in per_steg:
@@ -254,19 +254,19 @@ def _opptak(aar: int, saker: list, meldinger: dict) -> tuple[dict, dict, dict, l
         if lagret.get(hid) != feil:
             nye[hid] = feil
         if sak["sak_id"] in meldinger["sammendrag"]:
-            holdt.append(f"debatt {hid}: holdt tilbake etter en melding om feil i saken")
+            holdt += 1
             continue
         v = vurdert.get(hid)
         merk_feil = merknad_avvik(v["merknad"], navn) if v else []
         if v and v["avgjorelse"] == "ikke_publiser":
-            holdt.append(f"debatt {hid}: vurdert til ikke å publiseres")
+            holdt += 1
             continue
         if feil:
             godkjent = (v and v["avgjorelse"] == "publiser" and not kan_aldri_publiseres(feil)
                         and (debatt_kan_overstyres(feil) or v["overstyrt"])
                         and set(feil) <= set(v["grunner"]) and not merk_feil)
             if not godkjent:
-                holdt.append(f"debatt {hid}: {'; '.join(feil + merk_feil)}")
+                holdt += 1
                 continue
         vis[hid] = {"ing": 1} if d["ingen_debatt"] else {
             "o": d["oppsummering"], "n": d["antall_innlegg"],
