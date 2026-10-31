@@ -77,7 +77,7 @@ Slik holdes reglene i koden:
 | Portal | I drift på https://portal.kommunelys.no/ (ADR-020). Se «Portalen» under |
 | Flere kommuner | I bruk (ADR-021). Steinkjer er publisert. Levanger har begrenset innsyn (ADR-024): innholdet bare for innloggede med en rolle for kommunen |
 | Følg saken | Bygget (ADR-027), ikke i drift. E-post sendes først når variabelen `VARSEL_SEND` er 1. Driftssiden teller e-postene mot grensen i Resend (100 i døgnet, varslene stopper på 70) |
-| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). `data/` i git står som ved byttet. Sikkerhetskopi hver natt |
+| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). `data/` i git står som ved byttet. Sikkerhetskopi hver natt (privat repo) |
 
 ## Mappene
 
@@ -189,8 +189,9 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
   `~/.kommunelys.env` lokalt. Aldri i repoet.
 - **Endringsloggen** (`drift.endringslogg`) viser hva hver kjøring endret i
   databasen, og har tatt over for git-historikken på driftssiden.
-- **Sikkerhetskopien** tas hver natt (arbeidsflyten Sikkerhetskopi). Git er
-  ikke lenger sikkerhetskopien.
+- **Sikkerhetskopien** tas hver natt i det private repoet
+  `Kommunelys/sikkerhetskopi`, ikke her (ADR-019). Git er ikke lenger
+  sikkerhetskopien.
 
 ## Portalen
 

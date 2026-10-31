@@ -206,7 +206,7 @@ jobs:
 
   # GitHub slår av planlagte kjøringer etter 60 dager uten aktivitet i repoet.
   # Før byttet holdt de daglige datacommitene repoet aktivt; nå slås
-  # arbeidsflytene på igjen ved hver planlagte kjøring. GitHub sender også
+  # arbeidsflyten på igjen ved hver planlagte kjøring. GitHub sender også
   # e-post før en tidsplan slås av, og driftssiden viser når siste kjøring var.
   holdlevende:
     name: Hold tidsplanen aktiv
@@ -215,10 +215,7 @@ jobs:
     permissions:
       actions: write
     steps:
-      - name: Slå på Oppdater og Sikkerhetskopi
+      - name: Slå på Oppdater
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          for fil in oppdater.yml sikkerhetskopi.yml; do
-            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$fil/enable"
-          done
+        run: gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/oppdater.yml/enable"

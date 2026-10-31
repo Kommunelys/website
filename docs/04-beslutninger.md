@@ -477,12 +477,16 @@ som selv nekter å lagre det som bryter reglene.
 - Sikkerhetskopi: gratisplanen i Supabase har ingen å stole på, så
   arbeidsflyten `Sikkerhetskopi` tar `pg_dump` hver natt og lagrer den på
   kjøringen i 90 dager. Git-historikken er ikke lenger sikkerhetskopien.
+  Endret 31.10.2026: kopien har data som ikke er åpne, og filene fra en
+  kjøring i et offentlig repo kan lastes ned av alle med en GitHub-konto.
+  Arbeidsflyten er flyttet til det private repoet `Kommunelys/sikkerhetskopi`,
+  med 30 dager i stedet for 90.
 - Kostnad (endrer ADR-009): gratisplanen er nok for datamengden (28 MB). Pro
   (rundt 25 dollar i måneden) gir daglige sikkerhetskopier hos Supabase og
   bør vurderes når flere kommuner kommer til, eller når noen andre enn
   prosjekteier skal logge inn.
 - Uten daglige commits kan GitHub slå av tidsplanen etter 60 dager uten
-  aktivitet. Jobben «Hold tidsplanen aktiv» slår arbeidsflytene på igjen ved
+  aktivitet. Jobben «Hold tidsplanen aktiv» slår arbeidsflyten på igjen ved
   hver planlagte kjøring.
 - Postgres er ikke bundet til Supabase. Koden bruker vanlig Postgres
   (`psycopg`); bare innlogging og `auth.uid()` er Supabase-spesifikt. Veien
