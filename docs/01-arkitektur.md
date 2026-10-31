@@ -350,10 +350,10 @@ var og hvor mange saker som ble oppdatert.
 
 ### Gjenoppretting
 
-Arbeidsflyten `Sikkerhetskopi` tar en kopi av databasen hver natt
-(`pg_dump`, 90 dager); gjenoppretting står i `supabase/README.md`. Fram til
-6.10.2026 var git-historikken sikkerhetskopien (ADR-019). Fordi rå API-svar
-lagres urørt, kan hele
+Arbeidsflyten `Sikkerhetskopi` i det private repoet `Kommunelys/sikkerhetskopi`
+tar en kopi av databasen hver natt (`pg_dump`, 30 dager); gjenoppretting står i
+`supabase/README.md`. Fram til 6.10.2026 var git-historikken sikkerhetskopien
+(ADR-019). Fordi rå API-svar lagres urørt, kan hele
 den normaliserte modellen bygges opp igjen uten å hente noe fra portalen. Fordi
 AI-resultatene er lagret med sjekksum av kildeteksten, må bare endrede saker
 analyseres på nytt.

@@ -87,17 +87,21 @@ En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql
 
 ## Sikkerhetskopi
 
-Arbeidsflyten `Sikkerhetskopi` tar en kopi av skjemaene `kjerne` og `drift` hver
-natt (`pg_dump`) og lagrer den som en fil på kjøringen i 90 dager. Brukere og
+Arbeidsflyten `Sikkerhetskopi` i det private repoet `Kommunelys/sikkerhetskopi`
+tar en kopi av skjemaene `kjerne` og `drift` hver natt (`pg_dump`) og lagrer
+den som en fil på kjøringen i 30 dager. Brukere og
 innlogging (`tilgang`, `auth`) er ikke med, og heller ikke hvem som følger
 hvilke saker (`varsel`). Gratisplanen i Supabase har ingen
 sikkerhetskopi å stole på, så dette er den eneste kopien utenfor databasen
 når dataene ikke lenger ligger i git.
 
+Kopien har data som ikke er åpne, og filene fra kjøringene i et offentlig repo
+kan lastes ned av alle med en GitHub-konto. Derfor ligger den ikke her.
+
 Gjenopprette til en tom database:
 
 1. Kjør migreringene i `migrations/` (skjema, roller, regler).
-2. Last ned kopien fra kjøringen, og les den inn som `postgres`:
+2. Last ned kopien fra kjøringen i `Kommunelys/sikkerhetskopi`, og les den inn som `postgres`:
    `gzip -dc kommunelys-<dato>.sql.gz | psql "<adresse som postgres>"`.
    Kopien lager skjemaene selv; slett `kjerne` og `drift` fra trinn 1 først
    (`drop schema kjerne, drift cascade`), og kjør migreringene etter `drift`
