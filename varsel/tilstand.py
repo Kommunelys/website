@@ -22,15 +22,18 @@ from lager import varsel as lager_varsel
 MAPPE = Path(__file__).resolve().parent.parent / "varsel-tilstand"
 
 
-def tilstand(c: dict) -> dict:
-    """Én sak fra S.cases, med vedtakene (st.vt) og debatten (st.deb) ennå på stegene."""
+def tilstand(c: dict, kort: dict[str, str] | None = None) -> dict:
+    """Én sak fra S.cases, med vedtakene (st.vt) og debatten (st.deb) ennå på stegene.
+    kort er utvalg_kort fra kommunefilen: navnene slik nettstedet viser dem
+    («Kommunestyret», ikke «Kommunestyre» som i portalen)."""
+    kort = kort or {}
     return {
         "tittel": c["a"]["tk"] if c.get("a") else c["t"],
         "status": c["status"],
         "steg": [{
             "hid": x["hid"],
             "dato": x["date"],
-            "utvalg": x["ut"],
+            "utvalg": kort.get(x["sc"]) or x["ut"],
             "kode": x["sc"],
             # Protokollen er publisert, og vedtaket står på saken.
             "protokoll": bool(x["pub"]),
@@ -41,10 +44,10 @@ def tilstand(c: dict) -> dict:
     }
 
 
-def skriv(slug: str, cases: list[dict]) -> Path:
+def skriv(slug: str, cases: list[dict], kort: dict[str, str] | None = None) -> Path:
     MAPPE.mkdir(exist_ok=True)
     fil = MAPPE / f"{slug}.json"
-    fil.write_text(json.dumps({str(c["id"]): tilstand(c) for c in cases}, ensure_ascii=False),
+    fil.write_text(json.dumps({str(c["id"]): tilstand(c, kort) for c in cases}, ensure_ascii=False),
                    encoding="utf-8")
     return fil
 

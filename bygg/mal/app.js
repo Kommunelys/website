@@ -842,6 +842,8 @@ function renderSak(id,uten_detaljer,bla){
   bevegelse(el);
   if(BLA.retning)blaInn(el);
   if(FOLG.vis===c.id){FOLG.vis=null;folgMelding(c,true)}
+  const k=folgKonto();
+  if(k.innlogget&&!k.nokkel)folgForny(`${S.portal}/login?tilbake=${encodeURIComponent(location.href)}`);
 }
 
 /* ---------- MØTET ---------- */
@@ -1169,6 +1171,15 @@ function folgKonto(){
   return {innlogget:!!(k&&k.epost&&Date.now()-k.tid<30*24*3600*1000),
           nokkel:inn&&inn.nokkel&&inn.utloper*1000>Date.now()+60000?inn.nokkel:null};
 }
+// Innlogget, men nøkkelen er gått ut: portalen gir en ny og sender brukeren
+// tilbake, uten å spørre (som innsyn.js). Ellers vet ikke knappen om saken
+// følges. Høyst hvert andre minutt, så det aldri går i ring.
+function folgForny(til){
+  if(FOLG.forny)return;
+  try{const sist=+sessionStorage.getItem('kommunelys-innsyn-forsok')||0;if(Date.now()-sist<120000)return;
+    sessionStorage.setItem('kommunelys-innsyn-forsok',String(Date.now()))}catch(e){return}
+  FOLG.forny=true;location.replace(til);
+}
 // Tilbake til saken etter registreringen eller innloggingen, med ?folg= før #.
 const folgTilbake=c=>`${location.origin}${location.pathname}?folg=${c.id}#sak/${c.id}`;
 const folgPortal=(sti,c)=>`${S.portal}${sti}?${new URLSearchParams({grunn:'folg',sak:c.t,tilbake:folgTilbake(c)})}`;
@@ -1222,7 +1233,7 @@ function folgKlikk(c){
 (function(){
   const q=new URLSearchParams(location.search),ny=+q.get('folg'),k=folgKonto();
   if(q.has('folg')){q.delete('folg');history.replaceState(null,'',location.pathname+(q.toString()?'?'+q:'')+location.hash)}
-  if(!k.nokkel){if(ny&&SAK_ID[ny]&&k.innlogget)location.replace(folgPortal('/login',SAK_ID[ny]));return}
+  if(!k.nokkel){if(ny&&SAK_ID[ny]&&k.innlogget)folgForny(folgPortal('/login',SAK_ID[ny]));return}
   // Er saken ikke tegnet ennå (detaljene hentes), viser renderSak meldingen.
   if(ny&&SAK_ID[ny]){const c=SAK_ID[ny];folgStart(c).then(()=>{if(!document.querySelector(`#sak [data-folg="${ny}"]`))FOLG.vis=ny},e=>folgFeil(c,e));return}
   folgHent().catch(()=>{});
