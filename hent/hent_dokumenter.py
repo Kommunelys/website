@@ -162,7 +162,6 @@ def _oppgaver(aar: int) -> list[dict]:
                            "url": steg["url_vedtak"],
                            "slag": "saksprotokoll", "kolonner": True})
 
-
     # Møteprotokollen, for oppmøtelisten. Aldri møteinnkallingen (ADR-006).
     for mote in _moter_i_raadata(aar):
         mid = mote["mote"]["MO_ID"]
@@ -211,10 +210,7 @@ def kjor(aar: int) -> None:
           f"{len(nye) * SEKUND_PER_DOKUMENT / 60:.0f} minutter.")
 
     with tempfile.TemporaryDirectory() as tmp:
-        for i, o in enumerate(oppgaver, 1):
-            if lager_tekst.har(*_hvor(o)):
-                continue
-
+        for i, o in enumerate(nye, 1):
             try:
                 data = portal.hent_fil(o["url"])
             except portal.PortalFeil as e:

@@ -2,7 +2,7 @@
 
 Tre ID-rom, som ikke må blandes:
 
-- `dokument`: saksframlegg og vedlegg, etter dokument-ID
+- `dokument`: saksframlegget, etter dokument-ID
 - `behandling`: saksprotokollen (vedtaket), etter behandlings-ID
 - `mote`: møteprotokollen, etter møte-ID
 

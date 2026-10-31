@@ -741,9 +741,8 @@ def endringer(dager: int, maks: int) -> list[dict]:
 def overgang(antall: int = 60) -> dict:
     """Paritetskontrollene før byttet, siste kjøring og størrelsen på databasen."""
     k = kommune_id()
-    kontroller = [{"tid": tid, "likt": likt, "kontroller": n, "ulike": list(ulike)}
-                  for tid, likt, n, ulike in _rader(
-                      "select kontrollert, likt, kontroller, ulike from drift.paritet "
+    kontroller = [{"tid": tid, "likt": likt} for tid, likt in _rader(
+                      "select kontrollert, likt from drift.paritet "
                       "where kommune_id = %s order by kontrollert desc limit %s", k, antall)]
     # Etter byttet skriver kjøringen rett i databasen, med GITHUB_RUN_ID.
     kjoring = _rader(

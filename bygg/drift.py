@@ -291,7 +291,7 @@ def _database() -> str:
         return '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
 
     k = o["kontroller"]
-    rader = [("Kilde for nettstedet", "Databasen")]
+    rader = []
     if o["kjoring"]:
         _, start, endringer = o["kjoring"]
         rader.append(("Siste kjøring", f"{tidspunkt(start)}, {tall(endringer)} endringer"))

@@ -150,7 +150,6 @@ python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
 python -m lager.vurder <avvik> publiser --begrunnelse ... --vurdert-av ...  # vurdering fra en modell
 python -m bygg.bygg_nettsted 2026 --drift-fil drift.html  # driftssiden også lokalt
 KOMMUNELYS_PORTAL=http://localhost:5173 python -m bygg.bygg_nettsted 2026  # kontomenyen mot portalen lokalt
-python -m lager.paritet 2026           # filene i data/ mot databasen (etter en gjenoppretting)
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
 python -m varsel.kjor                   # «Følg saken»: endringene i køen; VARSEL_SEND=1 sender (ADR-027)
 python -m bygg.bygg_nettsted --bare-drift --utfall utfall.json  # bare driftssiden, etter varslene
@@ -421,7 +420,7 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   RLS og policyer for rollene (se `20261004212642_tilgang.sql`). Kjør
   `supabase/tests/regler.sql` etterpå.
 - **Rådata, analyser, vurderinger og endringsloggen kan ikke endres eller
-  slettes i databasen.** Det er med vilje. En speiling eller import kan ikke
+  slettes i databasen.** Det er med vilje. En kjøring mot databasen kan ikke
   angres. Prøv derfor endringer mot en kopi av dataene (`KOMMUNELYS_DATA`) før
   de kjøres mot de ekte. Lokale kjøringer skriver til den samme databasen som
   nettstedet bygges fra; det finnes ingen egen testdatabase.

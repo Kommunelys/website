@@ -7,8 +7,8 @@ import os
 from pathlib import Path
 
 ROT = Path(__file__).resolve().parent.parent
-# KOMMUNELYS_DATA peker til en annen datamappe, for eksempel en eksport som
-# skal sammenlignes med data/.
+# KOMMUNELYS_DATA peker til en annen datamappe, for eksempel for å prøve en ny
+# kommune.
 DATA = Path(os.environ.get("KOMMUNELYS_DATA") or ROT / "data")
 
 _MANGLER = object()
@@ -34,8 +34,8 @@ def les(sti: Path, standard=_MANGLER):
 def skriv(sti: Path, data, *, sorter: bool = True) -> None:
     """Samme format som før lagringslaget, så en ny kjøring ikke gir diff.
 
-    De fleste filene har sorterte nøkler. Analysene, målingen, kjøreloggen og
-    tellingen har det ikke.
+    De fleste filene har sorterte nøkler. Analysene, kjøreloggen og tellingen
+    har det ikke.
     """
     _vakt(sti)
     sti.parent.mkdir(parents=True, exist_ok=True)

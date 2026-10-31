@@ -10,7 +10,6 @@ databasen, i portalen eller med `python -m lager.vurder` (ADR-020).
 
 | Kommando | Gjør |
 |---|---|
-| `python -m lager.paritet 2026` | Leser alt fra filene og fra databasen og sammenligner, tegn for tegn |
 | `python -m bygg.bygg_nettsted 2026` | Bygger nettstedet fra databasen |
 
 Tilkoblingen leses fra `KOMMUNELYS_DB_URL` eller `~/.kommunelys.env` (se
@@ -105,5 +104,4 @@ Gjenopprette til en tom database:
    (`drop schema kjerne, drift cascade`), og kjør migreringene etter `drift`
    på nytt for policyer og rettigheter.
 3. Sett passordene på rollene på nytt; de er aldri med i en kopi.
-4. `python -m lager.paritet <år>` mot en eksport, eller bygg nettstedet med
-   `KOMMUNELYS_LAGER=pg` og sammenlign med det publiserte.
+4. Bygg nettstedet med `KOMMUNELYS_LAGER=pg` og sammenlign med det publiserte.
