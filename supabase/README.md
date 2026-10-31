@@ -52,12 +52,12 @@ Edge-funksjonen `varsel` (`functions/varsel/`) sender e-post til dem som følger
 
 ## Regler databasen håndhever
 
-- **Stemmetall (CLAUDE.md regel 2):** står `tall_stemmer` sant, må antall navn stemme med tallene, ellers stopper transaksjonen.
-- **Skjerming (regel 3):**
+- **Stemmetall (CLAUDE.md regel 1):** står `tall_stemmer` sant, må antall navn stemme med tallene, ellers stopper transaksjonen.
+- **Skjerming (regel 4):**
   - Et skjermet vedtak kan ikke ha lenke eller tekst.
   - Blir et vedtak skjermet i ettertid, slettes teksten.
   - Teksten i møteinnkallingen lagres aldri (ADR-006).
-- **Kildelenke (regel 5):** en analyse uten kilde kan ikke lagres. Et sammendrag vises bare når siste kontroll mot kilden er bestått.
+- **Kildelenke (regel 1):** en analyse uten kilde kan ikke lagres. Et sammendrag vises bare når siste kontroll mot kilden er bestått.
 - **Bare innsetting:** rådata, vurderinger, analyser og endringsloggen kan ikke endres eller slettes. En ny versjon er en ny rad.
 - **Ingen kontaktopplysninger** i medlemslistene (ADR-014).
 - **Kommune:** hver rad hører til én kommune, og fremmednøklene kan ikke peke på tvers.

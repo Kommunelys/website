@@ -8,19 +8,16 @@ description: Sjekkliste for å legge inn en ny kommune i Kommunelys, fra å finn
 Les først `CLAUDE.md` (avsnittet «Flere kommuner»), ADR-021 og ADR-022 i
 `docs/04-beslutninger.md`. Alt under bygger på dem.
 
-## Grunnreglene gjelder like mye for en ny kommune
+## Reglene gjelder like mye for en ny kommune
 
-- **Lav takt:** ett kall i sekundet, samlet for verten. Hent aldri for en ny
-  kommune mens Oppdater kjører; de deler `prod01.elementscloud.no`.
-- **Ingen språkmodell på stemmetall.** Kontrollen av stemmetall er lik for
-  alle kommuner.
-- **Skjermet informasjon** lastes aldri ned.
-- **Ingen PDF-er i git.**
-- **Kildelenke** på alle sammendrag.
-- **Ingen navn på privatpersoner** i tekst vi skriver.
+De seks reglene står øverst i `CLAUDE.md`. For en ny kommune betyr det særlig:
+
+- **Lav takt (regel 4):** hent aldri for en ny kommune mens Oppdater kjører;
+  de deler `prod01.elementscloud.no`.
+- **E-post til kommunen (regel 4):** vi ber ikke om lov, men prosjekteier
+  sender kommunen en e-post når hentingen starter, og når kommunen blir åpen
+  for alle. Påminnelsene står i trinn 3 og 9.
 - **Ikke gjett adresser.** Tenant, database og partilenker åpnes og sjekkes.
-- **Avklaring med kommunen:** nye kommuner trenger ingen egen avklaring
-  (prosjekteier, 7.10.2026).
 
 ## Stoppunkter: spør prosjekteier før du går videre
 
@@ -46,7 +43,7 @@ Merket **STOPP** under. Vis da hva du har funnet, med tall, og vent på svar.
      "https://prod01.elementscloud.no/publikum/api/PredefinedQuery/DmbMeetings?year=<år>" | head -c 300
    ```
    - JSON med `MO_ID` og `MO_START` betyr riktig.
-   - HTML betyr feil adresse (fallgruven «Feil API-adresse gir 200»).
+   - HTML betyr feil adresse («Feil API-adresse gir 200» under «Teknisk erfaring» i `CLAUDE.md`).
 5. Bruker kommunen ikke Elements, trengs en ny kildeadapter. Det er et eget
    prosjekt. **STOPP.**
 6. **Velg `fra_aar`**, det første året som hentes. Som regel inneværende år.
@@ -76,6 +73,9 @@ Lag også `kommuner/<slug>/partisider.json` og `kommuner/<slug>/tillatte-navn.js
 - Tillatte navn er en tom liste til et sammendrag trenger det.
 
 ## 3. Prøvekjøring mot en kopi, aldri mot databasen
+
+**Påminnelse til prosjekteier: send kommunen en e-post om at Kommunelys
+begynner å hente (regel 4).** Gi påminnelsen før den første hentingen under.
 
 Rådata, analyser og vurderinger kan ikke slettes i databasen. Prøv derfor alltid
 i en egen mappe:
@@ -205,6 +205,9 @@ For andre er den skjult.
 **STOPP:** prosjekteier sier ja før migreringen med `begrenset` kjøres.
 
 ## 9. Publiser
+
+**Påminnelse: send kommunen en e-post om at kommunen blir åpen for alle, og
+vurder bindingene på Om-siden hvis kommunen ligger på Innherred.**
 
 1. Ny migrering som setter `status = 'publisert'` for kommunen.
 2. Slå på `nivaa.voteringer` og `nivaa.oppmote` i `kommuner/<slug>.json` hvis

@@ -160,7 +160,7 @@ def _endringer_i(c: str, p: str) -> dict:
                 if g is None:
                     e["nye_saker"].append({
                         "id": s["sak_id"], "formalia": s.get("formalia", False),
-                        # Skjermede titler vises ikke (CLAUDE.md regel 3).
+                        # Skjermede titler vises ikke (CLAUDE.md regel 4).
                         "tittel": None if s.get("skjermet_tittel") else s.get("tittel"),
                         "url": next((st["url_mote"] for st in reversed(s.get("saksgang") or [])
                                      if st.get("url_mote")), None)})

@@ -236,6 +236,10 @@ hver adresse er kontrollert for hånd.
   to utvalg) får kort som kan lukkes og snarveier; i en liten sak står alt
   åpent og stemmene i vedtaket. Det som åpnes og lukkes, glir (Web
   Animations), og står stille for dem som har bedt om mindre bevegelse.
+- `#sak/<sak-id>/mote/<møte-id>`: samme saksside, der man kan bla til forrige
+  og neste politiske sak på sakslisten til møtet (`sakIMote` i `app.js`).
+  Møtesiden lenker slik, så tilbakeknappen og en delt lenke blar i samme møte.
+  Uten møte i adressen blar man i det siste møtet saken er behandlet i.
 - `#saker`, `#saker/pa-vei`, `#saker/venter`: tre faner etter hvor saken står,
   med filter for år og måned. Årene er de som finnes i dataene.
 - `#moter/<åååå-mm>`: kalender per måned, liste på smale skjermer.
@@ -301,7 +305,7 @@ nettstedet publiseres som vanlig, på samme måte som voteringer med avvik.
   kilden: saksframlegget, vedtakene, tittelen og møtedatoene i saksgangen.
   Tall sammenlignes uten tusenskille, datoer som dag, måned og år, uansett
   skrivemåte.
-- Personnavn fra sakstittelen skal ikke stå i teksten (CLAUDE.md regel 6).
+- Personnavn fra sakstittelen skal ikke stå i teksten (CLAUDE.md regel 2).
   Folkevalgte er unntatt, og det samme er navn i `data/tillatte-navn.json`,
   som har begrunnelse for hvert navn. Ledd med ord som «AS», «Stadion» eller
   «Kulturhus» regnes ikke som personnavn.

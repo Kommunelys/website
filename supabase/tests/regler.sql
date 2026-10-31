@@ -95,7 +95,7 @@ begin
   insert into kjerne.person (kommune_id, navn, slug) values (k, 'Kari Test', 'kari-test') returning id into kari;
   insert into kjerne.person (kommune_id, navn, slug) values (k, 'Ola Test', 'ola-test') returning id into ola;
 
-  -- Regel 2: stemmetall ----------------------------------------------------
+  -- Regel 1: stemmetall ----------------------------------------------------
   perform pg_temp.skal_virke('stemmetall: 2 for med 2 navn',
     format($s$
       insert into kjerne.votering (kommune_id, behandling_id, nr, type, resultat, enstemmig, antall_for, antall_mot, tall_stemmer)
@@ -160,7 +160,7 @@ begin
       values (%s, 'medlemsliste', '2026-10-04', 'y',
               '{"utvalg": {"100": {"medlemmer": [{"navn": "Kari Test", "person_id": 1, "funksjon": "Medlem", "repr": "AP", "repr_navn": "Arbeiderpartiet"}]}}}')$s$, k));
 
-  -- Regel 3 og ADR-006: tekst ----------------------------------------------------
+  -- Regel 4 og ADR-006: tekst ----------------------------------------------------
   insert into kjerne.dokument (kommune_id, id_rom, portal_id, slag, url, mote_id)
     values (k, 'motedokument', 77, 'moteinnkalling', 'https://portal/mi', 1000) returning id into dok;
   perform pg_temp.skal_feile('tekst: møteinnkallingen lagres ikke (ADR-006)',
@@ -184,7 +184,7 @@ begin
   update kjerne.saksgang_steg set protokoll_skjermet = false, url_vedtak = 'https://portal/vedtak'
     where kommune_id = k and behandling_id = 5000;
 
-  -- Analyse (regel 5) -------------------------------------------------------------
+  -- Analyse (regel 1) -------------------------------------------------------------
   perform pg_temp.skal_feile('analyse: uten kildelenke stoppes',
     format($s$insert into kjerne.analyse (kommune_id, sak_id, tittel_klarsprak, sammendrag, betydning, tagger,
       utfall, uenighet, usikker, sjekksum, modell, innsats, instruksjon_versjon, dato, kilder)
