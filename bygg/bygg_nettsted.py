@@ -4,10 +4,9 @@ Hele nettstedet bygges på nytt hver gang, ikke stykkevis. Det tar sekunder ved
 denne datamålestokken og fjerner en klasse feil der en gammel side blir
 liggende igjen med utdatert innhold.
 
-Malen (index.html, stil.css, app.js) er portert fra prototypen i
-bygg/prototype.html. Alt som var skrevet for hånd om enkeltsaker og ett møte,
-er fjernet; sidene lages bare fra dataene. Dataene skrives til
-nettsted/<kommune>/data/data.js som to objekter, S og VOT, som malen leser.
+Sidene lages bare fra dataene og malen (index.html, stil.css, app.js).
+Dataene skrives til nettsted/<kommune>/data/data.js som to objekter, S og
+VOT, som malen leser.
 
 Nettstedet heter Kommunelys og skal dekke flere kommuner (ADR-016). Roten er
 Kommunelys-forsiden med en liste over kommunene; hver kommune har sin egen
@@ -76,11 +75,9 @@ UOFFISIELL = "er en uoffisiell tjeneste"
 
 FASTE = ("Leder", "Nestleder", "Medlem")
 
-# Lenken «Meld fra om feil» under hvert sammendrag (ADR-011).
-MELD_FEIL = "https://github.com/Kommunelys/website/issues/new"
-REPO = MELD_FEIL.rsplit("/issues", 1)[0]
-# E-post for feil og innspill. Står på Om-siden, og «Meld fra om feil» åpner
-# en e-post hit med saken fylt inn.
+REPO = "https://github.com/Kommunelys/website"
+# E-post for feil og innspill: på Om-siden, og der en side ikke finnes eller
+# ikke kan vises. Feil i en sak meldes i portalen (ADR-023).
 KONTAKT_EPOST = "post@kommunelys.no"
 # Roten til nettstedet på serveren. 404-siden vises på alle adresser som ikke
 # finnes, så den trenger absolutte lenker. Arbeidsflyten setter NETTSTED_BASE
@@ -576,9 +573,6 @@ def _s(aarene: list[int], saker: list, moter: list, sammendrag: dict, kommune: d
                  for u in sorted({v["utvalg"] for v in verv})},
         "folk": _folk(verv),
         "mprot": dict(protokoller),
-        "meld": MELD_FEIL,
-        "repo": REPO,
-        "epost": KONTAKT_EPOST,
         # «Meld fra om feil» går til skjemaet i portalen, som krever
         # innlogging (ADR-023).
         "portal": PORTAL,
@@ -851,7 +845,7 @@ def _kommuneside(kommune: dict, ut: Path, begrenset: bool = False, viktige: str 
                                     f"{kommune['navn']} kommune, laget av en innbygger for innbyggerne."),
                   # Søkemotorene ser bare innloggingen; den skal ikke vises i søk.
                   "robots": '<meta name="robots" content="noindex">\n' if begrenset else "",
-                  "slug": kommune["slug"], "meld": MELD_FEIL, "telling": _telling()})
+                  "slug": kommune["slug"], "epost": KONTAKT_EPOST, "telling": _telling()})
     if UOFFISIELL not in (MAL / "app.js").read_text("utf-8"):
         raise SystemExit(f"bunnteksten i app.js mangler «{UOFFISIELL}»")
     (ut / "index.html").write_text(side, encoding="utf-8")
@@ -938,7 +932,7 @@ def _forside(kommuner: list[tuple[dict, dict]]) -> None:
                           "laget av en innbygger for innbyggerne."),
         "kart": _kart([k for k, _ in kommuner],
                       frozenset(k["slug"] for k, st in kommuner if st.get("begrenset"))),
-        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "telling": _telling()})
+        "gamle_lenker": GAMLE_LENKER, "telling": _telling()})
     (UT / "index.html").write_text(side, encoding="utf-8")
 
 
@@ -949,7 +943,7 @@ def _om(kommuner: list[tuple[dict, dict]]) -> None:
         "repo": REPO, "epost": html.escape(KONTAKT_EPOST), "telling": _telling(),
         "deling": _deling("om/", f"Om {MERKE}",
                           f"Hva {MERKE} er, og hvordan det er laget: kilder, hva som gjøres med kode og hva KI "
-                          "gjør, kvalitet, personvern og dekning. Uoffisiell og uavhengig."),
+                          "gjør, kvalitet og personvern. Uoffisiell og uavhengig."),
         # Navnene til kommunevalget i toppen (?kommune=). Ikke de med begrenset innsyn.
         "kommuner_json": json.dumps({k["slug"]: k["navn"] for k, st in kommuner if not st.get("begrenset")},
                                     ensure_ascii=False).replace("</", "<\\/")})
@@ -972,8 +966,7 @@ def _ikke_funnet(kommuner: list[tuple[dict, dict]]) -> None:
     side = _fyll((MAL / "404.html").read_text("utf-8"), {
         "merke": MERKE, "merke_ikon": _merke_ikon(), "konto": _konto(BASE), "v_stil": _v("stil.css"), "base": BASE,
         "kommuner": _kommunekort(kommuner, BASE), "kommuner_json": liste,
-        "gamle_lenker": GAMLE_LENKER, "repo": REPO, "meld": MELD_FEIL,
-        "telling": _telling()})
+        "gamle_lenker": GAMLE_LENKER, "epost": KONTAKT_EPOST, "telling": _telling()})
     relative = sorted({a for a in re.findall(r'(?:href|src)="([^"]*)"', side)
                        if not a.startswith(("/", "#", "https://", "http://localhost", "mailto:"))})
     if relative:
@@ -1139,9 +1132,6 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
         # Står på forsiden, men innholdet krever innlogging (ADR-024).
         "begrenset": begrenset,
         "nivaa": nivaa,
-        # Fase 2: faktisk forbruk, for å måle kostnaden.
-        "tokens": {k: sum((a.get("tokens") or {}).get(k, 0) for a in analyser.values())
-                   for k in ("inn", "ut")},
     }
     (ut / "status.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")

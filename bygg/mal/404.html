@@ -71,7 +71,7 @@ if(TIL&&TIL.sikker)location.replace(TIL.url);
     <ul class="punkt tekst">
       <li>Sjekk at adressen er skrevet riktig.</li>
       <li>Velg en kommune under, og søk etter saken der. Hver sak har sin egen lenke i sakslisten.</li>
-      <li>Kom du hit fra en lenke på {{merke}}, <a id="meld" href="{{meld}}">meld fra på GitHub</a>, så retter vi den.</li>
+      <li>Kom du hit fra en lenke på {{merke}}, skriv til <a id="meld" href="mailto:{{epost}}">{{epost}}</a>, så retter vi den.</li>
     </ul>
   </section>
 
@@ -97,7 +97,7 @@ if(TIL&&TIL.sikker)location.replace(TIL.url);
   var c=document.createElement('code');c.textContent=sti;hva.append(c);
   hva.append(' finnes ikke. Den kan være skrevet feil, eller siden kan være flyttet.');
   var meld=document.getElementById('meld');
-  meld.href+='?title='+encodeURIComponent('Lenke som ikke virker: '+sti);
+  meld.href+='?subject='+encodeURIComponent('Lenke som ikke virker: '+sti);
   if(TIL&&TIL.sikker){
     hva.textContent='Sender deg videre …';
     return;

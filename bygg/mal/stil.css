@@ -138,8 +138,6 @@ button,input,select{font:inherit;color:inherit}
 .kommunekort b{font-size:19px;color:var(--lenke)}
 .kommunekort:hover{border-color:var(--lys)}
 .kommunekort:hover b{text-decoration:underline}
-.slik-ikon{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px;max-width:640px}
-.slik-ikon li{display:flex;gap:14px;align-items:center}
 .ikon{flex:none;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--lys-flate);color:var(--ink)}
 .rot>.blokk{max-width:760px}
 .rot>.blokk.bred{max-width:none}
@@ -248,8 +246,6 @@ th:last-child,td:last-child{padding-right:0}
 .sorter th[data-k]:hover{color:var(--ink)}
 .sorter th[aria-sort="ascending"]::after{content:" ↑"}
 .sorter th[aria-sort="descending"]::after{content:" ↓"}
-tr.klikk{cursor:pointer}
-tr.klikk:hover td{background:var(--soft)}
 tr[aria-selected="true"] td{background:var(--lys-flate)}
 .dot,.sq{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:-1px;flex:none}
 .sq{border-radius:2px;width:9px;height:9px}
@@ -675,8 +671,6 @@ ol.vedtak li.ny::before{color:var(--info);background:color-mix(in srgb,var(--inf
 .pmrad{display:flex;flex-wrap:wrap;margin:8px 0 2px}
 .mnd a{color:inherit;text-decoration:none}
 .mnd a:hover{color:var(--lenke);text-decoration:underline}
-.mote-gr h3 a{color:inherit;text-decoration:none}
-.mote-gr h3 a:hover{color:var(--lenke);text-decoration:underline}
 
 /* Stemmer */
 .bar{display:flex;height:10px;border-radius:2px;overflow:hidden;background:var(--soft);gap:1px}
@@ -810,7 +804,7 @@ details summary{cursor:pointer;font-weight:600;font-size:14.5px;color:var(--lenk
 .drift-merke.ok{color:var(--good)}
 .drift-merke.feilet{color:var(--bad)}
 .drift-merke.delvis,.drift-merke.avbrutt{color:var(--warn)}
-.drift-merke.pagar,.drift-merke.lagret{color:var(--muted)}
+.drift-merke.pagar,.drift-merke.lokal{color:var(--muted)}
 
 /* Opptakene av møtene (ADR-026). Lenkene går til kommunens opptak, på
    starten av saken; knappen øverst på møtet og saken skal synes. */

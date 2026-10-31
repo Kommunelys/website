@@ -46,7 +46,6 @@ const SAK_FOR={},STEG={},SAK_ID={};S.cases.forEach(c=>{SAK_ID[c.id]=c;c.st.forEa
 // Adressen til saksiden for en behandling.
 const sakUrl=hid=>SAK_FOR[hid]?`#sak/${SAK_FOR[hid].id}`:'#saker';
 const stCls={"Til kommunestyret":"ks","Til behandling":"tb","Vedtatt i kommunestyret":"ok","Behandlet":"bh","Venter på protokoll":"vp","Protokoll ikke publisert":"bh","Unntatt offentlighet":"bh"};
-const stPill=s=>`<span class="st ${stCls[s]||'bh'}">${s}</span>`;
 /* Sammendrag fra KI (c.a) vises bare når det har bestått kontrollene i bygget. */
 const tittel=c=>c.a?c.a.tk:c.t;
 const sokTekst=c=>(c.t+' '+(c.a?`${c.a.tk} ${c.a.sum}`:'')).toLowerCase();
@@ -104,7 +103,6 @@ const protFor=hid=>{const c=SAK_FOR[hid],x=c&&c.st.find(x=>x.hid===hid);return x
 // Ved alternativ votering gjelder «vedtatt» ett av forslagene, ikke voteringen som helhet.
 const resTxt=v=>v.vinner?`Forslag ${v.vinner} vedtatt`:v.res==='vedtatt'?'Vedtatt':'Falt';
 const HOLDT=ALLEV.filter(v=>v.holdt).length;
-const MED_STEMMER=new Set(ALLEV.filter(v=>!v.holdt&&!v.en).map(v=>v.hid));
 const FORSL={};ALLEV.forEach(v=>{if(!v.holdt&&v.stiller)FORSL[v.stiller]=(FORSL[v.stiller]||0)+1});
 FOLK.forEach(p=>{p.m=p.verv.reduce((a,v)=>a+v.m,0);p.f=FORSL[p.n]||0});
 function stemmeStat(n){
@@ -125,7 +123,6 @@ const meetings=S.meetings;
 const RAD=K.rad;
 const UKEDAG=['søndag','mandag','tirsdag','onsdag','torsdag','fredag','lørdag'];
 const naar=d=>`${UKEDAG[new Date(d.slice(0,10)+'T12:00').getDay()]} ${ddl(d)}`;
-const sakLenke=(c,hid)=>`<a class="t" href="${sakUrl(hid)}">${esc(tittel(c))}</a>`;
 const smaa=s=>s.charAt(0).toLowerCase()+s.slice(1);
 
 /* Kommunestyret: halvsirkel og partiliste. Velg et parti for å se hvem som sitter der. */
@@ -465,7 +462,6 @@ function renderPerson(id){
   // «Møtt» med en stolpe som viser hvor stor del av møtene det er.
   const rad=v=>{const n=S.mprot[v.u];return `<tr><td>${esc(utName(v.u))}${v.p&&v.p!==p.p?` <span class="liten muted">(for ${esc(PNAME[v.p]||v.p)})</span>`:''}</td><td>${rolle(v.u,v.r)}</td><td class="num">${n&&v.m?`<span class="maaler mmaaler" aria-hidden="true"><i style="width:${Math.min(100,Math.round(100*v.m/n))}%"></i></span>`:''}${v.m||'–'}</td><td class="num">${n||'–'}</td></tr>`};
   const pct=st.omst.length?Math.round(st.maj/st.omst.length*100):0;
-  const sakLenke=v=>`<a href="${sakUrl(v.hid)}">${esc(SAK_FOR[v.hid]?tittel(SAK_FOR[v.hid]):v.sak)}</a>`;
   // Mange forslag foldes, som punktene i debatten på saken.
   const visF=st.forslag.length>8?6:st.forslag.length;
   // Tallene om stemmene som tre små ruter. Stolpen i den midterste fylles.

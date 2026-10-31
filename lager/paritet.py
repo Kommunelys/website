@@ -8,7 +8,6 @@ Rådataene sammenlignes uten hensyn til rekkefølgen på nøklene (Postgres
 lagrer jsonb med egen nøkkelrekkefølge); innholdet må være det samme.
 
     python -m lager.paritet 2026
-    python -m lager.paritet 2026 --lagre   # og lagre resultatet til driftssiden
 """
 
 from __future__ import annotations
@@ -18,7 +17,7 @@ import json
 import os
 import sys
 
-from lager import analyse, avvik, konfig, oppmote, pg, raa, saker, tekst, verv, voteringer
+from lager import analyse, avvik, konfig, oppmote, raa, saker, tekst, verv, voteringer
 from lager import drift as lager_drift
 
 
@@ -63,7 +62,7 @@ def _lik(fil, db, uten_rekkefolge: bool = False) -> tuple[bool, str]:
     return False, _forste_forskjell(fil, db)
 
 
-def kjor(aar: int, lagre: bool = False) -> int:
+def kjor(aar: int) -> int:
     kontroller = [
         ("saker", saker.les, (aar,), False),
         ("møter", saker.les_moter, (aar,), False),
@@ -73,6 +72,7 @@ def kjor(aar: int, lagre: bool = False) -> int:
         ("verv, alle år", verv.alle_aar, (), False),
         ("utvalg", verv.les_utvalg, (aar,), False),
         ("avvik", avvik.les, (aar,), False),
+        ("vurderinger", avvik.vurderinger, (), False),
         ("analyser", analyse.alle, (), False),
         ("kjøreloggen", lager_drift.kjoringer, (), False),
         ("forrige telling", konfig.forrige_telling, (), False),
@@ -92,16 +92,6 @@ def kjor(aar: int, lagre: bool = False) -> int:
         antall = len(fil) if hasattr(fil, "__len__") else ""
         notert(f"{navn} ({antall})", ok, hvor)
 
-    # Filene som vedlikeholdes for hånd, leses alltid fra filen. Her
-    # sammenlignes de med kopien i databasen.
-    for navn, fra_fil, fra_db in (("vurderinger", avvik.vurderinger, pg.vurderinger),
-                                  ("tillatte navn", konfig.tillatte_navn, pg.tillatte_navn)):
-        notert(navn, *_lik(fra_fil(), fra_db()))
-
-    # Partisidene: merknaden i filen er en kommentar og lagres ikke.
-    fil = {k: v for k, v in _med("json", konfig.partisider).items() if k != "merknad"}
-    notert("partisider", *_lik(fil, pg.partisider()))
-
     # Teksten: hvert dokument sakene og møtene viser til.
     oppslag = [("mote", m["mote_id"]) for m in saker.les_moter(aar)]
     for s in saker.les(aar):
@@ -116,26 +106,12 @@ def kjor(aar: int, lagre: bool = False) -> int:
     feil = sum(1 for _, ok, _ in resultat if not ok)
     print()
     print("alt likt" if not feil else f"{feil} ulike")
-    if lagre:
-        _lagre(aar, resultat)
     return 1 if feil else 0
-
-
-def _lagre(aar: int, resultat: list[tuple[str, bool, str]]) -> None:
-    """Resultatet i drift.paritet, til driftssiden."""
-    from psycopg.types.json import Jsonb  # noqa: PLC0415
-
-    from lager import kjoring_id, pg_skriv  # noqa: PLC0415
-
-    ulike = [{"navn": navn, "hvor": hvor} for navn, ok, hvor in resultat if not ok]
-    pg_skriv.i_transaksjon(lambda c, k: c.execute(
-        "insert into drift.paritet (kommune_id, aar, kjoring_id, likt, kontroller, ulike) "
-        "values (%s, %s, %s, %s, %s, %s)", (k, aar, kjoring_id(), not ulike, len(resultat), Jsonb(ulike))))
 
 
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    raise SystemExit(kjor(int(args[0]) if args else dt.date.today().year, lagre="--lagre" in sys.argv))
+    raise SystemExit(kjor(int(args[0]) if args else dt.date.today().year))
 
 
 if __name__ == "__main__":

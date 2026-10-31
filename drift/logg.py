@@ -1,6 +1,6 @@
 """Kjøreloggen: tall fra hver kjøring som ikke kan leses ut av dataene etterpå.
 
-Det som endres i dataene, finnes i git-historikken og regnes ut av
+Det som endres i dataene, står i endringsloggen i databasen og regnes ut av
 drift.historikk. Her lagres bare det som ellers ville vært borte når jobben er
 ferdig: hvor mange kall som gikk til portalen, og hvordan AI-analysen gikk.
 
@@ -17,7 +17,8 @@ import os
 
 from lager import drift as lager_drift
 
-# Loggen vokser med én post per kjøring. Eldre poster ligger i git.
+# Loggen vokser med én post per kjøring. Bare de siste skrives på nytt; de
+# eldre blir liggende i databasen.
 MAKS_POSTER = 200
 
 
