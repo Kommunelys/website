@@ -263,7 +263,7 @@ def tekster(c, k: int, les) -> dict:
     """Teksten for hvert dokument som har den. `les(id_rom, ident)` henter den.
 
     Tekst slettes ikke her. Den forsvinner med dokumentet, for eksempel når
-    et vedtak blir skjermet (CLAUDE.md regel 3).
+    et vedtak blir skjermet (CLAUDE.md regel 4).
     """
     rader = []
     for did, id_rom, portal_id, slag, mote_id in c.execute(

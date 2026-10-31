@@ -711,7 +711,7 @@ def endringer(dager: int, maks: int) -> list[dict]:
             " order by st.rekkefolge desc limit 1) "
             f"from drift.endringslogg e where {vilkar} and e.tabell = 'sak' and e.operasjon = 'I' "
             "order by e.id", *args):
-        # Skjermede titler vises ikke (CLAUDE.md regel 3).
+        # Skjermede titler vises ikke (CLAUDE.md regel 4).
         ut[kid]["nye_saker"].append({"id": sak_id, "formalia": formalia,
                                      "tittel": None if skjermet else tittel, "url": url})
 

@@ -5,7 +5,7 @@ hver kjøring og lagres versjonert, slik at historikken bygges opp framover. Det
 lagres en ny versjon (lager.raa) bare når noe er endret.
 
 Svaret fra portalen har også mobilnummer, e-post og kjønn for hver folkevalgt.
-Det lagres ikke: folkevalgte omtales bare i sin rolle (CLAUDE.md regel 6), og
+Det lagres ikke: folkevalgte omtales bare i sin rolle (CLAUDE.md regel 2), og
 ingen del av tjenesten trenger det. Dette er et bevisst unntak fra at rå svar
 lagres urørt (ADR-001); alle felter som tolkes, beholdes.
 

@@ -1,5 +1,11 @@
 # Beslutningslogg
 
+Dette er historikken over beslutningene: hva som ble bestemt, når og hvorfor.
+Reglene som gjelder, står i `CLAUDE.md` (seks regler, vedtatt 31.10.2026), og
+de går foran det som står her. Når en ADR eller en migrering viser til «regel
+N» eller «grunnregel N», er det den gamle nummereringen: regel 2 og 5 er nå
+regel 1, regel 6 er regel 2, og regel 1, 3 og 4 er regel 4.
+
 Hver beslutning med begrunnelse og konsekvens. Nyeste nederst. En beslutning
 endres ikke; den erstattes av en ny som sier at den forrige er avløst.
 
@@ -57,7 +63,7 @@ men uhentede noder.
 
 ## ADR-004 — JSON i git, ikke en databasefil
 
-**Besluttet.** Erstatter en tidligere antagelse om SQLite.
+**Besluttet. Avløst av ADR-019.** Erstatter en tidligere antagelse om SQLite.
 
 En SQLite-fil er binær og endres ved hver kjøring. Den ville vokst
 git-historikken og skjult nettopp de endringene som er poenget å kunne se.
@@ -496,7 +502,7 @@ skal forbli statisk og åpent.
 - Portalen er en egen app på `portal.kommunelys.no`, bygget med react-admin
   og ra-supabase, i repoet `Kommunelys/portal` på GitHub Pages. Innlogging,
   registrering, bekreftelse, glemt og nytt passord er Supabase Auth. E-post
-  sendes fra `noreply@kommunelys.no` via Resend.
+  sendes fra `post@kommunelys.no` via Resend.
 - Portalen har bare den publiserbare nøkkelen og leser bare skjemaet
   `portal` i databasen: views med `security_invoker`, så RLS-en fra ADR-019
   bestemmer alt. `anon` får ingenting.

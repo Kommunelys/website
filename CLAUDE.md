@@ -6,61 +6,78 @@ Kontekst for Claude Code i dette repoet. Les denne først.
 
 **Kommunelys**: en uoffisiell, offentlig nettside som gjør politiske saker i
 kommunen forståelige for innbyggere. Data hentes fra kommunens innsynsportal,
-tolkes med en språkmodell, og publiseres på nytt automatisk. Dekker i dag
-Steinkjer kommune; navnet og malen er laget for flere (ADR-016).
+tolkes med en språkmodell, og publiseres på nytt automatisk. Steinkjer er
+publisert, og Levanger har begrenset innsyn; navnet og malen er laget for
+flere (ADR-016).
 
 Prosjektet er **ikke** laget av eller for Steinkjer kommune eller noen annen
 kommune. Det må være utvetydig uoffisielt i all presentasjon.
+
+## Reglene
+
+Seks regler, vedtatt av prosjekteier 31.10.2026. De går foran alt annet i
+repoet. ADR-ene i `docs/04-beslutninger.md` er historikken bak, og «Teknisk
+erfaring» lenger ned sier hvordan ting gjøres, ikke hva som er lov.
+
+1. **Dokumentene er fasit.** Alt vi viser kan spores til kommunens dokumenter,
+   med lenke. Stemmetall leses med kode og kontrolleres, aldri av KI. Vi
+   venter ikke på svar fra kommunen.
+2. **Vi skriver ikke navn.** Tekst Kommunelys skriver selv, har ingen navn på
+   privatpersoner. Folkevalgte omtales i rollen sin, debatten med partiene.
+   Sakstitler og forslag fra dokumentene vises uendret. Unntak: prosjekteier
+   med navn og bilde på Om-siden.
+3. **KI-tekst er merket og kan holdes tilbake.** Det som ikke består
+   kontrollen, vises ikke før det er vurdert. Prosjekteier har siste ord og kan
+   redigere.
+4. **Vi er en høflig gjest hos kommunen.** Innsyn er en rett, så vi ber ikke om
+   lov. Men prosjekteier sender kommunen en e-post når vi begynner å hente fra
+   den, og igjen når den blir åpen for alle. Vi henter i lav takt, laster
+   aldri ned skjermet innhold, lagrer ikke PDF eller video, og siden er
+   tydelig uoffisiell.
+5. **Innbyggerne først.** Alt offentlig innhold er gratis og åpent uten konto,
+   uten informasjonskapsler og uten profilering. Betalte funksjoner kommer i
+   tillegg, aldri i stedet.
+6. **Ingenting ut uten ja, og bare det som virker, vises.** Prosjekteier
+   godkjenner før noe publiseres. En funksjon er ikke synlig før den virker.
+   Koden holdes lett og enkel.
+
+Slik holdes reglene i koden:
+
+- **Stemmetall (1):** mønstergjenkjenning i `tolk/`, og antall navn
+  kontrolleres alltid mot oppgitt stemmetall. Et avvik stopper raden. En
+  vurdering kan slippe voteringen gjennom, men endrer aldri navn eller tall,
+  og merkes med `vurdert_av` (ADR-015, ADR-020).
+- **Kildelenke (1):** et sammendrag eller en debatt uten kildelenke
+  publiseres ikke.
+- **Navn (2):** gjelder sammendrag, debatt, merknader og forklaringer.
+  Bunnteksten sier «Kommunelys er en uoffisiell tjeneste, laget av en
+  innbygger for innbyggerne», uten navn (`UOFFISIELL`).
+- **Lav takt (4):** maks ett kall i sekundet, én tråd, samlet for verten:
+  kommunene hentes etter tur, aldri samtidig (`kjor/alle.py`). Portalens
+  `robots.txt` ber automatiske verktøy holde seg unna (ADR-007).
+- **Skjermet (4):** portalen merker det med `ProtocolRestricted`,
+  `IsRestricted` og `AccessCodeId`. Det lastes aldri ned og sendes aldri til
+  en modell. Respekter feltene i hvert ledd.
+- **PDF og video (4):** bare uttrukket tekst lagres. Originalen og opptaket
+  lenkes til hos kommunen.
 
 ## Status akkurat nå
 
 | Del | Status |
 |---|---|
 | API-et til portalen | Kartlagt og dokumentert, se `docs/02-api.md` |
-| Innhenting av møter og saker | Virker, kjørt mot hele 2026 |
-| Tolkning av protokoll til stemmer | Virker. 42 av 42 i testmøtet, og alle 442 voteringer med navneliste i 2026 består tellekontrollen |
-| Oppmøte | Virker. Lest fra alle 67 møteprotokoller i 2026; stemmene i 6 møter avviker fra oppmøtelisten og er flagget |
+| Innhenting og dokumenter | Virker. Møter, saker, saksgang på tvers av utvalg, og tekst fra PDF og Word (ADR-013) |
+| Stemmer og oppmøte | Virker. Tellekontrollen stopper avvik; avvik mot oppmøtelisten flagges og vurderes. Fasit per kommune i `tester/fasit/` |
 | Utvalg og verv | Virker. Medlemslistene hentes versjonert; vervene har observerte, ikke vedtatte, datoer |
-| Saksgang på tvers av utvalg | Virker |
-| Nedlasting av dokumenter | Virker. Tekst fra 724 av 726 saksframlegg og vedtak for 2026 er lagret (ADR-013) |
-| AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag vises med kildelenke; de som ikke består kontrollen, holdes tilbake |
-| Nettsted | Kommunelys. Viser alle år fra kommunens `fra_aar`; en sak er én tråd på tvers av år, og detaljene til en sak lastes når den åpnes (ADR-022). Bygges fra data, `kommuner/` og `bygg/mal/`, publisert på https://kommunelys.no/ med Steinkjer under `/steinkjer/` (GitHub Pages med eget domene og HTTPS; den gamle adressen på github.io sendes videre). 216 av 221 sammendrag vises. Saken står i sentrum: egen side per sak (`#sak/<id>`) med saksgangen som en linje øverst, kort for sammendraget, debatten, vedtaket (stemmetall per avsnitt) og stemmene i hvert møte, og myk åpning og lukking, Saker i tre faner (avgjort, på vei, venter på protokoll), møtekalender og egen side per møte (`#mote/<id>`) med oppmøte. Profil for hver folkevalgt, bare fra egne data. Om-siden (`/om/`) er felles for alle kommunene, kort, med hvem som står bak, metode og personvern; kommunen har fanen «Hvem bestemmer» med utvalgene og medlemmene. Se `docs/01-arkitektur.md` |
-| Opptak av kommunestyret | Virker for Steinkjer (ADR-026). Opptakene på steinkjer.kommunetv.no kobles til møtet og hver sak med bokmerkene; møtet, saken, sakslisten og kalenderen lenker dit. 5 av 5 kommunestyremøter i 2026 har opptak, 3 har teksting. Debatten oppsummeres med Claude fra tekstingen (`analyser.analyser_debatt`), med partiene, uten navn og stemmetall, og kontrolleres i bygget |
+| AI-analyse | Kjører i arbeidsflyten (`claude-opus-5`, instruksjon v3). Sammendrag som ikke består kontrollen, holdes tilbake |
+| Nettsted | Publisert på https://kommunelys.no/, med hver kommune under `/<slug>/`. Alle år fra `fra_aar`; en sak er én tråd på tvers av år (ADR-022). Saken står i sentrum (`#sak/<id>`, og `#sak/<id>/mote/<id>` når man blar i ett møte), med møtet (`#mote/<id>`), profilene, «Hvem bestemmer» og en felles Om-side (`/om/`). Detaljene står i `docs/01-arkitektur.md` |
+| Opptak av kommunestyret | Virker for Steinkjer (ADR-026). Opptakene kobles til møtet og sakene; debatten oppsummeres fra tekstingen med partiene, uten navn og stemmetall |
 | GitHub Actions | Virker. Kjører på tidsplan hver hverdag kl. 05:17 UTC, og kan startes for hånd |
-| Drift og besøk | Driftssiden viser besøk (GoatCounter), status, AI-kostnad i kroner og en tabell over kjøringene (ADR-017). Bygges ved hver kjøring av Oppdater, lagres i databasen og vises i portalen for prosjektadmin (ADR-020). Ikke på nettstedet |
-| Portal | I drift fra 6.10.2026 på https://portal.kommunelys.no/ (repoet `Kommunelys/portal`, ADR-020). Registrering, innlogging, Min konto og «Meld fra om feil» for alle; «Til vurdering» (avvik, sammendrag, debatter, meldinger) for vurderere per kommune (ADR-023, ADR-026); brukere, roller, abonnement og driftssiden for prosjektadmin. Prosjektadmin har også «Alle sammendrag», der sammendragene kan publiseres uansett grunn og redigeres (ADR-025). Kontomenyen øverst på nettstedet lenker dit. Nettstedet er fortsatt åpent for alle. Se «Portalen» under |
-| Flere kommuner | Klar i koden (ADR-021): kilde og regelsett per kommune, fasit, dekningskontroll, nivåer og kjøring per kommune med isolasjon. Steinkjer er publisert. Levanger er lagt inn med begrenset innsyn (ADR-024): på forsiden og kartet bare for dem med tilgang, og innholdet bare for innloggede med en rolle for kommunen. Steinkjer leser 98 % av voteringene; tre voteringer i rådene leses ikke ennå. Levanger leser 98 % av voteringene og alt oppmøtet i 2026 |
-| Følg saken | Bygget (ADR-027), ikke i drift. Knappen med bjelle øverst på saken, «Saker jeg følger» i portalen, og e-post via edge-funksjonen `varsel` når saken kommer videre. Sendes først når variabelen `VARSEL_SEND` er 1. Driftssiden teller e-postene mot grensen i Resend (Free: 100 i døgnet, varslene stopper på 70) |
-| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). Hele kjeden leser og skriver Postgres i Supabase; `data/` i git står som ved byttet. Sikkerhetskopi hver natt. Boksen «Databasen» på driftssiden viser siste kjøring |
-
-## Grunnregler du ikke skal bryte
-
-1. **Lav takt mot portalen.** Maks ett kall i sekundet, én tråd, samlet for
-   verten: kommunene hentes etter tur, aldri samtidig (`kjor/alle.py`).
-   Portalens `robots.txt` ber automatiske verktøy holde seg unna; dette er ikke
-   avklart med kommunen ennå. Nye kommuner trenger ingen egen avklaring
-   (prosjekteier, 7.10.2026). Se `docs/04-beslutninger.md`, ADR-007 og ADR-021.
-2. **Stemmetall tolkes aldri av en språkmodell.** Det gjøres med
-   mønstergjenkjenning i `tolk/`, og antall navn kontrolleres alltid mot
-   oppgitt stemmetall. Avvik skal stoppe raden, ikke rundes av. Om en
-   votering med avvik likevel skal publiseres, kan vurderes av en modell,
-   men vurderingen endrer aldri navn eller tall, og den merkes med
-   `vurdert_av` (i databasen, fra portalen eller `lager.vurder`; ADR-015, ADR-020).
-3. **Skjermet informasjon lastes aldri ned og sendes aldri til en modell.**
-   Portalen merker dette med `ProtocolRestricted`, `IsRestricted` og
-   `AccessCodeId`. Respekter feltene i hvert ledd.
-4. **Ingen PDF-er i git.** Bare uttrukket tekst. Originalen lenkes til i
-   portalen.
-5. **Hvert sammendrag skal ha lenke til kilden.** Uten kildelenke publiseres
-   det ikke.
-6. **Tekst tjenesten skriver selv, har ikke navn på privatpersoner.** Det
-   gjelder sammendrag, merknader og forklaringer. Folkevalgte omtales bare i
-   sin rolle. Sakstitler og forslagstekster fra protokollene vises uendret,
-   også når de inneholder navn; de er offentlige dokumenter (prosjekteier,
-   2.10.2026). Unntak: prosjekteier står med navn og bilde under «Hvem
-   står bak» på Om-siden (ADR-018). Bunnteksten på alle sidene sier «Kommunelys
-   er en uoffisiell tjeneste, laget av en innbygger for innbyggerne», uten navn
-   (prosjekteier, 7.10.2026).
+| Drift og besøk | Driftssiden (besøk fra GoatCounter, status, AI-kostnad, kjøringene) vises i portalen for prosjektadmin, ikke på nettstedet (ADR-017, ADR-020) |
+| Portal | I drift på https://portal.kommunelys.no/ (ADR-020). Se «Portalen» under |
+| Flere kommuner | I bruk (ADR-021). Steinkjer er publisert. Levanger har begrenset innsyn (ADR-024): innholdet bare for innloggede med en rolle for kommunen |
+| Følg saken | Bygget (ADR-027), ikke i drift. E-post sendes først når variabelen `VARSEL_SEND` er 1. Driftssiden teller e-postene mot grensen i Resend (100 i døgnet, varslene stopper på 70) |
+| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). `data/` i git står som ved byttet. Sikkerhetskopi hver natt |
 
 ## Mappene
 
@@ -185,7 +202,7 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
 | Del | Hvor |
 |---|---|
 | Appen | Repoet `Kommunelys/portal` (lokalt `C:\ClaudeCode\kommunelys-portal`): Vite, React, react-admin og ra-supabase. Publiseres på GitHub Pages ved push til `main` |
-| Innlogging | Supabase Auth. E-post fra `noreply@kommunelys.no` via Resend (SMTP). Malene ligger i `supabase/epostmaler/` og limes inn i Supabase for hånd |
+| Innlogging | Supabase Auth. E-post fra `post@kommunelys.no` via Resend (SMTP). Malene ligger i `supabase/epostmaler/` og limes inn i Supabase for hånd |
 | Data | Skjemaet `portal` (`supabase/migrations/20261006181902_portal.sql`): views med `security_invoker`, så RLS gjelder. Det eneste skjemaet i Data API, og bare for innloggede |
 | Brukeradministrasjon | Edge-funksjonen `brukeradmin` (`supabase/functions/`): liste, invitere, sperre, nytt passord, slette. Service-nøkkelen finnes bare der |
 | Kontomenyen | `bygg/mal/konto.js` og `bygg/mal/konto.html` (`/konto/`) på nettstedet |
@@ -246,7 +263,32 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   service-nøkkelen, som slipper captcha.
 - **Senere:** tofaktor for prosjektadmin, betaling og Pro-plan i Supabase.
 
-## Fallgruver vi allerede har gått i
+## Design
+
+- **Siden slik den er nå er utgangspunktet.** Designet fra saksiden (kort som
+  åpnes, fargede overskrifter og myk bevegelse, av ved `prefers-reduced-motion`)
+  brukes også på møtet, profilen, sakene og oversikten der det passer.
+- **Saken er det alt lenker til.** Lenk til `#sak/<id>` (`sakUrl(hid)` i
+  `app.js`) og `#mote/<id>`, ikke til `#saker` med et søk. Fra møtet lenkes
+  saken som `#sak/<id>/mote/<id>` (`sakIMote`), så man kan bla til forrige og
+  neste sak i det møtet. Stemmer har ikke lenger egen fane; nye visninger av
+  stemmer hører hjemme på saken, møtet, profilen eller under Politikere ›
+  Partiene.
+- **Malen nevner ingen kommune.** Et kommunenavn i `bygg/mal/` ville stått på
+  de andre kommunenes sider også. Det hører hjemme i `kommuner/<kommune>.json`
+  og leses fra `S.kommune`. `tester.kontroller` stopper hvis malen nevner en
+  kommune.
+- **Lys blå er pynt, ikke tekst.** `#60A5FA` har 2,4:1 mot papirhvit. Lenker,
+  fokus og status bruker `--lenke` (ADR-016).
+- **Om-siden er felles, «Hvem bestemmer» er kommunens.** Tekst om metode,
+  kvalitet og personvern står i `bygg/mal/om.html` og gjelder alle kommunene.
+  Hver påstand der skal kunne spores til kode, en ADR eller data. Siden skal
+  være kort: ingen dekningstabell, og «Hvem står bak» endres ikke uten
+  godkjenning. Gamle lenker til `#om` sendes til `/om/`.
+
+## Teknisk erfaring
+
+Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
 
 - **En prøve mot filene kjenner ikke databasens regler.** Levanger gikk
   gjennom med `KOMMUNELYS_LAGER=json`, men stoppet i databasen på sakstypen
@@ -314,10 +356,10 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   i databasen (portalen eller `lager.vurder`). Sjekk bevisene med kode før du vurderer: hvem
   som står på listen uten å stemme, partiet deres, og vedtak om permisjon og
   fritak i sakene. Se `docs/03-datamodell.md`.
-- **Vi venter ikke på kommunen.** Dokumentene er fasit. Kan et avvik ikke
-  avgjøres fra dem, publiseres voteringen slik protokollen oppgir den, med en
-  tydelig merknad om hva som er usikkert og lenke til protokollen. Ikke skriv
-  at vi venter på svar eller har spurt kommunen (prosjekteier, 4.10.2026).
+- **Et avvik som dokumentene ikke avgjør** (regel 1): voteringen publiseres
+  slik protokollen oppgir den, med en tydelig merknad om hva som er usikkert
+  og lenke til protokollen. Ikke skriv at vi venter på svar eller har spurt
+  kommunen.
 - **Dagens medlemsliste beskriver ikke plassene tidligere i året.** Permisjon,
   fritak og partibytte gjør at stemmer per parti ikke kan kontrolleres mot
   dagens antall plasser. SP har for eksempel én stemme mer enn dagens faste
@@ -332,12 +374,6 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   kontrollen, så plant feil i ekte sammendrag og se at de fortsatt fanges.
 - **Samme person kan ha to person-ID-er.** Monika Luktvasslimo i HPNM har en
   annen ID enn i de andre utvalgene. Profilene samles på normalisert navn.
-- **Malen er felles for alle kommunene.** Et kommunenavn i `bygg/mal/` ville
-  stått på de andre kommunenes sider også. Det hører hjemme i
-  `kommuner/<kommune>.json` og leses fra `S.kommune`. `tester.kontroller`
-  stopper hvis malen nevner en kommune.
-- **Lys blå er pynt, ikke tekst.** `#60A5FA` har 2,4:1 mot papirhvit. Lenker,
-  fokus og status bruker `--lenke` (ADR-016).
 - **Driftssiden henter historikk fra databasen, git og GitHub-API-et.** Bygget
   trenger hele git-historikken for tiden før byttet (`fetch-depth: 0`) og
   `actions: read`. Lokalt brukes
@@ -361,21 +397,12 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
   (prosjekteier, 23.10.2026): de tre navnesjekkene ga bare feilalarmer
   («Modellen», «Nye Veier»), og den første utgaven holdt tilbake 8 av 11
   gode sammendrag fordi fornavn lignet korte ord («To» og «Tor»). At
-  sammendraget ikke har navn (regel 6), sikres av instruksjonen til
+  sammendraget ikke har navn (regel 2), sikres av instruksjonen til
   modellen. Gjør du kontrollen strengere, så prøv den på de ekte debattene
   i databasen, ikke bare på plantede feil.
-- **Saken er det alt lenker til.** Lenk til `#sak/<id>` (`sakUrl(hid)` i
-  `app.js`) og `#mote/<id>`, ikke til `#saker` med et søk. Stemmer har ikke
-  lenger egen fane; nye visninger av stemmer hører hjemme på saken, møtet,
-  profilen eller under Politikere › Partiene.
 - **Sted og rom er fritekst i portalen.** Ved befaringer står ruten i begge
   feltene, og noen ganger tidsplanen i rommet. `stedTekst` i `app.js` viser det
   som er likt, én gang.
-- **Om-siden er felles, «Hvem bestemmer» er kommunens.** Tekst om metode,
-  kvalitet og personvern står i `bygg/mal/om.html` og gjelder alle kommunene.
-  Hver påstand der skal kunne spores til kode, en ADR eller data. Siden skal
-  være kort (prosjekteier, 6.10.2026): ingen dekningstabell, og «Hvem står
-  bak» endres ikke uten godkjenning. Gamle lenker til `#om` sendes til `/om/`.
 - **404-siden vises på alle adresser som ikke finnes.** Derfor må lenkene i
   `bygg/mal/404.html` være absolutte, med `{{base}}` foran. Roten kommer fra
   `NETTSTED_BASE`, som arbeidsflyten setter fra GitHub Pages (tom med eget

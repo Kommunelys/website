@@ -8,7 +8,7 @@ ADR-002 gjelder også her: stemmetall og utfall kommer fra protokollen, aldri
 fra teksten modellen skriver. Modellen får vedtaket og forslagene fra
 voteringene, så den vet hva som ble stemt over, men skal ikke gjengi utfallet.
 
-Regel 6: folkevalgte omtales bare i sin rolle. Sammendraget sier hvilket parti
+Regel 2: folkevalgte omtales bare i sin rolle. Sammendraget sier hvilket parti
 som mente hva, aldri hvem. Det står i instruksjonen; kontrollen ser ikke etter
 navn (prosjekteier, 23.10.2026).
 
@@ -200,11 +200,11 @@ def avvik(svar: dict, sak: dict, behandling: dict, opptak: dict, teksting: dict)
     """Grunner til å holde sammendraget tilbake. Tom liste betyr at det kan vises.
 
     Kontrollen er mild med vilje (prosjekteier, 20.10.2026). Den stopper
-    stemmetall (regel 2), og det som viser at sammendraget ikke hører til
+    stemmetall (regel 1), og det som viser at sammendraget ikke hører til
     saken: et parti som ikke var i møtet eller ikke sa noe i saken, og en tid
     utenfor saken. Navn ser den ikke etter (prosjekteier, 23.10.2026): alle
     navnesjekkene ga bare feilalarmer («Modellen», «Nye Veier»), og
-    instruksjonen sier at modellen aldri skal skrive navn (regel 6).
+    instruksjonen sier at modellen aldri skal skrive navn (regel 2).
     """
     ut = []
     if svar.get("ingen_debatt"):
@@ -364,7 +364,7 @@ def _resultat(svar: dict, b: dict, o: dict, ds: list[dict], sum_: str, modell: s
         "instruksjon_versjon": INSTRUKSJON_VERSJON,
         "dato": dt.date.today().isoformat(),
         "tokens": forbruk,
-        # Regel 5: lenke til kilden, opptaket på starten av saken.
+        # Regel 1: lenke til kilden, opptaket på starten av saken.
         "kilder": [{"tittel": "Opptaket av møtet",
                     "url": kommunetv.lenke(o["opptak_id"], ds[0]["bokmerke_id"])}],
     }

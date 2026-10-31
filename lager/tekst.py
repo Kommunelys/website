@@ -9,7 +9,7 @@ Tre ID-rom, som ikke må blandes:
 I data/tekst/ deler de to første samme mappe; det er grunnen til at ID-rommet
 alltid oppgis.
 
-CLAUDE.md regel 3: skjermet tekst lagres aldri. Det kontrolleres før
+CLAUDE.md regel 4: skjermet tekst lagres aldri. Det kontrolleres før
 `lagre` kalles, og igjen i tester.kontroller.
 """
 

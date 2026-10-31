@@ -385,7 +385,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             "instruksjon_versjon": INSTRUKSJON_VERSJON,
             "dato": dt.date.today().isoformat(),
             "tokens": forbruk,
-            # CLAUDE.md regel 5: uten kildelenke publiseres det ikke.
+            # CLAUDE.md regel 1: uten kildelenke publiseres det ikke.
             "kilder": kilder,
         })
         if til_mappe:
