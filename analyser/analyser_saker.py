@@ -149,10 +149,11 @@ def vedtaksdel(protokoll: str) -> str:
 
     Delen før, «Behandling», har navnelistene; den sendes ikke. Målt
     3.10.2026: 372 av 375 protokoller har én slik linje, de tre andre har
-    ikke noe vedtak.
+    ikke noe vedtak. Linjen er den samme som tolkningen bruker
+    (tolk_protokoll.les_vedtakstekst), fra profilen.
     """
     linjer = protokoll.splitlines()
-    treff = [i for i, l in enumerate(linjer) if re.fullmatch(r"\s*Vedtak:?\s*", l)]
+    treff = [i for i, l in enumerate(linjer) if l.strip() in profil().vedtak_linjer]
     return "\n".join(linjer[treff[-1] + 1:]).strip() if treff else ""
 
 

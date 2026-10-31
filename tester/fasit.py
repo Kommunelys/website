@@ -4,7 +4,8 @@ Hver kommune har noen dokumenter i tester/fasit/<kommune>/, som tekst
 (<slag>-<id>.txt), med resultatet ved siden av (<slag>-<id>.json):
 
 - mote: en møteprotokoll, tolket med tolk_protokoll.tolk
-- vedtak: saksprotokollen for én sak, med voteringene og vedtaksteksten
+- vedtak: saksprotokollen for én sak, med voteringene og vedtaksteksten;
+  analysen (analyser_saker.vedtaksdel) skal finne vedtaket der tolkningen gjør det
 - saksframlegg: avsnittene i ett saksframlegg
 
 Fasiten gjelder regelsettet (tolk/profil.py). Endres standarden for Elements,
@@ -68,6 +69,7 @@ def _forskjell(ventet, fikk, sti: str = "") -> str | None:
 
 def kjor(kommune: str, skriv: bool = False) -> list[str]:
     """Feilene for én kommune. Tom liste betyr at fasiten består."""
+    from analyser.analyser_saker import vedtaksdel  # noqa: PLC0415
     from lager import kommune as lager_kommune  # noqa: PLC0415
 
     lager_kommune.bruk(kommune)
@@ -77,8 +79,12 @@ def kjor(kommune: str, skriv: bool = False) -> list[str]:
         return [f"{kommune}: ingen dokumenter i tester/fasit/{kommune}/"]
     for txt in filer:
         slag = txt.stem.split("-", 1)[0]
+        tekst = txt.read_text(encoding="utf-8")
         # Gjennom JSON, så tupler og lister sammenlignes likt.
-        fikk = json.loads(json.dumps(_tolk(slag, txt.read_text(encoding="utf-8")), ensure_ascii=False))
+        fikk = json.loads(json.dumps(_tolk(slag, tekst), ensure_ascii=False))
+        # Analysen skal finne vedtaket der tolkningen gjør det.
+        if slag == "vedtak" and bool(vedtaksdel(tekst)) != bool(fikk["vedtak"]):
+            feil.append(f"{kommune}/{txt.name}: analysen finner ikke vedtaket")
         fasit = txt.with_suffix(".json")
         if not fasit.exists():
             if skriv:
