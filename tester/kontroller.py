@@ -417,14 +417,15 @@ def varselet_fanger_endringene() -> list[str]:
     def sak(**endre) -> dict:
         st = [{"hid": 10, "date": "2026-09-01T10:00", "ut": "Formannskapet", "sc": "FSK", "pub": True,
                "vt": "Vedtatt."},
-              {"hid": 11, "date": "2026-11-20T10:00", "ut": "Kommunestyret", "sc": "KS", "pub": False}]
+              {"hid": 11, "date": "2026-11-20T10:00", "ut": "Kommunestyre", "sc": "KS", "pub": False}]
         c = {"id": 10, "t": "Ny skole", "status": "Til kommunestyret", "st": st}
         for nokkel, verdi in endre.items():
             if nokkel == "steg":
                 c["st"] = verdi(st)
             else:
                 c[nokkel] = verdi
-        return tilstand(c)
+        # Portalen skriver «Kommunestyre»; e-posten skal si «i kommunestyret», som nettstedet.
+        return tilstand(c, {"KS": "Kommunestyret"})
 
     i_dag = "2026-10-29"
     for_ = sak()

@@ -1048,7 +1048,7 @@ def kjor_kommune(aar: int, begrenset: bool = False) -> tuple[dict, dict]:
             c["merk"] = meldinger["merk"][c["id"]]
     # Det som er publisert i hver sak, til «Følg saken» (ADR-027). Før detaljene
     # skilles ut; kjor.alle lagrer det når kommunen publiseres.
-    varsel_tilstand.skriv(kommune["slug"], S["cases"])
+    varsel_tilstand.skriv(kommune["slug"], S["cases"], kommune.get("utvalg_kort"))
     if nivaa["voteringer"]:
         VOT, holdt = _vot(aar, saker, moter, meldinger)
     else:
