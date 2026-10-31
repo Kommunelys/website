@@ -3,7 +3,7 @@
 Den som vurderer et avvik, et sammendrag eller en melding om feil, kan skrive
 en kort merknad. Den vises ved neste kjøring uten at noen godkjenner teksten
 for hånd (prosjekteier, 8.10.2026). Derfor kontrolleres den her: kort, uten
-lenker og uten navn på folkevalgte eller privatpersoner (CLAUDE.md regel 6).
+lenker og uten navn på folkevalgte eller privatpersoner (CLAUDE.md regel 2).
 En merknad som ikke består, gjør at saken holdes tilbake som om vurderingen
 ikke fantes.
 

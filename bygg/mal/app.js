@@ -808,7 +808,7 @@ function renderSak(id,uten_detaljer,bla){
   // En stor sak får kort som kan lukkes, snarveier og bevegelse; en liten viser alt.
   const stor=nv>3||deb.length>0||stiSteg(c).length>2;
   // Kildene står i detaljene. Uten kildelenke vises verken sammendraget eller
-  // «Hva betyr det?» (CLAUDE.md regel 5).
+  // «Hva betyr det?» (CLAUDE.md regel 1).
   const harSum=!!(c.a&&c.a.kilder);
   const kort=[];
   if(harSum)kort.push({id:'kort-sum',type:'sum',ikon:'ki',kort:'Kort fortalt',tittel:'Kort fortalt',under:'KI-sammendrag av dokumentene',innhold:kortFortalt(c),fast:true});

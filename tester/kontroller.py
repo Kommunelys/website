@@ -84,7 +84,7 @@ def _kildetekst(sak: dict) -> str:
 
 
 def _folkevalgte() -> set[str]:
-    """Navn i vervlistene. Folkevalgte kan omtales i sin rolle (regel 6)."""
+    """Navn i vervlistene. Folkevalgte kan omtales i sin rolle (regel 2)."""
     return {v["navn"] for v in lager_verv.alle_aar()}
 
 
@@ -210,13 +210,13 @@ def sammendrag_avvik(sak: dict, a: dict, unntatt: set[str] = frozenset()) -> lis
 
     Tall og datoer i sammendraget må finnes i kilden: dokumentene, tittelen og
     møtedatoene i saksgangen. Navn på privatpersoner fra sakstittelen skal ikke
-    være med (CLAUDE.md regel 6). Brukes av bygget, som holder tilbake
+    være med (CLAUDE.md regel 2). Brukes av bygget, som holder tilbake
     sammendrag med avvik, på samme måte som voteringer.
     """
     if a.get("usikker"):
         return ["modellen er usikker"]
     if not a.get("kilder"):
-        return ["mangler kildelenke"]  # regel 5
+        return ["mangler kildelenke"]  # regel 1
     tekst = " ".join(str(a.get(k, "")) for k in
                      ("tittel_klarsprak", "sammendrag", "betydning", "uenighet"))
     ut = []
@@ -247,7 +247,7 @@ def sammendrag_avvik(sak: dict, a: dict, unntatt: set[str] = frozenset()) -> lis
 
 # Grunnene en vurderer kan overstyre i portalen (ADR-023): et tall eller en
 # dato som ikke ble funnet i kilden. Kontrollen tar ofte feil der, fordi
-# pdftotext klistrer sammen tabeller. Navn (regel 6), manglende kilde (regel 5)
+# pdftotext klistrer sammen tabeller. Navn (regel 2), manglende kilde (regel 1)
 # og et usikkert svar fra modellen kan aldri overstyres. Samme regel står i
 # databasen, kjerne.kan_overstyres.
 OVERSTYRBAR = re.compile(r"^(datoen|tallet) .+ finnes ikke i kilden$")
@@ -392,7 +392,7 @@ DEBATT_STOPPES = (
 
 def debattkontrollen_fanger_det_den_skal() -> list[str]:
     """Kontrollen av debatten (analyser_debatt.avvik) er mild med vilje, men
-    skal fortsatt stoppe stemmetall (regel 2). Navn ser den ikke etter
+    skal fortsatt stoppe stemmetall (regel 1). Navn ser den ikke etter
     (prosjekteier, 23.10.2026). Prøves på faste setninger, uten databasen."""
     from analyser.analyser_debatt import avvik  # noqa: PLC0415
     behandling = {"behandling_id": 1, "vedtak": "", "voteringer": [{"partier": {

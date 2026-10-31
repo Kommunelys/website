@@ -1,7 +1,7 @@
 """Driftssiden: hva tjenesten har gjort, i tabeller og nøkkeltall.
 
 Alt på siden er tall fra drift.historikk og dataene, satt inn i faste
-tabeller. Ingenting skrives av en språkmodell (CLAUDE.md, regel 2). Siden
+tabeller. Ingenting skrives av en språkmodell (CLAUDE.md, regel 1). Siden
 lenkes ikke fra resten av nettstedet og har noindex, men den er offentlig som
 alt annet i repoet.
 

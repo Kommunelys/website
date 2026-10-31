@@ -4,7 +4,7 @@ ADR-002: en votering der antall navn ikke stemmer med stemmetallet, eller der
 stemmene ikke stemmer med oppmøtet, publiseres ikke uten en vurdering.
 Vurderingen kan gjøres av et menneske eller en språkmodell, men den avgjør
 bare om voteringen publiseres og med hvilken merknad. Navn og tall gjengis
-alltid slik protokollen oppgir dem (CLAUDE.md regel 2), og `vurdert_av` sier
+alltid slik protokollen oppgir dem (CLAUDE.md regel 1), og `vurdert_av` sier
 hvem som har vurdert. Tjenesten forholder seg til dokumentene og venter ikke
 på svar fra kommunen: kan det ikke avgjøres fra dokumentene, publiseres
 voteringen slik protokollen oppgir den, med en merknad som sier hva som er
@@ -122,7 +122,7 @@ def finn_avvik(aar: int) -> list[dict]:
 
 
 def folkevalgte() -> set[str]:
-    """Navnene i vervlistene, som ikke skal stå i en merknad (CLAUDE.md regel 6)."""
+    """Navnene i vervlistene, som ikke skal stå i en merknad (CLAUDE.md regel 2)."""
     return {v["navn"] for v in lager_verv.alle_aar()}
 
 
