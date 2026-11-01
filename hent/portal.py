@@ -58,51 +58,65 @@ class PortalFeil(Exception):
     """Portalen svarte ikke slik vi forventer."""
 
 
-# Tellingen for kjøreloggen (drift.logg). Viser på driftssiden at takten holdes.
-_telling = {"kall": 0, "feil": 0, "byte": 0, "start": None}
+class Henter:
+    """Ett kall i sekundet, én tråd og identifiserbar klient (ADR-007), med nye
+    forsøk ved feil og tellingen til kjøreloggen (drift.logg), som viser på
+    driftssiden at takten holdes. Felles for innsynsportalen og opptakene
+    (hent.kommunetv). `del_` er navnet i kjøreloggen, `feil` unntaket som kastes."""
 
+    def __init__(self, del_: str, feil: type[Exception]) -> None:
+        self.del_, self.feil = del_, feil
+        self.telling = {"kall": 0, "feil": 0, "byte": 0, "start": None}
 
-def _logg_telling() -> None:
-    if not _telling["kall"]:
-        return
-    from drift.logg import legg_til  # noqa: PLC0415
+    def _logg(self) -> None:
+        if not self.telling["kall"]:
+            return
+        from drift.logg import legg_til  # noqa: PLC0415
 
-    legg_til("portal", {
-        "kall": _telling["kall"],
-        "feil": _telling["feil"],
-        "megabyte": _telling["byte"] / 1e6,
-        "sekunder": time.monotonic() - _telling["start"],
-    })
+        legg_til(self.del_, {
+            "kall": self.telling["kall"],
+            "feil": self.telling["feil"],
+            "megabyte": self.telling["byte"] / 1e6,
+            "sekunder": time.monotonic() - self.telling["start"],
+        })
 
-
-def _hent(url: str, *, binaer: bool = False, forsok: int = 3):
-    siste = None
-    if _telling["start"] is None:
-        _telling["start"] = time.monotonic()
-        atexit.register(_logg_telling)
-    for n in range(forsok):
-        _telling["kall"] += 1
-        try:
-            req = urllib.request.Request(url, headers=_headere())
-            with urllib.request.urlopen(req, timeout=60) as r:
-                data = r.read()
-            _telling["byte"] += len(data)
-            time.sleep(PAUSE_SEKUND)
-            return data if binaer else json.loads(data.decode("utf-8"))
-        except urllib.error.HTTPError as e:
-            _telling["feil"] += 1
-            # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
-            # at vi går for fort, og skal vente som andre feil.
-            if 400 <= e.code < 500 and e.code != 429:
+    def hent(self, url: str, headere: dict[str, str], les=None, forsok: int = 3):
+        """Svaret som JSON, eller gjort om med `les`. Er det ikke JSON når det skal
+        være det, prøves det på nytt: en feil adresse kan gi appens forside med 200."""
+        t, siste = self.telling, None
+        if t["start"] is None:
+            t["start"] = time.monotonic()
+            atexit.register(self._logg)
+        for n in range(forsok):
+            t["kall"] += 1
+            try:
+                req = urllib.request.Request(url, headers=headere)
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    data = r.read()
+                t["byte"] += len(data)
                 time.sleep(PAUSE_SEKUND)
-                raise PortalFeil(f"{e.code} {e.reason}: {url}") from e
-            siste = e
-            time.sleep(5 * (n + 1))
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
-            _telling["feil"] += 1
-            siste = e
-            time.sleep(5 * (n + 1))
-    raise PortalFeil(f"ga opp etter {forsok} forsøk: {url} ({siste})")
+                return les(data) if les else json.loads(data.decode("utf-8"))
+            except urllib.error.HTTPError as e:
+                t["feil"] += 1
+                # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
+                # at vi går for fort, og skal vente som andre feil.
+                if 400 <= e.code < 500 and e.code != 429:
+                    time.sleep(PAUSE_SEKUND)
+                    raise self.feil(f"{e.code} {e.reason}: {url}") from e
+                siste = e
+                time.sleep(5 * (n + 1))
+            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+                t["feil"] += 1
+                siste = e
+                time.sleep(5 * (n + 1))
+        raise self.feil(f"ga opp etter {forsok} forsøk: {url} ({siste})")
+
+
+_henter = Henter("portal", PortalFeil)
+
+
+def _hent(url: str, *, binaer: bool = False):
+    return _henter.hent(url, _headere(), (lambda d: d) if binaer else None)
 
 
 def moter(aar: int) -> list[dict]:

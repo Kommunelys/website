@@ -132,6 +132,34 @@ NAVNEVARIANTER: dict[str, str] = {}
 # kommunens profil, med partiene som faktisk sitter der.
 PARTINAVN: dict[str, str] = {}
 
+# Forslagene på saken (bygg/bygg_nettsted.py) ---------------------------------------
+
+# Hvem som står bak et forslag, skrevet først i teksten: «På vegne av H, V,
+# INP, PP:», «Fra SV og Rødt:», «Forslag fra Rødt, AP, SV og Frp:», ofte uten
+# kolon. Listen består av partier, «uavhengig representant X» eller en
+# person med parti («Kjell Haugan Ap»). Det som ikke passer, regnes som
+# begynnelsen på selve forslaget.
+_parti = (r"(?:Ap|AP|Arbeiderpartiet|H|Høyre|Sp|SP|Senterpartiet|SV|Sv|R|Rødt|"
+          r"FrP|Frp|FRP|Fremskrittspartiet|INP|Inp|PP|Pp|Pensjonistpartiet|V|Venstre|KrF|Krf|"
+          r"MDG|Mdg|Miljøpartiet De Grønne|"
+          r"Uavh\.?|[Uu]avhengig(?: representant(?: [A-ZÆØÅ][\wæøå-]+)?)?|alle partier)")
+_ledd = rf"(?:(?:[A-ZÆØÅ][\wæøå-]+ ){{1,3}}{_parti}|{_parti})"
+# Foran står ofte hva slags forslag det er: «Alternativt på vegne AP, …»,
+# «Alternativt helhetlig forslag fra Rødt, …», «Fellesforslag Rødt og AP».
+_slag = r"(?:Alternativt|alternativt|Helhetlig|helhetlig|Tilleggsforslag|Forslag|forslag|forlag)"
+FORSLAG_AVSENDER = re.compile(
+    rf"^(?:(?:{_slag}\s+)*(?:[Pp]å vegne(?: av)?|[Ff]ra)|Fellesforslag(?: fra)?):?\s+"
+    rf"(?P<bak>{_ledd}(?:(?:\s*[,;]+\s*og\s+|\s*[,;]+\s*|\s+og\s+){_ledd})*)(?![\wæøå])"
+    r"[\s.,:]*")
+
+# Ved alternativ votering står forslagene etter hverandre i protokollen:
+# «<forslag 1> Dette ble satt opp mot: 2) Navn (Parti) fremmet følgende
+# alternative forslag: <forslag 2>». Gjelder alle 61 i Steinkjer i 2026.
+SATT_OPP_MOT = "Dette ble satt opp mot:"
+ALTERNATIVT_FORSLAG = re.compile(
+    r"^\s*(?P<fs>\d)\)\s*(?P<stiller>[^()]{3,80}?)\s*\((?P<parti>[^)]+)\)\s*"
+    r"fremmet følgende (?P<type>[\w ]*?forslag):\s*")
+
 # Dekningen (tolk/dekning.py) ------------------------------------------------------
 
 # Ord som betyr at det ble stemt over noe. En saksprotokoll med et av dem, men

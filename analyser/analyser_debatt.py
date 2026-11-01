@@ -30,10 +30,10 @@ from __future__ import annotations
 import datetime as dt
 import difflib
 import hashlib
-import json
 import re
 import sys
 
+from analyser.claude import INNSATS, MODELL, Avvist, kall
 from drift.logg import legg_til
 from hent import kommunetv
 from lager import kommune
@@ -42,9 +42,6 @@ from lager import saker as lager_saker
 from lager import voteringer as lager_voteringer
 from tolk.profil import profil
 
-MODELL = "claude-opus-5"
-INNSATS = "high"
-MAKS_TOKENS = 16000
 MAKS_PER_KJORING = 15
 INSTRUKSJON_VERSJON = 1
 # Kortere enn dette er bare opplesning og avstemning; da sendes ingenting inn.
@@ -268,35 +265,6 @@ def sjekksum(grunnlag_: str) -> str:
     return h.hexdigest()[:16]
 
 
-class Avvist(Exception):
-    """Svaret kan ikke brukes: avslag, kuttet svar eller ugyldig JSON."""
-
-
-def kall(klient, grunnlag_: str) -> tuple[dict, str, dict]:
-    """Ett kall mot modellen, låst til SKJEMA, som i analyser_saker."""
-    svar = klient.beta.messages.create(
-        model=MODELL,
-        max_tokens=MAKS_TOKENS,
-        system=instruksjon(),
-        messages=[{"role": "user", "content": grunnlag_}],
-        output_config={"effort": INNSATS, "format": {"type": "json_schema", "schema": SKJEMA}},
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-    )
-    if svar.stop_reason == "refusal":
-        raise Avvist("avslått")
-    if svar.stop_reason == "max_tokens":
-        raise Avvist("svaret ble kuttet ved max_tokens")
-    tekster = [b.text for b in svar.content if b.type == "text"]
-    if not tekster:
-        raise Avvist(f"ingen tekst i svaret (stop_reason {svar.stop_reason})")
-    try:
-        resultat = json.loads(tekster[-1])
-    except json.JSONDecodeError as e:
-        raise Avvist(f"ugyldig JSON: {e}") from e
-    return resultat, svar.model, {"inn": svar.usage.input_tokens, "ut": svar.usage.output_tokens}
-
-
 # Instruksjonen ber om tre til seks punkter, men lange debatter gir flere.
 # Svaret brukes likevel; de første tas med.
 MAKS_PUNKTER = 8
@@ -402,7 +370,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
                 raise SystemExit("mangler pakken 'anthropic'. pip install -r krav.txt")
             klient = anthropic.Anthropic()
         try:
-            svar, modell, forbruk = kall(klient, tekst)
+            svar, modell, forbruk = kall(klient, instruksjon(), SKJEMA, tekst)
         except Avvist as e:
             print(f"  {b['saksnr']}: {e}, hoppet over")
             teller["feil"] += 1
