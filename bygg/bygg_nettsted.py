@@ -321,28 +321,11 @@ def _fyll(mal: str, verdier: dict[str, str]) -> str:
     return mal
 
 
-# Hvem som står bak et forslag, skrevet først i teksten: «På vegne av H, V,
-# INP, PP:», «Fra SV og Rødt:», «Forslag fra Rødt, AP, SV og Frp:», ofte uten
-# kolon. Listen består av partier, «uavhengig representant X» eller en
-# person med parti («Kjell Haugan Ap»). Det som ikke passer, regnes som
-# begynnelsen på selve forslaget.
-_PARTI = (r"(?:Ap|AP|Arbeiderpartiet|H|Høyre|Sp|SP|Senterpartiet|SV|Sv|R|Rødt|"
-          r"FrP|Frp|FRP|Fremskrittspartiet|INP|Inp|PP|Pp|Pensjonistpartiet|V|Venstre|KrF|Krf|"
-          r"Uavh\.?|[Uu]avhengig(?: representant(?: [A-ZÆØÅ][\wæøå-]+)?)?|alle partier)")
-_LEDD = rf"(?:(?:[A-ZÆØÅ][\wæøå-]+ ){{1,3}}{_PARTI}|{_PARTI})"
-# Foran står ofte hva slags forslag det er: «Alternativt på vegne AP, …»,
-# «Alternativt helhetlig forslag fra Rødt, …», «Fellesforslag Rødt og AP».
-_SLAG = r"(?:Alternativt|alternativt|Helhetlig|helhetlig|Tilleggsforslag|Forslag|forslag|forlag)"
-_AVSENDER = re.compile(
-    rf"^(?:(?:{_SLAG}\s+)*(?:[Pp]å vegne(?: av)?|[Ff]ra)|Fellesforslag(?: fra)?):?\s+"
-    rf"(?P<bak>{_LEDD}(?:(?:\s*[,;]+\s*og\s+|\s*[,;]+\s*|\s+og\s+){_LEDD})*)(?![\wæøå])"
-    r"[\s.,:]*")
-
-
 def _avsender_og_tekst(tekst: str) -> tuple[str | None, str]:
-    """«På vegne av H, V: 1. Kommunestyret …» -> («H, V», «1. Kommunestyret …»)."""
+    """«På vegne av H, V: 1. Kommunestyret …» -> («H, V», «1. Kommunestyret …»).
+    Mønsteret står i kommunens profil (forslag_avsender)."""
     tekst = re.sub(r"\s+", " ", tekst or "").strip()
-    m = _AVSENDER.match(tekst)
+    m = profil().forslag_avsender.match(tekst)
     if not m or not tekst[m.end():]:
         return None, tekst
     bak = re.sub(r"\s*[,;][\s,;]*", ", ", m.group("bak")).strip(" ,")
@@ -356,23 +339,16 @@ def _etikett(v: dict, tekst: str) -> str:
     return tekst or {"innstilling": "Innstillingen"}.get(v["type"], v["type"].capitalize())
 
 
-# Ved alternativ votering står forslagene etter hverandre i protokollen:
-# «<forslag 1> Dette ble satt opp mot: 2) Navn (Parti) fremmet følgende
-# alternative forslag: <forslag 2>». Gjelder alle 61 i 2026.
-_SATT_OPP_MOT = "Dette ble satt opp mot:"
-_ALT_FORSLAG = re.compile(
-    r"^\s*(?P<fs>\d)\)\s*(?P<stiller>[^()]{3,80}?)\s*\((?P<parti>[^)]+)\)\s*"
-    r"fremmet følgende (?P<type>[\w ]*?forslag):\s*")
-
-
 def _alternative_deler(v: dict, tekst: str, bak: str | None) -> list[dict] | None:
-    """Forslagene i en alternativ votering, hvert for seg, med hvem som fremmet dem."""
-    if not v["alternativer"] or _SATT_OPP_MOT not in tekst:
+    """Forslagene i en alternativ votering, hvert for seg, med hvem som fremmet
+    dem. Mønstrene står i kommunens profil (satt_opp_mot, alternativt_forslag)."""
+    p = profil()
+    if not v["alternativer"] or p.satt_opp_mot not in tekst:
         return None
-    forste, andre = tekst.split(_SATT_OPP_MOT, 1)
+    forste, andre = tekst.split(p.satt_opp_mot, 1)
     del1 = {"fs": "1", "tekst": forste.strip(), "type": v["type"],
             "stiller": v["forslagsstiller"], "parti": v["parti"], "bak": bak}
-    m = _ALT_FORSLAG.match(andre)
+    m = p.alternativt_forslag.match(andre)
     if not m:
         return [del1, {"fs": "2", "tekst": andre.strip()}]
     bak2, rest = _avsender_og_tekst(andre[m.end():])

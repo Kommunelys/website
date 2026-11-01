@@ -35,6 +35,7 @@ import time
 from pathlib import Path
 
 import lager
+from analyser.claude import INNSATS, MODELL, Avvist, kall
 from drift.logg import legg_til
 from lager import analyse as lager_analyse
 from lager import kommune
@@ -45,9 +46,6 @@ from tolk.bygg_avvik import holdt_tilbake
 from tolk.profil import profil
 from tolk.saksframlegg import del_opp
 
-MODELL = "claude-opus-5"
-INNSATS = "high"
-MAKS_TOKENS = 16000
 MAKS_PER_KJORING = 25
 # Endres instruksjonen eller skjemaet, må alt analyseres på nytt. Derfor inngår
 # versjonen i sjekksummen. Versjon 3 retter det prøven på ti saker 3.10.2026
@@ -121,10 +119,6 @@ def instruksjon() -> str:
     partier = ", ".join(f"{k} = {v}" for k, v in profil().partinavn.items())
     return (_INSTRUKSJON.replace("{kommune}", kommune.oppsett()["navn"])
             .replace("{partier}", partier))
-
-
-class Avvist(Exception):
-    """Svaret kan ikke brukes: avslag, kuttet svar eller ugyldig JSON."""
 
 
 def sjekksum(*deler: str) -> str:
@@ -234,38 +228,6 @@ def kildetekst(sak: dict, voteringer: dict[int, dict],
     return "\n\n".join(d for d in deler if d), kilder
 
 
-def analyser(klient, kilde: str) -> tuple[dict, str, dict]:
-    """Ett kall mot modellen. Gir (svaret, modellen som faktisk svarte, forbruket).
-
-    Svaret er låst til SKJEMA. Avslår modellens sikkerhetsfiltre, kjøres samme
-    forespørsel på Anthropics anbefalte reservemodell (fallbacks: "default").
-    """
-    svar = klient.beta.messages.create(
-        model=MODELL,
-        max_tokens=MAKS_TOKENS,
-        system=instruksjon(),
-        messages=[{"role": "user", "content": kilde}],
-        output_config={"effort": INNSATS,
-                       "format": {"type": "json_schema", "schema": SKJEMA}},
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-    )
-    if svar.stop_reason == "refusal":
-        raise Avvist(f"avslått ({getattr(svar.stop_details, 'category', None)})")
-    if svar.stop_reason == "max_tokens":
-        raise Avvist("svaret ble kuttet ved max_tokens")
-    tekster = [b.text for b in svar.content if b.type == "text"]
-    if not tekster:
-        raise Avvist(f"ingen tekst i svaret (stop_reason {svar.stop_reason})")
-    try:
-        resultat = json.loads(tekster[-1])
-    except json.JSONDecodeError as e:
-        raise Avvist(f"ugyldig JSON: {e}") from e
-    # For å måle faktisk kostnad per sak og per møte (fase 2).
-    forbruk = {"inn": svar.usage.input_tokens, "ut": svar.usage.output_tokens}
-    return resultat, svar.model, forbruk
-
-
 def gyldig(a: dict) -> bool:
     """Kontroller svaret før noe lagres. Skjemaet sikrer formen; dette sikrer innholdet."""
     if not isinstance(a, dict):
@@ -352,7 +314,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             continue
 
         try:
-            resultat, modell, forbruk = analyser(klient, kilde)
+            resultat, modell, forbruk = kall(klient, instruksjon(), SKJEMA, kilde)
         except anthropic.RateLimitError:
             # SDK-en har alt prøvd på nytt. Flere kall nå vil også bli avvist.
             print(f"  {sak['sak_id']}: rate limit, stopper kjøringen")
