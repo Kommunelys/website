@@ -4,12 +4,15 @@ Databaseskjemaet for Kommunelys (Postgres i Supabase). Databasen er kilden
 siden 6.10.2026 (ADR-019): hele kjeden leser og skriver her, og `data/` i git
 står som den var ved byttet. `KOMMUNELYS_LAGER=json` leser og skriver filene
 i stedet. To filer vedlikeholdes fortsatt for hånd i git, også da:
-`tillatte-navn.json` og `partisider.json`. De gjennomgås i en PR og leses
-rett fra filen. Vurderingene av avvik registreres i
+`tillatte-navn.json` og `partisider.json`. De gjennomgås i en PR og speiles
+inn med `python -m lager.synk --konfig`. Vurderingene av avvik registreres i
 databasen, i portalen eller med `python -m lager.vurder` (ADR-020).
 
 | Kommando | Gjør |
 |---|---|
+| `python -m lager.synk --konfig` | Speiler de to filene som vedlikeholdes for hånd. Kjøres først i hver kjøring |
+| `KOMMUNELYS_LAGER=json python -m lager.synk 2026` | Gjør databasen lik `data/` i én transaksjon: bare det som er endret, skrives og logges. Mot en tom database er det en import |
+| `python -m lager.paritet 2026` | Leser alt fra filene og fra databasen og sammenligner, tegn for tegn |
 | `python -m bygg.bygg_nettsted 2026` | Bygger nettstedet fra databasen |
 
 Tilkoblingen leses fra `KOMMUNELYS_DB_URL` eller `~/.kommunelys.env` (se
@@ -95,13 +98,26 @@ når dataene ikke lenger ligger i git.
 Kopien har data som ikke er åpne, og filene fra kjøringene i et offentlig repo
 kan lastes ned av alle med en GitHub-konto. Derfor ligger den ikke her.
 
-Gjenopprette til en tom database:
+Arbeidsflyten `Prøv gjenoppretting` i samme repo gjenoppretter den siste
+kopien hver søndag i en database som bare finnes under kjøringen, og
+sammenligner med den ekte. Feiler den, sender GitHub e-post.
 
-1. Kjør migreringene i `migrations/` (skjema, roller, regler).
-2. Last ned kopien fra kjøringen i `Kommunelys/sikkerhetskopi`, og les den inn som `postgres`:
-   `gzip -dc kommunelys-<dato>.sql.gz | psql "<adresse som postgres>"`.
-   Kopien lager skjemaene selv; slett `kjerne` og `drift` fra trinn 1 først
-   (`drop schema kjerne, drift cascade`), og kjør migreringene etter `drift`
-   på nytt for policyer og rettigheter.
-3. Sett passordene på rollene på nytt; de er aldri med i en kopi.
-4. Bygg nettstedet med `KOMMUNELYS_LAGER=pg` og sammenlign med det publiserte.
+Oppskriften for en ekte gjenoppretting, fra nytt Supabase-prosjekt til et
+nettsted som bygges igjen, står i README i `Kommunelys/sikkerhetskopi`. Kort:
+
+1. Kjør migreringene i `migrations/` i det nye prosjektet (`supabase db push`).
+   Skjemaet kommer herfra, ikke fra kopien: kopien har policyer som viser til
+   `tilgang` og `auth`, og en fremmednøkkel til `auth.users`, og kan ikke
+   leses inn alene i en tom database.
+2. Les inn bare dataene fra kopien med `prove/gjenopprett.sh` i
+   `Kommunelys/sikkerhetskopi`, før noen registrerer seg. Skriptet slår av
+   triggerne mens det leser inn, så endringsloggen ikke fylles på nytt.
+   Kjør `prove/etterpaa.sql` etterpå: meldinger om feil peker til kontoer som
+   ikke finnes lenger.
+3. Sett passord på `kommunelys_pipeline`, og legg den nye adressen i
+   `KOMMUNELYS_DB_URL` her og i `Kommunelys/sikkerhetskopi`.
+4. Bytt `SUPABASE_URL` og `SUPABASE_NOKKEL` i `bygg/bygg_nettsted.py` og i
+   portalen, og start Oppdater.
+5. Det som ikke er i kopien, settes opp for hånd: kontoene (alle registrerer
+   seg på nytt), rollene, følgerne, innstillingene i dashbordene og
+   edge-funksjonene.
