@@ -15,7 +15,6 @@ ingen opptak. Takten er den samme som mot innsynsportalen: ett kall i sekundet,
 from __future__ import annotations
 
 import datetime as dt
-import json
 import re
 import zoneinfo
 
@@ -33,8 +32,7 @@ _henter = Henter("opptak", OpptakFeil)
 
 def _hent(url: str, *, som_json: bool = True):
     """Ett kall, med pause etterpå. 404 betyr at opptaket er borte."""
-    return _henter.hent(url, {"User-Agent": KONTAKT},
-                        lambda d: json.loads(d.decode("utf-8")) if som_json else d.decode("utf-8"))
+    return _henter.hent(url, {"User-Agent": KONTAKT}, None if som_json else (lambda d: d.decode("utf-8")))
 
 
 def oppsett() -> dict | None:

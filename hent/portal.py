@@ -80,9 +80,9 @@ class Henter:
             "sekunder": time.monotonic() - self.telling["start"],
         })
 
-    def hent(self, url: str, headere: dict[str, str], les, forsok: int = 3):
-        """Svaret gjort om med `les`. Er det ikke JSON når det skal være det,
-        prøves det på nytt: en feil adresse kan gi appens forside med 200."""
+    def hent(self, url: str, headere: dict[str, str], les=None, forsok: int = 3):
+        """Svaret som JSON, eller gjort om med `les`. Er det ikke JSON når det skal
+        være det, prøves det på nytt: en feil adresse kan gi appens forside med 200."""
         t, siste = self.telling, None
         if t["start"] is None:
             t["start"] = time.monotonic()
@@ -95,7 +95,7 @@ class Henter:
                     data = r.read()
                 t["byte"] += len(data)
                 time.sleep(PAUSE_SEKUND)
-                return les(data)
+                return les(data) if les else json.loads(data.decode("utf-8"))
             except urllib.error.HTTPError as e:
                 t["feil"] += 1
                 # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
@@ -116,8 +116,7 @@ _henter = Henter("portal", PortalFeil)
 
 
 def _hent(url: str, *, binaer: bool = False):
-    return _henter.hent(url, _headere(),
-                        (lambda d: d) if binaer else (lambda d: json.loads(d.decode("utf-8"))))
+    return _henter.hent(url, _headere(), (lambda d: d) if binaer else None)
 
 
 def moter(aar: int) -> list[dict]:
