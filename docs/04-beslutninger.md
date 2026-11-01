@@ -465,7 +465,8 @@ som selv nekter å lagre det som bryter reglene.
   og det som skjedde før byttet, fra git.
 - Tre filer vedlikeholdes fortsatt for hånd i git, fordi de skal gjennomgås
   i en PR: `vurderinger.json`, `tillatte-navn.json` og `partisider.json`.
-  Hver kjøring speiler dem inn (`lager.synk --konfig`).
+  Hver kjøring speiler dem inn (`lager.synk --konfig`). Speilingen ble
+  fjernet 1.11.2026; filene leses rett fra git.
 - RLS på alle tabeller, og egne roller for pipelinen og bygget. Tilgang for
   innloggede brukere gis per kommune (`tilgang`), og gir aldri mer enn det som
   er publisert: tilbakeholdte voteringer og sammendrag holdes tilbake fordi de

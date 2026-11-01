@@ -4,15 +4,12 @@ Databaseskjemaet for Kommunelys (Postgres i Supabase). Databasen er kilden
 siden 6.10.2026 (ADR-019): hele kjeden leser og skriver her, og `data/` i git
 står som den var ved byttet. `KOMMUNELYS_LAGER=json` leser og skriver filene
 i stedet. To filer vedlikeholdes fortsatt for hånd i git, også da:
-`tillatte-navn.json` og `partisider.json`. De gjennomgås i en PR og speiles
-inn med `python -m lager.synk --konfig`. Vurderingene av avvik registreres i
+`tillatte-navn.json` og `partisider.json`. De gjennomgås i en PR og leses
+rett fra filen. Vurderingene av avvik registreres i
 databasen, i portalen eller med `python -m lager.vurder` (ADR-020).
 
 | Kommando | Gjør |
 |---|---|
-| `python -m lager.synk --konfig` | Speiler de to filene som vedlikeholdes for hånd. Kjøres først i hver kjøring |
-| `KOMMUNELYS_LAGER=json python -m lager.synk 2026` | Gjør databasen lik `data/` i én transaksjon: bare det som er endret, skrives og logges. Mot en tom database er det en import |
-| `python -m lager.paritet 2026` | Leser alt fra filene og fra databasen og sammenligner, tegn for tegn |
 | `python -m bygg.bygg_nettsted 2026` | Bygger nettstedet fra databasen |
 
 Tilkoblingen leses fra `KOMMUNELYS_DB_URL` eller `~/.kommunelys.env` (se
@@ -107,5 +104,4 @@ Gjenopprette til en tom database:
    (`drop schema kjerne, drift cascade`), og kjør migreringene etter `drift`
    på nytt for policyer og rettigheter.
 3. Sett passordene på rollene på nytt; de er aldri med i en kopi.
-4. `python -m lager.paritet <år>` mot en eksport, eller bygg nettstedet med
-   `KOMMUNELYS_LAGER=pg` og sammenlign med det publiserte.
+4. Bygg nettstedet med `KOMMUNELYS_LAGER=pg` og sammenlign med det publiserte.

@@ -1,4 +1,4 @@
-"""Lager sammendrag og tagger med Claude. Fase 2: ikke slått på i arbeidsflyten ennå.
+"""Lager sammendrag og tagger med Claude.
 
 ADR-002: stemmetall tolkes ikke her. Modellen får resultatet av hver votering
 fra data/voteringer/, tolket med kode, og hvilke partier som sto på hver side,

@@ -1,15 +1,12 @@
-"""Hva tjenesten har gjort: kjøringene i GitHub Actions og endringene i data/.
+"""Hva tjenesten har gjort: kjøringene i GitHub Actions og endringene i dataene.
 
 Tre kilder, slått sammen per kjøring:
 
 - GitHub Actions-API-et: når kjøringene gikk, hvem som startet dem, og
   resultatet for hver jobb. Repoet er offentlig, så API-et kan leses uten
   nøkkel (60 kall i timen). I Actions brukes GITHUB_TOKEN.
-- Git-historikken: hver commit fra oppdater-bot sammenlignes med forelderen.
-  Det gir nye møter, saker, voteringer, dokumenter og sammendrag, også for
-  kjøringer fra før kjøreloggen fantes.
-- Endringsloggen i databasen (KOMMUNELYS_LAGER=pg): det samme per kjøring,
-  når dataene skrives dit i stedet for å committes.
+- Endringsloggen i databasen: nye møter, saker, voteringer, dokumenter og
+  sammendrag per kjøring (lager.pg.endringer).
 - Kjøreloggen (drift.logg): kall mot portalen og hvordan AI-analysen gikk.
 
 Alt her er tall og offentlige sakstitler. Ingen tekst skrevet av en modell.
@@ -20,7 +17,6 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
-import subprocess
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -31,11 +27,6 @@ from lager import fra_databasen
 ROT = Path(__file__).resolve().parent.parent
 REPO = "Kommunelys/website"
 ARBEIDSFLYT = "oppdater.yml"
-BOT = "oppdater-bot"
-
-# Commits fra arbeidsflyten havner noen sekunder til minutter før kjøringen
-# regnes som ferdig. Slingringsmonn i begge ender.
-SLINGRING = dt.timedelta(minutes=3)
 
 
 # ---------- GitHub Actions ----------
@@ -95,155 +86,41 @@ def kjoringer(antall: int = 30, med_jobber: int = 15) -> list[dict] | None:
     return ut
 
 
-# ---------- Git ----------
-
-def _git(*args: str) -> str:
-    r = subprocess.run(["git", *args], cwd=ROT, capture_output=True,
-                       encoding="utf-8", errors="replace")
-    return r.stdout if r.returncode == 0 else ""
-
-
-def _json(rev: str, sti: str):
-    tekst = _git("show", f"{rev}:{sti}")
-    try:
-        return json.loads(tekst) if tekst else None
-    except json.JSONDecodeError:
-        return None
-
-
-def _har_protokoll(m: dict) -> bool:
-    return any(d.get("type") == "MP" for d in m.get("dokumenter") or [])
-
-
-def _antall_voteringer(v: list | None) -> int:
-    return sum(len(b.get("voteringer") or []) for b in v or [])
-
-
-def _endringer_i(c: str, p: str) -> dict:
-    """Hva commit c endret i data/ sammenlignet med forelderen p."""
-    e = {"nye_saker": [], "nye_moter": 0, "nye_protokoller": 0, "ny_status": 0,
-         "nye_voteringer": 0, "nye_dokumenter": 0, "nye_sammendrag": 0,
-         "oppdaterte_sammendrag": 0, "tokens_inn": 0, "tokens_ut": 0, "nye_avvik": 0,
-         "moter_sjekket": 0, "moter_hentet": 0,
-         # {modell: [inn, ut]}: prisen avhenger av modellen.
-         "tokens_per_modell": {}}
-    filer = []
-    for linje in _git("diff", "--name-status", "--no-renames", p, c, "--", "data/").splitlines():
-        status, _, sti = linje.partition("\t")
-        filer.append((status, sti))
-
-    for status, sti in filer:
-        if sti.startswith("data/tekst/") and status == "A":
-            e["nye_dokumenter"] += 1
-        elif sti.startswith("data/analyse/") and status in ("A", "M"):
-            e["nye_sammendrag" if status == "A" else "oppdaterte_sammendrag"] += 1
-            a = _json(c, sti) or {}
-            t = a.get("tokens") or {}
-            e["tokens_inn"] += t.get("inn", 0)
-            e["tokens_ut"] += t.get("ut", 0)
-            m = e["tokens_per_modell"].setdefault(a.get("modell") or "ukjent", [0, 0])
-            m[0] += t.get("inn", 0)
-            m[1] += t.get("ut", 0)
-        elif status != "M" and status != "A":
-            continue
-        elif sti.endswith("/siste-kjoring.json"):
-            # Skrives av hent.hent_moter hver gang: hvor mange møter som ble
-            # sjekket mot portalen, og hvor mange som måtte hentes på nytt.
-            sk = _json(c, sti) or {}
-            e["moter_sjekket"] += sk.get("moter_totalt", 0)
-            e["moter_hentet"] += sk.get("moter_hentet", 0)
-        elif sti.startswith("data/saker/") and sti.endswith(".json"):
-            ny, gml = _json(c, sti) or [], _json(p, sti) or []
-            for_ = {s["sak_id"]: s for s in gml}
-            for s in ny:
-                g = for_.get(s["sak_id"])
-                if g is None:
-                    e["nye_saker"].append({
-                        "id": s["sak_id"], "formalia": s.get("formalia", False),
-                        # Skjermede titler vises ikke (CLAUDE.md regel 4).
-                        "tittel": None if s.get("skjermet_tittel") else s.get("tittel"),
-                        "url": next((st["url_mote"] for st in reversed(s.get("saksgang") or [])
-                                     if st.get("url_mote")), None)})
-                elif g.get("status") != s.get("status"):
-                    e["ny_status"] += 1
-        elif sti.startswith("data/moter/") and sti.endswith(".json"):
-            ny, gml = _json(c, sti) or [], _json(p, sti) or []
-            for_ = {m["mote_id"]: m for m in gml}
-            for m in ny:
-                g = for_.get(m["mote_id"])
-                if g is None:
-                    e["nye_moter"] += 1
-                if _har_protokoll(m) and not (g and _har_protokoll(g)):
-                    e["nye_protokoller"] += 1
-        elif sti.startswith("data/voteringer/") and sti.endswith(".json"):
-            e["nye_voteringer"] += max(0, _antall_voteringer(_json(c, sti))
-                                       - _antall_voteringer(_json(p, sti)))
-        elif sti.startswith("data/avvik/") and sti.endswith(".json"):
-            gamle = {a["avvik"] for a in _json(p, sti) or []}
-            e["nye_avvik"] += sum(1 for a in _json(c, sti) or [] if a["avvik"] not in gamle)
-    return e
-
-
 def endringer(dager: int = 45, maks: int = 60) -> list[dict]:
-    """Commits fra arbeidsflyten de siste dagene, med hva de endret.
+    """Hva kjøringene de siste dagene endret, fra endringsloggen i databasen."""
+    if not fra_databasen():
+        return []
+    from lager import pg  # noqa: PLC0415
 
-    Med databasen også kjøringene i endringsloggen. Etter at dataene ikke
-    lenger committes, kommer alt nytt derfra; det eldre kommer fra git.
-    """
-    ut = _endringer_i_git(dager, maks)
-    if fra_databasen():
-        from lager import pg  # noqa: PLC0415
-
-        ut = sorted(ut + pg.endringer(dager, maks), key=lambda e: e["tid"], reverse=True)[:maks]
-    return ut
-
-
-def _endringer_i_git(dager: int, maks: int) -> list[dict]:
-    ut = []
-    logg = _git("log", f"--since={dager}.days", f"--max-count={maks}",
-                f"--author={BOT}", "--format=%H%x09%P%x09%cI%x09%s", "--", "data/")
-    for linje in logg.splitlines():
-        h, foreldre, tid, emne = linje.split("\t", 3)
-        p = foreldre.split()[0] if foreldre else None
-        if not p:
-            continue
-        ut.append({"commit": h, "tid": _tid(tid), "emne": emne, **_endringer_i(h, p)})
-    return ut
+    return pg.endringer(dager, maks)
 
 
 # ---------- Samlet ----------
 
 def tidslinje(kj: list[dict] | None, endr: list[dict]) -> list[dict]:
-    """Én post per kjøring, med commitene og loggtallene som hører til.
+    """Én post per kjøring, med endringene og loggtallene som hører til.
 
-    Commits som ikke passer i noen kjøring (eldre enn de hentede kjøringene,
-    eller kjørt lokalt), blir egne poster.
+    Endringer fra en kjøring som ikke er blant de hentede (eldre, eller kjørt
+    lokalt), blir egne poster.
     """
     logg = les_logg()
-    poster = []
-    brukt = set()
-    for k in kj or []:
-        start, slutt = k["start"], k["slutt"]
-        # Endringer fra databasen har kjøringen på seg; commits kobles på tid.
-        commits = [c for c in endr if c["commit"] not in brukt and (
-            c.get("kjoring") == k["id"] if c.get("kjoring") else
-            start and slutt and start - SLINGRING <= c["tid"] <= slutt + SLINGRING)]
-        brukt.update(c["commit"] for c in commits)
-        poster.append({**k, "commits": commits, "logg": logg.get(k["id"], {})})
-    for c in endr:
-        if c["commit"] not in brukt:
-            poster.append({"id": None, "start": c["tid"], "slutt": c["tid"],
-                           "status": "completed", "resultat": None, "commits": [c],
+    ider = {k["id"] for k in kj or []}
+    poster = [{**k, "endringer": [e for e in endr if e["kjoring"] == k["id"]],
+               "logg": logg.get(k["id"], {})} for k in kj or []]
+    for e in endr:
+        if e["kjoring"] not in ider:
+            poster.append({"id": None, "start": e["tid"], "slutt": e["tid"],
+                           "status": "completed", "resultat": None, "endringer": [e],
                            "logg": {}, "jobber": None})
     poster.sort(key=lambda p: p["start"] or dt.datetime.min.replace(tzinfo=dt.timezone.utc),
                 reverse=True)
     return poster
 
 
-def sum_endringer(commits: list[dict]) -> dict:
+def sum_endringer(endringer_: list[dict]) -> dict:
     tot: dict = {"nye_saker": [], "tokens_per_modell": {}}
-    for c in commits:
-        for k, v in c.items():
+    for e in endringer_:
+        for k, v in e.items():
             if k == "nye_saker":
                 tot["nye_saker"] += v
             elif k == "tokens_per_modell":

@@ -62,7 +62,7 @@ def hent(aar: int, alt: bool) -> dict[str, bool]:
     utfall = {}
     for slug, _ in lager_kommune.aktive():
         aarene = [str(a) for a in lager_kommune.aarene(aar, slug)]
-        ok = _kjor(slug, "lager.synk", "--konfig")
+        ok = True
         for a in aarene:
             ok = ok and _kjor(slug, "hent.hent_moter", a, *(["--alt"] if alt else []))
         ok = ok and _kjor(slug, "hent.hent_medlemmer", str(aar))
@@ -112,10 +112,7 @@ def _forrige(slug: str) -> bool:
     shutil.rmtree(ut, ignore_errors=True)
     try:
         status = json.loads(urllib.request.urlopen(rot + "status.json", timeout=60).read())
-        # Listen over filene står i status.json; eldre bygg hadde ett år.
-        filer = status.get("filer") or ["status.json", "index.html", "data/data.js"] + [
-            f"data/{n}-{status['ar']}.json" for n in ("saker", "moter", "analyser", "voteringer", "indeks")]
-        for f in filer:
+        for f in status["filer"]:
             (ut / f).parent.mkdir(parents=True, exist_ok=True)
             (ut / f).write_bytes(urllib.request.urlopen(rot + f, timeout=60).read())
     except Exception as e:  # noqa: BLE001

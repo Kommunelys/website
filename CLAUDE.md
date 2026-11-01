@@ -89,7 +89,7 @@ kjor/      alle kommunene etter tur: hent, analyser og bygg (kjor/alle.py)
 varsel/    «Følg saken»: det som er publisert i sakene, hva som er nytt, og køen (ADR-027)
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
-drift/     kjøreloggen, historikken fra git og Actions, og kostnadsanslaget til driftssiden
+drift/     kjøreloggen, historikken fra databasen og Actions, og kostnadsanslaget til driftssiden
 lager/     all lesing og skriving av data/; resten av koden bruker bare denne
 kommuner/  det som er særegent for hver kommune: kilden, regelsettet (tolk),
            nivåene (nivaa) og visningen (navn, utvalg, organer)
@@ -128,7 +128,6 @@ Alle kommandoene leser og skriver databasen (`KOMMUNELYS_DB_URL` eller
 python -m hent.hent_moter 2026          # møter, saker, saksgang
 python -m hent.hent_medlemmer 2026      # dagens medlemslister -> data/raa/medlemmer/
 python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
-python -m hent.hent_dokumenter 2026 --mal  # bare måling -> data/maling-<år>.json
 python -m tolk.bygg_saker               # saksgang og status -> data/saker/
 python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
 python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
@@ -148,12 +147,9 @@ python -m bygg.bygg_nettsted 2026 --kommune steinkjer --uten-felles  # bare nett
 python -m bygg.bygg_nettsted --felles   # forsiden, /om/, 404 og driftssiden fra nettsted/*/
 KOMMUNELYS_I_DAG=2026-10-04 python -m tolk.bygg_saker 2026  # tolk og bygg som om det var en annen dag
 python -m bygg.bygg_nettsted 2026       # nettsted/ fra data og bygg/mal/
-python -m lager.synk --konfig          # speil tillatte navn og partilenker inn
 python -m lager.vurder <avvik> publiser --begrunnelse ... --vurdert-av ...  # vurdering fra en modell
 python -m bygg.bygg_nettsted 2026 --drift-fil drift.html  # driftssiden også lokalt
 KOMMUNELYS_PORTAL=http://localhost:5173 python -m bygg.bygg_nettsted 2026  # kontomenyen mot portalen lokalt
-KOMMUNELYS_LAGER=json python -m lager.synk 2026  # gjør databasen lik data/ (import fra filer)
-python -m lager.paritet 2026           # filene i data/ og databasen gir det samme
 python -m bygg.lag_kart                 # kommunegrensene i Trøndelag -> kommuner/kart/ (sjelden)
 python -m varsel.kjor                   # «Følg saken»: endringene i køen; VARSEL_SEND=1 sender (ADR-027)
 python -m bygg.bygg_nettsted --bare-drift --utfall utfall.json  # bare driftssiden, etter varslene
@@ -172,7 +168,7 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
 | 0. Lagringslag (`lager/`) | Ferdig (#28). All lesing og skriving går gjennom `lager/` |
 | 1. Skjema, regler og RLS (`supabase/migrations/`) | Ferdig (#29). Testene i `supabase/tests/regler.sql` består |
 | 2. Import og lesing fra databasen | Ferdig (#30). Nettstedet bygget fra databasen er byte-likt |
-| 3. Speiling ved hver kjøring | Ferdig (#31). Jobben «Speil til databasen» kjører `lager.synk` og `lager.paritet --lagre` |
+| 3. Speiling ved hver kjøring | Ferdig (#31). Speilingen ble tatt bort etter byttet |
 | 4. Klargjort for bytte | Ferdig (#32, #33). Lesing, skriving, driftsside og nattlig sikkerhetskopi |
 | 4. Selve byttet | Ferdig 6.10.2026. `oppdater.yml` bruker databasen og committer ikke `data/`. 6 av 6 kontroller var like før byttet, og en generalprøve mot portalen ga det samme |
 | 5. `data/` ut av git | Senere, når databasen har gått en stund. Til da står `data/` som ved byttet |
@@ -180,15 +176,15 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
 - **Kilden nå:** databasen. Nettstedet bygges fra den. `data/` i git viser
   dataene slik de var 6.10.2026 og oppdateres ikke.
 - **`KOMMUNELYS_LAGER`** er `pg` som standard. `json` leser og skriver filene
-  i `data/`, for eksempel for å lese inn et år fra filer med `lager.synk`.
+  i `data/`, eller i en kopi med `KOMMUNELYS_DATA`, for å prøve en ny kommune.
 - **To filer vedlikeholdes for hånd og blir i git også etter byttet:**
-  `tillatte-navn.json` og `partisider.json`. De gjennomgås i PR og speiles
-  inn med `lager.synk --konfig`. Vurderingene av avvik registreres i
+  `tillatte-navn.json` og `partisider.json`. De gjennomgås i PR og leses
+  rett fra filen. Vurderingene av avvik registreres i
   databasen, i portalen eller med `lager.vurder` (ADR-020).
 - **Tilkoblingen** ligger i `KOMMUNELYS_DB_URL`: hemmeligheten i Actions og
   `~/.kommunelys.env` lokalt. Aldri i repoet.
 - **Endringsloggen** (`drift.endringslogg`) viser hva hver kjøring endret i
-  databasen, og har tatt over for git-historikken på driftssiden.
+  databasen, og er det driftssiden teller endringene fra.
 - **Sikkerhetskopien** tas hver natt i det private repoet
   `Kommunelys/sikkerhetskopi`, ikke her (ADR-019). Git er ikke lenger
   sikkerhetskopien.
@@ -249,9 +245,10 @@ kommunene med begrenset innsyn: der gir en rolle for kommunen (`leser`,
     `mx.domeneshop.no`, SPF `include:_spf.domeneshop.no`) og videresender til
     prosjekteier. Prosjekteier svarer fra Gmail som post@ via `smtp.resend.com`.
   - `post@kommunelys.no` er kontaktadressen overalt: på Om-siden
-    (`KONTAKT_EPOST` i `bygg/bygg_nettsted.py`), i «Meld fra om feil», som
-    åpner en e-post med saken fylt inn, og i `User-Agent` mot innsynsportalen
-    (`hent/portal.py`). Ingen personlig adresse og ikke noe kontaktskjema.
+    (`KONTAKT_EPOST` i `bygg/bygg_nettsted.py`), der en side ikke finnes
+    eller ikke kan vises, og i `User-Agent` mot innsynsportalen
+    (`hent/portal.py`). Feil i en sak meldes i portalen («Meld fra om feil»,
+    ADR-023). Ingen personlig adresse og ikke noe kontaktskjema.
   - Leveres e-post («250»), men kommer ikke fram, er det filteret hos
     mottakeren: søppelpost eller karantene i Microsoft 365.
 - **Captcha (hCaptcha):** Supabase krever den ved registrering, innlogging og
@@ -375,11 +372,9 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   kontrollen, så plant feil i ekte sammendrag og se at de fortsatt fanges.
 - **Samme person kan ha to person-ID-er.** Monika Luktvasslimo i HPNM har en
   annen ID enn i de andre utvalgene. Profilene samles på normalisert navn.
-- **Driftssiden henter historikk fra databasen, git og GitHub-API-et.** Bygget
-  trenger hele git-historikken for tiden før byttet (`fetch-depth: 0`) og
-  `actions: read`. Lokalt brukes
-  API-et uten nøkkel, med grense på 60 kall i timen. Svarer det ikke, viser
-  siden bare endringene i dataene.
+- **Driftssiden henter historikk fra databasen og GitHub-API-et.** Bygget
+  trenger `actions: read`. Lokalt brukes API-et uten nøkkel, med grense på 60
+  kall i timen. Svarer det ikke, viser siden bare endringene i dataene.
 - **Opptaket ligger hos kommunen, ikke hos oss.** Vi lenker til saken i
   kommunens spiller (`archive/<id>?caseId=<bokmerke>`); den kan ikke åpnes på
   et vilkårlig tidspunkt, så debatten skriver tiden i teksten. Videoen lastes
@@ -425,7 +420,7 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   RLS og policyer for rollene (se `20261004212642_tilgang.sql`). Kjør
   `supabase/tests/regler.sql` etterpå.
 - **Rådata, analyser, vurderinger og endringsloggen kan ikke endres eller
-  slettes i databasen.** Det er med vilje. En speiling eller import kan ikke
+  slettes i databasen.** Det er med vilje. En kjøring mot databasen kan ikke
   angres. Prøv derfor endringer mot en kopi av dataene (`KOMMUNELYS_DATA`) før
   de kjøres mot de ekte. Lokale kjøringer skriver til den samme databasen som
   nettstedet bygges fra; det finnes ingen egen testdatabase.

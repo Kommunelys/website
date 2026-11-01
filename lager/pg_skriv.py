@@ -109,16 +109,6 @@ class Personer:
         return self.id[navn]
 
 
-def navnevarianter(c, k: int, personer: Personer, varianter: dict[str, str]) -> dict:
-    personer.sikre(set(varianter.values()))
-    return synk_tabell(
-        c, "kjerne.navnevariant", ["kommune_id", "variant", "person_id", "begrunnelse"],
-        ["kommune_id", "variant"],
-        [(k, v, personer[n], "Fra tolk/navn.VARIANTER: samme person, skrevet ulikt i protokollene")
-         for v, n in sorted(varianter.items())],
-        "t.kommune_id = %s", (k,))
-
-
 # Utvalg, partier og verv -------------------------------------------------------------
 
 def utvalg(c, k: int, aar: int, utv: dict, partisider: dict) -> dict:
@@ -259,23 +249,6 @@ def saker(c, k: int, aar: int, alle_saker: list) -> dict:
     return ut
 
 
-def tekster(c, k: int, les) -> dict:
-    """Teksten for hvert dokument som har den. `les(id_rom, ident)` henter den.
-
-    Tekst slettes ikke her. Den forsvinner med dokumentet, for eksempel når
-    et vedtak blir skjermet (CLAUDE.md regel 4).
-    """
-    rader = []
-    for did, id_rom, portal_id, slag, mote_id in c.execute(
-            "select id, id_rom, portal_id, slag, mote_id from kjerne.dokument where kommune_id = %s "
-            "and slag <> 'moteinnkalling'", (k,)).fetchall():
-        innhold = les("mote", mote_id) if slag == "moteprotokoll" else les(id_rom, portal_id)
-        if innhold:
-            rader.append((k, did, innhold))
-    return synk_tabell(c, "kjerne.dokument_tekst", ["kommune_id", "dokument_id", "tekst"],
-                       ["kommune_id", "dokument_id"], rader, slett=False)
-
-
 # Voteringer og oppmøte ---------------------------------------------------------------------
 
 def voteringer(c, k: int, aar: int, personer: Personer, poster: list) -> dict:
@@ -372,45 +345,6 @@ def avvik(c, k: int, aar: int, avviksliste: list) -> dict:
         "t.kommune_id = %s and t.avvik in (select avvik from kjerne.avvik where kommune_id = %s "
         "and extract(year from dato) = %s)", (k, k, aar))
     return ut
-
-
-def vurderinger(c, k: int, vurd: list) -> int:
-    """En ny rad når vurderingen av et avvik er en annen enn den som gjelder."""
-    gjeldende = {a: (avg, m, b, v, str(d)) for a, avg, m, b, v, d in c.execute(
-        "select avvik, avgjorelse, merknad, begrunnelse, vurdert_av, dato from kjerne.vurdering_gjeldende "
-        "where kommune_id = %s", (k,))}
-    nye = [(k, v["avvik"], v["avgjorelse"], v.get("merknad"), v["begrunnelse"], v["vurdert_av"], v["dato"])
-           for v in vurd
-           if gjeldende.get(v["avvik"]) != (v["avgjorelse"], v.get("merknad"), v["begrunnelse"],
-                                           v["vurdert_av"], v["dato"])]
-    c.cursor().executemany(
-        "insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, merknad, begrunnelse, vurdert_av, dato) "
-        "values (%s, %s, %s, %s, %s, %s, %s)", nye)
-    return len(nye)
-
-
-def partilenker(c, k: int, partisider: dict) -> int:
-    """Lenkene til partienes egne sider (data/partisider.json), på partiene som finnes."""
-    sider = partisider.get("partier", {})
-    kontrollert = partisider.get("kontrollert")
-    endret = 0
-    for kode, url, tekst in c.execute("select kode, url, url_tekst from kjerne.parti where kommune_id = %s",
-                                      (k,)).fetchall():
-        ny = sider.get(kode) or {}
-        if (url, tekst) != (ny.get("url"), ny.get("tekst")):
-            c.execute("update kjerne.parti set url = %s, url_tekst = %s, url_kontrollert = %s "
-                      "where kommune_id = %s and kode = %s",
-                      (ny.get("url"), ny.get("tekst"), kontrollert if ny else None, k, kode))
-            endret += 1
-    return endret
-
-
-def tillatte_navn(c, k: int, tillatte: list) -> dict:
-    return synk_tabell(
-        c, "kjerne.tillatt_navn", ["kommune_id", "navn", "sak_id", "begrunnelse", "vurdert"],
-        ["kommune_id", "navn", "sak_id"],
-        [(k, n["navn"], n["sak_id"], n["begrunnelse"], n["vurdert"]) for n in tillatte],
-        "t.kommune_id = %s", (k,))
 
 
 # Analyser ---------------------------------------------------------------------------------

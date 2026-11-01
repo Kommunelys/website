@@ -11,17 +11,11 @@ ADR-013: poppler for PDF. Protokoller tas med `pdftotext -layout`, fordi
          Noen møter har protokollene bare i Word; de leses med
          standardbiblioteket. Dokumenter uten tekstlag lagres ikke.
 
-Dette skriptet er også måleverktøyet: `--mal` laster ned og rapporterer
-sidetall, tegn per side og andel uten tekstlag, uten å lagre tekst.
-
-    python -m hent.hent_dokumenter 2026 --mal      # mål samlingen først
-    python -m hent.hent_dokumenter 2026            # hent og lagre tekst
-    python -m hent.hent_dokumenter 2026 --vedlegg  # ta med vedlegg
+    python -m hent.hent_dokumenter 2026
 """
 
 from __future__ import annotations
 
-import collections
 import io
 import shutil
 import subprocess
@@ -31,11 +25,9 @@ import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 
-from lager import konfig
 from lager import raa as raadata
 from lager import saker as lager_saker
 from lager import tekst as lager_tekst
-from tolk import saksframlegg
 
 from . import portal
 
@@ -151,7 +143,7 @@ def _apne_i_raadata(aar: int) -> tuple[set[int], set[int], set[int]]:
             mote_apne - mote_stengt)
 
 
-def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
+def _oppgaver(aar: int) -> list[dict]:
     """Hva som skal hentes. Skjermede dokumenter er allerede filtrert bort
     i tolk/bygg_saker.py, men vi stoler ikke på det alene: hver oppgave
     kontrolleres også mot flaggene i rådataene."""
@@ -169,11 +161,6 @@ def _oppgaver(aar: int, med_vedlegg: bool) -> list[dict]:
                 ut.append({"id": steg["behandling_id"],
                            "url": steg["url_vedtak"],
                            "slag": "saksprotokoll", "kolonner": True})
-
-        if med_vedlegg:
-            for v in sak.get("vedlegg") or []:
-                ut.append({"id": v["dokument_id"], "url": v["url"],
-                           "slag": "vedlegg", "kolonner": False})
 
     # Møteprotokollen, for oppmøtelisten. Aldri møteinnkallingen (ADR-006).
     for mote in _moter_i_raadata(aar):
@@ -215,29 +202,22 @@ def _hvor(o: dict) -> tuple[str, int]:
     return "dokument", o["id"]
 
 
-def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
+def kjor(aar: int) -> None:
     sjekk_poppler()
-    oppgaver = _oppgaver(aar, med_vedlegg)
-    nye = [o for o in oppgaver if mal_bare or not lager_tekst.har(*_hvor(o))]
+    oppgaver = _oppgaver(aar)
+    nye = [o for o in oppgaver if not lager_tekst.har(*_hvor(o))]
     print(f"{len(oppgaver)} dokumenter, {len(nye)} skal lastes ned. Omtrent "
           f"{len(nye) * SEKUND_PER_DOKUMENT / 60:.0f} minutter.")
 
-    maling: list[dict] = []
     with tempfile.TemporaryDirectory() as tmp:
-        for i, o in enumerate(oppgaver, 1):
-            if lager_tekst.har(*_hvor(o)) and not mal_bare:
-                continue
-
+        for i, o in enumerate(nye, 1):
             try:
                 data = portal.hent_fil(o["url"])
             except portal.PortalFeil as e:
-                maling.append({**o, "feilet": str(e)})
                 print(f"[{i}] feilet {o['id']}: {e}")
                 continue
 
             fmt = filformat(data)
-            post = {**o, "bytes": len(data), "format": fmt, "er_pdf": fmt == "pdf"}
-
             if fmt == "pdf":
                 pdf = Path(tmp) / f"{o['id']}.pdf"
                 pdf.write_bytes(data)
@@ -246,61 +226,26 @@ def kjor(aar: int, mal_bare: bool = False, med_vedlegg: bool = False) -> None:
                 except subprocess.CalledProcessError as e:
                     print(f"[{i}] klarte ikke lese {o['id']}: {e}")
                     continue
-                per_side = len(tekst) / sider if sider else 0
-                post.update(sider=sider, tegn=len(tekst),
-                            tegn_per_side=round(per_side),
-                            mangler_tekstlag=per_side < MIN_TEGN_PER_SIDE)
+                if not sider or len(tekst) / sider < MIN_TEGN_PER_SIDE:
+                    print(f"[{i}] {o['id']} mangler tekstlag, ikke lagret")
+                    continue
             elif fmt == "docx":
                 try:
                     tekst = docx_til_tekst(data)
                 except (KeyError, ET.ParseError, zipfile.BadZipFile) as e:
                     print(f"[{i}] klarte ikke lese {o['id']}: {e}")
                     continue
-                post.update(tegn=len(tekst), mangler_tekstlag=False)
             else:
-                maling.append(post)
                 print(f"[{i}] {o['id']} er verken PDF eller Word, hoppet over")
                 continue
-
-            if o["slag"] == "saksframlegg":
-                deler = saksframlegg.del_opp(tekst)
-                post["etter_malen"] = deler is not None
-                if deler:
-                    post["avsnitt"] = [k for k in deler if k != "innledning"]
-            maling.append(post)
-
-            if not mal_bare:
-                if post["mangler_tekstlag"]:
-                    print(f"[{i}] {o['id']} mangler tekstlag, ikke lagret")
-                    continue
-                lager_tekst.lagre(*_hvor(o), tekst)
-
-    if mal_bare:
-        konfig.lagre_maling(aar, maling)
-        formater = collections.Counter(m["format"] for m in maling if "format" in m)
-        pdf_er = [m for m in maling if m.get("format") == "pdf"]
-        uten = [m for m in maling if m.get("mangler_tekstlag")]
-        sf = [m for m in maling if "etter_malen" in m]
-        print(f"\nMålt {len(maling)} dokumenter.")
-        print(f"  feilet            : {sum(1 for m in maling if 'feilet' in m)}")
-        print(f"  format            : {dict(formater)}")
-        print(f"  mangler tekstlag  : {len(uten)}")
-        if pdf_er:
-            sider = sum(m.get('sider') or 0 for m in pdf_er)
-            print(f"  sider totalt      : {sider}")
-            print(f"  største dokument  : "
-                  f"{max(m.get('sider') or 0 for m in pdf_er)} sider")
-        if sf:
-            print(f"  saksframlegg etter malen: "
-                  f"{sum(m['etter_malen'] for m in sf)} av {len(sf)}")
-        print(f"  detaljer i data/maling-{aar}.json")
+            lager_tekst.lagre(*_hvor(o), tekst)
 
 
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     import datetime as dt  # noqa: PLC0415
     aar = int(args[0]) if args else dt.date.today().year
-    kjor(aar, mal_bare="--mal" in sys.argv, med_vedlegg="--vedlegg" in sys.argv)
+    kjor(aar)
 
 
 if __name__ == "__main__":

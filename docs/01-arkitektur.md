@@ -265,8 +265,7 @@ nye møter, saker, dokumenter, voteringer og sammendrag, og kostnad. Kostnaden
 er et anslag: tokens ganget med listepris (`drift/kostnad.py`) og dagens
 dollarkurs fra Norges Bank. Tallene settes inn av `bygg/drift.py`, ikke av
 en modell. Kildene er GitHub-API-et, endringsloggen i databasen (hva hver
-kjøring satte inn, endret og slettet), git-historikken for tiden før byttet
-til databasen 6.10.2026 (ADR-019), og kjøreloggen (`drift/`). Siden publiseres
+kjøring satte inn, endret og slettet) og kjøreloggen (`drift/`). Siden publiseres
 ikke på nettstedet. Bygget lagrer den i databasen (`drift.side`), og portalen
 viser den for prosjektadmin (ADR-020).
 

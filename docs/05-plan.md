@@ -47,8 +47,8 @@ Dette er fasen som gjør tjenesten forståelig for folk uten forkunnskaper.
 | Prøvekjøring på rundt ti saker, lese resultatet | Ferdig. Fem feil funnet og rettet i instruksjon v3 |
 | Kontroll av tall og navn i sammendraget | Ferdig. Tall og datoer må finnes i kilden, uansett skrivemåte; navn på privatpersoner fra tittelen holdes ute. 215 av 221 består, de 6 andre er merket usikre av modellen |
 | Vise sammendrag på nettstedet med kildelenke | Ferdig |
-| Knapp for å melde fra om feil | Ferdig, lenke til et nytt GitHub-issue. Krever GitHub-konto |
-| Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres i `nettsted/<kommune>/status.json` |
+| Knapp for å melde fra om feil | Ferdig. Feil i en sak meldes i portalen (ADR-023); ellers post@kommunelys.no |
+| Måle faktisk kostnad per møte | Tokenforbruket lagres per sak og summeres på driftssiden |
 | Temalisten: mangler tema for frivillighet og sosiale tjenester | Åpent |
 | Profil for hver folkevalgt: verv, oppmøte, stemmer og forslag, bare fra egne data | Ferdig, 103 profiler |
 | Kommunestyret på forsiden: velg et parti og se representantene, med lenke til partiet | Ferdig |
@@ -127,8 +127,8 @@ Høyre-siden i 17 av 25 i skolesaken. Elleve voteringer endte 20–19 eller 19�
       Pages-innstillingene, med HTTPS
 - [x] Opprette en e-postadresse på kommunelys.no for feil og innspill, og
       sette den i `KONTAKT_EPOST` i `bygg/bygg_nettsted.py`: `post@kommunelys.no`
-      (7.10.2026). Den står på Om-siden, i «Meld fra om feil» og i
-      `User-Agent` mot innsynsportalen
+      (7.10.2026). Den står på Om-siden, der en side ikke finnes eller ikke
+      kan vises, og i `User-Agent` mot innsynsportalen
 
 ## Kjente mangler i nettstedet
 

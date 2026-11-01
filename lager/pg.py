@@ -1,8 +1,8 @@
 """Lesing fra databasen, i samme form som filene i data/ har.
 
 Brukes når KOMMUNELYS_LAGER=pg. Hver funksjon her svarer til en `les`-
-funksjon i lager/, og skal gi nøyaktig det samme tilbake, også rekkefølgen
-på nøklene: den havner i nettstedets data.js. lager.paritet kontrollerer det.
+funksjon i lager/, og gir det samme tilbake som filene, også rekkefølgen på
+nøklene: den havner i nettstedets data.js.
 
 Svarene huskes i prosessen: et bygg spør om det samme mange ganger, og
 hver spørring går over nett. glem() tømmer minnet etter skriving. Hver
@@ -543,25 +543,6 @@ def debatt_vurderinger() -> dict[int, dict]:
                 "where v.kommune_id = %s order by d.behandling_id", kommune_id())}
 
 
-# Det som vedlikeholdes for hånd ----------------------------------------------------
-
-@_husket
-def partisider() -> dict:
-    rader = _rader("select kode, url, url_tekst, url_kontrollert from kjerne.parti "
-                   "where kommune_id = %s and url is not null order by kode collate \"C\"", kommune_id())
-    kontrollert = max((r[3] for r in rader if r[3]), default=None)
-    return {"kontrollert": _dato(kontrollert),
-            "partier": {kode: {"url": url, "tekst": tekst} for kode, url, tekst, _ in rader}}
-
-
-@_husket
-def tillatte_navn() -> list[dict]:
-    return [{"navn": navn, "sak_id": sak_id, "begrunnelse": begrunnelse, "vurdert": _dato(vurdert)}
-            for navn, sak_id, begrunnelse, vurdert in _rader(
-                "select navn, sak_id, begrunnelse, vurdert from kjerne.tillatt_navn "
-                "where kommune_id = %s order by navn, sak_id", kommune_id())]
-
-
 # Tekst -------------------------------------------------------------------------------
 
 _NOKKEL = ("case when d.slag = 'moteprotokoll' then 'mote' else d.id_rom end, "
@@ -673,13 +654,13 @@ def forrige_telling() -> dict[str, int]:
 
 # Endringene per kjøring, til driftssiden ------------------------------------------------
 
-# Speilingen (fase 3) og importen skrev det samme som git-historikken viser;
-# de telles ikke på nytt.
+# Speilingen og importen før byttet 6.10.2026 skrev data som fantes fra før;
+# de telles ikke som nye.
 IKKE_KJORINGER = r"^(synk|import)-"
 
 
 def endringer(dager: int, maks: int) -> list[dict]:
-    """Hva hver kjøring endret, i samme form som drift.historikk lager fra git."""
+    """Hva hver kjøring endret, til driftssiden (drift.historikk)."""
     k = kommune_id()
     vilkar = ("e.kommune_id = %s and e.kjoring_id is not null and e.kjoring_id !~ %s "
               "and e.tidspunkt > now() - make_interval(days => %s)")
@@ -696,9 +677,8 @@ def endringer(dager: int, maks: int) -> list[dict]:
             "count(*) filter (where tabell = 'dokument_tekst' and operasjon = 'I'), "
             "count(*) filter (where tabell = 'avvik' and operasjon = 'I') "
             f"from drift.endringslogg e where {vilkar} group by e.kjoring_id", *args):
-        ut[kid] = {"commit": kid, "kjoring": kid, "tid": tid, "emne": f"Kjøring {kid}",
-                   "nye_saker": [], "nye_moter": nye_moter, "nye_protokoller": nye_protokoller,
-                   "ny_status": ny_status, "nye_voteringer": nye_voteringer,
+        ut[kid] = {"kjoring": kid, "tid": tid, "nye_saker": [], "nye_moter": nye_moter,
+                   "nye_protokoller": nye_protokoller, "ny_status": ny_status, "nye_voteringer": nye_voteringer,
                    "nye_dokumenter": nye_dokumenter, "nye_sammendrag": 0, "oppdaterte_sammendrag": 0,
                    "tokens_inn": 0, "tokens_ut": 0, "nye_avvik": nye_avvik,
                    "moter_sjekket": 0, "moter_hentet": 0, "tokens_per_modell": {}}
@@ -759,24 +739,18 @@ def endringer(dager: int, maks: int) -> list[dict]:
 # Overgangen til databasen, til driftssiden --------------------------------------------
 
 def overgang(antall: int = 60) -> dict:
-    """Siste paritetskontroller og speilinger, og størrelsen på databasen."""
+    """Paritetskontrollene før byttet, siste kjøring og størrelsen på databasen."""
     k = kommune_id()
-    kontroller = [{"tid": tid, "likt": likt, "kontroller": n, "ulike": list(ulike)}
-                  for tid, likt, n, ulike in _rader(
-                      "select kontrollert, likt, kontroller, ulike from drift.paritet "
+    kontroller = [{"tid": tid, "likt": likt} for tid, likt in _rader(
+                      "select kontrollert, likt from drift.paritet "
                       "where kommune_id = %s order by kontrollert desc limit %s", k, antall)]
-    speiling = _rader(
-        "select k.kjoring_id, k.start, (select count(*) from drift.endringslogg e "
-        "where e.kjoring_id = k.kjoring_id) from drift.kjoring k "
-        "where k.kjoring_id like 'synk-%%' and k.kilde = 'actions' order by k.start desc limit 1")
     # Etter byttet skriver kjøringen rett i databasen, med GITHUB_RUN_ID.
     kjoring = _rader(
         "select k.kjoring_id, k.start, (select count(*) from drift.endringslogg e "
         "where e.kjoring_id = k.kjoring_id) from drift.kjoring k "
         "where k.kilde = 'actions' and k.kjoring_id ~ '^[0-9]+$' order by k.start desc limit 1")
     storrelse = _rader("select pg_size_pretty(pg_database_size(current_database()))")[0][0]
-    return {"kontroller": kontroller, "speiling": speiling[0] if speiling else None,
-            "kjoring": kjoring[0] if kjoring else None, "storrelse": storrelse}
+    return {"kontroller": kontroller, "kjoring": kjoring[0] if kjoring else None, "storrelse": storrelse}
 
 
 # Følg saken (ADR-027) ----------------------------------------------------------------------

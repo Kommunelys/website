@@ -2,8 +2,7 @@
 
 Alt på siden er tall fra drift.historikk og dataene, satt inn i faste
 tabeller. Ingenting skrives av en språkmodell (CLAUDE.md, regel 1). Siden
-lenkes ikke fra resten av nettstedet og har noindex, men den er offentlig som
-alt annet i repoet.
+vises bare i portalen, for prosjektadmin (ADR-020).
 
 Siden bygges på nytt hver gang Oppdater kjører. Besøkstallene hentes i
 nettleseren fra GoatCounter, så de er ferske uansett når siden ble bygget.
@@ -80,7 +79,7 @@ def _jobber(p: dict) -> dict[str, str | None]:
 def utfall(p: dict) -> tuple[str, str]:
     """(merke, merknad). Merknaden er tom når alt gikk som vanlig."""
     if p["id"] is None:
-        return "lagret", "Commit uten kjent kjøring (eldre eller lokal)"
+        return "lokal", "Kjøring utenfor GitHub Actions, eller eldre"
     if p["status"] != "completed":
         if p["id"] == os.environ.get("GITHUB_RUN_ID"):
             return "pågår", "Denne kjøringen bygget siden"
@@ -100,7 +99,7 @@ def utfall(p: dict) -> tuple[str, str]:
 
 
 MERKER = {"ok": "OK", "feilet": "Feilet", "delvis": "Delvis", "avbrutt": "Avbrutt",
-          "pågår": "Pågår", "lagret": "Commit"}
+          "pågår": "Pågår", "lokal": "Lokal"}
 
 
 def _merke(m: str) -> str:
@@ -137,7 +136,7 @@ def _status(poster: list[dict], na: dt.datetime) -> str:
     kall = [(p["logg"].get("portal") or {}) for p in uke]
     n_kall = sum(int(k.get("kall", 0)) for k in kall)
     sek = sum(k.get("sekunder", 0) for k in kall)
-    endret = next((c["tid"] for p in poster for c in p["commits"]
+    endret = next((c["tid"] for p in poster for c in p["endringer"]
                    if c["nye_moter"] or c["nye_saker"] or c["ny_status"] or c["nye_dokumenter"]
                    or c["nye_voteringer"] or c["nye_protokoller"]), None)
     rader = []
@@ -158,7 +157,7 @@ def _status(poster: list[dict], na: dt.datetime) -> str:
 def _innhold(status: dict, avvik: dict[str, int], poster: list[dict], na: dt.datetime) -> str:
     def nye(dager: int) -> int:
         fra = na - dt.timedelta(days=dager)
-        return sum(1 for p in poster for c in p["commits"] if c["tid"] >= fra
+        return sum(1 for p in poster for c in p["endringer"] if c["tid"] >= fra
                    for s in c["nye_saker"] if not s.get("formalia"))
     holdt = status.get("sammendrag_holdt_tilbake", 0)
     aarene = status.get("aarene") or [status["ar"]]
@@ -247,7 +246,7 @@ def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
     def brukt(dager: int) -> float:
         fra = na - dt.timedelta(days=dager)
         tpm = historikk.sum_endringer(
-            [c for p in poster for c in p["commits"] if c["tid"] >= fra])["tokens_per_modell"]
+            [c for p in poster for c in p["endringer"] if c["tid"] >= fra])["tokens_per_modell"]
         return kostnad.dollar(tpm)[0] * nok_per_usd
 
     inn = sum(v[0] for v in ute.values())
@@ -280,54 +279,31 @@ def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
             + _kv(rader) + f'<p class="liten muted">{merknad}</p>')
 
 
-def _database(na: dt.datetime) -> str:
-    """Boksen om databasen. Før byttet: er filene i git og databasen like?
-
-    Fram til byttet speiles data/ inn i databasen ved hver kjøring, og
-    lager.paritet sammenligner alt tegn for tegn. Svarer ikke databasen,
-    står det her; resten av siden bygges likevel.
-    """
-    from lager import fra_databasen  # noqa: PLC0415
-
-    kilde = ("Kilde for nettstedet", "Databasen" if fra_databasen() else "Filene i git (data/)")
+def _database() -> str:
+    """Databasen er kilden (ADR-019): siste kjøring, og kontrollene før byttet.
+    Svarer ikke databasen, står det her; resten av siden bygges likevel."""
     try:
         from lager import pg  # noqa: PLC0415
 
         o = pg.overgang()
     except (Exception, SystemExit) as e:  # noqa: BLE001 (databasen trengs ikke for bygget)
         print(f"advarsel: fikk ikke lest overgangen fra databasen ({e})")
-        return _kv([kilde]) + '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
+        return '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
 
     k = o["kontroller"]
-    if fra_databasen():
-        return _database_etter_byttet(o, k)
-    rader = [kilde]
+    rader = []
+    if o["kjoring"]:
+        _, start, endringer = o["kjoring"]
+        rader.append(("Siste kjøring", f"{tidspunkt(start)}, {tall(endringer)} endringer"))
     if k:
-        siste = k[0]
-        merke = ('<span class="drift-merke ok">Like</span>' if siste["likt"]
-                 else '<span class="drift-merke feilet">Ulike</span>')
-        rader.append(("Siste kontroll", f"{tidspunkt(siste['tid'])} {merke}"))
-        rekke = next((i for i, x in enumerate(k) if not x["likt"]), len(k))
-        rader.append(("Like på rad", f"{rekke}" + (f" (siden {dato(k[rekke - 1]['tid'])})" if rekke else "")))
-        fjorten = [x for x in k if x["tid"] >= na - dt.timedelta(days=14)]
-        rader.append(("Like, 14 dager", f"{sum(x['likt'] for x in fjorten)} av {len(fjorten)}"))
-    else:
-        rader.append(("Siste kontroll", "ingen ennå"))
-    if o["speiling"]:
-        _, start, endringer = o["speiling"]
-        rader.append(("Siste speiling", f"{tidspunkt(start)}, {tall(endringer)} endringer"))
+        like = sum(x["likt"] for x in k)
+        rader.append(("Kontroller før byttet",
+                      f"{like} av {len(k)} like ({dato(k[-1]['tid'])}–{dato(k[0]['tid'])})"))
     rader.append(("Størrelse", _e(o["storrelse"])))
-
-    ulike = ""
-    if k and not k[0]["likt"]:
-        ulike = ('<p class="liten">Dette skilte ved siste kontroll:</p><ul class="liten">'
-                 + "".join(f"<li>{_e(u['navn'])}: {_e(u['hvor'])}</li>" for u in k[0]["ulike"][:10])
-                 + "</ul>")
-    return (_kv(rader) + ulike
-            + '<p class="liten muted">Før byttet speiles dataene inn i databasen ved hver kjøring, '
-            "og alt sammenlignes tegn for tegn med filene. Nettstedet bygges fra filene til "
-            "databasen har vært lik over tid.</p>")
-
+    return (_kv(rader)
+            + '<p class="liten muted">Dataene ligger i en database (Postgres i Supabase), og en '
+            "kopi tas hver natt. Før byttet 6.10.2026 ble databasen sammenlignet tegn for tegn "
+            "med filene i git ved hver kjøring.</p>")
 
 # Resend Free (resend.com/pricing, sjekket 29.10.2026): 100 e-poster i døgnet
 # (nullstilles kl. 00 UTC) og 3 000 i måneden, for alle e-postene fra kontoen.
@@ -388,22 +364,6 @@ def _epost_trygt() -> str:
         return '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
 
 
-def _database_etter_byttet(o: dict, k: list[dict]) -> str:
-    """Databasen er kilden (ADR-019): siste kjøring, og kontrollene før byttet."""
-    rader = [("Kilde for nettstedet", "Databasen")]
-    if o["kjoring"]:
-        _, start, endringer = o["kjoring"]
-        rader.append(("Siste kjøring", f"{tidspunkt(start)}, {tall(endringer)} endringer"))
-    if k:
-        like = sum(x["likt"] for x in k)
-        rader.append(("Kontroller før byttet",
-                      f"{like} av {len(k)} like ({dato(k[-1]['tid'])}–{dato(k[0]['tid'])})"))
-    rader.append(("Størrelse", _e(o["storrelse"])))
-    return (_kv(rader)
-            + '<p class="liten muted">Dataene ligger i en database (Postgres i Supabase), og en '
-            "kopi tas hver natt. Før byttet 6.10.2026 ble databasen sammenlignet tegn for tegn "
-            "med filene i git ved hver kjøring.</p>")
-
 
 # ---------- Tabeller ----------
 
@@ -418,9 +378,9 @@ def _kjoringer(poster: list[dict], nok_per_usd: float) -> str:
     rader = []
     for p in poster[:40]:
         merke, merknad = utfall(p)
-        e = historikk.sum_endringer(p["commits"])
+        e = historikk.sum_endringer(p["endringer"])
         j = _jobber(p)
-        hentet = j.get("hent") == "success" or bool(p["commits"])
+        hentet = j.get("hent") == "success" or bool(p["endringer"])
         pl = p["logg"].get("portal") or {}
         sek = ((p["slutt"] - p["start"]).total_seconds()
                if p["id"] and p["status"] == "completed" and p["start"] and p["slutt"] else None)
@@ -466,7 +426,7 @@ def _nye_saker(poster: list[dict], na: dt.datetime) -> str:
     fra = na - dt.timedelta(days=30)
     rader = []
     for p in poster:
-        for c in p["commits"]:
+        for c in p["endringer"]:
             if c["tid"] < fra:
                 continue
             for s in c["nye_saker"]:
@@ -493,7 +453,7 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
     kjoringer = _kjoringer(poster, kurs[0])
     if kj is None:
         kjoringer = ('<p class="liten">Kjøringene kunne ikke hentes fra GitHub da siden ble '
-                     "bygget. Tabellen viser bare commits med data.</p>" + kjoringer)
+                     "bygget. Tabellen viser bare endringene i dataene.</p>" + kjoringer)
     return fyll(mal, {
         "merke": merke,
         "kommune": _e(kommune["navn"]),
@@ -502,7 +462,7 @@ def side(mal: str, fyll, status: dict, kommune: dict, avvik: dict[str, int],
         "status": _status(poster, na),
         "innhold": _innhold(status, avvik, poster, na),
         "kostnad": _kostnad(analyser, poster, na, kurs, debatter),
-        "database": _database(na),
+        "database": _database(),
         "epost": _epost_trygt(),
         "kjoringer": kjoringer,
         "nye_saker": _nye_saker(poster, na),

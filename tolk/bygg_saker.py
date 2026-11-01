@@ -11,7 +11,6 @@ lagres i sitt eget år.
 Leser rådataene og skriver møtene og sakene (lager.raa, lager.saker).
 
     python -m tolk.bygg_saker 2026
-    python -m tolk.bygg_saker 2026 --fra-fil gammel_raadata.json
 """
 
 from __future__ import annotations
@@ -20,7 +19,6 @@ import collections
 import datetime as dt
 import json
 import sys
-from pathlib import Path
 
 import lager
 from hent import portal
@@ -33,16 +31,8 @@ from tolk.profil import profil
 # kommunestyret står i kommunens profil (tolk/profil.py).
 
 
-def les_raa(aar: int, fra_fil: str | None = None) -> list[dict]:
-    """Møter med behandlinger, fra rådataene eller fra en eldre samlefil."""
-    if fra_fil:
-        gammel = json.loads(Path(fra_fil).read_text(encoding="utf-8"))
-        return [
-            {"mote": m["mote"], "detaljer": m["detaljer"],
-             "behandlinger": m.get("saker") or m.get("behandlinger") or []}
-            for m in gammel
-        ]
-
+def les_raa(aar: int) -> list[dict]:
+    """Møter med behandlinger, fra rådataene."""
     moter = raadata.moter(aar)
     if moter is None:
         raise SystemExit(f"fant ingen møter for {aar}. Kjør hent.hent_moter først.")
@@ -133,11 +123,10 @@ def _status(steg: list[dict], i_dag: str) -> str:
     return "Venter på protokoll"
 
 
-def kjor(aar: int, fra_fil: str | None = None) -> dict:
+def kjor(aar: int) -> dict:
     i_dag = lager.i_dag()
-    # En eldre samlefil gjelder bare ett år.
-    aarene = [aar] if fra_fil else lager_kommune.aarene(aar)
-    raa = {a: les_raa(a, fra_fil) for a in aarene}
+    aarene = lager_kommune.aarene(aar)
+    raa = {a: les_raa(a) for a in aarene}
 
     kjent: dict[int, tuple[dict, dict]] = {}
     aar_for: dict[int, int] = {}
@@ -257,11 +246,7 @@ def _moter(raa: list[dict]) -> list[dict]:
 
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    aar = int(args[0]) if args else dt.date.today().year
-    fra_fil = None
-    if "--fra-fil" in sys.argv:
-        fra_fil = sys.argv[sys.argv.index("--fra-fil") + 1]
-    kjor(aar, fra_fil)
+    kjor(int(args[0]) if args else dt.date.today().year)
 
 
 if __name__ == "__main__":
