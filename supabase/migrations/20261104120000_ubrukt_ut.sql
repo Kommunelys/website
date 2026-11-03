@@ -5,23 +5,30 @@
 -- En kopi tatt før denne migreringen har tabellene og kolonnene under, og må
 -- leses inn med migreringene slik de var da (fra historikken i git).
 
--- Rollen for et eget bygg. Bygget kjører som kommunelys_pipeline, og denne
--- rollen kan ikke logge inn. Den eier ingenting; drop owned tar policyene og
--- rettighetene den har fått.
-do $$ begin
-  if exists (select from pg_class where relowner = 'kommunelys_bygg'::regrole)
-     or exists (select from pg_proc where proowner = 'kommunelys_bygg'::regrole) then
-    raise exception 'kommunelys_bygg eier noe; se over før rollen fjernes';
-  end if;
-end $$;
-drop owned by kommunelys_bygg;
-drop role kommunelys_bygg;
-
 -- Publiseringsreglene som views. Bygget holder tilbake i Python
 -- (tolk/bygg_avvik, bygg/bygg_nettsted), og ingen leste disse.
 drop view publisert.sammendrag, publisert.votering_alternativ, publisert.stemme,
   publisert.votering, publisert.votering_status;
 drop schema publisert;
+
+-- Rollen for et eget bygg. Bygget kjører som kommunelys_pipeline, og denne
+-- rollen kan ikke logge inn. Policyene er bare for den, og tas med den.
+-- (drop owned by går ikke i Supabase: postgres er ikke superbruker.)
+do $$
+declare p record;
+begin
+  for p in select schemaname, tablename, policyname, roles from pg_policies where 'kommunelys_bygg' = any (roles) loop
+    if p.roles <> '{kommunelys_bygg}' then
+      raise exception 'policyen % på %.% gjelder flere roller', p.policyname, p.schemaname, p.tablename;
+    end if;
+    execute format('drop policy %I on %I.%I', p.policyname, p.schemaname, p.tablename);
+  end loop;
+end $$;
+revoke all on all tables in schema kjerne, drift, varsel from kommunelys_bygg;
+revoke all on all sequences in schema kjerne, drift, varsel from kommunelys_bygg;
+revoke all on all functions in schema kjerne, drift, varsel from kommunelys_bygg;
+revoke all on schema kjerne, drift, varsel from kommunelys_bygg;
+drop role kommunelys_bygg;
 
 -- Navnevariantene og de tillatte navnene leses fra kommunens profil og fra
 -- kommuner/<slug>/. Paritetskontrollene var for byttet 6.10.2026.
