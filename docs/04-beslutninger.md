@@ -476,7 +476,11 @@ som selv nekter å lagre det som bryter reglene.
   bygget ble aldri tatt i bruk, og ble fjernet 4.11.2026). Tilgang for
   innloggede brukere gis per kommune (`tilgang`), og gir aldri mer enn det som
   er publisert: tilbakeholdte voteringer og sammendrag holdes tilbake fordi de
-  kan være feil, ikke av andre grunner.
+  kan være feil, ikke av andre grunner. Visningene i `publisert` som gjorde det i
+  databasen, ble aldri brukt og ble fjernet 4.11.2026; tilbakeholdingen gjøres
+  i bygget. RLS på `kjerne` slipper en abonnent til også det som er holdt
+  tilbake, så et API for abonnenter må få filteret tilbake før det åpnes. I
+  dag er bare `portal` åpent i Data API.
 - Byttet ble gjort etter at databasen var bygget opp ved siden av filene og
   sammenlignet tegn for tegn ved hver kjøring (6 av 6 like, 5.–6.10.2026), og
   etter en generalprøve mot portalen der kjeden med databasen ga nøyaktig det

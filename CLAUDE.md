@@ -402,7 +402,8 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   ingenting.
 - **Gamle migreringer endres aldri.** De er allerede kjørt. En rettelse er en
   ny fil, og filnavnet er versjonen databasen registrerer. En ny tabell trenger
-  RLS og policyer for rollene (se `20261004212642_tilgang.sql`). Kjør
+  RLS og policyer for rollene (se `20261004212642_tilgang.sql`, men uten
+  `kommunelys_bygg`, som er fjernet). Kjør
   `supabase/tests/regler.sql` etterpå.
 - **Rådata, analyser, vurderinger og endringsloggen kan ikke endres eller
   slettes i databasen.** Det er med vilje. En kjøring mot databasen kan ikke

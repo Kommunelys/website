@@ -75,7 +75,7 @@ alter role kommunelys_pipeline with login password '...';
 2. Kjør migreringen mot testprosjektet, og gi filen versjonsnummeret databasen registrerer.
 3. Kjør `tests/regler.sql`. Svaret er en feilmelding som begynner med «RESULTAT n av m ok».
 
-En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql`.
+En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql`, men uten `kommunelys_bygg`, som er fjernet (`20261104120000_ubrukt_ut.sql`).
 
 ## Sikkerhetskopi
 

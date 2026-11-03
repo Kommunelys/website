@@ -738,7 +738,7 @@ def endringer(dager: int, maks: int) -> list[dict]:
 
 # Databasen, til driftssiden ----------------------------------------------------------
 
-def overgang() -> dict:
+def databasen() -> dict:
     """Siste kjøring og størrelsen på databasen."""
     # Etter byttet skriver kjøringen rett i databasen, med GITHUB_RUN_ID.
     kjoring = _rader(

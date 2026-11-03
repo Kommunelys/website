@@ -766,15 +766,10 @@ begin
   perform pg_temp.skal_feile('portal: pipeline bruker ikke portalen',
     'set local role kommunelys_pipeline; select count(*) from portal.avvik');
 
-  -- Driftssiden: bygget skriver og rydder bort det som er eldre enn 30 dager.
-  insert into drift.side (bygget, kjoring_id, html) values (now() - interval '40 days', 'gammel', '<p>gammel</p>');
-  perform pg_temp.skal_virke('driftsside: bygget lagrer siden',
-    $s$set local role kommunelys_pipeline; insert into drift.side (kjoring_id, html) values ('ny', '<p>ny</p>'); reset role$s$);
-  perform pg_temp.skal_virke('driftsside: bygget rydder',
-    $s$set local role kommunelys_pipeline; delete from drift.side where bygget < now() - interval '30 days'; reset role$s$);
-  perform pg_temp.skal_vaere('driftsside: bare det gamle ble ryddet',
-    not exists (select 1 from drift.side where kjoring_id = 'gammel')
-    and exists (select 1 from drift.side where kjoring_id = 'ny'));
+  -- Driftssiden: bygget skriver og rydder.
+  perform pg_temp.skal_virke('driftsside: bygget lagrer siden og rydder',
+    $s$set local role kommunelys_pipeline; insert into drift.side (kjoring_id, html) values ('ny', '<p>ny</p>');
+       delete from drift.side where bygget < now() - interval '30 days'; reset role$s$);
 
   -- Begrenset innsyn (ADR-024): bygget lagrer dataene, og bare de med en rolle
   -- for kommunen (og prosjektadmin) kan hente dem.

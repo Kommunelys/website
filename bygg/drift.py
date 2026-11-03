@@ -285,9 +285,9 @@ def _database() -> str:
     try:
         from lager import pg  # noqa: PLC0415
 
-        o = pg.overgang()
+        o = pg.databasen()
     except (Exception, SystemExit) as e:  # noqa: BLE001 (databasen trengs ikke for bygget)
-        print(f"advarsel: fikk ikke lest overgangen fra databasen ({e})")
+        print(f"advarsel: fikk ikke lest fra databasen ({e})")
         return '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
 
     rader = []
