@@ -736,21 +736,17 @@ def endringer(dager: int, maks: int) -> list[dict]:
     return sorted(ut.values(), key=lambda e: e["tid"], reverse=True)[:maks]
 
 
-# Overgangen til databasen, til driftssiden --------------------------------------------
+# Databasen, til driftssiden ----------------------------------------------------------
 
-def overgang(antall: int = 60) -> dict:
-    """Paritetskontrollene før byttet, siste kjøring og størrelsen på databasen."""
-    k = kommune_id()
-    kontroller = [{"tid": tid, "likt": likt} for tid, likt in _rader(
-                      "select kontrollert, likt from drift.paritet "
-                      "where kommune_id = %s order by kontrollert desc limit %s", k, antall)]
+def databasen() -> dict:
+    """Siste kjøring og størrelsen på databasen."""
     # Etter byttet skriver kjøringen rett i databasen, med GITHUB_RUN_ID.
     kjoring = _rader(
         "select k.kjoring_id, k.start, (select count(*) from drift.endringslogg e "
         "where e.kjoring_id = k.kjoring_id) from drift.kjoring k "
         "where k.kilde = 'actions' and k.kjoring_id ~ '^[0-9]+$' order by k.start desc limit 1")
     storrelse = _rader("select pg_size_pretty(pg_database_size(current_database()))")[0][0]
-    return {"kontroller": kontroller, "kjoring": kjoring[0] if kjoring else None, "storrelse": storrelse}
+    return {"kjoring": kjoring[0] if kjoring else None, "storrelse": storrelse}
 
 
 # Følg saken (ADR-027) ----------------------------------------------------------------------

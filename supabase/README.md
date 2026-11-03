@@ -25,7 +25,6 @@ GitHub Actions ligger den som hemmeligheten `KOMMUNELYS_DB_URL`.
 | `kjerne` | Domenedataene: kommuner, rådata, møter, saker, dokumenter, personer, voteringer, stemmer, oppmøte, verv, avvik, vurderinger, analyser |
 | `drift` | Kjøringer, bygg og endringsloggen, som erstatter historikken fra git |
 | `tilgang` | Hvem som ser hva: prosjektadmin, medlemskap per kommune, abonnement |
-| `publisert` | Publiseringsreglene som views: tilbakeholdte voteringer og sammendrag |
 | `portal` | Det portalen (portal.kommunelys.no) ser: views med `security_invoker` over de andre, så RLS gjelder (ADR-020) |
 | `varsel` | «Følg saken» (ADR-027): hvem som følger hva (`folger`), det som er publisert i sakene (`sak_tilstand`), køen (`utsending`) og e-postene som er sendt (`epost`). Logges ikke i endringsloggen, og slettes med kontoen |
 
@@ -51,7 +50,7 @@ Edge-funksjonen `varsel` (`functions/varsel/`) sender e-post til dem som følger
   - Et skjermet vedtak kan ikke ha lenke eller tekst.
   - Blir et vedtak skjermet i ettertid, slettes teksten.
   - Teksten i møteinnkallingen lagres aldri (ADR-006).
-- **Kildelenke (regel 1):** en analyse uten kilde kan ikke lagres. Et sammendrag vises bare når siste kontroll mot kilden er bestått.
+- **Kildelenke (regel 1):** en analyse uten kilde kan ikke lagres.
 - **Bare innsetting:** rådata, vurderinger, analyser og endringsloggen kan ikke endres eller slettes. En ny versjon er en ny rad.
 - **Ingen kontaktopplysninger** i medlemslistene (ADR-014).
 - **Kommune:** hver rad hører til én kommune, og fremmednøklene kan ikke peke på tvers.
@@ -60,12 +59,11 @@ Edge-funksjonen `varsel` (`functions/varsel/`) sender e-post til dem som følger
 
 | Rolle | Brukes av | Kan |
 |---|---|---|
-| `kommunelys_pipeline` | henting, tolkning, analyse | lese og skrive `kjerne` og `drift`, ikke endre rådata |
-| `kommunelys_bygg` | bygget av nettstedet | lese, og skrive bygg og analysekontroll |
+| `kommunelys_pipeline` | henting, tolkning, analyse og bygget | lese og skrive `kjerne` og `drift`, ikke endre rådata |
 | `authenticated` | innloggede brukere | lese det RLS slipper gjennom for kommunene de har tilgang til |
 | `anon` | – | ingenting |
 
-Rollene logger ikke inn før et passord er satt for hånd i SQL-editoren. Passordet skal aldri ligge i git:
+Rollen logger ikke inn før et passord er satt for hånd i SQL-editoren. Passordet skal aldri ligge i git:
 
 ```sql
 alter role kommunelys_pipeline with login password '...';
@@ -77,7 +75,7 @@ alter role kommunelys_pipeline with login password '...';
 2. Kjør migreringen mot testprosjektet, og gi filen versjonsnummeret databasen registrerer.
 3. Kjør `tests/regler.sql`. Svaret er en feilmelding som begynner med «RESULTAT n av m ok».
 
-En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql`.
+En ny tabell trenger RLS og policyer for rollene. Se `20261004212642_tilgang.sql`, men uten `kommunelys_bygg`, som er fjernet (`20261104120000_ubrukt_ut.sql`).
 
 ## Sikkerhetskopi
 

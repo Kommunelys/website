@@ -280,25 +280,20 @@ def _kostnad(analyser: dict, poster: list[dict], na: dt.datetime,
 
 
 def _database() -> str:
-    """Databasen er kilden (ADR-019): siste kjøring, og kontrollene før byttet.
+    """Databasen er kilden (ADR-019): siste kjøring og størrelsen.
     Svarer ikke databasen, står det her; resten av siden bygges likevel."""
     try:
         from lager import pg  # noqa: PLC0415
 
-        o = pg.overgang()
+        o = pg.databasen()
     except (Exception, SystemExit) as e:  # noqa: BLE001 (databasen trengs ikke for bygget)
-        print(f"advarsel: fikk ikke lest overgangen fra databasen ({e})")
+        print(f"advarsel: fikk ikke lest fra databasen ({e})")
         return '<p class="liten muted">Databasen svarte ikke da siden ble bygget.</p>'
 
-    k = o["kontroller"]
     rader = []
     if o["kjoring"]:
         _, start, endringer = o["kjoring"]
         rader.append(("Siste kjøring", f"{tidspunkt(start)}, {tall(endringer)} endringer"))
-    if k:
-        like = sum(x["likt"] for x in k)
-        rader.append(("Kontroller før byttet",
-                      f"{like} av {len(k)} like ({dato(k[-1]['tid'])}–{dato(k[0]['tid'])})"))
     rader.append(("Størrelse", _e(o["storrelse"])))
     return (_kv(rader)
             + '<p class="liten muted">Dataene ligger i en database (Postgres i Supabase), og en '
