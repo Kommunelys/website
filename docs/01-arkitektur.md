@@ -160,7 +160,10 @@ Kildelenkene legges til av koden, ikke av modellen.
 Modellen er `claude-opus-5`. Avslår modellens sikkerhetsfiltre en sak, kjøres
 den på Anthropics anbefalte reservemodell (`fallbacks: "default"`), og modellen
 som faktisk svarte, lagres. En feil i én sak hopper over saken, og høyst 25
-saker sendes inn per kjøring.
+saker sendes inn per kjøring. Avviser Claude nøkkelen, eller er kontoen tom for
+kreditt, stopper analysen for alle kommunene, og jobben blir rød, så GitHub
+sender e-post (`analyser/claude.py`). Nettstedet bygges likevel, med
+sammendragene som finnes.
 
 Før et sammendrag publiseres, kontrollerer bygget at tallene i det finnes i
 kildeteksten, og at det ikke står navn på privatpersoner fra sakstittelen

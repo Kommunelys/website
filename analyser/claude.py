@@ -11,10 +11,19 @@ import json
 MODELL = "claude-opus-5"
 INNSATS = "high"
 MAKS_TOKENS = 16000
+# Utgangskoden når Claude avviser nøkkelen eller kontoen (Stopp). Da feiler
+# alle kallene, ikke bare ett, og kjor.alle gjør jobben rød.
+STOPP = 3
 
 
 class Avvist(Exception):
     """Svaret kan ikke brukes: avslag, kuttet svar eller ugyldig JSON."""
+
+
+class Stopp(Exception):
+    """Claude avviser nøkkelen, eller kontoen er tom for kreditt eller har nådd
+    grensen sin. 2.11.2026 hadde nøkkelen gått ut, og jobben ble grønn uten et
+    eneste sammendrag."""
 
 
 def kall(klient, instruksjon: str, skjema: dict, tekst: str) -> tuple[dict, str, dict]:
@@ -23,16 +32,25 @@ def kall(klient, instruksjon: str, skjema: dict, tekst: str) -> tuple[dict, str,
     Svaret er låst til skjemaet. Avslår modellens sikkerhetsfiltre, kjøres samme
     forespørsel på Anthropics anbefalte reservemodell (fallbacks: "default").
     """
-    svar = klient.beta.messages.create(
-        model=MODELL,
-        max_tokens=MAKS_TOKENS,
-        system=instruksjon,
-        messages=[{"role": "user", "content": tekst}],
-        output_config={"effort": INNSATS,
-                       "format": {"type": "json_schema", "schema": skjema}},
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-    )
+    try:
+        svar = klient.beta.messages.create(
+            model=MODELL,
+            max_tokens=MAKS_TOKENS,
+            system=instruksjon,
+            messages=[{"role": "user", "content": tekst}],
+            output_config={"effort": INNSATS,
+                           "format": {"type": "json_schema", "schema": skjema}},
+            betas=["server-side-fallback-2026-07-01"],
+            fallbacks="default",
+        )
+    except Exception as e:
+        # Meldingen fra API-et har aldri nøkkelen. «usage limits» er
+        # forbruksgrensen kontoen har satt (400); en 429 for takten går forbi.
+        status = getattr(e, "status_code", None)
+        if status in (401, 402, 403) or (status != 429 and (
+                "credit balance" in str(e) or "usage limits" in str(e))):
+            raise Stopp(f"Claude avviser kallet, nøkkelen eller kontoen virker ikke: {e}") from e
+        raise
     if svar.stop_reason == "refusal":
         raise Avvist(f"avslått ({getattr(svar.stop_details, 'category', None)})")
     if svar.stop_reason == "max_tokens":

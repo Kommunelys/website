@@ -119,7 +119,8 @@ jobs:
   # Sender bare nye og endrede saker, høyst analyse_maks per kjøring (25 som
   # standard). Første gjennomgang av et helt år tar over en time, så analysen
   # slutter å sende nye saker etter 150 minutter. Hver analyse lagres i
-  # databasen med en gang, så ingenting går tapt om jobben feiler.
+  # databasen med en gang, så ingenting går tapt om jobben feiler. Avviser
+  # Claude nøkkelen, eller er kontoen tom for kreditt, blir jobben rød.
   analyser:
     name: AI-analyse
     needs: hent

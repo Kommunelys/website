@@ -37,6 +37,7 @@ import time
 import urllib.request
 from pathlib import Path
 
+from analyser.claude import STOPP
 from lager import kommune as lager_kommune
 
 ROT = Path(__file__).resolve().parent.parent
@@ -46,12 +47,27 @@ INTERN = ROT / "nettsted-intern"
 MAKS_DEBATT = 15
 
 
-def _kjor(slug: str, *kommando: str) -> bool:
-    """Ett trinn for én kommune, som egen prosess. Sant når det gikk bra."""
+def _kode(slug: str, *kommando: str) -> int:
+    """Ett trinn for én kommune, som egen prosess. Gir utgangskoden."""
     print(f"\n== {slug}: {' '.join(kommando)}", flush=True)
-    r = subprocess.run([sys.executable, "-m", *kommando], cwd=ROT,
-                       env=os.environ | {"KOMMUNELYS_KOMMUNE": slug})
-    return r.returncode == 0
+    return subprocess.run([sys.executable, "-m", *kommando], cwd=ROT,
+                          env=os.environ | {"KOMMUNELYS_KOMMUNE": slug}).returncode
+
+
+def _kjor(slug: str, *kommando: str) -> bool:
+    """Som _kode, men sant når det gikk bra."""
+    return _kode(slug, *kommando) == 0
+
+
+def _analyse(slug: str, *kommando: str) -> bool:
+    """Som _kjor, men avviser Claude nøkkelen eller kontoen, stopper analysen
+    for alle kommunene, og jobben blir rød (analyser.claude.Stopp)."""
+    kode = _kode(slug, *kommando)
+    if kode == STOPP:
+        print("\nstopper: Claude avviser nøkkelen, eller kontoen er tom for kreditt. "
+              "Ingen saker eller debatter blir analysert før det er rettet.")
+        raise SystemExit(1)
+    return kode == 0
 
 
 def _aar(args: list[str]) -> int:
@@ -93,11 +109,11 @@ def analyser(aar: int, maks: int, minutter: float) -> dict[str, bool]:
     for i, (slug, _) in enumerate(kommuner):
         igjen = len(kommuner) - i
         min_her = max(1.0, (slutt - time.monotonic()) / 60 / igjen)
-        utfall[slug] = _kjor(slug, "analyser.analyser_saker", str(aar),
-                             "--maks", str(math.ceil(maks / len(kommuner))), "--minutter", f"{min_her:.0f}")
+        utfall[slug] = _analyse(slug, "analyser.analyser_saker", str(aar),
+                                "--maks", str(math.ceil(maks / len(kommuner))), "--minutter", f"{min_her:.0f}")
         # Debatten fra opptakene (ADR-026). Sakene går først; debatten får
         # sin egen kvote og stopper ikke kommunen om den feiler.
-        if lager_kommune.oppsett(slug).get("opptak") and not _kjor(
+        if lager_kommune.oppsett(slug).get("opptak") and not _analyse(
                 slug, "analyser.analyser_debatt", str(aar), "--maks", str(MAKS_DEBATT)):
             print(f"advarsel: debatten for {slug} ble ikke analysert")
     return utfall
