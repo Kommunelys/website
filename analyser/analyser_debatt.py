@@ -33,7 +33,7 @@ import hashlib
 import re
 import sys
 
-from analyser.claude import INNSATS, MODELL, Avvist, kall
+from analyser.claude import INNSATS, MODELL, STOPP, Avvist, Stopp, kall
 from drift.logg import legg_til
 from hent import kommunetv
 from lager import kommune
@@ -343,6 +343,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
     klient = None
     teller = {"sendt": 0, "uendret": 0, "uten debatt": 0, "feil": 0, "utsatt": 0}
     tokens = {"inn": 0, "ut": 0}
+    stoppet = None
     for sak, b, o, t in alle:
         tekst, ds = grunnlag(sak, b, o, t)
         sum_ = sjekksum(tekst)
@@ -371,6 +372,10 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             klient = anthropic.Anthropic()
         try:
             svar, modell, forbruk = kall(klient, instruksjon(), SKJEMA, tekst)
+        except Stopp as e:
+            stoppet = e
+            teller["feil"] += 1
+            break
         except Avvist as e:
             print(f"  {b['saksnr']}: {e}, hoppet over")
             teller["feil"] += 1
@@ -381,11 +386,6 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
             melding = " ".join(str(getattr(e, "message", "") or e).split())[:300]
             print(f"  {b['saksnr']}: {type(e).__name__} {getattr(e, 'status_code', '')}: {melding}, hoppet over")
             teller["feil"] += 1
-            # Avvises forespørselen før modellen har lest noe (for eksempel
-            # tom kredittsaldo), vil de neste også bli det.
-            if "credit balance" in melding:
-                print("  kredittsaldoen er brukt opp, stopper kjøringen")
-                break
             continue
         antall = len(svar.get("punkter") or [])
         if grunn := rydd(svar, ds):
@@ -404,6 +404,9 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
     if not tort_lop and not bare and teller["sendt"]:
         legg_til("debatt", {"sendt": teller["sendt"], "feil": teller["feil"],
                             "tokens_inn": tokens["inn"], "tokens_ut": tokens["ut"]})
+    if stoppet:
+        print(stoppet)
+        raise SystemExit(STOPP)
 
 
 def _finn(aar: int, behandling_id: int):

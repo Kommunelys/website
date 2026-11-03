@@ -35,7 +35,7 @@ import time
 from pathlib import Path
 
 import lager
-from analyser.claude import INNSATS, MODELL, Avvist, kall
+from analyser.claude import INNSATS, MODELL, STOPP, Avvist, Stopp, kall
 from drift.logg import legg_til
 from lager import analyse as lager_analyse
 from lager import kommune
@@ -293,6 +293,7 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
     teller = collections.Counter()
     tegn = 0
     tokens = collections.Counter()
+    stoppet = None
     for sak in kandidater:
         kilde, kilder = kildetekst(sak, voteringer, stopp)
         if not kilder:
@@ -315,13 +316,15 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
 
         try:
             resultat, modell, forbruk = kall(klient, instruksjon(), SKJEMA, kilde)
+        except Stopp as e:
+            stoppet = e
+            teller["feil"] += 1
+            break
         except anthropic.RateLimitError:
             # SDK-en har alt prøvd på nytt. Flere kall nå vil også bli avvist.
             print(f"  {sak['sak_id']}: rate limit, stopper kjøringen")
             teller["feil"] += 1
             break
-        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError) as e:
-            raise SystemExit(f"API-nøkkelen virker ikke: {e}") from e
         except anthropic.APIStatusError as e:
             print(f"  {sak['sak_id']}: API-feil {e.status_code}, hoppet over")
             teller["feil"] += 1
@@ -370,6 +373,9 @@ def kjor(aar: int, tort_lop: bool = False, maks: int = MAKS_PER_KJORING,
         print(f"tokens: {tokens['inn']} inn, {tokens['ut']} ut")
     if tort_lop and teller["sendt"]:
         print(f"grunnlaget er {tegn} tegn til sammen, i snitt {tegn // teller['sendt']} per sak")
+    if stoppet:
+        print(stoppet)
+        raise SystemExit(STOPP)
 
 
 def main() -> None:
