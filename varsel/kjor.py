@@ -14,12 +14,18 @@ uten varsel.
 E-postadressene er aldri her: edge-funksjonen slår dem opp og sender via
 Resend, med grensene i portal.varsel_til_sending. Tallene lagres i
 drift.kjoring_tall under «varsel», for alle kommunene samlet.
+
+Kan e-postene ikke sendes (edge-funksjonen svarer ikke, nøkkelen er avvist,
+eller Resend sier nei til alle), avslutter den med feil, og steget i Oppdater
+blir rødt. Nettstedet er da allerede publisert, og varslene ligger i køen til
+neste kjøring. At grensen for døgnet er nådd, er ikke en feil.
 """
 
 from __future__ import annotations
 
 import json
 import os
+import urllib.error
 import urllib.request
 
 from bygg.bygg_nettsted import NETTSTED, SUPABASE_URL
@@ -61,6 +67,17 @@ def send() -> dict:
         return json.loads(svar.read())
 
 
+def grunn(e: OSError) -> str:
+    """Hvorfor sendingen stoppet, med meldingen fra edge-funksjonen."""
+    if isinstance(e, urllib.error.HTTPError):
+        try:
+            melding = json.loads(e.read()).get("feil")
+        except (ValueError, AttributeError):
+            melding = None
+        return f"HTTP {e.code}: {melding or e.reason}"
+    return f"edge-funksjonen svarte ikke: {e}"
+
+
 def main() -> None:
     folgere = lager_varsel.folgere()
     rader, nye = ko(folgere, i_dag())
@@ -68,16 +85,24 @@ def main() -> None:
           f"{len(nye)} tilstander oppdatert")
     tall = {"ny_i_ko": len(rader)}
     lager_varsel.lagre_ko(rader, nye, tall)
+    stopp = None
     if os.environ.get("VARSEL_SEND") == "1":
-        svar = send()
-        print(f"sendt {svar.get('sendt', 0)} e-poster, {svar.get('feil', 0)} feil")
-        tall = {k: svar.get(k, 0) for k in ("sendt", "mottakere", "feil")}
+        try:
+            svar = send()
+        except OSError as e:
+            stopp, tall = grunn(e), {}
+        else:
+            print(f"sendt {svar.get('sendt', 0)} e-poster, {svar.get('feil', 0)} feil")
+            tall = {k: svar.get(k, 0) for k in ("sendt", "mottakere", "feil")}
     else:
         print("VARSEL_SEND er ikke 1: ingenting sendes")
         tall = {}
     # E-postene som venter etter sendingen, til neste dag eller til utsendingen er slått på.
     tall["venter"] = (lager_varsel.tall() or {}).get("venter_brukere", 0)
     lager_varsel.lagre_tall(tall)
+    if stopp:
+        raise SystemExit(f"stopper: e-postvarslene kunne ikke sendes ({stopp}). "
+                         "Varslene ligger i køen og prøves igjen ved neste kjøring.")
 
 
 if __name__ == "__main__":
