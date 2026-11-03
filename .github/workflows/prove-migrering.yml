@@ -44,7 +44,9 @@ jobs:
           ! grep -q "^FEIL\|	FEIL\| FEIL " etter.txt
       - name: Alle migreringene på en tom database
         run: |
-          cd lokal && supabase db stop --no-backup
+          cd lokal
           cp ../supabase/migrations/20261104120000_ubrukt_ut.sql supabase/migrations/
-          supabase db start
-          psql "postgresql://postgres:postgres@127.0.0.1:54322/postgres" -f ../supabase/tests/regler.sql 2>&1 | tail -3
+          supabase db reset
+          psql "postgresql://postgres:postgres@127.0.0.1:54322/postgres" -f ../supabase/tests/regler.sql 2>&1 | tee alle.txt || true
+          grep -q "RESULTAT" alle.txt
+          ! grep -q "^FEIL" alle.txt
