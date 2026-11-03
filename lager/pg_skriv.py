@@ -1,6 +1,6 @@
 """Skriving til databasen: gjør tabellene like dataene, med minst mulig endring.
 
-Hver funksjon tar dataene i samme form som filene i data/ har, og gjør
+Hver funksjon tar dataene i samme form som filene (KOMMUNELYS_LAGER=json) har, og gjør
 databasen lik dem innenfor et omfang (en kommune og et år): nye rader settes
 inn, endrede oppdateres, og rader som ikke lenger finnes, slettes. Uendrede
 rader røres ikke, så endringsloggen (drift.endringslogg) bare viser det som

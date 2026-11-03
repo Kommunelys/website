@@ -1,18 +1,17 @@
 # supabase/
 
 Databaseskjemaet for Kommunelys (Postgres i Supabase). Databasen er kilden
-siden 6.10.2026 (ADR-019): hele kjeden leser og skriver her, og `data/` i git
-står som den var ved byttet. `KOMMUNELYS_LAGER=json` leser og skriver filene
-i stedet. To filer vedlikeholdes fortsatt for hånd i git, også da:
-`tillatte-navn.json` og `partisider.json`. De gjennomgås i en PR og speiles
-inn med `python -m lager.synk --konfig`. Vurderingene av avvik registreres i
-databasen, i portalen eller med `python -m lager.vurder` (ADR-020).
+siden 6.10.2026 (ADR-019): hele kjeden leser og skriver her. Filene som lå i
+`data/` i git, ble tatt ut 4.11.2026; de finnes i historikken.
+`KOMMUNELYS_LAGER=json` leser og skriver filer i en egen mappe
+(`KOMMUNELYS_DATA`) i stedet, for å prøve en ny kommune. To filer per kommune
+vedlikeholdes for hånd i git: `kommuner/<slug>/tillatte-navn.json` og
+`kommuner/<slug>/partisider.json`. De gjennomgås i en PR og leses rett fra
+filen. Vurderingene av avvik registreres i databasen, i portalen eller med
+`python -m lager.vurder` (ADR-020).
 
 | Kommando | Gjør |
 |---|---|
-| `python -m lager.synk --konfig` | Speiler de to filene som vedlikeholdes for hånd. Kjøres først i hver kjøring |
-| `KOMMUNELYS_LAGER=json python -m lager.synk 2026` | Gjør databasen lik `data/` i én transaksjon: bare det som er endret, skrives og logges. Mot en tom database er det en import |
-| `python -m lager.paritet 2026` | Leser alt fra filene og fra databasen og sammenligner, tegn for tegn |
 | `python -m bygg.bygg_nettsted 2026` | Bygger nettstedet fra databasen |
 
 Tilkoblingen leses fra `KOMMUNELYS_DB_URL` eller `~/.kommunelys.env` (se

@@ -1,7 +1,7 @@
 """Lager sammendrag og tagger med Claude.
 
 ADR-002: stemmetall tolkes ikke her. Modellen får resultatet av hver votering
-fra data/voteringer/, tolket med kode, og hvilke partier som sto på hver side,
+fra voteringene, tolket med kode, og hvilke partier som sto på hver side,
 men ikke stemmetall eller navn. Den skal heller ikke skrive dem; nettstedet
 viser stemmene fra protokollen. Voteringer som er holdt tilbake (ADR-015),
 sendes ikke inn.

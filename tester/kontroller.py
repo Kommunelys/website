@@ -90,7 +90,7 @@ def _folkevalgte() -> set[str]:
 
 def _tillatte_navn() -> set[str]:
     """Navn som er vurdert og kan stå i et sammendrag, for eksempel en avdød
-    dikter en byste skal reises over. Vedlikeholdes i data/tillatte-navn.json
+    dikter en byste skal reises over. Vedlikeholdes i kommuner/<slug>/tillatte-navn.json
     med begrunnelse for hvert navn."""
     return {n["navn"] for n in konfig.tillatte_navn()}
 
@@ -120,7 +120,7 @@ def _navn_i_tittel(tittel: str, unntatt: set[str] = frozenset()) -> list[str]:
 
     Grovt: et ledd etter en bindestrek som bare består av ord med stor
     forbokstav (og «og»), uten ord som viser at det er et firma eller et sted.
-    Folkevalgte og navn i data/tillatte-navn.json unntas. Det er bedre å holde
+    Folkevalgte og navn i kommuner/<slug>/tillatte-navn.json unntas. Det er bedre å holde
     tilbake ett sammendrag for mye enn å publisere et navn.
     """
     navn = []

@@ -1,10 +1,10 @@
-"""Leser oppmøtelisten i møteprotokollene og skriver data/oppmote/<år>.json.
+"""Leser oppmøtelisten i møteprotokollene og lagrer oppmøtet (lager.oppmote).
 
 ADR-008: oppmøtelisten i hver protokoll er en selvstendig, datert kilde. Den
 oppgir funksjon, repr. (parti, eller kommune i interkommunale utvalg) og hvem
 et varamedlem møtte for.
 
-Stemmene i data/voteringer/ kontrolleres mot oppmøtet. To slags avvik:
+Stemmene i voteringene kontrolleres mot oppmøtet. To slags avvik:
 - noen stemte uten å stå på oppmøtelisten
 - en votering har flere stemmer enn det møtte medlemmer
 Avvikene lagres per møte. En votering med avvik skal ikke publiseres før et

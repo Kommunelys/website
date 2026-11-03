@@ -10,7 +10,7 @@ ikke et saksframlegg. Det deles ikke.
 
 Teksten må være hentet ut med `pdftotext` uten -layout.
 
-    python -m tolk.saksframlegg data/tekst/835161.txt
+    python -m tolk.saksframlegg tester/fasit/steinkjer/saksframlegg-738014.txt
 """
 
 from __future__ import annotations

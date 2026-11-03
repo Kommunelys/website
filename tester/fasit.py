@@ -10,7 +10,7 @@ Hver kommune har noen dokumenter i tester/fasit/<kommune>/, som tekst
 
 Fasiten gjelder regelsettet (tolk/profil.py). Endres standarden for Elements,
 skal fasiten for alle kommunene fortsatt bestå (ADR-021). Trenger ikke
-databasen eller data/, og kjøres ved hver PR (.github/workflows/tester.yml).
+databasen, og kjøres ved hver PR (.github/workflows/tester.yml).
 
     python -m tester.fasit                      # alle kommunene
     python -m tester.fasit steinkjer

@@ -1,4 +1,4 @@
-"""Lesing fra databasen, i samme form som filene i data/ har.
+"""Lesing fra databasen, i samme form som filene med KOMMUNELYS_LAGER=json har.
 
 Brukes når KOMMUNELYS_LAGER=pg. Hver funksjon her svarer til en `les`-
 funksjon i lager/, og gir det samme tilbake som filene, også rekkefølgen på

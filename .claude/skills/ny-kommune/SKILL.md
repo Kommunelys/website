@@ -69,7 +69,7 @@ Kopier `kommuner/steinkjer.json`, og bytt ut:
 
 Lag også `kommuner/<slug>/partisider.json` og `kommuner/<slug>/tillatte-navn.json`.
 - Partisidene åpnes og sjekkes én for én, med samme format som
-  `data/partisider.json`.
+  `kommuner/steinkjer/partisider.json`.
 - Tillatte navn er en tom liste til et sammendrag trenger det.
 
 ## 3. Prøvekjøring mot en kopi, aldri mot databasen
@@ -95,8 +95,7 @@ python -m tolk.bygg_avvik $A
 python -m tolk.dekning $A
 ```
 
-`lager/_fil.py` stopper hvis `KOMMUNELYS_DATA` mangler, så Steinkjers `data/`
-aldri røres.
+`KOMMUNELYS_LAGER=json` stopper hvis `KOMMUNELYS_DATA` mangler.
 
 Filene har ikke databasens regler. Se etter nye verdier i felt som har en
 regel i `supabase/migrations/`: `sakstype` (Levanger har «AS»), funksjonen i

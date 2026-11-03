@@ -4,9 +4,8 @@ Skrives av hent.hent_opptak og analyser.analyser_debatt. Opptaket ligger hos
 kommunen; her står lenken, bokmerkene for sakene og tekstingen. Videoen
 lagres ikke.
 
-Med KOMMUNELYS_LAGER=json ligger dataene i <data>/opptak/ og <data>/debatt/.
-De fantes ikke da data/ ble frosset 6.10.2026, så de brukes bare med en kopi
-(KOMMUNELYS_DATA).
+Med KOMMUNELYS_LAGER=json ligger dataene i opptak/ og debatt/ i mappen
+KOMMUNELYS_DATA.
 """
 
 from __future__ import annotations

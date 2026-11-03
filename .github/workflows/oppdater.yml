@@ -36,7 +36,7 @@ concurrency:
   cancel-in-progress: false
 
 # ADR-019: dataene ligger i databasen (Postgres i Supabase), og hver jobb leser
-# og skriver der. Ingenting committes; data/ i git står som det var 6.10.2026.
+# og skriver der. Ingenting committes.
 permissions:
   contents: read
   pages: write

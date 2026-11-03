@@ -25,8 +25,7 @@ STANDARD = "steinkjer"
 
 
 def slug() -> str:
-    """Kommunen denne prosessen gjelder. Filene i data/ hører til Steinkjer;
-    lager/_fil.py stopper en annen kommune som vil lese eller skrive dem."""
+    """Kommunen denne prosessen gjelder."""
     return os.environ.get("KOMMUNELYS_KOMMUNE") or STANDARD
 
 
@@ -74,15 +73,9 @@ def kilde(s: str | None = None) -> dict:
 
 
 def konfigmappe() -> Path:
-    """Mappen med filene som vedlikeholdes for hånd (partisider, tillatte navn).
-
-    Steinkjers ligger i data/ (eller KOMMUNELYS_DATA) som før byttet; de andre
-    kommunenes i kommuner/<slug>/.
-    """
-    from . import _fil  # noqa: PLC0415
-
-    s = slug()
-    return _fil.DATA if s == STANDARD else KOMMUNER / s
+    """Mappen med filene som vedlikeholdes for hånd (partisider, tillatte navn):
+    kommuner/<slug>/."""
+    return KOMMUNER / slug()
 
 
 def fra_argv(argv: list[str]) -> list[str]:
