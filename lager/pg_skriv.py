@@ -111,7 +111,7 @@ class Personer:
 
 # Utvalg, partier og verv -------------------------------------------------------------
 
-def utvalg(c, k: int, aar: int, utv: dict, partisider: dict) -> dict:
+def utvalg(c, k: int, aar: int, utv: dict) -> dict:
     ut = {}
     ut["utvalg"] = synk_tabell(
         c, "kjerne.utvalg", ["kommune_id", "utvalg_id", "kortnavn", "navn"], ["kommune_id", "utvalg_id"],
@@ -123,13 +123,9 @@ def utvalg(c, k: int, aar: int, utv: dict, partisider: dict) -> dict:
         [(k, aar, u["utvalg_id"], u["faste_medlemmer"], u["varamedlemmer"], u["moter"],
           utv["medlemsliste_hentet"] or None) for u in utv["utvalg"]],
         "t.kommune_id = %s and t.aar = %s", (k, aar))
-    sider = partisider.get("partier", {})
     ut["parti"] = synk_tabell(
-        c, "kjerne.parti", ["kommune_id", "kode", "navn", "url", "url_tekst", "url_kontrollert"],
-        ["kommune_id", "kode"],
-        [(k, kode, navn, (sider.get(kode) or {}).get("url"), (sider.get(kode) or {}).get("tekst"),
-          partisider.get("kontrollert") if kode in sider else None)
-         for kode, navn in sorted(utv["partier"].items())], slett=False)
+        c, "kjerne.parti", ["kommune_id", "kode", "navn"], ["kommune_id", "kode"],
+        [(k, kode, navn) for kode, navn in sorted(utv["partier"].items())], slett=False)
     return ut
 
 
@@ -529,7 +525,7 @@ def forrige_telling(c, k: int, telling: dict[str, int]) -> int:
     siste = {str(a): n for a, n in c.execute(
         "select distinct on (aar) aar, saker from drift.bygg where kommune_id = %s order by aar, bygget desc", (k,))}
     nye = [(k, int(a), n) for a, n in telling.items() if siste.get(a) != n]
-    c.cursor().executemany("insert into drift.bygg (kommune_id, aar, saker, status) values (%s, %s, %s, '{}')", nye)
+    c.cursor().executemany("insert into drift.bygg (kommune_id, aar, saker) values (%s, %s, %s)", nye)
     return len(nye)
 
 

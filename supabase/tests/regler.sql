@@ -141,7 +141,7 @@ begin
   insert into kjerne.kommune (kommunenr, slug, navn) values ('9999', 'testkommune', 'Testkommune')
     returning kommune_id into k2;
   perform pg_temp.skal_feile('kommune: en rad kan ikke peke til en person i en annen kommune',
-    format($s$insert into kjerne.navnevariant values (%s, 'Kari T.', %s, 'test')$s$, k2, kari));
+    format($s$insert into kjerne.person_portal_id values (%s, 99999, %s)$s$, k2, kari));
 
   -- Rådata og ADR-014 -----------------------------------------------------------
   insert into kjerne.raa_svar (kommune_id, kilde, nokkel, sjekksum, innhold)
@@ -200,12 +200,8 @@ begin
             '[{"tittel": "Saksframlegg", "url": "https://portal/doc"}]');
   perform pg_temp.skal_feile('analyse: kan ikke endres',
     format('update kjerne.analyse set sammendrag = ''annet'' where kommune_id = %s', k));
-  perform pg_temp.skal_vaere('sammendrag: vises ikke før det er kontrollert',
-    not exists (select 1 from publisert.sammendrag where kommune_id = k));
   insert into kjerne.analyse_kontroll (kommune_id, analyse_id, bestatt)
     select k, id, true from kjerne.analyse where kommune_id = k;
-  perform pg_temp.skal_vaere('sammendrag: vises når kontrollen er bestått',
-    exists (select 1 from publisert.sammendrag where kommune_id = k));
   perform pg_temp.skal_virke('sak: ny sak-ID flyttes til analysen',
     format('update kjerne.sak set sak_id = 4999 where kommune_id = %s and sak_id = 5000', k));
   perform pg_temp.skal_vaere('sak: analysen fulgte med',
@@ -254,14 +250,6 @@ begin
   insert into kjerne.avvik (kommune_id, avvik, type, utvalg, dato, beskrivelse)
     values (k, 'oppmote:1000:kari-test', 'oppmote', 'KS', '2026-01-01', 'Kari Test stemmer uten å stå på oppmøtelisten');
   insert into kjerne.avvik_votering values (k, 'oppmote:1000:kari-test', 5000, 1, 1);
-  perform pg_temp.skal_vaere('publisering: votering med avvik uten vurdering holdes tilbake',
-    (select holdt from publisert.votering_status where kommune_id = k and behandling_id = 5000 and nr = 1));
-  perform pg_temp.skal_vaere('publisering: navnene vises ikke når voteringen holdes tilbake',
-    not exists (select 1 from publisert.stemme where kommune_id = k and behandling_id = 5000 and nr = 1));
-  perform pg_temp.skal_vaere('publisering: tallene vises ikke når voteringen holdes tilbake',
-    (select antall_for is null from publisert.votering where kommune_id = k and behandling_id = 5000 and nr = 1));
-  perform pg_temp.skal_vaere('publisering: votering der tallene ikke stemmer, holdes tilbake',
-    (select holdt from publisert.votering_status where kommune_id = k and behandling_id = 5000 and nr = 3));
   perform pg_temp.skal_feile('vurdering: uten begrunnelse stoppes',
     format($s$insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av, dato)
       values (%s, 'oppmote:1000:kari-test', 'publiser', ' ', 'test', '2026-10-04')$s$, k));
@@ -273,11 +261,6 @@ begin
       values (%s, 'oppmote:1000:kari-test', 'venter_paa_kommunen', 'b', 'test', '2026-10-04')$s$, k));
   insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, merknad, begrunnelse, vurdert_av, dato)
     values (k, 'oppmote:1000:kari-test', 'publiser', 'Merknaden', 'Begrunnelse', 'test', '2026-10-04');
-  perform pg_temp.skal_vaere('publisering: vises når vurderingen er publiser, med merknad',
-    (select not holdt and merknader = array['Merknaden']
-     from publisert.votering_status where kommune_id = k and behandling_id = 5000 and nr = 1));
-  perform pg_temp.skal_vaere('publisering: navnene vises etter vurderingen',
-    (select count(*) = 2 from publisert.stemme where kommune_id = k and behandling_id = 5000 and nr = 1));
   perform pg_temp.skal_feile('vurdering: kan ikke endres',
     format('update kjerne.vurdering set avgjorelse = ''ikke_publiser'' where kommune_id = %s', k));
 
@@ -303,30 +286,25 @@ begin
        insert into drift.endringslogg (tabell, operasjon, nokkel) values ('x', 'I', '{}')$s$);
   perform pg_temp.skal_feile('pipeline: ser ikke tilgangstabellene',
     'set local role kommunelys_pipeline; select count(*) from tilgang.medlemskap');
-  perform pg_temp.skal_feile('bygg: kan ikke endre saker',
-    format('set local role kommunelys_bygg; update kjerne.sak set tittel = ''x'' where kommune_id = %s', k));
 
   set local role kommunelys_pipeline;
   svar := (select count(*) = 1 from kjerne.sak where kommune_id = k);
   reset role;
   perform pg_temp.skal_vaere('pipeline: leser kjerne', svar);
 
-  -- Opptak (ADR-026): pipeline og bygg når de nye tabellene.
+  -- Opptak (ADR-026): pipeline når de nye tabellene.
   set local role kommunelys_pipeline;
   svar := (select count(*) = 1 from kjerne.opptak where kommune_id = k)
-          and (select count(*) = 1 from kjerne.teksting_gjeldende where kommune_id = k);
+          and (select count(*) = 1 from kjerne.teksting_gjeldende where kommune_id = k)
+          and (select count(*) = 1 from kjerne.debatt_gjeldende where kommune_id = k);
   reset role;
-  set local role kommunelys_bygg;
-  svar2 := (select count(*) = 1 from kjerne.debatt_gjeldende where kommune_id = k);
-  reset role;
-  perform pg_temp.skal_vaere('opptak: pipeline leser opptak og teksting', svar);
-  perform pg_temp.skal_vaere('opptak: bygget leser debatten', svar2);
+  perform pg_temp.skal_vaere('opptak: pipeline leser opptak, teksting og debatt', svar);
 
   -- En innlogget bruker uten tilgang ser ingenting.
   perform set_config('request.jwt.claims', json_build_object('sub', bruker, 'role', 'authenticated')::text, true);
   set local role authenticated;
   svar := (select count(*) = 0 from kjerne.sak);
-  svar2 := (select count(*) = 0 from publisert.stemme);
+  svar2 := (select count(*) = 0 from kjerne.stemme);
   svar3 := (select count(*) = 0 from kjerne.opptak) and (select count(*) = 0 from kjerne.teksting);
   reset role;
   perform pg_temp.skal_vaere('innlogget uten tilgang: ser ingen saker', svar);
@@ -345,13 +323,13 @@ begin
     svar2 := (select count(*) = 0 from kjerne.sak where kommune_id = k2);
     svar3 := (select count(*) = 0 from kjerne.avvik);
     svar4 := (select count(*) = 0 from kjerne.dokument_tekst);
-    svar5 := (select count(*) = 2 from publisert.stemme where kommune_id = k and behandling_id = 5000 and nr = 1);
+    svar5 := (select count(*) = 2 from kjerne.stemme where kommune_id = k and behandling_id = 5000 and nr = 1);
     reset role;
     perform pg_temp.skal_vaere('abonnent: ser sakene i sin kommune', svar);
     perform pg_temp.skal_vaere('abonnent: ser ikke saker i en annen kommune', svar2);
     perform pg_temp.skal_vaere('abonnent: ser ikke avvik og vurderinger', svar3);
     perform pg_temp.skal_vaere('abonnent: ser ikke teksten uten fulltekst', svar4);
-    perform pg_temp.skal_vaere('abonnent: ser publiserte stemmer', svar5);
+    perform pg_temp.skal_vaere('abonnent: ser stemmene i sin kommune', svar5);
     perform pg_temp.skal_feile('abonnent: kan ikke legge inn vurderinger',
       format($s$set local role authenticated;
         insert into kjerne.vurdering (kommune_id, avvik, avgjorelse, begrunnelse, vurdert_av, dato, registrert_av)
@@ -673,13 +651,13 @@ begin
                    "sak_id": 5000, "tittel": "Testsak", "start_ms": 60000, "varighet_ms": 120000}]'
       where kommune_id = k;
     perform pg_temp.skal_virke('debatt: bygget lagrer kontrollen',
-      format($s$set local role kommunelys_bygg;
+      format($s$set local role kommunelys_pipeline;
         insert into kjerne.debatt_kontroll (kommune_id, debatt_id, bestatt, grunner)
           select kommune_id, id, false, array['AP er verken nevnt eller ropt opp i del 1']
           from kjerne.debatt_gjeldende where kommune_id = %s;
         reset role$s$, k));
     perform pg_temp.skal_feile('debatt: bygget kan ikke endre kontrollen',
-      format($s$set local role kommunelys_bygg; update kjerne.debatt_kontroll set grunner = '{}', bestatt = true
+      format($s$set local role kommunelys_pipeline; update kjerne.debatt_kontroll set grunner = '{}', bestatt = true
         where kommune_id = %s$s$, k));
     perform pg_temp.skal_feile('debatt: kontrollen kan ikke slettes',
       format('delete from kjerne.debatt_kontroll where kommune_id = %s', k));
@@ -791,9 +769,9 @@ begin
   -- Driftssiden: bygget skriver og rydder bort det som er eldre enn 30 dager.
   insert into drift.side (bygget, kjoring_id, html) values (now() - interval '40 days', 'gammel', '<p>gammel</p>');
   perform pg_temp.skal_virke('driftsside: bygget lagrer siden',
-    $s$set local role kommunelys_bygg; insert into drift.side (kjoring_id, html) values ('ny', '<p>ny</p>'); reset role$s$);
+    $s$set local role kommunelys_pipeline; insert into drift.side (kjoring_id, html) values ('ny', '<p>ny</p>'); reset role$s$);
   perform pg_temp.skal_virke('driftsside: bygget rydder',
-    $s$set local role kommunelys_bygg; delete from drift.side where kjoring_id in ('gammel', 'ny'); reset role$s$);
+    $s$set local role kommunelys_pipeline; delete from drift.side where bygget < now() - interval '30 days'; reset role$s$);
   perform pg_temp.skal_vaere('driftsside: bare det gamle ble ryddet',
     not exists (select 1 from drift.side where kjoring_id = 'gammel')
     and exists (select 1 from drift.side where kjoring_id = 'ny'));
@@ -802,10 +780,10 @@ begin
   -- for kommunen (og prosjektadmin) kan hente dem.
   insert into auth.users (id, aud, role, email) values (leser, 'authenticated', 'authenticated', 'leser@example.invalid');
   perform pg_temp.skal_virke('innsyn: bygget lagrer dataene',
-    format($s$set local role kommunelys_bygg;
+    format($s$set local role kommunelys_pipeline;
       insert into drift.nettsted_fil (kommune_id, sti, innhold) values (%s, 'data.json', '{"S":{}}'); reset role$s$, k));
   perform pg_temp.skal_feile('innsyn: bare json-filer',
-    format($s$set local role kommunelys_bygg;
+    format($s$set local role kommunelys_pipeline;
       insert into drift.nettsted_fil (kommune_id, sti, innhold) values (%s, '../app.js', 'x')$s$, k));
   perform pg_temp.skal_feile('innsyn: anon får ikke dataene',
     'set local role anon; select portal.nettsted_fil(''testkommune-a'', ''data.json'')');

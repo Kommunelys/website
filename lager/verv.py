@@ -36,8 +36,5 @@ def les_utvalg(aar: int, *standard):
 
 def lagre_utvalg(aar: int, utvalg: dict) -> None:
     if fra_databasen():
-        from . import konfig  # noqa: PLC0415
-
-        partisider = konfig.partisider()
-        return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.utvalg(c, k, aar, utvalg, partisider))
+        return pg_skriv.i_transaksjon(lambda c, k: pg_skriv.utvalg(c, k, aar, utvalg))
     _fil.skriv(UTVALG / f"{aar}.json", utvalg)
