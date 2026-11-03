@@ -1,7 +1,9 @@
 # Datamodell
 
-Tabellene under er den logiske modellen. I praksis er hver av dem en JSON-fil
-eller en mappe med én fil per enhet under `data/`.
+Tabellene under er den logiske modellen. Dataene ligger i databasen (Postgres i
+Supabase, ADR-019; skjemaet i `supabase/migrations/`). `lager/` gir dem tilbake
+i samme form som JSON-filene i `data/` hadde fram til byttet 6.10.2026. Med `KOMMUNELYS_LAGER=json` er hver av dem en JSON-fil eller en
+mappe med én fil per enhet i mappen `KOMMUNELYS_DATA`.
 
 ## Oversikt
 
@@ -69,10 +71,10 @@ behandling, 14 venter på protokoll, 8 unntatt offentlighet. Tallene kommer fra
 
 ## Voteringer
 
-`votering` og `stemme` ligger samlet i `data/voteringer/<år>.json`, én post
+`votering` og `stemme` ligger samlet per år (`lager.voteringer`), én post
 per behandling med vedtak. Hver votering har en navneliste per standpunkt, og
 partiet til hvert navn. Tolkes av `python -m tolk.bygg_voteringer` fra
-saksprotokollene i `data/tekst/`.
+saksprotokollene (`lager.tekst`).
 
 | Form | Slik står den i protokollen | Antall i 2026 |
 |---|---|---|
@@ -126,14 +128,14 @@ historikk. Derfor to grep:
 
 1. Medlemslisten hentes ved hver kjøring og lagres versjonert, slik at
    historikken bygges opp framover (`hent.hent_medlemmer`, til
-   `data/raa/medlemmer/<dato>.json`, ny fil bare når noe er endret).
+   én versjon per dato, ny bare når noe er endret).
    Mobilnummer, e-post og kjønn fra portalen lagres ikke.
 2. Oppmøtelisten i hver protokoll leses som selvstendig kilde. Den er datert,
    står i et dokument som ikke endres i ettertid, og oppgir både rolle og hvem
    en vara møtte for.
 
-`python -m tolk.bygg_verv` setter de to sammen til `data/verv/<år>.json`, ett
-verv per person og utvalg, og `data/utvalg/<år>.json` med utvalg og partier.
+`python -m tolk.bygg_verv` setter de to sammen til vervene for året, ett
+verv per person og utvalg, og utvalgene for året med partiene.
 Portalen oppgir ikke når et verv begynte eller sluttet. Vervet får derfor de
 datoene det er observert: hvilke medlemslister det står i
 (`i_medlemslister`), og første og siste møte personen møtte (`forst_motte`,
@@ -148,7 +150,7 @@ oppmøtelisten uten å møte for noen, for eksempel Tor Borgan i 9 møter i
 formannskapet. De tar ingen plass i protokollen og telles for seg. Med den
 regelen har ingen møter flere i plasser enn utvalget har faste plasser.
 
-Oppmøtet ligger i `data/oppmote/<år>.json`, én post per møte, lest av
+Oppmøtet ligger per år (`lager.oppmote`), én post per møte, lest av
 `python -m tolk.bygg_oppmote` fra alle 67 møteprotokoller i 2026: 754 rader,
 136 av dem varamedlemmer. Kolonnen «Repr.» lagres som `repr`. Den er partiet,
 men i interkommunale utvalg er den kommunen, og i rådene ofte «ANDRE».
@@ -180,7 +182,7 @@ svar fra kommunen: da publiseres voteringen slik protokollen oppgir den,
 med en merknad som sier hva som er usikkert, og protokollen gjelder. Se
 ADR-015.
 
-`python -m tolk.bygg_avvik` samler avvikene til `data/avvik/<år>.json`. Ett
+`python -m tolk.bygg_avvik` samler avvikene for året (`lager.avvik`). Ett
 avvik er én ting å vurdere og berører ofte mange voteringer, for eksempel
 `oppmote:1285:lena-hanem-bartnes`, som gjelder 42 voteringer. I 2026 er det
 10 avvik og 97 voteringer.

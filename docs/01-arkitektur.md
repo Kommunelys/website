@@ -223,7 +223,7 @@ forklaringen ligger under «Om».
 medlemslistene og protokollene. Profilene har ingen tekst fra en modell, og
 ingenting er hentet fra aviser, sosiale medier eller andre kilder. Medlemmer av
 råd som ikke er valgt for et parti, for eksempel ungdomsrådet, får ikke
-profil. Partiene lenkes til sine egne sider, fra `data/partisider.json`, der
+profil. Partiene lenkes til sine egne sider, fra `kommuner/<slug>/partisider.json`, der
 hver adresse er kontrollert for hånd.
 
 **Sakene i sentrum.** Saken er det alt annet lenker til (7.10.2026):
@@ -308,7 +308,7 @@ nettstedet publiseres som vanlig, på samme måte som voteringer med avvik.
   Tall sammenlignes uten tusenskille, datoer som dag, måned og år, uansett
   skrivemåte.
 - Personnavn fra sakstittelen skal ikke stå i teksten (CLAUDE.md regel 2).
-  Folkevalgte er unntatt, og det samme er navn i `data/tillatte-navn.json`,
+  Folkevalgte er unntatt, og det samme er navn i `kommuner/<slug>/tillatte-navn.json`,
   som har begrunnelse for hvert navn. Ledd med ord som «AS», «Stadion» eller
   «Kulturhus» regnes ikke som personnavn.
 - Sammendrag modellen selv har merket som usikre, publiseres ikke.
@@ -332,8 +332,8 @@ Ett offentlig GitHub-repo. Actions kjører på tidsplan, Pages publiserer.
 |---|---|
 | Kjøring på tidsplan | GitHub Actions med cron |
 | Kode | `hent/`, `tolk/`, `analyser/`, `bygg/` |
-| Data | `data/` som JSON i repoet |
-| Dokumenttekst | `data/tekst/` |
+| Data | Postgres i Supabase (ADR-019), med sikkerhetskopi hver natt i et privat repo |
+| Dokumenttekst | I databasen, som uttrukket tekst |
 | PDF-er | Lagres ikke |
 | Nettsted | GitHub Pages |
 | API-nøkkel | Actions secret, `ANTHROPIC_API_KEY` |

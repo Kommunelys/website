@@ -467,6 +467,11 @@ som selv nekter å lagre det som bryter reglene.
   i en PR: `vurderinger.json`, `tillatte-navn.json` og `partisider.json`.
   Hver kjøring speiler dem inn (`lager.synk --konfig`). Speilingen ble
   fjernet 1.11.2026; filene leses rett fra git.
+- `data/` ble tatt ut av git 4.11.2026, etter at gjenoppretting fra
+  sikkerhetskopien var prøvd og besto 1.11.2026. Filene finnes i historikken.
+  `tillatte-navn.json` og `partisider.json` for Steinkjer ble flyttet til
+  `kommuner/steinkjer/`, som for de andre kommunene. `KOMMUNELYS_LAGER=json`
+  krever nå en egen mappe (`KOMMUNELYS_DATA`).
 - RLS på alle tabeller, og egne roller for pipelinen og bygget. Tilgang for
   innloggede brukere gis per kommune (`tilgang`), og gir aldri mer enn det som
   er publisert: tilbakeholdte voteringer og sammendrag holdes tilbake fordi de

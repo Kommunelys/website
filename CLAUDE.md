@@ -77,7 +77,7 @@ Slik holdes reglene i koden:
 | Portal | I drift på https://portal.kommunelys.no/ (ADR-020). Se «Portalen» under |
 | Flere kommuner | I bruk (ADR-021). Steinkjer er publisert. Levanger har begrenset innsyn (ADR-024): innholdet bare for innloggede med en rolle for kommunen |
 | Følg saken | Bygget (ADR-027), ikke i drift. E-post sendes først når variabelen `VARSEL_SEND` er 1. Driftssiden teller e-postene mot grensen i Resend (100 i døgnet, varslene stopper på 70) |
-| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). `data/` i git står som ved byttet. Sikkerhetskopi hver natt (privat repo) |
+| Database (Supabase) | Kilden siden 6.10.2026 (ADR-019). `data/` ble tatt ut av git 4.11.2026. Sikkerhetskopi hver natt (privat repo) |
 
 ## Mappene
 
@@ -90,29 +90,14 @@ varsel/    «Følg saken»: det som er publisert i sakene, hva som er nytt, og k
 analyser/  kall mot Claude med caching på sjekksum
 bygg/      statisk nettsted; malen (HTML, CSS, JS, skrift, merke) i bygg/mal/
 drift/     kjøreloggen, historikken fra databasen og Actions, og kostnadsanslaget til driftssiden
-lager/     all lesing og skriving av data/; resten av koden bruker bare denne
+lager/     all lesing og skriving av dataene; resten av koden bruker bare denne
 kommuner/  det som er særegent for hver kommune: kilden, regelsettet (tolk),
            nivåene (nivaa) og visningen (navn, utvalg, organer)
-kommuner/<slug>/  partisider og tillatte navn for andre kommuner enn Steinkjer
+kommuner/<slug>/  det som vedlikeholdes for hånd per kommune: tillatte-navn.json
+               (navn fra sakstitler som er vurdert og kan stå i et sammendrag)
+               og partisider.json (lenker til partienes egne sider, kontrollert for hånd)
 kommuner/kart/  forenklede kommunegrenser til kartet på forsiden (bygg.lag_kart),
                og kandidatene med samme innsynsportal (kandidater.json, grå på kartet)
-data/          dataene slik de var ved byttet til databasen 6.10.2026 (ADR-019);
-               oppdateres ikke lenger, bortsett fra de to filene for hånd
-data/raa/      rå API-svar, urørt. Slettes aldri. Unntak: medlemslistene
-               lagres uten kontaktopplysninger (raa/medlemmer/)
-data/moter/    normaliserte møter
-data/saker/    normaliserte saker med saksgang
-data/tekst/    tekst trukket ut av PDF og Word (møteprotokoller i tekst/moter/)
-data/voteringer/  voteringer og stemmer fra saksprotokollene
-data/oppmote/  oppmøte fra møteprotokollene, med avvik mot stemmene
-data/utvalg/   utvalg og partier
-data/verv/     verv per person og utvalg
-data/avvik/    avvik som må vurderes før voteringene publiseres
-data/vurderinger.json  vurderingene av avvikene slik de var 6.10.2026; nå i databasen (ADR-020)
-data/analyse/  sammendrag og tagger fra modellen
-data/tillatte-navn.json  navn fra sakstitler som er vurdert og kan stå i et sammendrag
-data/partisider.json  lenker til partienes egne sider, kontrollert for hånd
-data/drift/kjoringer.json  tall fra hver kjøring: kall mot portalen, AI-analysen
 docs/      arkitektur, API, datamodell, beslutninger, plan
 tester/    kontroller som må passere før publisering
 tester/fasit/  dokumenter kontrollert for hånd, per kommune, med forventet resultat
@@ -122,17 +107,18 @@ supabase/  databaseskjemaet (migreringer og tester); databasen er kilden
 ## Kommandoer
 
 Alle kommandoene leser og skriver databasen (`KOMMUNELYS_DB_URL` eller
-`~/.kommunelys.env`). `KOMMUNELYS_LAGER=json` bruker filene i `data/` i stedet.
+`~/.kommunelys.env`). `KOMMUNELYS_LAGER=json` bruker filer i mappen
+`KOMMUNELYS_DATA` i stedet.
 
 ```bash
 python -m hent.hent_moter 2026          # møter, saker, saksgang
-python -m hent.hent_medlemmer 2026      # dagens medlemslister -> data/raa/medlemmer/
-python -m hent.hent_dokumenter 2026     # PDF/Word -> data/tekst/ (rundt 25 min)
-python -m tolk.bygg_saker               # saksgang og status -> data/saker/
-python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene -> data/voteringer/
-python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene -> data/oppmote/
-python -m tolk.bygg_verv 2026           # utvalg, partier og verv -> data/utvalg/, data/verv/
-python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering -> data/avvik/
+python -m hent.hent_medlemmer 2026      # dagens medlemslister, versjonert
+python -m hent.hent_dokumenter 2026     # tekst fra PDF og Word (rundt 25 min)
+python -m tolk.bygg_saker               # saksgang og status
+python -m tolk.bygg_voteringer 2026     # voteringer fra vedtakene
+python -m tolk.bygg_oppmote 2026        # oppmøte og avvik mot stemmene
+python -m tolk.bygg_verv 2026           # utvalg, partier og verv
+python -m tolk.bygg_avvik 2026          # avvik som venter på vurdering
 python -m hent.hent_opptak 2026         # opptakene, bokmerkene og tekstingen fra kommunetv (ADR-026)
 python -m analyser.analyser_debatt 2026 --tort-lop  # hvilke debatter som ville blitt oppsummert
 python -m analyser.analyser_debatt 2026 --vis 8457  # grunnlaget for debatten om én behandling
@@ -171,15 +157,14 @@ ble vedtatt av prosjekteier 4.10.2026, og byttet ble gjort 6.10.2026;
 | 3. Speiling ved hver kjøring | Ferdig (#31). Speilingen ble tatt bort etter byttet |
 | 4. Klargjort for bytte | Ferdig (#32, #33). Lesing, skriving, driftsside og nattlig sikkerhetskopi |
 | 4. Selve byttet | Ferdig 6.10.2026. `oppdater.yml` bruker databasen og committer ikke `data/`. 6 av 6 kontroller var like før byttet, og en generalprøve mot portalen ga det samme |
-| 5. `data/` ut av git | Senere, når databasen har gått en stund. Til da står `data/` som ved byttet |
+| 5. `data/` ut av git | Ferdig 4.11.2026, etter at gjenoppretting fra sikkerhetskopien var prøvd og besto 1.11.2026. Filene finnes i historikken |
 
-- **Kilden nå:** databasen. Nettstedet bygges fra den. `data/` i git viser
-  dataene slik de var 6.10.2026 og oppdateres ikke.
-- **`KOMMUNELYS_LAGER`** er `pg` som standard. `json` leser og skriver filene
-  i `data/`, eller i en kopi med `KOMMUNELYS_DATA`, for å prøve en ny kommune.
-- **To filer vedlikeholdes for hånd og blir i git også etter byttet:**
-  `tillatte-navn.json` og `partisider.json`. De gjennomgås i PR og leses
-  rett fra filen. Vurderingene av avvik registreres i
+- **Kilden:** databasen. Nettstedet bygges fra den.
+- **`KOMMUNELYS_LAGER`** er `pg` som standard. `json` leser og skriver filer
+  i mappen `KOMMUNELYS_DATA`, for å prøve en ny kommune, og stopper uten den.
+- **To filer per kommune vedlikeholdes for hånd i git:**
+  `kommuner/<slug>/tillatte-navn.json` og `kommuner/<slug>/partisider.json`.
+  De gjennomgås i PR og leses rett fra filen. Vurderingene av avvik registreres i
   databasen, i portalen eller med `lager.vurder` (ADR-020).
 - **Tilkoblingen** ligger i `KOMMUNELYS_DB_URL`: hemmeligheten i Actions og
   `~/.kommunelys.env` lokalt. Aldri i repoet.
@@ -407,7 +392,7 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   Andre feilkoder (500, 503) kan ikke tilpasses på GitHub Pages.
 - **Ikke gjett adresser.** inp.no er ikke Industri- og næringspartiet, men en
   side om kredittkort. Lenker til partier og andre ligger i
-  `data/partisider.json` og åpnes og sjekkes før de legges inn.
+  `kommuner/<slug>/partisider.json` og åpnes og sjekkes før de legges inn.
 - **Endrer du formen på dataene, må databasen følge med.** Et nytt felt eller
   en ny type data (som `vedtak` i voteringene, #27) kjenner ikke databasen, og
   det forsvinner uten feilmelding om ingen tar det med. Ta med i samme PR: en
@@ -421,7 +406,7 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   `supabase/tests/regler.sql` etterpå.
 - **Rådata, analyser, vurderinger og endringsloggen kan ikke endres eller
   slettes i databasen.** Det er med vilje. En kjøring mot databasen kan ikke
-  angres. Prøv derfor endringer mot en kopi av dataene (`KOMMUNELYS_DATA`) før
+  angres. Prøv derfor endringer i en egen mappe (`KOMMUNELYS_DATA`) før
   de kjøres mot de ekte. Lokale kjøringer skriver til den samme databasen som
   nettstedet bygges fra; det finnes ingen egen testdatabase.
 - **Bruk Session pooler-adressen til Supabase.** Den direkte adressen
@@ -512,9 +497,8 @@ Hvordan ting gjøres, lært av feil vi har gjort. Reglene står øverst.
   mot dokumentet for hånd før den committes.
 - **Nivåer:** uten `nivaa` er alt med. Sett `"nivaa": {"voteringer": false}`
   til dekningen er over 95 %.
-- **Prøv mot en kopi:** `KOMMUNELYS_LAGER=json KOMMUNELYS_DATA=<mappe>`.
-  `data/` hører til Steinkjer; `lager/_fil.py` stopper en annen kommune som
-  vil lese eller skrive der.
+- **Prøv i en egen mappe:** `KOMMUNELYS_LAGER=json KOMMUNELYS_DATA=<mappe>`.
+  Uten `KOMMUNELYS_DATA` stopper `json`.
 
 ## Språk
 

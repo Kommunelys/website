@@ -1,8 +1,8 @@
 """Avvik som må vurderes, og vurderingene av dem (ADR-015).
 
 Avvikene skrives av tolk.bygg_avvik. Vurderingene registreres i portalen eller
-med python -m lager.vurder, og ligger i databasen (ADR-020). data/vurderinger.json
-står som den var 6.10.2026.
+med python -m lager.vurder, og ligger i databasen (ADR-020). Med
+KOMMUNELYS_LAGER=json leses de fra vurderinger.json i mappen KOMMUNELYS_DATA.
 """
 
 from __future__ import annotations
@@ -33,7 +33,7 @@ def vurderinger() -> list[dict]:
 
 
 # Sammendrag og meldinger om feil vurderes bare i portalen, som skriver til
-# databasen (ADR-023). Filene i data/ har ingen.
+# databasen (ADR-023). Filene (KOMMUNELYS_LAGER=json) har ingen.
 
 def sammendrag_vurderinger() -> dict[int, dict]:
     """Gjeldende vurdering av sammendraget per sak, for sakens gjeldende analyse."""

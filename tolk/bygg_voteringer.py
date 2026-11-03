@@ -1,4 +1,4 @@
-"""Tolker voteringene i saksprotokollene og skriver data/voteringer/<år>.json.
+"""Tolker voteringene i saksprotokollene og lagrer dem (lager.voteringer).
 
 ADR-002: mønstergjenkjenning, aldri språkmodell. Hver votering har feltet
 `tall_stemmer`. Er det usant, stemmer ikke antall navn med oppgitt stemmetall,

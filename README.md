@@ -30,7 +30,8 @@ Portalen  ->  Innhenting  ->  Lagring  ->  AI-analyse  ->  Bygg  ->  Nettsted
 
 Hele kjeden kjøres av én GitHub Actions-arbeidsflyt på tidsplan. Dataene ligger
 i en database (Postgres i Supabase), som logger hver endring. Fram til
-6.10.2026 lå de som JSON i dette repoet, i `data/` (ADR-019).
+6.10.2026 lå de som JSON i dette repoet, i `data/` (ADR-019); mappen ble tatt
+ut 4.11.2026 og finnes i historikken.
 
 ## Dokumentasjon
 
