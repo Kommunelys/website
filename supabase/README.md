@@ -1,14 +1,9 @@
 # supabase/
 
 Databaseskjemaet for Kommunelys (Postgres i Supabase). Databasen er kilden
-siden 6.10.2026 (ADR-019): hele kjeden leser og skriver her. Filene som lå i
-`data/` i git, ble tatt ut 4.11.2026; de finnes i historikken.
-`KOMMUNELYS_LAGER=json` leser og skriver filer i en egen mappe
-(`KOMMUNELYS_DATA`) i stedet, for å prøve en ny kommune. To filer per kommune
-vedlikeholdes for hånd i git: `kommuner/<slug>/tillatte-navn.json` og
-`kommuner/<slug>/partisider.json`. De gjennomgås i en PR og leses rett fra
-filen. Vurderingene av avvik registreres i databasen, i portalen eller med
-`python -m lager.vurder` (ADR-020).
+siden 6.10.2026 (ADR-019): hele kjeden leser og skriver her. `data/` ble tatt
+ut av git 4.11.2026. Prøvekjøring med filer og de to filene som vedlikeholdes
+for hånd: se «Flytting til databasen» i CLAUDE.md.
 
 | Kommando | Gjør |
 |---|---|
@@ -91,8 +86,7 @@ tar en kopi av skjemaene `kjerne` og `drift` hver natt (`pg_dump`) og lagrer
 den som en fil på kjøringen i 30 dager. Brukere og
 innlogging (`tilgang`, `auth`) er ikke med, og heller ikke hvem som følger
 hvilke saker (`varsel`). Gratisplanen i Supabase har ingen
-sikkerhetskopi å stole på, så dette er den eneste kopien utenfor databasen
-når dataene ikke lenger ligger i git.
+sikkerhetskopi å stole på, så dette er den eneste kopien utenfor databasen.
 
 Kopien har data som ikke er åpne, og filene fra kjøringene i et offentlig repo
 kan lastes ned av alle med en GitHub-konto. Derfor ligger den ikke her.
@@ -104,7 +98,8 @@ sammenligner med den ekte. Feiler den, sender GitHub e-post.
 Oppskriften for en ekte gjenoppretting, fra nytt Supabase-prosjekt til et
 nettsted som bygges igjen, står i README i `Kommunelys/sikkerhetskopi`. Kort:
 
-1. Kjør migreringene i `migrations/` i det nye prosjektet (`supabase db push`).
+1. Kjør migreringene i `migrations/` i det nye prosjektet (`supabase link` og
+   `supabase db push`, som README der viser).
    Skjemaet kommer herfra, ikke fra kopien: kopien har policyer som viser til
    `tilgang` og `auth`, og en fremmednøkkel til `auth.users`, og kan ikke
    leses inn alene i en tom database.

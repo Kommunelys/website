@@ -33,7 +33,7 @@ def vurderinger() -> list[dict]:
 
 
 # Sammendrag og meldinger om feil vurderes bare i portalen, som skriver til
-# databasen (ADR-023). Filene i data/ har ingen.
+# databasen (ADR-023). Filene (KOMMUNELYS_LAGER=json) har ingen.
 
 def sammendrag_vurderinger() -> dict[int, dict]:
     """Gjeldende vurdering av sammendraget per sak, for sakens gjeldende analyse."""

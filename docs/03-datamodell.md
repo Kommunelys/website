@@ -2,8 +2,7 @@
 
 Tabellene under er den logiske modellen. Dataene ligger i databasen (Postgres i
 Supabase, ADR-019; skjemaet i `supabase/migrations/`). `lager/` gir dem tilbake
-i samme form som JSON-filene hadde da de lå i `data/` i git, fram til
-6.10.2026. Med `KOMMUNELYS_LAGER=json` er hver av dem en JSON-fil eller en
+i samme form som JSON-filene i `data/` hadde fram til byttet 6.10.2026. Med `KOMMUNELYS_LAGER=json` er hver av dem en JSON-fil eller en
 mappe med én fil per enhet i mappen `KOMMUNELYS_DATA`.
 
 ## Oversikt
