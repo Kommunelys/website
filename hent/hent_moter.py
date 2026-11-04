@@ -49,7 +49,6 @@ def kjor(aar: int, alt: bool = False) -> dict:
 
     forrige_liste = raadata.moteliste(aar) or []
     forrige = {m["MO_ID"]: m for m in forrige_liste}
-    raadata.lagre_moteliste(aar, liste)
 
     endret, hoppet = [], 0
     for i, m in enumerate(liste, 1):
@@ -66,6 +65,8 @@ def kjor(aar: int, alt: bool = False) -> dict:
         for s in saksliste:
             try:
                 behandlinger.append(portal.behandling(s["Id"]))
+            except portal.Avvist:
+                raise
             except portal.PortalFeil as e:
                 print(f"   hoppet over behandling {s.get('Id')}: {e}")
                 behandlinger.append(s)
@@ -74,6 +75,8 @@ def kjor(aar: int, alt: bool = False) -> dict:
             aar, mid, {"mote": m, "detaljer": detaljer, "behandlinger": behandlinger})
         endret.append(mid)
 
+    # Etter møtene: stopper hentingen underveis, hentes resten neste gang.
+    raadata.lagre_moteliste(aar, liste)
     raadata.lagre_siste_kjoring(
         aar,
         {"tidspunkt": dt.datetime.now().isoformat(timespec="seconds"),
@@ -89,7 +92,8 @@ def kjor(aar: int, alt: bool = False) -> dict:
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     aar = int(args[0]) if args else dt.date.today().year
-    kjor(aar, alt="--alt" in sys.argv)
+    with portal.stopp_ved_avvisning():
+        kjor(aar, alt="--alt" in sys.argv)
 
 
 if __name__ == "__main__":

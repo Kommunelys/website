@@ -11,6 +11,7 @@ takten gjelder samlet for verten (ADR-007, ADR-021).
 from __future__ import annotations
 
 import atexit
+import contextlib
 import json
 import time
 import urllib.error
@@ -58,14 +59,37 @@ class PortalFeil(Exception):
     """Portalen svarte ikke slik vi forventer."""
 
 
+class Avvist(PortalFeil):
+    """Portalen avviser oss: 401 eller 403, 429 i alle forsøkene, eller en side
+    som ikke er data. Vi kan være blokkert. Hentingen for kommunen stopper med
+    en gang, og kjøringen blir rød (kjor.alle)."""
+
+    def __str__(self) -> str:
+        return f"innsynsportalen avviser oss: {self.args[0]}."
+
+
+# Utgangskoden når portalen avviser oss, så kjor.alle kan si det tydelig.
+AVVIST = 4
+
+
+@contextlib.contextmanager
+def stopp_ved_avvisning():
+    """Rundt main i trinnene som henter fra portalen: Avvist gir AVVIST."""
+    try:
+        yield
+    except Avvist as e:
+        print(f"\nstopper: {e}", flush=True)
+        raise SystemExit(AVVIST) from e
+
+
 class Henter:
     """Ett kall i sekundet, én tråd og identifiserbar klient (ADR-007), med nye
     forsøk ved feil og tellingen til kjøreloggen (drift.logg), som viser på
     driftssiden at takten holdes. Felles for innsynsportalen og opptakene
     (hent.kommunetv). `del_` er navnet i kjøreloggen, `feil` unntaket som kastes."""
 
-    def __init__(self, del_: str, feil: type[Exception]) -> None:
-        self.del_, self.feil = del_, feil
+    def __init__(self, del_: str, feil: type[Exception], avvist: type[Exception] | None = None) -> None:
+        self.del_, self.feil, self.avvist = del_, feil, avvist or feil
         self.telling = {"kall": 0, "feil": 0, "byte": 0, "start": None}
 
     def _logg(self) -> None:
@@ -82,7 +106,10 @@ class Henter:
 
     def hent(self, url: str, headere: dict[str, str], les=None, forsok: int = 3):
         """Svaret som JSON, eller gjort om med `les`. Er det ikke JSON når det skal
-        være det, prøves det på nytt: en feil adresse kan gi appens forside med 200."""
+        være det, prøves det på nytt: en feil adresse kan gi appens forside med 200.
+
+        `avvist` kastes når verten kan ha blokkert oss: 401 eller 403 med en gang,
+        og 429 eller svar som ikke er data når også siste forsøk ga det."""
         t, siste = self.telling, None
         if t["start"] is None:
             t["start"] = time.monotonic()
@@ -100,19 +127,27 @@ class Henter:
                 t["feil"] += 1
                 # 404 og andre klientfeil blir ikke bedre av nye forsøk. 429 betyr
                 # at vi går for fort, og skal vente som andre feil.
+                if e.code in (401, 403):
+                    time.sleep(PAUSE_SEKUND)
+                    raise self.avvist(f"{e.code} {e.reason} på {url}. Vi kan være blokkert") from e
                 if 400 <= e.code < 500 and e.code != 429:
                     time.sleep(PAUSE_SEKUND)
                     raise self.feil(f"{e.code} {e.reason}: {url}") from e
                 siste = e
                 time.sleep(5 * (n + 1))
-            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as e:
                 t["feil"] += 1
                 siste = e
                 time.sleep(5 * (n + 1))
+        if isinstance(siste, urllib.error.HTTPError) and siste.code == 429:
+            raise self.avvist(f"429 Too Many Requests {forsok} ganger på {url}. Vi kan være blokkert")
+        if isinstance(siste, (json.JSONDecodeError, UnicodeDecodeError)):
+            raise self.avvist(f"svaret på {url} var ikke data, {forsok} ganger. "
+                              "Vi kan være blokkert, eller adressen er feil")
         raise self.feil(f"ga opp etter {forsok} forsøk: {url} ({siste})")
 
 
-_henter = Henter("portal", PortalFeil)
+_henter = Henter("portal", PortalFeil, Avvist)
 
 
 def _hent(url: str, *, binaer: bool = False):

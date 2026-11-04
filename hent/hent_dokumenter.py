@@ -213,6 +213,8 @@ def kjor(aar: int) -> None:
         for i, o in enumerate(nye, 1):
             try:
                 data = portal.hent_fil(o["url"])
+            except portal.Avvist:
+                raise
             except portal.PortalFeil as e:
                 print(f"[{i}] feilet {o['id']}: {e}")
                 continue
@@ -245,7 +247,8 @@ def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     import datetime as dt  # noqa: PLC0415
     aar = int(args[0]) if args else dt.date.today().year
-    kjor(aar)
+    with portal.stopp_ved_avvisning():
+        kjor(aar)
 
 
 if __name__ == "__main__":
