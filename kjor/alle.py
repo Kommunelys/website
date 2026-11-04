@@ -3,7 +3,10 @@
 Kommunene kjøres etter tur, aldri samtidig, så takten mot portalen gjelder
 samlet for verten (ADR-007). Hvert trinn er en egen prosess med
 KOMMUNELYS_KOMMUNE satt, så ingenting som er husket fra én kommune, brukes for
-en annen. Feiler en kommune, fortsetter kjøringen med neste.
+en annen. Feiler en kommune, fortsetter kjøringen med neste. Det som feilet,
+står i sammendraget for kjøringen i Actions. Feilet noe i hentingen, gjør siste
+jobb kjøringen rød etter at de andre kommunene er publisert; feilet noe i
+analysen, blir analysejobben rød.
 
     python -m kjor.alle hent [år] [--alt]
     python -m kjor.alle analyser [år] [--maks 25] [--minutter 150]
@@ -38,6 +41,7 @@ import urllib.request
 from pathlib import Path
 
 from analyser.claude import STOPP
+from hent.portal import AVVIST
 from lager import kommune as lager_kommune
 
 ROT = Path(__file__).resolve().parent.parent
@@ -45,6 +49,8 @@ UT = ROT / "nettsted"
 INTERN = ROT / "nettsted-intern"
 # Saker med debatt som analyseres per kommune og kjøring (analyser.analyser_debatt).
 MAKS_DEBATT = 15
+# Det som feilet uten å stoppe de andre kommunene, én linje per feil (_meld).
+FEIL: list[str] = []
 
 
 def _kode(slug: str, *kommando: str) -> int:
@@ -59,13 +65,26 @@ def _kjor(slug: str, *kommando: str) -> bool:
     return _kode(slug, *kommando) == 0
 
 
+def _hent(slug: str, *kommando: str) -> bool:
+    """Som _kjor, men det som feilet, står i FEIL. Avviser innsynsportalen oss,
+    sier det det (hent.portal.Avvist)."""
+    kode = _kode(slug, *kommando)
+    if kode == AVVIST:
+        FEIL.append(f"{slug}: innsynsportalen avviser oss, og vi kan være blokkert (eller adressen "
+                    "er feil; svaret står i loggen). Kommunen beholder forrige versjon på nettstedet, "
+                    "og neste kjøring prøver igjen.")
+    elif kode:
+        FEIL.append(f"{slug}: {' '.join(kommando)} feilet. Kommunen beholder forrige versjon på nettstedet.")
+    return kode == 0
+
+
 def _analyse(slug: str, *kommando: str) -> bool:
     """Som _kjor, men avviser Claude nøkkelen eller kontoen, stopper analysen
     for alle kommunene, og jobben blir rød (analyser.claude.Stopp)."""
     kode = _kode(slug, *kommando)
     if kode == STOPP:
-        print("\nstopper: Claude avviser nøkkelen, eller kontoen er tom for kreditt. "
-              "Ingen saker eller debatter blir analysert før det er rettet.")
+        FEIL.append("stopper: Claude avviser nøkkelen, eller kontoen er tom for kreditt. "
+                    "Ingen saker eller debatter blir analysert før det er rettet.")
         raise SystemExit(1)
     return kode == 0
 
@@ -80,20 +99,20 @@ def hent(aar: int, alt: bool) -> dict[str, bool]:
         aarene = [str(a) for a in lager_kommune.aarene(aar, slug)]
         ok = True
         for a in aarene:
-            ok = ok and _kjor(slug, "hent.hent_moter", a, *(["--alt"] if alt else []))
-        ok = ok and _kjor(slug, "hent.hent_medlemmer", str(aar))
+            ok = ok and _hent(slug, "hent.hent_moter", a, *(["--alt"] if alt else []))
+        ok = ok and _hent(slug, "hent.hent_medlemmer", str(aar))
         # Sakene bygges én gang, for alle årene: en sak kan gå over flere år.
-        ok = ok and _kjor(slug, "tolk.bygg_saker", str(aar))
+        ok = ok and _hent(slug, "tolk.bygg_saker", str(aar))
         for a in aarene:
-            ok = ok and _kjor(slug, "hent.hent_dokumenter", a) and _kjor(slug, "tolk.bygg_voteringer", a)
+            ok = ok and _hent(slug, "hent.hent_dokumenter", a) and _hent(slug, "tolk.bygg_voteringer", a)
         # Oppmøtet og avvikene kontrollerer stemmene fra alle årene til og med året.
         for a in aarene:
             for trinn in ("tolk.bygg_oppmote", "tolk.bygg_verv", "tolk.bygg_avvik"):
-                ok = ok and _kjor(slug, trinn, a)
+                ok = ok and _hent(slug, trinn, a)
         # Opptakene av møtene (ADR-026), når kommunen har dem. En annen vert enn
         # portalen. Feiler det, beholder kommunen lenkene fra forrige kjøring.
         if ok and lager_kommune.oppsett(slug).get("opptak") and not _kjor(slug, "hent.hent_opptak", str(aar)):
-            print(f"advarsel: opptakene for {slug} ble ikke hentet; lenkene er som ved forrige kjøring")
+            FEIL.append(f"{slug}: opptakene ble ikke hentet; lenkene er som ved forrige kjøring")
         utfall[slug] = ok
     return utfall
 
@@ -111,11 +130,14 @@ def analyser(aar: int, maks: int, minutter: float) -> dict[str, bool]:
         min_her = max(1.0, (slutt - time.monotonic()) / 60 / igjen)
         utfall[slug] = _analyse(slug, "analyser.analyser_saker", str(aar),
                                 "--maks", str(math.ceil(maks / len(kommuner))), "--minutter", f"{min_her:.0f}")
+        if not utfall[slug]:
+            FEIL.append(f"{slug}: AI-analysen av sakene feilet")
         # Debatten fra opptakene (ADR-026). Sakene går først; debatten får
-        # sin egen kvote og stopper ikke kommunen om den feiler.
+        # sin egen kvote og stopper ikke kommunen om den feiler. En debatt som
+        # holdes tilbake av kontrollen, er ikke en feil.
         if lager_kommune.oppsett(slug).get("opptak") and not _analyse(
                 slug, "analyser.analyser_debatt", str(aar), "--maks", str(MAKS_DEBATT)):
-            print(f"advarsel: debatten for {slug} ble ikke analysert")
+            FEIL.append(f"{slug}: debatten ble ikke analysert")
     return utfall
 
 
@@ -195,17 +217,35 @@ def main() -> None:
     aar = _aar([a for a in rest if not a.startswith("--") and a not in verdier.values()])
     if hva == "bygg":
         raise SystemExit(bygg(aar, {s for s in verdier.get("--hopp-over", "").split(",") if s}))
-    if hva == "hent":
-        utfall = hent(aar, "--alt" in rest)
-    else:
-        utfall = analyser(aar, int(verdier.get("--maks", 25)), float(verdier.get("--minutter", 150)))
+    try:
+        if hva == "hent":
+            utfall = hent(aar, "--alt" in rest)
+        else:
+            utfall = analyser(aar, int(verdier.get("--maks", 25)), float(verdier.get("--minutter", 150)))
+    finally:
+        _meld("Hent og tolk" if hva == "hent" else "AI-analyse")
     print("\n" + "\n".join(f"{s}: {'ok' if ok else 'feilet'}" for s, ok in utfall.items()))
-    # Til neste jobb i Actions: kommunene som feilet, beholder forrige versjon.
+    if hva == "analyser":
+        # Rød jobb, men bygget venter ikke på at analysen gikk bra (oppdater.yml).
+        raise SystemExit(1 if FEIL else 0)
+    # Til bygget: kommunene som feilet, beholder forrige versjon. Til siste jobb:
+    # det som feilet, så kjøringen blir rød etter publiseringen.
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
-            f.write(f"feilet={','.join(s for s, ok in utfall.items() if not ok)}\n")
+            f.write(f"feilet={','.join(s for s, ok in utfall.items() if not ok)}\n"
+                    f"feil={' | '.join(FEIL)}\n")
     # Jobben feiler bare når ingen kommune gikk bra; de andre publiseres som vanlig.
     raise SystemExit(0 if any(utfall.values()) else 1)
+
+
+def _meld(tittel: str) -> None:
+    """Det som feilet, i loggen og i sammendraget for kjøringen i Actions."""
+    if not FEIL:
+        return
+    print(f"\n{tittel}, dette feilet:\n" + "\n".join(FEIL), flush=True)
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+            f.write(f"### {tittel}: dette feilet\n\n" + "".join(f"- {x}\n" for x in FEIL) + "\n")
 
 
 if __name__ == "__main__":

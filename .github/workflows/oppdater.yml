@@ -91,6 +91,8 @@ jobs:
     outputs:
       # Kommunene der innhentingen feilet, med komma mellom.
       feilet: ${{ steps.hent.outputs.feilet }}
+      # Det som feilet uten å stoppe de andre kommunene, til siste jobb.
+      feil: ${{ steps.hent.outputs.feil }}
     steps:
       - uses: actions/checkout@v4
 
@@ -120,7 +122,9 @@ jobs:
   # standard). Første gjennomgang av et helt år tar over en time, så analysen
   # slutter å sende nye saker etter 150 minutter. Hver analyse lagres i
   # databasen med en gang, så ingenting går tapt om jobben feiler. Avviser
-  # Claude nøkkelen, eller er kontoen tom for kreditt, blir jobben rød.
+  # Claude nøkkelen, eller er kontoen tom for kreditt, stopper analysen for alle
+  # kommunene. Feiler analysen av sakene eller debatten i én kommune, blir
+  # jobben rød til slutt. Bygget venter ikke på at analysen gikk bra.
   analyser:
     name: AI-analyse
     needs: hent
@@ -201,6 +205,22 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           NETTSTED_BASE: ${{ steps.pages.outputs.base_path }}
         run: python -m bygg.bygg_nettsted --bare-drift --utfall utfall.json
+
+  # Feilet noe i hentingen uten å stoppe de andre kommunene (en kommune, eller
+  # opptakene), blir kjøringen rød her, etter at nettstedet er publisert.
+  # Hva som feilet, står i sammendraget for kjøringen (kjor/alle.py).
+  underveis:
+    name: Feil underveis
+    needs: [hent, bygg]
+    if: ${{ !cancelled() && needs.hent.outputs.feil != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Si hva som feilet
+        env:
+          FEIL: ${{ needs.hent.outputs.feil }}
+        run: |
+          echo "::error title=Noe feilet i hentingen::$FEIL"
+          exit 1
 
   # GitHub slår av planlagte kjøringer etter 60 dager uten aktivitet i repoet.
   # Før byttet holdt de daglige datacommitene repoet aktivt; nå slås

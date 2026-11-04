@@ -70,7 +70,8 @@ def _jobber(p: dict) -> dict[str, str | None]:
     ut = {}
     for j in p.get("jobber") or []:
         navn = j["navn"].lower()
-        rolle = ("proeve" if "prøve" in navn else "hent" if "hent" in navn
+        rolle = ("proeve" if "prøve" in navn else "underveis" if "underveis" in navn
+                 else "hent" if "hent" in navn
                  else "analyse" if "analyse" in navn else "bygg" if "bygg" in navn else navn)
         ut[rolle] = j["resultat"] if j.get("status") == "completed" else "pågår"
     return ut
@@ -93,8 +94,10 @@ def utfall(p: dict) -> tuple[str, str]:
         return "feilet", "Innhenting feilet, ingenting publisert"
     if j.get("bygg") == "failure":
         return "feilet", "Kontroll eller bygg feilet, ikke publisert"
+    if j.get("underveis") == "failure":
+        return "delvis", "Noe feilet i hentingen, resten er publisert"
     if j.get("analyse") == "failure":
-        return "delvis", "Analyse feilet, publisert uten nye sammendrag"
+        return "delvis", "Analysen feilet, publisert likevel"
     return ("ok", "") if p["resultat"] == "success" else ("feilet", "")
 
 

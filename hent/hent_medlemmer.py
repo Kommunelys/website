@@ -68,7 +68,8 @@ def kjor(aar: int) -> dict:
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     aar = int(args[0]) if args else dt.date.today().year
-    kjor(aar)
+    with portal.stopp_ved_avvisning():
+        kjor(aar)
 
 
 if __name__ == "__main__":
