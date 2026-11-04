@@ -1,11 +1,12 @@
 // node --test supabase/functions/varsel/logikk.test.ts
 //
 // Nøkkelen for «Slutt å følge», og e-posten: lenkene til vårt eget domene,
-// List-Unsubscribe til funksjonen, ingen tekst fra sammendraget.
+// List-Unsubscribe til funksjonen, ingen tekst fra sammendraget. Og når
+// utsendingen skal gjøre Oppdater rød.
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { gyldig, lagEpost, perSak, signer, type Rad } from "./logikk.ts";
+import { alleFeilet, gyldig, lagEpost, perSak, signer, stoppHosResend, type Rad } from "./logikk.ts";
 
 const H = "hemmelig";
 const B = "11111111-2222-3333-4444-555555555555";
@@ -59,4 +60,19 @@ test("e-posten: lenker til vårt eget domene, og ett klikk til funksjonen", asyn
 test("én sak: emnet har tittelen", async () => {
   const e = await lagEpost(H, FUNKSJON, B, "a@example.invalid", [rad(1, 7, ["Sammendraget er publisert"])]);
   assert.equal(e.subject, "Nytt i saken du følger: Ny skole");
+});
+
+test("avvist nøkkel stopper alt, grensen er ingen feil", () => {
+  assert.equal(stoppHosResend(401), "avvist");
+  assert.equal(stoppHosResend(403), "avvist");
+  assert.equal(stoppHosResend(429), "grense");
+  for (const s of [400, 422, 500, 503]) assert.equal(stoppHosResend(s), null, String(s));
+});
+
+test("rødt bare når alle e-postene feilet, og mer enn én", () => {
+  assert.ok(alleFeilet(0, 2), "Resend sa nei til alle");
+  assert.ok(alleFeilet(0, 9));
+  assert.ok(!alleFeilet(0, 1), "én ugyldig adresse");
+  assert.ok(!alleFeilet(5, 3), "noen kom fram");
+  assert.ok(!alleFeilet(0, 0), "ingenting å sende");
 });

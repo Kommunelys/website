@@ -41,6 +41,7 @@ Edge-funksjonen `varsel` (`functions/varsel/`) sender e-post til dem som følger
 - Publiseres med `verify_jwt = false`, fordi e-postprogrammene sender «Slutt å følge» (`List-Unsubscribe-Post`) uten innlogging: `supabase functions deploy varsel --no-verify-jwt`. `send` krever hodet `x-varsel-nokkel`, og «slutt» en signert nøkkel.
 - Hemmelighetene i funksjonen: `RESEND_API_KEY` (en nøkkel som bare kan sende), `VARSEL_NOKKEL` (den samme som hemmeligheten i Actions) og `VARSEL_HEMMELIGHET` (signerer lenkene; byttes den, slutter de gamle lenkene å virke).
 - Oppdater sender bare når variabelen `VARSEL_SEND` er `1` i repoet. Til da legges varslene i køen, og driftssiden viser at de venter.
+- Kan e-postene ikke sendes, blir steget i Oppdater rødt (etter publiseringen): funksjonen svarer ikke, Resend avviser nøkkelen eller avsenderen (401, 403; da stopper den med en gang, og raden telles ikke som et forsøk), eller alle e-postene feilet, og flere enn én. Grensen hos Resend (429, for døgnet, måneden eller takten) og én e-post som feiler, gir ikke rødt. Andre feil telles som et forsøk, og etter tre forsøk faller varselet ut av køen. Etter en endring her må funksjonen publiseres på nytt.
 - Logikken kan prøves uten Supabase: `node --test supabase/functions/varsel/logikk.test.ts`.
 
 ## Regler databasen håndhever

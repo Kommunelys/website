@@ -15,7 +15,7 @@
 // innlogging. send er beskyttet av VARSEL_NOKKEL, slutt av signaturen.
 
 import { createClient } from "npm:@supabase/supabase-js@2";
-import { gyldig, lagEpost, PORTAL, type Rad } from "./logikk.ts";
+import { alleFeilet, gyldig, lagEpost, PORTAL, type Rad, stoppHosResend } from "./logikk.ts";
 
 const SUPABASE = Deno.env.get("SUPABASE_URL")!;
 const SERVICE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -65,11 +65,14 @@ async function send(): Promise<{ sendt: number; mottakere: number; feil: number 
   const { data, error } = await klient.rpc("varsel_til_sending");
   if (error) throw new Feil(500, error.message);
   const til = (data ?? []) as { user_id: string; epost: string; saker: Rad[] }[];
-  let sendt = 0, feil = 0;
+  let sendt = 0, feil = 0, siste = "";
   for (const m of til) {
     const e = await lagEpost(HEMMELIGHET, FUNKSJON, m.user_id, m.epost, m.saker);
     const ider = m.saker.map((r) => r.id);
-    let resendId: string | null = null, melding: string | null = null, brukt: number | null = null, stopp = false;
+    let resendId: string | null = null, melding: string | null = null, brukt: number | null = null;
+    // Kort grunn uten meldingen fra Resend, som kan ha en e-postadresse:
+    // svaret går til loggen i Actions. Hele meldingen lagres i varsel.epost.
+    let stopp: "grense" | "avvist" | null = null, grunn = "";
     try {
       const r = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -88,21 +91,29 @@ async function send(): Promise<{ sendt: number; mottakere: number; feil: number 
       if (r.ok) resendId = innhold.id ?? null;
       else {
         melding = `HTTP ${r.status}: ${innhold.message ?? innhold.name ?? "ukjent feil"}`;
-        // Grensen hos Resend er nådd: resten venter til neste kjøring.
-        stopp = r.status === 429;
+        stopp = stoppHosResend(r.status);
+        grunn = `HTTP ${r.status} ${innhold.name ?? ""}`.trim();
       }
     } catch (x) {
       melding = `Resend svarte ikke: ${x instanceof Error ? x.message : String(x)}`;
+      grunn = "Resend svarte ikke";
     }
+    // Varsel.kjor gjør steget i Oppdater rødt. Raden telles ikke som et
+    // forsøk, så ingen mister varselet: det sendes når nøkkelen er rettet.
+    if (stopp === "avvist") throw new Feil(502, `Resend avviser nøkkelen eller avsenderen (${grunn})`);
     const { error: lagreFeil } = await klient.rpc("varsel_sendt", {
       p_ider: ider, p_resend_id: resendId, p_feil: melding, p_brukt: brukt,
     });
     if (lagreFeil) throw new Feil(500, lagreFeil.message);
-    if (melding) feil++;
-    else sendt++;
-    if (stopp) break;
+    if (melding) {
+      feil++;
+      siste = grunn;
+    } else sendt++;
+    // Grensen hos Resend er nådd: resten venter til neste kjøring.
+    if (stopp === "grense") return { sendt, mottakere: sendt, feil };
     await new Promise((ok) => setTimeout(ok, PAUSE_MS));
   }
+  if (alleFeilet(sendt, feil)) throw new Feil(502, `Resend sa nei til alle de ${feil} e-postene (${siste})`);
   return { sendt, mottakere: sendt, feil };
 }
 

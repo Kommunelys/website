@@ -37,6 +37,21 @@ export async function gyldig(hemmelighet: string, bruker: string, folger: number
   return ulik === 0;
 }
 
+// Når Resend sier nei: «grense» er nådd (429), og resten venter til neste
+// kjøring, uten at det er en feil. «avvist» (401, 403) er nøkkelen eller
+// avsenderen, og da ville alle de andre feilet på samme måte.
+export function stoppHosResend(status: number): "grense" | "avvist" | null {
+  if (status === 429) return "grense";
+  if (status === 401 || status === 403) return "avvist";
+  return null;
+}
+
+// Feilet alle e-postene, og mer enn én, er det Resend og ikke adressene.
+// Én e-post som feiler, er bare den ene.
+export function alleFeilet(sendt: number, feil: number): boolean {
+  return sendt === 0 && feil >= 2;
+}
+
 // Samme sak kan ha flere rader i køen, når e-posten har ventet en dag.
 export function perSak(rader: Rad[]): Rad[] {
   const saker = new Map<number, Rad>();
