@@ -99,6 +99,47 @@ def kjor(kommune: str, skriv: bool = False) -> list[str]:
     return feil
 
 
+# Samme navn to ganger i én votering: kontrollen skal stoppe den, navnene skal
+# ikke lagres, og skrivingen til databasen skal nekte hvis de kommer dit.
+# Stemmetallet stemmer med antall navn, så bare duplikatet kan stoppe den.
+DOBBELT = ("Ola Nordmann (AP) fremmet følgende forslag: Saken utsettes. "
+           "For forslaget stemte 2: Kari Nordmann (H), Kari Nordmann (H). "
+           "I mot forslaget stemte 1: Per Hansen (SP) Dermed ble forslaget vedtatt.")
+
+
+def samme_navn_to_ganger() -> list[str]:
+    """Feilene i vernet mot samme navn to ganger. Tom liste betyr at det virker."""
+    from lager import kommune as lager_kommune  # noqa: PLC0415
+    from lager.pg_skriv import voteringer as skriv_voteringer  # noqa: PLC0415
+    from tolk.bygg_voteringer import _uten_navnelister  # noqa: PLC0415
+    from tolk.tolk_protokoll import dobbelte_navn, les_vedtak  # noqa: PLC0415
+
+    lager_kommune.bruk("steinkjer")
+    feil = []
+    [v] = les_vedtak(DOBBELT, "-")
+    v["nr"] = 1
+    if dobbelte_navn(v) != ["Kari Nordmann"]:
+        feil.append(f"samme navn to ganger: fant {dobbelte_navn(v)!r}")
+    if v["tall_stemmer"]:
+        feil.append("samme navn to ganger: kontrollen slapp voteringen gjennom")
+
+    post = {"behandling_id": 1, "saksnr": "PS 1/2026", "voteringer": [v]}
+    try:
+        skriv_voteringer(None, 0, 2026, None, [post])
+        feil.append("samme navn to ganger: skrivingen til databasen stoppet ikke")
+    except ValueError as e:
+        if "Kari Nordmann" not in str(e) or "votering 1" not in str(e):
+            feil.append(f"samme navn to ganger: uklar feilmelding: {e}")
+    except Exception as e:  # noqa: BLE001 – vernet mangler, og skrivingen kom lenger
+        feil.append(f"samme navn to ganger: skrivingen stoppet ikke før databasen ({type(e).__name__})")
+
+    if _uten_navnelister(v) != ["Kari Nordmann"] or v["for"] or v["mot"]:
+        feil.append("samme navn to ganger: navnelistene ble ikke tatt bort")
+    if (v["antall_for"], v["antall_mot"], v["tall_stemmer"]) != (2, 1, False):
+        feil.append("samme navn to ganger: stemmetallet eller kontrollen ble endret")
+    return feil
+
+
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     skriv = "--skriv" in sys.argv
@@ -108,6 +149,10 @@ def main() -> None:
         f = kjor(k, skriv)
         n = len(list((MAPPE / k).glob("*.txt")))
         print(f"{k}: {n - len({x.split(':')[0] for x in f})} av {n} dokumenter som i fasiten")
+        feil += f
+    if not args:
+        f = samme_navn_to_ganger()
+        print(f"samme navn to ganger i en votering: {'virker ikke' if f else 'stoppes'}")
         feil += f
     if feil:
         print(f"\n{len(feil)} feil:")

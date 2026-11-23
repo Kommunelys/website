@@ -1,0 +1,164 @@
+{
+ "voteringer": [
+  {
+   "saksnr": "-",
+   "forslagsstiller": null,
+   "parti": null,
+   "type": "innstilling",
+   "tekst": "Antall representanter i kommunestyret i Steinkjer reduseres til 27 i neste valgperiode.",
+   "enstemmig": false,
+   "antall_for": 0,
+   "antall_mot": 9,
+   "for": [],
+   "mot": [
+    "Line Anita Hammer",
+    "Tommy Fossum Skatland",
+    "Christine Agdestein",
+    "Erik Røsegg",
+    "Tor-André Hopen",
+    "Tor Borgan",
+    "Lisbeth Melhus",
+    "Ragnar Andresen",
+    "Elin Rodum Agdestein"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {
+    "Line Anita Hammer": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Tor-André Hopen": "PP",
+    "Tor Borgan": "SP",
+    "Lisbeth Melhus": "UAVH",
+    "Ragnar Andresen": "V",
+    "Elin Rodum Agdestein": "H"
+   },
+   "resultat": "falt",
+   "resultat_tekst": "innstillingen ikke vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Elin Rodum Agdestein",
+   "parti": "H",
+   "type": "forslag",
+   "tekst": "Antall representanter i kommunestyret i Steinkjer reduseres til 35 i neste valgperiode.",
+   "enstemmig": false,
+   "antall_for": 2,
+   "antall_mot": 7,
+   "for": [
+    "Christine Agdestein",
+    "Elin Rodum Agdestein"
+   ],
+   "mot": [
+    "Erik Røsegg",
+    "Tor Borgan",
+    "Lisbeth Melhus",
+    "Line Anita Hammer",
+    "Tommy Fossum Skatland",
+    "Tor-André Hopen",
+    "Ragnar Andresen"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {
+    "Christine Agdestein": "H",
+    "Elin Rodum Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Tor Borgan": "SP",
+    "Lisbeth Melhus": "UAVH",
+    "Line Anita Hammer": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Tor-André Hopen": "PP",
+    "Ragnar Andresen": "V"
+   },
+   "resultat": "falt",
+   "resultat_tekst": "forslaget ikke vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Tor-André Hopen",
+   "parti": "PP",
+   "type": "forslag",
+   "tekst": "Antall representanter i kommunestyret i Steinkjer reduseres ikke i neste valgperiode.",
+   "enstemmig": false,
+   "antall_for": 4,
+   "antall_mot": 5,
+   "for": [
+    "Line Anita Hammer",
+    "Tommy Fossum Skatland",
+    "Tor-André Hopen",
+    "Ragnar Andresen"
+   ],
+   "mot": [
+    "Christine Agdestein",
+    "Erik Røsegg",
+    "Tor Borgan",
+    "Lisbeth Melhus",
+    "Elin Rodum Agdestein"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {
+    "Line Anita Hammer": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Tor-André Hopen": "PP",
+    "Ragnar Andresen": "V",
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Tor Borgan": "SP",
+    "Lisbeth Melhus": "UAVH",
+    "Elin Rodum Agdestein": "H"
+   },
+   "resultat": "falt",
+   "resultat_tekst": "forslaget ikke vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  },
+  {
+   "saksnr": "-",
+   "forslagsstiller": "Tor Borgan",
+   "parti": "SP",
+   "type": "forslag",
+   "tekst": "Antall representanter i kommunestyret i Steinkjer reduseres til 37 i neste valgperiode.",
+   "enstemmig": false,
+   "antall_for": 5,
+   "antall_mot": 4,
+   "for": [
+    "Christine Agdestein",
+    "Erik Røsegg",
+    "Tor Borgan",
+    "Lisbeth Melhus",
+    "Elin Rodum Agdestein"
+   ],
+   "mot": [
+    "Line Anita Hammer",
+    "Tommy Fossum Skatland",
+    "Tor-André Hopen",
+    "Ragnar Andresen"
+   ],
+   "alternativer": [],
+   "ikke_til_stede": [],
+   "partier": {
+    "Christine Agdestein": "H",
+    "Erik Røsegg": "INP",
+    "Tor Borgan": "SP",
+    "Lisbeth Melhus": "UAVH",
+    "Elin Rodum Agdestein": "H",
+    "Line Anita Hammer": "AP",
+    "Tommy Fossum Skatland": "FRP",
+    "Tor-André Hopen": "PP",
+    "Ragnar Andresen": "V"
+   },
+   "resultat": "vedtatt",
+   "resultat_tekst": "forslaget vedtatt",
+   "dobbeltstemme": null,
+   "tall_stemmer": true
+  }
+ ],
+ "vedtak": "Antall representanter i kommunestyret i Steinkjer reduseres til 37 i neste valgperiode."
+}

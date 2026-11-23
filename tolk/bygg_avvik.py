@@ -14,7 +14,8 @@ Ett avvik er én ting å vurdere, og berører ofte mange voteringer:
 
 - `oppmote`: én person stemmer i ett møte uten å stå på oppmøtelisten
 - `antall`: én votering har flere stemmer enn det møtte medlemmer
-- `tall`: én votering der antall navn ikke stemmer med stemmetallet
+- `tall`: én votering der antall navn ikke stemmer med stemmetallet, eller
+  der samme navn står to ganger (da er navnelisten ikke lagret)
 
 Vurderingene ligger i databasen (lager.avvik; portalen eller lager.vurder,
 ADR-020), én gjeldende per avvik:
@@ -86,7 +87,8 @@ def finn_avvik(aar: int) -> list[dict]:
             if not v["tall_stemmer"]:
                 a = _avvik(f"tall:{b['behandling_id']}:{v['nr']}", type="tall",
                            utvalg=b["utvalg"], dato=b["dato"][:10],
-                           beskrivelse=f"{b['saksnr']}: antall navn stemmer ikke med stemmetallet")
+                           beskrivelse=f"{b['saksnr']}: antall navn stemmer ikke med stemmetallet, "
+                                       "eller samme navn står to ganger; se protokollen")
                 a["voteringer"].append([b["behandling_id"], v["nr"]])
 
     for m in oppmote:

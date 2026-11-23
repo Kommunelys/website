@@ -41,6 +41,23 @@ def _navneliste(tekst: str | None) -> list[tuple[str, str]]:
     return ut
 
 
+def dobbelte_navn(v: dict) -> list[str]:
+    """Navn som står mer enn én gang i samme votering, i rekkefølge.
+
+    Én person har én stemme per votering. Står et navn to ganger, er
+    navnelisten feil lest eller feil i protokollen, og da teller den ikke
+    som kontrollert (ADR-002). Duplikatet fjernes ikke.
+    """
+    sett: set[str] = set()
+    dobbelt: list[str] = []
+    for n in (v["for"] + v["mot"] + v["ikke_til_stede"]
+              + [n for a in v["alternativer"] for n in a["navn"]]):
+        if n in sett and n not in dobbelt:
+            dobbelt.append(n)
+        sett.add(n)
+    return dobbelt
+
+
 def les_oppmoteblokk(tekst: str) -> tuple[list[dict], list[str]]:
     """Oppmøtelisten, og linjene i den som ikke kunne tolkes.
 
@@ -139,7 +156,7 @@ def _voteringer(del_: str, saksnr: str) -> list[dict]:
         # raden stoppes, ikke gå videre som 0 mot 0.
         har_tall = bool(g["n_for"] or g["n_mot"] or alternativer)
 
-        funnet.append((v.start(), {
+        votering = {
             "saksnr": saksnr,
             # «Behandling» er overskriften foran, ikke en del av navnet. Det
             # er også «Det deltok ingen vararepresentant i behandling av
@@ -170,16 +187,19 @@ def _voteringer(del_: str, saksnr: str) -> list[dict]:
                 {"ordførers": "ordfører", "leders": "leder"}[g["dobbelt"]]
                 if g["dobbelt"] else None
             ),
-            # Kontrollen (ADR-002). Er denne usann, skal raden ikke
-            # publiseres uten at et menneske har sett på den. Navn på de
-            # som ikke var til stede, står ikke alltid; da telles de ikke.
-            "tall_stemmer": (
-                har_tall
-                and len(stemte_for) == n_for and len(stemte_mot) == n_mot
-                and all(len(a["navn"]) == a["antall"] for a in alternativer)
-                and (not borte or len(borte) == n_borte)
-            ),
-        }))
+        }
+        # Kontrollen (ADR-002). Er denne usann, skal raden ikke publiseres
+        # uten at et menneske har sett på den. Navn på de som ikke var til
+        # stede, står ikke alltid; da telles de ikke. Samme navn to ganger
+        # er ikke to stemmer.
+        votering["tall_stemmer"] = (
+            har_tall
+            and len(stemte_for) == n_for and len(stemte_mot) == n_mot
+            and all(len(a["navn"]) == a["antall"] for a in alternativer)
+            and (not borte or len(borte) == n_borte)
+            and not dobbelte_navn(votering)
+        )
+        funnet.append((v.start(), votering))
 
     for e in p.enstemmig.finditer(del_):
         if any(a <= e.start() < b for a, b in dekket):
