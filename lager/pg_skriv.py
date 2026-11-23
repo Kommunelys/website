@@ -251,8 +251,15 @@ def voteringer(c, k: int, aar: int, personer: Personer, poster: list) -> dict:
     navn = set()
     for b in poster:
         for v in b["voteringer"]:
-            navn |= set(v["for"]) | set(v["mot"]) | set(v["ikke_til_stede"])
-            navn |= {n for a in v["alternativer"] for n in a["navn"]}
+            alle = v["for"] + v["mot"] + v["ikke_til_stede"] + [n for a in v["alternativer"] for n in a["navn"]]
+            # Én person har én stemme per votering (primærnøkkelen i kjerne.stemme).
+            # tolk.bygg_voteringer holder slike voteringer tilbake uten navn;
+            # kommer et duplikat hit likevel, sier feilen hvor.
+            if dobbelt := sorted({n for n in alle if alle.count(n) > 1}):
+                raise ValueError(
+                    f"Behandling {b['behandling_id']} ({b.get('saksnr')}), votering {v['nr']}: "
+                    f"{', '.join(dobbelt)} står mer enn én gang i navnelisten")
+            navn |= set(alle)
     personer.sikre(navn)
 
     vedtak, vrader, arader, srader = [], [], [], []

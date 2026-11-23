@@ -21,12 +21,14 @@ import re
 # uten kolon og navn, og «vedtatt, med ordførers dobbeltstemme» (eller leders).
 # Ved alternativ votering står «For forslag 1 stemte 4: …» for hvert forslag.
 # Én gang står det bare «Dermed vedtatt», uten «ble» og uten punktum.
+# Forretningsutvalget i Steinkjer 18.11.2026 skriver «I mot» i to ord, uten
+# punktum etter den siste navnelisten.
 VOTERING = re.compile(
     r"((?:(?P<stiller>[A-ZÆØÅ][\wÆØÅæøå .\-]+?) \((?P<parti>[^)]+)\) "
     r"fremmet følgende (?P<type>[\w ]*?forslag):?)|Innstilling:|(?P<forslag>Forslag):)"
     r"(?P<tekst>.*?)"
     r"(?:For forslaget stemte (?P<n_for>\d+): (?P<for>.*?)\.)? ?"
-    r"(?:Imot forslaget stemte (?P<n_mot>\d+): (?P<mot>.*?)\.)? ?"
+    r"(?:I ?mot forslaget stemte (?P<n_mot>\d+): (?P<mot>.*?)(?:\.|(?= Dermed )))? ?"
     r"(?P<alternativer>(?:For forslag \S+ stemte \d+: .*?\. ?)+)?"
     r"(?:Ikke til stede \((?P<n_borte>\d+)\):? ?(?P<borte>[^.]*?)\.? ?)?"
     r"Dermed (?:ble )?(?P<resultat>[\w ]*?vedtatt)"
